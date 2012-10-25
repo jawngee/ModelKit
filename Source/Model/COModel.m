@@ -12,6 +12,7 @@
 #import "COReflectedProperty.h"
 
 #import "COModelRegistry.h"
+#import "COModelContext.h"
 
 @interface COModel()
 
@@ -20,6 +21,8 @@
 @end
 
 @implementation COModel
+
+#pragma mark - Class Initialization
 
 +(void)initialize
 {
@@ -32,6 +35,8 @@
     [inst release];
 }
 
+#pragma mark Init/Dealloc
+
 -(id)init
 {
     if ((self=[super init]))
@@ -39,6 +44,8 @@
         _modelState=ModelStateNew;
         _createdAt=[[NSDate date] retain];
         _updatedAt=[[NSDate date] retain];
+        
+        [[COModelContext current] addToContext:self];
     }
 
     return self;
@@ -52,6 +59,47 @@
     
     [super dealloc];
 }
+
+
++(id)instanceWithId:(NSString *)objId
+{
+    COModel *instance=[[COModelContext current] modelForId:objId andClass:[self class]];
+    if (instance!=nil)
+        return instance;
+    
+    instance=[[[[self class] alloc] init] autorelease];
+    instance.objectId=objId;
+    
+    return instance;
+}
+
++(id)instanceWithDictionary:(NSDictionary *)dictionary
+{
+    COModel *instance=nil;
+    if ([dictionary objectForKey:@"objectId"])
+        instance=[[COModelContext current] modelForId:[dictionary objectForKey:@"objectId"] andClass:[self class]];
+    
+    if (!instance)
+    {
+        instance=[[[[self class] alloc] init] autorelease];
+        if ([dictionary objectForKey:@"objectId"])
+            instance.objectId=[dictionary objectForKey:@"objectId"];
+    }
+    
+    [instance fromDictionary:dictionary];
+    
+    return instance;
+}
+
+
+#pragma mark - Context related
+
+-(void)remove
+{
+    [[COModelContext current] removeFromContext:self];
+}
+
+#pragma mark - Conversion
 
 -(NSArray *)flattenArray:(NSArray *)array
 {
@@ -127,6 +175,11 @@
     }
     
     return result;
+}
+
+-(void)fromDictionary:(NSDictionary *)dictionary
+{
+    
 }
 
 @end

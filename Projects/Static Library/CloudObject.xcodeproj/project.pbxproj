@@ -19,6 +19,7 @@
 		FF3C8D45163940B9009EB62A /* COReflectedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D44163940B9009EB62A /* COReflectedClass.m */; };
 		FF3C8D5E16396082009EB62A /* COModelRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D5D16396082009EB62A /* COModelRegistry.m */; };
 		FFA54AA116391DEA00F055A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54AA016391DEA00F055A6 /* Foundation.framework */; };
+		FFCFA9F11639732500BC2E3E /* COModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFA9F01639732500BC2E3E /* COModelContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		FFA54A9D16391DEA00F055A6 /* libCloudObject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCloudObject.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA54AA016391DEA00F055A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FFA54AA416391DEA00F055A6 /* CloudObject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudObject-Prefix.pch"; sourceTree = "<group>"; };
+		FFCFA9EF1639732500BC2E3E /* COModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COModelContext.h; sourceTree = "<group>"; };
+		FFCFA9F01639732500BC2E3E /* COModelContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COModelContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				FF3C8D3216393D91009EB62A /* CloudObject.h */,
+				FFCFA9F31639735A00BC2E3E /* Service */,
 				FF3C8D3A1639407C009EB62A /* Classes */,
 				FF3C8CB21639368E009EB62A /* Model */,
 			);
@@ -109,6 +113,8 @@
 				FF3C8CB4163936B0009EB62A /* COModel.m */,
 				FF3C8D5C16396082009EB62A /* COModelRegistry.h */,
 				FF3C8D5D16396082009EB62A /* COModelRegistry.m */,
+				FFCFA9EF1639732500BC2E3E /* COModelContext.h */,
+				FFCFA9F01639732500BC2E3E /* COModelContext.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +205,21 @@
 			path = CloudObjects;
 			sourceTree = "<group>";
 		};
+		FFCFA9F31639735A00BC2E3E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FFCFA9F41639735A00BC2E3E /* Backend */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FFCFA9F41639735A00BC2E3E /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Backend;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,6 +293,7 @@
 				FF3C8D42163940AC009EB62A /* COReflectedProperty.m in Sources */,
 				FF3C8D45163940B9009EB62A /* COReflectedClass.m in Sources */,
 				FF3C8D5E16396082009EB62A /* COModelRegistry.m in Sources */,
+				FFCFA9F11639732500BC2E3E /* COModelContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

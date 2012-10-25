@@ -21,6 +21,8 @@
     
     // just testing
     CSMPSampleModel *s=[[CSMPSampleModel alloc] init];
+    
+    s.objectId=@"HEY";
     s.name=@"Jon";
     s.email=@"jon@interfacelab.com";
     s.age=39;
