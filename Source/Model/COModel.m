@@ -60,7 +60,7 @@
     for(NSObject *ele in array)
     {
         if ([ele isKindOfClass:[COModel class]])
-            [replacement addObject:ele];
+            [replacement addObject:[((COModel *)ele) toDictionary]];
         else if ([ele isKindOfClass:[NSArray class]])
             [replacement addObject:[self flattenArray:(NSArray *)ele]];
         else if (
@@ -80,6 +80,8 @@
 -(NSDictionary *)toDictionary
 {
     NSMutableDictionary *result=[NSMutableDictionary dictionary];
+    
+    [result setObject:@"model" forKey:@"__type"];
     
     if (self.modelName)
         [result setObject:self.modelName forKey:@"model"];
@@ -111,7 +113,7 @@
             // We are only interested in other models, otherwise we skip the property
             NSObject *obj=(NSObject *)val;
             if ([obj isKindOfClass:[COModel class]])
-                [props setObject:obj forKey:p.name];
+                [props setObject:[((COModel *)obj) toDictionary] forKey:p.name];
         }
         
         else if (p.type==refTypeArray)
