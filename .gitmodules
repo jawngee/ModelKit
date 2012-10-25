@@ -1,0 +1,3 @@
+[submodule "External/AFNetworkingStatic"]
+	path = External/AFNetworkingStatic
+	url = git://github.com/jawngee/AFNetworkingStatic.git

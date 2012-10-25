@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF3C8CDF16393978009EB62A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CDE16393978009EB62A /* UIKit.framework */; };
+		FF3C8CE116393978009EB62A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CE016393978009EB62A /* Foundation.framework */; };
+		FF3C8CE316393978009EB62A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CE216393978009EB62A /* CoreGraphics.framework */; };
+		FF3C8CE916393978009EB62A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3C8CE716393978009EB62A /* InfoPlist.strings */; };
+		FF3C8CEB16393978009EB62A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8CEA16393978009EB62A /* main.m */; };
+		FF3C8CF116393978009EB62A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3C8CF016393978009EB62A /* Default.png */; };
+		FF3C8CF316393978009EB62A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3C8CF216393978009EB62A /* Default@2x.png */; };
+		FF3C8CF516393979009EB62A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3C8CF416393979009EB62A /* Default-568h@2x.png */; };
+		FF3C8D17163939E6009EB62A /* libCloudObject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8D0D1639398C009EB62A /* libCloudObject.a */; };
+		FF3C8D2216393A5E009EB62A /* CSMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D1C16393A5E009EB62A /* CSMPAppDelegate.m */; };
+		FF3C8D2316393A5E009EB62A /* CSMPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D1F16393A5E009EB62A /* CSMPViewController.m */; };
+		FF3C8D2416393A5E009EB62A /* CSMPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3C8D2016393A5E009EB62A /* CSMPViewController.xib */; };
+		FF3C8D3916393EEC009EB62A /* CSMPSampleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D3816393EEC009EB62A /* CSMPSampleModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF3C8D0C1639398C009EB62A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF3C8D011639398B009EB62A /* CloudObject.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FFA54A9D16391DEA00F055A6;
+			remoteInfo = CloudObject;
+		};
+		FF3C8D15163939DD009EB62A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF3C8D011639398B009EB62A /* CloudObject.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FFA54A9C16391DEA00F055A6;
+			remoteInfo = CloudObject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF3C8CDA16393978009EB62A /* CloudSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF3C8CDE16393978009EB62A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FF3C8CE016393978009EB62A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FF3C8CE216393978009EB62A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FF3C8CE616393978009EB62A /* CloudSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CloudSample-Info.plist"; sourceTree = "<group>"; };
+		FF3C8CE816393978009EB62A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FF3C8CEA16393978009EB62A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FF3C8CF016393978009EB62A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FF3C8CF216393978009EB62A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FF3C8CF416393979009EB62A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FF3C8D011639398B009EB62A /* CloudObject.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CloudObject.xcodeproj; path = "../Static Library/CloudObject.xcodeproj"; sourceTree = "<group>"; };
+		FF3C8D1A16393A5E009EB62A /* CloudSample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CloudSample-Prefix.pch"; sourceTree = "<group>"; };
+		FF3C8D1B16393A5E009EB62A /* CSMPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPAppDelegate.h; sourceTree = "<group>"; };
+		FF3C8D1C16393A5E009EB62A /* CSMPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPAppDelegate.m; sourceTree = "<group>"; };
+		FF3C8D1E16393A5E009EB62A /* CSMPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPViewController.h; sourceTree = "<group>"; };
+		FF3C8D1F16393A5E009EB62A /* CSMPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPViewController.m; sourceTree = "<group>"; };
+		FF3C8D2016393A5E009EB62A /* CSMPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSMPViewController.xib; sourceTree = "<group>"; };
+		FF3C8D3716393EEC009EB62A /* CSMPSampleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPSampleModel.h; sourceTree = "<group>"; };
+		FF3C8D3816393EEC009EB62A /* CSMPSampleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPSampleModel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF3C8CD716393978009EB62A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF3C8D17163939E6009EB62A /* libCloudObject.a in Frameworks */,
+				FF3C8CDF16393978009EB62A /* UIKit.framework in Frameworks */,
+				FF3C8CE116393978009EB62A /* Foundation.framework in Frameworks */,
+				FF3C8CE316393978009EB62A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF3C8CCF16393978009EB62A = {
+			isa = PBXGroup;
+			children = (
+				FF3C8D011639398B009EB62A /* CloudObject.xcodeproj */,
+				FF3C8CE516393978009EB62A /* Supporting Files */,
+				FF3C8CDD16393978009EB62A /* Frameworks */,
+				FF3C8CDB16393978009EB62A /* Products */,
+				FF3C8D1816393A5E009EB62A /* Source */,
+			);
+			sourceTree = "<group>";
+		};
+		FF3C8CDB16393978009EB62A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8CDA16393978009EB62A /* CloudSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF3C8CDD16393978009EB62A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8CDE16393978009EB62A /* UIKit.framework */,
+				FF3C8CE016393978009EB62A /* Foundation.framework */,
+				FF3C8CE216393978009EB62A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF3C8CE516393978009EB62A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8CE616393978009EB62A /* CloudSample-Info.plist */,
+				FF3C8CE716393978009EB62A /* InfoPlist.strings */,
+				FF3C8CEA16393978009EB62A /* main.m */,
+				FF3C8CF016393978009EB62A /* Default.png */,
+				FF3C8CF216393978009EB62A /* Default@2x.png */,
+				FF3C8CF416393979009EB62A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			path = CloudSample;
+			sourceTree = "<group>";
+		};
+		FF3C8D021639398B009EB62A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8D0D1639398C009EB62A /* libCloudObject.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF3C8D1816393A5E009EB62A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8D1916393A5E009EB62A /* App */,
+				FF3C8D1D16393A5E009EB62A /* Controller */,
+				FF3C8D2116393A5E009EB62A /* Model */,
+			);
+			name = Source;
+			path = CloudSample/Source;
+			sourceTree = "<group>";
+		};
+		FF3C8D1916393A5E009EB62A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8D1A16393A5E009EB62A /* CloudSample-Prefix.pch */,
+				FF3C8D1B16393A5E009EB62A /* CSMPAppDelegate.h */,
+				FF3C8D1C16393A5E009EB62A /* CSMPAppDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FF3C8D1D16393A5E009EB62A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8D1E16393A5E009EB62A /* CSMPViewController.h */,
+				FF3C8D1F16393A5E009EB62A /* CSMPViewController.m */,
+				FF3C8D2016393A5E009EB62A /* CSMPViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FF3C8D2116393A5E009EB62A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8D3716393EEC009EB62A /* CSMPSampleModel.h */,
+				FF3C8D3816393EEC009EB62A /* CSMPSampleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF3C8CD916393978009EB62A /* CloudSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF3C8CFE16393979009EB62A /* Build configuration list for PBXNativeTarget "CloudSample" */;
+			buildPhases = (
+				FF3C8CD616393978009EB62A /* Sources */,
+				FF3C8CD716393978009EB62A /* Frameworks */,
+				FF3C8CD816393978009EB62A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF3C8D16163939DD009EB62A /* PBXTargetDependency */,
+			);
+			name = CloudSample;
+			productName = CloudSample;
+			productReference = FF3C8CDA16393978009EB62A /* CloudSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF3C8CD116393978009EB62A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CSMP;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Interfacelab LLC";
+			};
+			buildConfigurationList = FF3C8CD416393978009EB62A /* Build configuration list for PBXProject "CloudSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FF3C8CCF16393978009EB62A;
+			productRefGroup = FF3C8CDB16393978009EB62A /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FF3C8D021639398B009EB62A /* Products */;
+					ProjectRef = FF3C8D011639398B009EB62A /* CloudObject.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				FF3C8CD916393978009EB62A /* CloudSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FF3C8D0D1639398C009EB62A /* libCloudObject.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCloudObject.a;
+			remoteRef = FF3C8D0C1639398C009EB62A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF3C8CD816393978009EB62A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF3C8CE916393978009EB62A /* InfoPlist.strings in Resources */,
+				FF3C8CF116393978009EB62A /* Default.png in Resources */,
+				FF3C8CF316393978009EB62A /* Default@2x.png in Resources */,
+				FF3C8CF516393979009EB62A /* Default-568h@2x.png in Resources */,
+				FF3C8D2416393A5E009EB62A /* CSMPViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF3C8CD616393978009EB62A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF3C8CEB16393978009EB62A /* main.m in Sources */,
+				FF3C8D2216393A5E009EB62A /* CSMPAppDelegate.m in Sources */,
+				FF3C8D2316393A5E009EB62A /* CSMPViewController.m in Sources */,
+				FF3C8D3916393EEC009EB62A /* CSMPSampleModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF3C8D16163939DD009EB62A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CloudObject;
+			targetProxy = FF3C8D15163939DD009EB62A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FF3C8CE716393978009EB62A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF3C8CE816393978009EB62A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF3C8CFC16393979009EB62A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FF3C8CFD16393979009EB62A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF3C8CFF16393979009EB62A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudSample/Source/App/CloudSample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Source\"/**";
+				INFOPLIST_FILE = "CloudSample/CloudSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FF3C8D0016393979009EB62A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudSample/Source/App/CloudSample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Source\"/**";
+				INFOPLIST_FILE = "CloudSample/CloudSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF3C8CD416393978009EB62A /* Build configuration list for PBXProject "CloudSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF3C8CFC16393979009EB62A /* Debug */,
+				FF3C8CFD16393979009EB62A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF3C8CFE16393979009EB62A /* Build configuration list for PBXNativeTarget "CloudSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF3C8CFF16393979009EB62A /* Debug */,
+				FF3C8D0016393979009EB62A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF3C8CD116393978009EB62A /* Project object */;
+}

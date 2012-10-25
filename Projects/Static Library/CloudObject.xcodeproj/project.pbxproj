@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF3C8CB5163936B0009EB62A /* COModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8CB4163936B0009EB62A /* COModel.m */; };
+		FF3C8CC116393793009EB62A /* libAFNetworkingStatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CBE16393789009EB62A /* libAFNetworkingStatic.a */; };
+		FF3C8CC7163937CC009EB62A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC2163937CC009EB62A /* CoreGraphics.framework */; };
+		FF3C8CC8163937CC009EB62A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC3163937CC009EB62A /* CoreLocation.framework */; };
+		FF3C8CC9163937CC009EB62A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC4163937CC009EB62A /* MobileCoreServices.framework */; };
+		FF3C8CCA163937CC009EB62A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC5163937CC009EB62A /* Security.framework */; };
+		FF3C8CCB163937CC009EB62A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC6163937CC009EB62A /* SystemConfiguration.framework */; };
+		FF3C8D3F1639409B009EB62A /* COReflectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D3E1639409B009EB62A /* COReflectionManager.m */; };
+		FF3C8D42163940AC009EB62A /* COReflectedProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D41163940AC009EB62A /* COReflectedProperty.m */; };
+		FF3C8D45163940B9009EB62A /* COReflectedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D44163940B9009EB62A /* COReflectedClass.m */; };
+		FF3C8D5E16396082009EB62A /* COModelRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D5D16396082009EB62A /* COModelRegistry.m */; };
+		FFA54AA116391DEA00F055A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54AA016391DEA00F055A6 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF3C8CBD16393789009EB62A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF3C8CB616393788009EB62A /* AFNetworkingStatic.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FFA54AB916391ECB00F055A6;
+			remoteInfo = AFNetworkingStatic;
+		};
+		FF3C8CBF1639378F009EB62A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF3C8CB616393788009EB62A /* AFNetworkingStatic.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FFA54AB816391ECB00F055A6;
+			remoteInfo = AFNetworkingStatic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FFA54A9B16391DEA00F055A6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FF3C8CB3163936B0009EB62A /* COModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COModel.h; sourceTree = "<group>"; };
+		FF3C8CB4163936B0009EB62A /* COModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COModel.m; sourceTree = "<group>"; };
+		FF3C8CB616393788009EB62A /* AFNetworkingStatic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworkingStatic.xcodeproj; path = ../../External/AFNetworkingStatic/AFNetworkingStatic.xcodeproj; sourceTree = "<group>"; };
+		FF3C8CC2163937CC009EB62A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FF3C8CC3163937CC009EB62A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FF3C8CC4163937CC009EB62A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FF3C8CC5163937CC009EB62A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FF3C8CC6163937CC009EB62A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FF3C8D3216393D91009EB62A /* CloudObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudObject.h; sourceTree = "<group>"; };
+		FF3C8D3D1639409B009EB62A /* COReflectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COReflectionManager.h; sourceTree = "<group>"; };
+		FF3C8D3E1639409B009EB62A /* COReflectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COReflectionManager.m; sourceTree = "<group>"; };
+		FF3C8D40163940AC009EB62A /* COReflectedProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COReflectedProperty.h; sourceTree = "<group>"; };
+		FF3C8D41163940AC009EB62A /* COReflectedProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COReflectedProperty.m; sourceTree = "<group>"; };
+		FF3C8D43163940B9009EB62A /* COReflectedClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COReflectedClass.h; sourceTree = "<group>"; };
+		FF3C8D44163940B9009EB62A /* COReflectedClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COReflectedClass.m; sourceTree = "<group>"; };
+		FF3C8D5C16396082009EB62A /* COModelRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COModelRegistry.h; sourceTree = "<group>"; };
+		FF3C8D5D16396082009EB62A /* COModelRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COModelRegistry.m; sourceTree = "<group>"; };
+		FFA54A9D16391DEA00F055A6 /* libCloudObject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCloudObject.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFA54AA016391DEA00F055A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FFA54AA416391DEA00F055A6 /* CloudObject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudObject-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFA54A9A16391DEA00F055A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF3C8CC7163937CC009EB62A /* CoreGraphics.framework in Frameworks */,
+				FF3C8CC8163937CC009EB62A /* CoreLocation.framework in Frameworks */,
+				FF3C8CC9163937CC009EB62A /* MobileCoreServices.framework in Frameworks */,
+				FF3C8CCA163937CC009EB62A /* Security.framework in Frameworks */,
+				FF3C8CCB163937CC009EB62A /* SystemConfiguration.framework in Frameworks */,
+				FF3C8CC116393793009EB62A /* libAFNetworkingStatic.a in Frameworks */,
+				FFA54AA116391DEA00F055A6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF3C8CB11639368E009EB62A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8D3216393D91009EB62A /* CloudObject.h */,
+				FF3C8D3A1639407C009EB62A /* Classes */,
+				FF3C8CB21639368E009EB62A /* Model */,
+			);
+			name = Source;
+			path = ../../Source;
+			sourceTree = "<group>";
+		};
+		FF3C8CB21639368E009EB62A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8CB3163936B0009EB62A /* COModel.h */,
+				FF3C8CB4163936B0009EB62A /* COModel.m */,
+				FF3C8D5C16396082009EB62A /* COModelRegistry.h */,
+				FF3C8D5D16396082009EB62A /* COModelRegistry.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF3C8CB716393788009EB62A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8CBE16393789009EB62A /* libAFNetworkingStatic.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF3C8D11163939A1009EB62A /* External */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8CB616393788009EB62A /* AFNetworkingStatic.xcodeproj */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		FF3C8D3A1639407C009EB62A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8D3B1639407C009EB62A /* Categories */,
+				FF3C8D3C1639407C009EB62A /* Reflection */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FF3C8D3B1639407C009EB62A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		FF3C8D3C1639407C009EB62A /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8D3D1639409B009EB62A /* COReflectionManager.h */,
+				FF3C8D3E1639409B009EB62A /* COReflectionManager.m */,
+				FF3C8D40163940AC009EB62A /* COReflectedProperty.h */,
+				FF3C8D41163940AC009EB62A /* COReflectedProperty.m */,
+				FF3C8D43163940B9009EB62A /* COReflectedClass.h */,
+				FF3C8D44163940B9009EB62A /* COReflectedClass.m */,
+			);
+			path = Reflection;
+			sourceTree = "<group>";
+		};
+		FFA54A9216391DEA00F055A6 = {
+			isa = PBXGroup;
+			children = (
+				FF3C8D11163939A1009EB62A /* External */,
+				FF3C8CB11639368E009EB62A /* Source */,
+				FFA54AA316391DEA00F055A6 /* Supporting Files */,
+				FFA54A9F16391DEA00F055A6 /* Frameworks */,
+				FFA54A9E16391DEA00F055A6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFA54A9E16391DEA00F055A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFA54A9D16391DEA00F055A6 /* libCloudObject.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFA54A9F16391DEA00F055A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF3C8CC2163937CC009EB62A /* CoreGraphics.framework */,
+				FF3C8CC3163937CC009EB62A /* CoreLocation.framework */,
+				FF3C8CC4163937CC009EB62A /* MobileCoreServices.framework */,
+				FF3C8CC5163937CC009EB62A /* Security.framework */,
+				FF3C8CC6163937CC009EB62A /* SystemConfiguration.framework */,
+				FFA54AA016391DEA00F055A6 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFA54AA316391DEA00F055A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFA54AA416391DEA00F055A6 /* CloudObject-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = CloudObjects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFA54A9C16391DEA00F055A6 /* CloudObject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFA54AAB16391DEA00F055A6 /* Build configuration list for PBXNativeTarget "CloudObject" */;
+			buildPhases = (
+				FFA54A9916391DEA00F055A6 /* Sources */,
+				FFA54A9A16391DEA00F055A6 /* Frameworks */,
+				FFA54A9B16391DEA00F055A6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF3C8CC01639378F009EB62A /* PBXTargetDependency */,
+			);
+			name = CloudObject;
+			productName = CloudObjects;
+			productReference = FFA54A9D16391DEA00F055A6 /* libCloudObject.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFA54A9416391DEA00F055A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Interfacelab LLC";
+			};
+			buildConfigurationList = FFA54A9716391DEA00F055A6 /* Build configuration list for PBXProject "CloudObject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FFA54A9216391DEA00F055A6;
+			productRefGroup = FFA54A9E16391DEA00F055A6 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FF3C8CB716393788009EB62A /* Products */;
+					ProjectRef = FF3C8CB616393788009EB62A /* AFNetworkingStatic.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				FFA54A9C16391DEA00F055A6 /* CloudObject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FF3C8CBE16393789009EB62A /* libAFNetworkingStatic.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworkingStatic.a;
+			remoteRef = FF3C8CBD16393789009EB62A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFA54A9916391DEA00F055A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF3C8CB5163936B0009EB62A /* COModel.m in Sources */,
+				FF3C8D3F1639409B009EB62A /* COReflectionManager.m in Sources */,
+				FF3C8D42163940AC009EB62A /* COReflectedProperty.m in Sources */,
+				FF3C8D45163940B9009EB62A /* COReflectedClass.m in Sources */,
+				FF3C8D5E16396082009EB62A /* COModelRegistry.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF3C8CC01639378F009EB62A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworkingStatic;
+			targetProxy = FF3C8CBF1639378F009EB62A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FFA54AA916391DEA00F055A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FFA54AAA16391DEA00F055A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFA54AAC16391DEA00F055A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CloudObjects.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudObject-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../External/AFNetworkingStatic/External/AFNetworking/AFNetworking\"";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = CloudObject;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FFA54AAD16391DEA00F055A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CloudObjects.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudObject-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../External/AFNetworkingStatic/External/AFNetworking/AFNetworking\"";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = CloudObject;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFA54A9716391DEA00F055A6 /* Build configuration list for PBXProject "CloudObject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFA54AA916391DEA00F055A6 /* Debug */,
+				FFA54AAA16391DEA00F055A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFA54AAB16391DEA00F055A6 /* Build configuration list for PBXNativeTarget "CloudObject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFA54AAC16391DEA00F055A6 /* Debug */,
+				FFA54AAD16391DEA00F055A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFA54A9416391DEA00F055A6 /* Project object */;
+}
