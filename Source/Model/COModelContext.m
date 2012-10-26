@@ -9,6 +9,13 @@
 #import "COModelContext.h"
 #import "COModel.h"
 
+@interface COModelContext()
+
+-(void)modelStateChanged:(NSNotification *)notification;
+-(void)modelGainedIdentifier:(NSNotification *)notification;
+
+@end
+
 @implementation COModelContext
 
 static NSMutableArray *contextStack=nil;
@@ -91,7 +98,6 @@ static NSMutableArray *contextStack=nil;
     if ((model.objectId==nil) || ((id)model.objectId==[NSNull null]))
     {
         [newStack addObject:model];
-        [model addObserver:self forKeyPath:@"objectId" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:NULL];
     }
     else
     {
@@ -133,27 +139,6 @@ static NSMutableArray *contextStack=nil;
     return NO;
 }
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    COModel *model=(COModel *)object;
-    
-    if ([change objectForKey:@"new"]!=[NSNull null])
-    {
-        [newStack removeObject:model];
-        
-        NSString *className=NSStringFromClass([model class]);
-        NSMutableDictionary *objectCache=[classCache objectForKey:className];
-        if (!objectCache)
-        {
-            objectCache=[NSMutableDictionary dictionary];
-            [classCache setObject:objectCache forKey:className];
-        }
-        
-        [objectCache setObject:model forKey:model.objectId];
-        [model removeObserver:self forKeyPath:@"objectId"];
-    }
-}
-
 -(COModel *)modelForId:(NSString *)objId andClass:(Class)modelClass
 {
     NSString *className=NSStringFromClass(modelClass);
@@ -162,6 +147,33 @@ static NSMutableArray *contextStack=nil;
         return nil;
     
     return [objectCache objectForKey:objId];
+}
+
+#pragma mark - Notifications
+
+-(void)modelStateChanged:(NSNotification *)notification
+{
+    
+}
+
+-(void)modelGainedIdentifier:(NSNotification *)notification
+{
+    COModel *model=(COModel *)notification.object;
+    
+    if ([newStack indexOfObject:model]==NSNotFound)
+        return;
+    
+    [newStack removeObject:model];
+    
+    NSString *className=NSStringFromClass([model class]);
+    NSMutableDictionary *objectCache=[classCache objectForKey:className];
+    if (!objectCache)
+    {
+        objectCache=[NSMutableDictionary dictionary];
+        [classCache setObject:objectCache forKey:className];
+    }
+    
+    [objectCache setObject:model forKey:model.objectId];
 }
 
 @end

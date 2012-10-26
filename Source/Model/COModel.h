@@ -16,6 +16,17 @@ typedef enum
     ModelStateDeleted   /**< Model has been marked for delete or deleted */
 } COModelState;
 
+/** Model state has changed */
+extern NSString *const COModelStateChangedNotification;
+
+/** Model has gained an identifier */
+extern NSString *const COModelGainedIdentifierNotification;
+
+@class COModel;
+
+/** Models that should not be added to the context should "implement" this */
+@protocol CONoContext @end
+
 /**
  * Base model.
  *
@@ -28,8 +39,11 @@ typedef enum
  *
  * The context is sort of like a global storage for models so that your
  * application isn't littered with different instances of the same object.
+ *
+ * For very large heirarchies, you might want to skip the context.  In that case
+ * implement the CONoContext protocol to mark your model as a non participant.
  */
-@interface COModel : NSObject
+@interface COModel : NSObject<NSCoding>
 
 @property (readonly) NSString *modelName;               /**< Name of the model.  If not overridden, class name is used */
 @property (assign, nonatomic) COModelState modelState;  /**< The current model state */
@@ -61,15 +75,15 @@ typedef enum
 -(void)remove;
 
 /**
- * Flattens the model into a dictionary
+ * Flattens the model into a dictionary.  Note this dictionary cannot be stored to plist due to use of NSNull.
  * @result A dictionary containing information about the model plus its properties and their values
  */
--(NSDictionary *)toDictionary;
+-(NSDictionary *)serialize;
 
 /**
  * Loads properties from a dictionary.
  * @param dictionary The dictionary to load values from
  */
--(void)fromDictionary:(NSDictionary *)dictionary;
+-(void)deserialize:(NSDictionary *)dictionary;
 
 @end

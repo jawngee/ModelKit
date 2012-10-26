@@ -14,9 +14,19 @@
 #import "COModelRegistry.h"
 #import "COModelContext.h"
 
+#import "NSDate+CloudObject.h"
+
+
+NSString *const COModelStateChangedNotification=@"COModelStateChangedNotification";
+NSString *const COModelGainedIdentifierNotification=@"COModelGainedIdentifierNotification";
+
 @interface COModel()
 
--(NSArray *)flattenArray:(NSArray *)array;
+-(NSDate *)getDateFromId:(id)val;
+-(NSDictionary *)serializeForJSON:(BOOL)encodeForJSON;
+-(void)deserialize:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON;
+-(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON;
+-(NSArray *)unflattenArray:(NSArray *)array decodeFromJSON:(BOOL)decodeFromJSON;
 
 @end
 
@@ -26,9 +36,12 @@
 
 +(void)initialize
 {
+    // We are going to register this class and it's model name with the registry
+    // so that when we pull down objects from a service we can correctly map
+    // back and forth.
+    
     COModel *inst=[[self alloc] init];
 
-    // register the model's name if it has one with the model registry for mapping
     if (inst.modelName!=nil)
         [COModelRegistry registerModel:inst.modelName forClass:[self class]];
     
@@ -45,21 +58,64 @@
         _createdAt=[[NSDate date] retain];
         _updatedAt=[[NSDate date] retain];
         
-        [[COModelContext current] addToContext:self];
+        // Add to the context if this class doesn't conform to CONoContext
+        if (![[self class] conformsToProtocol:@protocol(CONoContext)])
+            [[COModelContext current] addToContext:self];
+        
+        // We need observe our property changes to send out notifications
+        COReflectedClass *ref=[COReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[COModel class]];
+        [self addObserver:self forKeyPath:@"objectId" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+        [self addObserver:self forKeyPath:@"updatedAt" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+        for(COReflectedProperty *p in [ref.properties allValues])
+            [self addObserver:self forKeyPath:p.name options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
     }
 
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self=[self init]))
+    {
+        id val=nil;
+        
+        self.updatedAt=[aDecoder decodeObjectForKey:@"updatedAt"];
+        self.createdAt=[aDecoder decodeObjectForKey:@"createdAt"];
+        
+        val=[aDecoder decodeObjectForKey:@"objectId"];
+        if (val)
+            self.objectId=val;
+        
+        COReflectedClass *ref=[COReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[COModel class]];
+        for(COReflectedProperty *p in [ref.properties allValues])
+        {
+            val=[aDecoder decodeObjectForKey:p.name];
+            
+            if (val==[NSNull null])
+                val=nil;
+            
+            [self setValue:val forKey:p.name];
+        }
+    }
+    
+    return self;
+}
+
 -(void)dealloc
 {
+    // Remove our selves from as observers
+    COReflectedClass *ref=[COReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[COModel class]];
+    [self removeObserver:self forKeyPath:@"objectId"];
+    [self removeObserver:self forKeyPath:@"updatedAt"];
+    for(COReflectedProperty *p in [ref.properties allValues])
+        [self removeObserver:self forKeyPath:p.name];
+    
     self.objectId=nil;
     self.createdAt=nil;
     self.updatedAt=nil;
     
     [super dealloc];
 }
-
 
 +(id)instanceWithId:(NSString *)objId
 {
@@ -86,11 +142,65 @@
             instance.objectId=[dictionary objectForKey:@"objectId"];
     }
     
-    [instance fromDictionary:dictionary];
+    [instance deserialize:dictionary];
     
     return instance;
 }
 
+#pragma mark - NSCoding
+
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    COReflectedClass *ref=[COReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[COModel class]];
+    
+    [aCoder encodeObject:self.createdAt forKey:@"createdAt"];
+    [aCoder encodeObject:self.updatedAt forKey:@"updatedAt"];
+    
+    if (self.objectId)
+        [aCoder encodeObject:self.objectId forKey:@"objectId"];
+    
+    id val=nil;
+    for(COReflectedProperty *p in [ref.properties allValues])
+        switch(p.type)
+        {
+            case refTypeId:
+            case refTypeClass:
+            case refTypeString:
+            case refTypeNumber:
+            case refTypeData:
+            case refTypeDate:
+            case refTypeArray:
+            case refTypeDictionary:
+            case refTypeChar:
+            case refTypeShort:
+            case refTypeInteger:
+            case refTypeLong:
+            case refTypeFloat:
+            case refTypeDouble:
+                val=[self valueForKey:p.name];
+                if (val==nil)
+                    val=[NSNull null];
+                [aCoder encodeObject:val forKey:p.name];
+                break;
+                
+            default:
+                break;
+        }
+}
+
+#pragma mark - Property observation
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (([keyPath isEqualToString:@"objectId"]) && (change[@"new"]!=[NSNull null]))
+        [[NSNotificationCenter defaultCenter] postNotificationName:COModelGainedIdentifierNotification object:self];
+    
+    if (self.modelState==ModelStateValid)
+    {
+        self.modelState=ModelStateDirty;
+        [[NSNotificationCenter defaultCenter] postNotificationName:COModelStateChangedNotification object:self];
+    }
+}
 
 #pragma mark - Context related
 
@@ -101,19 +211,54 @@
 
 #pragma mark - Conversion
 
--(NSArray *)flattenArray:(NSArray *)array
+-(NSDate *)getDateFromId:(id)val
+{
+    if (val==nil)
+        return nil;
+    
+    if ([[val class] isSubclassOfClass:[NSDate class]])
+        return (NSDate *)val;
+    
+    if ([[val class] isSubclassOfClass:[NSDictionary class]])
+    {
+        NSString *type=[val objectForKey:@"__type"];
+        if ((type==nil) || (![type isEqualToString:@"Date"]))
+            return nil;
+        
+        NSString *iso=[val objectForKey:@"iso"];
+        if (!iso)
+            return nil;
+        
+        return [NSDate dateFromISO8601:iso];
+    }
+    
+    return nil;
+}
+
+-(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON
 {
     NSMutableArray *replacement=[NSMutableArray array];
     
     for(NSObject *ele in array)
     {
         if ([ele isKindOfClass:[COModel class]])
-            [replacement addObject:[((COModel *)ele) toDictionary]];
+        {
+            if (encodeForJSON)
+                [replacement addObject:@{@"__type":@"Model",@"model":[((COModel *)ele) serializeForJSON:encodeForJSON]}];
+            else
+                [replacement addObject:[((COModel *)ele) serializeForJSON:encodeForJSON]];
+        }
         else if ([ele isKindOfClass:[NSArray class]])
-            [replacement addObject:[self flattenArray:(NSArray *)ele]];
+            [replacement addObject:[self flattenArray:(NSArray *)ele encodeForJSON:encodeForJSON]];
+        else if ([ele isKindOfClass:[NSDate class]])
+        {
+            if (encodeForJSON)
+                [replacement addObject:@{@"__type":@"Date",@"iso":[((NSDate *)ele) ISO8601String]}];
+            else
+                [replacement addObject:ele];
+        }
         else if (
                  ([ele isKindOfClass:[NSString class]]) ||
-                 ([ele isKindOfClass:[NSDate class]]) ||
                  ([ele isKindOfClass:[NSNumber class]]) ||
                  ([ele isKindOfClass:[NSData class]])
                  )
@@ -125,7 +270,12 @@
     return replacement;
 }
 
--(NSDictionary *)toDictionary
+-(NSArray *)unflattenArray:(NSArray *)array decodeFromJSON:(BOOL)decodeFromJSON
+{
+    return nil;
+}
+
+-(NSDictionary *)serializeForJSON:(BOOL)encodeForJSON
 {
     NSMutableDictionary *result=[NSMutableDictionary dictionary];
     
@@ -139,8 +289,8 @@
     if (self.objectId)
         [result setObject:self.objectId forKey:@"objectId"];
     
-    [result setObject:self.createdAt forKey:@"createdAt"];
-    [result setObject:self.updatedAt forKey:@"updatedAt"];
+    [result setObject:@{@"__type":@"Date",@"iso":[self.createdAt ISO8601String]} forKey:@"createdAt"];
+    [result setObject:@{@"__type":@"Date",@"iso":[self.updatedAt ISO8601String]} forKey:@"updatedAt"];
     
     NSMutableDictionary *props=[NSMutableDictionary dictionary];
     [result setObject:props forKey:@"properties"];
@@ -161,14 +311,21 @@
             // We are only interested in other models, otherwise we skip the property
             NSObject *obj=(NSObject *)val;
             if ([obj isKindOfClass:[COModel class]])
-                [props setObject:[((COModel *)obj) toDictionary] forKey:p.name];
+                [props setObject:[((COModel *)obj) serialize] forKey:p.name];
         }
         
         else if (p.type==refTypeArray)
         {
-            [props setObject:[self flattenArray:(NSArray *)val] forKey:p.name];
+            [props setObject:[self flattenArray:(NSArray *)val encodeForJSON:encodeForJSON] forKey:p.name];
         }
-        else if ((p.type>=refTypeString && p.type<=refTypeDate) || (p.type>=refTypeChar && p.type<refTypeUnknown))
+        else if (p.type==refTypeDate)
+        {
+            if (encodeForJSON)
+                [props setObject:@{@"__type":@"Date",@"iso":[((NSDate *)val) ISO8601String]} forKey:p.name];
+            else
+                [props setObject:val forKey:p.name];
+        }
+        else if ((p.type>=refTypeString && p.type<refTypeDate) || (p.type>=refTypeChar && p.type<refTypeUnknown))
         {
             [props setObject:val forKey:p.name];
         }
@@ -177,9 +334,79 @@
     return result;
 }
 
--(void)fromDictionary:(NSDictionary *)dictionary
+-(void)deserialize:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON
 {
+    self.updatedAt=[self getDateFromId:[dictionary objectForKey:@"updatedAt"]];
+    self.createdAt=[self getDateFromId:[dictionary objectForKey:@"createdAt"]];
     
+    id val=[dictionary objectForKey:@"objectId"];
+    
+    if ((val!=[NSNull null]) && (val!=nil))
+        self.objectId=val;
+    
+    NSDictionary *props=[dictionary objectForKey:@"properties"];
+    if (!props)
+        props=dictionary;
+    
+    COReflectedClass *ref=[COReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[COModel class]];
+    val=nil;
+    for(COReflectedProperty *p in [ref.properties allValues])
+    {
+        val=[props objectForKey:p.name];
+        if (val==[NSNull null])
+            val=nil;
+        
+        switch(p.type)
+        {
+            case refTypeId:
+            case refTypeClass:
+                if ((val!=nil) && ([p.class isSubclassOfClass:[COModel class]]))
+                {
+                    [self setValue:[p.class instanceWithDictionary:val] forKey:p.name];
+                }
+                else
+                    [self setValue:nil forKey:p.name];
+                break;
+            case refTypeString:
+            case refTypeNumber:
+            case refTypeChar:
+            case refTypeShort:
+            case refTypeInteger:
+            case refTypeLong:
+            case refTypeFloat:
+            case refTypeDouble:
+                [self setValue:val forKey:p.name];
+                break;
+            case refTypeArray:
+                [self setValue:nil forKey:p.name];
+                break;
+            case refTypeDictionary:
+                [self setValue:nil forKey:p.name];
+                break;
+            case refTypeData:
+                [self setValue:nil forKey:p.name];
+                break;
+            case refTypeDate:
+                if (val)
+                    [self setValue:[self getDateFromId:val] forKey:p.name];
+                else
+                    [self setValue:nil forKey:p.name];
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+
+-(NSDictionary *)serialize
+{
+    return [self serializeForJSON:NO];
+}
+
+-(void)deserialize:(NSDictionary *)dictionary
+{
+    [self deserialize:dictionary fromJSON:NO];
 }
 
 @end

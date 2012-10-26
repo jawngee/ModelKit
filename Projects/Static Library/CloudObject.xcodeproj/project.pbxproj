@@ -20,6 +20,10 @@
 		FF3C8D5E16396082009EB62A /* COModelRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D5D16396082009EB62A /* COModelRegistry.m */; };
 		FFA54AA116391DEA00F055A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54AA016391DEA00F055A6 /* Foundation.framework */; };
 		FFCFA9F11639732500BC2E3E /* COModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFA9F01639732500BC2E3E /* COModelContext.m */; };
+		FFCFAA21163A7DD800BC2E3E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA20163A7DD800BC2E3E /* JSONKit.m */; };
+		FFCFAA2F163A837300BC2E3E /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA2E163A837300BC2E3E /* ISO8601DateFormatter.m */; };
+		FFCFAA33163A83C800BC2E3E /* NSDate+CloudObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA32163A83C800BC2E3E /* NSDate+CloudObject.m */; };
+		FFCFAA42163AC39000BC2E3E /* COMutableModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA41163AC39000BC2E3E /* COMutableModelArray.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,14 @@
 		FFA54AA416391DEA00F055A6 /* CloudObject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudObject-Prefix.pch"; sourceTree = "<group>"; };
 		FFCFA9EF1639732500BC2E3E /* COModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COModelContext.h; sourceTree = "<group>"; };
 		FFCFA9F01639732500BC2E3E /* COModelContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COModelContext.m; sourceTree = "<group>"; };
+		FFCFAA1F163A7DD800BC2E3E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../External/JSONKit/JSONKit.h; sourceTree = "<group>"; };
+		FFCFAA20163A7DD800BC2E3E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = ../../External/JSONKit/JSONKit.m; sourceTree = "<group>"; };
+		FFCFAA2D163A837300BC2E3E /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISO8601DateFormatter.h; path = ../../External/iso/ISO8601DateFormatter.h; sourceTree = "<group>"; };
+		FFCFAA2E163A837300BC2E3E /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISO8601DateFormatter.m; path = ../../External/iso/ISO8601DateFormatter.m; sourceTree = "<group>"; };
+		FFCFAA31163A83C800BC2E3E /* NSDate+CloudObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CloudObject.h"; sourceTree = "<group>"; };
+		FFCFAA32163A83C800BC2E3E /* NSDate+CloudObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CloudObject.m"; sourceTree = "<group>"; };
+		FFCFAA40163AC39000BC2E3E /* COMutableModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COMutableModelArray.h; sourceTree = "<group>"; };
+		FFCFAA41163AC39000BC2E3E /* COMutableModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COMutableModelArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +142,8 @@
 		FF3C8D11163939A1009EB62A /* External */ = {
 			isa = PBXGroup;
 			children = (
+				FFCFAA30163A837A00BC2E3E /* ISO8601 */,
+				FFCFAA22163A7DDD00BC2E3E /* JSONKit */,
 				FF3C8CB616393788009EB62A /* AFNetworkingStatic.xcodeproj */,
 			);
 			name = External;
@@ -138,6 +152,7 @@
 		FF3C8D3A1639407C009EB62A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FFCFAA1B163A6C2B00BC2E3E /* Foundation */,
 				FF3C8D3B1639407C009EB62A /* Categories */,
 				FF3C8D3C1639407C009EB62A /* Reflection */,
 			);
@@ -147,6 +162,8 @@
 		FF3C8D3B1639407C009EB62A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				FFCFAA31163A83C800BC2E3E /* NSDate+CloudObject.h */,
+				FFCFAA32163A83C800BC2E3E /* NSDate+CloudObject.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -218,6 +235,33 @@
 			children = (
 			);
 			path = Backend;
+			sourceTree = "<group>";
+		};
+		FFCFAA1B163A6C2B00BC2E3E /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				FFCFAA40163AC39000BC2E3E /* COMutableModelArray.h */,
+				FFCFAA41163AC39000BC2E3E /* COMutableModelArray.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		FFCFAA22163A7DDD00BC2E3E /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				FFCFAA1F163A7DD800BC2E3E /* JSONKit.h */,
+				FFCFAA20163A7DD800BC2E3E /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		FFCFAA30163A837A00BC2E3E /* ISO8601 */ = {
+			isa = PBXGroup;
+			children = (
+				FFCFAA2D163A837300BC2E3E /* ISO8601DateFormatter.h */,
+				FFCFAA2E163A837300BC2E3E /* ISO8601DateFormatter.m */,
+			);
+			name = ISO8601;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +338,10 @@
 				FF3C8D45163940B9009EB62A /* COReflectedClass.m in Sources */,
 				FF3C8D5E16396082009EB62A /* COModelRegistry.m in Sources */,
 				FFCFA9F11639732500BC2E3E /* COModelContext.m in Sources */,
+				FFCFAA21163A7DD800BC2E3E /* JSONKit.m in Sources */,
+				FFCFAA2F163A837300BC2E3E /* ISO8601DateFormatter.m in Sources */,
+				FFCFAA33163A83C800BC2E3E /* NSDate+CloudObject.m in Sources */,
+				FFCFAA42163AC39000BC2E3E /* COMutableModelArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

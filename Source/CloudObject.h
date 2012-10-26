@@ -14,5 +14,10 @@
 #import "COReflectedProperty.h"
 
 #import "COModel.h"
+#import "COMutableModelArray.h"
+#import "COModelRegistry.h"
+#import "COModelContext.h"
+
+#import "NSDate+CloudObject.h"
 
 #endif
