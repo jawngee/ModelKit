@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CSMPViewController : UIViewController
+{
+}
+
+- (IBAction)buttonTouched:(id)sender;
+- (IBAction)removeButtonTouched:(id)sender;
 
 @end

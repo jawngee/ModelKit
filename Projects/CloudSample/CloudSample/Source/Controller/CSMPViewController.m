@@ -7,7 +7,9 @@
 //
 
 #import "CSMPViewController.h"
-#import "CSMPSampleModel.h"
+#import "JSONKit.h"
+#import "COMutableModelArray.h"
+#import "CSMPAuthor.h"
 
 @interface CSMPViewController ()
 
@@ -18,27 +20,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // just testing
-    CSMPSampleModel *s=[[CSMPSampleModel alloc] init];
-    
-    s.objectId=@"HEY";
-    s.name=@"Jon";
-    s.email=@"jon@interfacelab.com";
-    s.age=39;
-    s.single=NO;
-    s.value=SampleValue2;
-    s.values=@[@(NO),@(12.4f),@"hello"];
-    s.anotherModel=[[[CSMPSampleModel alloc] init] autorelease];
-    
-    NSDictionary *props=[s toDictionary];
-    NSLog(@"%@",props);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)buttonTouched:(id)sender
+{
+}
+
+- (IBAction)removeButtonTouched:(id)sender
+{
 }
 
 @end

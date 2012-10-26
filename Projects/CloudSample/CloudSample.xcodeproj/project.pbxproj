@@ -19,7 +19,15 @@
 		FF3C8D2216393A5E009EB62A /* CSMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D1C16393A5E009EB62A /* CSMPAppDelegate.m */; };
 		FF3C8D2316393A5E009EB62A /* CSMPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D1F16393A5E009EB62A /* CSMPViewController.m */; };
 		FF3C8D2416393A5E009EB62A /* CSMPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3C8D2016393A5E009EB62A /* CSMPViewController.xib */; };
-		FF3C8D3916393EEC009EB62A /* CSMPSampleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D3816393EEC009EB62A /* CSMPSampleModel.m */; };
+		FFCFAA24163A7EE400BC2E3E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCFAA23163A7EE400BC2E3E /* CFNetwork.framework */; };
+		FFCFAA29163A7F0900BC2E3E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCFAA25163A7F0900BC2E3E /* CoreLocation.framework */; };
+		FFCFAA2A163A7F0900BC2E3E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCFAA26163A7F0900BC2E3E /* MobileCoreServices.framework */; };
+		FFCFAA2B163A7F0900BC2E3E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCFAA27163A7F0900BC2E3E /* Security.framework */; };
+		FFCFAA2C163A7F0900BC2E3E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCFAA28163A7F0900BC2E3E /* SystemConfiguration.framework */; };
+		FFCFAA36163ABCE600BC2E3E /* CSMPAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA35163ABCE600BC2E3E /* CSMPAuthor.m */; };
+		FFCFAA39163ABCF600BC2E3E /* CSMPBlog.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA38163ABCF600BC2E3E /* CSMPBlog.m */; };
+		FFCFAA3C163ABD0B00BC2E3E /* CSMPPost.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA3B163ABD0B00BC2E3E /* CSMPPost.m */; };
+		FFCFAA3F163ABD2400BC2E3E /* CSMPComment.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA3E163ABD2400BC2E3E /* CSMPComment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +65,19 @@
 		FF3C8D1E16393A5E009EB62A /* CSMPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPViewController.h; sourceTree = "<group>"; };
 		FF3C8D1F16393A5E009EB62A /* CSMPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPViewController.m; sourceTree = "<group>"; };
 		FF3C8D2016393A5E009EB62A /* CSMPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSMPViewController.xib; sourceTree = "<group>"; };
-		FF3C8D3716393EEC009EB62A /* CSMPSampleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPSampleModel.h; sourceTree = "<group>"; };
-		FF3C8D3816393EEC009EB62A /* CSMPSampleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPSampleModel.m; sourceTree = "<group>"; };
+		FFCFAA23163A7EE400BC2E3E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FFCFAA25163A7F0900BC2E3E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FFCFAA26163A7F0900BC2E3E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FFCFAA27163A7F0900BC2E3E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FFCFAA28163A7F0900BC2E3E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FFCFAA34163ABCE600BC2E3E /* CSMPAuthor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPAuthor.h; sourceTree = "<group>"; };
+		FFCFAA35163ABCE600BC2E3E /* CSMPAuthor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPAuthor.m; sourceTree = "<group>"; };
+		FFCFAA37163ABCF600BC2E3E /* CSMPBlog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPBlog.h; sourceTree = "<group>"; };
+		FFCFAA38163ABCF600BC2E3E /* CSMPBlog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPBlog.m; sourceTree = "<group>"; };
+		FFCFAA3A163ABD0B00BC2E3E /* CSMPPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPPost.h; sourceTree = "<group>"; };
+		FFCFAA3B163ABD0B00BC2E3E /* CSMPPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPPost.m; sourceTree = "<group>"; };
+		FFCFAA3D163ABD2400BC2E3E /* CSMPComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPComment.h; sourceTree = "<group>"; };
+		FFCFAA3E163ABD2400BC2E3E /* CSMPComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPComment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +85,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCFAA29163A7F0900BC2E3E /* CoreLocation.framework in Frameworks */,
+				FFCFAA2A163A7F0900BC2E3E /* MobileCoreServices.framework in Frameworks */,
+				FFCFAA2B163A7F0900BC2E3E /* Security.framework in Frameworks */,
+				FFCFAA2C163A7F0900BC2E3E /* SystemConfiguration.framework in Frameworks */,
+				FFCFAA24163A7EE400BC2E3E /* CFNetwork.framework in Frameworks */,
 				FF3C8D17163939E6009EB62A /* libCloudObject.a in Frameworks */,
 				FF3C8CDF16393978009EB62A /* UIKit.framework in Frameworks */,
 				FF3C8CE116393978009EB62A /* Foundation.framework in Frameworks */,
@@ -98,6 +122,11 @@
 		FF3C8CDD16393978009EB62A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFCFAA25163A7F0900BC2E3E /* CoreLocation.framework */,
+				FFCFAA26163A7F0900BC2E3E /* MobileCoreServices.framework */,
+				FFCFAA27163A7F0900BC2E3E /* Security.framework */,
+				FFCFAA28163A7F0900BC2E3E /* SystemConfiguration.framework */,
+				FFCFAA23163A7EE400BC2E3E /* CFNetwork.framework */,
 				FF3C8CDE16393978009EB62A /* UIKit.framework */,
 				FF3C8CE016393978009EB62A /* Foundation.framework */,
 				FF3C8CE216393978009EB62A /* CoreGraphics.framework */,
@@ -161,8 +190,14 @@
 		FF3C8D2116393A5E009EB62A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FF3C8D3716393EEC009EB62A /* CSMPSampleModel.h */,
-				FF3C8D3816393EEC009EB62A /* CSMPSampleModel.m */,
+				FFCFAA34163ABCE600BC2E3E /* CSMPAuthor.h */,
+				FFCFAA35163ABCE600BC2E3E /* CSMPAuthor.m */,
+				FFCFAA37163ABCF600BC2E3E /* CSMPBlog.h */,
+				FFCFAA38163ABCF600BC2E3E /* CSMPBlog.m */,
+				FFCFAA3A163ABD0B00BC2E3E /* CSMPPost.h */,
+				FFCFAA3B163ABD0B00BC2E3E /* CSMPPost.m */,
+				FFCFAA3D163ABD2400BC2E3E /* CSMPComment.h */,
+				FFCFAA3E163ABD2400BC2E3E /* CSMPComment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,7 +289,10 @@
 				FF3C8CEB16393978009EB62A /* main.m in Sources */,
 				FF3C8D2216393A5E009EB62A /* CSMPAppDelegate.m in Sources */,
 				FF3C8D2316393A5E009EB62A /* CSMPViewController.m in Sources */,
-				FF3C8D3916393EEC009EB62A /* CSMPSampleModel.m in Sources */,
+				FFCFAA36163ABCE600BC2E3E /* CSMPAuthor.m in Sources */,
+				FFCFAA39163ABCF600BC2E3E /* CSMPBlog.m in Sources */,
+				FFCFAA3C163ABD0B00BC2E3E /* CSMPPost.m in Sources */,
+				FFCFAA3F163ABD2400BC2E3E /* CSMPComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,9 +370,13 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CloudSample/Source/App/CloudSample-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Source\"/**";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../Source\"/**",
+					"\"$(SRCROOT)/../../External/JSONKit\"",
+				);
 				INFOPLIST_FILE = "CloudSample/CloudSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -345,9 +387,13 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CloudSample/Source/App/CloudSample-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Source\"/**";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../Source\"/**",
+					"\"$(SRCROOT)/../../External/JSONKit\"",
+				);
 				INFOPLIST_FILE = "CloudSample/CloudSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
