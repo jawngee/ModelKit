@@ -21,7 +21,13 @@
 {
     NSMutableArray *newStack;
     NSMutableDictionary *classCache;
+    
+    NSUInteger contextSize;
+    NSUInteger contextCount;
 }
+
+@property (readonly) NSUInteger contextSize;
+@property (readonly) NSUInteger contextCount;
 
 #pragma mark - Class Methods - Stack Management
 
@@ -43,6 +49,30 @@
  */
 +(COModelContext *)push;
 
+/**
+ * Clears all contexts
+ */
++(void)clearAllContexts;
+
+#pragma mark - Persistence
+
+/**
+ * Saves the context to a binary plist.
+ * @param file The name of the file to save to
+ * @param error The error generated, if any
+ * @return YES if succesful, NO if not.
+ */
+-(BOOL)saveToFile:(NSString *)file error:(NSError **)error;
+
+/**
+ * Loads the context from a binary plist.
+ * @param file The name of the file to load from
+ * @param error The error generated, if any
+ * @return YES if succesful, NO if not.
+ */
+-(BOOL)loadFromFile:(NSString *)file error:(NSError **)error;
+
+
 #pragma mark - Class Methods - Model Management
 
 /**
@@ -63,6 +93,11 @@
  * Deactivates this context
  */
 -(void)deactivate;
+
+/**
+ * Clears the current context
+ */
+-(void)clear;
 
 #pragma mark - Model Management
 

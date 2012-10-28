@@ -163,6 +163,7 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
     
     id val=nil;
     for(COReflectedProperty *p in [ref.properties allValues])
+    {
         switch(p.type)
         {
             case refTypeId:
@@ -188,6 +189,7 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
             default:
                 break;
         }
+    }
 }
 
 #pragma mark - Property observation

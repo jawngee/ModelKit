@@ -12,7 +12,6 @@
 
 const void *__CFArrayRetainCallBack(CFAllocatorRef allocator, const void *value)
 {
-    NSLog(@"retain cb");
     COModel *model=(COModel *)value;
     if ([model conformsToProtocol:@protocol(CONoContext)])
         [model retain];
@@ -22,8 +21,6 @@ const void *__CFArrayRetainCallBack(CFAllocatorRef allocator, const void *value)
 
 void __CFArrayReleaseCallBack(CFAllocatorRef allocator, const void *value)
 {
-    NSLog(@"release cb");
-    
     COModel *model=(COModel *)value;
     if ([model conformsToProtocol:@protocol(CONoContext)])
         [model release];

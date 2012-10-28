@@ -45,6 +45,13 @@
 			remoteGlobalIDString = FFA54A9C16391DEA00F055A6;
 			remoteInfo = CloudObject;
 		};
+		FFBA0D1E163D23BE00B6560C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF3C8D011639398B009EB62A /* CloudObject.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FFCFAA81163C655C00BC2E3E;
+			remoteInfo = TestCases;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				FF3C8D0D1639398C009EB62A /* libCloudObject.a */,
+				FFBA0D1F163D23BE00B6560C /* TestCases.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -262,6 +270,13 @@
 			fileType = archive.ar;
 			path = libCloudObject.a;
 			remoteRef = FF3C8D0C1639398C009EB62A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FFBA0D1F163D23BE00B6560C /* TestCases.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TestCases.octest;
+			remoteRef = FFBA0D1E163D23BE00B6560C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

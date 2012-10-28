@@ -8,6 +8,7 @@
 
 #import "COModelContext.h"
 #import "COModel.h"
+#import <malloc/malloc.h>
 
 @interface COModelContext()
 
@@ -20,6 +21,8 @@
 
 static NSMutableArray *contextStack=nil;
 
+@synthesize contextCount, contextSize;
+
 #pragma mark - Init/Dealloc
 
 -(id)init
@@ -28,6 +31,9 @@ static NSMutableArray *contextStack=nil;
     {
         newStack=[[NSMutableArray alloc] init];
         classCache=[[NSMutableDictionary alloc] init];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modelGainedIdentifier:) name:COModelGainedIdentifierNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modelStateChanged:) name:COModelStateChangedNotification object:nil];
     }
     
     return self;
@@ -37,6 +43,8 @@ static NSMutableArray *contextStack=nil;
 {
     [newStack release];
     [classCache release];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [super dealloc];
 }
@@ -50,7 +58,7 @@ static NSMutableArray *contextStack=nil;
     
     if (contextStack.count==0)
     {
-        COModelContext *ctx=[[COModelContext alloc] init];
+        COModelContext *ctx=[[[COModelContext alloc] init] autorelease];
         [contextStack addObject:ctx];
         
         return ctx;
@@ -75,10 +83,21 @@ static NSMutableArray *contextStack=nil;
     if (contextStack==nil)
         [self current];
     
-    COModelContext *ctx=[[COModelContext alloc] init];
+    COModelContext *ctx=[[[COModelContext alloc] init] autorelease];
     [contextStack addObject:ctx];
     
     return ctx;
+}
+
++(void)clearAllContexts
+{
+    if (contextStack==nil)
+        return;
+    
+    for(COModelContext *ctx in contextStack)
+        [ctx clear];
+    
+    [contextStack removeAllObjects];
 }
 
 #pragma mark - Class Methods - Model Management
@@ -110,6 +129,9 @@ static NSMutableArray *contextStack=nil;
         }
         
         [objectCache setObject:model forKey:model.objectId];
+        
+        contextCount++;
+        contextSize+=malloc_size(model);
     }
 }
 
@@ -133,10 +155,23 @@ static NSMutableArray *contextStack=nil;
     if ([objectCache objectForKey:model.objectId])
     {
         [objectCache removeObjectForKey:model.objectId];
+        
+        contextCount--;
+        contextSize-=malloc_size(model);
+        
         return YES;
     }
     
     return NO;
+}
+
+-(void)clear
+{
+    [classCache removeAllObjects];
+    [newStack removeAllObjects];
+    
+    contextCount=0;
+    contextSize=0;
 }
 
 -(COModel *)modelForId:(NSString *)objId andClass:(Class)modelClass
@@ -174,6 +209,9 @@ static NSMutableArray *contextStack=nil;
     }
     
     [objectCache setObject:model forKey:model.objectId];
+    
+    contextCount++;
+    contextSize+=malloc_size(model);
 }
 
 #pragma mark - Activation
@@ -195,6 +233,36 @@ static NSMutableArray *contextStack=nil;
         return;
     
     [contextStack removeObject:self];
+}
+
+#pragma mark - Persistence
+
+-(BOOL)saveToFile:(NSString *)file error:(NSError **)error
+{
+    NSMutableData *data=[NSMutableData data];
+    NSKeyedArchiver *archiver=[[[NSKeyedArchiver alloc] initForWritingWithMutableData:data] autorelease];
+    [archiver encodeRootObject:classCache];
+    [archiver finishEncoding];
+    [data writeToFile:file atomically:NO];
+    return YES;
+}
+
+-(BOOL)loadFromFile:(NSString *)file error:(NSError **)error
+{
+    [self clear];
+    
+    NSData *data=[NSData dataWithContentsOfFile:file];
+    NSKeyedUnarchiver *unarchiver=[[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
+    NSMutableDictionary *dict=[unarchiver decodeObject];
+    if (dict)
+    {
+        [classCache release];
+        classCache=[dict retain];
+        
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end
