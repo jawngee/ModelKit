@@ -52,6 +52,18 @@
 +(void)removeFromAnyContext:(COModel *)model;
 
 
+#pragma mark - Activation
+
+/**
+ * Makes this context the active context
+ */
+-(void)activate;
+
+/**
+ * Deactivates this context
+ */
+-(void)deactivate;
+
 #pragma mark - Model Management
 
 /**

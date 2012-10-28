@@ -176,4 +176,25 @@ static NSMutableArray *contextStack=nil;
     [objectCache setObject:model forKey:model.objectId];
 }
 
+#pragma mark - Activation
+
+-(void)activate
+{
+    if (contextStack==nil)
+        contextStack=[[NSMutableArray alloc] init];
+    
+    if ([contextStack indexOfObject:self]!=NSNotFound)
+        [contextStack removeObject:self];
+    
+    [contextStack addObject:self];
+}
+
+-(void)deactivate
+{
+    if (contextStack==nil)
+        return;
+    
+    [contextStack removeObject:self];
+}
+
 @end
