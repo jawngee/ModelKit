@@ -6,15 +6,19 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
+#pragma mark - Typedefs
+
 /** Model state enumeration */
 typedef enum
 {
-    ModelStateNew,      /**< Model is in a new state */
-    ModelStateValid,    /**< Model is valid */
-    ModelStateUnknown,  /**< Model has an ID but has not been fetched */
-    ModelStateDirty,    /**< Model is dirty and needs saving */
-    ModelStateDeleted   /**< Model has been marked for delete or deleted */
+    ModelStateNew,          /**< Model is in a new state */
+    ModelStateValid,        /**< Model is valid */
+    ModelStateNeedsData,    /**< Model has an ID but has not been fetched */
+    ModelStateDirty,        /**< Model is dirty and needs saving */
+    ModelStateDeleted       /**< Model has been marked for delete or deleted */
 } COModelState;
+
+#pragma mark - Notifications
 
 /** Model state has changed */
 extern NSString *const COModelStateChangedNotification;
@@ -22,10 +26,19 @@ extern NSString *const COModelStateChangedNotification;
 /** Model has gained an identifier */
 extern NSString *const COModelGainedIdentifierNotification;
 
-@class COModel;
+/** 
+ * A model property has changed.  The notification's userinfo property contains
+ * the keyPath and changes unless beginChanges/endChanges were called.  In that
+ * case userinfo will be nil.
+ */
+extern NSString *const COModelPropertyChangedNotification;
+
+#pragma mark - Protocols
 
 /** Models that should not be added to the context should "implement" this */
 @protocol CONoContext @end
+
+#pragma mark - COModel
 
 /**
  * Base model.
@@ -44,6 +57,11 @@ extern NSString *const COModelGainedIdentifierNotification;
  * implement the CONoContext protocol to mark your model as a non participant.
  */
 @interface COModel : NSObject<NSCoding>
+{
+@private
+    BOOL _changing;
+    BOOL _hasChanged;
+}
 
 @property (readonly) NSString *modelName;               /**< Name of the model.  If not overridden, class name is used */
 @property (assign, nonatomic) COModelState modelState;  /**< The current model state */
@@ -68,11 +86,29 @@ extern NSString *const COModelGainedIdentifierNotification;
  */
 +(id)instanceWithDictionary:(NSDictionary *)dictionary;
 
+
+/**
+ * Adds the object to the context.  This is done automatically, but for models
+ * conforming to CONoContext protocol, you'll have to call this if you want to
+ * add them.
+ */
+-(void)addToContext;
+
 /**
  * Removes an object from a context.  If you call delete, you do not need to
  * call this.
  */
--(void)remove;
+-(void)removeFromContext;
+
+/**
+ * Suspend notifications when properties are changed.
+ */
+-(void)beginChanges;
+
+/**
+ * Resumes notifications when properties are changed.
+ */
+-(void)endChanges;
 
 /**
  * Flattens the model into a dictionary.  Note this dictionary cannot be stored to plist due to use of NSNull.
