@@ -44,7 +44,13 @@
                 else if ([NSMutableDictionary isSubclassOfClass:_typeClass])
                     _type=refTypeDictionary;
                 else if ([NSMutableArray isSubclassOfClass:_typeClass])
+                {
+                    _typeClass=NSClassFromString(actualType);
+                    if (_typeClass==nil)
+                        _typeClass=[NSMutableArray class];
+                    
                     _type=refTypeArray;
+                }
                 else
                     _type=refTypeClass;
             }
