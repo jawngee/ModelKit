@@ -19,11 +19,20 @@
 		FF3C8D45163940B9009EB62A /* COReflectedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D44163940B9009EB62A /* COReflectedClass.m */; };
 		FF3C8D5E16396082009EB62A /* COModelRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D5D16396082009EB62A /* COModelRegistry.m */; };
 		FFA54AA116391DEA00F055A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54AA016391DEA00F055A6 /* Foundation.framework */; };
-		FFBA0D26163D23EE00B6560C /* ContextTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D25163D23EE00B6560C /* ContextTestCases.m */; };
+		FFBA0D26163D23EE00B6560C /* COTC0001ContextTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D25163D23EE00B6560C /* COTC0001ContextTestCases.m */; };
 		FFBA0D29163D24C100B6560C /* TestModelNoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D28163D24C100B6560C /* TestModelNoContext.m */; };
 		FFBA0D2C163D254E00B6560C /* libCloudObject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54A9D16391DEA00F055A6 /* libCloudObject.a */; };
-		FFBA0D2F163D587200B6560C /* COMutableWeakArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D2E163D587200B6560C /* COMutableWeakArray.m */; };
 		FFBA0D32163D5B1F00B6560C /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D31163D5B1F00B6560C /* TestModel.m */; };
+		FFBA0D35163D709C00B6560C /* COTC0002ModelTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D34163D709C00B6560C /* COTC0002ModelTestCases.m */; };
+		FFBA0D36163DB3E700B6560C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC3163937CC009EB62A /* CoreLocation.framework */; };
+		FFBA0D37163DB3E700B6560C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC4163937CC009EB62A /* MobileCoreServices.framework */; };
+		FFBA0D38163DB3E700B6560C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC5163937CC009EB62A /* Security.framework */; };
+		FFBA0D39163DB3E700B6560C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC6163937CC009EB62A /* SystemConfiguration.framework */; };
+		FFBA0D3A163DB3E700B6560C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC2163937CC009EB62A /* CoreGraphics.framework */; };
+		FFBA0D3D163DB3E700B6560C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBA0D3B163DB3E700B6560C /* CFNetwork.framework */; };
+		FFBA0D3E163DB3E700B6560C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBA0D3C163DB3E700B6560C /* UIKit.framework */; };
+		FFBA0D41163DBB5D00B6560C /* COMutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D40163DBB5D00B6560C /* COMutableOrderedDictionary.m */; };
+		FFBA0D44163DBEAB00B6560C /* COTC0000FoundationTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D43163DBEAB00B6560C /* COTC0000FoundationTestCases.m */; };
 		FFCFA9F11639732500BC2E3E /* COModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFA9F01639732500BC2E3E /* COModelContext.m */; };
 		FFCFAA21163A7DD800BC2E3E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA20163A7DD800BC2E3E /* JSONKit.m */; };
 		FFCFAA2F163A837300BC2E3E /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA2E163A837300BC2E3E /* ISO8601DateFormatter.m */; };
@@ -92,14 +101,20 @@
 		FFA54A9D16391DEA00F055A6 /* libCloudObject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCloudObject.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA54AA016391DEA00F055A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FFA54AA416391DEA00F055A6 /* CloudObject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudObject-Prefix.pch"; sourceTree = "<group>"; };
-		FFBA0D24163D23EE00B6560C /* ContextTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextTestCases.h; sourceTree = "<group>"; };
-		FFBA0D25163D23EE00B6560C /* ContextTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextTestCases.m; sourceTree = "<group>"; };
+		FFBA0D24163D23EE00B6560C /* COTC0001ContextTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTC0001ContextTestCases.h; sourceTree = "<group>"; };
+		FFBA0D25163D23EE00B6560C /* COTC0001ContextTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTC0001ContextTestCases.m; sourceTree = "<group>"; };
 		FFBA0D27163D24C100B6560C /* TestModelNoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModelNoContext.h; sourceTree = "<group>"; };
 		FFBA0D28163D24C100B6560C /* TestModelNoContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModelNoContext.m; sourceTree = "<group>"; };
-		FFBA0D2D163D587200B6560C /* COMutableWeakArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COMutableWeakArray.h; sourceTree = "<group>"; };
-		FFBA0D2E163D587200B6560C /* COMutableWeakArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COMutableWeakArray.m; sourceTree = "<group>"; };
 		FFBA0D30163D5B1F00B6560C /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		FFBA0D31163D5B1F00B6560C /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		FFBA0D33163D709C00B6560C /* COTC0002ModelTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTC0002ModelTestCases.h; sourceTree = "<group>"; };
+		FFBA0D34163D709C00B6560C /* COTC0002ModelTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTC0002ModelTestCases.m; sourceTree = "<group>"; };
+		FFBA0D3B163DB3E700B6560C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FFBA0D3C163DB3E700B6560C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FFBA0D3F163DBB5D00B6560C /* COMutableOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COMutableOrderedDictionary.h; sourceTree = "<group>"; };
+		FFBA0D40163DBB5D00B6560C /* COMutableOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COMutableOrderedDictionary.m; sourceTree = "<group>"; };
+		FFBA0D42163DBEAB00B6560C /* COTC0000FoundationTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COTC0000FoundationTestCases.h; sourceTree = "<group>"; };
+		FFBA0D43163DBEAB00B6560C /* COTC0000FoundationTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COTC0000FoundationTestCases.m; sourceTree = "<group>"; };
 		FFCFA9EF1639732500BC2E3E /* COModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COModelContext.h; sourceTree = "<group>"; };
 		FFCFA9F01639732500BC2E3E /* COModelContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COModelContext.m; sourceTree = "<group>"; };
 		FFCFAA1F163A7DD800BC2E3E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../External/JSONKit/JSONKit.h; sourceTree = "<group>"; };
@@ -140,7 +155,14 @@
 				FFBA0D2C163D254E00B6560C /* libCloudObject.a in Frameworks */,
 				FFCFAA82163C655C00BC2E3E /* SenTestingKit.framework in Frameworks */,
 				FFCFAA83163C655C00BC2E3E /* UIKit.framework in Frameworks */,
+				FFBA0D3D163DB3E700B6560C /* CFNetwork.framework in Frameworks */,
+				FFBA0D3E163DB3E700B6560C /* UIKit.framework in Frameworks */,
+				FFBA0D36163DB3E700B6560C /* CoreLocation.framework in Frameworks */,
+				FFBA0D37163DB3E700B6560C /* MobileCoreServices.framework in Frameworks */,
+				FFBA0D38163DB3E700B6560C /* Security.framework in Frameworks */,
+				FFBA0D39163DB3E700B6560C /* SystemConfiguration.framework in Frameworks */,
 				FFCFAA84163C655C00BC2E3E /* Foundation.framework in Frameworks */,
+				FFBA0D3A163DB3E700B6560C /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +247,8 @@
 		FFA54A9216391DEA00F055A6 = {
 			isa = PBXGroup;
 			children = (
+				FFBA0D3B163DB3E700B6560C /* CFNetwork.framework */,
+				FFBA0D3C163DB3E700B6560C /* UIKit.framework */,
 				FF3C8D11163939A1009EB62A /* External */,
 				FF3C8CB11639368E009EB62A /* Source */,
 				FFA54AA316391DEA00F055A6 /* Supporting Files */,
@@ -281,8 +305,12 @@
 		FFBA0D23163D23EE00B6560C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				FFBA0D24163D23EE00B6560C /* ContextTestCases.h */,
-				FFBA0D25163D23EE00B6560C /* ContextTestCases.m */,
+				FFBA0D42163DBEAB00B6560C /* COTC0000FoundationTestCases.h */,
+				FFBA0D43163DBEAB00B6560C /* COTC0000FoundationTestCases.m */,
+				FFBA0D24163D23EE00B6560C /* COTC0001ContextTestCases.h */,
+				FFBA0D25163D23EE00B6560C /* COTC0001ContextTestCases.m */,
+				FFBA0D33163D709C00B6560C /* COTC0002ModelTestCases.h */,
+				FFBA0D34163D709C00B6560C /* COTC0002ModelTestCases.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -307,8 +335,8 @@
 			children = (
 				FFCFAA40163AC39000BC2E3E /* COMutableModelArray.h */,
 				FFCFAA41163AC39000BC2E3E /* COMutableModelArray.m */,
-				FFBA0D2D163D587200B6560C /* COMutableWeakArray.h */,
-				FFBA0D2E163D587200B6560C /* COMutableWeakArray.m */,
+				FFBA0D3F163DBB5D00B6560C /* COMutableOrderedDictionary.h */,
+				FFBA0D40163DBB5D00B6560C /* COMutableOrderedDictionary.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -476,7 +504,7 @@
 				FFCFAA2F163A837300BC2E3E /* ISO8601DateFormatter.m in Sources */,
 				FFCFAA33163A83C800BC2E3E /* NSDate+CloudObject.m in Sources */,
 				FFCFAA42163AC39000BC2E3E /* COMutableModelArray.m in Sources */,
-				FFBA0D2F163D587200B6560C /* COMutableWeakArray.m in Sources */,
+				FFBA0D41163DBB5D00B6560C /* COMutableOrderedDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,9 +512,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFBA0D26163D23EE00B6560C /* ContextTestCases.m in Sources */,
+				FFBA0D26163D23EE00B6560C /* COTC0001ContextTestCases.m in Sources */,
 				FFBA0D29163D24C100B6560C /* TestModelNoContext.m in Sources */,
 				FFBA0D32163D5B1F00B6560C /* TestModel.m in Sources */,
+				FFBA0D35163D709C00B6560C /* COTC0002ModelTestCases.m in Sources */,
+				FFBA0D44163DBEAB00B6560C /* COTC0000FoundationTestCases.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +628,7 @@
 				GCC_PREFIX_HEADER = "TestCases/TestCases-Prefix.pch";
 				INFOPLIST_FILE = "TestCases/TestCases-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -614,6 +645,7 @@
 				GCC_PREFIX_HEADER = "TestCases/TestCases-Prefix.pch";
 				INFOPLIST_FILE = "TestCases/TestCases-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};

@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import "ContextTestCases.h"
+#import "COTC0001ContextTestCases.h"
 #import "TestModel.h"
 #import "TestModelNoContext.h"
 
-@implementation ContextTestCases
+@implementation COTC0001ContextTestCases
 
 - (void)setUp
 {

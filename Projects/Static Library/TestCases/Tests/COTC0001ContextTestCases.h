@@ -9,6 +9,6 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "CloudObject.h"
 
-@interface ContextTestCases : SenTestCase
+@interface COTC0001ContextTestCases : SenTestCase
 
 @end
