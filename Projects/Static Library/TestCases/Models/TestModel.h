@@ -1,18 +1,18 @@
 //
 //  TestModel.h
-//  CloudObject
+//  ModelKit
 //
 //  Created by Jon Gilkison on 10/28/12.
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import "COModel.h"
-#import "COMutableModelArray.h"
+#import "MKitModel.h"
+#import "MKitMutableModelArray.h"
 
-@interface TestModel : COModel
+@interface TestModel : MKitModel
 
 @property (copy, nonatomic) NSString *stringV;
-@property (retain, nonatomic) COMutableModelArray *amodelArrayV;
+@property (retain, nonatomic) MKitMutableModelArray *amodelArrayV;
 @property (copy, nonatomic) NSDate *dateV;
 @property (assign, nonatomic) NSInteger intV;
 @property (assign, nonatomic) BOOL boolV;
