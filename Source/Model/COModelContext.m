@@ -98,6 +98,9 @@ static NSMutableArray *contextStack=nil;
         [ctx clear];
     
     [contextStack removeAllObjects];
+    
+    COModelContext *ctx=[[[COModelContext alloc] init] autorelease];
+    [contextStack addObject:ctx];
 }
 
 #pragma mark - Class Methods - Model Management

@@ -7,16 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "COMutableOrderedDictionary.h"
 
 /**
  * Wraps the runtime reflection of a given class
  */
 @interface COReflectedClass : NSObject
 {
-    NSMutableDictionary *properties;    /**< Dictionary of COReflectedProperty objects for each property */
+    COMutableOrderedDictionary *properties;    /**< Dictionary of COReflectedProperty objects for each property */
 }
 
-@property (readonly) NSMutableDictionary *properties;   /**< Dictionary of COReflectedProperty objects for each property */
+@property (readonly) COMutableOrderedDictionary *properties;   /**< Dictionary of COReflectedProperty objects for each property */
 
 
 /**

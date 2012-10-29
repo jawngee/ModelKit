@@ -9,6 +9,9 @@
 #ifndef CloudObject_CloudObject_h
 #define CloudObject_CloudObject_h
 
+#import "NSDate+CloudObject.h"
+#import "COMutableOrderedDictionary.h"
+
 #import "COReflectionManager.h"
 #import "COReflectedClass.h"
 #import "COReflectedProperty.h"
@@ -17,7 +20,5 @@
 #import "COMutableModelArray.h"
 #import "COModelRegistry.h"
 #import "COModelContext.h"
-
-#import "NSDate+CloudObject.h"
 
 #endif

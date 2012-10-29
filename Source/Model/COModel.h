@@ -88,6 +88,25 @@ extern NSString *const COModelPropertyChangedNotification;
 
 
 /**
+ * Creates a new instance with the contents of a dictionary.  If the dictionary
+ * contains an objectId, the context is checked first and if an object of the
+ * same class and id exists, refreshes that object's data with the dictionary.
+ * @param dictionary The dictionary of data to build the model from
+ * @param fromJSON Tells us if the dictionary of data is from a JSON string
+ */
++(id)instanceWithDictionary:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON;
+
+/**
+ * Creates a new instance with the contents of a JSON string.  If the JSON
+ * contains an objectId, the context is checked first and if an object of the
+ * same class and id exists, refreshes that object's data with the contents of
+ * the JSON.
+ * @param JSONString The JSONString to build the model from
+ */
++(id)instanceWithJSON:(NSString *)JSONString;
+
+
+/**
  * Adds the object to the context.  This is done automatically, but for models
  * conforming to CONoContext protocol, you'll have to call this if you want to
  * add them.
@@ -121,5 +140,17 @@ extern NSString *const COModelPropertyChangedNotification;
  * @param dictionary The dictionary to load values from
  */
 -(void)deserialize:(NSDictionary *)dictionary;
+
+/**
+ * Serializes the model to JSON
+ * @return The serialized model as a JSON string.
+ */
+-(NSString *)serializeToJSON;
+
+/**
+ * Deserializes the model from JSON
+ * @param jsonString The JSON string to deserialize form.
+ */
+-(void)deserializeFromJSON:(NSString *)jsonString;
 
 @end

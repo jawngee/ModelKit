@@ -16,6 +16,8 @@
 
 #import "NSDate+CloudObject.h"
 
+#import "JSONKit.h"
+
 
 NSString *const COModelStateChangedNotification=@"COModelStateChangedNotification";
 NSString *const COModelGainedIdentifierNotification=@"COModelGainedIdentifierNotification";
@@ -24,9 +26,9 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
 @interface COModel()
 
 -(NSDate *)getDateFromId:(id)val;
--(NSDictionary *)serializeForJSON:(BOOL)encodeForJSON;
+-(NSDictionary *)serializeForJSON:(BOOL)encodeForJSON encodingCache:(NSMutableArray *)encodingCache;
 -(void)deserialize:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON;
--(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON;
+-(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON encodingCache:(NSMutableArray *)encodingCache;
 -(id)unflattenArray:(NSArray *)array decodeFromJSON:(BOOL)decodeFromJSON arrayClass:(Class)arrayClass;
 
 @end
@@ -131,7 +133,7 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
     return instance;
 }
 
-+(id)instanceWithDictionary:(NSDictionary *)dictionary
++(id)instanceWithDictionary:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON
 {
     COModel *instance=nil;
     if ([dictionary objectForKey:@"objectId"])
@@ -144,9 +146,21 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
             instance.objectId=[dictionary objectForKey:@"objectId"];
     }
     
-    [instance deserialize:dictionary];
+    [instance deserialize:dictionary fromJSON:fromJSON];
     
     return instance;
+}
+
++(id)instanceWithDictionary:(NSDictionary *)dictionary
+{
+    return [self instanceWithDictionary:dictionary fromJSON:NO];
+}
+
++(id)instanceWithJSON:(NSString *)JSONString
+{
+    NSDictionary *jsonDict=[JSONString objectFromJSONString];
+    
+    return [self instanceWithDictionary:jsonDict fromJSON:YES];
 }
 
 #pragma mark - NSCoding
@@ -278,7 +292,7 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
     return nil;
 }
 
--(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON
+-(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON encodingCache:(NSMutableArray *)encodingCache
 {
     NSMutableArray *replacement=[NSMutableArray array];
     
@@ -286,13 +300,22 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
     {
         if ([ele isKindOfClass:[COModel class]])
         {
-            if (encodeForJSON)
-                [replacement addObject:@{@"__type":@"Model",@"model":[((COModel *)ele) serializeForJSON:encodeForJSON]}];
+            COModel *m=(COModel *)ele;
+            if ([encodingCache indexOfObject:m.objectId]!=NSNotFound)
+            {
+                NSString *modelName=(m.modelName) ? m.modelName : NSStringFromClass([m class]);
+                [replacement addObject:@{@"__type":@"ModelPointer",@"objectId":m.objectId,@"model":modelName}];
+            }
             else
-                [replacement addObject:[((COModel *)ele) serializeForJSON:encodeForJSON]];
+            {
+                if (encodeForJSON)
+                    [replacement addObject:@{@"__type":@"Model",@"model":[((COModel *)ele) serializeForJSON:encodeForJSON encodingCache:encodingCache]}];
+                else
+                    [replacement addObject:[((COModel *)ele) serializeForJSON:encodeForJSON encodingCache:encodingCache]];
+            }
         }
         else if ([ele isKindOfClass:[NSArray class]])
-            [replacement addObject:[self flattenArray:(NSArray *)ele encodeForJSON:encodeForJSON]];
+            [replacement addObject:[self flattenArray:(NSArray *)ele encodeForJSON:encodeForJSON encodingCache:encodingCache]];
         else if ([ele isKindOfClass:[NSDate class]])
         {
             if (encodeForJSON)
@@ -325,24 +348,53 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
         if ([[ele class] isSubclassOfClass:[NSDictionary class]])
         {
             NSDictionary *d=(NSDictionary *)ele;
-            NSString *type=[d objectForKey:@"__type"];
-            if (type)
+            
+            if (!decodeFromJSON)
             {
-                if ([type isEqualToString:@"Date"])
+                if ([d objectForKey:@"__type"] && [[d objectForKey:@"__type"] isEqualToString:@"ModelPointer"])
                 {
-                    [replacement addObject:[self getDateFromId:d]];
-                }
-                else if ([type isEqualToString:@"Model"])
-                {
-                    NSDictionary *md=[d objectForKey:@"model"];
-                    Class mc=[COModelRegistry registeredClassForModel:[md objectForKey:@"model"]];
+                    Class mc=[COModelRegistry registeredClassForModel:[d objectForKey:@"model"]];
                     if (!mc)
-                        mc=NSClassFromString([md objectForKey:@"model"]);
+                        mc=NSClassFromString([d objectForKey:@"model"]);
                     if (!mc)
-                        @throw [NSException exceptionWithName:@"Unknown model class" reason:[NSString stringWithFormat:@"Unknown model class '%@'",[md objectForKey:@"model"]] userInfo:md];
+                        @throw [NSException exceptionWithName:@"Unknown model class" reason:[NSString stringWithFormat:@"Unknown model class '%@'",[d objectForKey:@"model"]] userInfo:d];
                     
-                    COModel *m=[mc instanceWithDictionary:md];
+                    COModel *m=[mc instanceWithId:[d objectForKey:@"objectId"]];
                     [replacement addObject:m];
+                }
+                else if ([d objectForKey:@"model"])
+                {
+                    Class mc=[COModelRegistry registeredClassForModel:[d objectForKey:@"model"]];
+                    if (!mc)
+                        mc=NSClassFromString([d objectForKey:@"model"]);
+                    if (!mc)
+                        @throw [NSException exceptionWithName:@"Unknown model class" reason:[NSString stringWithFormat:@"Unknown model class '%@'",[d objectForKey:@"model"]] userInfo:d];
+                    
+                    COModel *m=[mc instanceWithDictionary:d];
+                    [replacement addObject:m];
+                }
+            }
+            else
+            {
+                NSString *type=[d objectForKey:@"__type"];
+                if (type)
+                {
+                    if ([type isEqualToString:@"Date"])
+                    {
+                        [replacement addObject:[self getDateFromId:d]];
+                    }
+                    else if ([type isEqualToString:@"Model"])
+                    {
+                        NSDictionary *md=[d objectForKey:@"model"];
+                        Class mc=[COModelRegistry registeredClassForModel:[md objectForKey:@"model"]];
+                        if (!mc)
+                            mc=NSClassFromString([md objectForKey:@"model"]);
+                        if (!mc)
+                            @throw [NSException exceptionWithName:@"Unknown model class" reason:[NSString stringWithFormat:@"Unknown model class '%@'",[md objectForKey:@"model"]] userInfo:md];
+                        
+                        COModel *m=[mc instanceWithDictionary:md fromJSON:decodeFromJSON];
+                        [replacement addObject:m];
+                    }
                 }
             }
         }
@@ -356,9 +408,17 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
 
 }
 
--(NSDictionary *)serializeForJSON:(BOOL)encodeForJSON
+-(NSDictionary *)serializeForJSON:(BOOL)encodeForJSON encodingCache:(NSMutableArray *)encodingCache
 {
-    NSMutableDictionary *result=[NSMutableDictionary dictionary];
+    COMutableOrderedDictionary *result=[COMutableOrderedDictionary dictionary];
+    
+    if (encodingCache==nil)
+        encodingCache=[[NSMutableArray array] retain];
+    else
+        [encodingCache retain];
+    
+    if (self.objectId)
+        [encodingCache addObject:self.objectId];
     
     if (self.modelName)
         [result setObject:self.modelName forKey:@"model"];
@@ -368,10 +428,18 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
     if (self.objectId)
         [result setObject:self.objectId forKey:@"objectId"];
     
-    [result setObject:@{@"__type":@"Date",@"iso":[self.createdAt ISO8601String]} forKey:@"createdAt"];
-    [result setObject:@{@"__type":@"Date",@"iso":[self.updatedAt ISO8601String]} forKey:@"updatedAt"];
+    if (encodeForJSON)
+    {
+        [result setObject:@{@"__type":@"Date",@"iso":[self.createdAt ISO8601String]} forKey:@"createdAt"];
+        [result setObject:@{@"__type":@"Date",@"iso":[self.updatedAt ISO8601String]} forKey:@"updatedAt"];
+    }
+    else
+    {
+        [result setObject:self.createdAt forKey:@"createdAt"];
+        [result setObject:self.updatedAt forKey:@"updatedAt"];
+    }
     
-    NSMutableDictionary *props=[NSMutableDictionary dictionary];
+    COMutableOrderedDictionary *props=[COMutableOrderedDictionary dictionary];
     [result setObject:props forKey:@"properties"];
     
     COReflectedClass *ref=[COReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[COModel class]];
@@ -391,16 +459,25 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
             NSObject *obj=(NSObject *)val;
             if ([obj isKindOfClass:[COModel class]])
             {
-                if (encodeForJSON)
-                    [props setObject:@{@"__type":@"Model",@"model":[((COModel *)obj) serializeForJSON:encodeForJSON]} forKey:p.name];
+                COModel *m=(COModel *)val;
+                if ([encodingCache indexOfObject:m.objectId]!=NSNotFound)
+                {
+                    NSString *modelName=(m.modelName) ? m.modelName : NSStringFromClass([m class]);
+                    [props setObject:@{@"__type":@"ModelPointer",@"objectId":m.objectId,@"model":modelName} forKey:p.name];
+                }
                 else
-                    [props setObject:[((COModel *)obj) serializeForJSON:encodeForJSON] forKey:p.name];
+                {
+                    [encodingCache addObject:m.objectId];
+                    if (encodeForJSON)
+                        [props setObject:@{@"__type":@"Model",@"model":[((COModel *)obj) serializeForJSON:encodeForJSON encodingCache:encodingCache]} forKey:p.name];
+                    else
+                        [props setObject:[((COModel *)obj) serializeForJSON:encodeForJSON encodingCache:encodingCache] forKey:p.name];
+                }
             }
         }
-        
         else if (p.type==refTypeArray)
         {
-            [props setObject:[self flattenArray:(NSArray *)val encodeForJSON:encodeForJSON] forKey:p.name];
+            [props setObject:[self flattenArray:(NSArray *)val encodeForJSON:encodeForJSON encodingCache:encodingCache] forKey:p.name];
         }
         else if (p.type==refTypeDate)
         {
@@ -414,6 +491,8 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
             [props setObject:val forKey:p.name];
         }
     }
+    
+    [encodingCache release];
     
     return result;
 }
@@ -444,16 +523,32 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
         {
             case refTypeId:
             case refTypeClass:
-                if ((val!=nil) && ([p.class isSubclassOfClass:[COModel class]]))
+                if ((val!=nil) && ([p.typeClass isSubclassOfClass:[COModel class]]))
                 {
-                    if (fromJSON)
+                    if ([[val class] isSubclassOfClass:[NSDictionary class]])
                     {
-                        COModel *m=[[[p.class alloc] init] autorelease];
-                        [m deserialize:[dictionary objectForKey:@"model"] fromJSON:YES];
-                        [self setValue:m forKey:p.name];
+                        NSDictionary *md=(NSDictionary *)val;
+                        if (([md objectForKey:@"__type"]) && ([[md objectForKey:@"__type"] isEqualToString:@"ModelPointer"]))
+                        {
+                            COModel *model=[p.typeClass instanceWithId:[md objectForKey:@"objectId"]];
+                            [self setValue:model forKey:p.name];
+                        }
+                        else if (fromJSON)
+                        {
+                            COModel *m=[[[p.typeClass alloc] init] autorelease];
+                            [m deserialize:[dictionary objectForKey:@"model"] fromJSON:YES];
+                            [self setValue:m forKey:p.name];
+                        }
+                        else
+                            [self setValue:[p.typeClass instanceWithDictionary:val] forKey:p.name];
+                    }
+                    else if ([[val class] isSubclassOfClass:[COModel class]])
+                    {
+                        [self setValue:val forKey:p.name];
                     }
                     else
-                        [self setValue:[p.class instanceWithDictionary:val] forKey:p.name];
+                        [self setValue:nil forKey:p.name];
+                    
                 }
                 else
                     [self setValue:nil forKey:p.name];
@@ -469,7 +564,7 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
                 [self setValue:val forKey:p.name];
                 break;
             case refTypeArray:
-                [self setValue:[self unflattenArray:val decodeFromJSON:fromJSON arrayClass:p.class] forKey:p.name];
+                [self setValue:[self unflattenArray:val decodeFromJSON:fromJSON arrayClass:p.typeClass] forKey:p.name];
                 break;
             case refTypeDictionary:
                 [self setValue:nil forKey:p.name];
@@ -492,12 +587,23 @@ NSString *const COModelPropertyChangedNotification=@"COModelPropertyChangedNotif
 
 -(NSDictionary *)serialize
 {
-    return [self serializeForJSON:NO];
+    return [self serializeForJSON:NO encodingCache:nil];
 }
 
 -(void)deserialize:(NSDictionary *)dictionary
 {
     [self deserialize:dictionary fromJSON:NO];
+}
+
+-(NSString *)serializeToJSON
+{
+    NSDictionary *d=[self serializeForJSON:YES encodingCache:nil];
+    return [d JSONStringWithOptions:JKSerializeOptionPretty error:nil];
+}
+
+-(void)deserializeFromJSON:(NSString *)jsonString
+{
+    [self deserialize:[jsonString objectFromJSONString] fromJSON:YES];
 }
 
 @end

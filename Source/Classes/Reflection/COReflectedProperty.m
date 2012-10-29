@@ -33,17 +33,17 @@
                 if (_typeClass==nil)
                     @throw [NSException exceptionWithName:@"Missing Reflection Class" reason:[NSString stringWithFormat:@"Can not find class '%@'.",actualType] userInfo:nil];
                 
-                if ([NSMutableString isSubclassOfClass:_typeClass])
+                if ([_typeClass isSubclassOfClass:[NSString class]])
                     _type=refTypeString;
-                else if ([NSNumber isSubclassOfClass:_typeClass])
+                else if ([_typeClass isSubclassOfClass:[NSNumber class]])
                     _type=refTypeNumber;
-                else if ([NSDate isSubclassOfClass:_typeClass])
+                else if ([_typeClass isSubclassOfClass:[NSDate class]])
                     _type=refTypeDate;
-                else if ([NSMutableData isSubclassOfClass:_typeClass])
+                else if ([_typeClass isSubclassOfClass:[NSData class]])
                     _type=refTypeData;
-                else if ([NSMutableDictionary isSubclassOfClass:_typeClass])
+                else if ([_typeClass isSubclassOfClass:[NSDictionary class]])
                     _type=refTypeDictionary;
-                else if ([NSMutableArray isSubclassOfClass:_typeClass])
+                else if ([_typeClass isSubclassOfClass:[NSArray class]])
                 {
                     _typeClass=NSClassFromString(actualType);
                     if (_typeClass==nil)

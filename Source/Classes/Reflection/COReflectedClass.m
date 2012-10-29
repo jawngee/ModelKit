@@ -36,7 +36,6 @@
         if(propName)
         {
             NSString *propertyName = [NSString stringWithCString:propName encoding:NSASCIIStringEncoding];
-            
             if ((ignorePropPrefix==nil) || (![propertyName hasPrefix:ignorePropPrefix]))
                 [properties setObject:[[[COReflectedProperty alloc] initWithName:propertyName forProperty:property] autorelease] forKey:propertyName];
         }
@@ -49,7 +48,7 @@
 {
     if ((self=[super init]))
     {
-        properties=[[NSMutableDictionary alloc] init];
+        properties=[[COMutableOrderedDictionary alloc] init];
         
         if (topclass==nil)
             topclass=[NSObject class];
