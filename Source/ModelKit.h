@@ -21,4 +21,6 @@
 #import "MKitModelRegistry.h"
 #import "MKitModelContext.h"
 
+#import "MKitServiceManager.h"
+
 #endif

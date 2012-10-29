@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
+#include "CSMPAppKeys.h"
 #import "CSMPAppDelegate.h"
-
 #import "CSMPViewController.h"
 
 @implementation CSMPAppDelegate
@@ -21,6 +21,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Make sure your keys are defined in CSMPAppKeys
+    [MKitServiceManager setupService:@"Parse" withKeys:@{@"AppID":PARSE_APP_ID,@"RestKey":PARSE_REST_KEY}];
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.viewController = [[[CSMPViewController alloc] initWithNibName:@"CSMPViewController" bundle:nil] autorelease];

@@ -60,6 +60,7 @@
 		FF3C8CE016393978009EB62A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF3C8CE216393978009EB62A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FF3C8D011639398B009EB62A /* ModelKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ModelKit.xcodeproj; path = "../Static Library/ModelKit.xcodeproj"; sourceTree = "<group>"; };
+		FFA3DEA7163E8F7200D2D855 /* CSMPAppKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMPAppKeys.h; sourceTree = "<group>"; };
 		FFBA0D84163E541000B6560C /* CSMPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPAppDelegate.h; sourceTree = "<group>"; };
 		FFBA0D85163E541000B6560C /* CSMPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPAppDelegate.m; sourceTree = "<group>"; };
 		FFBA0D86163E541000B6560C /* ModelKitSample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ModelKitSample-Prefix.pch"; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		FFBA0D83163E541000B6560C /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FFA3DEA7163E8F7200D2D855 /* CSMPAppKeys.h */,
 				FFBA0D84163E541000B6560C /* CSMPAppDelegate.h */,
 				FFBA0D85163E541000B6560C /* CSMPAppDelegate.m */,
 				FFBA0D86163E541000B6560C /* ModelKitSample-Prefix.pch */,
