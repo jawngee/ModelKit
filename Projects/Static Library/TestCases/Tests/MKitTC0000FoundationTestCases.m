@@ -10,6 +10,20 @@
 
 @implementation MKitTC0000FoundationTestCases
 
+- (void)setUp
+{
+    [super setUp];
+    
+    // Set-up code here.
+}
+
+- (void)tearDown
+{
+    // Tear-down code here.
+    
+    [super tearDown];
+}
+
 -(void)test0001OrderedDictionary
 {
     MKitMutableOrderedDictionary *dict=[MKitMutableOrderedDictionary dictionary];

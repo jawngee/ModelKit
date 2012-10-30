@@ -10,6 +10,7 @@
 #define ModelKit_ModelKit_h
 
 #import "NSDate+ModelKit.h"
+#import "NSString+ModelKit.h"
 #import "MKitMutableOrderedDictionary.h"
 
 #import "MKitReflectionManager.h"

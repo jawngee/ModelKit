@@ -14,6 +14,7 @@
 
 -(void)modelStateChanged:(NSNotification *)notification;
 -(void)modelGainedIdentifier:(NSNotification *)notification;
+-(void)modelIdentifierChanged:(NSNotification *)notification;
 
 @end
 
@@ -29,11 +30,12 @@ static NSMutableArray *contextStack=nil;
 {
     if ((self=[super init]))
     {
-        newStack=[[NSMutableArray alloc] init];
+        modelStack=[[NSMutableDictionary alloc] init];
         classCache=[[NSMutableDictionary alloc] init];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modelGainedIdentifier:) name:MKitModelGainedIdentifierNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modelGainedIdentifier:) name:MKitObjectIdentifierChangedNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modelStateChanged:) name:MKitModelStateChangedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modelIdentifierChanged:) name:MKitModelIdentifierChangedNotification object:nil];
     }
     
     return self;
@@ -41,7 +43,7 @@ static NSMutableArray *contextStack=nil;
 
 -(void)dealloc
 {
-    [newStack release];
+    [modelStack release];
     [classCache release];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -117,11 +119,9 @@ static NSMutableArray *contextStack=nil;
 
 -(void)addToContext:(MKitModel *)model
 {
-    if ((model.objectId==nil) || ((id)model.objectId==[NSNull null]))
-    {
-        [newStack addObject:model];
-    }
-    else
+    [modelStack setObject:model forKey:model.modelId];
+
+    if ((model.objectId!=nil) && ((id)model.objectId!=[NSNull null]))
     {
         NSString *className=NSStringFromClass([model class]);
         NSMutableDictionary *objectCache=[classCache objectForKey:className];
@@ -140,44 +140,41 @@ static NSMutableArray *contextStack=nil;
 
 -(BOOL)removeFromContext:(MKitModel *)model
 {
-    NSInteger idx=[newStack indexOfObject:model];
-    if (idx!=NSNotFound)
+    BOOL exists=([modelStack objectForKey:model.modelId]!=nil);
+    if (exists)
+        [modelStack removeObjectForKey:model.modelId];
+    
+    if ((model.objectId!=nil) && ((id)model.objectId!=[NSNull null]))
     {
-        [newStack removeObjectAtIndex:idx];
-        return YES;
+        NSString *className=NSStringFromClass([model class]);
+        NSMutableDictionary *objectCache=[classCache objectForKey:className];
+        if (!objectCache)
+            return exists;
+    
+        if ([objectCache objectForKey:model.objectId])
+        {
+            [objectCache removeObjectForKey:model.objectId];
+            
+            contextCount--;
+            contextSize-=malloc_size(model);
+            
+            return YES;
+        }
     }
     
-    if (!model.objectId)
-        return NO;
-    
-    NSString *className=NSStringFromClass([model class]);
-    NSMutableDictionary *objectCache=[classCache objectForKey:className];
-    if (!objectCache)
-        return NO;
-    
-    if ([objectCache objectForKey:model.objectId])
-    {
-        [objectCache removeObjectForKey:model.objectId];
-        
-        contextCount--;
-        contextSize-=malloc_size(model);
-        
-        return YES;
-    }
-    
-    return NO;
+    return exists;
 }
 
 -(void)clear
 {
     [classCache removeAllObjects];
-    [newStack removeAllObjects];
+    [modelStack removeAllObjects];
     
     contextCount=0;
     contextSize=0;
 }
 
--(MKitModel *)modelForId:(NSString *)objId andClass:(Class)modelClass
+-(MKitModel *)modelForObjectId:(NSString *)objId andClass:(Class)modelClass
 {
     NSString *className=NSStringFromClass(modelClass);
     NSMutableDictionary *objectCache=[classCache objectForKey:className];
@@ -194,14 +191,26 @@ static NSMutableArray *contextStack=nil;
     
 }
 
+-(void)modelIdentifierChanged:(NSNotification *)notification
+{
+    MKitModel *model=(MKitModel *)notification.object;
+    
+    NSString *oldValue=[notification.userInfo objectForKey:NSKeyValueChangeOldKey];
+    
+    if ([modelStack objectForKey:oldValue])
+        [modelStack removeObjectForKey:oldValue];
+    
+    if ((model.modelId) && (![[self class] conformsToProtocol:@protocol(MKitNoContext)]))
+        [modelStack setObject:model forKey:model.modelId];
+
+}
+
 -(void)modelGainedIdentifier:(NSNotification *)notification
 {
     MKitModel *model=(MKitModel *)notification.object;
     
-    if ([newStack indexOfObject:model]==NSNotFound)
+    if (![modelStack objectForKey:model.modelId])
         return;
-    
-    [newStack removeObject:model];
     
     NSString *className=NSStringFromClass([model class]);
     NSMutableDictionary *objectCache=[classCache objectForKey:className];
@@ -211,10 +220,13 @@ static NSMutableArray *contextStack=nil;
         [classCache setObject:objectCache forKey:className];
     }
     
-    [objectCache setObject:model forKey:model.objectId];
+    if (![objectCache objectForKey:model.objectId])
+    {
+        [objectCache setObject:model forKey:model.objectId];
     
-    contextCount++;
-    contextSize+=malloc_size(model);
+        contextCount++;
+        contextSize+=malloc_size(model);
+    }
 }
 
 #pragma mark - Activation
@@ -244,7 +256,7 @@ static NSMutableArray *contextStack=nil;
 {
     NSMutableData *data=[NSMutableData data];
     NSKeyedArchiver *archiver=[[[NSKeyedArchiver alloc] initForWritingWithMutableData:data] autorelease];
-    [archiver encodeRootObject:classCache];
+    [archiver encodeRootObject:@[modelStack,classCache]];
     [archiver finishEncoding];
     [data writeToFile:file atomically:NO];
     return YES;
@@ -256,11 +268,14 @@ static NSMutableArray *contextStack=nil;
     
     NSData *data=[NSData dataWithContentsOfFile:file];
     NSKeyedUnarchiver *unarchiver=[[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
-    NSMutableDictionary *dict=[unarchiver decodeObject];
-    if (dict)
+    NSArray *array=[unarchiver decodeObject];
+    if (array)
     {
+        [modelStack release];
+        modelStack=[[array objectAtIndex:0] retain];
+        
         [classCache release];
-        classCache=[dict retain];
+        classCache=[[array objectAtIndex:1] retain];
         
         return YES;
     }

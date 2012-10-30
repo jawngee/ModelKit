@@ -28,6 +28,8 @@
 
 - (void)test0001ContextSize
 {
+    [MKitModelContext clearAllContexts];
+    
     TestModel *model=[TestModel instanceWithId:@"hey"];
     
     STAssertTrue([MKitModelContext current].contextSize==80, @"Contexts size mismatch.");
@@ -41,6 +43,8 @@
 
 -(void)test0002ContextPopPush
 {
+    [MKitModelContext clearAllContexts];
+    
     [MKitModelContext push];
     
     [TestModel instanceWithId:@"hey"];
@@ -86,14 +90,14 @@
 {
     TestModel *m=[TestModel instanceWithId:@"hey"];
 
-    TestModel *m2=(TestModel *)[[MKitModelContext current] modelForId:@"hey" andClass:[TestModel class]];
+    TestModel *m2=(TestModel *)[[MKitModelContext current] modelForObjectId:@"hey" andClass:[TestModel class]];
     STAssertTrue(m==m2, @"Objects do not match");
     
     m2=[TestModel instanceWithId:@"hey"];
     STAssertTrue(m==m2, @"Objects do not match");
     
     [[MKitModelContext current] clear];
-    m2=(TestModel *)[[MKitModelContext current] modelForId:@"hey" andClass:[TestModel class]];
+    m2=(TestModel *)[[MKitModelContext current] modelForObjectId:@"hey" andClass:[TestModel class]];
     STAssertTrue(m2==nil, @"Object should be nil");
 }
 
@@ -119,7 +123,7 @@
     
     STAssertTrue([[MKitModelContext current] loadFromFile:@"/tmp/persist.plist" error:nil], @"This should never fail either.");
     
-    TestModel *m=(TestModel *)[[MKitModelContext current] modelForId:@"004" andClass:[TestModel class]];
+    TestModel *m=(TestModel *)[[MKitModelContext current] modelForObjectId:@"004" andClass:[TestModel class]];
     STAssertTrue(m!=nil, @"Model is nil");
 }
 

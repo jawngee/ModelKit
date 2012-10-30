@@ -15,13 +15,15 @@
 #import "MKitModelContext.h"
 
 #import "NSDate+ModelKit.h"
+#import "NSString+ModelKit.h"
 
 #import "JSONKit.h"
 
 
 NSString *const MKitModelStateChangedNotification=@"MKitModelStateChangedNotification";
-NSString *const MKitModelGainedIdentifierNotification=@"MKitModelGainedIdentifierNotification";
+NSString *const MKitObjectIdentifierChangedNotification=@"MKitObjectIdentifierChangedNotification";
 NSString *const MKitModelPropertyChangedNotification=@"MKitModelPropertyChangedNotification";
+NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChangedNotification";
 
 @interface MKitModel()
 
@@ -48,6 +50,7 @@ NSString *const MKitModelPropertyChangedNotification=@"MKitModelPropertyChangedN
     if (inst.modelName!=nil)
         [MKitModelRegistry registerModel:inst.modelName forClass:[self class]];
     
+    [inst removeFromContext];
     [inst release];
 }
 
@@ -61,15 +64,16 @@ NSString *const MKitModelPropertyChangedNotification=@"MKitModelPropertyChangedN
         _modelState=ModelStateNew;
         _createdAt=[[NSDate date] retain];
         _updatedAt=[[NSDate date] retain];
+        _modelId=[[NSString UUID] retain];
         
-        // Add to the context if this class doesn't conform to MKitNoContext
         if (![[self class] conformsToProtocol:@protocol(MKitNoContext)])
             [self addToContext];
-        
+
         // We need observe our property changes to send out notifications
         MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
         [self addObserver:self forKeyPath:@"objectId" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
         [self addObserver:self forKeyPath:@"updatedAt" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+        [self addObserver:self forKeyPath:@"modelId" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
         for(MKitReflectedProperty *p in [ref.properties allValues])
             [self addObserver:self forKeyPath:p.name options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
     }
@@ -85,7 +89,7 @@ NSString *const MKitModelPropertyChangedNotification=@"MKitModelPropertyChangedN
         
         self.updatedAt=[aDecoder decodeObjectForKey:@"updatedAt"];
         self.createdAt=[aDecoder decodeObjectForKey:@"createdAt"];
-        
+        self.modelId=[aDecoder decodeObjectForKey:@"modelId"];
         val=[aDecoder decodeObjectForKey:@"objectId"];
         if (val)
             self.objectId=val;
@@ -111,19 +115,21 @@ NSString *const MKitModelPropertyChangedNotification=@"MKitModelPropertyChangedN
     MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
     [self removeObserver:self forKeyPath:@"objectId"];
     [self removeObserver:self forKeyPath:@"updatedAt"];
+    [self removeObserver:self forKeyPath:@"modelId"];
     for(MKitReflectedProperty *p in [ref.properties allValues])
         [self removeObserver:self forKeyPath:p.name];
     
     self.objectId=nil;
     self.createdAt=nil;
     self.updatedAt=nil;
+    self.modelId=nil;
     
     [super dealloc];
 }
 
 +(id)instanceWithId:(NSString *)objId
 {
-    MKitModel *instance=[[MKitModelContext current] modelForId:objId andClass:[self class]];
+    MKitModel *instance=[[MKitModelContext current] modelForObjectId:objId andClass:[self class]];
     if (instance!=nil)
         return instance;
     
@@ -137,7 +143,7 @@ NSString *const MKitModelPropertyChangedNotification=@"MKitModelPropertyChangedN
 {
     MKitModel *instance=nil;
     if ([dictionary objectForKey:@"objectId"])
-        instance=[[MKitModelContext current] modelForId:[dictionary objectForKey:@"objectId"] andClass:[self class]];
+        instance=[[MKitModelContext current] modelForObjectId:[dictionary objectForKey:@"objectId"] andClass:[self class]];
     
     if (!instance)
     {
@@ -210,13 +216,17 @@ NSString *const MKitModelPropertyChangedNotification=@"MKitModelPropertyChangedN
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+
+    if ([keyPath isEqualToString:@"modelId"])
+        [[NSNotificationCenter defaultCenter] postNotificationName:MKitModelIdentifierChangedNotification object:self userInfo:change];
+    
     _hasChanged=YES;
     
     if (_changing)
         return;
     
-    if (([keyPath isEqualToString:@"objectId"]) && (change[@"new"]!=[NSNull null]))
-        [[NSNotificationCenter defaultCenter] postNotificationName:MKitModelGainedIdentifierNotification object:self];
+    if (([keyPath isEqualToString:@"objectId"]) && (change[NSKeyValueChangeNewKey]!=[NSNull null]))
+        [[NSNotificationCenter defaultCenter] postNotificationName:MKitObjectIdentifierChangedNotification object:self];
     
     if (self.modelState==ModelStateValid)
     {

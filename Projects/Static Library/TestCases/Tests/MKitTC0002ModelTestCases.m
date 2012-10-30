@@ -53,7 +53,7 @@
     
     // Make sure the context has been cleared
     [MKitModelContext clearAllContexts];
-    m1=(TestModel *)[[MKitModelContext current] modelForId:@"001" andClass:[TestModel class]];
+    m1=(TestModel *)[[MKitModelContext current] modelForObjectId:@"001" andClass:[TestModel class]];
     STAssertTrue(m1==nil, @"Context wasn't cleared.");
     
     // Deserialize
@@ -101,7 +101,7 @@
     
     // Make sure the context has been cleared
     [MKitModelContext clearAllContexts];
-    m1=(TestModel *)[[MKitModelContext current] modelForId:@"001" andClass:[TestModel class]];
+    m1=(TestModel *)[[MKitModelContext current] modelForObjectId:@"001" andClass:[TestModel class]];
     STAssertTrue(m1==nil, @"Context wasn't cleared.");
     
     // Deserialize

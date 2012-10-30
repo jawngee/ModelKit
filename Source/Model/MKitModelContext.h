@@ -19,7 +19,7 @@
  */
 @interface MKitModelContext : NSObject
 {
-    NSMutableArray *newStack;
+    NSMutableDictionary *modelStack;
     NSMutableDictionary *classCache;
     
     NSUInteger contextSize;
@@ -120,6 +120,6 @@
  * @param modelClass The class of the model
  * @return The model, if found, nil if not.
  */
--(MKitModel *)modelForId:(NSString *)objId andClass:(Class)modelClass;
+-(MKitModel *)modelForObjectId:(NSString *)objId andClass:(Class)modelClass;
 
 @end

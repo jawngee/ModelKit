@@ -30,7 +30,10 @@ typedef enum
 extern NSString *const MKitModelStateChangedNotification;
 
 /** Model has gained an identifier */
-extern NSString *const MKitModelGainedIdentifierNotification;
+extern NSString *const MKitObjectIdentifierChangedNotification;
+
+/** Model's internal ID has changed */
+extern NSString *const MKitModelIdentifierChangedNotification;
 
 /** 
  * A model property has changed.  The notification's userinfo property contains
@@ -69,11 +72,12 @@ extern NSString *const MKitModelPropertyChangedNotification;
     BOOL _hasChanged;
 }
 
-@property (readonly) NSString *modelName;               /**< Name of the model.  If not overridden, class name is used */
-@property (assign, nonatomic) MKitModelState modelState;  /**< The current model state */
+@property (retain, nonatomic) NSString *modelId;            /**< Used internally */
+@property (readonly) NSString *modelName;                   /**< Name of the model.  If not overridden, class name is used */
+@property (assign, nonatomic) MKitModelState modelState;    /**< The current model state */
 
 // All models have these properties
-@property (copy, nonatomic) NSString *objectId;         /**< The object ID */
+@property (copy, nonatomic) NSString *objectId;         /**< The object ID - Application specific */
 @property (copy, nonatomic) NSDate *createdAt;          /**< Date created */
 @property (copy, nonatomic) NSDate *updatedAt;          /**< Date updated */
 
