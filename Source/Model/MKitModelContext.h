@@ -122,4 +122,11 @@
  */
 -(MKitModel *)modelForObjectId:(NSString *)objId andClass:(Class)modelClass;
 
+/**
+ * Retrieves a model from the context based on the model id
+ * @param modelId The model id of the model
+ * @return The model, if found, nil if not.
+ */
+-(MKitModel *)modelForModelId:(NSString *)modelId;
+
 @end

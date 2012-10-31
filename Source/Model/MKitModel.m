@@ -28,10 +28,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 @interface MKitModel()
 
 -(NSDate *)getDateFromId:(id)val;
--(NSDictionary *)serializeForJSON:(BOOL)encodeForJSON encodingCache:(NSMutableArray *)encodingCache;
--(void)deserialize:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON;
--(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON encodingCache:(NSMutableArray *)encodingCache;
--(id)unflattenArray:(NSArray *)array decodeFromJSON:(BOOL)decodeFromJSON arrayClass:(Class)arrayClass;
+-(NSDictionary *)getObjectFromDictionary:(NSDictionary *)dict objectArray:(NSArray *)objectArray;
+-(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON encodingCache:(MKitMutableOrderedDictionary *)encodingCache;
+-(void)serializeForJSON:(BOOL)encodeForJSON encodingCache:(MKitMutableOrderedDictionary *)encodingCache;
+-(id)unflattenArray:(NSArray *)array decodeFromJSON:(BOOL)decodeFromJSON arrayClass:(Class)arrayClass objectArray:(NSArray *)objectArray decodingCache:(NSMutableDictionary *)decodingCache;
+-(void)deserialize:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON objectArray:(NSArray *)objectArray decodingCache:(NSMutableDictionary *)decodingCache;
 
 @end
 
@@ -127,6 +128,13 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     [super dealloc];
 }
 
+#pragma mark - Static Initializers
+
++(id)instance
+{
+    return [[[[self class] alloc] init] autorelease];
+}
+
 +(id)instanceWithId:(NSString *)objId
 {
     MKitModel *instance=[[MKitModelContext current] modelForObjectId:objId andClass:[self class]];
@@ -139,34 +147,50 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     return instance;
 }
 
-+(id)instanceWithDictionary:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON
++(id)instanceWithSerializedData:(id)data fromJSON:(BOOL)fromJSON
 {
     MKitModel *instance=nil;
-    if ([dictionary objectForKey:@"objectId"])
-        instance=[[MKitModelContext current] modelForObjectId:[dictionary objectForKey:@"objectId"] andClass:[self class]];
+    
+    NSDictionary *odict=nil;
+    NSArray *oarray=nil;
+    
+    if ([[data class] isSubclassOfClass:[NSDictionary class]])
+        odict=(NSDictionary *)data;
+    else if ([[data class] isSubclassOfClass:[NSArray class]])
+    {
+        oarray=data;
+        odict=[data objectAtIndex:0];
+    }
+    else
+        @throw [NSException exceptionWithName:@"Invalid Serialized Data" reason:@"Data must be either a dictionary or array" userInfo:nil];
+    
+    if ((odict[@"objectId"]) && (odict[@"objectId"]!=[NSNull null]))
+        instance=[[MKitModelContext current] modelForObjectId:odict[@"objectId"] andClass:[self class]];
+    else if ((odict[@"modelId"]) && (odict[@"modelId"]!=[NSNull null]))
+        instance=[[MKitModelContext current] modelForModelId:odict[@"modelId"]];
     
     if (!instance)
     {
         instance=[[[[self class] alloc] init] autorelease];
-        if ([dictionary objectForKey:@"objectId"])
-            instance.objectId=[dictionary objectForKey:@"objectId"];
+        if ((odict[@"objectId"]) && (odict[@"objectId"]!=[NSNull null]))
+            instance.objectId=odict[@"objectId"];
     }
     
-    [instance deserialize:dictionary fromJSON:fromJSON];
+    [instance deserialize:odict fromJSON:fromJSON objectArray:oarray decodingCache:[NSMutableDictionary dictionary]];
     
     return instance;
 }
 
-+(id)instanceWithDictionary:(NSDictionary *)dictionary
++(id)instanceWithSerializedData:(id)data
 {
-    return [self instanceWithDictionary:dictionary fromJSON:NO];
+    return [self instanceWithSerializedData:data fromJSON:NO];
 }
 
 +(id)instanceWithJSON:(NSString *)JSONString
 {
-    NSDictionary *jsonDict=[JSONString objectFromJSONString];
+    id jsonData=[JSONString objectFromJSONString];
     
-    return [self instanceWithDictionary:jsonDict fromJSON:YES];
+    return [self instanceWithSerializedData:jsonData fromJSON:YES];
 }
 
 #pragma mark - NSCoding
@@ -273,7 +297,21 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     [[NSNotificationCenter defaultCenter] postNotificationName:MKitModelPropertyChangedNotification object:self userInfo:nil];
 }
 
-#pragma mark - Conversion
+#pragma mark - Private serialization/deserialization methods
+
+-(NSDictionary *)getObjectFromDictionary:(NSDictionary *)dict objectArray:(NSArray *)objectArray;
+{
+    NSString *oid=dict[@"objectId"];
+    NSString *mid=dict[@"modelId"];
+    
+    for(NSDictionary *d in objectArray)
+        if ((oid) && ([oid isEqualToString:d[@"objectId"]]))
+            return d;
+        else if ((mid) && ([mid isEqualToString:d[@"modelId"]]))
+            return d;
+    
+    return nil;
+}
 
 -(NSDate *)getDateFromId:(id)val
 {
@@ -302,7 +340,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     return nil;
 }
 
--(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON encodingCache:(NSMutableArray *)encodingCache
+-(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON encodingCache:(MKitMutableOrderedDictionary *)encodingCache
 {
     NSMutableArray *replacement=[NSMutableArray array];
     
@@ -311,18 +349,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
         if ([ele isKindOfClass:[MKitModel class]])
         {
             MKitModel *m=(MKitModel *)ele;
-            if ([encodingCache indexOfObject:m.objectId]!=NSNotFound)
-            {
-                NSString *modelName=(m.modelName) ? m.modelName : NSStringFromClass([m class]);
-                [replacement addObject:@{@"__type":@"ModelPointer",@"objectId":m.objectId,@"model":modelName}];
-            }
-            else
-            {
-                if (encodeForJSON)
-                    [replacement addObject:@{@"__type":@"Model",@"model":[((MKitModel *)ele) serializeForJSON:encodeForJSON encodingCache:encodingCache]}];
-                else
-                    [replacement addObject:[((MKitModel *)ele) serializeForJSON:encodeForJSON encodingCache:encodingCache]];
-            }
+            if (![encodingCache objectForKey:m.modelId])
+                [m serializeForJSON:encodeForJSON encodingCache:encodingCache];
+            
+            NSString *modelName=(m.modelName) ? m.modelName : NSStringFromClass([m class]);
+            [replacement addObject:@{@"__type":@"ModelPointer",@"objectId":(m.objectId) ? m.objectId : [NSNull null],@"modelId":m.modelId,@"model":modelName}];
         }
         else if ([ele isKindOfClass:[NSArray class]])
             [replacement addObject:[self flattenArray:(NSArray *)ele encodeForJSON:encodeForJSON encodingCache:encodingCache]];
@@ -346,89 +377,13 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     return replacement;
 }
 
--(id)unflattenArray:(NSArray *)array decodeFromJSON:(BOOL)decodeFromJSON arrayClass:(Class)arrayClass
-{
-    if ((arrayClass==nil) || (![arrayClass isSubclassOfClass:[NSMutableArray class]]))
-        arrayClass=[NSMutableArray class];
-    
-    NSMutableArray *replacement=[arrayClass array];
-    
-    for(NSObject *ele in array)
-    {
-        if ([[ele class] isSubclassOfClass:[NSDictionary class]])
-        {
-            NSDictionary *d=(NSDictionary *)ele;
-            
-            if (!decodeFromJSON)
-            {
-                if ([d objectForKey:@"__type"] && [[d objectForKey:@"__type"] isEqualToString:@"ModelPointer"])
-                {
-                    Class mc=[MKitModelRegistry registeredClassForModel:[d objectForKey:@"model"]];
-                    if (!mc)
-                        mc=NSClassFromString([d objectForKey:@"model"]);
-                    if (!mc)
-                        @throw [NSException exceptionWithName:@"Unknown model class" reason:[NSString stringWithFormat:@"Unknown model class '%@'",[d objectForKey:@"model"]] userInfo:d];
-                    
-                    MKitModel *m=[mc instanceWithId:[d objectForKey:@"objectId"]];
-                    [replacement addObject:m];
-                }
-                else if ([d objectForKey:@"model"])
-                {
-                    Class mc=[MKitModelRegistry registeredClassForModel:[d objectForKey:@"model"]];
-                    if (!mc)
-                        mc=NSClassFromString([d objectForKey:@"model"]);
-                    if (!mc)
-                        @throw [NSException exceptionWithName:@"Unknown model class" reason:[NSString stringWithFormat:@"Unknown model class '%@'",[d objectForKey:@"model"]] userInfo:d];
-                    
-                    MKitModel *m=[mc instanceWithDictionary:d];
-                    [replacement addObject:m];
-                }
-            }
-            else
-            {
-                NSString *type=[d objectForKey:@"__type"];
-                if (type)
-                {
-                    if ([type isEqualToString:@"Date"])
-                    {
-                        [replacement addObject:[self getDateFromId:d]];
-                    }
-                    else if ([type isEqualToString:@"Model"])
-                    {
-                        NSDictionary *md=[d objectForKey:@"model"];
-                        Class mc=[MKitModelRegistry registeredClassForModel:[md objectForKey:@"model"]];
-                        if (!mc)
-                            mc=NSClassFromString([md objectForKey:@"model"]);
-                        if (!mc)
-                            @throw [NSException exceptionWithName:@"Unknown model class" reason:[NSString stringWithFormat:@"Unknown model class '%@'",[md objectForKey:@"model"]] userInfo:md];
-                        
-                        MKitModel *m=[mc instanceWithDictionary:md fromJSON:decodeFromJSON];
-                        [replacement addObject:m];
-                    }
-                }
-            }
-        }
-        else
-        {
-            [replacement addObject:ele];
-        }
-    }
-    
-    return replacement;
-
-}
-
--(NSDictionary *)serializeForJSON:(BOOL)encodeForJSON encodingCache:(NSMutableArray *)encodingCache
+-(void)serializeForJSON:(BOOL)encodeForJSON encodingCache:(MKitMutableOrderedDictionary *)encodingCache
 {
     MKitMutableOrderedDictionary *result=[MKitMutableOrderedDictionary dictionary];
     
-    if (encodingCache==nil)
-        encodingCache=[[NSMutableArray array] retain];
-    else
-        [encodingCache retain];
+    [encodingCache setValue:result forKey:self.modelId];
     
-    if (self.objectId)
-        [encodingCache addObject:self.objectId];
+    [result setObject:self.modelId forKey:@"modelId"];
     
     if (self.modelName)
         [result setObject:self.modelName forKey:@"model"];
@@ -470,19 +425,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
             if ([obj isKindOfClass:[MKitModel class]])
             {
                 MKitModel *m=(MKitModel *)val;
-                if ([encodingCache indexOfObject:m.objectId]!=NSNotFound)
-                {
-                    NSString *modelName=(m.modelName) ? m.modelName : NSStringFromClass([m class]);
-                    [props setObject:@{@"__type":@"ModelPointer",@"objectId":m.objectId,@"model":modelName} forKey:p.name];
-                }
-                else
-                {
-                    [encodingCache addObject:m.objectId];
-                    if (encodeForJSON)
-                        [props setObject:@{@"__type":@"Model",@"model":[((MKitModel *)obj) serializeForJSON:encodeForJSON encodingCache:encodingCache]} forKey:p.name];
-                    else
-                        [props setObject:[((MKitModel *)obj) serializeForJSON:encodeForJSON encodingCache:encodingCache] forKey:p.name];
-                }
+                if (![encodingCache objectForKey:m.modelId])
+                    [m serializeForJSON:encodeForJSON encodingCache:encodingCache];
+
+                NSString *modelName=(m.modelName) ? m.modelName : NSStringFromClass([m class]);
+                [props setObject:@{@"__type":@"ModelPointer",@"objectId":(m.objectId) ? m.objectId : [NSNull null],@"modelId":m.modelId,@"model":modelName} forKey:p.name];
             }
         }
         else if (p.type==refTypeArray)
@@ -501,21 +448,93 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
             [props setObject:val forKey:p.name];
         }
     }
-    
-    [encodingCache release];
-    
-    return result;
 }
 
--(void)deserialize:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON
+-(id)unflattenArray:(NSArray *)array decodeFromJSON:(BOOL)decodeFromJSON arrayClass:(Class)arrayClass objectArray:(NSArray *)objectArray decodingCache:(NSMutableDictionary *)decodingCache
+{
+    if ((arrayClass==nil) || (![arrayClass isSubclassOfClass:[NSMutableArray class]]))
+        arrayClass=[NSMutableArray class];
+    
+    NSMutableArray *replacement=[arrayClass array];
+    
+    for(NSObject *ele in array)
+    {
+        if ([[ele class] isSubclassOfClass:[NSDictionary class]])
+        {
+            NSDictionary *d=(NSDictionary *)ele;
+            if ([d objectForKey:@"__type"] && [[d objectForKey:@"__type"] isEqualToString:@"ModelPointer"])
+            {
+                Class mc=[MKitModelRegistry registeredClassForModel:[d objectForKey:@"model"]];
+                if (!mc)
+                    mc=NSClassFromString([d objectForKey:@"model"]);
+                if (!mc)
+                    @throw [NSException exceptionWithName:@"Unknown model class" reason:[NSString stringWithFormat:@"Unknown model class '%@'",[d objectForKey:@"model"]] userInfo:d];
+                
+                MKitModel *model=nil;
+                if ((d[@"modelId"]) && (d[@"modelId"]!=[NSNull null]))
+                    model=[decodingCache objectForKey:d[@"modelId"]];
+                
+                if (model==nil)
+                {
+                    NSDictionary *lookupDict=[self getObjectFromDictionary:d objectArray:objectArray];
+                    if (!lookupDict)
+                        @throw [NSException exceptionWithName:@"Missing Model Dictionary" reason:@"Could not find model dictionary for model pointer" userInfo:d];
+                    
+                    if ((lookupDict[@"objectId"]) && (lookupDict[@"objectId"]!=[NSNull null]))
+                        model=[mc instanceWithId:lookupDict[@"objectId"]];
+                    else if ((lookupDict[@"modelId"]) && (lookupDict[@"modelId"]!=[NSNull null]))
+                    {
+                        model=[[MKitModelContext current] modelForModelId:lookupDict[@"modelId"]];
+                        if (!model)
+                        {
+                            model=[[[mc alloc] init] autorelease];
+                            model.modelId=lookupDict[@"modelId"];
+                        }
+                    }
+                    
+                    [model deserialize:lookupDict fromJSON:decodeFromJSON objectArray:objectArray decodingCache:decodingCache];
+                    [decodingCache setObject:model forKey:model.modelId];
+                }
+                
+                if (model)
+                    [replacement addObject:model];
+            }
+            else
+            {
+                NSString *type=[d objectForKey:@"__type"];
+                if (type)
+                {
+                    if ([type isEqualToString:@"Date"])
+                    {
+                        [replacement addObject:[self getDateFromId:d]];
+                    }
+                }
+            }
+        }
+        else
+        {
+            [replacement addObject:ele];
+        }
+    }
+    
+    return replacement;
+    
+}
+
+-(void)deserialize:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON objectArray:(NSArray *)objectArray decodingCache:(NSMutableDictionary *)decodingCache
 {
     self.updatedAt=[self getDateFromId:[dictionary objectForKey:@"updatedAt"]];
     self.createdAt=[self getDateFromId:[dictionary objectForKey:@"createdAt"]];
     
-    id val=[dictionary objectForKey:@"objectId"];
+    id val=[dictionary objectForKey:@"modelId"];
+    if ((val) && (val!=[NSNull null]))
+        self.modelId=val;
     
-    if ((val!=[NSNull null]) && (val!=nil))
+    val=[dictionary objectForKey:@"objectId"];
+    if ((val) && (val!=[NSNull null]))
         self.objectId=val;
+    
+    [decodingCache setObject:self forKey:self.modelId];
     
     NSDictionary *props=[dictionary objectForKey:@"properties"];
     if (!props)
@@ -540,17 +559,34 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                         NSDictionary *md=(NSDictionary *)val;
                         if (([md objectForKey:@"__type"]) && ([[md objectForKey:@"__type"] isEqualToString:@"ModelPointer"]))
                         {
-                            MKitModel *model=[p.typeClass instanceWithId:[md objectForKey:@"objectId"]];
+                            MKitModel *model=nil;
+                            if ((md[@"modelId"]) && (md[@"modelId"]!=[NSNull null]))
+                                model=[decodingCache objectForKey:md[@"modelId"]];
+                            
+                            if (model==nil)
+                            {
+                                NSDictionary *lookupDict=[self getObjectFromDictionary:md objectArray:objectArray];
+                                if (!lookupDict)
+                                    @throw [NSException exceptionWithName:@"Missing Model Dictionary" reason:@"Could not find model dictionary for model pointer" userInfo:md];
+                                
+                                if ((lookupDict[@"objectId"]) && (lookupDict[@"objectId"]!=[NSNull null]))
+                                    model=[p.typeClass instanceWithId:lookupDict[@"objectId"]];
+                                else if ((lookupDict[@"modelId"]) && (lookupDict[@"modelId"]!=[NSNull null]))
+                                {
+                                    model=[[MKitModelContext current] modelForModelId:lookupDict[@"modelId"]];
+                                    if (!model)
+                                    {
+                                        model=[[[p.typeClass alloc] init] autorelease];
+                                        model.modelId=lookupDict[@"modelId"];
+                                    }
+                                }
+                                
+                                [model deserialize:lookupDict fromJSON:fromJSON objectArray:objectArray decodingCache:decodingCache];
+                                [decodingCache setObject:model forKey:model.modelId];
+                            }
+                            
                             [self setValue:model forKey:p.name];
                         }
-                        else if (fromJSON)
-                        {
-                            MKitModel *m=[[[p.typeClass alloc] init] autorelease];
-                            [m deserialize:[dictionary objectForKey:@"model"] fromJSON:YES];
-                            [self setValue:m forKey:p.name];
-                        }
-                        else
-                            [self setValue:[p.typeClass instanceWithDictionary:val] forKey:p.name];
                     }
                     else if ([[val class] isSubclassOfClass:[MKitModel class]])
                     {
@@ -574,7 +610,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                 [self setValue:val forKey:p.name];
                 break;
             case refTypeArray:
-                [self setValue:[self unflattenArray:val decodeFromJSON:fromJSON arrayClass:p.typeClass] forKey:p.name];
+                [self setValue:[self unflattenArray:val decodeFromJSON:fromJSON arrayClass:p.typeClass objectArray:objectArray decodingCache:decodingCache] forKey:p.name];
                 break;
             case refTypeDictionary:
                 [self setValue:nil forKey:p.name];
@@ -594,26 +630,68 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     }
 }
 
+#pragma mark - Public serialization/deserialization methods
 
--(NSDictionary *)serialize
+-(id)serialize
 {
-    return [self serializeForJSON:NO encodingCache:nil];
+    MKitMutableOrderedDictionary *encodingCache=[MKitMutableOrderedDictionary dictionary];
+    [self serializeForJSON:NO encodingCache:encodingCache];
+    if (encodingCache.count==1)
+        return [[encodingCache allValues] lastObject];
+    else
+        return [encodingCache allValues];
 }
 
--(void)deserialize:(NSDictionary *)dictionary
+-(void)deserialize:(id)data
 {
-    [self deserialize:dictionary fromJSON:NO];
+    NSDictionary *odict=nil;
+    NSArray *oarray=nil;
+    
+    if ([[data class] isSubclassOfClass:[NSDictionary class]])
+        odict=(NSDictionary *)data;
+    else if ([[data class] isSubclassOfClass:[NSArray class]])
+    {
+        oarray=data;
+        odict=[data objectAtIndex:0];
+    }
+    else
+        @throw [NSException exceptionWithName:@"Invalid Serialized Data" reason:@"Data must be either a dictionary or array" userInfo:nil];
+
+    [self deserialize:odict fromJSON:NO objectArray:oarray decodingCache:[NSMutableDictionary dictionary]];
 }
 
 -(NSString *)serializeToJSON
 {
-    NSDictionary *d=[self serializeForJSON:YES encodingCache:nil];
-    return [d JSONStringWithOptions:JKSerializeOptionPretty error:nil];
+    MKitMutableOrderedDictionary *encodingCache=[MKitMutableOrderedDictionary dictionary];
+    [self serializeForJSON:YES encodingCache:encodingCache];
+    
+    id result;
+    if (encodingCache.count==1)
+        result=[[encodingCache allValues] lastObject];
+    else
+        result=[encodingCache allValues];
+
+    return [result JSONStringWithOptions:JKSerializeOptionPretty error:nil];
 }
 
 -(void)deserializeFromJSON:(NSString *)jsonString
 {
-    [self deserialize:[jsonString objectFromJSONString] fromJSON:YES];
+    id data=[jsonString objectFromJSONString];
+    
+    NSDictionary *odict=nil;
+    NSArray *oarray=nil;
+    
+    if ([[data class] isSubclassOfClass:[NSDictionary class]])
+        odict=(NSDictionary *)data;
+    else if ([[data class] isSubclassOfClass:[NSArray class]])
+    {
+        oarray=data;
+        odict=[data objectAtIndex:0];
+    }
+    else
+        @throw [NSException exceptionWithName:@"Invalid Serialized Data" reason:@"Data must be either a dictionary or array" userInfo:nil];
+    
+    [self deserialize:odict fromJSON:YES objectArray:oarray decodingCache:[NSMutableDictionary dictionary]];
 }
 
 @end

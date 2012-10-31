@@ -49,7 +49,7 @@
     m4.amodelV=m3;
     
     // Serialize
-    NSDictionary *dict=[m1 serialize];
+    id data=[m1 serialize];
     
     // Make sure the context has been cleared
     [MKitModelContext clearAllContexts];
@@ -57,7 +57,7 @@
     STAssertTrue(m1==nil, @"Context wasn't cleared.");
     
     // Deserialize
-    m1=[TestModel instanceWithDictionary:dict];
+    m1=[TestModel instanceWithSerializedData:data];
     
     // Make sure we have 4 objects in the context
     STAssertTrue([MKitModelContext current].contextCount==4, @"Context count mismatch, should be 4.");

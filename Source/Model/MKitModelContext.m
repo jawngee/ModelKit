@@ -184,6 +184,11 @@ static NSMutableArray *contextStack=nil;
     return [objectCache objectForKey:objId];
 }
 
+-(MKitModel *)modelForModelId:(NSString *)modelId
+{
+    return [modelStack objectForKey:modelId];
+}
+
 #pragma mark - Notifications
 
 -(void)modelStateChanged:(NSNotification *)notification

@@ -82,6 +82,12 @@ extern NSString *const MKitModelPropertyChangedNotification;
 @property (copy, nonatomic) NSDate *updatedAt;          /**< Date updated */
 
 /**
+ * Creates an empty instance of the class
+ * @return A new empty instance
+ */
++(id)instance;
+
+/**
  * Creates an instance with the given object id, but first checks the context for
  * an existing model of the same class and matching id, returning that if it exists.
  * @param objId The object id
@@ -94,7 +100,7 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * same class and id exists, refreshes that object's data with the dictionary.
  * @param dictionary The dictionary of data to build the model from
  */
-+(id)instanceWithDictionary:(NSDictionary *)dictionary;
++(id)instanceWithSerializedData:(id)data;
 
 
 /**
@@ -104,7 +110,7 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * @param dictionary The dictionary of data to build the model from
  * @param fromJSON Tells us if the dictionary of data is from a JSON string
  */
-+(id)instanceWithDictionary:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON;
++(id)instanceWithSerializedData:(id)data fromJSON:(BOOL)fromJSON;
 
 /**
  * Creates a new instance with the contents of a JSON string.  If the JSON
@@ -140,16 +146,19 @@ extern NSString *const MKitModelPropertyChangedNotification;
 -(void)endChanges;
 
 /**
- * Flattens the model into a dictionary.  Note this dictionary cannot be stored to plist due to use of NSNull.
+ * Flattens the model into a dictionary or array.  If the serialized object contains model properties
+ * or an array of models, this method returns an array containing all of the objects.  The first object
+ * of the array is the model being serialized.
+ * Note this dictionary cannot be stored to plist due to use of NSNull.
  * @result A dictionary containing information about the model plus its properties and their values
  */
--(NSDictionary *)serialize;
+-(id)serialize;
 
 /**
  * Loads properties from a dictionary.
  * @param dictionary The dictionary to load values from
  */
--(void)deserialize:(NSDictionary *)dictionary;
+-(void)deserialize:(id)data;
 
 /**
  * Serializes the model to JSON
