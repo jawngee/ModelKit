@@ -10,4 +10,6 @@
 
 @interface MKitMutableModelArray (Parse)
 
+-(NSArray *)parsePointerArray:(NSMutableArray **)modelsToSave;
+
 @end

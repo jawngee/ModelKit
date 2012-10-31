@@ -35,6 +35,7 @@
     TestModel *m3=[self makeModelWithId:@"003"];
     TestModel *m4=[self makeModelWithId:@"004"];
     
+    
     // Note the circular references
     m1.amodelArrayV=[MKitMutableModelArray arrayWithArray:@[m2,m3]];
     m1.amodelV=m4;
@@ -47,6 +48,8 @@
     
     m4.amodelArrayV=[MKitMutableModelArray arrayWithArray:@[m1,m2]];
     m4.amodelV=m3;
+    
+    NSLog(@"%@",m1.modelChanges);
     
     // Serialize
     id data=[m1 serialize];

@@ -7,10 +7,12 @@
 //
 
 #import "MKitServiceManager.h"
+#import "AFNetworking.h"
 
 @interface MKitParseServiceManager : MKitServiceManager
 {
 @private
+    AFHTTPClient *parseClient;
     NSString *_appID;
     NSString *_restKey;
 }

@@ -10,4 +10,9 @@
 
 @interface MKitModel (Parse)
 
+/**
+ * Returns Parse's pointer type.
+ */
+-(NSDictionary *)parsePointer;
+
 @end

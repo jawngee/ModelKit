@@ -7,7 +7,20 @@
 //
 
 #import "MKitModel.h"
+#import "MKitServiceManager.h"
 
 @interface MKitServiceModel : MKitModel
+
+-(MKitServiceManager *)service;
+
+-(BOOL)save:(NSError **)error;
+-(void)saveInBackground:(MKitBooleanResultBlock)resultBlock;
+
+-(BOOL)delete:(NSError **)error;
+-(void)deleteInBackground:(MKitBooleanResultBlock)resultBlock;
+
+-(BOOL)fetch:(NSError **)error;
+-(void)fetchInBackground:(MKitBooleanResultBlock)resultBlock;
+
 
 @end

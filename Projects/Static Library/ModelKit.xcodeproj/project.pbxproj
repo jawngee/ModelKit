@@ -19,9 +19,13 @@
 		FF3C8D45163940B9009EB62A /* MKitReflectedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D44163940B9009EB62A /* MKitReflectedClass.m */; };
 		FF3C8D5E16396082009EB62A /* MKitModelRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D5D16396082009EB62A /* MKitModelRegistry.m */; };
 		FFA3DE7D163E785400D2D855 /* MKitServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DE7C163E785400D2D855 /* MKitServiceManager.m */; };
-		FFA3DEA6163E8E4C00D2D855 /* MKitParseServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DEA5163E8E4C00D2D855 /* MKitParseServiceManager.m */; };
 		FFA3DEAA163F1A9800D2D855 /* NSString+ModelKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DEA9163F1A9800D2D855 /* NSString+ModelKit.m */; };
 		FFA54AA116391DEA00F055A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54AA016391DEA00F055A6 /* Foundation.framework */; };
+		FFB8CB641641A3D300D43C8F /* MKitServiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CB631641A3D300D43C8F /* MKitServiceModel.m */; };
+		FFB8CB6F1641A5AA00D43C8F /* MKitParseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CB6E1641A5AA00D43C8F /* MKitParseModel.m */; };
+		FFB8CB751641A6AC00D43C8F /* MKitModel+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CB721641A6AC00D43C8F /* MKitModel+Parse.m */; };
+		FFB8CB761641A6AC00D43C8F /* MKitMutableModelArray+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CB741641A6AC00D43C8F /* MKitMutableModelArray+Parse.m */; };
+		FFB8CB791641A6B700D43C8F /* MKitParseServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CB781641A6B700D43C8F /* MKitParseServiceManager.m */; };
 		FFBA0D26163D23EE00B6560C /* MKitTC0001ContextTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D25163D23EE00B6560C /* MKitTC0001ContextTestCases.m */; };
 		FFBA0D29163D24C100B6560C /* TestModelNoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D28163D24C100B6560C /* TestModelNoContext.m */; };
 		FFBA0D2C163D254E00B6560C /* libModelKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54A9D16391DEA00F055A6 /* libModelKit.a */; };
@@ -103,12 +107,20 @@
 		FF3C8D5D16396082009EB62A /* MKitModelRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitModelRegistry.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FFA3DE7B163E785400D2D855 /* MKitServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitServiceManager.h; sourceTree = "<group>"; };
 		FFA3DE7C163E785400D2D855 /* MKitServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceManager.m; sourceTree = "<group>"; };
-		FFA3DEA4163E8E4C00D2D855 /* MKitParseServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitParseServiceManager.h; sourceTree = "<group>"; };
-		FFA3DEA5163E8E4C00D2D855 /* MKitParseServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseServiceManager.m; sourceTree = "<group>"; };
 		FFA3DEA8163F1A9800D2D855 /* NSString+ModelKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ModelKit.h"; sourceTree = "<group>"; };
 		FFA3DEA9163F1A9800D2D855 /* NSString+ModelKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ModelKit.m"; sourceTree = "<group>"; };
 		FFA54A9D16391DEA00F055A6 /* libModelKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libModelKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA54AA016391DEA00F055A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FFB8CB621641A3D300D43C8F /* MKitServiceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitServiceModel.h; sourceTree = "<group>"; };
+		FFB8CB631641A3D300D43C8F /* MKitServiceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceModel.m; sourceTree = "<group>"; };
+		FFB8CB6D1641A5AA00D43C8F /* MKitParseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitParseModel.h; sourceTree = "<group>"; };
+		FFB8CB6E1641A5AA00D43C8F /* MKitParseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseModel.m; sourceTree = "<group>"; };
+		FFB8CB711641A6AC00D43C8F /* MKitModel+Parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKitModel+Parse.h"; sourceTree = "<group>"; };
+		FFB8CB721641A6AC00D43C8F /* MKitModel+Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKitModel+Parse.m"; sourceTree = "<group>"; };
+		FFB8CB731641A6AC00D43C8F /* MKitMutableModelArray+Parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKitMutableModelArray+Parse.h"; sourceTree = "<group>"; };
+		FFB8CB741641A6AC00D43C8F /* MKitMutableModelArray+Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKitMutableModelArray+Parse.m"; sourceTree = "<group>"; };
+		FFB8CB771641A6B700D43C8F /* MKitParseServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitParseServiceManager.h; sourceTree = "<group>"; };
+		FFB8CB781641A6B700D43C8F /* MKitParseServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseServiceManager.m; sourceTree = "<group>"; };
 		FFBA0D24163D23EE00B6560C /* MKitTC0001ContextTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKitTC0001ContextTestCases.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FFBA0D25163D23EE00B6560C /* MKitTC0001ContextTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitTC0001ContextTestCases.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FFBA0D27163D24C100B6560C /* TestModelNoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TestModelNoContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -199,6 +211,8 @@
 				FF3C8D5D16396082009EB62A /* MKitModelRegistry.m */,
 				FFCFA9EF1639732500BC2E3E /* MKitModelContext.h */,
 				FFCFA9F01639732500BC2E3E /* MKitModelContext.m */,
+				FFB8CB621641A3D300D43C8F /* MKitServiceModel.h */,
+				FFB8CB631641A3D300D43C8F /* MKitServiceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,8 +272,11 @@
 		FFA3DEA3163E8E4C00D2D855 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				FFA3DEA4163E8E4C00D2D855 /* MKitParseServiceManager.h */,
-				FFA3DEA5163E8E4C00D2D855 /* MKitParseServiceManager.m */,
+				FFB8CB701641A6AC00D43C8F /* Categories */,
+				FFB8CB771641A6B700D43C8F /* MKitParseServiceManager.h */,
+				FFB8CB781641A6B700D43C8F /* MKitParseServiceManager.m */,
+				FFB8CB6D1641A5AA00D43C8F /* MKitParseModel.h */,
+				FFB8CB6E1641A5AA00D43C8F /* MKitParseModel.m */,
 			);
 			path = Parse;
 			sourceTree = "<group>";
@@ -309,6 +326,17 @@
 			);
 			name = "Supporting Files";
 			path = ModelKit;
+			sourceTree = "<group>";
+		};
+		FFB8CB701641A6AC00D43C8F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FFB8CB711641A6AC00D43C8F /* MKitModel+Parse.h */,
+				FFB8CB721641A6AC00D43C8F /* MKitModel+Parse.m */,
+				FFB8CB731641A6AC00D43C8F /* MKitMutableModelArray+Parse.h */,
+				FFB8CB741641A6AC00D43C8F /* MKitMutableModelArray+Parse.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		FFBA0D22163D23EE00B6560C /* Models */ = {
@@ -530,8 +558,12 @@
 				FFCFAA42163AC39000BC2E3E /* MKitMutableModelArray.m in Sources */,
 				FFBA0D41163DBB5D00B6560C /* MKitMutableOrderedDictionary.m in Sources */,
 				FFA3DE7D163E785400D2D855 /* MKitServiceManager.m in Sources */,
-				FFA3DEA6163E8E4C00D2D855 /* MKitParseServiceManager.m in Sources */,
 				FFA3DEAA163F1A9800D2D855 /* NSString+ModelKit.m in Sources */,
+				FFB8CB641641A3D300D43C8F /* MKitServiceModel.m in Sources */,
+				FFB8CB6F1641A5AA00D43C8F /* MKitParseModel.m in Sources */,
+				FFB8CB751641A6AC00D43C8F /* MKitModel+Parse.m in Sources */,
+				FFB8CB761641A6AC00D43C8F /* MKitMutableModelArray+Parse.m in Sources */,
+				FFB8CB791641A6B700D43C8F /* MKitParseServiceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

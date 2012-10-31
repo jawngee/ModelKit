@@ -10,4 +10,9 @@
 
 @implementation MKitParseModel
 
+-(MKitServiceManager *)service
+{
+    return [MKitServiceManager managerForService:@"Parse"];
+}
+
 @end

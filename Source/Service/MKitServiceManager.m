@@ -10,24 +10,32 @@
 
 @implementation MKitServiceManager
 
-static MKitServiceManager *currentManager=nil;
+static NSMutableDictionary *managers=nil;
 
 +(MKitServiceManager *)setupService:(NSString *)name withKeys:(NSDictionary *)keys
 {
-    if (currentManager)
-        [currentManager release];
+    if (!managers)
+        managers=[[NSMutableDictionary dictionary] retain];
+    
+    MKitServiceManager *m=[managers objectForKey:name];
+    if (m)
+        [managers removeObjectForKey:m];
     
     Class serviceClass=NSClassFromString([NSString stringWithFormat:@"MKit%@ServiceManager",name]);
     if (!serviceClass)
         @throw [NSException exceptionWithName:@"Service Not Found" reason:[NSString stringWithFormat:@"Service named '%@' could not be found.",name] userInfo:nil];
     
-    currentManager=[[serviceClass alloc] initWithKeys:keys];
-    return currentManager;
+    m=[[serviceClass alloc] initWithKeys:keys];
+    [managers setObject:m forKey:name];
+    return m;
 }
 
-+(MKitServiceManager *)current
++(MKitServiceManager *)managerForService:(NSString *)name;
 {
-    return currentManager;
+    if (!managers)
+        managers=[[NSMutableDictionary dictionary] retain];
+    
+    return [managers objectForKey:name];
 }
 
 -(id)initWithKeys:(NSDictionary *)keys
@@ -50,21 +58,6 @@ static MKitServiceManager *currentManager=nil;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSError *error=nil;
         BOOL result=[self saveModel:model error:&error];
-        if (resultBlock)
-            resultBlock(result,error);
-    });
-}
-
--(BOOL)updateModel:(MKitModel *)model error:(NSError **)error
-{
-    return NO;
-}
-
--(void)updateModelInBackground:(MKitModel *)model withBlock:(MKitBooleanResultBlock)resultBlock
-{
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSError *error=nil;
-        BOOL result=[self updateModel:model error:&error];
         if (resultBlock)
             resultBlock(result,error);
     });

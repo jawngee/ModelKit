@@ -12,15 +12,12 @@
 @interface MKitServiceManager : NSObject
 
 +(MKitServiceManager *)setupService:(NSString *)name withKeys:(NSDictionary *)keys;
-+(MKitServiceManager *)current;
++(MKitServiceManager *)managerForService:(NSString *)name;
 
 -(id)initWithKeys:(NSDictionary *)keys;
 
 -(BOOL)saveModel:(MKitModel *)model error:(NSError **)error;
 -(void)saveModelInBackground:(MKitModel *)model withBlock:(MKitBooleanResultBlock)resultBlock;
-
--(BOOL)updateModel:(MKitModel *)model error:(NSError **)error;
--(void)updateModelInBackground:(MKitModel *)model withBlock:(MKitBooleanResultBlock)resultBlock;
 
 -(BOOL)deleteModel:(MKitModel *)model error:(NSError **)error;
 -(void)deleteModelInBackground:(MKitModel *)model withBlock:(MKitBooleanResultBlock)resultBlock;
