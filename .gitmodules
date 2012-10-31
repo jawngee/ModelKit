@@ -6,4 +6,4 @@
 	url = git://github.com/johnezang/JSONKit.git
 [submodule "External/iso"]
 	path = External/iso
-	url = git@github.com:jawngee/iso-8601-date-formatter.git
+	url = git://github.com/jawngee/iso-8601-date-formatter.git

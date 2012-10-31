@@ -42,4 +42,12 @@
     }
 }
 
+-(void)test0002Date
+{
+    NSDate *d=[NSDate date];
+    NSDate *d2=[NSDate dateFromISO8601:[d ISO8601String]];
+    
+    STAssertTrue([[d ISO8601String] isEqualToString:[d2 ISO8601String]], @"Dates are not the same.");
+}
+
 @end
