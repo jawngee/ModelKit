@@ -99,6 +99,8 @@
     // Serialize
     NSString *json=[m1 serializeToJSON];
     
+    NSLog(@"%@",json);
+    
     // Make sure the context has been cleared
     [MKitModelContext clearAllContexts];
     m1=(TestModel *)[[MKitModelContext current] modelForObjectId:@"001" andClass:[TestModel class]];

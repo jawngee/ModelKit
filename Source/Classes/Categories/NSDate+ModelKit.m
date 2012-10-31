@@ -14,6 +14,7 @@
 +(NSDate *)dateFromISO8601:(NSString *)iso8601
 {
     ISO8601DateFormatter *formatter=[[[ISO8601DateFormatter alloc] init] autorelease];
+    formatter.includeTime=YES;
     return [formatter dateFromString:iso8601];
 }
 
@@ -21,7 +22,7 @@
 {
     ISO8601DateFormatter *formatter=[[[ISO8601DateFormatter alloc] init] autorelease];
     formatter.includeTime=YES;
-    return [formatter stringFromDate:self];
+    return [formatter stringFromDate:self timeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
 }
 
 @end
