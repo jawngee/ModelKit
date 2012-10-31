@@ -70,11 +70,13 @@ extern NSString *const MKitModelPropertyChangedNotification;
 @private
     BOOL _changing;
     BOOL _hasChanged;
+    NSMutableDictionary *_modelChanges;
 }
 
 @property (retain, nonatomic) NSString *modelId;            /**< Used internally */
 @property (readonly) NSString *modelName;                   /**< Name of the model.  If not overridden, class name is used */
 @property (assign, nonatomic) MKitModelState modelState;    /**< The current model state */
+@property (readonly) NSDictionary *modelChanges;
 
 // All models have these properties
 @property (copy, nonatomic) NSString *objectId;         /**< The object ID - Application specific */
@@ -144,6 +146,17 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * Resumes notifications when properties are changed.
  */
 -(void)endChanges;
+
+/**
+ * Resets tracking of changed properties.
+ */
+-(void)resetChanges;
+
+/**
+ * Retrieves all of the model's properties
+ * @return All of the model's properties
+ */
+-(NSDictionary *)properties;
 
 /**
  * Flattens the model into a dictionary or array.  If the serialized object contains model properties

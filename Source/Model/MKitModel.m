@@ -38,6 +38,8 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 @implementation MKitModel
 
+@synthesize modelChanges=_modelChanges;
+
 #pragma mark - Class Initialization
 
 +(void)initialize
@@ -66,6 +68,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
         _createdAt=[[NSDate date] retain];
         _updatedAt=[[NSDate date] retain];
         _modelId=[[NSString UUID] retain];
+        _modelChanges=[[NSMutableDictionary dictionary] retain];
         
         if (![[self class] conformsToProtocol:@protocol(MKitNoContext)])
             [self addToContext];
@@ -124,6 +127,8 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     self.createdAt=nil;
     self.updatedAt=nil;
     self.modelId=nil;
+    
+    [_modelChanges release];
     
     [super dealloc];
 }
@@ -246,6 +251,9 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     
     _hasChanged=YES;
     
+    if ((![keyPath hasPrefix:@"model"]) && ([@[@"updatedAt",@"createdAt",@"objectId"] indexOfObject:keyPath]==NSNotFound))
+        [_modelChanges setObject:change[NSKeyValueChangeNewKey] forKey:keyPath];
+    
     if (_changing)
         return;
     
@@ -295,6 +303,15 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:MKitModelPropertyChangedNotification object:self userInfo:nil];
+}
+
+-(void)resetChanges
+{
+    if (_changing)
+        return;
+    
+    _hasChanged=NO;
+    [_modelChanges removeAllObjects];
 }
 
 #pragma mark - Private serialization/deserialization methods
@@ -631,6 +648,23 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 }
 
 #pragma mark - Public serialization/deserialization methods
+
+-(NSDictionary *)properties
+{
+    MKitMutableOrderedDictionary *result=[MKitMutableOrderedDictionary dictionary];
+    
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+    
+    for(MKitReflectedProperty *prop in [ref.properties allValues])
+    {
+        id val=[self valueForKey:prop.name];
+        if (val==nil)
+            val=[NSNull null];
+        [result setObject:val forKey:prop.name];
+    }
+    
+    return result;
+}
 
 -(id)serialize
 {
