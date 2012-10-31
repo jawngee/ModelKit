@@ -7,6 +7,10 @@
 //
 
 #import "MKitParseServiceManager.h"
+#import "AFNetworking.h"
+
+@interface MKitParseServiceManager()
+@end
 
 @implementation MKitParseServiceManager
 
