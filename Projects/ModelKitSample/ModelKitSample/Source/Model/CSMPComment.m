@@ -10,6 +10,11 @@
 
 @implementation CSMPComment
 
++(void)load
+{
+    [self register];
+}
+
 -(NSString *)modelName
 {
     return @"Comment";

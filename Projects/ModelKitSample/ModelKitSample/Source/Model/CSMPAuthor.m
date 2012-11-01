@@ -10,6 +10,11 @@
 
 @implementation CSMPAuthor
 
++(void)load
+{
+    [self register];
+}
+
 -(NSString *)modelName
 {
     return @"Author";

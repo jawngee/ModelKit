@@ -6,14 +6,14 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import "MKitModel.h"
+#import "MKitParseModel.h"
 #import "CSMPAuthor.h"
 
-@interface CSMPPost : MKitModel
+@interface CSMPPost : MKitParseModel
 
 @property (assign, nonatomic) CSMPAuthor *author;
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *body;
-@property (copy, nonatomic) MKitMutableModelArray *comments;
+@property (retain, nonatomic) MKitMutableModelArray *comments;
 
 @end

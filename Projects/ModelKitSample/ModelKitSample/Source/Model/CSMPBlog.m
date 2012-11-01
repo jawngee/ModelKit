@@ -10,6 +10,11 @@
 
 @implementation CSMPBlog
 
++(void)load
+{
+    [self register];
+}
+
 -(NSString *)modelName
 {
     return @"Blog";

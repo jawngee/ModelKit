@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import "MKitModel.h"
+#import "MKitParseModel.h"
 
-@interface CSMPAuthor : MKitModel
+@interface CSMPAuthor : MKitParseModel
 
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *email;
