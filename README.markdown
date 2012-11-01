@@ -33,7 +33,8 @@ ModelKit makes heavy use of the Objective-C runtime to take care of all the boil
 * Properties that reference other subclasses of **MKitModel** should not use **retain** but should use **assign** instead.  This is because ModelKit uses the concept of contexts which retain the models, but more on that later.
 * If a property of your objects is an array of **MKitModel** subclasses, you need to use the **MKitMutableModelArray** instead of **NSMutableArray** for the property.
 * All models have the following properties:
-  * **objectId** - A unique identifier for the object
+  * **modelId** - A unique identifier for the object that model kit uses internally.
+  * **objectId** - A unique identifier for the object that is application specific.  If you are using a service like Parse, you typically will not set this directly, but let the service set it for you.  If you are using local persistence only, feel free to use this how you see fit.
   * **createdAt** - The date the object was created
   * **updatedAt** - The date the object was updated
   
@@ -42,7 +43,7 @@ Models can be serialized/deserialized to NSDictionary, as well as to JSON string
 
 Serializing to a dictionary is as easy as:
 
-    CSMPAuthor *author=[CSMPAuthor instanceWithId:@"001"];
+    CSMPAuthor *author=[CSMPAuthor instanceWithObjectId:@"001"];
     author.email=@"jon@interfacelab.com";
     author.name=@"Jon Gilkison";
     author.age=39;
@@ -56,6 +57,7 @@ The resulting dictionary would look like:
 	{
 	    createdAt = "2012-10-29 06:44:01 +0000";
 	    model = Author;
+	    modelId = AAAA-AAAA-AAAA-AAAA;
 	    objectId = 001;
 	    properties =     {
 	        age = 39;
@@ -83,6 +85,7 @@ Using the above example, the serialized JSON would look like:
 	    "iso": "2012-10-29T13:50:03+0700"
 	  },
 	  "model": "Author",
+	  "modelId": "AAAA-AAAA-AAAA-AAAA",
 	  "objectId": "001",
 	  "properties": {
 	    "age": 39,
@@ -130,7 +133,7 @@ No problem.  When serializing, ModelKit tracks the models that it is serializing
 	
 And then later in the code:
 
-	VeryConvolutedExample *example=[VeryConvolutedExample instanceWithId:@"0001"];
+	VeryConvolutedExample *example=[VeryConvolutedExample instanceWithObjectId:@"0001"];
 	example.circular=example;
 	
 	NSDictionary *serialized=[example serialize];
@@ -140,6 +143,7 @@ Now, let's look at the dictionary we serialized:
 	{
 	    createdAt = "2012-10-29 07:04:08 +0000";
 	    model = VeryConvolutedExample;
+	    modelId = AAAA-AAAA-AAAA-AAAA;
 	    objectId = 0001;
 	    properties =     {
 	        circular =         {
@@ -159,6 +163,7 @@ Here's the JSON example:
 	    "iso": "2012-10-29T14:04:58+0700"
 	  },
 	  "model": "VeryConvolutedExample",
+	  "modelId": "AAAA-AAAA-AAAA-AAAA",
 	  "objectId": "0001",
 	  "properties": {
 	    "circular": {
@@ -221,14 +226,14 @@ Once you assign an **objectId**, you can fetch that same instance later:
 
 	-(void)someAction:(id)sender
 	{
-    	CSMPAuthor *author=[CSMPAuthor instanceWithId:@"0001"]; // this is already auto-released
+    	CSMPAuthor *author=[CSMPAuthor instanceWithObjectId:@"0001"]; // this is already auto-released
     	author.name="Jon Gilkison";
     	author.email="jon@interfacelab.com";
 	}
 	
 	-(void)someOtherAction:(id)sender
 	{
-		CSMPAuthor *author=[CSMPAuthor instanceWithId:@"0001"];
+		CSMPAuthor *author=[CSMPAuthor instanceWithObjectId:@"0001"];
 		if ([author.name isEqualToString:@"Jon Gilkison"])
 			NSLog(@"Same instance.");
 	}
@@ -236,7 +241,7 @@ Once you assign an **objectId**, you can fetch that same instance later:
 ###Removing a Model From The Context
 Removing a model from a context is this simple:
 
-    CSMPAuthor *author=[CSMPAuthor instanceWithId:@"0001"];
+    CSMPAuthor *author=[CSMPAuthor instanceWithObjectId:@"0001"];
     [author removeFromContext];
    
 ###Multiple Contexts
@@ -247,7 +252,7 @@ There might be conditions where you want to create a temporary context, perhaps 
     
     // Load up a bunch of objects…
     for(int i=0; i<100; i++)
-    	[CSMPAuthor instanceWithId:[NSString stringWithFormat:@"%d",i]];
+    	[CSMPAuthor instanceWithObjectId:[NSString stringWithFormat:@"%d",i]];
     	
     // Do our processing
     
@@ -262,7 +267,7 @@ In a more complicated example, we can push a new context onto a stack, retain a 
 	    
     // Load up a bunch of objects…
     for(int i=0; i<100; i++)
-    	[CSMPAuthor instanceWithId:[NSString stringWithFormat:@"%d",i]];
+    	[CSMPAuthor instanceWithObjectId:[NSString stringWithFormat:@"%d",i]];
     	
     // Do our processing
     
@@ -276,7 +281,7 @@ In a more complicated example, we can push a new context onto a stack, retain a 
     
     // Create some more objects ...
     for(int i=0; i<100; i++)
-    	[CSMPAuthor instanceWithId:[NSString stringWithFormat:@"%d",i]];
+    	[CSMPAuthor instanceWithObjectId:[NSString stringWithFormat:@"%d",i]];
     	
     // Deactive the context
     [newContext deactivate];
@@ -326,7 +331,7 @@ There will definitely be times when you don't want your model to ever be added t
 
 Any instances of this object will not be added to the context ever, unless you do so manually:
 
-	CSMPAuthor *author=[CSMPAuthor instanceWithId:@"001"];
+	CSMPAuthor *author=[CSMPAuthor instanceWithObjectId:@"001"];
 	[author addToContext];
 	
 ###Context Information
@@ -344,7 +349,23 @@ You can use it:
 ## Tying to Backend Services
 ModelKit was originally designed to replace Parse.com's iOS SDK.  Therefore, a primary goal of this framework is not only model persistance/management, but tying those models to a backend, either a PaaS like Parse or Kinvey, or your own custom REST solution.
 
-More on this to come...
+Currently, ModelKit supports Parse through their REST API.
+
+### Setting Up The Service
+
+### Making Your Models Usable With The Service
+
+### Saving, Updating, Deleting and Fetching
+
+### Querying
+
+### Users
+
+### Files
+
+### GeoPoints
+
+### Calling Backend Code
 
 
 

@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Helper methods for NSString for use with ModelKit
+ */
 @interface NSString (ModelKit)
 
 /**

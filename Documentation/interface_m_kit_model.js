@@ -1,0 +1,28 @@
+var interface_m_kit_model =
+[
+    [ "addToContext", "interface_m_kit_model.html#a88a798be77b03b0a936dedee30243cc0", null ],
+    [ "beginChanges", "interface_m_kit_model.html#a9e6611393dbacace3bc9631c0ba18843", null ],
+    [ "deserialize:", "interface_m_kit_model.html#ab7168486a373d33276a60e0909e6ed0f", null ],
+    [ "deserializeFromJSON:", "interface_m_kit_model.html#a4d2aad21edda6f1f42fd741972a4b443", null ],
+    [ "endChanges", "interface_m_kit_model.html#a40bff0a24e2da39d0478454ba9a8c107", null ],
+    [ "instance", "interface_m_kit_model.html#a5d0bbc2eb3d876d979c4875cb11469d7", null ],
+    [ "instanceWithJSON:", "interface_m_kit_model.html#a91e80d02cedbd66842a0828b616cb1c3", null ],
+    [ "instanceWithModelId:", "interface_m_kit_model.html#a98f2f0e221a5e310d91b72cc99aeb311", null ],
+    [ "instanceWithObjectId:", "interface_m_kit_model.html#a1acd2d46e9b7100d6d7756f71b6fc968", null ],
+    [ "instanceWithSerializedData:", "interface_m_kit_model.html#abe725276c24a29fda994b399dd71f40b", null ],
+    [ "instanceWithSerializedData:fromJSON:", "interface_m_kit_model.html#a16122e9091936a18de3071d0cf3923ec", null ],
+    [ "parsePointer", "interface_m_kit_model.html#a144065b32af764f82867ce4532c23878", null ],
+    [ "properties", "interface_m_kit_model.html#a5b4368f5a007821a686d88ac7ba4247e", null ],
+    [ "register", "interface_m_kit_model.html#ac77a9c0b41b0dcdb6be77f164f9fe7cd", null ],
+    [ "removeFromContext", "interface_m_kit_model.html#a862b29ee98c260b5529b9fa0c776ac4e", null ],
+    [ "resetChanges", "interface_m_kit_model.html#afd26486d5372b89c0b5f34b7b56dcdb2", null ],
+    [ "serialize", "interface_m_kit_model.html#ac43d2d369cd4fd80faafefdca2c51d4a", null ],
+    [ "serializeToJSON", "interface_m_kit_model.html#aa4c536580fffccfa7f8fe65119886b8f", null ],
+    [ "createdAt", "interface_m_kit_model.html#a4a003b05b9aec38e846e813f10508019", null ],
+    [ "modelChanges", "interface_m_kit_model.html#a1d6af52200bc2c3c6c2af72f7d56efda", null ],
+    [ "modelId", "interface_m_kit_model.html#a32e9be11049ba14ad32a222c5bb67a74", null ],
+    [ "modelName", "interface_m_kit_model.html#a1c0605c04aafa203ba75f4da89663072", null ],
+    [ "modelState", "interface_m_kit_model.html#a7fe4973518ee4144dfc5b510fbd6849d", null ],
+    [ "objectId", "interface_m_kit_model.html#a40bdf5da434aac66dc025ef6965e728c", null ],
+    [ "updatedAt", "interface_m_kit_model.html#a319ff840329e3430ef6e34a6a6d5a336", null ]
+];

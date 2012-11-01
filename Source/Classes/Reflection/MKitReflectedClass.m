@@ -10,8 +10,16 @@
 #import <objc/runtime.h>
 #import "MKitReflectedProperty.h"
 
-@interface MKitReflectedClass()
+/**
+ * Private methods
+ */
+@interface MKitReflectedClass(Internal)
 
+/**
+ * Parses the properties for a given class
+ * @param class The class to parse properties for
+ * @param ignorePropPrefix Properties with this prefix are ignored
+ */
 -(void)parsePropertiesForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix;
 
 @end

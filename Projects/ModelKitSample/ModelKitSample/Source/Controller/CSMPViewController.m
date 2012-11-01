@@ -10,6 +10,8 @@
 #import "JSONKit.h"
 #import "MKitMutableModelArray.h"
 #import "CSMPAuthor.h"
+#import "CSMPPost.h"
+#import "CSMPComment.h"
 
 @interface CSMPViewController ()
 
@@ -19,6 +21,11 @@
 
 - (void)viewDidLoad
 {
+    CSMPPost *post=[CSMPPost instanceWithObjectId:@"AhKmx8FSGv"];
+    [post fetchInBackground:^(BOOL succeeded, NSError *error) {
+        NSLog(@"POST: %@",[post serialize]);
+    }];
+    
     [super viewDidLoad];
 }
 

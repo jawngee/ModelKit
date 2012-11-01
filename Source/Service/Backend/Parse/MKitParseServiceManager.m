@@ -21,10 +21,34 @@
 
 #define PARSE_BASE_URL @"https://api.parse.com/1/"
 
-@interface MKitParseServiceManager()
+/**
+ * Private methods
+ */
+@interface MKitParseServiceManager(Internal)
 
+/**
+ * Internal model update
+ * @param model The model to update
+ * @param props The properties to update
+ * @param error The error to assign to if one occurs
+ * @return YES if successful, otherwise NO
+ */
 -(BOOL)internalUpdateModel:(MKitModel *)model props:(NSDictionary *)props error:(NSError **)error;
+
+/**
+ * Internal model save
+ * @param model The model to update
+ * @param props The properties to update
+ * @param error The error to assign to if one occurs
+ * @return YES if successful, otherwise NO
+ */
 -(BOOL)internalSaveModel:(MKitModel *)model props:(NSDictionary *)props error:(NSError **)error;
+
+/**
+ * Binds a model to the data in a given dictionary
+ * @param model The model to bind
+ * @param data The data to bind to
+ */
 -(void)bindModel:(MKitModel *)model data:(NSDictionary *)data;
 
 @end
@@ -274,12 +298,12 @@
             NSDictionary *md=[data objectForKey:prop.name];
             if ((md[@"__type"]) && ([md[@"__type"] isEqualToString:@"Object"]))
             {
-                m=[prop.typeClass instanceWithId:md[@"objectId"]];
+                m=[prop.typeClass instanceWithObjectId:md[@"objectId"]];
                 [self bindModel:m data:md];
             }
             else if ((md[@"__type"]) && ([md[@"__type"] isEqualToString:@"Pointer"]))
             {
-                m=[prop.typeClass instanceWithId:md[@"objectId"]];
+                m=[prop.typeClass instanceWithObjectId:md[@"objectId"]];
                 if ((m.modelState==ModelStateNeedsData) && ([prop.typeClass isSubclassOfClass:[MKitServiceModel class]]))
                     [((MKitServiceModel *)m) fetchInBackground:nil];
             }
@@ -303,7 +327,7 @@
                         @throw [NSException exceptionWithName:@"Invalid Class Name" reason:[NSString stringWithFormat:@"Parse returned an unknown classname '%@'.",cname] userInfo:md];
                     
                     MKitModel *m=nil;
-                    m=[c instanceWithId:md[@"objectId"]];
+                    m=[c instanceWithObjectId:md[@"objectId"]];
                     if ((md[@"__type"]) && ([md[@"__type"] isEqualToString:@"Object"]))
                         [self bindModel:m data:md];
                     else if ((md[@"__type"]) && ([md[@"__type"] isEqualToString:@"Pointer"]))

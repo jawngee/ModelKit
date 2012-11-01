@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		FFB8CB7A1642732B00D43C8F /* ModelKit Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FFB8CB7B1642732B00D43C8F /* Build configuration list for PBXAggregateTarget "ModelKit Documentation" */;
+			buildPhases = (
+				FFB8CB7E1642733500D43C8F /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "ModelKit Documentation";
+			productName = "ModelKit Documentation";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		FF3C8CB5163936B0009EB62A /* MKitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8CB4163936B0009EB62A /* MKitModel.m */; };
 		FF3C8CC116393793009EB62A /* libAFNetworkingStatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CBE16393789009EB62A /* libAFNetworkingStatic.a */; };
@@ -500,6 +514,7 @@
 			targets = (
 				FFA54A9C16391DEA00F055A6 /* ModelKit */,
 				FFCFAA80163C655C00BC2E3E /* TestCases */,
+				FFB8CB7A1642732B00D43C8F /* ModelKit Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -526,6 +541,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		FFB8CB7E1642733500D43C8F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$(SRCROOT)../..\"\n/usr/local/bin/doxygen doxygen.config";
+		};
 		FFCFAA7F163C655C00BC2E3E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -676,6 +704,20 @@
 			};
 			name = Release;
 		};
+		FFB8CB7C1642732B00D43C8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FFB8CB7D1642732B00D43C8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		FFCFAA90163C655C00BC2E3E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -730,6 +772,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FFB8CB7B1642732B00D43C8F /* Build configuration list for PBXAggregateTarget "ModelKit Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB8CB7C1642732B00D43C8F /* Debug */,
+				FFB8CB7D1642732B00D43C8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		FFCFAA8F163C655C00BC2E3E /* Build configuration list for PBXNativeTarget "TestCases" */ = {
 			isa = XCConfigurationList;

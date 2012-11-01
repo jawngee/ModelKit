@@ -76,7 +76,7 @@ extern NSString *const MKitModelPropertyChangedNotification;
 @property (retain, nonatomic) NSString *modelId;            /**< Used internally */
 @property (readonly) NSString *modelName;                   /**< Name of the model.  If not overridden, class name is used */
 @property (assign, nonatomic) MKitModelState modelState;    /**< The current model state */
-@property (readonly) NSDictionary *modelChanges;
+@property (readonly) NSDictionary *modelChanges;            /**< List of model properties that have changed */
 
 // All models have these properties
 @property (copy, nonatomic) NSString *objectId;         /**< The object ID - Application specific */
@@ -93,14 +93,24 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * Creates an instance with the given object id, but first checks the context for
  * an existing model of the same class and matching id, returning that if it exists.
  * @param objId The object id
+ * @return A new instance if object id is not found, otherwise matching instance with object id
  */
-+(id)instanceWithId:(NSString *)objId;
++(id)instanceWithObjectId:(NSString *)objId;
+
+/**
+ * Creates an instance with the given model id, but first checks the context for
+ * an existing model of the same class and matching id, returning that if it exists.
+ * @param modId The model id
+ * @return A new instance if model id is not found, otherwise matching instance with model id
+ */
++(id)instanceWithModelId:(NSString *)modId;
 
 /**
  * Creates a new instance with the contents of a dictionary.  If the dictionary
  * contains an objectId, the context is checked first and if an object of the
  * same class and id exists, refreshes that object's data with the dictionary.
- * @param dictionary The dictionary of data to build the model from
+ * @param data The data to build the model from
+ * @return A new instance
  */
 +(id)instanceWithSerializedData:(id)data;
 
@@ -109,8 +119,9 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * Creates a new instance with the contents of a dictionary.  If the dictionary
  * contains an objectId, the context is checked first and if an object of the
  * same class and id exists, refreshes that object's data with the dictionary.
- * @param dictionary The dictionary of data to build the model from
+ * @param data The data to build the model from
  * @param fromJSON Tells us if the dictionary of data is from a JSON string
+ * @return A new instance
  */
 +(id)instanceWithSerializedData:(id)data fromJSON:(BOOL)fromJSON;
 
@@ -120,6 +131,7 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * same class and id exists, refreshes that object's data with the contents of
  * the JSON.
  * @param JSONString The JSONString to build the model from
+ * @return A new instance
  */
 +(id)instanceWithJSON:(NSString *)JSONString;
 
@@ -175,7 +187,7 @@ extern NSString *const MKitModelPropertyChangedNotification;
 
 /**
  * Loads properties from a dictionary.
- * @param dictionary The dictionary to load values from
+ * @param data The data to load values from
  */
 -(void)deserialize:(id)data;
 

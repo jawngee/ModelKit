@@ -19,11 +19,11 @@
  */
 @interface MKitModelContext : NSObject
 {
-    NSMutableDictionary *modelStack;
-    NSMutableDictionary *classCache;
+    NSMutableDictionary *modelStack;    /**< Dictionary of models keyed by modelId */
+    NSMutableDictionary *classCache;    /**< Dictionary of models classified by thier objectId and class */
     
-    NSUInteger contextSize;
-    NSUInteger contextCount;
+    NSUInteger contextSize;             /**< The rough estimate of the size of the context */
+    NSUInteger contextCount;            /**< The number of items stored in the context */
 }
 
 @property (readonly) NSUInteger contextSize;

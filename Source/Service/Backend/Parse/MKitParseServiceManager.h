@@ -9,6 +9,9 @@
 #import "MKitServiceManager.h"
 #import "AFNetworking.h"
 
+/**
+ * Parse.com Service Manager
+ */
 @interface MKitParseServiceManager : MKitServiceManager
 {
 @private

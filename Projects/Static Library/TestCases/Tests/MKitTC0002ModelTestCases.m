@@ -13,7 +13,7 @@
 
 -(TestModel *)makeModelWithId:(NSString *)modelId
 {
-    TestModel *m1=[TestModel instanceWithId:modelId];
+    TestModel *m1=[TestModel instanceWithObjectId:modelId];
     
     m1.stringV=modelId;
     m1.shortV=192;
@@ -65,9 +65,9 @@
     // Make sure we have 4 objects in the context
     STAssertTrue([MKitModelContext current].contextCount==4, @"Context count mismatch, should be 4.");
     
-    m2=[TestModel instanceWithId:@"002"];
-    m3=[TestModel instanceWithId:@"003"];
-    m4=[TestModel instanceWithId:@"004"];
+    m2=[TestModel instanceWithObjectId:@"002"];
+    m3=[TestModel instanceWithObjectId:@"003"];
+    m4=[TestModel instanceWithObjectId:@"004"];
 
     
     STAssertTrue(m1.amodelV==m4, @"Model didn't deserialize correctly.");
@@ -115,9 +115,9 @@
     // Make sure we have 4 objects in the context
     STAssertTrue([MKitModelContext current].contextCount==4, @"Context count mismatch, should be 4.");
     
-    m2=[TestModel instanceWithId:@"002"];
-    m3=[TestModel instanceWithId:@"003"];
-    m4=[TestModel instanceWithId:@"004"];
+    m2=[TestModel instanceWithObjectId:@"002"];
+    m3=[TestModel instanceWithObjectId:@"003"];
+    m4=[TestModel instanceWithObjectId:@"004"];
     
     
     STAssertTrue(m1.amodelV==m4, @"Model didn't deserialize correctly.");

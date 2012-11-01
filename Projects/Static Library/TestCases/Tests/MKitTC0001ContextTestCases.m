@@ -30,7 +30,7 @@
 {
     [MKitModelContext clearAllContexts];
     
-    TestModel *model=[TestModel instanceWithId:@"hey"];
+    TestModel *model=[TestModel instanceWithObjectId:@"hey"];
     
     STAssertTrue([MKitModelContext current].contextSize==80, @"Contexts size mismatch.");
     STAssertTrue([MKitModelContext current].contextCount==1, @"Contexts count mismatch.");
@@ -47,7 +47,7 @@
     
     [MKitModelContext push];
     
-    [TestModel instanceWithId:@"hey"];
+    [TestModel instanceWithObjectId:@"hey"];
     
     STAssertTrue([MKitModelContext current].contextSize==80, @"Contexts size mismatch.");
     STAssertTrue([MKitModelContext current].contextCount==1, @"Contexts count mismatch.");
@@ -67,7 +67,7 @@
 
     [context activate];
     
-    [TestModel instanceWithId:@"hey"];
+    [TestModel instanceWithObjectId:@"hey"];
     
     STAssertTrue([MKitModelContext current].contextSize==80, @"Contexts size mismatch.");
     STAssertTrue([MKitModelContext current].contextCount==1, @"Contexts count mismatch.");
@@ -88,12 +88,12 @@
 
 -(void)test0004FindModel
 {
-    TestModel *m=[TestModel instanceWithId:@"hey"];
+    TestModel *m=[TestModel instanceWithObjectId:@"hey"];
 
     TestModel *m2=(TestModel *)[[MKitModelContext current] modelForObjectId:@"hey" andClass:[TestModel class]];
     STAssertTrue(m==m2, @"Objects do not match");
     
-    m2=[TestModel instanceWithId:@"hey"];
+    m2=[TestModel instanceWithObjectId:@"hey"];
     STAssertTrue(m==m2, @"Objects do not match");
     
     [[MKitModelContext current] clear];
@@ -103,12 +103,12 @@
 
 -(void)test0005SaveContext
 {
-    [TestModel instanceWithId:@"001"];
-    [TestModel instanceWithId:@"002"];
-    [TestModel instanceWithId:@"003"];
-    [TestModel instanceWithId:@"004"];
-    [TestModel instanceWithId:@"005"];
-    [TestModel instanceWithId:@"006"];
+    [TestModel instanceWithObjectId:@"001"];
+    [TestModel instanceWithObjectId:@"002"];
+    [TestModel instanceWithObjectId:@"003"];
+    [TestModel instanceWithObjectId:@"004"];
+    [TestModel instanceWithObjectId:@"005"];
+    [TestModel instanceWithObjectId:@"006"];
     
     STAssertTrue([[MKitModelContext current] saveToFile:@"/tmp/persist.plist" error:nil], @"This should never fail.");
     
@@ -131,12 +131,12 @@
 {
     [MKitModelContext clearAllContexts];
     
-    TestModel *m1=[TestModel instanceWithId:@"001"];
-    TestModel *m2=[TestModel instanceWithId:@"002"];
-    TestModel *m3=[TestModel instanceWithId:@"003"];
-    TestModel *m4=[TestModel instanceWithId:@"004"];
-    TestModel *m5=[TestModel instanceWithId:@"005"];
-    TestModel *m6=[TestModel instanceWithId:@"006"];
+    TestModel *m1=[TestModel instanceWithObjectId:@"001"];
+    TestModel *m2=[TestModel instanceWithObjectId:@"002"];
+    TestModel *m3=[TestModel instanceWithObjectId:@"003"];
+    TestModel *m4=[TestModel instanceWithObjectId:@"004"];
+    TestModel *m5=[TestModel instanceWithObjectId:@"005"];
+    TestModel *m6=[TestModel instanceWithObjectId:@"006"];
     
     m1.stringV=@"Hey 1";
     m1.shortV=192;
@@ -196,12 +196,12 @@
     [MKitModelContext clearAllContexts];
     STAssertTrue([[MKitModelContext current] loadFromFile:@"/tmp/persist.plist" error:nil]==YES,@"This should never fail.");
     
-    m1=[TestModel instanceWithId:@"001"];
-    m2=[TestModel instanceWithId:@"002"];
-    m3=[TestModel instanceWithId:@"003"];
-    m4=[TestModel instanceWithId:@"004"];
-    m5=[TestModel instanceWithId:@"005"];
-    m6=[TestModel instanceWithId:@"006"];
+    m1=[TestModel instanceWithObjectId:@"001"];
+    m2=[TestModel instanceWithObjectId:@"002"];
+    m3=[TestModel instanceWithObjectId:@"003"];
+    m4=[TestModel instanceWithObjectId:@"004"];
+    m5=[TestModel instanceWithObjectId:@"005"];
+    m6=[TestModel instanceWithObjectId:@"006"];
     
     STAssertTrue([m1.stringV isEqualToString:@"Hey 1"],@"stringV not equal");
     STAssertTrue(m1.shortV==192,@"shortV not equal");

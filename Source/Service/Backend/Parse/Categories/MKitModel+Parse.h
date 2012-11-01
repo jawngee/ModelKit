@@ -8,10 +8,14 @@
 
 #import "MKitModel.h"
 
+/**
+ * Helper methods for dealing with models and Parse
+ */
 @interface MKitModel (Parse)
 
 /**
  * Returns Parse's pointer type.
+ * @return The model as a dictionary in Parse's Pointer format.
  */
 -(NSDictionary *)parsePointer;
 

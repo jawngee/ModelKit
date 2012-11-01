@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Utility methods for converting dates to ISO 8601 and back.
+ */
 @interface NSDate (ModelKit)
 
 /**

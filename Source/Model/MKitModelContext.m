@@ -10,10 +10,27 @@
 #import "MKitModel.h"
 #import <malloc/malloc.h>
 
-@interface MKitModelContext()
+/**
+ * Private methods
+ */
+@interface MKitModelContext(Internal)
 
+/**
+ * Notification that the model state has changed
+ * @param notification The notification
+ */
 -(void)modelStateChanged:(NSNotification *)notification;
+
+/**
+ * Notification that the model has gained an objectId
+ * @param notification The notification
+ */
 -(void)modelGainedIdentifier:(NSNotification *)notification;
+
+/**
+ * Notification that the model's ID has changed
+ * @param notification The notification
+ */
 -(void)modelIdentifierChanged:(NSNotification *)notification;
 
 @end

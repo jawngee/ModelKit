@@ -25,13 +25,60 @@ NSString *const MKitObjectIdentifierChangedNotification=@"MKitObjectIdentifierCh
 NSString *const MKitModelPropertyChangedNotification=@"MKitModelPropertyChangedNotification";
 NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChangedNotification";
 
-@interface MKitModel()
+/**
+ * Private methods
+ */
+@interface MKitModel(Internal)
 
+/**
+ * Returns an NSDate from the val, which may be a string or dictionary.
+ * @param val The value to convert to an NSDate
+ * @return The converted date
+ */
 -(NSDate *)getDateFromId:(id)val;
+
+/**
+ * Searches the objectArray for an object with matching objectId or modelId specified in the dict.
+ * @param dict The dictionary containing the objectId or modelId of the object to search for
+ * @param objectArray The object array to search through
+ * @return The found model's data dictionary, nil if not found.
+ */
 -(NSDictionary *)getObjectFromDictionary:(NSDictionary *)dict objectArray:(NSArray *)objectArray;
+
+/**
+ * Flattens an array into a serialized array
+ * @param array The array to flatten
+ * @param encodeForJSON Is this array being encoded for JSON
+ * @param encodingCache A cache of objects
+ * @return The flattened array
+ */
 -(NSArray *)flattenArray:(NSArray *)array encodeForJSON:(BOOL)encodeForJSON encodingCache:(MKitMutableOrderedDictionary *)encodingCache;
+
+/**
+ * Main serialization method
+ * @param encodeForJSON This method is being serialized for eventual JSON
+ * @param encodingCache The cache of objects being serialized
+ */
 -(void)serializeForJSON:(BOOL)encodeForJSON encodingCache:(MKitMutableOrderedDictionary *)encodingCache;
+
+/**
+ * Unflattens a serialized array back into its original form.
+ * @param array The flattened array to be deserialized
+ * @param decodeFromJSON Indiciates this array came from a JSON string
+ * @param arrayClass The class of the new deserialized array, if nil defaults to NSMutableArray
+ * @param objectArray Array of already deserialized objects for resolving references
+ * @param decodingCache Dictionary of already deserialzied objects
+ * @return The unflattened array
+ */
 -(id)unflattenArray:(NSArray *)array decodeFromJSON:(BOOL)decodeFromJSON arrayClass:(Class)arrayClass objectArray:(NSArray *)objectArray decodingCache:(NSMutableDictionary *)decodingCache;
+
+/**
+ * Main deserializtion method
+ * @param dictionary The dictionary being deserialized
+ * @param fromJSON Indicates the dictionary came from JSON
+ * @param objectArray An array of already deserialized objects
+ * @param decodingCache Dictionary of already deserialized objects
+ */
 -(void)deserialize:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON objectArray:(NSArray *)objectArray decodingCache:(NSMutableDictionary *)decodingCache;
 
 @end
@@ -140,7 +187,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     return [[[[self class] alloc] init] autorelease];
 }
 
-+(id)instanceWithId:(NSString *)objId
++(id)instanceWithObjectId:(NSString *)objId
 {
     MKitModel *instance=[[MKitModelContext current] modelForObjectId:objId andClass:[self class]];
     if (instance!=nil)
@@ -149,6 +196,18 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     instance=[[[[self class] alloc] init] autorelease];
     instance.objectId=objId;
     instance.modelState=ModelStateNeedsData;
+    
+    return instance;
+}
+
++(id)instanceWithModelId:(NSString *)modId
+{
+    MKitModel *instance=[[MKitModelContext current] modelForModelId:modId];
+    if (instance!=nil)
+        return instance;
+    
+    instance=[[[[self class] alloc] init] autorelease];
+    instance.modelId=modId;
     
     return instance;
 }
@@ -499,7 +558,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                         @throw [NSException exceptionWithName:@"Missing Model Dictionary" reason:@"Could not find model dictionary for model pointer" userInfo:d];
                     
                     if ((lookupDict[@"objectId"]) && (lookupDict[@"objectId"]!=[NSNull null]))
-                        model=[mc instanceWithId:lookupDict[@"objectId"]];
+                        model=[mc instanceWithObjectId:lookupDict[@"objectId"]];
                     else if ((lookupDict[@"modelId"]) && (lookupDict[@"modelId"]!=[NSNull null]))
                     {
                         model=[[MKitModelContext current] modelForModelId:lookupDict[@"modelId"]];
@@ -588,7 +647,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                                     @throw [NSException exceptionWithName:@"Missing Model Dictionary" reason:@"Could not find model dictionary for model pointer" userInfo:md];
                                 
                                 if ((lookupDict[@"objectId"]) && (lookupDict[@"objectId"]!=[NSNull null]))
-                                    model=[p.typeClass instanceWithId:lookupDict[@"objectId"]];
+                                    model=[p.typeClass instanceWithObjectId:lookupDict[@"objectId"]];
                                 else if ((lookupDict[@"modelId"]) && (lookupDict[@"modelId"]!=[NSNull null]))
                                 {
                                     model=[[MKitModelContext current] modelForModelId:lookupDict[@"modelId"]];

@@ -24,6 +24,7 @@
 /**
  * Retrieves the registered class for a given model
  * @param modelName The name of the model to retrieve
+ * @return The Class for the given model name, nil if not found.
  */
 +(Class)registeredClassForModel:(NSString *)modelName;
 
