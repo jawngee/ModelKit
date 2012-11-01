@@ -89,19 +89,18 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 #pragma mark - Class Initialization
 
++(NSString *)modelName
+{
+    return NSStringFromClass(self);
+}
+
 +(void)register
 {
     // We are going to register this class and it's model name with the registry
     // so that when we pull down objects from a service we can correctly map
     // back and forth.
     
-    MKitModel *inst=[[self alloc] init];
-
-    if (inst.modelName!=nil)
-        [MKitModelRegistry registerModel:inst.modelName forClass:[self class]];
-    
-    [inst removeFromContext];
-    [inst release];
+    [MKitModelRegistry registerModel:[self modelName] forClass:self];
 }
 
 #pragma mark Init/Dealloc
@@ -429,8 +428,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
             if (![encodingCache objectForKey:m.modelId])
                 [m serializeForJSON:encodeForJSON encodingCache:encodingCache];
             
-            NSString *modelName=(m.modelName) ? m.modelName : NSStringFromClass([m class]);
-            [replacement addObject:@{@"__type":@"ModelPointer",@"objectId":(m.objectId) ? m.objectId : [NSNull null],@"modelId":m.modelId,@"model":modelName}];
+            [replacement addObject:@{@"__type":@"ModelPointer",@"objectId":(m.objectId) ? m.objectId : [NSNull null],@"modelId":m.modelId,@"model":[[m class] modelName]}];
         }
         else if ([ele isKindOfClass:[NSArray class]])
             [replacement addObject:[self flattenArray:(NSArray *)ele encodeForJSON:encodeForJSON encodingCache:encodingCache]];
@@ -462,10 +460,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     
     [result setObject:self.modelId forKey:@"modelId"];
     
-    if (self.modelName)
-        [result setObject:self.modelName forKey:@"model"];
-    else
-        [result setObject:NSStringFromClass([self class]) forKey:@"model"];
+    [result setObject:[[self class] modelName] forKey:@"model"];
     
     if (self.objectId)
         [result setObject:self.objectId forKey:@"objectId"];
@@ -505,8 +500,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                 if (![encodingCache objectForKey:m.modelId])
                     [m serializeForJSON:encodeForJSON encodingCache:encodingCache];
 
-                NSString *modelName=(m.modelName) ? m.modelName : NSStringFromClass([m class]);
-                [props setObject:@{@"__type":@"ModelPointer",@"objectId":(m.objectId) ? m.objectId : [NSNull null],@"modelId":m.modelId,@"model":modelName} forKey:p.name];
+                [props setObject:@{@"__type":@"ModelPointer",@"objectId":(m.objectId) ? m.objectId : [NSNull null],@"modelId":m.modelId,@"model":[[m class] modelName]} forKey:p.name];
             }
         }
         else if (p.type==refTypeArray)

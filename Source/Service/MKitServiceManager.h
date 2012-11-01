@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "MKitModel.h"
-#import "MKitModelQuery.h"
+#import "AFNetworking.h"
+
+@class MKitServiceModelQuery;
 
 /**
  * Abstract class for building an interface between models and a backend service
@@ -42,7 +44,7 @@
  * @param modelClass The class of the model to return the query for
  * @return The query object
  */
--(MKitModelQuery *)queryForModelClass:(Class)modelClass;
+-(MKitServiceModelQuery *)queryForModelClass:(Class)modelClass;
 
 /**
  * Saves the model with the service asynchronously.  When subclassing MKitServiceManager, you must implement this method.
@@ -90,6 +92,9 @@
  * @param resultBlock The block that gets called after the fetch completes
  */
 -(void)fetchModelInBackground:(MKitModel *)model withBlock:(MKitBooleanResultBlock)resultBlock;
+
+-(AFHTTPRequestOperation *)classRequestWithMethod:(NSString *)method class:(Class)class params:(NSDictionary *)params body:(NSData *)body;
+-(AFHTTPRequestOperation *)modelRequestWithMethod:(NSString *)method model:(MKitModel *)model params:(NSDictionary *)params body:(NSData *)body;
 
 
 @end

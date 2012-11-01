@@ -10,7 +10,7 @@
 
 @implementation MKitServiceModel
 
-+(MKitModelQuery *)query
++(MKitServiceModelQuery *)query
 {
     return [[self service] queryForModelClass:self];
 }

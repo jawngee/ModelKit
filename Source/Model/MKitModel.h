@@ -74,7 +74,6 @@ extern NSString *const MKitModelPropertyChangedNotification;
 }
 
 @property (retain, nonatomic) NSString *modelId;            /**< Used internally */
-@property (readonly) NSString *modelName;                   /**< Name of the model.  If not overridden, class name is used */
 @property (assign, nonatomic) MKitModelState modelState;    /**< The current model state */
 @property (readonly) NSDictionary *modelChanges;            /**< List of model properties that have changed */
 
@@ -134,6 +133,13 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * @return A new instance
  */
 +(id)instanceWithJSON:(NSString *)JSONString;
+
+/**
+ * Returns the name of the model, typically to specify a different name for
+ * a backend service, eg PREFIXPost becomes Post.
+ * @return The name of the model.  If not overridden, returns the name of the class.
+ */
++(NSString *)modelName;
 
 /**
  * Registers this class in the model registry.  If you implement

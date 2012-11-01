@@ -23,5 +23,11 @@
 #import "MKitModelContext.h"
 
 #import "MKitServiceManager.h"
+#import "MKitServiceModel.h"
+#import "MKitServiceModelQuery.h"
+
+#import "MKitParseModel.h"
+#import "MKitParseModelQuery.h"
+#import "MKitParseServiceManager.h"
 
 #endif

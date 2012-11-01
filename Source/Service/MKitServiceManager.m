@@ -7,6 +7,7 @@
 //
 
 #import "MKitServiceManager.h"
+#import "MKitServiceModelQuery.h"
 
 @implementation MKitServiceManager
 
@@ -48,7 +49,7 @@ static NSMutableDictionary *managers=nil;
     return self;
 }
 
--(MKitModelQuery *)queryForModelClass:(Class)modelClass
+-(MKitServiceModelQuery *)queryForModelClass:(Class)modelClass
 {
     return nil;
 }
@@ -96,6 +97,16 @@ static NSMutableDictionary *managers=nil;
         if (resultBlock)
             resultBlock(result,error);
     });
+}
+
+-(AFHTTPRequestOperation *)classRequestWithMethod:(NSString *)method class:(Class)class params:(NSDictionary *)params body:(NSData *)body
+{
+    return nil;
+}
+
+-(AFHTTPRequestOperation *)modelRequestWithMethod:(NSString *)method model:(MKitModel *)model params:(NSDictionary *)params body:(NSData *)body
+{
+    return nil;
 }
 
 @end

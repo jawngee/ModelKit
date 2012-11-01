@@ -15,7 +15,7 @@
     [self register];
 }
 
--(NSString *)modelName
++(NSString *)modelName
 {
     return @"Author";
 }

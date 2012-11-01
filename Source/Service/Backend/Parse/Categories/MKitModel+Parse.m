@@ -15,7 +15,7 @@
     if (!self.objectId)
         return nil;
     
-    return @{@"__type":@"Pointer",@"className":(self.modelName) ? self.modelName : NSStringFromClass([self class]),@"objectId":self.objectId};
+    return @{@"__type":@"Pointer",@"className":[[self class] modelName],@"objectId":self.objectId};
 }
 
 @end

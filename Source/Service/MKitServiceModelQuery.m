@@ -6,19 +6,21 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import "MKitModelQuery.h"
+#import "MKitServiceModelQuery.h"
 
-@implementation MKitModelQuery
+@implementation MKitServiceModelQuery
 
-+(MKitModelQuery *)queryForModelClass:(Class)_modelClass
++(MKitServiceModelQuery *)queryForModelClass:(Class)_modelClass manager:(MKitServiceManager *)_manager
 {
-    return [[[self alloc] initWithModelClass:_modelClass] autorelease];
+    return [[[self alloc] initWithModelClass:_modelClass manager:_manager] autorelease];
 }
 
--(id)initWithModelClass:(Class)_modelClass
+-(id)initWithModelClass:(Class)_modelClass manager:(MKitServiceManager *)_manager
 {
     if ((self=[super init]))
     {
+        manager=_manager;
+        orders=[[NSMutableArray array] retain];
         includes=[[NSMutableArray array] retain];
         conditions=[[NSMutableArray array] retain];
         modelClass=_modelClass;
@@ -30,36 +32,42 @@
 
 -(void)dealloc
 {
-    [includes release];
+    [orders release];
     [conditions release];
     [refClass release];
     [super dealloc];
 }
 
--(MKitModelQuery *)includeKey:(NSString *)key
+-(MKitServiceModelQuery *)includeKey:(NSString *)key
 {
     [includes addObject:key];
     return self;
 }
 
--(MKitModelQuery *)keyExists:(NSString *)key
+-(MKitServiceModelQuery *)keyExists:(NSString *)key
 {
     [conditions addObject:@{@"condition":@(KeyExists),@"key":key}];
     return self;
 }
 
--(MKitModelQuery *)keyDoesNotExit:(NSString *)key
+-(MKitServiceModelQuery *)keyDoesNotExit:(NSString *)key
 {
     [conditions addObject:@{@"condition":@(KeyNotExist),@"key":key}];
     return self;
 }
 
--(MKitModelQuery *)key:(NSString *)key condition:(MKitQueryCondition)condition value:(id)val
+-(MKitServiceModelQuery *)key:(NSString *)key condition:(MKitQueryCondition)condition value:(id)val
 {
     if (val==nil)
         val=[NSNull null];
     
     [conditions addObject:@{@"condition":@(condition),@"key":key,@"value":val}];
+    return self;
+}
+
+-(MKitServiceModelQuery *)orderBy:(NSString *)key direction:(MKitQueryOrder)order
+{
+    [orders addObject:@{@"key":key,@"dir":@(order)}];
     return self;
 }
 

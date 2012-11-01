@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import "MKitModelQuery.h"
+#import "MKitServiceModelQuery.h"
 
-@interface MKitParseModelQuery : MKitModelQuery
+@interface MKitParseModelQuery : MKitServiceModelQuery
 
 @end

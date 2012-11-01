@@ -390,6 +390,7 @@
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../Source\"/**",
 					"\"$(SRCROOT)/../../External/JSONKit\"",
+					"\"$(SRCROOT)/../../External/AFNetworkingStatic/External/AFNetworking/AFNetworking\"",
 				);
 				INFOPLIST_FILE = "ModelKitSample/ModelKitSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -407,6 +408,7 @@
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../Source\"/**",
 					"\"$(SRCROOT)/../../External/JSONKit\"",
+					"\"$(SRCROOT)/../../External/AFNetworkingStatic/External/AFNetworking/AFNetworking\"",
 				);
 				INFOPLIST_FILE = "ModelKitSample/ModelKitSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
