@@ -123,6 +123,12 @@ extern NSString *const MKitModelPropertyChangedNotification;
  */
 +(id)instanceWithJSON:(NSString *)JSONString;
 
+/**
+ * Registers this class in the model registry.  If you implement
+ * a custom model name, you need to call this from the load method of 
+ * your class.
+ */
++(void)register;
 
 /**
  * Adds the object to the context.  This is done automatically, but for models

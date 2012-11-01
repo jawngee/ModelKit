@@ -42,7 +42,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 #pragma mark - Class Initialization
 
-+(void)initialize
++(void)register
 {
     // We are going to register this class and it's model name with the registry
     // so that when we pull down objects from a service we can correctly map
@@ -148,6 +148,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     
     instance=[[[[self class] alloc] init] autorelease];
     instance.objectId=objId;
+    instance.modelState=ModelStateNeedsData;
     
     return instance;
 }
