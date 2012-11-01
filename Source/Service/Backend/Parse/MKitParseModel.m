@@ -10,9 +10,14 @@
 
 @implementation MKitParseModel
 
--(MKitServiceManager *)service
+static MKitServiceManager *parseService=nil;
+
++(MKitServiceManager *)service
 {
-    return [MKitServiceManager managerForService:@"Parse"];
+    if (parseService==nil)
+        parseService=[MKitServiceManager managerForService:@"Parse"];
+    
+    return parseService;
 }
 
 @end

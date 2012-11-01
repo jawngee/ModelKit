@@ -10,38 +10,43 @@
 
 @implementation MKitServiceModel
 
--(MKitServiceManager *)service
++(MKitModelQuery *)query
+{
+    return [[self service] queryForModelClass:self];
+}
+
++(MKitServiceManager *)service
 {
     return nil;
 }
 
 -(BOOL)save:(NSError **)error
 {
-    return [[self service] saveModel:self error:error];
+    return [[[self class] service] saveModel:self error:error];
 }
 
 -(void)saveInBackground:(MKitBooleanResultBlock)resultBlock
 {
-    [[self service] saveModelInBackground:self withBlock:resultBlock];
+    [[[self class] service] saveModelInBackground:self withBlock:resultBlock];
 }
 
 -(BOOL)delete:(NSError **)error
 {
-    return [[self service] deleteModel:self error:error];
+    return [[[self class] service] deleteModel:self error:error];
 }
 
 -(void)deleteInBackground:(MKitBooleanResultBlock)resultBlock
 {
-    [[self service] deleteModelInBackground:self withBlock:resultBlock];
+    [[[self class] service] deleteModelInBackground:self withBlock:resultBlock];
 }
 
 -(BOOL)fetch:(NSError **)error
 {
-    return [[self service] fetchModel:self error:error];
+    return [[[self class] service] fetchModel:self error:error];
 }
 
 -(void)fetchInBackground:(MKitBooleanResultBlock)resultBlock
 {
-    [[self service] fetchModelInBackground:self withBlock:resultBlock];
+    [[[self class] service] fetchModelInBackground:self withBlock:resultBlock];
 }
 @end

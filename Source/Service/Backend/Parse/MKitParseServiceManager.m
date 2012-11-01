@@ -18,6 +18,7 @@
 #import "MKitReflectionManager.h"
 #import "MKitServiceModel.h"
 #import "MKitModelRegistry.h"
+#import "MKitParseModelQuery.h"
 
 #define PARSE_BASE_URL @"https://api.parse.com/1/"
 
@@ -83,6 +84,11 @@
     [_restKey release];
     
     [super dealloc];
+}
+
+-(MKitModelQuery *)queryForModelClass:(Class)modelClass
+{
+    return [MKitParseModelQuery queryForModelClass:modelClass];
 }
 
 -(BOOL)internalUpdateModel:(MKitModel *)model props:(NSDictionary *)props error:(NSError **)error

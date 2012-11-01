@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MKitModel.h"
+#import "MKitModelQuery.h"
 
 /**
  * Abstract class for building an interface between models and a backend service
@@ -35,6 +36,13 @@
  * @return The new instance
  */
 -(id)initWithKeys:(NSDictionary *)keys;
+
+/**
+ * Returns a service specific query for a given class
+ * @param modelClass The class of the model to return the query for
+ * @return The query object
+ */
+-(MKitModelQuery *)queryForModelClass:(Class)modelClass;
 
 /**
  * Saves the model with the service asynchronously.  When subclassing MKitServiceManager, you must implement this method.

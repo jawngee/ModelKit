@@ -8,6 +8,7 @@
 
 #import "MKitModel.h"
 #import "MKitServiceManager.h"
+#import "MKitModelQuery.h"
 
 /**
  * Abstract model class that is tied to a backend service
@@ -25,10 +26,15 @@
 @interface MKitServiceModel : MKitModel
 
 /**
+ * Returns a query object for the model.
+ */
++(MKitModelQuery *)query;
+
+/**
  * Returns the service manager this model uses for persistence
  * @return service The service this model uses
  */
--(MKitServiceManager *)service;
++(MKitServiceManager *)service;
 
 /**
  * Saves the model synchronously.

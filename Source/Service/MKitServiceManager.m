@@ -48,6 +48,11 @@ static NSMutableDictionary *managers=nil;
     return self;
 }
 
+-(MKitModelQuery *)queryForModelClass:(Class)modelClass
+{
+    return nil;
+}
+
 -(BOOL)saveModel:(MKitModel *)model error:(NSError **)error
 {
     return NO;
