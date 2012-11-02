@@ -24,7 +24,6 @@
         includes=[[NSMutableArray array] retain];
         conditions=[[NSMutableArray array] retain];
         modelClass=_modelClass;
-        refClass=[[MKitReflectionManager reflectionForClass:_modelClass ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]] retain];
     }
     
     return self;
@@ -34,41 +33,35 @@
 {
     [orders release];
     [conditions release];
-    [refClass release];
     [super dealloc];
 }
 
--(MKitServiceModelQuery *)includeKey:(NSString *)key
+-(void)includeKey:(NSString *)key
 {
     [includes addObject:key];
-    return self;
 }
 
--(MKitServiceModelQuery *)keyExists:(NSString *)key
+-(void)keyExists:(NSString *)key
 {
     [conditions addObject:@{@"condition":@(KeyExists),@"key":key}];
-    return self;
 }
 
--(MKitServiceModelQuery *)keyDoesNotExit:(NSString *)key
+-(void)keyDoesNotExist:(NSString *)key
 {
     [conditions addObject:@{@"condition":@(KeyNotExist),@"key":key}];
-    return self;
 }
 
--(MKitServiceModelQuery *)key:(NSString *)key condition:(MKitQueryCondition)condition value:(id)val
+-(void)key:(NSString *)key condition:(MKitQueryCondition)condition value:(id)val
 {
     if (val==nil)
         val=[NSNull null];
     
     [conditions addObject:@{@"condition":@(condition),@"key":key,@"value":val}];
-    return self;
 }
 
--(MKitServiceModelQuery *)orderBy:(NSString *)key direction:(MKitQueryOrder)order
+-(void)orderBy:(NSString *)key direction:(MKitQueryOrder)order
 {
     [orders addObject:@{@"key":key,@"dir":@(order)}];
-    return self;
 }
 
 -(NSArray *)execute:(NSError **)error

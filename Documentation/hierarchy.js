@@ -25,11 +25,15 @@ var hierarchy =
       [ "MKitModel", "interface_m_kit_model.html", null ],
       [ "MKitModelContext", "interface_m_kit_model_context.html", null ],
       [ "MKitModelRegistry", "interface_m_kit_model_registry.html", null ],
+      [ "MKitParseModelBinder", "interface_m_kit_parse_model_binder.html", null ],
       [ "MKitReflectedClass", "interface_m_kit_reflected_class.html", null ],
       [ "MKitReflectedProperty", "interface_m_kit_reflected_property.html", null ],
       [ "MKitReflectionManager", "interface_m_kit_reflection_manager.html", null ],
       [ "MKitServiceManager", "interface_m_kit_service_manager.html", [
         [ "MKitParseServiceManager", "interface_m_kit_parse_service_manager.html", null ]
+      ] ],
+      [ "MKitServiceModelQuery", "interface_m_kit_service_model_query.html", [
+        [ "MKitParseModelQuery", "interface_m_kit_parse_model_query.html", null ]
       ] ]
     ] ],
     [ "NSString(ModelKit)", "category_n_s_string_07_model_kit_08.html", null ]

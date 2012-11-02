@@ -11,6 +11,8 @@ var annotated =
     [ "MKitMutableOrderedDictionary", "interface_m_kit_mutable_ordered_dictionary.html", null ],
     [ "<MKitNoContext>", "protocol_m_kit_no_context-p.html", null ],
     [ "MKitParseModel", "interface_m_kit_parse_model.html", null ],
+    [ "MKitParseModelBinder", "interface_m_kit_parse_model_binder.html", "interface_m_kit_parse_model_binder" ],
+    [ "MKitParseModelQuery", "interface_m_kit_parse_model_query.html", null ],
     [ "MKitParseServiceManager", "interface_m_kit_parse_service_manager.html", null ],
     [ "MKitParseServiceManager(Internal)", "category_m_kit_parse_service_manager_07_internal_08.html", "category_m_kit_parse_service_manager_07_internal_08" ],
     [ "MKitReflectedClass", "interface_m_kit_reflected_class.html", "interface_m_kit_reflected_class" ],
@@ -19,6 +21,7 @@ var annotated =
     [ "MKitReflectionManager", "interface_m_kit_reflection_manager.html", "interface_m_kit_reflection_manager" ],
     [ "MKitServiceManager", "interface_m_kit_service_manager.html", "interface_m_kit_service_manager" ],
     [ "MKitServiceModel", "interface_m_kit_service_model.html", "interface_m_kit_service_model" ],
+    [ "MKitServiceModelQuery", "interface_m_kit_service_model_query.html", "interface_m_kit_service_model_query" ],
     [ "NSDate(ModelKit)", "category_n_s_date_07_model_kit_08.html", "category_n_s_date_07_model_kit_08" ],
     [ "NSString(ModelKit)", "category_n_s_string_07_model_kit_08.html", "category_n_s_string_07_model_kit_08" ]
 ];

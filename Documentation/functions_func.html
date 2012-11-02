@@ -89,9 +89,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_k"><span>k</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_q"><span>q</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_u"><span>u</span></a></li>
@@ -146,13 +149,19 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>beginChanges
 : <a class="el" href="interface_m_kit_model.html#a9e6611393dbacace3bc9631c0ba18843">MKitModel</a>
 </li>
+<li>bindArrayOfModels:forClass:
+: <a class="el" href="interface_m_kit_parse_model_binder.html#a1c3ab1ad308d6bad95a85c37ab35b6a2">MKitParseModelBinder</a>
+</li>
 <li>bindModel:data:
-: <a class="el" href="category_m_kit_parse_service_manager_07_internal_08.html#a8bd00b715b8c16a27ebef403154cf4aa">MKitParseServiceManager(Internal)</a>
+: <a class="el" href="interface_m_kit_parse_model_binder.html#ac85fd317994547b0d3bfc4bf05803b69">MKitParseModelBinder</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>classRequestWithMethod:class:params:body:
+: <a class="el" href="interface_m_kit_service_manager.html#af26f3035a4b7d0fa2767ed83c8661ad6">MKitServiceManager</a>
+</li>
 <li>clear
 : <a class="el" href="interface_m_kit_model_context.html#a79c8f824aa0908d26c66c73e76a03e60">MKitModelContext</a>
 </li>
@@ -200,6 +209,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>endChanges
 : <a class="el" href="interface_m_kit_model.html#a40bff0a24e2da39d0478454ba9a8c107">MKitModel</a>
 </li>
+<li>execute:
+: <a class="el" href="interface_m_kit_service_model_query.html#a52387217899eb34c58f542b901d949bf">MKitServiceModelQuery</a>
+</li>
+<li>executeInBackground:
+: <a class="el" href="interface_m_kit_service_model_query.html#aa2e1c37325f2c67c35c5fa3a4943c208">MKitServiceModelQuery</a>
+</li>
 </ul>
 
 
@@ -233,11 +248,17 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>includeKey:
+: <a class="el" href="interface_m_kit_service_model_query.html#a84ef2e7264e7ffe71626b81bf3062695">MKitServiceModelQuery</a>
+</li>
 <li>initWithClass:ignorePropPrefix:recurseChainUntil:
 : <a class="el" href="interface_m_kit_reflected_class.html#a0cfa7374e77c330f7d5c1abb7e0f1d84">MKitReflectedClass</a>
 </li>
 <li>initWithKeys:
 : <a class="el" href="interface_m_kit_service_manager.html#a30ace61b8b86673ff08f97c8d919309f">MKitServiceManager</a>
+</li>
+<li>initWithModelClass:manager:
+: <a class="el" href="interface_m_kit_service_model_query.html#a6cc12e2d4558e72fe1782a172062f061">MKitServiceModelQuery</a>
 </li>
 <li>initWithName:forProperty:
 : <a class="el" href="interface_m_kit_reflected_property.html#acd399fc58d297eeccc87ce21ddd60a15">MKitReflectedProperty</a>
@@ -272,6 +293,19 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </ul>
 
 
+<h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
+<li>key:condition:value:
+: <a class="el" href="interface_m_kit_service_model_query.html#ad737b3799e4da9d04e2a7bfdbbd64b73">MKitServiceModelQuery</a>
+</li>
+<li>keyDoesNotExist:
+: <a class="el" href="interface_m_kit_service_model_query.html#af109d1a9b18ef7195a7501ca837a2d97">MKitServiceModelQuery</a>
+</li>
+<li>keyExists:
+: <a class="el" href="interface_m_kit_service_model_query.html#ae1318f14b42e685eac13cc9662e79ee2">MKitServiceModelQuery</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>loadFromFile:error:
 : <a class="el" href="interface_m_kit_model_context.html#abea195103040c17fc226f71977a22e77">MKitModelContext</a>
@@ -295,8 +329,21 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>modelIdentifierChanged:
 : <a class="el" href="category_m_kit_model_context_07_internal_08.html#a5b42385260ac5f8fe037b89796a7e87c">MKitModelContext(Internal)</a>
 </li>
+<li>modelName
+: <a class="el" href="interface_m_kit_model.html#a6d7c8e3ae72dee47232ba05c089012e4">MKitModel</a>
+</li>
+<li>modelRequestWithMethod:model:params:body:
+: <a class="el" href="interface_m_kit_service_manager.html#aa78fbeff668cd87fa6d2d37ebf0a56d3">MKitServiceManager</a>
+</li>
 <li>modelStateChanged:
 : <a class="el" href="category_m_kit_model_context_07_internal_08.html#a2ff2d8cf3e842b7846271dcbb34c5107">MKitModelContext(Internal)</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>orderBy:direction:
+: <a class="el" href="interface_m_kit_service_model_query.html#a4bf6d59b2048d7b787bdaa7f5d79b8d7">MKitServiceModelQuery</a>
 </li>
 </ul>
 
@@ -321,6 +368,19 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>push
 : <a class="el" href="interface_m_kit_model_context.html#a699fc665089f1fe363547ef750b7aaba">MKitModelContext</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_q"></a>- q -</h3><ul>
+<li>query
+: <a class="el" href="interface_m_kit_service_model.html#a10093c1e76818cb7c95e0f9d2ca6c2dd">MKitServiceModel</a>
+</li>
+<li>queryForModelClass:
+: <a class="el" href="interface_m_kit_service_manager.html#a50a85563c800263cfe85a5c2d9d48e50">MKitServiceManager</a>
+</li>
+<li>queryForModelClass:manager:
+: <a class="el" href="interface_m_kit_service_model_query.html#a9dbf56ebe3ef974e03a27aef01de3038">MKitServiceModelQuery</a>
 </li>
 </ul>
 
@@ -401,7 +461,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Nov 1 2012 16:36:13 for ModelKit by
+    <li class="footer">Generated on Fri Nov 2 2012 13:06:38 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

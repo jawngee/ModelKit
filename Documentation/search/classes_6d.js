@@ -11,6 +11,8 @@ var searchData=
   ['mkitmutableordereddictionary',['MKitMutableOrderedDictionary',['../interface_m_kit_mutable_ordered_dictionary.html',1,'']]],
   ['mkitnocontext_2dp',['MKitNoContext-p',['../protocol_m_kit_no_context-p.html',1,'']]],
   ['mkitparsemodel',['MKitParseModel',['../interface_m_kit_parse_model.html',1,'']]],
+  ['mkitparsemodelbinder',['MKitParseModelBinder',['../interface_m_kit_parse_model_binder.html',1,'']]],
+  ['mkitparsemodelquery',['MKitParseModelQuery',['../interface_m_kit_parse_model_query.html',1,'']]],
   ['mkitparseservicemanager',['MKitParseServiceManager',['../interface_m_kit_parse_service_manager.html',1,'']]],
   ['mkitparseservicemanager_28internal_29',['MKitParseServiceManager(Internal)',['../category_m_kit_parse_service_manager_07_internal_08.html',1,'']]],
   ['mkitreflectedclass',['MKitReflectedClass',['../interface_m_kit_reflected_class.html',1,'']]],
@@ -18,5 +20,6 @@ var searchData=
   ['mkitreflectedproperty',['MKitReflectedProperty',['../interface_m_kit_reflected_property.html',1,'']]],
   ['mkitreflectionmanager',['MKitReflectionManager',['../interface_m_kit_reflection_manager.html',1,'']]],
   ['mkitservicemanager',['MKitServiceManager',['../interface_m_kit_service_manager.html',1,'']]],
-  ['mkitservicemodel',['MKitServiceModel',['../interface_m_kit_service_model.html',1,'']]]
+  ['mkitservicemodel',['MKitServiceModel',['../interface_m_kit_service_model.html',1,'']]],
+  ['mkitservicemodelquery',['MKitServiceModelQuery',['../interface_m_kit_service_model_query.html',1,'']]]
 ];

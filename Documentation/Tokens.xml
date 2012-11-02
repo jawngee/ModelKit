@@ -199,6 +199,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>modelName</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model.html</Path>
+    <Anchor>a6d7c8e3ae72dee47232ba05c089012e4</Anchor>
+    <DeclaredIn>MKitModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>register</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
@@ -217,16 +228,6 @@
     </TokenIdentifier>
     <Path>interface_m_kit_model.html</Path>
     <Anchor>a32e9be11049ba14ad32a222c5bb67a74</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>modelName</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>MKitModel</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_model.html</Path>
-    <Anchor>a1c0605c04aafa203ba75f4da89663072</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -725,17 +726,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>service</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>MKitServiceModel</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model.html</Path>
-    <Anchor>a60ad20ba8082c4d2666a8c542072c78b</Anchor>
-    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>save:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -802,80 +792,25 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>instance</Name>
+      <Name>query</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
-      <Scope>MKitModel</Scope>
+      <Scope>MKitServiceModel</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model.html</Path>
-    <Anchor>a5d0bbc2eb3d876d979c4875cb11469d7</Anchor>
-    <DeclaredIn>MKitModel.h</DeclaredIn>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a10093c1e76818cb7c95e0f9d2ca6c2dd</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>instanceWithObjectId:</Name>
+      <Name>service</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
-      <Scope>MKitModel</Scope>
+      <Scope>MKitServiceModel</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model.html</Path>
-    <Anchor>a1acd2d46e9b7100d6d7756f71b6fc968</Anchor>
-    <DeclaredIn>MKitModel.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>instanceWithModelId:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>MKitModel</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_model.html</Path>
-    <Anchor>a98f2f0e221a5e310d91b72cc99aeb311</Anchor>
-    <DeclaredIn>MKitModel.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>instanceWithSerializedData:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>MKitModel</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_model.html</Path>
-    <Anchor>abe725276c24a29fda994b399dd71f40b</Anchor>
-    <DeclaredIn>MKitModel.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>instanceWithSerializedData:fromJSON:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>MKitModel</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_model.html</Path>
-    <Anchor>a16122e9091936a18de3071d0cf3923ec</Anchor>
-    <DeclaredIn>MKitModel.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>instanceWithJSON:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>MKitModel</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_model.html</Path>
-    <Anchor>a91e80d02cedbd66842a0828b616cb1c3</Anchor>
-    <DeclaredIn>MKitModel.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>register</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>MKitModel</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_model.html</Path>
-    <Anchor>ac77a9c0b41b0dcdb6be77f164f9fe7cd</Anchor>
-    <DeclaredIn>MKitModel.h</DeclaredIn>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a60ad20ba8082c4d2666a8c542072c78b</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -886,16 +821,6 @@
     </TokenIdentifier>
     <Path>interface_m_kit_model.html</Path>
     <Anchor>a32e9be11049ba14ad32a222c5bb67a74</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>modelName</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>MKitModel</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_model.html</Path>
-    <Anchor>a1c0605c04aafa203ba75f4da89663072</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -949,6 +874,196 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>MKitParseModelBinder</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitParseModelBinder</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_binder.html</Path>
+    <DeclaredIn>MKitParseModelBinder.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>bindModel:data:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitParseModelBinder</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_binder.html</Path>
+    <Anchor>ac85fd317994547b0d3bfc4bf05803b69</Anchor>
+    <DeclaredIn>MKitParseModelBinder.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>bindArrayOfModels:forClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitParseModelBinder</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_binder.html</Path>
+    <Anchor>a1c3ab1ad308d6bad95a85c37ab35b6a2</Anchor>
+    <DeclaredIn>MKitParseModelBinder.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MKitParseModelQuery</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitParseModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_query.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithModelClass:manager:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a6cc12e2d4558e72fe1782a172062f061</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>includeKey:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a84ef2e7264e7ffe71626b81bf3062695</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>keyExists:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>ae1318f14b42e685eac13cc9662e79ee2</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>keyDoesNotExist:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>af109d1a9b18ef7195a7501ca837a2d97</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>key:condition:value:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>ad737b3799e4da9d04e2a7bfdbbd64b73</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>orderBy:direction:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a4bf6d59b2048d7b787bdaa7f5d79b8d7</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>execute:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a52387217899eb34c58f542b901d949bf</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>aa2e1c37325f2c67c35c5fa3a4943c208</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>queryForModelClass:manager:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a9dbf56ebe3ef974e03a27aef01de3038</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>orders</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a23a3c0e491843eb79ad965596a6a5298</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>conditions</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>abf92ce467258f9ba5c41cb4c8b0c145b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>includes</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a18cc12bb32f96a6a073896a9fa366aeb</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>modelClass</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a75a1924f79d415e2a6b5a4a5f7fe55c4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>manager</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>af8e7fff661acc01b9411a6fda21f42a1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>MKitParseServiceManager</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -966,6 +1081,17 @@
     </TokenIdentifier>
     <Path>interface_m_kit_service_manager.html</Path>
     <Anchor>a30ace61b8b86673ff08f97c8d919309f</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>queryForModelClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>a50a85563c800263cfe85a5c2d9d48e50</Anchor>
     <DeclaredIn>MKitServiceManager.h</DeclaredIn>
   </Token>
   <Token>
@@ -1036,6 +1162,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>classRequestWithMethod:class:params:body:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>af26f3035a4b7d0fa2767ed83c8661ad6</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>modelRequestWithMethod:model:params:body:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>aa78fbeff668cd87fa6d2d37ebf0a56d3</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>setupService:withKeys:</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
@@ -1085,17 +1233,6 @@
     </TokenIdentifier>
     <Path>category_m_kit_parse_service_manager_07_internal_08.html</Path>
     <Anchor>a357c0dfc585907920de112ce72b9ffbc</Anchor>
-    <DeclaredIn>MKitParseServiceManager.m</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bindModel:data:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>func</Type>
-      <Scope>MKitParseServiceManager(Internal)</Scope>
-    </TokenIdentifier>
-    <Path>category_m_kit_parse_service_manager_07_internal_08.html</Path>
-    <Anchor>a8bd00b715b8c16a27ebef403154cf4aa</Anchor>
     <DeclaredIn>MKitParseServiceManager.m</DeclaredIn>
   </Token>
   <Token>
@@ -1255,6 +1392,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>queryForModelClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>a50a85563c800263cfe85a5c2d9d48e50</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>saveModel:error:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -1321,6 +1469,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>classRequestWithMethod:class:params:body:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>af26f3035a4b7d0fa2767ed83c8661ad6</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>modelRequestWithMethod:model:params:body:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>aa78fbeff668cd87fa6d2d37ebf0a56d3</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>setupService:withKeys:</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
@@ -1349,17 +1519,6 @@
       <Scope>MKitServiceModel</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_model.html</Path>
-    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>service</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>MKitServiceModel</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model.html</Path>
-    <Anchor>a60ad20ba8082c4d2666a8c542072c78b</Anchor>
     <DeclaredIn>MKitServiceModel.h</DeclaredIn>
   </Token>
   <Token>
@@ -1551,6 +1710,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>query</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a10093c1e76818cb7c95e0f9d2ca6c2dd</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>service</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a60ad20ba8082c4d2666a8c542072c78b</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>instance</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
@@ -1617,6 +1798,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>modelName</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model.html</Path>
+    <Anchor>a6d7c8e3ae72dee47232ba05c089012e4</Anchor>
+    <DeclaredIn>MKitModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>register</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
@@ -1635,16 +1827,6 @@
     </TokenIdentifier>
     <Path>interface_m_kit_model.html</Path>
     <Anchor>a32e9be11049ba14ad32a222c5bb67a74</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>modelName</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>MKitModel</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_model.html</Path>
-    <Anchor>a1c0605c04aafa203ba75f4da89663072</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1695,6 +1877,165 @@
     </TokenIdentifier>
     <Path>interface_m_kit_model.html</Path>
     <Anchor>a319ff840329e3430ef6e34a6a6d5a336</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MKitServiceModelQuery</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithModelClass:manager:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a6cc12e2d4558e72fe1782a172062f061</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>includeKey:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a84ef2e7264e7ffe71626b81bf3062695</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>keyExists:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>ae1318f14b42e685eac13cc9662e79ee2</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>keyDoesNotExist:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>af109d1a9b18ef7195a7501ca837a2d97</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>key:condition:value:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>ad737b3799e4da9d04e2a7bfdbbd64b73</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>orderBy:direction:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a4bf6d59b2048d7b787bdaa7f5d79b8d7</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>execute:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a52387217899eb34c58f542b901d949bf</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>aa2e1c37325f2c67c35c5fa3a4943c208</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>queryForModelClass:manager:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a9dbf56ebe3ef974e03a27aef01de3038</Anchor>
+    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>orders</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a23a3c0e491843eb79ad965596a6a5298</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>conditions</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>abf92ce467258f9ba5c41cb4c8b0c145b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>includes</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a18cc12bb32f96a6a073896a9fa366aeb</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>modelClass</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>a75a1924f79d415e2a6b5a4a5f7fe55c4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>manager</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitServiceModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model_query.html</Path>
+    <Anchor>af8e7fff661acc01b9411a6fda21f42a1</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

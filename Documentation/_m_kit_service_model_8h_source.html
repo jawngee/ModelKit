@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>ModelKit: Source/Model/MKitServiceModel.h Source File</title>
+<title>ModelKit: Source/Service/MKitServiceModel.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -112,32 +112,35 @@ $(document).ready(function(){initNavTree('_m_kit_service_model_8h_source.html','
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#import &quot;MKitModel.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#import &quot;MKitServiceManager.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="interface_m_kit_service_model.html">   25</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_m_kit_service_model.html">MKitServiceModel</a> : <a class="code" href="interface_m_kit_model.html">MKitModel</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;-(<a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> *)<a class="code" href="interface_m_kit_service_model.html#a60ad20ba8082c4d2666a8c542072c78b">service</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;-(BOOL)save:(NSError **)error;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#import &quot;MKitServiceModelQuery.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="interface_m_kit_service_model.html">   26</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_m_kit_service_model.html">MKitServiceModel</a> : <a class="code" href="interface_m_kit_model.html">MKitModel</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;+(<a class="code" href="interface_m_kit_service_model_query.html">MKitServiceModelQuery</a> *)<a class="code" href="interface_m_kit_service_model.html#a10093c1e76818cb7c95e0f9d2ca6c2dd">query</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;+(<a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> *)<a class="code" href="interface_m_kit_service_model.html#a60ad20ba8082c4d2666a8c542072c78b">service</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;-(void)saveInBackground:(MKitBooleanResultBlock)resultBlock;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;-(BOOL)delete:(NSError **)error;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;-(BOOL)save:(NSError **)error;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;-(void)saveInBackground:(MKitBooleanResultBlock)resultBlock;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;-(void)deleteInBackground:(MKitBooleanResultBlock)resultBlock;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;-(BOOL)fetch:(NSError **)error;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(BOOL)delete:(NSError **)error;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;-(void)deleteInBackground:(MKitBooleanResultBlock)resultBlock;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;-(void)fetchInBackground:(MKitBooleanResultBlock)resultBlock;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;-(BOOL)fetch:(NSError **)error;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;-(void)fetchInBackground:(MKitBooleanResultBlock)resultBlock;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_4d2cd150aff3df625ebb7431566b7a26.html">Model</a></li><li class="navelem"><b>MKitServiceModel.h</b></li>
-    <li class="footer">Generated on Thu Nov 1 2012 16:36:13 for ModelKit by
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_274770857b8dca50bfd429b32ee69447.html">Service</a></li><li class="navelem"><b>MKitServiceModel.h</b></li>
+    <li class="footer">Generated on Fri Nov 2 2012 13:06:38 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

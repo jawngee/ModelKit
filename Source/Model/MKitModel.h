@@ -6,11 +6,6 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#pragma mark - Block Defs
-
-typedef void (^MKitBooleanResultBlock)(BOOL succeeded, NSError *error);
-typedef void (^MKitArrayResultBlock)(NSArray *objects, NSError *error);
-typedef void (^MKitObjectResultBlock)(id object, NSError *error);
 
 #pragma mark - Typedefs
 

@@ -11,6 +11,7 @@ var interface_m_kit_model =
     [ "instanceWithObjectId:", "interface_m_kit_model.html#a1acd2d46e9b7100d6d7756f71b6fc968", null ],
     [ "instanceWithSerializedData:", "interface_m_kit_model.html#abe725276c24a29fda994b399dd71f40b", null ],
     [ "instanceWithSerializedData:fromJSON:", "interface_m_kit_model.html#a16122e9091936a18de3071d0cf3923ec", null ],
+    [ "modelName", "interface_m_kit_model.html#a6d7c8e3ae72dee47232ba05c089012e4", null ],
     [ "parsePointer", "interface_m_kit_model.html#a144065b32af764f82867ce4532c23878", null ],
     [ "properties", "interface_m_kit_model.html#a5b4368f5a007821a686d88ac7ba4247e", null ],
     [ "register", "interface_m_kit_model.html#ac77a9c0b41b0dcdb6be77f164f9fe7cd", null ],
@@ -21,7 +22,6 @@ var interface_m_kit_model =
     [ "createdAt", "interface_m_kit_model.html#a4a003b05b9aec38e846e813f10508019", null ],
     [ "modelChanges", "interface_m_kit_model.html#a1d6af52200bc2c3c6c2af72f7d56efda", null ],
     [ "modelId", "interface_m_kit_model.html#a32e9be11049ba14ad32a222c5bb67a74", null ],
-    [ "modelName", "interface_m_kit_model.html#a1c0605c04aafa203ba75f4da89663072", null ],
     [ "modelState", "interface_m_kit_model.html#a7fe4973518ee4144dfc5b510fbd6849d", null ],
     [ "objectId", "interface_m_kit_model.html#a40bdf5da434aac66dc025ef6965e728c", null ],
     [ "updatedAt", "interface_m_kit_model.html#a319ff840329e3430ef6e34a6a6d5a336", null ]

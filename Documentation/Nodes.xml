@@ -73,6 +73,11 @@
               <Anchor>a16122e9091936a18de3071d0cf3923ec</Anchor>
              </Node>
              <Node>
+              <Name>modelName</Name>
+              <Path>interface_m_kit_model.html</Path>
+              <Anchor>a6d7c8e3ae72dee47232ba05c089012e4</Anchor>
+             </Node>
+             <Node>
               <Name>parsePointer</Name>
               <Path>interface_m_kit_model.html</Path>
               <Anchor>a144065b32af764f82867ce4532c23878</Anchor>
@@ -121,11 +126,6 @@
               <Name>modelId</Name>
               <Path>interface_m_kit_model.html</Path>
               <Anchor>a32e9be11049ba14ad32a222c5bb67a74</Anchor>
-             </Node>
-             <Node>
-              <Name>modelName</Name>
-              <Path>interface_m_kit_model.html</Path>
-              <Anchor>a1c0605c04aafa203ba75f4da89663072</Anchor>
              </Node>
              <Node>
               <Name>modelState</Name>
@@ -361,6 +361,26 @@
             <Path>interface_m_kit_parse_model.html</Path>
            </Node>
            <Node>
+            <Name>MKitParseModelBinder</Name>
+            <Path>interface_m_kit_parse_model_binder.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>bindArrayOfModels:forClass:</Name>
+              <Path>interface_m_kit_parse_model_binder.html</Path>
+              <Anchor>a1c3ab1ad308d6bad95a85c37ab35b6a2</Anchor>
+             </Node>
+             <Node>
+              <Name>bindModel:data:</Name>
+              <Path>interface_m_kit_parse_model_binder.html</Path>
+              <Anchor>ac85fd317994547b0d3bfc4bf05803b69</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>MKitParseModelQuery</Name>
+            <Path>interface_m_kit_parse_model_query.html</Path>
+           </Node>
+           <Node>
             <Name>MKitParseServiceManager</Name>
             <Path>interface_m_kit_parse_service_manager.html</Path>
             <Subnodes>
@@ -370,11 +390,6 @@
             <Name>MKitParseServiceManager(Internal)</Name>
             <Path>category_m_kit_parse_service_manager_07_internal_08.html</Path>
             <Subnodes>
-             <Node>
-              <Name>bindModel:data:</Name>
-              <Path>category_m_kit_parse_service_manager_07_internal_08.html</Path>
-              <Anchor>a8bd00b715b8c16a27ebef403154cf4aa</Anchor>
-             </Node>
              <Node>
               <Name>internalSaveModel:props:error:</Name>
               <Path>category_m_kit_parse_service_manager_07_internal_08.html</Path>
@@ -461,6 +476,11 @@
             <Path>interface_m_kit_service_manager.html</Path>
             <Subnodes>
              <Node>
+              <Name>classRequestWithMethod:class:params:body:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>af26f3035a4b7d0fa2767ed83c8661ad6</Anchor>
+             </Node>
+             <Node>
               <Name>deleteModel:error:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
               <Anchor>a1568f80f20242b7f233a3ff66d1e9464</Anchor>
@@ -489,6 +509,16 @@
               <Name>managerForService:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
               <Anchor>a16d6c03ce3f21e8148c4837d810a0aa8</Anchor>
+             </Node>
+             <Node>
+              <Name>modelRequestWithMethod:model:params:body:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>aa78fbeff668cd87fa6d2d37ebf0a56d3</Anchor>
+             </Node>
+             <Node>
+              <Name>queryForModelClass:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>a50a85563c800263cfe85a5c2d9d48e50</Anchor>
              </Node>
              <Node>
               <Name>saveModel:error:</Name>
@@ -532,6 +562,11 @@
               <Anchor>a2aaf3b79caeba97cf746c18c5c3b7335</Anchor>
              </Node>
              <Node>
+              <Name>query</Name>
+              <Path>interface_m_kit_service_model.html</Path>
+              <Anchor>a10093c1e76818cb7c95e0f9d2ca6c2dd</Anchor>
+             </Node>
+             <Node>
               <Name>save:</Name>
               <Path>interface_m_kit_service_model.html</Path>
               <Anchor>aa325d545c472172a3552e01415dc9372</Anchor>
@@ -545,6 +580,82 @@
               <Name>service</Name>
               <Path>interface_m_kit_service_model.html</Path>
               <Anchor>a60ad20ba8082c4d2666a8c542072c78b</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>MKitServiceModelQuery</Name>
+            <Path>interface_m_kit_service_model_query.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>execute:</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>a52387217899eb34c58f542b901d949bf</Anchor>
+             </Node>
+             <Node>
+              <Name>executeInBackground:</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>aa2e1c37325f2c67c35c5fa3a4943c208</Anchor>
+             </Node>
+             <Node>
+              <Name>includeKey:</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>a84ef2e7264e7ffe71626b81bf3062695</Anchor>
+             </Node>
+             <Node>
+              <Name>initWithModelClass:manager:</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>a6cc12e2d4558e72fe1782a172062f061</Anchor>
+             </Node>
+             <Node>
+              <Name>key:condition:value:</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>ad737b3799e4da9d04e2a7bfdbbd64b73</Anchor>
+             </Node>
+             <Node>
+              <Name>keyDoesNotExist:</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>af109d1a9b18ef7195a7501ca837a2d97</Anchor>
+             </Node>
+             <Node>
+              <Name>keyExists:</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>ae1318f14b42e685eac13cc9662e79ee2</Anchor>
+             </Node>
+             <Node>
+              <Name>orderBy:direction:</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>a4bf6d59b2048d7b787bdaa7f5d79b8d7</Anchor>
+             </Node>
+             <Node>
+              <Name>queryForModelClass:manager:</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>a9dbf56ebe3ef974e03a27aef01de3038</Anchor>
+             </Node>
+             <Node>
+              <Name>conditions</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>abf92ce467258f9ba5c41cb4c8b0c145b</Anchor>
+             </Node>
+             <Node>
+              <Name>includes</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>a18cc12bb32f96a6a073896a9fa366aeb</Anchor>
+             </Node>
+             <Node>
+              <Name>manager</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>af8e7fff661acc01b9411a6fda21f42a1</Anchor>
+             </Node>
+             <Node>
+              <Name>modelClass</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>a75a1924f79d415e2a6b5a4a5f7fe55c4</Anchor>
+             </Node>
+             <Node>
+              <Name>orders</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Anchor>a23a3c0e491843eb79ad965596a6a5298</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -676,6 +787,10 @@
               <Path>interface_m_kit_model_registry.html</Path>
              </Node>
              <Node>
+              <Name>MKitParseModelBinder</Name>
+              <Path>interface_m_kit_parse_model_binder.html</Path>
+             </Node>
+             <Node>
               <Name>MKitReflectedClass</Name>
               <Path>interface_m_kit_reflected_class.html</Path>
              </Node>
@@ -694,6 +809,16 @@
                <Node>
                 <Name>MKitParseServiceManager</Name>
                 <Path>interface_m_kit_parse_service_manager.html</Path>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>MKitServiceModelQuery</Name>
+              <Path>interface_m_kit_service_model_query.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>MKitParseModelQuery</Name>
+                <Path>interface_m_kit_parse_model_query.html</Path>
                </Node>
               </Subnodes>
              </Node>
@@ -849,14 +974,6 @@
                 <Name>MKitModelRegistry.m</Name>
                 <Path>_m_kit_model_registry_8m_source.html</Path>
                </Node>
-               <Node>
-                <Name>MKitServiceModel.h</Name>
-                <Path>_m_kit_service_model_8h_source.html</Path>
-               </Node>
-               <Node>
-                <Name>MKitServiceModel.m</Name>
-                <Path>_m_kit_service_model_8m_source.html</Path>
-               </Node>
               </Subnodes>
              </Node>
              <Node>
@@ -894,12 +1011,34 @@
                     </Subnodes>
                    </Node>
                    <Node>
+                    <Name>Utilities</Name>
+                    <Path>dir_c38a6c91a81fbeb79608af1e92ee4443.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>MKitParseModelBinder.h</Name>
+                      <Path>_m_kit_parse_model_binder_8h_source.html</Path>
+                     </Node>
+                     <Node>
+                      <Name>MKitParseModelBinder.m</Name>
+                      <Path>_m_kit_parse_model_binder_8m_source.html</Path>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
                     <Name>MKitParseModel.h</Name>
                     <Path>_m_kit_parse_model_8h_source.html</Path>
                    </Node>
                    <Node>
                     <Name>MKitParseModel.m</Name>
                     <Path>_m_kit_parse_model_8m_source.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>MKitParseModelQuery.h</Name>
+                    <Path>_m_kit_parse_model_query_8h_source.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>MKitParseModelQuery.m</Name>
+                    <Path>_m_kit_parse_model_query_8m_source.html</Path>
                    </Node>
                    <Node>
                     <Name>MKitParseServiceManager.h</Name>
@@ -920,6 +1059,22 @@
                <Node>
                 <Name>MKitServiceManager.m</Name>
                 <Path>_m_kit_service_manager_8m_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceModel.h</Name>
+                <Path>_m_kit_service_model_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceModel.m</Name>
+                <Path>_m_kit_service_model_8m_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceModelQuery.h</Name>
+                <Path>_m_kit_service_model_query_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceModelQuery.m</Name>
+                <Path>_m_kit_service_model_query_8m_source.html</Path>
                </Node>
               </Subnodes>
              </Node>

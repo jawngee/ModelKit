@@ -27,6 +27,7 @@
 
 /**
  * Returns a query object for the model.
+ * @return The query object
  */
 +(MKitServiceModelQuery *)query;
 

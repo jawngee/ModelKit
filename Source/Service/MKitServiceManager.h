@@ -10,6 +10,13 @@
 #import "MKitModel.h"
 #import "AFNetworking.h"
 
+
+#pragma mark - Block Defs
+
+typedef void (^MKitBooleanResultBlock)(BOOL succeeded, NSError *error);
+typedef void (^MKitArrayResultBlock)(NSArray *objects, NSError *error);
+typedef void (^MKitObjectResultBlock)(id object, NSError *error);
+
 @class MKitServiceModelQuery;
 
 /**
@@ -93,7 +100,25 @@
  */
 -(void)fetchModelInBackground:(MKitModel *)model withBlock:(MKitBooleanResultBlock)resultBlock;
 
+/**
+ * Creates a HTTP request for class methods (create/delete)
+ * @param method The HTTP method to use
+ * @param class The model class to generate the request for
+ * @param params The query parameters for the request
+ * @param body The body data for the request
+ * @return The operation
+ */
 -(AFHTTPRequestOperation *)classRequestWithMethod:(NSString *)method class:(Class)class params:(NSDictionary *)params body:(NSData *)body;
+
+
+/**
+ * Creates a HTTP request for model methods (update/query)
+ * @param method The HTTP method to use
+ * @param model The model to generate the request for
+ * @param params The query parameters for the request
+ * @param body The body data for the request
+ * @return The operation
+ */
 -(AFHTTPRequestOperation *)modelRequestWithMethod:(NSString *)method model:(MKitModel *)model params:(NSDictionary *)params body:(NSData *)body;
 
 
