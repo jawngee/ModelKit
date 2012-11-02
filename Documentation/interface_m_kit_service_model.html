@@ -164,6 +164,8 @@ Instance Methods</h2></td></tr>
 Class Methods</h2></td></tr>
 <tr class="memitem:a10093c1e76818cb7c95e0f9d2ca6c2dd"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_m_kit_service_model_query.html">MKitServiceModelQuery</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_service_model.html#a10093c1e76818cb7c95e0f9d2ca6c2dd">query</a></td></tr>
 <tr class="separator:a10093c1e76818cb7c95e0f9d2ca6c2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec271a06c736f1b2e9e10e5811e96892"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_m_kit_model_query.html">MKitModelQuery</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_service_model.html#aec271a06c736f1b2e9e10e5811e96892">offlineQuery</a></td></tr>
+<tr class="separator:aec271a06c736f1b2e9e10e5811e96892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60ad20ba8082c4d2666a8c542072c78b"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_service_model.html#a60ad20ba8082c4d2666a8c542072c78b">service</a></td></tr>
 <tr class="separator:a60ad20ba8082c4d2666a8c542072c78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_interface_m_kit_model"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_interface_m_kit_model')"><img src="closed.png" alt="-"/>&#160;Class Methods inherited from <a class="el" href="interface_m_kit_model.html">MKitModel</a></td></tr>
@@ -229,7 +231,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if the model was deleted, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00033">33</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00039">39</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
 
 </div>
 </div>
@@ -254,7 +256,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00038">38</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00044">44</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
 
 </div>
 </div>
@@ -280,7 +282,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if the model was fetched, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00043">43</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00049">49</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
 
 </div>
 </div>
@@ -305,7 +307,26 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00048">48</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00054">54</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec271a06c736f1b2e9e10e5811e96892"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="interface_m_kit_model_query.html">MKitModelQuery</a> *) offlineQuery </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns a query object for the model using predicates on the context. </p>
+<dl class="section return"><dt>Returns</dt><dd>The query object </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00019">19</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
 
 </div>
 </div>
@@ -324,7 +345,9 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns a query object for the model. </p>
 <dl class="section return"><dt>Returns</dt><dd>The query object </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00013">13</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
+<p>Reimplemented from <a class="el" href="interface_m_kit_model.html#a1bd6ad3751da96df6adc783c7aec78f5">MKitModel</a>.</p>
+
+<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00014">14</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
 
 </div>
 </div>
@@ -350,7 +373,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if the model was saved, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00023">23</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00029">29</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
 
 </div>
 </div>
@@ -375,7 +398,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00028">28</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00034">34</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
 
 </div>
 </div>
@@ -394,7 +417,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns the service manager this model uses for persistence </p>
 <dl class="section return"><dt>Returns</dt><dd>service The service this model uses </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00018">18</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_model_8m_source.html#l00024">24</a> of file <a class="el" href="_m_kit_service_model_8m_source.html">MKitServiceModel.m</a>.</p>
 
 </div>
 </div>
@@ -408,7 +431,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_m_kit_service_model.html">MKitServiceModel</a></li>
-    <li class="footer">Generated on Fri Nov 2 2012 13:06:38 for ModelKit by
+    <li class="footer">Generated on Fri Nov 2 2012 16:57:02 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

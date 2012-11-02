@@ -394,14 +394,24 @@ $(document).ready(function(){initNavTree('_m_kit_model_context_8m_source.html','
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">return</span> NO;</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="code" href="interface_m_kit_model_context.html#aafe9f421f5454dacd3e73486a57738f7">  308</a></span>&#160;-(NSArray *)queryWithPredicate:(NSPredicate *)predicate forClass:(Class)modelClass</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;{</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    NSString *className=NSStringFromClass(modelClass);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    NSMutableDictionary *objectCache=[<a class="code" href="interface_m_kit_model_context.html#a9235e274b5a2e71c5427fc6b73179ac0">classCache</a> objectForKey:className];</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">if</span> (!objectCache)</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">return</span> nil;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">return</span> [[objectCache allValues] filteredArrayUsingPredicate:predicate];</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_4d2cd150aff3df625ebb7431566b7a26.html">Model</a></li><li class="navelem"><b>MKitModelContext.m</b></li>
-    <li class="footer">Generated on Fri Nov 2 2012 13:06:38 for ModelKit by
+    <li class="footer">Generated on Fri Nov 2 2012 16:57:02 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

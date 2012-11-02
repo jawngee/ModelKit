@@ -46,7 +46,9 @@ typedef enum
     orderDESC
 } MKitQueryOrder;
 
-
+/**
+ * Abstract class for querying models
+ */
 @interface MKitModelQuery : NSObject
 {
     NSMutableArray *orders;         /**< List of orderings */
@@ -65,7 +67,6 @@ typedef enum
 /**
  * Initializes a new instance
  * @param modelClass The model class to query
- * @param manager The service manager
  * @return The new instance
  */
 -(id)initWithModelClass:(Class)modelClass;

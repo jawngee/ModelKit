@@ -13,8 +13,18 @@
 #import "JSONKit.h"
 #import "MKitParseModelBinder.h"
 
+/**
+ * Internal methods
+ */
 @interface MKitParseModelQuery(Internal)
 
+/**
+ * Builds the HTTP Request for the query
+ * @param limit The limit to the number of items the request should return, NSNotFound for no limit
+ * @param skip The number of items to skip when returning results, NSNotFound for no skip
+ * @param includeCount Determines if the total object count should be returned from the request
+ * @return The HTTP Request
+ */
 -(AFHTTPRequestOperation *)buildQueryOpWithLimit:(NSInteger)limit skip:(NSInteger)skip includeCount:(BOOL)includeCount;
 
 @end

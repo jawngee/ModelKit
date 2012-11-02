@@ -11,6 +11,7 @@ var interface_m_kit_model_context =
     [ "modelForObjectId:andClass:", "interface_m_kit_model_context.html#af5b1376612af5184e282d4eea3c716a0", null ],
     [ "pop", "interface_m_kit_model_context.html#ad25838cf2b2302cb928c9e33ca6f5212", null ],
     [ "push", "interface_m_kit_model_context.html#a699fc665089f1fe363547ef750b7aaba", null ],
+    [ "queryWithPredicate:forClass:", "interface_m_kit_model_context.html#aafe9f421f5454dacd3e73486a57738f7", null ],
     [ "removeFromAnyContext:", "interface_m_kit_model_context.html#acbd6d0cba647d3845a128ded9d45eaee", null ],
     [ "removeFromContext:", "interface_m_kit_model_context.html#a49e1ea1d3d33c8b81aff4f53987f495a", null ],
     [ "saveToFile:error:", "interface_m_kit_model_context.html#a8edfa66ee2aa5977e1cab3a26f50258c", null ],

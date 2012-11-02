@@ -110,57 +110,52 @@ $(document).ready(function(){initNavTree('_m_kit_service_manager_8h_source.html'
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//  Copyright (c) 2012 Interfacelab LLC. All rights reserved.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#import &quot;MKitModel.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#import &quot;AFNetworking.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;MKitDefs.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#import &quot;MKitModel.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#import &quot;AFNetworking.h&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma mark - Block Defs</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">typedef</span> void (^MKitBooleanResultBlock)(BOOL succeeded, NSError *error);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">typedef</span> void (^MKitArrayResultBlock)(NSArray *objects, NSError *error);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">typedef</span> void (^MKitObjectResultBlock)(<span class="keywordtype">id</span> object, NSError *error);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_m_kit_service_model_query.html">MKitServiceModelQuery</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_m_kit_service_model_query.html">MKitServiceModelQuery</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="interface_m_kit_service_manager.html">   20</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> : NSObject</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="interface_m_kit_service_manager.html">   25</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> : NSObject</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;+(<a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> *)setupService:(NSString *)name withKeys:(NSDictionary *)keys;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;+(<a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> *)managerForService:(NSString *)name;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;-(id)initWithKeys:(NSDictionary *)keys;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;-(<a class="code" href="interface_m_kit_service_model_query.html">MKitServiceModelQuery</a> *)queryForModelClass:(Class)modelClass;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;-(BOOL)saveModel:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model error:(NSError **)error;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;-(void)saveModelInBackground:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model withBlock:(MKitBooleanResultBlock)resultBlock;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;-(BOOL)deleteModel:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model error:(NSError **)error;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;-(void)deleteModelInBackground:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model withBlock:(MKitBooleanResultBlock)resultBlock;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;-(BOOL)fetchModel:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model error:(NSError **)error;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;-(void)fetchModelInBackground:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model withBlock:(MKitBooleanResultBlock)resultBlock;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;-(AFHTTPRequestOperation *)classRequestWithMethod:(NSString *)method class:(Class)class params:(NSDictionary *)params body:(NSData *)body;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;-(AFHTTPRequestOperation *)modelRequestWithMethod:(NSString *)method model:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model params:(NSDictionary *)params body:(NSData *)body;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;+(<a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> *)setupService:(NSString *)name withKeys:(NSDictionary *)keys;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;+(<a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> *)managerForService:(NSString *)name;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;-(id)initWithKeys:(NSDictionary *)keys;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;-(<a class="code" href="interface_m_kit_service_model_query.html">MKitServiceModelQuery</a> *)queryForModelClass:(Class)modelClass;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;-(BOOL)saveModel:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model error:(NSError **)error;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;-(void)saveModelInBackground:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model withBlock:(MKitBooleanResultBlock)resultBlock;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;-(BOOL)deleteModel:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model error:(NSError **)error;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;-(void)deleteModelInBackground:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model withBlock:(MKitBooleanResultBlock)resultBlock;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;-(BOOL)fetchModel:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model error:(NSError **)error;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;-(void)fetchModelInBackground:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model withBlock:(MKitBooleanResultBlock)resultBlock;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;-(AFHTTPRequestOperation *)classRequestWithMethod:(NSString *)method class:(Class)class params:(NSDictionary *)params body:(NSData *)body;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;-(AFHTTPRequestOperation *)modelRequestWithMethod:(NSString *)method model:(<a class="code" href="interface_m_kit_model.html">MKitModel</a> *)model params:(NSDictionary *)params body:(NSData *)body;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_274770857b8dca50bfd429b32ee69447.html">Service</a></li><li class="navelem"><b>MKitServiceManager.h</b></li>
-    <li class="footer">Generated on Fri Nov 2 2012 13:06:38 for ModelKit by
+    <li class="footer">Generated on Fri Nov 2 2012 16:57:02 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

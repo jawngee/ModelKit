@@ -9,8 +9,15 @@
 #import "MKitModelPredicateQuery.h"
 #import "MKitModelContext.h"
 
+/**
+ * Internal
+ */
 @interface MKitModelPredicateQuery(Internal)
 
+/**
+ * Builds the query
+ * @return The query predicate
+ */
 -(NSPredicate *)buildQuery;
 
 @end

@@ -14,6 +14,7 @@ var interface_m_kit_model =
     [ "modelName", "interface_m_kit_model.html#a6d7c8e3ae72dee47232ba05c089012e4", null ],
     [ "parsePointer", "interface_m_kit_model.html#a144065b32af764f82867ce4532c23878", null ],
     [ "properties", "interface_m_kit_model.html#a5b4368f5a007821a686d88ac7ba4247e", null ],
+    [ "query", "interface_m_kit_model.html#a1bd6ad3751da96df6adc783c7aec78f5", null ],
     [ "register", "interface_m_kit_model.html#ac77a9c0b41b0dcdb6be77f164f9fe7cd", null ],
     [ "removeFromContext", "interface_m_kit_model.html#a862b29ee98c260b5529b9fa0c776ac4e", null ],
     [ "resetChanges", "interface_m_kit_model.html#afd26486d5372b89c0b5f34b7b56dcdb2", null ],

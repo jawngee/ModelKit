@@ -221,6 +221,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>query</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model.html</Path>
+    <Anchor>a1bd6ad3751da96df6adc783c7aec78f5</Anchor>
+    <DeclaredIn>MKitModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>modelId</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
@@ -486,6 +497,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>queryWithPredicate:forClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelContext</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_context.html</Path>
+    <Anchor>aafe9f421f5454dacd3e73486a57738f7</Anchor>
+    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>current</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
@@ -620,6 +642,369 @@
     <Path>category_m_kit_model_context_07_internal_08.html</Path>
     <Anchor>a5b42385260ac5f8fe037b89796a7e87c</Anchor>
     <DeclaredIn>MKitModelContext.m</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MKitModelPredicateQuery</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitModelPredicateQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_predicate_query.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithModelClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a17a116a690f5d84c2a226b79652168dc</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>keyExists:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a43ad622a66c1ba04521e8f6fadf6971b</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>keyDoesNotExist:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>af683eba84a5aac2baccfdcea9e6912e5</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>key:condition:value:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>ad84415a485afadfe072f9edc39a295a0</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>orderBy:direction:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a33156e11a671361de9764d8444fe8fae</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>execute:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a2ec306256f0cb8e26936dfb955d20753</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a693e99ec48887b562649d71b9524dd11</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeWithLimit:skip:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>ac6f0721c5582e29a3adf75c5559166b0</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeInBackgroundWithLimit:skip:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a9ea6dae7055a829584d58ff8818d8407</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>count:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a38af585be34efa416f5bf36b71ac3a5d</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>countInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a96b71d239c5d840210caa8c14144cd0f</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>queryForModelClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>abe88f71577417392d7fda8782b45e435</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>orders</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a85efd1f3fe43ae476d1024e860d0ae9f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>conditions</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a02cba614fd0e2ecbe1addde1fee14cad</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>modelClass</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a4f4461722278e7e8e1091fe043631ddd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MKitModelPredicateQuery(Internal)</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cat</Type>
+      <Scope>MKitModelPredicateQuery(Internal)</Scope>
+    </TokenIdentifier>
+    <Path>category_m_kit_model_predicate_query_07_internal_08.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>buildQuery</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>func</Type>
+      <Scope>MKitModelPredicateQuery(Internal)</Scope>
+    </TokenIdentifier>
+    <Path>category_m_kit_model_predicate_query_07_internal_08.html</Path>
+    <Anchor>a0e17239b1f2b26270cfee1ba669ee6c3</Anchor>
+    <DeclaredIn>MKitModelPredicateQuery.m</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MKitModelQuery</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithModelClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a17a116a690f5d84c2a226b79652168dc</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>keyExists:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a43ad622a66c1ba04521e8f6fadf6971b</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>keyDoesNotExist:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>af683eba84a5aac2baccfdcea9e6912e5</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>key:condition:value:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>ad84415a485afadfe072f9edc39a295a0</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>orderBy:direction:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a33156e11a671361de9764d8444fe8fae</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>execute:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a2ec306256f0cb8e26936dfb955d20753</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a693e99ec48887b562649d71b9524dd11</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeWithLimit:skip:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>ac6f0721c5582e29a3adf75c5559166b0</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeInBackgroundWithLimit:skip:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a9ea6dae7055a829584d58ff8818d8407</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>count:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a38af585be34efa416f5bf36b71ac3a5d</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>countInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a96b71d239c5d840210caa8c14144cd0f</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>queryForModelClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>abe88f71577417392d7fda8782b45e435</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>orders</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a85efd1f3fe43ae476d1024e860d0ae9f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>conditions</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a02cba614fd0e2ecbe1addde1fee14cad</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>modelClass</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a4f4461722278e7e8e1091fe043631ddd</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -803,6 +1188,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>offlineQuery</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>aec271a06c736f1b2e9e10e5811e96892</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>service</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
@@ -937,72 +1333,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>keyExists:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>ae1318f14b42e685eac13cc9662e79ee2</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>keyDoesNotExist:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>af109d1a9b18ef7195a7501ca837a2d97</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>key:condition:value:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>ad737b3799e4da9d04e2a7bfdbbd64b73</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>orderBy:direction:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>a4bf6d59b2048d7b787bdaa7f5d79b8d7</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>execute:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>a52387217899eb34c58f542b901d949bf</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>executeInBackground:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>aa2e1c37325f2c67c35c5fa3a4943c208</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>queryForModelClass:manager:</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
@@ -1011,26 +1341,6 @@
     <Path>interface_m_kit_service_model_query.html</Path>
     <Anchor>a9dbf56ebe3ef974e03a27aef01de3038</Anchor>
     <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>orders</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>a23a3c0e491843eb79ad965596a6a5298</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>conditions</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>abf92ce467258f9ba5c41cb4c8b0c145b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1044,16 +1354,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>modelClass</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>a75a1924f79d415e2a6b5a4a5f7fe55c4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>manager</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -1061,6 +1361,26 @@
     </TokenIdentifier>
     <Path>interface_m_kit_service_model_query.html</Path>
     <Anchor>af8e7fff661acc01b9411a6fda21f42a1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MKitParseModelQuery(Internal)</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cat</Type>
+      <Scope>MKitParseModelQuery(Internal)</Scope>
+    </TokenIdentifier>
+    <Path>category_m_kit_parse_model_query_07_internal_08.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>buildQueryOpWithLimit:skip:includeCount:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>func</Type>
+      <Scope>MKitParseModelQuery(Internal)</Scope>
+    </TokenIdentifier>
+    <Path>category_m_kit_parse_model_query_07_internal_08.html</Path>
+    <Anchor>a4621cf2fb79fc4e274f6dab112c7afd5</Anchor>
+    <DeclaredIn>MKitParseModelQuery.m</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1721,6 +2041,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>offlineQuery</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>aec271a06c736f1b2e9e10e5811e96892</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>service</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
@@ -1912,69 +2243,124 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>initWithModelClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a17a116a690f5d84c2a226b79652168dc</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>keyExists:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
+      <Scope>MKitModelQuery</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>ae1318f14b42e685eac13cc9662e79ee2</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a43ad622a66c1ba04521e8f6fadf6971b</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>keyDoesNotExist:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
+      <Scope>MKitModelQuery</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>af109d1a9b18ef7195a7501ca837a2d97</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>af683eba84a5aac2baccfdcea9e6912e5</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>key:condition:value:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
+      <Scope>MKitModelQuery</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>ad737b3799e4da9d04e2a7bfdbbd64b73</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>ad84415a485afadfe072f9edc39a295a0</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>orderBy:direction:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
+      <Scope>MKitModelQuery</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>a4bf6d59b2048d7b787bdaa7f5d79b8d7</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a33156e11a671361de9764d8444fe8fae</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>execute:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
+      <Scope>MKitModelQuery</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>a52387217899eb34c58f542b901d949bf</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a2ec306256f0cb8e26936dfb955d20753</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>executeInBackground:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitServiceModelQuery</Scope>
+      <Scope>MKitModelQuery</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>aa2e1c37325f2c67c35c5fa3a4943c208</Anchor>
-    <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a693e99ec48887b562649d71b9524dd11</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeWithLimit:skip:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>ac6f0721c5582e29a3adf75c5559166b0</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeInBackgroundWithLimit:skip:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a9ea6dae7055a829584d58ff8818d8407</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>count:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a38af585be34efa416f5bf36b71ac3a5d</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>countInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a96b71d239c5d840210caa8c14144cd0f</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1989,23 +2375,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>orders</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>MKitServiceModelQuery</Scope>
+      <Name>queryForModelClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitModelQuery</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>a23a3c0e491843eb79ad965596a6a5298</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>conditions</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>abf92ce467258f9ba5c41cb4c8b0c145b</Anchor>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>abe88f71577417392d7fda8782b45e435</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2019,16 +2396,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>modelClass</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>MKitServiceModelQuery</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_service_model_query.html</Path>
-    <Anchor>a75a1924f79d415e2a6b5a4a5f7fe55c4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>manager</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -2036,6 +2403,36 @@
     </TokenIdentifier>
     <Path>interface_m_kit_service_model_query.html</Path>
     <Anchor>af8e7fff661acc01b9411a6fda21f42a1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>orders</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a85efd1f3fe43ae476d1024e860d0ae9f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>conditions</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a02cba614fd0e2ecbe1addde1fee14cad</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>modelClass</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a4f4461722278e7e8e1091fe043631ddd</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

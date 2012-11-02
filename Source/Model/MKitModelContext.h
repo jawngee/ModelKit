@@ -135,6 +135,6 @@
  * @param modelClass The model class to filter on
  * @return An array of models filtered with the predicate
  */
--(NSArray *)queryWithPredicate:(NSPredicate *)predicate forClass:(Class)class;
+-(NSArray *)queryWithPredicate:(NSPredicate *)predicate forClass:(Class)modelClass;
 
 @end

@@ -166,6 +166,8 @@ Class Methods</h2></td></tr>
 <tr class="separator:a6d7c8e3ae72dee47232ba05c089012e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac77a9c0b41b0dcdb6be77f164f9fe7cd"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_model.html#ac77a9c0b41b0dcdb6be77f164f9fe7cd">register</a></td></tr>
 <tr class="separator:ac77a9c0b41b0dcdb6be77f164f9fe7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd6ad3751da96df6adc783c7aec78f5"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_m_kit_model_query.html">MKitModelQuery</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_model.html#a1bd6ad3751da96df6adc783c7aec78f5">query</a></td></tr>
+<tr class="separator:a1bd6ad3751da96df6adc783c7aec78f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -189,7 +191,7 @@ Properties</h2></td></tr>
 <p>The context is sort of like a global storage for models so that your application isn't littered with different instances of the same object.</p>
 <p>For very large heirarchies, you might want to skip the context. In that case implement the <a class="el" href="protocol_m_kit_no_context-p.html">MKitNoContext</a> protocol to mark your model as a non participant. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00063">63</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00066">66</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
 </div><h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="a88a798be77b03b0a936dedee30243cc0"></a>
 <div class="memitem">
@@ -205,7 +207,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Adds the object to the context. This is done automatically, but for models conforming to <a class="el" href="protocol_m_kit_no_context-p.html">MKitNoContext</a> protocol, you'll have to call this if you want to add them. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00333">333</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00341">341</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -223,7 +225,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Suspend notifications when properties are changed. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00345">345</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00353">353</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -248,7 +250,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00733">733</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00741">741</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -273,7 +275,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00765">765</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00773">773</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -291,7 +293,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Resumes notifications when properties are changed. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00351">351</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00359">359</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -310,7 +312,7 @@ Properties</h2></td></tr>
 <p>Creates an empty instance of the class </p>
 <dl class="section return"><dt>Returns</dt><dd>A new empty instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00184">184</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00185">185</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -336,7 +338,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00253">253</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00254">254</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -362,7 +364,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new instance if model id is not found, otherwise matching instance with model id </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00202">202</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00203">203</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -388,7 +390,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new instance if object id is not found, otherwise matching instance with object id </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00189">189</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00190">190</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -414,7 +416,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00248">248</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00249">249</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -451,7 +453,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00214">214</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00215">215</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -470,7 +472,7 @@ Properties</h2></td></tr>
 <p>Returns the name of the model, typically to specify a different name for a backend service, eg PREFIXPost becomes Post. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the model. If not overridden, returns the name of the class. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00092">92</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00093">93</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -510,7 +512,28 @@ Properties</h2></td></tr>
 <p>Retrieves all of the model's properties </p>
 <dl class="section return"><dt>Returns</dt><dd>All of the model's properties </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00706">706</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00714">714</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bd6ad3751da96df6adc783c7aec78f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="interface_m_kit_model_query.html">MKitModelQuery</a> *) query </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns a query object for the model. </p>
+<dl class="section return"><dt>Returns</dt><dd>The query object </dd></dl>
+
+<p>Reimplemented in <a class="el" href="interface_m_kit_service_model.html#a10093c1e76818cb7c95e0f9d2ca6c2dd">MKitServiceModel</a>.</p>
+
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00263">263</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -528,7 +551,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Registers this class in the model registry. If you implement a custom model name, you need to call this from the load method of your class. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00097">97</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00098">98</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -546,7 +569,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Removes an object from a context. If you call delete, you do not need to call this. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00338">338</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00346">346</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -564,7 +587,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Resets tracking of changed properties. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00367">367</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00375">375</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -583,7 +606,7 @@ Properties</h2></td></tr>
 <p>Flattens the model into a dictionary or array. If the serialized object contains model properties or an array of models, this method returns an array containing all of the objects. The first object of the array is the model being serialized. Note this dictionary cannot be stored to plist due to use of NSNull. </p>
 <dl class="section return"><dt>Returns</dt><dd>A dictionary containing information about the model plus its properties and their values </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00723">723</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00731">731</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -602,7 +625,7 @@ Properties</h2></td></tr>
 <p>Serializes the model to JSON </p>
 <dl class="section return"><dt>Returns</dt><dd>The serialized model as a JSON string. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00751">751</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00759">759</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -626,7 +649,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Date created </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00078">78</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00081">81</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
 
 </div>
 </div>
@@ -649,7 +672,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>List of model properties that have changed </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00074">74</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00077">77</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
 
 </div>
 </div>
@@ -672,7 +695,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Used internally </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00072">72</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00075">75</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
 
 </div>
 </div>
@@ -695,7 +718,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>The current model state </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00073">73</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00076">76</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
 
 </div>
 </div>
@@ -718,7 +741,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>The object ID - Application specific </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00077">77</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00080">80</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
 
 </div>
 </div>
@@ -741,7 +764,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Date updated </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00079">79</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00082">82</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
 
 </div>
 </div>
@@ -755,7 +778,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_m_kit_model.html">MKitModel</a></li>
-    <li class="footer">Generated on Fri Nov 2 2012 13:06:38 for ModelKit by
+    <li class="footer">Generated on Fri Nov 2 2012 16:57:02 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>
