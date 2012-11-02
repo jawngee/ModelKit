@@ -16,6 +16,7 @@
 typedef void (^MKitBooleanResultBlock)(BOOL succeeded, NSError *error);
 typedef void (^MKitArrayResultBlock)(NSArray *objects, NSError *error);
 typedef void (^MKitObjectResultBlock)(id object, NSError *error);
+typedef void (^MKitIntResultBlock)(NSInteger result, NSError *error);
 
 @class MKitServiceModelQuery;
 

@@ -13,6 +13,16 @@
 #import "MKitMutableOrderedDictionary.h"
 #import "MKitServiceManager.h"
 
+
+typedef void (^MKitQueryResultBlock)(NSArray *objects, NSInteger totalCount, NSError *error);
+
+/** Key for result dictionary for number of items matched by query */
+extern NSString *const MKitQueryItemCountKey;
+
+/** Key for result dictionary for the array of objects returned by query */
+extern NSString *const MKitQueryResultKey;
+
+
 /**
  * Query conditions
  */
@@ -104,16 +114,53 @@ typedef enum
 -(void)orderBy:(NSString *)key direction:(MKitQueryOrder)order;
 
 /**
- * Executes the query
+ * Executes the query and returns a dictionary.  The dictionary has two keys: totalCount and results.  
+ * totalCount contains the total number of items the query matches, results is an array of objects that
+ * match the query.  Note that the number of items returned might be limited by the backend service
+ * and therefore, totalCount and number of objects in the results array can be different.
  * @param error The error if any
- * @return The results of the query
+ * @return The results of the query.
  */
--(NSArray *)execute:(NSError **)error;
+-(NSDictionary *)execute:(NSError **)error;
 
 /**
  * Executes the query in the background
  * @param resultBlock The block to call when the query completes
  */
--(void)executeInBackground:(MKitArrayResultBlock)resultBlock;
+-(void)executeInBackground:(MKitQueryResultBlock)resultBlock;
+
+/**
+ * Executes the query and returns a dictionary.  The dictionary has two keys: totalCount and results.
+ * totalCount contains the total number of items the query matches, results is an array of objects that
+ * match the query.  Note that the number of items returned might be limited by the backend service
+ * and therefore, totalCount and number of objects in the results array can be different.
+ * @param limit Limits the number of items returned, use NSNotFound for maximum amount
+ * @param skip Skips x number of results
+ * @param error The error if any
+ * @return The results of the query.
+ */
+-(NSDictionary *)executeWithLimit:(NSInteger)limit skip:(NSInteger)skip error:(NSError **)error;
+
+/**
+ * Executes the query in the background
+ * @param limit Limits the number of items returned, use NSNotFound for maximum amount
+ * @param skip Skips x number of results
+ * @param resultBlock The block to call when the query completes
+ */
+-(void)executeInBackgroundWithLimit:(NSInteger)limit skip:(NSInteger)skip resultBlock:(MKitQueryResultBlock)resultBlock;
+
+
+/**
+ * Executes the query returning the count of objects
+ * @param error The error if any
+ * @return The number of objects in the potential results
+ */
+-(NSInteger)count:(NSError **)error;
+
+/**
+ * Executes the query returning the number of results in the background
+ * @param resultBlock The block to call when the query completes
+ */
+-(void)countInBackground:(MKitIntResultBlock)resultBlock;
 
 @end

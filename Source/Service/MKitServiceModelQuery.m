@@ -8,6 +8,9 @@
 
 #import "MKitServiceModelQuery.h"
 
+NSString *const MKitQueryItemCountKey=@"itemCount";
+NSString *const MKitQueryResultKey=@"result";
+
 @implementation MKitServiceModelQuery
 
 +(MKitServiceModelQuery *)queryForModelClass:(Class)_modelClass manager:(MKitServiceManager *)_manager
@@ -64,16 +67,45 @@
     [orders addObject:@{@"key":key,@"dir":@(order)}];
 }
 
--(NSArray *)execute:(NSError **)error
+-(NSDictionary *)execute:(NSError **)error
 {
-    return NO;
+    return [self executeWithLimit:NSNotFound skip:NSNotFound error:error];
 }
 
--(void)executeInBackground:(MKitArrayResultBlock)resultBlock
+-(void)executeInBackground:(MKitQueryResultBlock)resultBlock
+{
+    [self executeInBackgroundWithLimit:NSNotFound skip:NSNotFound resultBlock:resultBlock];
+}
+
+
+-(NSDictionary *)executeWithLimit:(NSInteger)limit skip:(NSInteger)skip error:(NSError **)error
+{
+    return nil;
+}
+
+-(void)executeInBackgroundWithLimit:(NSInteger)limit skip:(NSInteger)skip resultBlock:(MKitQueryResultBlock)resultBlock
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSError *error=nil;
-        NSArray *result=[self execute:&error];
+        NSDictionary *result=[self executeWithLimit:limit skip:skip error:&error];
+        
+        if ((result!=nil) && (resultBlock!=nil))
+            resultBlock(result[MKitQueryResultKey], [result[MKitQueryItemCountKey] integerValue], error);
+        else if (resultBlock)
+            resultBlock(nil, 0, error);
+    });
+}
+
+-(NSInteger)count:(NSError **)error
+{
+    return 0;
+}
+
+-(void)countInBackground:(MKitIntResultBlock)resultBlock
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSError *error=nil;
+        NSInteger result=[self count:&error];
         if (resultBlock)
             resultBlock(result, error);
     });

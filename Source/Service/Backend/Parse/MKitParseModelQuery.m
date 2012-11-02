@@ -13,11 +13,26 @@
 #import "JSONKit.h"
 #import "MKitParseModelBinder.h"
 
+@interface MKitParseModelQuery(Internal)
+
+-(AFHTTPRequestOperation *)buildQueryOpWithLimit:(NSInteger)limit skip:(NSInteger)skip includeCount:(BOOL)includeCount;
+
+@end
+
 @implementation MKitParseModelQuery
 
--(NSArray *)execute:(NSError **)error
+-(AFHTTPRequestOperation *)buildQueryOpWithLimit:(NSInteger)limit skip:(NSInteger)skip includeCount:(BOOL)includeCount
 {
     NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    
+    if (limit!=NSNotFound)
+        [params setObject:@(limit) forKey:@"limit"];
+    
+    if (skip!=NSNotFound)
+        [params setObject:@(skip) forKey:@"skip"];
+    
+    if (includeCount)
+        [params setObject:@(1) forKey:@"count"];
     
     NSMutableDictionary *query=[NSMutableDictionary dictionary];
     for(NSDictionary *c in conditions)
@@ -87,7 +102,12 @@
     if (includes.count>0)
         [params setObject:[includes componentsJoinedByString:@","] forKey:@"include"];
     
-    AFHTTPRequestOperation *op=[manager classRequestWithMethod:@"GET" class:modelClass params:((params.count>0) ? params : nil) body:nil];
+    return [manager classRequestWithMethod:@"GET" class:modelClass params:((params.count>0) ? params : nil) body:nil];
+}
+
+-(NSDictionary *)executeWithLimit:(NSInteger)limit skip:(NSInteger)skip error:(NSError **)error
+{
+    AFHTTPRequestOperation *op=[self buildQueryOpWithLimit:limit skip:skip includeCount:YES];
     
     [op start];
     [op waitUntilFinished];
@@ -95,7 +115,30 @@
     if ([op hasAcceptableStatusCode])
     {
         id data=[op.responseString objectFromJSONString];
-        return [MKitParseModelBinder bindArrayOfModels:[data objectForKey:@"results"] forClass:modelClass];
+        return @{
+            MKitQueryItemCountKey:data[@"count"],
+            MKitQueryResultKey:[MKitParseModelBinder bindArrayOfModels:[data objectForKey:@"results"] forClass:modelClass]
+        };
+    }
+    
+    if (error)
+        *error=op.error;
+    
+    return nil;
+}
+
+
+-(NSInteger)count:(NSError **)error
+{
+    AFHTTPRequestOperation *op=[self buildQueryOpWithLimit:0 skip:NSNotFound includeCount:YES];
+    
+    [op start];
+    [op waitUntilFinished];
+    
+    if ([op hasAcceptableStatusCode])
+    {
+        id data=[op.responseString objectFromJSONString];
+        return [data[@"count"] integerValue];
     }
     
     if (error)
