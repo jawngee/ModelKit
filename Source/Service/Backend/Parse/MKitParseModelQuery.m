@@ -38,6 +38,7 @@
     for(NSDictionary *c in conditions)
     {
         id val=c[@"value"];
+        id val2=c[@"value2"];
         
         if ([[val class] isSubclassOfClass:[MKitModel class]])
             val=[((MKitModel *) val) parsePointer];
@@ -48,6 +49,9 @@
         }
         else if ([[val class] isSubclassOfClass:[NSDate class]])
             val=@{@"__type":@"Date",@"iso":[((NSDate *) val) ISO8601String]};
+        
+        if ([[val2 class] isSubclassOfClass:[NSDate class]])
+            val2=@{@"__type":@"Date",@"iso":[((NSDate *) val) ISO8601String]};
         
         switch ([c[@"condition"] integerValue])
         {
@@ -80,6 +84,20 @@
                 break;
             case KeyNotExist:
                 [query setObject:@{@"$exists":@(NO)} forKey:c[@"key"]];
+                break;
+            case KeyWithin:
+                [query setObject:@{@"$gte":val,@"$lte":val2} forKey:c[@"key"]];
+                break;
+            case KeyBeginsWith:
+                [query setObject:@{@"$regex":[NSString stringWithFormat:@"^%@",val],@"$options":@"im"} forKey:c[@"key"]];
+                break;
+            case KeyEndsWith:
+                [query setObject:@{@"$regex":[NSString stringWithFormat:@"%@$",val],@"$options":@"im"} forKey:c[@"key"]];
+                break;
+            case KeyLike:
+                [query setObject:@{@"$regex":val,@"$options":@"im"} forKey:c[@"key"]];
+                break;
+            default:
                 break;
         }
     }

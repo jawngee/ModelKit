@@ -31,6 +31,10 @@ typedef enum
     KeyNotIn,
     KeyExists,
     KeyNotExist,
+    KeyWithin,
+    KeyBeginsWith,
+    KeyEndsWith,
+    KeyLike
 } MKitQueryCondition;
 
 /**

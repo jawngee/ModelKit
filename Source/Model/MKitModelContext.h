@@ -129,4 +129,12 @@
  */
 -(MKitModel *)modelForModelId:(NSString *)modelId;
 
+/**
+ * Queries the context for models of a specific class matching a supplied predicate.
+ * @param predicate The predicate to filter with
+ * @param modelClass The model class to filter on
+ * @return An array of models filtered with the predicate
+ */
+-(NSArray *)queryWithPredicate:(NSPredicate *)predicate forClass:(Class)class;
+
 @end

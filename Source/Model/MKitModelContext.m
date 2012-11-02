@@ -305,4 +305,14 @@ static NSMutableArray *contextStack=nil;
     return NO;
 }
 
+-(NSArray *)queryWithPredicate:(NSPredicate *)predicate forClass:(Class)modelClass
+{
+    NSString *className=NSStringFromClass(modelClass);
+    NSMutableDictionary *objectCache=[classCache objectForKey:className];
+    if (!objectCache)
+        return nil;
+    
+    return [[objectCache allValues] filteredArrayUsingPredicate:predicate];
+}
+
 @end
