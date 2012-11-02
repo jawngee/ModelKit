@@ -10,14 +10,21 @@
 
 #import "MKitModel.h"
 #import "AFNetworking.h"
+#import "MKitServiceKeyChain.h"
 
-
+@class MKitServiceModel;
 @class MKitServiceModelQuery;
+@protocol MKitServiceUser;
 
 /**
  * Abstract class for building an interface between models and a backend service
  */
 @interface MKitServiceManager : NSObject
+{
+    MKitServiceKeyChain *keychain;      /**< Keychain for storing credentials */
+}
+
+@property (readonly) MKitServiceKeyChain *keychain;
 
 /**
  * Sets up a service for use
@@ -116,5 +123,26 @@
  */
 -(AFHTTPRequestOperation *)modelRequestWithMethod:(NSString *)method model:(MKitModel *)model params:(NSDictionary *)params body:(NSData *)body;
 
+/**
+ * Creates a generic HTTP request
+ * @param method The HTTP method to use
+ * @param params The query parameters for the request
+ * @param body The body data for the request
+ * @return The operation
+ */
+-(AFHTTPRequestOperation *)requestWithMethod:(NSString *)method path:(NSString *)path params:(NSDictionary *)params body:(NSData *)body;
+
+
+/**
+ * Returns user's credentials
+ * @return Dictionary of credentials, nil if none
+ */
+-(NSDictionary *)userCredentials;
+
+/**
+ * Stores a user's credentials
+ * @param user The user to store
+ */
+-(void)storeUserCredentials:(MKitServiceModel<MKitServiceUser> *)user;
 
 @end

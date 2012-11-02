@@ -8,8 +8,12 @@
 
 #import "MKitServiceManager.h"
 #import "MKitServiceModelQuery.h"
+#import "MKitServiceUser.h"
+#import "MKitServiceModel.h"
 
 @implementation MKitServiceManager
+
+@synthesize keychain;
 
 static NSMutableDictionary *managers=nil;
 
@@ -43,7 +47,7 @@ static NSMutableDictionary *managers=nil;
 {
     if ((self=[super init]))
     {
-        
+        keychain=nil;
     }
     
     return self;
@@ -107,6 +111,21 @@ static NSMutableDictionary *managers=nil;
 -(AFHTTPRequestOperation *)modelRequestWithMethod:(NSString *)method model:(MKitModel *)model params:(NSDictionary *)params body:(NSData *)body
 {
     return nil;
+}
+
+-(AFHTTPRequestOperation *)requestWithMethod:(NSString *)method path:(NSString *)path params:(NSDictionary *)params body:(NSData *)body
+{
+    return nil;
+}
+
+-(NSDictionary *)userCredentials
+{
+    return nil;
+}
+
+-(void)storeUserCredentials:(MKitServiceModel<MKitServiceUser> *)user
+{
+    
 }
 
 @end
