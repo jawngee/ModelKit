@@ -7,12 +7,18 @@
 //
 
 #import "MKitServiceModel.h"
+#import "MKitModelPredicateQuery.h"
 
 @implementation MKitServiceModel
 
 +(MKitServiceModelQuery *)query
 {
     return [[self service] queryForModelClass:self];
+}
+
++(MKitModelQuery *)offlineQuery
+{
+    return [MKitModelPredicateQuery queryForModelClass:self];
 }
 
 +(MKitServiceManager *)service

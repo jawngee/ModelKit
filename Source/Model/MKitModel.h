@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
+#include "MKitDefs.h"
+
+@class MKitModelQuery;
 
 #pragma mark - Typedefs
 
@@ -142,6 +145,12 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * your class.
  */
 +(void)register;
+
+/**
+ * Returns a query object for the model.
+ * @return The query object
+ */
++(MKitModelQuery *)query;
 
 /**
  * Adds the object to the context.  This is done automatically, but for models

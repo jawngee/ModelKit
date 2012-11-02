@@ -6,17 +6,11 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#include "MKitDefs.h"
+
 #import "MKitModel.h"
 #import "AFNetworking.h"
 
-
-#pragma mark - Block Defs
-
-typedef void (^MKitBooleanResultBlock)(BOOL succeeded, NSError *error);
-typedef void (^MKitArrayResultBlock)(NSArray *objects, NSError *error);
-typedef void (^MKitObjectResultBlock)(id object, NSError *error);
-typedef void (^MKitIntResultBlock)(NSInteger result, NSError *error);
 
 @class MKitServiceModelQuery;
 

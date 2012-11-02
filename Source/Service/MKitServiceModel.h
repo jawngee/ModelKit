@@ -32,6 +32,12 @@
 +(MKitServiceModelQuery *)query;
 
 /**
+ * Returns a query object for the model using predicates on the context.
+ * @return The query object
+ */
++(MKitModelQuery *)offlineQuery;
+
+/**
  * Returns the service manager this model uses for persistence
  * @return service The service this model uses
  */

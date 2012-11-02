@@ -43,6 +43,8 @@
 		FFB8CBAB1642928600D43C8F /* MKitServiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CBAA1642928600D43C8F /* MKitServiceModel.m */; };
 		FFB8CBAE164292C500D43C8F /* MKitParseServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CBAD164292C400D43C8F /* MKitParseServiceManager.m */; };
 		FFB8CBB316429A4E00D43C8F /* MKitParseModelBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CBB216429A4E00D43C8F /* MKitParseModelBinder.m */; };
+		FFB8CBB61643A6B000D43C8F /* MKitModelQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CBB51643A6B000D43C8F /* MKitModelQuery.m */; };
+		FFB8CBBA1643A95200D43C8F /* MKitModelPredicateQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CBB91643A95200D43C8F /* MKitModelPredicateQuery.m */; };
 		FFBA0D26163D23EE00B6560C /* MKitTC0001ContextTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D25163D23EE00B6560C /* MKitTC0001ContextTestCases.m */; };
 		FFBA0D29163D24C100B6560C /* TestModelNoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D28163D24C100B6560C /* TestModelNoContext.m */; };
 		FFBA0D2C163D254E00B6560C /* libModelKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54A9D16391DEA00F055A6 /* libModelKit.a */; };
@@ -144,6 +146,11 @@
 		FFB8CBAD164292C400D43C8F /* MKitParseServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseServiceManager.m; sourceTree = "<group>"; };
 		FFB8CBB116429A4E00D43C8F /* MKitParseModelBinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitParseModelBinder.h; sourceTree = "<group>"; };
 		FFB8CBB216429A4E00D43C8F /* MKitParseModelBinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseModelBinder.m; sourceTree = "<group>"; };
+		FFB8CBB41643A6B000D43C8F /* MKitModelQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitModelQuery.h; sourceTree = "<group>"; };
+		FFB8CBB51643A6B000D43C8F /* MKitModelQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitModelQuery.m; sourceTree = "<group>"; };
+		FFB8CBB71643A7A900D43C8F /* MKitDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKitDefs.h; sourceTree = "<group>"; };
+		FFB8CBB81643A95200D43C8F /* MKitModelPredicateQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitModelPredicateQuery.h; sourceTree = "<group>"; };
+		FFB8CBB91643A95200D43C8F /* MKitModelPredicateQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitModelPredicateQuery.m; sourceTree = "<group>"; };
 		FFBA0D24163D23EE00B6560C /* MKitTC0001ContextTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKitTC0001ContextTestCases.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FFBA0D25163D23EE00B6560C /* MKitTC0001ContextTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitTC0001ContextTestCases.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FFBA0D27163D24C100B6560C /* TestModelNoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TestModelNoContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -228,12 +235,17 @@
 		FF3C8CB21639368E009EB62A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FFB8CBB71643A7A900D43C8F /* MKitDefs.h */,
 				FF3C8CB3163936B0009EB62A /* MKitModel.h */,
 				FF3C8CB4163936B0009EB62A /* MKitModel.m */,
 				FF3C8D5C16396082009EB62A /* MKitModelRegistry.h */,
 				FF3C8D5D16396082009EB62A /* MKitModelRegistry.m */,
 				FFCFA9EF1639732500BC2E3E /* MKitModelContext.h */,
 				FFCFA9F01639732500BC2E3E /* MKitModelContext.m */,
+				FFB8CBB41643A6B000D43C8F /* MKitModelQuery.h */,
+				FFB8CBB51643A6B000D43C8F /* MKitModelQuery.m */,
+				FFB8CBB81643A95200D43C8F /* MKitModelPredicateQuery.h */,
+				FFB8CBB91643A95200D43C8F /* MKitModelPredicateQuery.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -618,6 +630,8 @@
 				FFB8CBAB1642928600D43C8F /* MKitServiceModel.m in Sources */,
 				FFB8CBAE164292C500D43C8F /* MKitParseServiceManager.m in Sources */,
 				FFB8CBB316429A4E00D43C8F /* MKitParseModelBinder.m in Sources */,
+				FFB8CBB61643A6B000D43C8F /* MKitModelQuery.m in Sources */,
+				FFB8CBBA1643A95200D43C8F /* MKitModelPredicateQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

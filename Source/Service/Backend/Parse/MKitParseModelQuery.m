@@ -144,7 +144,7 @@
     if (error)
         *error=op.error;
     
-    return nil;
+    return 0;
 }
 
 @end

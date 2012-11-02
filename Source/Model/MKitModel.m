@@ -7,6 +7,7 @@
 //
 
 #import "MKitModel.h"
+#import "MKitModelPredicateQuery.h"
 #import "MKitReflectionManager.h"
 #import "MKitReflectedClass.h"
 #import "MKitReflectedProperty.h"
@@ -255,6 +256,13 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     id jsonData=[JSONString objectFromJSONString];
     
     return [self instanceWithSerializedData:jsonData fromJSON:YES];
+}
+
+#pragma mark - Query
+
++(MKitModelQuery *)query
+{
+    return [MKitModelPredicateQuery queryForModelClass:self];
 }
 
 #pragma mark - NSCoding
