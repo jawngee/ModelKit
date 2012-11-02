@@ -7,6 +7,7 @@ var searchData=
   ['initwithmodelclass_3a',['initWithModelClass:',['../interface_m_kit_model_query.html#a17a116a690f5d84c2a226b79652168dc',1,'MKitModelQuery']]],
   ['initwithmodelclass_3amanager_3a',['initWithModelClass:manager:',['../interface_m_kit_service_model_query.html#a6cc12e2d4558e72fe1782a172062f061',1,'MKitServiceModelQuery']]],
   ['initwithname_3aforproperty_3a',['initWithName:forProperty:',['../interface_m_kit_reflected_property.html#acd399fc58d297eeccc87ce21ddd60a15',1,'MKitReflectedProperty']]],
+  ['initwithservice_3a',['initWithService:',['../interface_m_kit_service_key_chain.html#af4246f0cec37ec50c5974c32d03f4a28',1,'MKitServiceKeyChain']]],
   ['instance',['instance',['../interface_m_kit_model.html#a5d0bbc2eb3d876d979c4875cb11469d7',1,'MKitModel']]],
   ['instancewithjson_3a',['instanceWithJSON:',['../interface_m_kit_model.html#a91e80d02cedbd66842a0828b616cb1c3',1,'MKitModel']]],
   ['instancewithmodelid_3a',['instanceWithModelId:',['../interface_m_kit_model.html#a98f2f0e221a5e310d91b72cc99aeb311',1,'MKitModel']]],

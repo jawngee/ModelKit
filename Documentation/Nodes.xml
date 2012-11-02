@@ -520,6 +520,72 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>MKitParseUser</Name>
+            <Path>interface_m_kit_parse_user.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>currentUser</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>acd57d67d199b528bce050f37ea01f0e6</Anchor>
+             </Node>
+             <Node>
+              <Name>logInWithUserName:password:error:</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>aa2099ab036eacca891ec16c19c491f46</Anchor>
+             </Node>
+             <Node>
+              <Name>logInWithUserName:password:resultBlock:</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>a4cc818756eee93f44eaa18931f4d99c9</Anchor>
+             </Node>
+             <Node>
+              <Name>logOut</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>aa9c7f80d41b3b8bf764afce4ea0173c0</Anchor>
+             </Node>
+             <Node>
+              <Name>requestPasswordResetForEmail:error:</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>a4388f44e3981c3f20eb23236feaa8c07</Anchor>
+             </Node>
+             <Node>
+              <Name>requestPasswordResetInBackgroundForEmail:resultBlock:</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>a486d3916ed9d54979bc5e767d085142f</Anchor>
+             </Node>
+             <Node>
+              <Name>signUpInBackgroundWithUserName:email:password:resultBlock:</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>a9498108c43deaafd2b0d6c997ea1b2bf</Anchor>
+             </Node>
+             <Node>
+              <Name>signUpWithUserName:email:password:error:</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>aa7aec9e7c1f7c1d5a19e7ee377bfad76</Anchor>
+             </Node>
+             <Node>
+              <Name>email</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>a3c5a1a30cdd65bc5adb11a1f298840ad</Anchor>
+             </Node>
+             <Node>
+              <Name>modelSessionToken</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>a55dee00b23bfbd4fee4280b6241d6a31</Anchor>
+             </Node>
+             <Node>
+              <Name>password</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>afac307298c8f91f23917459421d3c050</Anchor>
+             </Node>
+             <Node>
+              <Name>username</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>ac05339da87d3a3c59010c1fa500b24fa</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>MKitReflectedClass</Name>
             <Path>interface_m_kit_reflected_class.html</Path>
             <Subnodes>
@@ -589,6 +655,37 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>MKitServiceKeyChain</Name>
+            <Path>interface_m_kit_service_key_chain.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>credentialsForUsername:</Name>
+              <Path>interface_m_kit_service_key_chain.html</Path>
+              <Anchor>a8326f3228eb48acc973ec5a6d00cccce</Anchor>
+             </Node>
+             <Node>
+              <Name>deleteCredentialsForUsername:</Name>
+              <Path>interface_m_kit_service_key_chain.html</Path>
+              <Anchor>acdfbb59352e4d77f99a2abaedb8ca6f6</Anchor>
+             </Node>
+             <Node>
+              <Name>initWithService:</Name>
+              <Path>interface_m_kit_service_key_chain.html</Path>
+              <Anchor>af4246f0cec37ec50c5974c32d03f4a28</Anchor>
+             </Node>
+             <Node>
+              <Name>storeUsername:password:sessionToken:data:</Name>
+              <Path>interface_m_kit_service_key_chain.html</Path>
+              <Anchor>ab9e482b99378422fcc636ad376279d13</Anchor>
+             </Node>
+             <Node>
+              <Name>service</Name>
+              <Path>interface_m_kit_service_key_chain.html</Path>
+              <Anchor>aa5a0dcf26e76193234aa218f3a5cf2ad</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>MKitServiceManager</Name>
             <Path>interface_m_kit_service_manager.html</Path>
             <Subnodes>
@@ -638,6 +735,11 @@
               <Anchor>a50a85563c800263cfe85a5c2d9d48e50</Anchor>
              </Node>
              <Node>
+              <Name>requestWithMethod:path:params:body:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>aeaca69fe7553d7f9357165446f224b91</Anchor>
+             </Node>
+             <Node>
               <Name>saveModel:error:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
               <Anchor>a780a85f5bdd23658371d0ed6bd68200b</Anchor>
@@ -651,6 +753,21 @@
               <Name>setupService:withKeys:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
               <Anchor>ad33c0c71934d2d6af2c75c5def01181e</Anchor>
+             </Node>
+             <Node>
+              <Name>storeUserCredentials:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>ae17cb193061855460d7e5c244517fb94</Anchor>
+             </Node>
+             <Node>
+              <Name>userCredentials</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>a17fbcc36fd83bd996499b2eb314ffcb1</Anchor>
+             </Node>
+             <Node>
+              <Name>keychain</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>acb2a726710d43bcbdc0a538702096957</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -737,6 +854,72 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>&lt;MKitServiceUser&gt;</Name>
+            <Path>protocol_m_kit_service_user-p.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>currentUser</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>a51e62737ba864bd0f98283b34db461ae</Anchor>
+             </Node>
+             <Node>
+              <Name>logInWithUserName:password:error:</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>acfa225f40dc8dfb908dc68e672182bd1</Anchor>
+             </Node>
+             <Node>
+              <Name>logInWithUserName:password:resultBlock:</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>aec0683a9a873cbcc44df2d51ead22a2d</Anchor>
+             </Node>
+             <Node>
+              <Name>logOut</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>ac5f64bb5b31c297df71356aa904836b5</Anchor>
+             </Node>
+             <Node>
+              <Name>requestPasswordResetForEmail:error:</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>ae5e85623e9c097029d015291b92605bf</Anchor>
+             </Node>
+             <Node>
+              <Name>requestPasswordResetInBackgroundForEmail:resultBlock:</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>a55a0a28edceefb393d648e545627e6ea</Anchor>
+             </Node>
+             <Node>
+              <Name>signUpInBackgroundWithUserName:email:password:resultBlock:</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>a2d1ec0b7c1bb8c9eb283939cb19ce528</Anchor>
+             </Node>
+             <Node>
+              <Name>signUpWithUserName:email:password:error:</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>a7239371af35a474b466274e2409203d3</Anchor>
+             </Node>
+             <Node>
+              <Name>email</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>a97682a7db35f6cedfb9706b6efb92f3e</Anchor>
+             </Node>
+             <Node>
+              <Name>modelSessionToken</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>a33a644bbd0dab1f3969aff5396dbfed7</Anchor>
+             </Node>
+             <Node>
+              <Name>password</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>a258935ca2152b60c4e4055e09ed652a0</Anchor>
+             </Node>
+             <Node>
+              <Name>username</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>a88e933a1d6801c05baf6efa6c10b814a</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>NSDate(ModelKit)</Name>
             <Path>category_n_s_date_07_model_kit_08.html</Path>
             <Subnodes>
@@ -810,6 +993,16 @@
             <Path>category_m_kit_reflected_class_07_internal_08.html</Path>
            </Node>
            <Node>
+            <Name>&lt;MKitServiceUser&gt;</Name>
+            <Path>protocol_m_kit_service_user-p.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>MKitParseUser</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>&lt;NSCoding&gt;</Name>
             <Path></Path>
             <Subnodes>
@@ -824,6 +1017,12 @@
                  <Node>
                   <Name>MKitParseModel</Name>
                   <Path>interface_m_kit_parse_model.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>MKitParseUser</Name>
+                    <Path>interface_m_kit_parse_user.html</Path>
+                   </Node>
+                  </Subnodes>
                  </Node>
                 </Subnodes>
                </Node>
@@ -906,6 +1105,10 @@
              <Node>
               <Name>MKitReflectionManager</Name>
               <Path>interface_m_kit_reflection_manager.html</Path>
+             </Node>
+             <Node>
+              <Name>MKitServiceKeyChain</Name>
+              <Path>interface_m_kit_service_key_chain.html</Path>
              </Node>
              <Node>
               <Name>MKitServiceManager</Name>
@@ -1163,9 +1366,25 @@
                     <Name>MKitParseServiceManager.m</Name>
                     <Path>_m_kit_parse_service_manager_8m_source.html</Path>
                    </Node>
+                   <Node>
+                    <Name>MKitParseUser.h</Name>
+                    <Path>_m_kit_parse_user_8h_source.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>MKitParseUser.m</Name>
+                    <Path>_m_kit_parse_user_8m_source.html</Path>
+                   </Node>
                   </Subnodes>
                  </Node>
                 </Subnodes>
+               </Node>
+               <Node>
+                <Name>MKitServiceKeyChain.h</Name>
+                <Path>_m_kit_service_key_chain_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceKeyChain.m</Name>
+                <Path>_m_kit_service_key_chain_8m_source.html</Path>
                </Node>
                <Node>
                 <Name>MKitServiceManager.h</Name>
@@ -1190,6 +1409,10 @@
                <Node>
                 <Name>MKitServiceModelQuery.m</Name>
                 <Path>_m_kit_service_model_query_8m_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceUser.h</Name>
+                <Path>_m_kit_service_user_8h_source.html</Path>
                </Node>
               </Subnodes>
              </Node>

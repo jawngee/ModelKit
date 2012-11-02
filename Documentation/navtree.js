@@ -20,7 +20,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_m_kit_defs_8h_source.html"
+"_m_kit_defs_8h_source.html",
+"protocol_m_kit_service_user-p.html#ae5e85623e9c097029d015291b92605bf"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

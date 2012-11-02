@@ -180,8 +180,15 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>countInBackground:
 : <a class="el" href="interface_m_kit_model_query.html#a96b71d239c5d840210caa8c14144cd0f">MKitModelQuery</a>
 </li>
+<li>credentialsForUsername:
+: <a class="el" href="interface_m_kit_service_key_chain.html#a8326f3228eb48acc973ec5a6d00cccce">MKitServiceKeyChain</a>
+</li>
 <li>current
 : <a class="el" href="interface_m_kit_model_context.html#abf89ab8b8f857336c88e1be4d175fc80">MKitModelContext</a>
+</li>
+<li>currentUser
+: <a class="el" href="interface_m_kit_parse_user.html#acd57d67d199b528bce050f37ea01f0e6">MKitParseUser</a>
+, <a class="el" href="protocol_m_kit_service_user-p.html#a51e62737ba864bd0f98283b34db461ae">&lt;MKitServiceUser&gt;</a>
 </li>
 </ul>
 
@@ -195,6 +202,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>delete:
 : <a class="el" href="interface_m_kit_service_model.html#a261e0e80c5caa0ad74d1de78bc7f94d6">MKitServiceModel</a>
+</li>
+<li>deleteCredentialsForUsername:
+: <a class="el" href="interface_m_kit_service_key_chain.html#acdfbb59352e4d77f99a2abaedb8ca6f6">MKitServiceKeyChain</a>
 </li>
 <li>deleteInBackground:
 : <a class="el" href="interface_m_kit_service_model.html#ac2bf36d184060bda52b0685895de7fd9">MKitServiceModel</a>
@@ -284,6 +294,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>initWithName:forProperty:
 : <a class="el" href="interface_m_kit_reflected_property.html#acd399fc58d297eeccc87ce21ddd60a15">MKitReflectedProperty</a>
 </li>
+<li>initWithService:
+: <a class="el" href="interface_m_kit_service_key_chain.html#af4246f0cec37ec50c5974c32d03f4a28">MKitServiceKeyChain</a>
+</li>
 <li>instance
 : <a class="el" href="interface_m_kit_model.html#a5d0bbc2eb3d876d979c4875cb11469d7">MKitModel</a>
 </li>
@@ -330,6 +343,18 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>loadFromFile:error:
 : <a class="el" href="interface_m_kit_model_context.html#abea195103040c17fc226f71977a22e77">MKitModelContext</a>
+</li>
+<li>logInWithUserName:password:error:
+: <a class="el" href="interface_m_kit_parse_user.html#aa2099ab036eacca891ec16c19c491f46">MKitParseUser</a>
+, <a class="el" href="protocol_m_kit_service_user-p.html#acfa225f40dc8dfb908dc68e672182bd1">&lt;MKitServiceUser&gt;</a>
+</li>
+<li>logInWithUserName:password:resultBlock:
+: <a class="el" href="protocol_m_kit_service_user-p.html#aec0683a9a873cbcc44df2d51ead22a2d">&lt;MKitServiceUser&gt;</a>
+, <a class="el" href="interface_m_kit_parse_user.html#a4cc818756eee93f44eaa18931f4d99c9">MKitParseUser</a>
+</li>
+<li>logOut
+: <a class="el" href="interface_m_kit_parse_user.html#aa9c7f80d41b3b8bf764afce4ea0173c0">MKitParseUser</a>
+, <a class="el" href="protocol_m_kit_service_user-p.html#ac5f64bb5b31c297df71356aa904836b5">&lt;MKitServiceUser&gt;</a>
 </li>
 </ul>
 
@@ -437,6 +462,17 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>removeFromContext:
 : <a class="el" href="interface_m_kit_model_context.html#a49e1ea1d3d33c8b81aff4f53987f495a">MKitModelContext</a>
 </li>
+<li>requestPasswordResetForEmail:error:
+: <a class="el" href="interface_m_kit_parse_user.html#a4388f44e3981c3f20eb23236feaa8c07">MKitParseUser</a>
+, <a class="el" href="protocol_m_kit_service_user-p.html#ae5e85623e9c097029d015291b92605bf">&lt;MKitServiceUser&gt;</a>
+</li>
+<li>requestPasswordResetInBackgroundForEmail:resultBlock:
+: <a class="el" href="protocol_m_kit_service_user-p.html#a55a0a28edceefb393d648e545627e6ea">&lt;MKitServiceUser&gt;</a>
+, <a class="el" href="interface_m_kit_parse_user.html#a486d3916ed9d54979bc5e767d085142f">MKitParseUser</a>
+</li>
+<li>requestWithMethod:path:params:body:
+: <a class="el" href="interface_m_kit_service_manager.html#aeaca69fe7553d7f9357165446f224b91">MKitServiceManager</a>
+</li>
 <li>resetChanges
 : <a class="el" href="interface_m_kit_model.html#afd26486d5372b89c0b5f34b7b56dcdb2">MKitModel</a>
 </li>
@@ -474,12 +510,29 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>setupService:withKeys:
 : <a class="el" href="interface_m_kit_service_manager.html#ad33c0c71934d2d6af2c75c5def01181e">MKitServiceManager</a>
 </li>
+<li>signUpInBackgroundWithUserName:email:password:resultBlock:
+: <a class="el" href="interface_m_kit_parse_user.html#a9498108c43deaafd2b0d6c997ea1b2bf">MKitParseUser</a>
+, <a class="el" href="protocol_m_kit_service_user-p.html#a2d1ec0b7c1bb8c9eb283939cb19ce528">&lt;MKitServiceUser&gt;</a>
+</li>
+<li>signUpWithUserName:email:password:error:
+: <a class="el" href="interface_m_kit_parse_user.html#aa7aec9e7c1f7c1d5a19e7ee377bfad76">MKitParseUser</a>
+, <a class="el" href="protocol_m_kit_service_user-p.html#a7239371af35a474b466274e2409203d3">&lt;MKitServiceUser&gt;</a>
+</li>
+<li>storeUserCredentials:
+: <a class="el" href="interface_m_kit_service_manager.html#ae17cb193061855460d7e5c244517fb94">MKitServiceManager</a>
+</li>
+<li>storeUsername:password:sessionToken:data:
+: <a class="el" href="interface_m_kit_service_key_chain.html#ab9e482b99378422fcc636ad376279d13">MKitServiceKeyChain</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
 <li>unflattenArray:decodeFromJSON:arrayClass:objectArray:decodingCache:
 : <a class="el" href="category_m_kit_model_07_internal_08.html#adae1180df5b1096f42f67f9ce540c008">MKitModel(Internal)</a>
+</li>
+<li>userCredentials
+: <a class="el" href="interface_m_kit_service_manager.html#a17fbcc36fd83bd996499b2eb314ffcb1">MKitServiceManager</a>
 </li>
 <li>UUID
 : <a class="el" href="category_n_s_string_07_model_kit_08.html#aa25a7b069a206a0f51d7e43c9842eefc">NSString(ModelKit)</a>
@@ -490,7 +543,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Nov 2 2012 16:57:02 for ModelKit by
+    <li class="footer">Generated on Sat Nov 3 2012 04:22:40 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

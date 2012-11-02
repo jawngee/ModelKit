@@ -19,13 +19,16 @@ var annotated =
     [ "MKitParseModelQuery(Internal)", "category_m_kit_parse_model_query_07_internal_08.html", "category_m_kit_parse_model_query_07_internal_08" ],
     [ "MKitParseServiceManager", "interface_m_kit_parse_service_manager.html", null ],
     [ "MKitParseServiceManager(Internal)", "category_m_kit_parse_service_manager_07_internal_08.html", "category_m_kit_parse_service_manager_07_internal_08" ],
+    [ "MKitParseUser", "interface_m_kit_parse_user.html", "interface_m_kit_parse_user" ],
     [ "MKitReflectedClass", "interface_m_kit_reflected_class.html", "interface_m_kit_reflected_class" ],
     [ "MKitReflectedClass(Internal)", "category_m_kit_reflected_class_07_internal_08.html", "category_m_kit_reflected_class_07_internal_08" ],
     [ "MKitReflectedProperty", "interface_m_kit_reflected_property.html", "interface_m_kit_reflected_property" ],
     [ "MKitReflectionManager", "interface_m_kit_reflection_manager.html", "interface_m_kit_reflection_manager" ],
+    [ "MKitServiceKeyChain", "interface_m_kit_service_key_chain.html", "interface_m_kit_service_key_chain" ],
     [ "MKitServiceManager", "interface_m_kit_service_manager.html", "interface_m_kit_service_manager" ],
     [ "MKitServiceModel", "interface_m_kit_service_model.html", "interface_m_kit_service_model" ],
     [ "MKitServiceModelQuery", "interface_m_kit_service_model_query.html", "interface_m_kit_service_model_query" ],
+    [ "<MKitServiceUser>", "protocol_m_kit_service_user-p.html", "protocol_m_kit_service_user-p" ],
     [ "NSDate(ModelKit)", "category_n_s_date_07_model_kit_08.html", "category_n_s_date_07_model_kit_08" ],
     [ "NSString(ModelKit)", "category_n_s_string_07_model_kit_08.html", "category_n_s_string_07_model_kit_08" ]
 ];

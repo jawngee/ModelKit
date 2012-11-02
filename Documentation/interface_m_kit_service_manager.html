@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('interface_m_kit_service_manager.html',
   <div class="summary">
 <a href="#pub-methods">Instance Methods</a> &#124;
 <a href="#pub-static-methods">Class Methods</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="class_m_kit_service_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MKitServiceManager Class Reference</div>  </div>
@@ -143,6 +144,12 @@ Instance Methods</h2></td></tr>
 <tr class="separator:af26f3035a4b7d0fa2767ed83c8661ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa78fbeff668cd87fa6d2d37ebf0a56d3"><td class="memItemLeft" align="right" valign="top">(AFHTTPRequestOperation *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#aa78fbeff668cd87fa6d2d37ebf0a56d3">modelRequestWithMethod:model:params:body:</a></td></tr>
 <tr class="separator:aa78fbeff668cd87fa6d2d37ebf0a56d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaca69fe7553d7f9357165446f224b91"><td class="memItemLeft" align="right" valign="top">(AFHTTPRequestOperation *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#aeaca69fe7553d7f9357165446f224b91">requestWithMethod:path:params:body:</a></td></tr>
+<tr class="separator:aeaca69fe7553d7f9357165446f224b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17fbcc36fd83bd996499b2eb314ffcb1"><td class="memItemLeft" align="right" valign="top">(NSDictionary *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#a17fbcc36fd83bd996499b2eb314ffcb1">userCredentials</a></td></tr>
+<tr class="separator:a17fbcc36fd83bd996499b2eb314ffcb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae17cb193061855460d7e5c244517fb94"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#ae17cb193061855460d7e5c244517fb94">storeUserCredentials:</a></td></tr>
+<tr class="separator:ae17cb193061855460d7e5c244517fb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Class Methods</h2></td></tr>
@@ -150,11 +157,16 @@ Class Methods</h2></td></tr>
 <tr class="separator:ad33c0c71934d2d6af2c75c5def01181e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d6c03ce3f21e8148c4837d810a0aa8"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_service_manager.html#a16d6c03ce3f21e8148c4837d810a0aa8">managerForService:</a></td></tr>
 <tr class="separator:a16d6c03ce3f21e8148c4837d810a0aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:acb2a726710d43bcbdc0a538702096957"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_m_kit_service_key_chain.html">MKitServiceKeyChain</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_m_kit_service_manager.html#acb2a726710d43bcbdc0a538702096957">keychain</a></td></tr>
+<tr class="separator:acb2a726710d43bcbdc0a538702096957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class for building an interface between models and a backend service </p>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00020">20</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00022">22</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
 </div><h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="af26f3035a4b7d0fa2767ed83c8661ad6"></a>
 <div class="memitem">
@@ -203,7 +215,7 @@ Class Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The operation </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00102">102</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00106">106</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -240,7 +252,7 @@ Class Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00072">72</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00076">76</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -276,7 +288,7 @@ Class Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00077">77</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00081">81</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -313,7 +325,7 @@ Class Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00087">87</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00091">91</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -349,7 +361,7 @@ Class Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00092">92</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00096">96</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -375,7 +387,7 @@ Class Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00042">42</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00046">46</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -401,7 +413,7 @@ Class Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The manager instance, nil if not found </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00034">34</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00038">38</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -452,7 +464,7 @@ Class Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The operation </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00107">107</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00111">111</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -478,7 +490,57 @@ Class Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The query object </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00052">52</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00056">56</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeaca69fe7553d7f9357165446f224b91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (AFHTTPRequestOperation *) requestWithMethod: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>method</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">path:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>path</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">params:</td>
+          <td></td>
+          <td class="paramtype">(NSDictionary *)&#160;</td>
+          <td class="paramname"><em>params</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">body:</td>
+          <td></td>
+          <td class="paramtype">(NSData *)&#160;</td>
+          <td class="paramname"><em>body</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a generic HTTP request </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>The HTTP method to use </td></tr>
+    <tr><td class="paramname">params</td><td>The query parameters for the request </td></tr>
+    <tr><td class="paramname">body</td><td>The body data for the request </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The operation </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00116">116</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -515,7 +577,7 @@ Class Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00057">57</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00061">61</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -551,7 +613,7 @@ Class Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00062">62</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00066">66</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -588,7 +650,75 @@ Class Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An instance of the service that has been setup </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00016">16</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00020">20</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae17cb193061855460d7e5c244517fb94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) storeUserCredentials: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_m_kit_service_model.html">MKitServiceModel</a>&lt;<a class="el" href="protocol_m_kit_service_user-p.html">MKitServiceUser</a>&gt; *)&#160;</td>
+          <td class="paramname"><em>user</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Stores a user's credentials </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>The user to store </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00126">126</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a17fbcc36fd83bd996499b2eb314ffcb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSDictionary *) userCredentials </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns user's credentials </p>
+<dl class="section return"><dt>Returns</dt><dd>Dictionary of credentials, nil if none </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00121">121</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="acb2a726710d43bcbdc0a538702096957"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_m_kit_service_key_chain.html">MKitServiceKeyChain</a> *) keychain</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">atomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Keychain for storing credentials </p>
+
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00024">24</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
 
 </div>
 </div>
@@ -602,7 +732,7 @@ Class Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a></li>
-    <li class="footer">Generated on Fri Nov 2 2012 16:57:02 for ModelKit by
+    <li class="footer">Generated on Sat Nov 3 2012 04:22:40 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>
