@@ -32,6 +32,7 @@
 		FF3C8D42163940AC009EB62A /* MKitReflectedProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D41163940AC009EB62A /* MKitReflectedProperty.m */; };
 		FF3C8D45163940B9009EB62A /* MKitReflectedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D44163940B9009EB62A /* MKitReflectedClass.m */; };
 		FF3C8D5E16396082009EB62A /* MKitModelRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D5D16396082009EB62A /* MKitModelRegistry.m */; };
+		FF9419AB164534130072BFDA /* MKitServiceUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419AA164534130072BFDA /* MKitServiceUser.m */; };
 		FFA3DE7D163E785400D2D855 /* MKitServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DE7C163E785400D2D855 /* MKitServiceManager.m */; };
 		FFA3DEAA163F1A9800D2D855 /* NSString+ModelKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DEA9163F1A9800D2D855 /* NSString+ModelKit.m */; };
 		FFA54AA116391DEA00F055A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54AA016391DEA00F055A6 /* Foundation.framework */; };
@@ -126,6 +127,7 @@
 		FF3C8D44163940B9009EB62A /* MKitReflectedClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitReflectedClass.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FF3C8D5C16396082009EB62A /* MKitModelRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKitModelRegistry.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FF3C8D5D16396082009EB62A /* MKitModelRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitModelRegistry.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		FF9419AA164534130072BFDA /* MKitServiceUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceUser.m; sourceTree = "<group>"; };
 		FFA3DE7B163E785400D2D855 /* MKitServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitServiceManager.h; sourceTree = "<group>"; };
 		FFA3DE7C163E785400D2D855 /* MKitServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceManager.m; sourceTree = "<group>"; };
 		FFA3DEA8163F1A9800D2D855 /* NSString+ModelKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ModelKit.h"; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				FFB8CBA61642927100D43C8F /* MKitServiceModelQuery.h */,
 				FFB8CBA71642927100D43C8F /* MKitServiceModelQuery.m */,
 				FFB8CBBB1643E9CC00D43C8F /* MKitServiceUser.h */,
+				FF9419AA164534130072BFDA /* MKitServiceUser.m */,
 				FFB8CBC616440F3000D43C8F /* MKitServiceKeyChain.h */,
 				FFB8CBC716440F3200D43C8F /* MKitServiceKeyChain.m */,
 			);
@@ -646,6 +649,7 @@
 				FFB8CBBA1643A95200D43C8F /* MKitModelPredicateQuery.m in Sources */,
 				FFB8CBBE1643EA8C00D43C8F /* MKitParseUser.m in Sources */,
 				FFB8CBC816440F3A00D43C8F /* MKitServiceKeyChain.m in Sources */,
+				FF9419AB164534130072BFDA /* MKitServiceUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,6 +840,7 @@
 				FFB8CB7D1642732B00D43C8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFCFAA8F163C655C00BC2E3E /* Build configuration list for PBXNativeTarget "TestCases" */ = {
 			isa = XCConfigurationList;
