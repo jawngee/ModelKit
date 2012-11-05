@@ -273,6 +273,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     
     [aCoder encodeObject:self.createdAt forKey:@"createdAt"];
     [aCoder encodeObject:self.updatedAt forKey:@"updatedAt"];
+    [aCoder encodeObject:self.modelId forKey:@"modelId"];
     
     if (self.objectId)
         [aCoder encodeObject:self.objectId forKey:@"objectId"];
