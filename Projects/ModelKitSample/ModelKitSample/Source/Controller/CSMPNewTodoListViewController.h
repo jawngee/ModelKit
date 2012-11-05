@@ -1,5 +1,5 @@
 //
-//  CSMPNewTodoListViewController.h
+//  CSMPNewToDoListViewController.h
 //  ModelKitSample
 //
 //  Created by Jon Gilkison on 11/3/12.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSMPNewTodoListViewController : UIViewController
+@interface CSMPNewToDoListViewController : UIViewController
+
+@property (retain, nonatomic) IBOutlet UITextField *listNameTextField;
 
 @end

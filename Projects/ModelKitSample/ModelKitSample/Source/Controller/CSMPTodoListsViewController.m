@@ -6,32 +6,62 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
+#import "CSMPTodoListsViewController.h"
+#import "CSMPSignUpViewController.h"
+#import "CSMPNewToDoListViewController.h"
+#import "CSMPTodoList.h"
 #import "CSMPTodoListViewController.h"
 
-@interface CSMPTodoListViewController ()
+@interface CSMPTodoListsViewController ()
+
+-(void)showSignUp;
+-(void)updateForLoggedInUser;
+-(void)logOutUser:(id)sender;
+
+-(void)addToDoList:(id)sender;
+
+-(void)userLoggedInNotification:(NSNotification *)notification;
+-(void)userLoggedOutNotification:(NSNotification *)notification;
 
 @end
 
-@implementation CSMPTodoListViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@implementation CSMPTodoListsViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    lists=[[NSMutableArray alloc] init];
+    
+    self.title=@"To Do Lists";
+    self.clearsSelectionOnViewWillAppear = NO;
+    self.navigationItem.rightBarButtonItems=@[[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addToDoList:)] autorelease],self.editButtonItem];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLoggedInNotification:) name:MKitUserLoggedInNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLoggedOutNotification:) name:MKitUserLoggedOutNotification object:nil];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"View Will Appear");
+    
+    [super viewWillAppear:animated];
+    
+    if (![CSMPUser currentUser])
+    {
+        [self performSelector:@selector(showSignUp) withObject:nil afterDelay:0.66f];
+    }
+    else
+        [self updateForLoggedInUser];
+}
+
+-(void)viewDidUnload
+{
+    [lists release];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,26 +70,80 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Sign Up
+
+-(void)showSignUp
+{
+    CSMPSignUpViewController *signUp=[[[CSMPSignUpViewController alloc] initWithNibName:@"CSMPSignUpViewController" bundle:nil] autorelease];
+    UINavigationController *nav=[[[UINavigationController alloc] initWithRootViewController:signUp] autorelease];
+    
+    [self presentModalViewController:nav animated:YES];
+}
+
+-(void)updateForLoggedInUser
+{
+    self.navigationItem.leftBarButtonItem=[[[UIBarButtonItem alloc] initWithTitle:@"Log Out" style:UIBarButtonItemStyleBordered target:self action:@selector(logOutUser:)] autorelease];
+    
+    [lists removeAllObjects];
+    
+    MKitModelQuery *q=[CSMPTodoList contextQuery];
+    [q key:@"owner" condition:KeyEquals value:[CSMPUser currentUser]];
+    NSArray *results=[[q execute:nil] objectForKey:MKitQueryResultKey];
+    [lists addObjectsFromArray:results];
+    [self.tableView reloadData];
+    
+    q=[CSMPTodoList query];
+    [q key:@"owner" condition:KeyEquals value:[CSMPUser currentUser]];
+    [q executeInBackground:^(NSArray *objects, NSInteger totalCount, NSError *error) {
+        if (objects!=nil)
+        {
+            [lists removeAllObjects];
+            [lists addObjectsFromArray:objects];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+            
+        }
+    }];
+}
+
+-(void)logOutUser:(id)sender
+{
+    [[CSMPUser currentUser] logOut];
+    [MKitModelContext clearAllContexts];
+}
+
+-(void)addToDoList:(id)sender
+{
+    CSMPNewToDoListViewController *ntd=[[[CSMPNewToDoListViewController alloc] initWithNibName:@"CSMPNewToDoListViewController" bundle:nil] autorelease];
+    UINavigationController *nav=[[[UINavigationController alloc] initWithRootViewController:ntd] autorelease];
+    
+    [self presentModalViewController:nav animated:YES];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return lists.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell)
+        cell=[[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+              
+    CSMPTodoList *list=[lists objectAtIndex:indexPath.row];
+    cell.textLabel.text=list.name;
+    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     
     // Configure the cell...
     
@@ -109,14 +193,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    CSMPTodoListViewController *lv=[[[CSMPTodoListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+    lv.list=[lists objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:lv animated:YES];
+}
+
+#pragma mark - Notifications
+
+
+-(void)userLoggedInNotification:(NSNotification *)notification
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self dismissModalViewControllerAnimated:YES];
+        [self updateForLoggedInUser];
+    });
+}
+
+-(void)userLoggedOutNotification:(NSNotification *)notification
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.navigationItem.leftBarButtonItem=nil;
+        [self showSignUp];
+    });
 }
 
 @end

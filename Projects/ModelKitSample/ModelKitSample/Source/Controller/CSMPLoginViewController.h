@@ -10,4 +10,10 @@
 
 @interface CSMPLoginViewController : UIViewController
 
+@property (retain, nonatomic) IBOutlet UITextField *emailTextField;
+@property (retain, nonatomic) IBOutlet UITextField *passwordTextField;
+
+- (IBAction)loginTouched:(id)sender;
+- (IBAction)forgotPasswordTouched:(id)sender;
+
 @end

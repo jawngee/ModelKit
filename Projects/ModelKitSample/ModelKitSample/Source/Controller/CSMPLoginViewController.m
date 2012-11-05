@@ -14,25 +14,82 @@
 
 @implementation CSMPLoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title=@"Log In";
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidUnload
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self setEmailTextField:nil];
+    [self setPasswordTextField:nil];
+    [super viewDidUnload];
+}
+
+- (void)dealloc
+{
+    [_emailTextField release];
+    [_passwordTextField release];
+    [super dealloc];
+}
+
+- (IBAction)loginTouched:(id)sender
+{
+    if (self.emailTextField.text.length==0)
+    {
+        [AlertMonger showAlertWithTitle:@"Oops"
+                                message:@"Please specify an email address."
+                      cancelButtonTitle:@"Ok"
+                   clickedButtonAtIndex:^(NSInteger buttonIndex) {
+                       [self.emailTextField becomeFirstResponder];
+                   }
+                      otherButtonTitles:nil];
+        return;
+    }
+    
+    if (self.passwordTextField.text.length==0)
+    {
+        [AlertMonger showAlertWithTitle:@"Oops"
+                                message:@"Please specify a password."
+                      cancelButtonTitle:@"Ok"
+                   clickedButtonAtIndex:^(NSInteger buttonIndex) {
+                       [self.passwordTextField becomeFirstResponder];
+                   }
+                      otherButtonTitles:nil];
+        return;
+    }
+    
+    [CSMPUser logInInBackgroundWithUserName:self.emailTextField.text
+                                   password:self.passwordTextField.text
+                                resultBlock:^(id object, NSError *error) {
+                                    if (error)
+                                        [AlertMonger showAlertWithTitle:@"Oops" message:[error localizedDescription] cancelButtonTitle:@"Ok"];
+                                }];
+}
+
+- (IBAction)forgotPasswordTouched:(id)sender
+{
+    if (self.emailTextField.text.length==0)
+    {
+        [AlertMonger showAlertWithTitle:@"Oops"
+                                message:@"Please specify an email address."
+                      cancelButtonTitle:@"Ok"
+                   clickedButtonAtIndex:^(NSInteger buttonIndex) {
+                       [self.emailTextField becomeFirstResponder];
+                   }
+                      otherButtonTitles:nil];
+        return;
+    }
+    
+    [CSMPUser requestPasswordResetInBackgroundForEmail:self.emailTextField.text
+                                           resultBlock:^(BOOL succeeded, NSError *error) {
+                                               if (error)
+                                                   [AlertMonger showAlertWithTitle:@"Oops" message:[error localizedDescription] cancelButtonTitle:@"Ok"];
+                                               else
+                                                   [AlertMonger showAlertWithTitle:@"Success" message:@"Password change email sent.  Please check your inbox." cancelButtonTitle:@"Ok"];
+                                           }];
 }
 
 @end

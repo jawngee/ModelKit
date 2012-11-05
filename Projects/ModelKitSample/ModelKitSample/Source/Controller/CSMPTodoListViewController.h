@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSMPTodoList.h"
 
-@interface CSMPTodoItemViewController : UITableViewController
+@interface CSMPTodoListViewController : UITableViewController
+{
+}
+
+@property (assign, nonatomic) CSMPTodoList *list;
 
 @end

@@ -10,13 +10,22 @@
 		FF3C8CDF16393978009EB62A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CDE16393978009EB62A /* UIKit.framework */; };
 		FF3C8CE116393978009EB62A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CE016393978009EB62A /* Foundation.framework */; };
 		FF3C8CE316393978009EB62A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CE216393978009EB62A /* CoreGraphics.framework */; };
+		FF94196B1644D9CE0072BFDA /* CSMPTodoList.m in Sources */ = {isa = PBXBuildFile; fileRef = FF94196A1644D9CE0072BFDA /* CSMPTodoList.m */; };
+		FF94196E1644DA480072BFDA /* CSMPTodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FF94196D1644DA480072BFDA /* CSMPTodoItem.m */; };
+		FF9419711644DBA90072BFDA /* CSMPTodoListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419701644DBA90072BFDA /* CSMPTodoListsViewController.m */; };
+		FF9419741644DBBA0072BFDA /* CSMPTodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419731644DBBA0072BFDA /* CSMPTodoListViewController.m */; };
+		FF94197B1644DBDE0072BFDA /* CSMPSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419791644DBDE0072BFDA /* CSMPSignUpViewController.m */; };
+		FF94197C1644DBDE0072BFDA /* CSMPSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF94197A1644DBDE0072BFDA /* CSMPSignUpViewController.xib */; };
+		FF9419801644DBEB0072BFDA /* CSMPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF94197E1644DBEB0072BFDA /* CSMPLoginViewController.m */; };
+		FF9419811644DBEB0072BFDA /* CSMPLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF94197F1644DBEB0072BFDA /* CSMPLoginViewController.xib */; };
+		FF9419841644DE640072BFDA /* CSMPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419831644DE640072BFDA /* CSMPUser.m */; };
+		FF9419A91644E0E00072BFDA /* NSString+ModelKitSample.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419A81644E0E00072BFDA /* NSString+ModelKitSample.m */; };
+		FF9419AF16453D080072BFDA /* AlertMonger.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419AE16453D080072BFDA /* AlertMonger.m */; };
+		FF9419B6164544700072BFDA /* CSMPNewToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419B4164544700072BFDA /* CSMPNewToDoListViewController.m */; };
+		FF9419B7164544700072BFDA /* CSMPNewToDoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9419B5164544700072BFDA /* CSMPNewToDoListViewController.xib */; };
+		FF9419BB1647B1F50072BFDA /* CSMPNewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419B91647B1F50072BFDA /* CSMPNewItemViewController.m */; };
+		FF9419BC1647B1F50072BFDA /* CSMPNewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9419BA1647B1F50072BFDA /* CSMPNewItemViewController.xib */; };
 		FFBA0D94163E541000B6560C /* CSMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D85163E541000B6560C /* CSMPAppDelegate.m */; };
-		FFBA0D95163E541000B6560C /* CSMPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D89163E541000B6560C /* CSMPViewController.m */; };
-		FFBA0D96163E541000B6560C /* CSMPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBA0D8A163E541000B6560C /* CSMPViewController.xib */; };
-		FFBA0D97163E541000B6560C /* CSMPAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D8D163E541000B6560C /* CSMPAuthor.m */; };
-		FFBA0D98163E541000B6560C /* CSMPBlog.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D8F163E541000B6560C /* CSMPBlog.m */; };
-		FFBA0D99163E541000B6560C /* CSMPComment.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D91163E541000B6560C /* CSMPComment.m */; };
-		FFBA0D9A163E541000B6560C /* CSMPPost.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D93163E541000B6560C /* CSMPPost.m */; };
 		FFBA0DA2163E543900B6560C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBA0D9B163E543900B6560C /* Default-568h@2x.png */; };
 		FFBA0DA3163E543900B6560C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBA0D9C163E543900B6560C /* Default.png */; };
 		FFBA0DA4163E543900B6560C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBA0D9D163E543900B6560C /* Default@2x.png */; };
@@ -60,21 +69,36 @@
 		FF3C8CE016393978009EB62A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF3C8CE216393978009EB62A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FF3C8D011639398B009EB62A /* ModelKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ModelKit.xcodeproj; path = "../Static Library/ModelKit.xcodeproj"; sourceTree = "<group>"; };
+		FF9419691644D9CE0072BFDA /* CSMPTodoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPTodoList.h; sourceTree = "<group>"; };
+		FF94196A1644D9CE0072BFDA /* CSMPTodoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPTodoList.m; sourceTree = "<group>"; };
+		FF94196C1644DA480072BFDA /* CSMPTodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPTodoItem.h; sourceTree = "<group>"; };
+		FF94196D1644DA480072BFDA /* CSMPTodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPTodoItem.m; sourceTree = "<group>"; };
+		FF94196F1644DBA90072BFDA /* CSMPTodoListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPTodoListsViewController.h; sourceTree = "<group>"; };
+		FF9419701644DBA90072BFDA /* CSMPTodoListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPTodoListsViewController.m; sourceTree = "<group>"; };
+		FF9419721644DBBA0072BFDA /* CSMPTodoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPTodoListViewController.h; sourceTree = "<group>"; };
+		FF9419731644DBBA0072BFDA /* CSMPTodoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPTodoListViewController.m; sourceTree = "<group>"; };
+		FF9419781644DBDE0072BFDA /* CSMPSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPSignUpViewController.h; sourceTree = "<group>"; };
+		FF9419791644DBDE0072BFDA /* CSMPSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPSignUpViewController.m; sourceTree = "<group>"; };
+		FF94197A1644DBDE0072BFDA /* CSMPSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSMPSignUpViewController.xib; sourceTree = "<group>"; };
+		FF94197D1644DBEB0072BFDA /* CSMPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPLoginViewController.h; sourceTree = "<group>"; };
+		FF94197E1644DBEB0072BFDA /* CSMPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPLoginViewController.m; sourceTree = "<group>"; };
+		FF94197F1644DBEB0072BFDA /* CSMPLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSMPLoginViewController.xib; sourceTree = "<group>"; };
+		FF9419821644DE640072BFDA /* CSMPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPUser.h; sourceTree = "<group>"; };
+		FF9419831644DE640072BFDA /* CSMPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPUser.m; sourceTree = "<group>"; };
+		FF9419A71644E0E00072BFDA /* NSString+ModelKitSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ModelKitSample.h"; sourceTree = "<group>"; };
+		FF9419A81644E0E00072BFDA /* NSString+ModelKitSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ModelKitSample.m"; sourceTree = "<group>"; };
+		FF9419AD16453D080072BFDA /* AlertMonger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMonger.h; sourceTree = "<group>"; };
+		FF9419AE16453D080072BFDA /* AlertMonger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMonger.m; sourceTree = "<group>"; };
+		FF9419B31645446F0072BFDA /* CSMPNewToDoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPNewToDoListViewController.h; sourceTree = "<group>"; };
+		FF9419B4164544700072BFDA /* CSMPNewToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPNewToDoListViewController.m; sourceTree = "<group>"; };
+		FF9419B5164544700072BFDA /* CSMPNewToDoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSMPNewToDoListViewController.xib; sourceTree = "<group>"; };
+		FF9419B81647B1F50072BFDA /* CSMPNewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPNewItemViewController.h; sourceTree = "<group>"; };
+		FF9419B91647B1F50072BFDA /* CSMPNewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPNewItemViewController.m; sourceTree = "<group>"; };
+		FF9419BA1647B1F50072BFDA /* CSMPNewItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSMPNewItemViewController.xib; sourceTree = "<group>"; };
 		FFA3DEA7163E8F7200D2D855 /* CSMPAppKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMPAppKeys.h; sourceTree = "<group>"; };
 		FFBA0D84163E541000B6560C /* CSMPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPAppDelegate.h; sourceTree = "<group>"; };
 		FFBA0D85163E541000B6560C /* CSMPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPAppDelegate.m; sourceTree = "<group>"; };
 		FFBA0D86163E541000B6560C /* ModelKitSample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ModelKitSample-Prefix.pch"; sourceTree = "<group>"; };
-		FFBA0D88163E541000B6560C /* CSMPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPViewController.h; sourceTree = "<group>"; };
-		FFBA0D89163E541000B6560C /* CSMPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPViewController.m; sourceTree = "<group>"; };
-		FFBA0D8A163E541000B6560C /* CSMPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSMPViewController.xib; sourceTree = "<group>"; };
-		FFBA0D8C163E541000B6560C /* CSMPAuthor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPAuthor.h; sourceTree = "<group>"; };
-		FFBA0D8D163E541000B6560C /* CSMPAuthor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPAuthor.m; sourceTree = "<group>"; };
-		FFBA0D8E163E541000B6560C /* CSMPBlog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPBlog.h; sourceTree = "<group>"; };
-		FFBA0D8F163E541000B6560C /* CSMPBlog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPBlog.m; sourceTree = "<group>"; };
-		FFBA0D90163E541000B6560C /* CSMPComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPComment.h; sourceTree = "<group>"; };
-		FFBA0D91163E541000B6560C /* CSMPComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPComment.m; sourceTree = "<group>"; };
-		FFBA0D92163E541000B6560C /* CSMPPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPPost.h; sourceTree = "<group>"; };
-		FFBA0D93163E541000B6560C /* CSMPPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPPost.m; sourceTree = "<group>"; };
 		FFBA0D9B163E543900B6560C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "ModelKitSample/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		FFBA0D9C163E543900B6560C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ModelKitSample/Default.png; sourceTree = SOURCE_ROOT; };
 		FFBA0D9D163E543900B6560C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "ModelKitSample/Default@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -156,6 +180,17 @@
 			path = CloudSample;
 			sourceTree = "<group>";
 		};
+		FF9419A61644E0C20072BFDA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FF9419AD16453D080072BFDA /* AlertMonger.h */,
+				FF9419AE16453D080072BFDA /* AlertMonger.m */,
+				FF9419A71644E0E00072BFDA /* NSString+ModelKitSample.h */,
+				FF9419A81644E0E00072BFDA /* NSString+ModelKitSample.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		FFBA0D79163E53DB00B6560C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				FFBA0D83163E541000B6560C /* App */,
+				FF9419A61644E0C20072BFDA /* Categories */,
 				FFBA0D87163E541000B6560C /* Controller */,
 				FFBA0D8B163E541000B6560C /* Model */,
 			);
@@ -190,9 +226,22 @@
 		FFBA0D87163E541000B6560C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FFBA0D88163E541000B6560C /* CSMPViewController.h */,
-				FFBA0D89163E541000B6560C /* CSMPViewController.m */,
-				FFBA0D8A163E541000B6560C /* CSMPViewController.xib */,
+				FF94196F1644DBA90072BFDA /* CSMPTodoListsViewController.h */,
+				FF9419701644DBA90072BFDA /* CSMPTodoListsViewController.m */,
+				FF9419721644DBBA0072BFDA /* CSMPTodoListViewController.h */,
+				FF9419731644DBBA0072BFDA /* CSMPTodoListViewController.m */,
+				FF9419781644DBDE0072BFDA /* CSMPSignUpViewController.h */,
+				FF9419791644DBDE0072BFDA /* CSMPSignUpViewController.m */,
+				FF94197A1644DBDE0072BFDA /* CSMPSignUpViewController.xib */,
+				FF94197D1644DBEB0072BFDA /* CSMPLoginViewController.h */,
+				FF94197E1644DBEB0072BFDA /* CSMPLoginViewController.m */,
+				FF94197F1644DBEB0072BFDA /* CSMPLoginViewController.xib */,
+				FF9419B31645446F0072BFDA /* CSMPNewToDoListViewController.h */,
+				FF9419B4164544700072BFDA /* CSMPNewToDoListViewController.m */,
+				FF9419B5164544700072BFDA /* CSMPNewToDoListViewController.xib */,
+				FF9419B81647B1F50072BFDA /* CSMPNewItemViewController.h */,
+				FF9419B91647B1F50072BFDA /* CSMPNewItemViewController.m */,
+				FF9419BA1647B1F50072BFDA /* CSMPNewItemViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,14 +249,12 @@
 		FFBA0D8B163E541000B6560C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FFBA0D8C163E541000B6560C /* CSMPAuthor.h */,
-				FFBA0D8D163E541000B6560C /* CSMPAuthor.m */,
-				FFBA0D8E163E541000B6560C /* CSMPBlog.h */,
-				FFBA0D8F163E541000B6560C /* CSMPBlog.m */,
-				FFBA0D90163E541000B6560C /* CSMPComment.h */,
-				FFBA0D91163E541000B6560C /* CSMPComment.m */,
-				FFBA0D92163E541000B6560C /* CSMPPost.h */,
-				FFBA0D93163E541000B6560C /* CSMPPost.m */,
+				FF9419691644D9CE0072BFDA /* CSMPTodoList.h */,
+				FF94196A1644D9CE0072BFDA /* CSMPTodoList.m */,
+				FF94196C1644DA480072BFDA /* CSMPTodoItem.h */,
+				FF94196D1644DA480072BFDA /* CSMPTodoItem.m */,
+				FF9419821644DE640072BFDA /* CSMPUser.h */,
+				FF9419831644DE640072BFDA /* CSMPUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,11 +335,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFBA0D96163E541000B6560C /* CSMPViewController.xib in Resources */,
 				FFBA0DA2163E543900B6560C /* Default-568h@2x.png in Resources */,
 				FFBA0DA3163E543900B6560C /* Default.png in Resources */,
 				FFBA0DA4163E543900B6560C /* Default@2x.png in Resources */,
 				FFBA0DA5163E543900B6560C /* InfoPlist.strings in Resources */,
+				FF94197C1644DBDE0072BFDA /* CSMPSignUpViewController.xib in Resources */,
+				FF9419811644DBEB0072BFDA /* CSMPLoginViewController.xib in Resources */,
+				FF9419B7164544700072BFDA /* CSMPNewToDoListViewController.xib in Resources */,
+				FF9419BC1647B1F50072BFDA /* CSMPNewItemViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,12 +354,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFBA0D94163E541000B6560C /* CSMPAppDelegate.m in Sources */,
-				FFBA0D95163E541000B6560C /* CSMPViewController.m in Sources */,
-				FFBA0D97163E541000B6560C /* CSMPAuthor.m in Sources */,
-				FFBA0D98163E541000B6560C /* CSMPBlog.m in Sources */,
-				FFBA0D99163E541000B6560C /* CSMPComment.m in Sources */,
-				FFBA0D9A163E541000B6560C /* CSMPPost.m in Sources */,
 				FFBA0DA6163E543900B6560C /* main.m in Sources */,
+				FF94196B1644D9CE0072BFDA /* CSMPTodoList.m in Sources */,
+				FF94196E1644DA480072BFDA /* CSMPTodoItem.m in Sources */,
+				FF9419711644DBA90072BFDA /* CSMPTodoListsViewController.m in Sources */,
+				FF9419741644DBBA0072BFDA /* CSMPTodoListViewController.m in Sources */,
+				FF94197B1644DBDE0072BFDA /* CSMPSignUpViewController.m in Sources */,
+				FF9419801644DBEB0072BFDA /* CSMPLoginViewController.m in Sources */,
+				FF9419841644DE640072BFDA /* CSMPUser.m in Sources */,
+				FF9419A91644E0E00072BFDA /* NSString+ModelKitSample.m in Sources */,
+				FF9419AF16453D080072BFDA /* AlertMonger.m in Sources */,
+				FF9419B6164544700072BFDA /* CSMPNewToDoListViewController.m in Sources */,
+				FF9419BB1647B1F50072BFDA /* CSMPNewItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,4 +10,31 @@
 
 @implementation CSMPTodoList
 
++(void)load
+{
+    [self register];
+}
+
++(NSString *)modelName
+{
+    return @"TodoList";
+}
+
++(MKitServiceModelQuery *)query
+{
+    MKitServiceModelQuery *q=[super query];
+    [q includeKey:@"items"];
+    return q;
+}
+
+-(id)init
+{
+    if ((self=[super init]))
+    {
+        self.items=[MKitMutableModelArray array];
+    }
+    
+    return self;
+}
+
 @end

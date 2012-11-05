@@ -10,4 +10,11 @@
 
 @interface NSString (ModelKitSample)
 
+
+/**
+ * Returns the user's document folder path with the optional
+ * subfolder
+ */
++(NSString *)fileNameInDocumentPath:(NSString *)filename;
+
 @end

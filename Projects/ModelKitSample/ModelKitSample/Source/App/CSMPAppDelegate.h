@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class CSMPViewController;
-
 @interface CSMPAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) CSMPViewController *viewController;
 
 @end

@@ -6,13 +6,16 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import "CSMPTodoItemViewController.h"
+#import "CSMPTodoListViewController.h"
+#import "CSMPNewItemViewController.h"
 
-@interface CSMPTodoItemViewController ()
+@interface CSMPTodoListViewController ()
+
+-(void)addToDoItem:(id)sender;
 
 @end
 
-@implementation CSMPTodoItemViewController
+@implementation CSMPTodoListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,11 +30,16 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title=self.list.name;
+    self.clearsSelectionOnViewWillAppear = NO;
+    self.navigationItem.rightBarButtonItems=@[[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addToDoItem:)] autorelease],self.editButtonItem];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,26 +52,31 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.list.items.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell)
+        cell=[[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    
+    CSMPTodoItem *item=[self.list.items objectAtIndex:indexPath.row];
+    cell.textLabel.text=item.item;
+    cell.accessoryType=(item.finished) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     
     // Configure the cell...
     
     return cell;
+
 }
 
 /*
@@ -109,14 +122,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    CSMPTodoItem *item=[self.list.items objectAtIndex:indexPath.row];
+    item.finished=!item.finished;
+    [self.tableView reloadData];
+    
+    [item saveInBackground:nil];
 }
+
+#pragma mark - Actions
+
+
+-(void)addToDoItem:(id)sender
+{
+    CSMPNewItemViewController *ntd=[[[CSMPNewItemViewController alloc] initWithNibName:@"CSMPNewItemViewController" bundle:nil] autorelease];
+    ntd.list=self.list;
+    UINavigationController *nav=[[[UINavigationController alloc] initWithRootViewController:ntd] autorelease];
+    
+    [self presentModalViewController:nav animated:YES];
+}
+
 
 @end

@@ -10,4 +10,14 @@
 
 @implementation CSMPTodoItem
 
++(void)load
+{
+    [self register];
+}
+
++(NSString *)modelName
+{
+    return @"Item";
+}
+
 @end

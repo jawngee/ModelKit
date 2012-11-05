@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSMPTodoListViewController : UITableViewController
+@interface CSMPTodoListsViewController : UITableViewController
+{
+    NSMutableArray *lists;
+}
 
 @end

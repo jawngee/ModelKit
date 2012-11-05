@@ -10,4 +10,14 @@
 
 @implementation NSString (ModelKitSample)
 
++(NSString *)fileNameInDocumentPath:(NSString *)filename
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents folder
+    
+    NSLog(@"%@",documentsDirectory);
+    return [documentsDirectory stringByAppendingPathComponent:filename];
+}
+
+
 @end

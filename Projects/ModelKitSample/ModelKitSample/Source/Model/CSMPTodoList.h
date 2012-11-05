@@ -10,4 +10,8 @@
 
 @interface CSMPTodoList : MKitParseModel
 
+@property (assign, nonatomic) CSMPUser *owner;
+@property (copy, nonatomic) NSString *name;
+@property (retain, nonatomic) MKitMutableModelArray *items;
+
 @end
