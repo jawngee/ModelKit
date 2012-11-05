@@ -16,6 +16,16 @@
 
 static MKitParseUser *_currentUser=nil;
 
++(void)load
+{
+    [self register];
+}
+
++(NSString *)modelName
+{
+    return @"_User";
+}
+
 +(MKitParseUser *)currentUser
 {
     if (_currentUser)
@@ -44,7 +54,11 @@ static MKitParseUser *_currentUser=nil;
     if (!result)
         [m removeFromContext];
     else
+    {
         _currentUser=m;
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:MKitUserLoggedInNotification object:_currentUser];
+    }
     
     return result;
 }
@@ -63,7 +77,7 @@ static MKitParseUser *_currentUser=nil;
 {
     MKitParseServiceManager *manager=(MKitParseServiceManager *)[[self class] service];
     
-    AFHTTPRequestOperation *op=[manager requestWithMethod:@"POST"
+    AFHTTPRequestOperation *op=[manager requestWithMethod:@"GET"
                                                      path:@"login"
                                                    params:@{@"username":userName,@"password":password}
                                                      body:nil];
@@ -91,6 +105,7 @@ static MKitParseUser *_currentUser=nil;
         [manager storeUserCredentials:user];
         
         _currentUser=user;
+        [[NSNotificationCenter defaultCenter] postNotificationName:MKitUserLoggedInNotification object:_currentUser];
         
         return YES;
     }
@@ -101,7 +116,7 @@ static MKitParseUser *_currentUser=nil;
     return NO;
 }
 
-+(void)logInWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock
++(void)logInInBackgroundWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSError *error=nil;
@@ -117,8 +132,8 @@ static MKitParseUser *_currentUser=nil;
     
     AFHTTPRequestOperation *op=[manager requestWithMethod:@"POST"
                                                      path:@"requestPasswordReset"
-                                                   params:@{@"email":email}
-                                                     body:nil];
+                                                   params:nil
+                                                     body:[[NSString stringWithFormat:@"{\"email\":\"%@\"}",email] dataUsingEncoding:NSUTF8StringEncoding]];
     
     [op start];
     [op waitUntilFinished];
@@ -147,6 +162,8 @@ static MKitParseUser *_currentUser=nil;
     _currentUser=nil;
     MKitParseServiceManager *manager=(MKitParseServiceManager *)[[self class] service];
     [manager.keychain deleteCredentialsForUsername:self.username];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:MKitUserLoggedOutNotification object:nil];
 }
 
 @end

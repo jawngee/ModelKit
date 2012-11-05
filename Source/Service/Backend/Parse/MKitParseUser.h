@@ -25,7 +25,7 @@
 +(void)signUpInBackgroundWithUserName:(NSString *)userName email:(NSString *)email password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;
 
 +(BOOL)logInWithUserName:(NSString *)userName password:(NSString *)password error:(NSError **)error;
-+(void)logInWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;
++(void)logInInBackgroundWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;
 
 +(BOOL)requestPasswordResetForEmail:(NSString *)email error:(NSError **)error;
 +(void)requestPasswordResetInBackgroundForEmail:(NSString *)email resultBlock:(MKitBooleanResultBlock)resultBlock;
