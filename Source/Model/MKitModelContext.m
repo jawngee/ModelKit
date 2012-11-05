@@ -288,6 +288,14 @@ static NSMutableArray *contextStack=nil;
 {
     [self clear];
     
+    if (![[NSFileManager defaultManager] fileExistsAtPath:file])
+    {
+        if (error)
+            *error=[NSError errorWithDomain:NSPOSIXErrorDomain code:ENOENT userInfo:nil];
+        
+        return NO;
+    }
+    
     NSData *data=[NSData dataWithContentsOfFile:file];
     NSKeyedUnarchiver *unarchiver=[[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
     NSArray *array=[unarchiver decodeObject];
