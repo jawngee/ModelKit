@@ -91,6 +91,9 @@
     
     NSArray *results=[[MKitModelContext current] queryWithPredicate:predicate forClass:modelClass];
     
+    if (results==nil)
+        results=[NSArray array];
+    
     return @{
         MKitQueryItemCountKey:@(results.count),
         MKitQueryResultKey:results
