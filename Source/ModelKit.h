@@ -9,8 +9,11 @@
 #ifndef ModelKit_ModelKit_h
 #define ModelKit_ModelKit_h
 
+#include "MKitDefs.h"
+
 #import "NSDate+ModelKit.h"
 #import "NSString+ModelKit.h"
+
 #import "MKitMutableOrderedDictionary.h"
 
 #import "MKitReflectionManager.h"
@@ -18,16 +21,21 @@
 #import "MKitReflectedProperty.h"
 
 #import "MKitModel.h"
-#import "MKitMutableModelArray.h"
 #import "MKitModelRegistry.h"
+#import "MKitMutableModelArray.h"
 #import "MKitModelContext.h"
+#import "MKitModelQuery.h"
+#import "MKitModelPredicateQuery.h"
 
 #import "MKitServiceManager.h"
 #import "MKitServiceModel.h"
 #import "MKitServiceModelQuery.h"
+#import "MKitServiceUser.h"
+#import "MKitServiceKeyChain.h"
 
 #import "MKitParseModel.h"
 #import "MKitParseModelQuery.h"
 #import "MKitParseServiceManager.h"
+#import "MKitParseUser.h"
 
 #endif
