@@ -9,6 +9,12 @@
 #import "MKitDefs.h"
 #import "MKitServiceModel.h"
 
+/** User Has Logged In */
+extern NSString *const MKitUserLoggedInNotification;
+
+/** User Has Logged Out */
+extern NSString *const MKitUserLoggedOutNotification;
+
 /**
  * Protocol for implementing service specific user class
  */
@@ -59,7 +65,7 @@
  * @param password The user's password
  * @param resultBlock The result block to call when the operation completes
  */
-+(void)logInWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;
++(void)logInInBackgroundWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;
 
 /**
  * Request a password reset email.

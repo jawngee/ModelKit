@@ -7,3 +7,6 @@
 [submodule "External/iso"]
 	path = External/iso
 	url = git://github.com/jawngee/iso-8601-date-formatter.git
+[submodule "External/QDialog"]
+	path = External/QDialog
+	url = git://github.com/lludo/QuickDialog.git
