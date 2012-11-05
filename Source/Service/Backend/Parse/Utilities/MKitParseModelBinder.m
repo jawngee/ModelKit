@@ -22,6 +22,8 @@
 
 +(void)bindModel:(MKitModel *)model data:(NSDictionary *)data
 {
+    model.modelState=ModelStateValid;
+    
     MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[model class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
     
     if ((data[@"modelId"]) && (data[@"modelId"]!=[NSNull null]))
@@ -80,7 +82,7 @@
                         [self bindModel:m data:md];
                     else if ((md[@"__type"]) && ([md[@"__type"] isEqualToString:@"Pointer"]))
                     {
-                        if ((m.modelState==ModelStateNeedsData) && ([prop.typeClass isSubclassOfClass:[MKitServiceModel class]]))
+                        if ((m.modelState==ModelStateNeedsData) && ([c isSubclassOfClass:[MKitServiceModel class]]))
                             [((MKitServiceModel *)m) fetchInBackground:nil];
                     }
                     
@@ -102,7 +104,6 @@
         }
     }];
     
-    model.modelState=ModelStateValid;
     [model resetChanges];
 }
 
