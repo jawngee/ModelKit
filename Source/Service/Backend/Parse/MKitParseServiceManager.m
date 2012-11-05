@@ -191,6 +191,7 @@
         return YES;
     }
     
+    // TODO: Handle JSON error response
     if (error!=nil)
         *error=op.error;
     
@@ -286,10 +287,10 @@
         // this model is "new" and needs to be saved
         result=[self internalSaveModel:model props:propsToSave error:error];
     }
-    else
+    else if (propsToSave.count>0)
     {
         // just needs to be updated
-        result=[self internalUpdateModel:model props:props error:error];
+        result=[self internalUpdateModel:model props:propsToSave error:error];
     }
     
     // if we failed we're going to bail here.
