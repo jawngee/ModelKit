@@ -16,7 +16,7 @@
     return [[self service] queryForModelClass:self];
 }
 
-+(MKitModelQuery *)offlineQuery
++(MKitModelQuery *)contextQuery
 {
     return [MKitModelPredicateQuery queryForModelClass:self];
 }
