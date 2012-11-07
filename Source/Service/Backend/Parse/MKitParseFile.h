@@ -8,8 +8,15 @@
 
 #import "MKitServiceFile.h"
 
+/**
+ * Parse implementation of MKitServiceFile
+ */
 @interface MKitParseFile : MKitServiceFile
 
+/**
+ * Returns a representation of the file as Parse "pointer".
+ * @return Dictionary of pointer rep
+ */
 -(NSDictionary *)parseFilePointer;
 
 @end

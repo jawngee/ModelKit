@@ -129,6 +129,7 @@
  * @param method The HTTP method to use
  * @param params The query parameters for the request
  * @param body The body data for the request
+ * @param contentType The content type, if nil will use default for particular backend
  * @return The operation
  */
 -(AFHTTPRequestOperation *)requestWithMethod:(NSString *)method path:(NSString *)path params:(NSDictionary *)params body:(NSData *)body contentType:(NSString *)contentType;

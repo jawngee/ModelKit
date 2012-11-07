@@ -9,8 +9,16 @@
 #import "MKitServiceFile.h"
 #import "MKitServiceManager.h"
 
+/**
+ * Internal methods
+ */
 @interface MKitServiceFile(Internal)
 
+/**
+ * Determines the content type for a filename
+ * @param filename The filename
+ * @return The content type
+ */
 -(NSString *)contentTypeForFileName:(NSString *)filename;
 
 @end
