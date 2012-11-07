@@ -138,8 +138,8 @@ Class Methods</h2></td></tr>
 <tr class="separator:a2d1ec0b7c1bb8c9eb283939cb19ce528"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfa225f40dc8dfb908dc68e672182bd1"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="protocol_m_kit_service_user-p.html#acfa225f40dc8dfb908dc68e672182bd1">logInWithUserName:password:error:</a></td></tr>
 <tr class="separator:acfa225f40dc8dfb908dc68e672182bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec0683a9a873cbcc44df2d51ead22a2d"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="protocol_m_kit_service_user-p.html#aec0683a9a873cbcc44df2d51ead22a2d">logInWithUserName:password:resultBlock:</a></td></tr>
-<tr class="separator:aec0683a9a873cbcc44df2d51ead22a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaedfd4556921d8133141d101e8c66e93"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="protocol_m_kit_service_user-p.html#aaedfd4556921d8133141d101e8c66e93">logInInBackgroundWithUserName:password:resultBlock:</a></td></tr>
+<tr class="separator:aaedfd4556921d8133141d101e8c66e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5e85623e9c097029d015291b92605bf"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="protocol_m_kit_service_user-p.html#ae5e85623e9c097029d015291b92605bf">requestPasswordResetForEmail:error:</a></td></tr>
 <tr class="separator:ae5e85623e9c097029d015291b92605bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55a0a28edceefb393d648e545627e6ea"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="protocol_m_kit_service_user-p.html#a55a0a28edceefb393d648e545627e6ea">requestPasswordResetInBackgroundForEmail:resultBlock:</a></td></tr>
@@ -159,7 +159,7 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Protocol for implementing service specific user class </p>
 
-<p>Definition at line <a class="el" href="_m_kit_service_user_8h_source.html#l00015">15</a> of file <a class="el" href="_m_kit_service_user_8h_source.html">MKitServiceUser.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_user_8h_source.html#l00021">21</a> of file <a class="el" href="_m_kit_service_user_8h_source.html">MKitServiceUser.h</a>.</p>
 </div><h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="a51e62737ba864bd0f98283b34db461ae"></a>
 <div class="memitem">
@@ -177,6 +177,49 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The current user if logged in, nil if not logged in. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="interface_m_kit_parse_user.html#acd57d67d199b528bce050f37ea01f0e6">MKitParseUser</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaedfd4556921d8133141d101e8c66e93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (void) logInInBackgroundWithUserName: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>userName</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">password:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>password</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">resultBlock:</td>
+          <td></td>
+          <td class="paramtype">(MKitObjectResultBlock)&#160;</td>
+          <td class="paramname"><em>resultBlock</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Logs a user in in the background. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userName</td><td>The user's login name </td></tr>
+    <tr><td class="paramname">password</td><td>The user's password </td></tr>
+    <tr><td class="paramname">resultBlock</td><td>The result block to call when the operation completes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="interface_m_kit_parse_user.html#ae1b41976853e47d69c8294ec2dbb579e">MKitParseUser</a>.</p>
 
 </div>
 </div>
@@ -221,49 +264,6 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="interface_m_kit_parse_user.html#aa2099ab036eacca891ec16c19c491f46">MKitParseUser</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aec0683a9a873cbcc44df2d51ead22a2d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">+ (void) logInWithUserName: </td>
-          <td></td>
-          <td class="paramtype">(NSString *)&#160;</td>
-          <td class="paramname"><em>userName</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">password:</td>
-          <td></td>
-          <td class="paramtype">(NSString *)&#160;</td>
-          <td class="paramname"><em>password</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">resultBlock:</td>
-          <td></td>
-          <td class="paramtype">(MKitObjectResultBlock)&#160;</td>
-          <td class="paramname"><em>resultBlock</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Logs a user in in the background. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userName</td><td>The user's login name </td></tr>
-    <tr><td class="paramname">password</td><td>The user's password </td></tr>
-    <tr><td class="paramname">resultBlock</td><td>The result block to call when the operation completes </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented in <a class="el" href="interface_m_kit_parse_user.html#a4cc818756eee93f44eaa18931f4d99c9">MKitParseUser</a>.</p>
 
 </div>
 </div>
@@ -479,7 +479,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Email </p>
 
-<p>Definition at line <a class="el" href="_m_kit_service_user_8h_source.html#l00020">20</a> of file <a class="el" href="_m_kit_service_user_8h_source.html">MKitServiceUser.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_user_8h_source.html#l00026">26</a> of file <a class="el" href="_m_kit_service_user_8h_source.html">MKitServiceUser.h</a>.</p>
 
 </div>
 </div>
@@ -502,7 +502,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Session token for authenticating other requests. Uses model prefix so it isn't serialized </p>
 
-<p>Definition at line <a class="el" href="_m_kit_service_user_8h_source.html#l00017">17</a> of file <a class="el" href="_m_kit_service_user_8h_source.html">MKitServiceUser.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_user_8h_source.html#l00023">23</a> of file <a class="el" href="_m_kit_service_user_8h_source.html">MKitServiceUser.h</a>.</p>
 
 </div>
 </div>
@@ -525,7 +525,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Password </p>
 
-<p>Definition at line <a class="el" href="_m_kit_service_user_8h_source.html#l00019">19</a> of file <a class="el" href="_m_kit_service_user_8h_source.html">MKitServiceUser.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_user_8h_source.html#l00025">25</a> of file <a class="el" href="_m_kit_service_user_8h_source.html">MKitServiceUser.h</a>.</p>
 
 </div>
 </div>
@@ -548,7 +548,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>User name </p>
 
-<p>Definition at line <a class="el" href="_m_kit_service_user_8h_source.html#l00018">18</a> of file <a class="el" href="_m_kit_service_user_8h_source.html">MKitServiceUser.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_user_8h_source.html#l00024">24</a> of file <a class="el" href="_m_kit_service_user_8h_source.html">MKitServiceUser.h</a>.</p>
 
 </div>
 </div>
@@ -561,7 +561,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="protocol_m_kit_service_user-p.html">MKitServiceUser</a></li>
-    <li class="footer">Generated on Sat Nov 3 2012 04:22:40 for ModelKit by
+    <li class="footer">Generated on Thu Nov 8 2012 04:29:53 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

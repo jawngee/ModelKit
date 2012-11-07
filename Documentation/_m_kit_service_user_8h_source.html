@@ -113,36 +113,40 @@ $(document).ready(function(){initNavTree('_m_kit_service_user_8h_source.html',''
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#import &quot;MKitDefs.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#import &quot;MKitServiceModel.h&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="protocol_m_kit_service_user-p.html">   15</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_m_kit_service_user-p.html">MKitServiceUser</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="protocol_m_kit_service_user-p.html#a33a644bbd0dab1f3969aff5396dbfed7">   17</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) NSString *<a class="code" href="protocol_m_kit_service_user-p.html#a33a644bbd0dab1f3969aff5396dbfed7">modelSessionToken</a>;  </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="protocol_m_kit_service_user-p.html#a88e933a1d6801c05baf6efa6c10b814a">   18</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) NSString *<a class="code" href="protocol_m_kit_service_user-p.html#a88e933a1d6801c05baf6efa6c10b814a">username</a>;           </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="protocol_m_kit_service_user-p.html#a258935ca2152b60c4e4055e09ed652a0">   19</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) NSString *<a class="code" href="protocol_m_kit_service_user-p.html#a258935ca2152b60c4e4055e09ed652a0">password</a>;           </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="protocol_m_kit_service_user-p.html#a97682a7db35f6cedfb9706b6efb92f3e">   20</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) NSString *<a class="code" href="protocol_m_kit_service_user-p.html#a97682a7db35f6cedfb9706b6efb92f3e">email</a>;              </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;+(<a class="code" href="interface_m_kit_service_model.html">MKitServiceModel</a>&lt;<a class="code" href="protocol_m_kit_service_user-p.html">MKitServiceUser</a>&gt; *)<a class="code" href="protocol_m_kit_service_user-p.html#a51e62737ba864bd0f98283b34db461ae">currentUser</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;+(BOOL)signUpWithUserName:(NSString *)userName email:(NSString *)email password:(NSString *)password error:(NSError **)error;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;+(void)signUpInBackgroundWithUserName:(NSString *)userName email:(NSString *)email password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;+(BOOL)logInWithUserName:(NSString *)userName password:(NSString *)password error:(NSError **)error;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;+(void)logInWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;+(BOOL)requestPasswordResetForEmail:(NSString *)email error:(NSError **)error;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;+(void)requestPasswordResetInBackgroundForEmail:(NSString *)email resultBlock:(MKitBooleanResultBlock)resultBlock;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;-(void)<a class="code" href="protocol_m_kit_service_user-p.html#ac5f64bb5b31c297df71356aa904836b5">logOut</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> MKitUserLoggedInNotification;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> MKitUserLoggedOutNotification;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="protocol_m_kit_service_user-p.html">   21</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_m_kit_service_user-p.html">MKitServiceUser</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="protocol_m_kit_service_user-p.html#a33a644bbd0dab1f3969aff5396dbfed7">   23</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) NSString *<a class="code" href="protocol_m_kit_service_user-p.html#a33a644bbd0dab1f3969aff5396dbfed7">modelSessionToken</a>;  </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="protocol_m_kit_service_user-p.html#a88e933a1d6801c05baf6efa6c10b814a">   24</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) NSString *<a class="code" href="protocol_m_kit_service_user-p.html#a88e933a1d6801c05baf6efa6c10b814a">username</a>;           </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="protocol_m_kit_service_user-p.html#a258935ca2152b60c4e4055e09ed652a0">   25</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) NSString *<a class="code" href="protocol_m_kit_service_user-p.html#a258935ca2152b60c4e4055e09ed652a0">password</a>;           </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="protocol_m_kit_service_user-p.html#a97682a7db35f6cedfb9706b6efb92f3e">   26</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) NSString *<a class="code" href="protocol_m_kit_service_user-p.html#a97682a7db35f6cedfb9706b6efb92f3e">email</a>;              </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;+(<a class="code" href="interface_m_kit_service_model.html">MKitServiceModel</a>&lt;<a class="code" href="protocol_m_kit_service_user-p.html">MKitServiceUser</a>&gt; *)<a class="code" href="protocol_m_kit_service_user-p.html#a51e62737ba864bd0f98283b34db461ae">currentUser</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;+(BOOL)signUpWithUserName:(NSString *)userName email:(NSString *)email password:(NSString *)password error:(NSError **)error;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;+(void)signUpInBackgroundWithUserName:(NSString *)userName email:(NSString *)email password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;+(BOOL)logInWithUserName:(NSString *)userName password:(NSString *)password error:(NSError **)error;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;+(void)logInInBackgroundWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;+(BOOL)requestPasswordResetForEmail:(NSString *)email error:(NSError **)error;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;+(void)requestPasswordResetInBackgroundForEmail:(NSString *)email resultBlock:(MKitBooleanResultBlock)resultBlock;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;-(void)<a class="code" href="protocol_m_kit_service_user-p.html#ac5f64bb5b31c297df71356aa904836b5">logOut</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_274770857b8dca50bfd429b32ee69447.html">Service</a></li><li class="navelem"><b>MKitServiceUser.h</b></li>
-    <li class="footer">Generated on Sat Nov 3 2012 04:22:40 for ModelKit by
+    <li class="footer">Generated on Thu Nov 8 2012 04:29:53 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

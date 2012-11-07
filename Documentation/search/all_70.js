@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['parsefilepointer',['parseFilePointer',['../interface_m_kit_parse_file.html#aa986e93893b16aba7df917a82d37b37e',1,'MKitParseFile']]],
   ['parsepointer',['parsePointer',['../category_m_kit_model_07_parse_08.html#a144065b32af764f82867ce4532c23878',1,'MKitModel(Parse)::parsePointer()'],['../interface_m_kit_model.html#a144065b32af764f82867ce4532c23878',1,'MKitModel::parsePointer()']]],
   ['parsepointerarray_3a',['parsePointerArray:',['../category_m_kit_mutable_model_array_07_parse_08.html#aec2f7468a256f3c3fa4080c489299c86',1,'MKitMutableModelArray(Parse)::parsePointerArray:()'],['../interface_m_kit_mutable_model_array.html#aec2f7468a256f3c3fa4080c489299c86',1,'MKitMutableModelArray::parsePointerArray:()']]],
   ['parsepropertiesforclass_3aignorepropprefix_3a',['parsePropertiesForClass:ignorePropPrefix:',['../category_m_kit_reflected_class_07_internal_08.html#a290fda965174ddf31b6a48be73dd412d',1,'MKitReflectedClass(Internal)']]],

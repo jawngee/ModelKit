@@ -1040,6 +1040,38 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>MKitMutableFileArray</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitMutableFileArray</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_mutable_file_array.html</Path>
+    <DeclaredIn>MKitMutableFileArray.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>uploadWithProgress:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitMutableFileArray</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_mutable_file_array.html</Path>
+    <Anchor>a4626af13641d101d9924f88111b5820b</Anchor>
+    <DeclaredIn>MKitMutableFileArray.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>uploadInBackgroundWithProgress:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitMutableFileArray</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_mutable_file_array.html</Path>
+    <Anchor>ac9e825642f650e3652b9a048da8ac2d5</Anchor>
+    <DeclaredIn>MKitMutableFileArray.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>MKitMutableModelArray</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -1099,6 +1131,208 @@
     </TokenIdentifier>
     <Path>protocol_m_kit_no_context-p.html</Path>
     <DeclaredIn>MKitModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MKitParseFile</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitParseFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_file.html</Path>
+    <DeclaredIn>MKitParseFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parseFilePointer</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitParseFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_file.html</Path>
+    <Anchor>aa986e93893b16aba7df917a82d37b37e</Anchor>
+    <DeclaredIn>MKitParseFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithFile:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>aae78f991c00a95839ca587cb72e5cb4d</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithData:name:contentType:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>ab043717f2344ec290d107f6acfbb778a</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithName:andURL:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>af1d974b9ebe0ead458373ae7ada61ff4</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>save:progressBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a7b57edce9bdcd04aade0047add9bc340</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveInBackgroundWithProgress:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a4d76d8af64118757965ed664bda2afe5</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>delete:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>ad66feffdfae7111d303e33a3a887ada8</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deleteInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a0e33a347a5534eac8ec9196bb0004d52</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>service</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>ab6d239070bccd6766d7a67bad73e98cb</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fileWithFile:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a673afae82b2f2fd954cd3f20d27a5ad0</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fileWithData:name:contentType:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a99fb50f66b2fdc964ae293eab0e8d1a5</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fileWithName:andURL:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a9023e5839f3601cb084f81738c2dfcd6</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>contentType</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a30832eb4a4b3d89ef7514fa4024bfb67</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>filename</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a44a7e0ba4afd8a66405ecd966b753f81</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>data</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>ac9f70d18800b390f52c9923bdd92bed6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>state</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a0d1be2ea60ad08f9bfb792f27151367e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>name</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a0e13d86d1dce3b7bd1592b16722435c1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>url</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a2fc923516a4732e6c528735ecd62646c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1188,13 +1422,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>offlineQuery</Name>
+      <Name>contextQuery</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
       <Scope>MKitServiceModel</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_model.html</Path>
-    <Anchor>aec271a06c736f1b2e9e10e5811e96892</Anchor>
+    <Anchor>a60cb3b87246ba3229e058b80b6ef0113</Anchor>
     <DeclaredIn>MKitServiceModel.h</DeclaredIn>
   </Token>
   <Token>
@@ -1504,13 +1738,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>requestWithMethod:path:params:body:</Name>
+      <Name>requestWithMethod:path:params:body:contentType:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>MKitServiceManager</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_manager.html</Path>
-    <Anchor>aeaca69fe7553d7f9357165446f224b91</Anchor>
+    <Anchor>a519a73ed459c5ac119d5411586b974cf</Anchor>
     <DeclaredIn>MKitServiceManager.h</DeclaredIn>
   </Token>
   <Token>
@@ -1533,6 +1767,50 @@
     </TokenIdentifier>
     <Path>interface_m_kit_service_manager.html</Path>
     <Anchor>ae17cb193061855460d7e5c244517fb94</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveFile:progressBlock:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>ab7d22be3ff0905f6339eca9251912d8a</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveFileInBackground:progressBlock:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>ac56b8dddac741f37397aaa99a4dc8645</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deleteFile:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>a579a1a2b178313603f46871b9c6290af</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deleteFileInBackground:withBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>aa8cc8003f11790e50ad9dc817fb5589f</Anchor>
     <DeclaredIn>MKitServiceManager.h</DeclaredIn>
   </Token>
   <Token>
@@ -1665,13 +1943,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>logInWithUserName:password:resultBlock:</Name>
+      <Name>logInInBackgroundWithUserName:password:resultBlock:</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
       <Scope>MKitParseUser</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_parse_user.html</Path>
-    <Anchor>a4cc818756eee93f44eaa18931f4d99c9</Anchor>
+    <Anchor>ae1b41976853e47d69c8294ec2dbb579e</Anchor>
     <DeclaredIn>MKitParseUser.h</DeclaredIn>
   </Token>
   <Token>
@@ -1912,6 +2190,217 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>MKitServiceFile</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithFile:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>aae78f991c00a95839ca587cb72e5cb4d</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithData:name:contentType:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>ab043717f2344ec290d107f6acfbb778a</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithName:andURL:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>af1d974b9ebe0ead458373ae7ada61ff4</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>save:progressBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a7b57edce9bdcd04aade0047add9bc340</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveInBackgroundWithProgress:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a4d76d8af64118757965ed664bda2afe5</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>delete:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>ad66feffdfae7111d303e33a3a887ada8</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deleteInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a0e33a347a5534eac8ec9196bb0004d52</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>service</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>ab6d239070bccd6766d7a67bad73e98cb</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fileWithFile:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a673afae82b2f2fd954cd3f20d27a5ad0</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fileWithData:name:contentType:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a99fb50f66b2fdc964ae293eab0e8d1a5</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fileWithName:andURL:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a9023e5839f3601cb084f81738c2dfcd6</Anchor>
+    <DeclaredIn>MKitServiceFile.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>contentType</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a30832eb4a4b3d89ef7514fa4024bfb67</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>filename</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a44a7e0ba4afd8a66405ecd966b753f81</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>data</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>ac9f70d18800b390f52c9923bdd92bed6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>state</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a0d1be2ea60ad08f9bfb792f27151367e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>name</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a0e13d86d1dce3b7bd1592b16722435c1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>url</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceFile</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_file.html</Path>
+    <Anchor>a2fc923516a4732e6c528735ecd62646c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MKitServiceFile(Internal)</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cat</Type>
+      <Scope>MKitServiceFile(Internal)</Scope>
+    </TokenIdentifier>
+    <Path>category_m_kit_service_file_07_internal_08.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>contentTypeForFileName:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>func</Type>
+      <Scope>MKitServiceFile(Internal)</Scope>
+    </TokenIdentifier>
+    <Path>category_m_kit_service_file_07_internal_08.html</Path>
+    <Anchor>acd893274b280761e5757f5f20d07b2e3</Anchor>
+    <DeclaredIn>MKitServiceFile.m</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>MKitServiceKeyChain</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -2096,13 +2585,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>requestWithMethod:path:params:body:</Name>
+      <Name>requestWithMethod:path:params:body:contentType:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>MKitServiceManager</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_manager.html</Path>
-    <Anchor>aeaca69fe7553d7f9357165446f224b91</Anchor>
+    <Anchor>a519a73ed459c5ac119d5411586b974cf</Anchor>
     <DeclaredIn>MKitServiceManager.h</DeclaredIn>
   </Token>
   <Token>
@@ -2125,6 +2614,50 @@
     </TokenIdentifier>
     <Path>interface_m_kit_service_manager.html</Path>
     <Anchor>ae17cb193061855460d7e5c244517fb94</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveFile:progressBlock:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>ab7d22be3ff0905f6339eca9251912d8a</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveFileInBackground:progressBlock:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>ac56b8dddac741f37397aaa99a4dc8645</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deleteFile:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>a579a1a2b178313603f46871b9c6290af</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deleteFileInBackground:withBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>aa8cc8003f11790e50ad9dc817fb5589f</Anchor>
     <DeclaredIn>MKitServiceManager.h</DeclaredIn>
   </Token>
   <Token>
@@ -2369,13 +2902,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>offlineQuery</Name>
+      <Name>contextQuery</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
       <Scope>MKitServiceModel</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_model.html</Path>
-    <Anchor>aec271a06c736f1b2e9e10e5811e96892</Anchor>
+    <Anchor>a60cb3b87246ba3229e058b80b6ef0113</Anchor>
     <DeclaredIn>MKitServiceModel.h</DeclaredIn>
   </Token>
   <Token>
@@ -2829,13 +3362,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>logInWithUserName:password:resultBlock:</Name>
+      <Name>logInInBackgroundWithUserName:password:resultBlock:</Name>
       <APILanguage>occ</APILanguage>
       <Type>intfcm</Type>
       <Scope>MKitServiceUser-p</Scope>
     </TokenIdentifier>
     <Path>protocol_m_kit_service_user-p.html</Path>
-    <Anchor>aec0683a9a873cbcc44df2d51ead22a2d</Anchor>
+    <Anchor>aaedfd4556921d8133141d101e8c66e93</Anchor>
     <DeclaredIn>MKitServiceUser.h</DeclaredIn>
   </Token>
   <Token>

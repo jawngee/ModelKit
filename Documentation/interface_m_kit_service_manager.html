@@ -144,12 +144,20 @@ Instance Methods</h2></td></tr>
 <tr class="separator:af26f3035a4b7d0fa2767ed83c8661ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa78fbeff668cd87fa6d2d37ebf0a56d3"><td class="memItemLeft" align="right" valign="top">(AFHTTPRequestOperation *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#aa78fbeff668cd87fa6d2d37ebf0a56d3">modelRequestWithMethod:model:params:body:</a></td></tr>
 <tr class="separator:aa78fbeff668cd87fa6d2d37ebf0a56d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeaca69fe7553d7f9357165446f224b91"><td class="memItemLeft" align="right" valign="top">(AFHTTPRequestOperation *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#aeaca69fe7553d7f9357165446f224b91">requestWithMethod:path:params:body:</a></td></tr>
-<tr class="separator:aeaca69fe7553d7f9357165446f224b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519a73ed459c5ac119d5411586b974cf"><td class="memItemLeft" align="right" valign="top">(AFHTTPRequestOperation *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#a519a73ed459c5ac119d5411586b974cf">requestWithMethod:path:params:body:contentType:</a></td></tr>
+<tr class="separator:a519a73ed459c5ac119d5411586b974cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17fbcc36fd83bd996499b2eb314ffcb1"><td class="memItemLeft" align="right" valign="top">(NSDictionary *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#a17fbcc36fd83bd996499b2eb314ffcb1">userCredentials</a></td></tr>
 <tr class="separator:a17fbcc36fd83bd996499b2eb314ffcb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae17cb193061855460d7e5c244517fb94"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#ae17cb193061855460d7e5c244517fb94">storeUserCredentials:</a></td></tr>
 <tr class="separator:ae17cb193061855460d7e5c244517fb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7d22be3ff0905f6339eca9251912d8a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#ab7d22be3ff0905f6339eca9251912d8a">saveFile:progressBlock:error:</a></td></tr>
+<tr class="separator:ab7d22be3ff0905f6339eca9251912d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac56b8dddac741f37397aaa99a4dc8645"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#ac56b8dddac741f37397aaa99a4dc8645">saveFileInBackground:progressBlock:resultBlock:</a></td></tr>
+<tr class="separator:ac56b8dddac741f37397aaa99a4dc8645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579a1a2b178313603f46871b9c6290af"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#a579a1a2b178313603f46871b9c6290af">deleteFile:error:</a></td></tr>
+<tr class="separator:a579a1a2b178313603f46871b9c6290af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8cc8003f11790e50ad9dc817fb5589f"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#aa8cc8003f11790e50ad9dc817fb5589f">deleteFileInBackground:withBlock:</a></td></tr>
+<tr class="separator:aa8cc8003f11790e50ad9dc817fb5589f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Class Methods</h2></td></tr>
@@ -166,7 +174,7 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class for building an interface between models and a backend service </p>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00022">22</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00023">23</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
 </div><h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="af26f3035a4b7d0fa2767ed83c8661ad6"></a>
 <div class="memitem">
@@ -215,7 +223,80 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The operation </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00106">106</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00112">112</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a579a1a2b178313603f46871b9c6290af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) deleteFile: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_m_kit_service_file.html">MKitServiceFile</a> *)&#160;</td>
+          <td class="paramname"><em>file</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">error:</td>
+          <td></td>
+          <td class="paramtype">(NSError **)&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Deletes the file from the service synchronously. When subclassing <a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a>, you must implement this method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The file to delete </td></tr>
+    <tr><td class="paramname">error</td><td>The error to return, nil if none </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00156">156</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa8cc8003f11790e50ad9dc817fb5589f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) deleteFileInBackground: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_m_kit_service_file.html">MKitServiceFile</a> *)&#160;</td>
+          <td class="paramname"><em>file</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withBlock:</td>
+          <td></td>
+          <td class="paramtype">(MKitBooleanResultBlock)&#160;</td>
+          <td class="paramname"><em>resultBlock</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Deletes the file asynchronously in the background. No need to implement in subclasses. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The file to delete </td></tr>
+    <tr><td class="paramname">resultBlock</td><td>The block that gets called after the delete completes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00161">161</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -242,7 +323,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Deletes the model from the service asynchronously. When subclassing <a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a>, you must implement this method. </p>
+<p>Deletes the model from the service synchronously. When subclassing <a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a>, you must implement this method. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">model</td><td>The model to delete </td></tr>
@@ -252,7 +333,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00076">76</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00080">80</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -288,7 +369,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00081">81</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00085">85</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -315,7 +396,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fetches the model from the service asynchronously. When subclassing <a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a>, you must implement this method. </p>
+<p>Fetches the model from the service synchronously. When subclassing <a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a>, you must implement this method. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">model</td><td>The model to fetch </td></tr>
@@ -325,7 +406,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00091">91</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00095">95</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -361,7 +442,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00096">96</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00100">100</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -464,7 +545,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The operation </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00111">111</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00117">117</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -490,11 +571,11 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The query object </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00056">56</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00058">58</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aeaca69fe7553d7f9357165446f224b91"></a>
+<a class="anchor" id="a519a73ed459c5ac119d5411586b974cf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -520,7 +601,13 @@ Properties</h2></td></tr>
           <td class="paramkey">body:</td>
           <td></td>
           <td class="paramtype">(NSData *)&#160;</td>
-          <td class="paramname"><em>body</em>&#160;</td>
+          <td class="paramname"><em>body</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">contentType:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>contentType</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -535,12 +622,100 @@ Properties</h2></td></tr>
     <tr><td class="paramname">method</td><td>The HTTP method to use </td></tr>
     <tr><td class="paramname">params</td><td>The query parameters for the request </td></tr>
     <tr><td class="paramname">body</td><td>The body data for the request </td></tr>
+    <tr><td class="paramname">contentType</td><td>The content type, if nil will use default for particular backend </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The operation </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00116">116</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00122">122</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7d22be3ff0905f6339eca9251912d8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) saveFile: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_m_kit_service_file.html">MKitServiceFile</a> *)&#160;</td>
+          <td class="paramname"><em>file</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">progressBlock:</td>
+          <td></td>
+          <td class="paramtype">(MKitProgressBlock)&#160;</td>
+          <td class="paramname"><em>progressBlock</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">error:</td>
+          <td></td>
+          <td class="paramtype">(NSError **)&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Saves the file with the service synchronously. When subclassing <a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a>, you must implement this method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The file to save </td></tr>
+    <tr><td class="paramname">progressBlock</td><td>The progress block to call with updates </td></tr>
+    <tr><td class="paramname">error</td><td>The error to return, nil if none </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00141">141</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac56b8dddac741f37397aaa99a4dc8645"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) saveFileInBackground: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_m_kit_service_file.html">MKitServiceFile</a> *)&#160;</td>
+          <td class="paramname"><em>file</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">progressBlock:</td>
+          <td></td>
+          <td class="paramtype">(MKitProgressBlock)&#160;</td>
+          <td class="paramname"><em>progressBlock</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">resultBlock:</td>
+          <td></td>
+          <td class="paramtype">(MKitBooleanResultBlock)&#160;</td>
+          <td class="paramname"><em>resultBlock</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Saves the file asynchronously in the background. No need to implement in subclasses. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The file to save </td></tr>
+    <tr><td class="paramname">progressBlock</td><td>The progress block with updates </td></tr>
+    <tr><td class="paramname">resultBlock</td><td>The block that gets called after the save completes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00146">146</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -567,7 +742,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Saves the model with the service asynchronously. When subclassing <a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a>, you must implement this method. </p>
+<p>Saves the model with the service synchronously. When subclassing <a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a>, you must implement this method. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">model</td><td>The model to save </td></tr>
@@ -577,7 +752,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00061">61</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00065">65</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -613,7 +788,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00066">66</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00070">70</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -675,7 +850,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00126">126</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00134">134</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -694,7 +869,7 @@ Properties</h2></td></tr>
 <p>Returns user's credentials </p>
 <dl class="section return"><dt>Returns</dt><dd>Dictionary of credentials, nil if none </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00121">121</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00129">129</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -718,7 +893,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Keychain for storing credentials </p>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00024">24</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00025">25</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
 
 </div>
 </div>
@@ -732,7 +907,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a></li>
-    <li class="footer">Generated on Sat Nov 3 2012 04:22:40 for ModelKit by
+    <li class="footer">Generated on Thu Nov 8 2012 04:29:53 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

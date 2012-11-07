@@ -1,8 +1,8 @@
 var protocol_m_kit_service_user_p =
 [
     [ "currentUser", "protocol_m_kit_service_user-p.html#a51e62737ba864bd0f98283b34db461ae", null ],
+    [ "logInInBackgroundWithUserName:password:resultBlock:", "protocol_m_kit_service_user-p.html#aaedfd4556921d8133141d101e8c66e93", null ],
     [ "logInWithUserName:password:error:", "protocol_m_kit_service_user-p.html#acfa225f40dc8dfb908dc68e672182bd1", null ],
-    [ "logInWithUserName:password:resultBlock:", "protocol_m_kit_service_user-p.html#aec0683a9a873cbcc44df2d51ead22a2d", null ],
     [ "logOut", "protocol_m_kit_service_user-p.html#ac5f64bb5b31c297df71356aa904836b5", null ],
     [ "requestPasswordResetForEmail:error:", "protocol_m_kit_service_user-p.html#ae5e85623e9c097029d015291b92605bf", null ],
     [ "requestPasswordResetInBackgroundForEmail:resultBlock:", "protocol_m_kit_service_user-p.html#a55a0a28edceefb393d648e545627e6ea", null ],

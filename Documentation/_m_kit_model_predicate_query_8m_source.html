@@ -188,25 +188,28 @@ $(document).ready(function(){initNavTree('_m_kit_model_predicate_query_8m_source
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    NSArray *results=[[<a class="code" href="interface_m_kit_model_context.html">MKitModelContext</a> <a class="code" href="interface_m_kit_model_context.html#abf89ab8b8f857336c88e1be4d175fc80">current</a>] <a class="code" href="interface_m_kit_model_context.html#aafe9f421f5454dacd3e73486a57738f7">queryWithPredicate</a>:predicate <a class="code" href="interface_m_kit_model_context.html#aafe9f421f5454dacd3e73486a57738f7">forClass</a>:modelClass];</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> @{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        MKitQueryItemCountKey:@(results.count),</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        MKitQueryResultKey:results</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    };</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;-(NSInteger)count:(NSError **)error</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> [[[<span class="keyword">self</span> executeWithLimit:NSNotFound skip:NSNotFound error:error] objectForKey:MKitQueryItemCountKey] integerValue];</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (results==nil)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        results=[NSArray array];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> @{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        MKitQueryItemCountKey:@(results.count),</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        MKitQueryResultKey:results</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    };</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;-(NSInteger)count:(NSError **)error</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> [[[<span class="keyword">self</span> executeWithLimit:NSNotFound skip:NSNotFound error:error] objectForKey:MKitQueryItemCountKey] integerValue];</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_4d2cd150aff3df625ebb7431566b7a26.html">Model</a></li><li class="navelem"><b>MKitModelPredicateQuery.m</b></li>
-    <li class="footer">Generated on Sat Nov 3 2012 04:22:40 for ModelKit by
+    <li class="footer">Generated on Thu Nov 8 2012 04:29:53 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -431,6 +431,22 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>MKitMutableFileArray</Name>
+            <Path>interface_m_kit_mutable_file_array.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>uploadInBackgroundWithProgress:resultBlock:</Name>
+              <Path>interface_m_kit_mutable_file_array.html</Path>
+              <Anchor>ac9e825642f650e3652b9a048da8ac2d5</Anchor>
+             </Node>
+             <Node>
+              <Name>uploadWithProgress:error:</Name>
+              <Path>interface_m_kit_mutable_file_array.html</Path>
+              <Anchor>a4626af13641d101d9924f88111b5820b</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>MKitMutableModelArray</Name>
             <Path>interface_m_kit_mutable_model_array.html</Path>
             <Subnodes>
@@ -461,6 +477,17 @@
            <Node>
             <Name>&lt;MKitNoContext&gt;</Name>
             <Path>protocol_m_kit_no_context-p.html</Path>
+           </Node>
+           <Node>
+            <Name>MKitParseFile</Name>
+            <Path>interface_m_kit_parse_file.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>parseFilePointer</Name>
+              <Path>interface_m_kit_parse_file.html</Path>
+              <Anchor>aa986e93893b16aba7df917a82d37b37e</Anchor>
+             </Node>
+            </Subnodes>
            </Node>
            <Node>
             <Name>MKitParseModel</Name>
@@ -529,14 +556,14 @@
               <Anchor>acd57d67d199b528bce050f37ea01f0e6</Anchor>
              </Node>
              <Node>
+              <Name>logInInBackgroundWithUserName:password:resultBlock:</Name>
+              <Path>interface_m_kit_parse_user.html</Path>
+              <Anchor>ae1b41976853e47d69c8294ec2dbb579e</Anchor>
+             </Node>
+             <Node>
               <Name>logInWithUserName:password:error:</Name>
               <Path>interface_m_kit_parse_user.html</Path>
               <Anchor>aa2099ab036eacca891ec16c19c491f46</Anchor>
-             </Node>
-             <Node>
-              <Name>logInWithUserName:password:resultBlock:</Name>
-              <Path>interface_m_kit_parse_user.html</Path>
-              <Anchor>a4cc818756eee93f44eaa18931f4d99c9</Anchor>
              </Node>
              <Node>
               <Name>logOut</Name>
@@ -655,6 +682,108 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>MKitServiceFile</Name>
+            <Path>interface_m_kit_service_file.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>delete:</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>ad66feffdfae7111d303e33a3a887ada8</Anchor>
+             </Node>
+             <Node>
+              <Name>deleteInBackground:</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a0e33a347a5534eac8ec9196bb0004d52</Anchor>
+             </Node>
+             <Node>
+              <Name>fileWithData:name:contentType:</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a99fb50f66b2fdc964ae293eab0e8d1a5</Anchor>
+             </Node>
+             <Node>
+              <Name>fileWithFile:</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a673afae82b2f2fd954cd3f20d27a5ad0</Anchor>
+             </Node>
+             <Node>
+              <Name>fileWithName:andURL:</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a9023e5839f3601cb084f81738c2dfcd6</Anchor>
+             </Node>
+             <Node>
+              <Name>initWithData:name:contentType:</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>ab043717f2344ec290d107f6acfbb778a</Anchor>
+             </Node>
+             <Node>
+              <Name>initWithFile:</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>aae78f991c00a95839ca587cb72e5cb4d</Anchor>
+             </Node>
+             <Node>
+              <Name>initWithName:andURL:</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>af1d974b9ebe0ead458373ae7ada61ff4</Anchor>
+             </Node>
+             <Node>
+              <Name>save:progressBlock:</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a7b57edce9bdcd04aade0047add9bc340</Anchor>
+             </Node>
+             <Node>
+              <Name>saveInBackgroundWithProgress:resultBlock:</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a4d76d8af64118757965ed664bda2afe5</Anchor>
+             </Node>
+             <Node>
+              <Name>service</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>ab6d239070bccd6766d7a67bad73e98cb</Anchor>
+             </Node>
+             <Node>
+              <Name>contentType</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a30832eb4a4b3d89ef7514fa4024bfb67</Anchor>
+             </Node>
+             <Node>
+              <Name>data</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>ac9f70d18800b390f52c9923bdd92bed6</Anchor>
+             </Node>
+             <Node>
+              <Name>filename</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a44a7e0ba4afd8a66405ecd966b753f81</Anchor>
+             </Node>
+             <Node>
+              <Name>name</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a0e13d86d1dce3b7bd1592b16722435c1</Anchor>
+             </Node>
+             <Node>
+              <Name>state</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a0d1be2ea60ad08f9bfb792f27151367e</Anchor>
+             </Node>
+             <Node>
+              <Name>url</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Anchor>a2fc923516a4732e6c528735ecd62646c</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>MKitServiceFile(Internal)</Name>
+            <Path>category_m_kit_service_file_07_internal_08.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>contentTypeForFileName:</Name>
+              <Path>category_m_kit_service_file_07_internal_08.html</Path>
+              <Anchor>acd893274b280761e5757f5f20d07b2e3</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>MKitServiceKeyChain</Name>
             <Path>interface_m_kit_service_key_chain.html</Path>
             <Subnodes>
@@ -693,6 +822,16 @@
               <Name>classRequestWithMethod:class:params:body:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
               <Anchor>af26f3035a4b7d0fa2767ed83c8661ad6</Anchor>
+             </Node>
+             <Node>
+              <Name>deleteFile:error:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>a579a1a2b178313603f46871b9c6290af</Anchor>
+             </Node>
+             <Node>
+              <Name>deleteFileInBackground:withBlock:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>aa8cc8003f11790e50ad9dc817fb5589f</Anchor>
              </Node>
              <Node>
               <Name>deleteModel:error:</Name>
@@ -735,9 +874,19 @@
               <Anchor>a50a85563c800263cfe85a5c2d9d48e50</Anchor>
              </Node>
              <Node>
-              <Name>requestWithMethod:path:params:body:</Name>
+              <Name>requestWithMethod:path:params:body:contentType:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
-              <Anchor>aeaca69fe7553d7f9357165446f224b91</Anchor>
+              <Anchor>a519a73ed459c5ac119d5411586b974cf</Anchor>
+             </Node>
+             <Node>
+              <Name>saveFile:progressBlock:error:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>ab7d22be3ff0905f6339eca9251912d8a</Anchor>
+             </Node>
+             <Node>
+              <Name>saveFileInBackground:progressBlock:resultBlock:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>ac56b8dddac741f37397aaa99a4dc8645</Anchor>
              </Node>
              <Node>
               <Name>saveModel:error:</Name>
@@ -776,6 +925,11 @@
             <Path>interface_m_kit_service_model.html</Path>
             <Subnodes>
              <Node>
+              <Name>contextQuery</Name>
+              <Path>interface_m_kit_service_model.html</Path>
+              <Anchor>a60cb3b87246ba3229e058b80b6ef0113</Anchor>
+             </Node>
+             <Node>
               <Name>delete:</Name>
               <Path>interface_m_kit_service_model.html</Path>
               <Anchor>a261e0e80c5caa0ad74d1de78bc7f94d6</Anchor>
@@ -794,11 +948,6 @@
               <Name>fetchInBackground:</Name>
               <Path>interface_m_kit_service_model.html</Path>
               <Anchor>a2aaf3b79caeba97cf746c18c5c3b7335</Anchor>
-             </Node>
-             <Node>
-              <Name>offlineQuery</Name>
-              <Path>interface_m_kit_service_model.html</Path>
-              <Anchor>aec271a06c736f1b2e9e10e5811e96892</Anchor>
              </Node>
              <Node>
               <Name>query</Name>
@@ -863,14 +1012,14 @@
               <Anchor>a51e62737ba864bd0f98283b34db461ae</Anchor>
              </Node>
              <Node>
+              <Name>logInInBackgroundWithUserName:password:resultBlock:</Name>
+              <Path>protocol_m_kit_service_user-p.html</Path>
+              <Anchor>aaedfd4556921d8133141d101e8c66e93</Anchor>
+             </Node>
+             <Node>
               <Name>logInWithUserName:password:error:</Name>
               <Path>protocol_m_kit_service_user-p.html</Path>
               <Anchor>acfa225f40dc8dfb908dc68e672182bd1</Anchor>
-             </Node>
-             <Node>
-              <Name>logInWithUserName:password:resultBlock:</Name>
-              <Path>protocol_m_kit_service_user-p.html</Path>
-              <Anchor>aec0683a9a873cbcc44df2d51ead22a2d</Anchor>
              </Node>
              <Node>
               <Name>logOut</Name>
@@ -993,6 +1142,10 @@
             <Path>category_m_kit_reflected_class_07_internal_08.html</Path>
            </Node>
            <Node>
+            <Name>MKitServiceFile(Internal)</Name>
+            <Path>category_m_kit_service_file_07_internal_08.html</Path>
+           </Node>
+           <Node>
             <Name>&lt;MKitServiceUser&gt;</Name>
             <Path>protocol_m_kit_service_user-p.html</Path>
             <Subnodes>
@@ -1038,6 +1191,10 @@
             <Name>NSMutableArray</Name>
             <Path></Path>
             <Subnodes>
+             <Node>
+              <Name>MKitMutableFileArray</Name>
+              <Path>interface_m_kit_mutable_file_array.html</Path>
+             </Node>
              <Node>
               <Name>MKitMutableModelArray</Name>
               <Path>interface_m_kit_mutable_model_array.html</Path>
@@ -1105,6 +1262,16 @@
              <Node>
               <Name>MKitReflectionManager</Name>
               <Path>interface_m_kit_reflection_manager.html</Path>
+             </Node>
+             <Node>
+              <Name>MKitServiceFile</Name>
+              <Path>interface_m_kit_service_file.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>MKitParseFile</Name>
+                <Path>interface_m_kit_parse_file.html</Path>
+               </Node>
+              </Subnodes>
              </Node>
              <Node>
               <Name>MKitServiceKeyChain</Name>
@@ -1194,6 +1361,14 @@
                 <Name>Foundation</Name>
                 <Path>dir_121c9556c35ed64612e512a391ad786e.html</Path>
                 <Subnodes>
+                 <Node>
+                  <Name>MKitMutableFileArray.h</Name>
+                  <Path>_m_kit_mutable_file_array_8h_source.html</Path>
+                 </Node>
+                 <Node>
+                  <Name>MKitMutableFileArray.m</Name>
+                  <Path>_m_kit_mutable_file_array_8m_source.html</Path>
+                 </Node>
                  <Node>
                   <Name>MKitMutableModelArray.h</Name>
                   <Path>_m_kit_mutable_model_array_8h_source.html</Path>
@@ -1343,6 +1518,14 @@
                     </Subnodes>
                    </Node>
                    <Node>
+                    <Name>MKitParseFile.h</Name>
+                    <Path>_m_kit_parse_file_8h_source.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>MKitParseFile.m</Name>
+                    <Path>_m_kit_parse_file_8m_source.html</Path>
+                   </Node>
+                   <Node>
                     <Name>MKitParseModel.h</Name>
                     <Path>_m_kit_parse_model_8h_source.html</Path>
                    </Node>
@@ -1379,6 +1562,14 @@
                 </Subnodes>
                </Node>
                <Node>
+                <Name>MKitServiceFile.h</Name>
+                <Path>_m_kit_service_file_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceFile.m</Name>
+                <Path>_m_kit_service_file_8m_source.html</Path>
+               </Node>
+               <Node>
                 <Name>MKitServiceKeyChain.h</Name>
                 <Path>_m_kit_service_key_chain_8h_source.html</Path>
                </Node>
@@ -1413,6 +1604,10 @@
                <Node>
                 <Name>MKitServiceUser.h</Name>
                 <Path>_m_kit_service_user_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceUser.m</Name>
+                <Path>_m_kit_service_user_8m_source.html</Path>
                </Node>
               </Subnodes>
              </Node>

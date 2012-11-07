@@ -1,8 +1,8 @@
 var interface_m_kit_parse_user =
 [
     [ "currentUser", "interface_m_kit_parse_user.html#acd57d67d199b528bce050f37ea01f0e6", null ],
+    [ "logInInBackgroundWithUserName:password:resultBlock:", "interface_m_kit_parse_user.html#ae1b41976853e47d69c8294ec2dbb579e", null ],
     [ "logInWithUserName:password:error:", "interface_m_kit_parse_user.html#aa2099ab036eacca891ec16c19c491f46", null ],
-    [ "logInWithUserName:password:resultBlock:", "interface_m_kit_parse_user.html#a4cc818756eee93f44eaa18931f4d99c9", null ],
     [ "logOut", "interface_m_kit_parse_user.html#aa9c7f80d41b3b8bf764afce4ea0173c0", null ],
     [ "requestPasswordResetForEmail:error:", "interface_m_kit_parse_user.html#a4388f44e3981c3f20eb23236feaa8c07", null ],
     [ "requestPasswordResetInBackgroundForEmail:resultBlock:", "interface_m_kit_parse_user.html#a486d3916ed9d54979bc5e767d085142f", null ],
