@@ -10,4 +10,6 @@
 
 @interface MKitParseFile : MKitServiceFile
 
+-(NSDictionary *)parseFilePointer;
+
 @end

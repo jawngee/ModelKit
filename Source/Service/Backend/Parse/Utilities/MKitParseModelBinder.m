@@ -16,6 +16,7 @@
 #import "MKitModel+Parse.h"
 #import "MKitMutableModelArray+Parse.h"
 #import "MKitModelRegistry.h"
+#import "MKitParseFile.h"
 
 @implementation MKitParseModelBinder
 
@@ -97,6 +98,11 @@
         else if ([prop.typeClass isSubclassOfClass:[NSDate class]])
         {
             [model setValue:[NSDate dateFromISO8601:data[prop.name]] forKey:prop.name];
+        }
+        else if ([prop.typeClass isSubclassOfClass:[MKitServiceFile class]])
+        {
+            NSDictionary *fileDict=data[prop.name];
+            [model setValue:[MKitParseFile fileWithName:fileDict[@"name"] andURL:fileDict[@"url"]] forKey:prop.name];
         }
         else
         {

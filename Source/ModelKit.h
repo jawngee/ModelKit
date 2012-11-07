@@ -33,6 +33,7 @@
 #import "MKitServiceUser.h"
 #import "MKitServiceKeyChain.h"
 #import "MKitServiceFile.h"
+#import "MKitMutableFileArray.h"
 
 #import "MKitParseModel.h"
 #import "MKitParseModelQuery.h"

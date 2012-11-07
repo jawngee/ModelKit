@@ -21,6 +21,7 @@
 #import "MKitParseModelQuery.h"
 #import "MKitParseModelBinder.h"
 #import "MKitParseUser.h"
+#import "MKitParseFile.h"
 
 #define PARSE_BASE_URL @"https://api.parse.com/1/"
 
@@ -271,12 +272,18 @@
             // convert to parse's date format
             [propsToSave setObject:@{@"__type":@"Date",@"iso":[((NSDate *)obj) ISO8601String]} forKey:key];
         }
+        else if ([[obj class] isSubclassOfClass:[MKitParseFile class]])
+        {
+            [propsToSave setObject:[((MKitParseFile *)obj) parseFilePointer] forKey:key];
+        }
         else if ([[obj class] isSubclassOfClass:[NSMutableArray array]])
         {
             NSMutableArray *arrayCopy=[NSMutableArray array];
             for(id val in ((NSMutableArray *)obj))
                 if ([[val class] isSubclassOfClass:[NSDate class]])
                     [arrayCopy addObject:@{@"__type":@"Date",@"iso":[((NSDate *)val) ISO8601String]}];
+                else if ([[val class] isSubclassOfClass:[MKitParseFile class]])
+                    [arrayCopy addObject:[((MKitParseFile *)val) parseFilePointer]];
                 else
                     [arrayCopy addObject:val];
             
@@ -434,10 +441,11 @@
                                                 params:nil
                                                   body:file.data
                                            contentType:file.contentType];
-    
-    [op setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
-        progressBlock((float)totalBytesWritten/(float)totalBytesExpectedToWrite);
-    }];
+
+    if (progressBlock)
+        [op setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+            progressBlock((float)totalBytesWritten/(float)totalBytesExpectedToWrite);
+        }];
     
     [op start];
     [op waitUntilFinished];

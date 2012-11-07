@@ -64,6 +64,7 @@
 		FFBA0D44163DBEAB00B6560C /* MKitTC0000FoundationTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D43163DBEAB00B6560C /* MKitTC0000FoundationTestCases.m */; };
 		FFBB3309164A467D0053F713 /* MKitServiceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBB3308164A467D0053F713 /* MKitServiceFile.m */; };
 		FFBB330C164A63080053F713 /* MKitParseFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBB330B164A63080053F713 /* MKitParseFile.m */; };
+		FFBB330F164A9F570053F713 /* MKitMutableFileArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBB330E164A9F570053F713 /* MKitMutableFileArray.m */; };
 		FFCFA9F11639732500BC2E3E /* MKitModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFA9F01639732500BC2E3E /* MKitModelContext.m */; };
 		FFCFAA21163A7DD800BC2E3E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA20163A7DD800BC2E3E /* JSONKit.m */; };
 		FFCFAA2F163A837300BC2E3E /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA2E163A837300BC2E3E /* ISO8601DateFormatter.m */; };
@@ -181,6 +182,8 @@
 		FFBB3308164A467D0053F713 /* MKitServiceFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceFile.m; sourceTree = "<group>"; };
 		FFBB330A164A63080053F713 /* MKitParseFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitParseFile.h; sourceTree = "<group>"; };
 		FFBB330B164A63080053F713 /* MKitParseFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseFile.m; sourceTree = "<group>"; };
+		FFBB330D164A9F570053F713 /* MKitMutableFileArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitMutableFileArray.h; sourceTree = "<group>"; };
+		FFBB330E164A9F570053F713 /* MKitMutableFileArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitMutableFileArray.m; sourceTree = "<group>"; };
 		FFCFA9EF1639732500BC2E3E /* MKitModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKitModelContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FFCFA9F01639732500BC2E3E /* MKitModelContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitModelContext.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FFCFAA1F163A7DD800BC2E3E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../External/JSONKit/JSONKit.h; sourceTree = "<group>"; };
@@ -462,6 +465,8 @@
 				FFCFAA41163AC39000BC2E3E /* MKitMutableModelArray.m */,
 				FFBA0D3F163DBB5D00B6560C /* MKitMutableOrderedDictionary.h */,
 				FFBA0D40163DBB5D00B6560C /* MKitMutableOrderedDictionary.m */,
+				FFBB330D164A9F570053F713 /* MKitMutableFileArray.h */,
+				FFBB330E164A9F570053F713 /* MKitMutableFileArray.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 				FF9419AB164534130072BFDA /* MKitServiceUser.m in Sources */,
 				FFBB3309164A467D0053F713 /* MKitServiceFile.m in Sources */,
 				FFBB330C164A63080053F713 /* MKitParseFile.m in Sources */,
+				FFBB330F164A9F570053F713 /* MKitMutableFileArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

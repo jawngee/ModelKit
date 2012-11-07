@@ -21,4 +21,12 @@ static MKitServiceManager *parseService=nil;
     return parseService;
 }
 
+-(NSDictionary *)parseFilePointer
+{
+    if (self.state!=FileStateSaved)
+        @throw [NSException exceptionWithName:@"Invalid File State" reason:@"The MKitParseFile is in an invalid state.  It has either been deleted or not saved." userInfo:nil];
+    
+    return @{@"__type":@"File",@"name":self.name};
+}
+
 @end
