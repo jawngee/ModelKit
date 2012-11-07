@@ -2,12 +2,47 @@
 
 ModelKit is a simple to use model framework for Objective-C (Cocoa/iOS).  It allows you to write your model layer quickly and easily, managing persistence (local and network) for you.
 
-ModelKit is under active development.  This README is both a design document and actual documentation.
+ModelKit is under active development and, as such, should probably not be used for production.
+
+##About ModelKit
+Before we jump into the how-to, it's important to understand what ModelKit is and isn't:
+
+###What Is It?
+ModelKit was built to solve a few problems I consistently run into developing iPhone software.  Namely:
+
+* Persisting the model graph
+* Integrating with a backend web service or BaaS (Backend as a Service) like Parse
+* If using a backend, allowing the application to work offline.
+
+I do a lot of consulting and inherit a lot of projects that use CoreData to store all of the data they pull off their JSON based REST-esque API.  It is invariably a giant convoluted mess for what should be such a simple task.  Need to upgrade a CoreData schema?  Yeah, no thanks.
+
+ModelKit could be considered CoreData-lite since it does most things that CoreData does.  It attempts to accomplish these things in the simplest way possible.  Therefore, it might not cover all the edge cases that CoreData does, nor does it ever intend to.
+
+The other reason I needed something like ModelKit was to cover the holes in the iOS SDKs for certain BaaS services.  While these SDKs are generally good for simple things like saving game scores, the more complicated your needs get, the bigger the holes they develop and the more boilerplate you end up writing.  Since they typically aren't open sourced, you are left in the dark if you run head first into a wall.
+
+###What Does It Provide?
+ModelKit gives you:
+
+* A framework for building mildly complicated object graphs
+* Persisting those graphs to local storage
+* Querying the graph
+* Tying the graph to a BaaS or your own custom backend REST API
+* User system (backend)
+* File uploads (backend)
+* Push notifications (backend)
+* Running custom backend code (backend)
+* Simplistic and optimistic syncing (backend)
+
+###How Do I Install It?
+
+I will write more in-depth installation notes in the future.
+
+For now, just do a recursive check out of this git repo and check out the example application for pointers on getting it setup.
 
 
 
-##Models
-Creating a model in ModelKit is as easy as you'd suspect:
+##Working With Models
+Creating a model in ModelKit is as easy as you'd hope for:
 
     #import "MKitModel.h"
     
@@ -29,7 +64,7 @@ There are, however, a few conventions you'll need to follow and a few concepts y
 ###Model Conventions
 ModelKit makes heavy use of the Objective-C runtime to take care of all the boilerplate one would normally have to do to support serialization, persistence, etc.
 
-* Properties that are prefixed with 'model' are ignored during serialization/deserializiton.  The **MKitModel** class has a number of properties with this prefix to manage state, etc.
+* Properties that are prefixed with **'model'** are ignored during serialization/de-serialization.  The **MKitModel** class has a number of properties with this prefix to manage state, etc.
 * Properties that reference other subclasses of **MKitModel** should not use **retain** but should use **assign** instead.  This is because ModelKit uses the concept of contexts which retain the models, but more on that later.
 * If a property of your objects is an array of **MKitModel** subclasses, you need to use the **MKitMutableModelArray** instead of **NSMutableArray** for the property.
 * All models have the following properties:
@@ -198,6 +233,136 @@ The **ModelPointer** type tells the serializer/deserializer that this a pointer 
 
 So circular reference your heart out, just make sure your properties are **assign** and not **retain**.
 
+###Getting Properties and/or Changed Properties
+You may have the case where your serialization format is different than how ModelKit serializes by default.  You can easily grab the properties of any object as a dictionary, even grabbing only the properties that have been changed.  Let's look at an example:
+
+    CSMPAuthor *author=[CSMPAuthor instanceWithObjectId:@"001"];
+    author.email=@"jon@interfacelab.com";
+    author.name=@"Jon Gilkison";
+    author.age=39;
+    author.displayEmail=YES;
+    author.avatarURL=@"https://secure.gravatar.com/avatar/819b112459b48de1e3ea08128b8e5479";
+    
+    NSDictionary *properties=[author properties];
+
+Here we've grabbed all of the properties of the object.  Here's what that dictionary will look like:
+
+	{
+	    email = "jon@interfacelab.com";
+	    name = "Jon Gilkison";
+	    age = 39;
+	    displayEmail = YES;
+	    avatarURL = @"https://secure.gravatar.com/avatar/819b112459b48de1e3ea08128b8e5479";
+	}
+
+Now what about the case where we only want the properties that have been changed?  Nearly the same thing:
+
+    CSMPAuthor *author=[CSMPAuthor instanceWithObjectId:@"001"];  // exists already
+    
+    // going to change the email and name only
+    author.email=@"jon@interfacelab.com";
+    author.name=@"Jon Gilkison";
+    
+    NSDictionary *changes=author.modelChanges;
+
+And the dictionary:
+
+	{
+	    email = "jon@interfacelab.com";
+	    name = "Jon Gilkison";
+	}
+
+You can reset the changes by calling **resetChanges** on the model:
+
+	[author resetChanges];
+	
+###Model Property Change Notifications
+Whenever a property of a model is changed, the model will broadcast a notification: **MKitModelPropertyChangedNotification**.  You can the add observers for this notification and update your UI as the model is changed:
+
+	-(void)viewDidLoad
+	{
+		self.author=[CSMPAuthor instanceWithId:@"001"];	
+	    [[NSNotificationCenter defaultCenter] addObserver:self
+	                                             selector:@selector(authorChanged:)
+	                                                 name:MKitModelPropertyChangedNotification
+	                                               object:self.author];
+	}
+	
+	-(void)viewDidUnload
+	{
+		// Don't forget to unregister!
+	    [[NSNotificationCenter defaultCenter] removeObserver:self];
+	}
+	
+	-(void)authorChanged:(NSNotification *)notification
+	{
+		if (notification.userInfo==nil)
+		{
+			NSLog(@"Entire model changed!");
+			
+			[self.author.modelChanges enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+		        NSLog(@"%@ = %@",key,obj);
+		    }];
+		}
+		else
+		{
+			id prop=notification.userInfo[@"keyPath"];
+			id oldVal=notification.userInfo[NSKeyValueChangeOldKey];
+			id newVal=notification.userInfo[NSKeyValueChangeNewKey];
+			NSLog(@"Property: %@  Old: %@   New: %@", prop,oldVal,newVal);
+		}
+	}
+	
+What if you are changing a whole slew of properties at once?  You can suspend notifications until your finished by calling **beginChanges** and **endChanges** on the model:
+
+	-(void)viewDidLoad
+	{
+		self.author=[CSMPAuthor instanceWithId:@"001"];	
+	    [[NSNotificationCenter defaultCenter] addObserver:self
+	                                             selector:@selector(authorChanged:)
+	                                                 name:MKitModelPropertyChangedNotification
+	                                               object:self.author];
+	}
+	
+	-(void)viewDidUnload
+	{
+		// Don't forget to unregister!
+	    [[NSNotificationCenter defaultCenter] removeObserver:self];
+	}
+	
+	-(void)changeLots:(id)sender
+	{
+		[self.author beginChanges];
+
+		self.author.email="whutwhut@interfacelab.com";
+		self.author.name="Joe Blow";
+		self.author.age=29;
+		self.author.displayEmail=NO;
+		
+		[self.author endChanges];
+	}
+	
+	-(void)authorChanged:(NSNotification *)notification
+	{
+		if (notification.userInfo==nil)
+		{
+			NSLog(@"Entire model changed!");
+			
+			[self.author.modelChanges enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+		        NSLog(@"%@ = %@",key,obj);
+		    }];
+		}
+		else
+		{
+			id prop=notification.userInfo[@"keyPath"];
+			id oldVal=notification.userInfo[NSKeyValueChangeOldKey];
+			id newVal=notification.userInfo[NSKeyValueChangeNewKey];
+			NSLog(@"Property: %@  Old: %@   New: %@", prop,oldVal,newVal);
+		}
+	}
+
+
+
 ##Contexts
 ModelKit has a global context that stores all models you create, allowing your application access to all instances regardless of where in your code it's accessing it from.  This provides a variety of benefits:
 
@@ -326,7 +491,7 @@ In a more complicated example, we can push a new context onto a stack, retain a 
     for(int i=0; i<100; i++)
     	[CSMPAuthor instanceWithObjectId:[NSString stringWithFormat:@"%d",i]];
     	
-    // Deactive the context
+    // Deactivate the context
     [newContext deactivate];
     
     // Release it to destroy it
@@ -357,7 +522,7 @@ Or, just clear one of them:
 This will remove all objects from the context, releasing them.
 
 ###No Context Models
-There will definitely be times when you don't want your model to ever be added to a context.  This is simple to acheive by adding the MKitNoContext protocol to your model:
+There will definitely be times when you don't want your model to ever be added to a context.  This is simple to achieve by adding the MKitNoContext protocol to your model:
 
     #import "MKitModel.h"
     
@@ -428,7 +593,7 @@ KeyLike | The key value contains the string
 Queries are always AND and subqueries are not supported.  Support for OR and subqueries is planned however.
 
 ## Tying to Backend Services
-ModelKit was originally designed to replace Parse.com's iOS SDK.  Therefore, a primary goal of this framework is not only model persistance/management, but tying those models to a backend, either a PaaS like Parse or Kinvey, or your own custom REST solution.
+ModelKit was originally designed to replace Parse.com's iOS SDK.  Therefore, a primary goal of this framework is not only model persistence/management, but tying those models to a backend, either a BaaS like Parse or Kinvey, or your own custom REST solution.
 
 Currently, ModelKit supports Parse through their REST API.
 
@@ -589,11 +754,11 @@ Asynchronously:
 ### Querying
 Querying works exactly the same as described in the section above, except that instead of using NSPredicates to query the context, you are generating web requests to Parse.  Otherwise, the interface and usage is exactly the same.
 
-But what if you want to query the context?  Maybe your user doesn't have an internet connection or you just want to search locally.  **MKServiceModel**, which **MKParseModel** subclasses, has a static class method called **offlineQuery**.  Using this will query the context instead of the backend service:
+But what if you want to query the context?  Maybe your user doesn't have an internet connection or you just want to search locally.  **MKServiceModel**, which **MKParseModel** subclasses, has a static class method called **contextQuery**.  Using this will query the context instead of the backend service:
 
 	-(void)someAction:(id)sender
 	{
-		MKitModelQuery *query=[CSMPAuthor offlineQuery];
+		MKitModelQuery *query=[CSMPAuthor contextQuery];
 		
 		// Let's find all authors between the ages of 24 to 35
 		[query key:@"age" condition:KeyBetween value:@[@(24),@(35)]];
@@ -607,10 +772,167 @@ But what if you want to query the context?  Maybe your user doesn't have an inte
 
 ### Users
 
-TBD
+ModelKit provides a working User model out of the box.  Note the user only works with a backend service because it wouldn't make any sense if your data was always local.  Duh.
+
+If you are familiar with **PFUser** from the Parse iOS SDK, it works almost identically, except that you can subclass it and add your own properties to it.
+
+The Parse user class is **MKitParseUser**, which is a subclass of **MKitParseModel** that implements the **MKitServiceUser** protocol.  Because it's a model, everything you can do with that you can do with **MKitParseModel**.
+
+#### Determining If The Current User Is Logged In
+You can check to see if the current user is logged in by calling the **currentUser** static method:
+
+	if ([MKitParseUser currentUser])
+	{
+		// Logged In!
+	}
+
+
+
+#### Signing Up
+Signing up your users for your application is straight forward.  As with saving/deleting/fetching, it can be done synchronously or asynchronously depending on your needs.  Synchronously:
+
+
+	-(void)signUpTouched:(id)sender
+	{
+	    NSError *error=nil;
+	    BOOL result=[MKitParseUser signUpWithUserName:@"bob" email:@"bob@somewhere.com" password:@"password" error:&error];
+	    if (!result)
+	        NSLog(@"ERROR: %@",error);
+    }
+    
+Asynchronously:
+
+	-(void)signUpTouched:(id)sender
+	{
+		[MKitParseUser signUpInBackgroundWithUserName:@"bob"
+		                                            email:@"bob@somewhere.com""
+		                                         password:@"password"
+		                                      resultBlock:^(id object, NSError *error) {
+		                                          if (error)
+		                                              NSLog(@"ERROR: %@", error);
+		                                      }];
+	}
+	
+Once the user is signed up, that user will be logged in.  There is no need to log them in.
+
+#### Logging In
+
+	-(void)signUpTouched:(id)sender
+	{
+	    [MKitParseUser logInInBackgroundWithUserName:@"bob"
+	                                         password:@"password"
+	                                      resultBlock:^(id object, NSError *error) {
+	                                         if (error)
+	                                        	  NSLog(@"ERROR: %@",error);
+	                                      }];
+	}
+	
+Logging in will keep the user logged in forever, the user session never expires.
+
+#### Logging Out
+
+
+	-(void)logOutTouched:(id)sender
+	{
+		[[MKitParseUser currentUser] logOut];
+	}
+	
+
+#### Forgotten Password?
+
+	-(void)forgotPasswordTouched:(id)sender
+	{
+	    [MKitParseUser requestPasswordResetInBackgroundForEmail:@"bob@somewhere.com"
+                                                    resultBlock:^(BOOL succeeded, NSError *error) {
+                                                        if (error)
+                                                            NSLog(@"ERROR: %@",error);
+                                           }];
+
+	}
+
+
 
 ### Files
-TBD
+
+ModelKit also provides a mechanism to upload files to your backend and associating those files with your users.  Like users, this feature requires a backend integration and is not available for local models.
+
+**MKitParseFile** subclasses **MKitServiceFile**, but it is important to note that it is not a subclass of any model and should not be treated like a model.  In other words, you cannot add properties to it.  But what if that is what you want to do?  For example, let's say you want to model a Photograph.  You would create a Photograph model and have MKitParseFile as property of that model that points to the file.  Read more about this below because there are some **important** caveats.
+
+#### Uploading Files
+Uploading files is very simple and supports synchronous and asynchronous operation.  I will only demonstrate asynchronous:
+
+    MKitParseFile *p=[MKitParseFile fileWithFile:[[NSBundle mainBundle] pathForResource:@"image2" ofType:@"jpeg"]];
+    [p saveInBackgroundWithProgress:^(float progress) {
+        NSLog(@"%f",progress);
+    }
+                        resultBlock:^(BOOL succeeded, NSError *error) {
+                            if (succeeded)
+                                NSLog(@"%@",p.url);
+                            else
+                                NSLog(@"ERORR: %@",error);
+                        }];
+
+You are not limited to uploading an existing file, you can upload an NSData instance as well.  This is a convoluted example, but you get the point:
+
+
+    NSData *data=[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"image2" ofType:@"jpeg"]
+                                        options:NSDataReadingMappedAlways
+                                          error:nil];
+    MKitParseFile *p=[MKitParseFile fileWithData:data name:@"image2.jpeg" contentType:@"image/jpeg"];
+    [p saveInBackgroundWithProgress:^(float progress) {
+        NSLog(@"%f",progress);
+    }
+                        resultBlock:^(BOOL succeeded, NSError *error) {
+                            if (succeeded)
+                                NSLog(@"%@",p.url);
+                            else
+                                NSLog(@"ERORR: %@",error);
+                        }];
+                        
+Once the upload has successfully completed, the **url** and **name** properties will be populated with values returned from the server.  **url** will be a valid URL to the uploaded resource and **name** will contain the backend's unique name for the file.
+
+
+#### Uploading Batches
+ModelKit provides the **MKitMutableFileArray** class which allows you to easily do batch uploading (and is useful as an array of files property on a model).  It's a subclass of **NSMutableArray** so you can cast it up the chain no problem.  Here's an example of a batch upload:
+
+    MKitMutableFileArray *files=[MKitMutableFileArray array];
+    
+    // Add 10 files to the array to upload
+    for(int i=0; i<10; i++)
+        [files addObject:[MKitParseFile fileWithFile:[[NSBundle mainBundle] pathForResource:@"image2" ofType:@"jpeg"]]];
+    
+    [files uploadInBackgroundWithProgress:^(NSInteger current, NSInteger total, float currentProgress, float totalProgress) {
+        NSLog(@"File %d of %d - Progress %f - Total Progress %f",current,total, currentProgress, totalProgress);
+    } resultBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Finished");
+    }];
+
+
+
+
+#### Associating With Models
+
+You can use **MKitParseFile** as a property of an model, but there are some things you must know:
+
+* You must **retain** the property, not **assign** as you would do for a model property
+* The file must be uploaded to the backend before saving your model to the backend.  Failure to do so will raise an exception.
+
+With those two things in mind, here's a model with a file as a property:
+
+	#import "ModelKit.h"
+    
+    @interface CSMPPhoto : MKitParseModel
+    
+    @property (assign, nonatomic) MKitParseUser *owner;
+	@property (retain, nonatomic) MKitParseFile *photo;
+	    
+    @end
+
+
+#### Deleting Files
+Like models, you can simply call **delete** on the file to delete it.  Unless you are using Parse.  If you are using Parse, Parse requires you to use the MasterKey to delete files from the backend.  Therefore, it is not possible to delete them with ModelKit.
+
+However, if you delete a model that has a file as a property, you can clean out "unused" files in the Parse data dashboard.
 
 ### GeoPoints
 TBD
