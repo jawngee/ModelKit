@@ -42,7 +42,7 @@ typedef enum
  * @param filename The file name of the local file
  * @return A new instance
  */
-+(MKitServiceFile *)fileWithFile:(NSString *)filename;
++(id)fileWithFile:(NSString *)filename;
 
 
 /**
@@ -52,7 +52,7 @@ typedef enum
  * @param contentType The content type
  * @return A new instance
  */
-+(MKitServiceFile *)fileWithData:(NSData *)data name:(NSString *)name contentType:(NSString *)contentType;
++(id)fileWithData:(NSData *)data name:(NSString *)name contentType:(NSString *)contentType;
 
 /**
  * Creates a new instance with a name and a url.  Created for objects already
@@ -61,7 +61,7 @@ typedef enum
  * @param url The backend's url for the file
  * @return New instance
  */
-+(MKitServiceFile *)fileWithName:(NSString *)name andURL:(NSString *)url;
++(id)fileWithName:(NSString *)name andURL:(NSString *)url;
 
 /**
  * Initializes the file with the contents of a local file

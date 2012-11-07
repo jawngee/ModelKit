@@ -79,17 +79,17 @@
 
 #pragma mark - Static Initializers
 
-+(MKitServiceFile *)fileWithFile:(NSString *)filename
++(id)fileWithFile:(NSString *)filename
 {
     return [[[self alloc] initWithFile:filename] autorelease];
 }
 
-+(MKitServiceFile *)fileWithData:(NSData *)data name:(NSString *)name contentType:(NSString *)contentType
++(id)fileWithData:(NSData *)data name:(NSString *)name contentType:(NSString *)contentType
 {
     return [[[self alloc] initWithData:data name:name contentType:contentType] autorelease];
 }
 
-+(MKitServiceFile *)fileWithName:(NSString *)name andURL:(NSString *)url
++(id)fileWithName:(NSString *)name andURL:(NSString *)url
 {
     return [[[self alloc] initWithName:name andURL:url] autorelease];
 }
