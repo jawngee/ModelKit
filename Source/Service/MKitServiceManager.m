@@ -53,10 +53,14 @@ static NSMutableDictionary *managers=nil;
     return self;
 }
 
+#pragma mark - Query
+
 -(MKitServiceModelQuery *)queryForModelClass:(Class)modelClass
 {
     return nil;
 }
+
+#pragma mark - Model
 
 -(BOOL)saveModel:(MKitModel *)model error:(NSError **)error
 {
@@ -103,6 +107,8 @@ static NSMutableDictionary *managers=nil;
     });
 }
 
+#pragma mark - Request generation
+
 -(AFHTTPRequestOperation *)classRequestWithMethod:(NSString *)method class:(Class)class params:(NSDictionary *)params body:(NSData *)body
 {
     return nil;
@@ -113,10 +119,12 @@ static NSMutableDictionary *managers=nil;
     return nil;
 }
 
--(AFHTTPRequestOperation *)requestWithMethod:(NSString *)method path:(NSString *)path params:(NSDictionary *)params body:(NSData *)body
+-(AFHTTPRequestOperation *)requestWithMethod:(NSString *)method path:(NSString *)path params:(NSDictionary *)params body:(NSData *)body contentType:(NSString *)contentType
 {
     return nil;
 }
+
+#pragma mark - Credentials
 
 -(NSDictionary *)userCredentials
 {
@@ -126,6 +134,38 @@ static NSMutableDictionary *managers=nil;
 -(void)storeUserCredentials:(MKitServiceModel<MKitServiceUser> *)user
 {
     
+}
+
+#pragma mark - File
+
+-(BOOL)saveFile:(MKitServiceFile *)file progressBlock:(MKitProgressBlock)progressBlock error:(NSError **)error
+{
+    return NO;
+}
+
+-(void)saveFileInBackground:(MKitServiceFile *)file progressBlock:(MKitProgressBlock)progressBlock resultBlock:(MKitBooleanResultBlock)resultBlock
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSError *error=nil;
+        BOOL result=[self saveFile:file progressBlock:progressBlock error:&error];
+        if (resultBlock)
+            resultBlock(result,error);
+    });
+}
+
+-(BOOL)deleteFile:(MKitServiceFile *)file error:(NSError **)error
+{
+    return NO;
+}
+
+-(void)deleteFileInBackground:(MKitServiceFile *)file withBlock:(MKitBooleanResultBlock)resultBlock
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSError *error=nil;
+        BOOL result=[self deleteFile:file error:&error];
+        if (resultBlock)
+            resultBlock(result,error);
+    });
 }
 
 @end

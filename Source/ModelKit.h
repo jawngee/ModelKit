@@ -32,10 +32,12 @@
 #import "MKitServiceModelQuery.h"
 #import "MKitServiceUser.h"
 #import "MKitServiceKeyChain.h"
+#import "MKitServiceFile.h"
 
 #import "MKitParseModel.h"
 #import "MKitParseModelQuery.h"
 #import "MKitParseServiceManager.h"
 #import "MKitParseUser.h"
+#import "MKitParseFile.h"
 
 #endif

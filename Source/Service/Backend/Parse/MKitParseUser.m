@@ -80,7 +80,8 @@ static MKitParseUser *_currentUser=nil;
     AFHTTPRequestOperation *op=[manager requestWithMethod:@"GET"
                                                      path:@"login"
                                                    params:@{@"username":userName,@"password":password}
-                                                     body:nil];
+                                                     body:nil
+                                              contentType:nil];
     
     [op start];
     [op waitUntilFinished];
@@ -133,7 +134,8 @@ static MKitParseUser *_currentUser=nil;
     AFHTTPRequestOperation *op=[manager requestWithMethod:@"POST"
                                                      path:@"requestPasswordReset"
                                                    params:nil
-                                                     body:[[NSString stringWithFormat:@"{\"email\":\"%@\"}",email] dataUsingEncoding:NSUTF8StringEncoding]];
+                                                     body:[[NSString stringWithFormat:@"{\"email\":\"%@\"}",email] dataUsingEncoding:NSUTF8StringEncoding]
+                                              contentType:nil];
     
     [op start];
     [op waitUntilFinished];

@@ -11,6 +11,7 @@
 #import "MKitModel.h"
 #import "AFNetworking.h"
 #import "MKitServiceKeyChain.h"
+#import "MKitServiceFile.h"
 
 @class MKitServiceModel;
 @class MKitServiceModelQuery;
@@ -56,7 +57,7 @@
 -(MKitServiceModelQuery *)queryForModelClass:(Class)modelClass;
 
 /**
- * Saves the model with the service asynchronously.  When subclassing MKitServiceManager, you must implement this method.
+ * Saves the model with the service synchronously.  When subclassing MKitServiceManager, you must implement this method.
  * @param model The model to save
  * @param error The error to return, nil if none
  * @return YES if successful, NO if not.
@@ -72,7 +73,7 @@
 
 
 /**
- * Deletes the model from the service asynchronously.  When subclassing MKitServiceManager, you must implement this method.
+ * Deletes the model from the service synchronously.  When subclassing MKitServiceManager, you must implement this method.
  * @param model The model to delete
  * @param error The error to return, nil if none
  * @return YES if successful, NO if not.
@@ -88,7 +89,7 @@
 
 
 /**
- * Fetches the model from the service asynchronously.  When subclassing MKitServiceManager, you must implement this method.
+ * Fetches the model from the service synchronously.  When subclassing MKitServiceManager, you must implement this method.
  * @param model The model to fetch
  * @param error The error to return, nil if none
  * @return YES if successful, NO if not.
@@ -130,7 +131,7 @@
  * @param body The body data for the request
  * @return The operation
  */
--(AFHTTPRequestOperation *)requestWithMethod:(NSString *)method path:(NSString *)path params:(NSDictionary *)params body:(NSData *)body;
+-(AFHTTPRequestOperation *)requestWithMethod:(NSString *)method path:(NSString *)path params:(NSDictionary *)params body:(NSData *)body contentType:(NSString *)contentType;
 
 
 /**
@@ -144,5 +145,39 @@
  * @param user The user to store
  */
 -(void)storeUserCredentials:(MKitServiceModel<MKitServiceUser> *)user;
+
+/**
+ * Saves the file with the service synchronously.  When subclassing MKitServiceManager, you must implement this method.
+ * @param file The file to save
+ * @param progressBlock The progress block to call with updates
+ * @param error The error to return, nil if none
+ * @return YES if successful, NO if not.
+ */
+-(BOOL)saveFile:(MKitServiceFile *)file progressBlock:(MKitProgressBlock)progressBlock error:(NSError **)error;
+
+/**
+ * Saves the file asynchronously in the background.  No need to implement in subclasses.
+ * @param file The file to save
+ * @param progressBlock The progress block with updates
+ * @param resultBlock The block that gets called after the save completes
+ */
+-(void)saveFileInBackground:(MKitServiceFile *)file progressBlock:(MKitProgressBlock)progressBlock resultBlock:(MKitBooleanResultBlock)resultBlock;
+
+
+/**
+ * Deletes the file from the service synchronously.  When subclassing MKitServiceManager, you must implement this method.
+ * @param file The file to delete
+ * @param error The error to return, nil if none
+ * @return YES if successful, NO if not.
+ */
+-(BOOL)deleteFile:(MKitServiceFile *)file error:(NSError **)error;
+
+/**
+ * Deletes the file asynchronously in the background.  No need to implement in subclasses.
+ * @param file The file to delete
+ * @param resultBlock The block that gets called after the delete completes
+ */
+-(void)deleteFileInBackground:(MKitServiceFile *)file withBlock:(MKitBooleanResultBlock)resultBlock;
+
 
 @end

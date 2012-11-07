@@ -68,7 +68,6 @@
         parseClient=[[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:PARSE_BASE_URL]];
         [parseClient setDefaultHeader:@"X-Parse-Application-Id" value:_appID];
         [parseClient setDefaultHeader:@"X-Parse-REST-API-Key" value:_restKey];
-        [parseClient setDefaultHeader:@"Content-Type" value:@"application/json"];
         
         keychain=[[MKitServiceKeyChain alloc] initWithService:_appID];
     }
@@ -92,6 +91,8 @@
 
 -(AFHTTPRequestOperation *)classRequestWithMethod:(NSString *)method class:(Class)class params:(NSDictionary *)params body:(NSData *)body
 {
+    [parseClient setDefaultHeader:@"Content-Type" value:@"application/json"];
+
     // If we are currently logged in, set the session token
     if ([MKitParseUser currentUser])
         [parseClient setDefaultHeader:@"X-Parse-Session-Token" value:[MKitParseUser currentUser].modelSessionToken];
@@ -111,6 +112,8 @@
 
 -(AFHTTPRequestOperation *)modelRequestWithMethod:(NSString *)method model:(MKitModel *)model params:(NSDictionary *)params body:(NSData *)body
 {
+    [parseClient setDefaultHeader:@"Content-Type" value:@"application/json"];
+
     // If we are currently logged in, set the session token
     if ([MKitParseUser currentUser])
         [parseClient setDefaultHeader:@"X-Parse-Session-Token" value:[MKitParseUser currentUser].modelSessionToken];
@@ -128,8 +131,11 @@
     return [[[AFHTTPRequestOperation alloc] initWithRequest:req] autorelease];
 }
 
--(AFHTTPRequestOperation *)requestWithMethod:(NSString *)method path:(NSString *)path params:(NSDictionary *)params body:(NSData *)body
+-(AFHTTPRequestOperation *)requestWithMethod:(NSString *)method path:(NSString *)path params:(NSDictionary *)params body:(NSData *)body contentType:(NSString *)contentType
 {
+    contentType=(contentType) ? contentType : @"application/json";
+    [parseClient setDefaultHeader:@"Content-Type" value:contentType];
+
     NSMutableURLRequest *req=[parseClient requestWithMethod:method
                                                        path:path
                                                  parameters:params];
@@ -414,6 +420,49 @@
     // We store the user name so we can pull the credentials from the keychain next time the app starts
     [[NSUserDefaults standardUserDefaults] setObject:puser.username forKey:[NSString stringWithFormat:@"%@-username",_appID]];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+#pragma mark - File
+
+-(BOOL)saveFile:(MKitServiceFile *)file progressBlock:(MKitProgressBlock)progressBlock error:(NSError **)error
+{
+    if (file.state!=FileStateNew)
+        return YES;
+    
+    AFHTTPRequestOperation *op=[self requestWithMethod:@"POST"
+                                                  path:[NSString stringWithFormat:@"files/%@",file.name]
+                                                params:nil
+                                                  body:file.data
+                                           contentType:file.contentType];
+    
+    [op setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+        progressBlock((float)totalBytesWritten/(float)totalBytesExpectedToWrite);
+    }];
+    
+    [op start];
+    [op waitUntilFinished];
+    
+    if ([op hasAcceptableStatusCode])
+    {
+        NSDictionary *result=[op.responseString objectFromJSONString];
+        file.url=result[@"url"];
+        file.name=result[@"name"];
+        file.state=FileStateSaved;
+        file.data=nil;
+        
+        return YES;
+    }
+    
+    if (error!=nil)
+        *error=op.error;
+    
+    return NO;
+}
+
+-(BOOL)deleteFile:(MKitServiceFile *)file error:(NSError **)error
+{
+    // Parse requires a master key to delete files, so we always return NO.
+    return NO;
 }
 
 @end
