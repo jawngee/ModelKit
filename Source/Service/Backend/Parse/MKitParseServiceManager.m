@@ -22,6 +22,8 @@
 #import "MKitParseModelBinder.h"
 #import "MKitParseUser.h"
 #import "MKitParseFile.h"
+#import "MKitGeoPoint.h"
+#import "MKitGeoPoint+Parse.h"
 
 #define PARSE_BASE_URL @"https://api.parse.com/1/"
 
@@ -276,6 +278,10 @@
         {
             [propsToSave setObject:[((MKitParseFile *)obj) parseFilePointer] forKey:key];
         }
+        else if ([[obj class] isSubclassOfClass:[MKitGeoPoint class]])
+        {
+            [propsToSave setObject:[((MKitGeoPoint *)obj) parsePointer] forKey:key];
+        }
         else if ([[obj class] isSubclassOfClass:[NSMutableArray array]])
         {
             NSMutableArray *arrayCopy=[NSMutableArray array];
@@ -284,6 +290,8 @@
                     [arrayCopy addObject:@{@"__type":@"Date",@"iso":[((NSDate *)val) ISO8601String]}];
                 else if ([[val class] isSubclassOfClass:[MKitParseFile class]])
                     [arrayCopy addObject:[((MKitParseFile *)val) parseFilePointer]];
+                else if ([[val class] isSubclassOfClass:[MKitGeoPoint class]])
+                    [arrayCopy addObject:[((MKitGeoPoint *)val) parsePointer]];
                 else
                     [arrayCopy addObject:val];
             

@@ -8,6 +8,7 @@
 
 #import "MKitModelPredicateQuery.h"
 #import "MKitModelContext.h"
+#import "MKitGeoPoint.h"
 
 /**
  * Internal
@@ -32,6 +33,9 @@
     {
         id val=c[@"value"];
         id val2=c[@"value2"];
+        
+        MKitGeoPoint *geoPoint=nil;
+        double distance=0.0;
         
         switch ([c[@"condition"] integerValue])
         {
@@ -77,6 +81,14 @@
             case KeyLike:
                 [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ LIKE[cd] *%%@*",c[@"key"]],val]];
                 break;
+            case KeyWithinDistance:
+                geoPoint=[val objectForKey:@"point"];
+                distance=[[val objectForKey:@"distance"] doubleValue];
+                [predicates addObject:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+                    MKitGeoPoint *p=(MKitGeoPoint *)[evaluatedObject valueForKey:c[@"key"]];
+                    double cdistance=acos(sin(p.latitudeRad) * sin(geoPoint.latitudeRad) + cos(p.latitudeRad) * cos(geoPoint.latitudeRad) * cos(geoPoint.longitudeRad - (p.longitudeRad))) * EARTH_RADIUS;
+                    return (cdistance <= distance);
+                }]];
             default:
                 break;
         }

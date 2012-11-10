@@ -8,6 +8,8 @@
 
 #include "MKitDefs.h"
 
+@class MKitGeoPoint;
+
 typedef void (^MKitQueryResultBlock)(NSArray *objects, NSInteger totalCount, NSError *error);
 
 /** Key for result dictionary for number of items matched by query */
@@ -34,7 +36,8 @@ typedef enum
     KeyWithin,
     KeyBeginsWith,
     KeyEndsWith,
-    KeyLike
+    KeyLike,
+    KeyWithinDistance
 } MKitQueryCondition;
 
 /**
@@ -91,6 +94,14 @@ typedef enum
  * @param val The value to test
  */
 -(void)key:(NSString *)key condition:(MKitQueryCondition)condition value:(id)val;
+
+/**
+ * Adds a condition where key, being a MKitGeoPoint, is within a given distance of another point.
+ * @param key The key
+ * @param distance The distance in kilometers
+ * @param point The point to measure the distance from
+ */
+-(void)key:(NSString *)key withinDistance:(double)distance ofPoint:(MKitGeoPoint *)point;
 
 /**
  * Adds an order by clause to the query

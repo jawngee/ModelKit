@@ -52,6 +52,12 @@
     [conditions addObject:@{@"condition":@(condition),@"key":key,@"value":val}];
 }
 
+
+-(void)key:(NSString *)key withinDistance:(double)distance ofPoint:(MKitGeoPoint *)point
+{
+    [conditions addObject:@{@"condition":@(KeyWithinDistance),@"key":key,@"value":@{@"distance":@(distance),@"point":point}}];
+}
+
 -(void)orderBy:(NSString *)key direction:(MKitQueryOrder)order
 {
     [orders addObject:@{@"key":key,@"dir":@(order)}];

@@ -27,6 +27,8 @@
 #import "MKitModelQuery.h"
 #import "MKitModelPredicateQuery.h"
 
+#import "MKitGeoPoint.h"
+
 #import "MKitServiceManager.h"
 #import "MKitServiceModel.h"
 #import "MKitServiceModelQuery.h"
@@ -40,5 +42,8 @@
 #import "MKitParseServiceManager.h"
 #import "MKitParseUser.h"
 #import "MKitParseFile.h"
+#import "MKitModel+Parse.h"
+#import "MKitMutableModelArray+Parse.h"
+#import "MKitGeoPoint+Parse.h"
 
 #endif

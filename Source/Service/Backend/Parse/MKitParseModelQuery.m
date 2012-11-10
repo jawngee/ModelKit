@@ -12,6 +12,8 @@
 #import "MKitMutableModelArray+Parse.h"
 #import "JSONKit.h"
 #import "MKitParseModelBinder.h"
+#import "MKitGeoPoint.h"
+#import "MKitGeoPoint+Parse.h"
 
 /**
  * Internal methods
@@ -63,6 +65,9 @@
         if ([[val2 class] isSubclassOfClass:[NSDate class]])
             val2=@{@"__type":@"Date",@"iso":[((NSDate *) val) ISO8601String]};
         
+        MKitGeoPoint *geoPoint=nil;
+        double distance=0.0;
+        
         switch ([c[@"condition"] integerValue])
         {
             case KeyEquals:
@@ -107,6 +112,11 @@
             case KeyLike:
                 [query setObject:@{@"$regex":val,@"$options":@"im"} forKey:c[@"key"]];
                 break;
+            case KeyWithinDistance:
+                geoPoint=[val objectForKey:@"point"];
+                distance=[[val objectForKey:@"distance"] doubleValue];
+                
+                [query setObject:@{@"$nearSphere":[geoPoint parsePointer],@"$maxDistanceInKilometers":@(distance)} forKey:c[@"key"]];
             default:
                 break;
         }

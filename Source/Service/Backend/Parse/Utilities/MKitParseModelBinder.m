@@ -17,6 +17,8 @@
 #import "MKitMutableModelArray+Parse.h"
 #import "MKitModelRegistry.h"
 #import "MKitParseFile.h"
+#import "MKitGeoPoint.h"
+#import "MKitGeoPoint+Parse.h"
 
 @implementation MKitParseModelBinder
 
@@ -103,6 +105,11 @@
         {
             NSDictionary *fileDict=data[prop.name];
             [model setValue:[MKitParseFile fileWithName:fileDict[@"name"] andURL:fileDict[@"url"]] forKey:prop.name];
+        }
+        else if ([prop.typeClass isSubclassOfClass:[MKitGeoPoint class]])
+        {
+            NSDictionary *geoDict=data[prop.name];
+            [model setValue:[MKitGeoPoint geoPointWithLatitude:[geoDict[@"latitude"] doubleValue] andLongitude:[geoDict[@"longitude"] doubleValue]] forKey:prop.name];
         }
         else
         {
