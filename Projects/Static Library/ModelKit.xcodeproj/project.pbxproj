@@ -32,6 +32,10 @@
 		FF3C8D42163940AC009EB62A /* MKitReflectedProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D41163940AC009EB62A /* MKitReflectedProperty.m */; };
 		FF3C8D45163940B9009EB62A /* MKitReflectedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D44163940B9009EB62A /* MKitReflectedClass.m */; };
 		FF3C8D5E16396082009EB62A /* MKitModelRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3C8D5D16396082009EB62A /* MKitModelRegistry.m */; };
+		FF903002164DACCB00156E71 /* MKitGeoPoint+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF903001164DACCB00156E71 /* MKitGeoPoint+Parse.m */; };
+		FF90303D164DBADE00156E71 /* venues.json in Resources */ = {isa = PBXBuildFile; fileRef = FF90303C164DBADE00156E71 /* venues.json */; };
+		FF903041164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FF903040164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m */; };
+		FF903044164E37B000156E71 /* TestVenueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF903043164E37B000156E71 /* TestVenueModel.m */; };
 		FF9419AB164534130072BFDA /* MKitServiceUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419AA164534130072BFDA /* MKitServiceUser.m */; };
 		FFA3DE7D163E785400D2D855 /* MKitServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DE7C163E785400D2D855 /* MKitServiceManager.m */; };
 		FFA3DEAA163F1A9800D2D855 /* NSString+ModelKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DEA9163F1A9800D2D855 /* NSString+ModelKit.m */; };
@@ -74,6 +78,7 @@
 		FFCFAA83163C655C00BC2E3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCFAA6C163C642800BC2E3E /* UIKit.framework */; };
 		FFCFAA84163C655C00BC2E3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54AA016391DEA00F055A6 /* Foundation.framework */; };
 		FFCFAA8A163C655C00BC2E3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFCFAA88163C655C00BC2E3E /* InfoPlist.strings */; };
+		FFE4F131164CDEFE00E26C74 /* MKitGeoPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE4F130164CDEFE00E26C74 /* MKitGeoPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +135,13 @@
 		FF3C8D44163940B9009EB62A /* MKitReflectedClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitReflectedClass.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FF3C8D5C16396082009EB62A /* MKitModelRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKitModelRegistry.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FF3C8D5D16396082009EB62A /* MKitModelRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitModelRegistry.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		FF903000164DACCB00156E71 /* MKitGeoPoint+Parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKitGeoPoint+Parse.h"; sourceTree = "<group>"; };
+		FF903001164DACCB00156E71 /* MKitGeoPoint+Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKitGeoPoint+Parse.m"; sourceTree = "<group>"; };
+		FF90303C164DBADE00156E71 /* venues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = venues.json; sourceTree = "<group>"; };
+		FF90303F164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitTC0003GeoPointTestCases.h; sourceTree = "<group>"; };
+		FF903040164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitTC0003GeoPointTestCases.m; sourceTree = "<group>"; };
+		FF903042164E37B000156E71 /* TestVenueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVenueModel.h; sourceTree = "<group>"; };
+		FF903043164E37B000156E71 /* TestVenueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVenueModel.m; sourceTree = "<group>"; };
 		FF9419AA164534130072BFDA /* MKitServiceUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceUser.m; sourceTree = "<group>"; };
 		FFA3DE7B163E785400D2D855 /* MKitServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitServiceManager.h; sourceTree = "<group>"; };
 		FFA3DE7C163E785400D2D855 /* MKitServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceManager.m; sourceTree = "<group>"; };
@@ -200,6 +212,8 @@
 		FFCFAA87163C655C00BC2E3E /* TestCases-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestCases-Info.plist"; sourceTree = "<group>"; };
 		FFCFAA89163C655C00BC2E3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FFCFAA8E163C655C00BC2E3E /* TestCases-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestCases-Prefix.pch"; sourceTree = "<group>"; };
+		FFE4F12F164CDEFE00E26C74 /* MKitGeoPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitGeoPoint.h; sourceTree = "<group>"; };
+		FFE4F130164CDEFE00E26C74 /* MKitGeoPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitGeoPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +278,8 @@
 				FFB8CBB51643A6B000D43C8F /* MKitModelQuery.m */,
 				FFB8CBB81643A95200D43C8F /* MKitModelPredicateQuery.h */,
 				FFB8CBB91643A95200D43C8F /* MKitModelPredicateQuery.m */,
+				FFE4F12F164CDEFE00E26C74 /* MKitGeoPoint.h */,
+				FFE4F130164CDEFE00E26C74 /* MKitGeoPoint.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,6 +409,8 @@
 				FFB8CB721641A6AC00D43C8F /* MKitModel+Parse.m */,
 				FFB8CB731641A6AC00D43C8F /* MKitMutableModelArray+Parse.h */,
 				FFB8CB741641A6AC00D43C8F /* MKitMutableModelArray+Parse.m */,
+				FF903000164DACCB00156E71 /* MKitGeoPoint+Parse.h */,
+				FF903001164DACCB00156E71 /* MKitGeoPoint+Parse.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -413,6 +431,8 @@
 				FFBA0D28163D24C100B6560C /* TestModelNoContext.m */,
 				FFBA0D30163D5B1F00B6560C /* TestModel.h */,
 				FFBA0D31163D5B1F00B6560C /* TestModel.m */,
+				FF903042164E37B000156E71 /* TestVenueModel.h */,
+				FF903043164E37B000156E71 /* TestVenueModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,6 +446,8 @@
 				FFBA0D25163D23EE00B6560C /* MKitTC0001ContextTestCases.m */,
 				FFBA0D33163D709C00B6560C /* MKitTC0002ModelTestCases.h */,
 				FFBA0D34163D709C00B6560C /* MKitTC0002ModelTestCases.m */,
+				FF90303F164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.h */,
+				FF903040164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -505,6 +527,7 @@
 				FFCFAA87163C655C00BC2E3E /* TestCases-Info.plist */,
 				FFCFAA88163C655C00BC2E3E /* InfoPlist.strings */,
 				FFCFAA8E163C655C00BC2E3E /* TestCases-Prefix.pch */,
+				FF90303C164DBADE00156E71 /* venues.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -600,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFCFAA8A163C655C00BC2E3E /* InfoPlist.strings in Resources */,
+				FF90303D164DBADE00156E71 /* venues.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +692,8 @@
 				FFBB3309164A467D0053F713 /* MKitServiceFile.m in Sources */,
 				FFBB330C164A63080053F713 /* MKitParseFile.m in Sources */,
 				FFBB330F164A9F570053F713 /* MKitMutableFileArray.m in Sources */,
+				FFE4F131164CDEFE00E26C74 /* MKitGeoPoint.m in Sources */,
+				FF903002164DACCB00156E71 /* MKitGeoPoint+Parse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +706,8 @@
 				FFBA0D32163D5B1F00B6560C /* TestModel.m in Sources */,
 				FFBA0D35163D709C00B6560C /* MKitTC0002ModelTestCases.m in Sources */,
 				FFBA0D44163DBEAB00B6560C /* MKitTC0000FoundationTestCases.m in Sources */,
+				FF903041164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m in Sources */,
+				FF903044164E37B000156E71 /* TestVenueModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
