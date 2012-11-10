@@ -10,4 +10,23 @@
 
 @implementation TestModel
 
+-(id)init
+{
+    if ((self=[super init]))
+    {
+        self.amodelArrayV=nil;
+    }
+    
+    return self;
+}
+
+-(void)dealloc
+{
+    self.stringV=nil;
+    self.amodelArrayV=nil;
+    self.dateV=nil;
+    
+    [super dealloc];
+}
+
 @end

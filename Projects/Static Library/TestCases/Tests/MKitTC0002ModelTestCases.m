@@ -49,8 +49,6 @@
     m4.amodelArrayV=[MKitMutableModelArray arrayWithArray:@[m1,m2]];
     m4.amodelV=m3;
     
-    NSLog(@"%@",m1.modelChanges);
-    
     // Serialize
     id data=[m1 serialize];
     
@@ -101,8 +99,6 @@
     
     // Serialize
     NSString *json=[m1 serializeToJSON];
-    
-    NSLog(@"%@",json);
     
     // Make sure the context has been cleared
     [MKitModelContext clearAllContexts];

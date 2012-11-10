@@ -1,0 +1,2630 @@
+{
+    "meta": {
+        "code": 200
+    },
+    "response": {
+        "venues": [
+            {
+                "id": "4f5e1bf2e4b024154481a5b6",
+                "name": "Góc khuất",
+                "contact": {},
+                "location": {
+                    "lat": 10.764424138369375,
+                    "lng": 106.68904781341553,
+                    "distance": 195,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4deefb944765f83613cdba6e",
+                        "name": "Historic Site",
+                        "pluralName": "Historic Sites",
+                        "shortName": "Historic Site",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/arts_entertainment/museum_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 35,
+                    "usersCount": 2,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e4375f8c65b8210945f3195",
+                "name": "Vannessa's Home",
+                "contact": {},
+                "location": {
+                    "isFuzzed": true,
+                    "lat": 10.762263499104147,
+                    "lng": 106.69398030025182,
+                    "distance": 499,
+                    "state": "Ho Chi Minh City",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d103941735",
+                        "name": "Home (private)",
+                        "pluralName": "Homes (private)",
+                        "shortName": "Home",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/home_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 6,
+                    "usersCount": 2,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fcb906de4b0928dc1f41b92",
+                "name": "Play Station 99",
+                "contact": {},
+                "location": {
+                    "lat": 10.764113,
+                    "lng": 106.689355,
+                    "distance": 189,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1e1931735",
+                        "name": "Arcade",
+                        "pluralName": "Arcades",
+                        "shortName": "Arcade",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/arts_entertainment/arcade_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e6f849c483bd41a3dcd91c9",
+                "name": "Tihi Home ^_*",
+                "contact": {},
+                "location": {
+                    "isFuzzed": true,
+                    "lat": 10.762263499104147,
+                    "lng": 106.69398030025182,
+                    "distance": 499,
+                    "city": "Ho Chi Minh",
+                    "state": "D1",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d103941735",
+                        "name": "Home (private)",
+                        "pluralName": "Homes (private)",
+                        "shortName": "Home",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/home_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 92,
+                    "usersCount": 7,
+                    "tipCount": 4
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e6b1c767d8b143eb76831b8",
+                "name": "My Ổ Chuột",
+                "contact": {},
+                "location": {
+                    "isFuzzed": true,
+                    "lat": 10.762263499104147,
+                    "lng": 106.69398030025182,
+                    "distance": 499,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d103941735",
+                        "name": "Home (private)",
+                        "pluralName": "Homes (private)",
+                        "shortName": "Home",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/home_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 4,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4d65d7cb13a6236aba789368",
+                "name": "Cali wow",
+                "contact": {},
+                "location": {
+                    "lat": 10.76518,
+                    "lng": 106.688695,
+                    "distance": 209,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 3,
+                    "usersCount": 3,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4d42eca1f2a6a09347d2db68",
+                "name": "245L Nguyen Trai .Q1",
+                "contact": {},
+                "location": {
+                    "lat": 10.764884,
+                    "lng": 106.688543,
+                    "distance": 230,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 12,
+                    "usersCount": 2,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "50416473e4b03ccc168675a2",
+                "name": "Mì Quảng bên trong chợ Thái Bình",
+                "contact": {},
+                "location": {
+                    "lat": 10.76477,
+                    "lng": 106.68857,
+                    "distance": 230,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d14a941735",
+                        "name": "Vietnamese Restaurant",
+                        "pluralName": "Vietnamese Restaurants",
+                        "shortName": "Vietnamese",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4ba4e1c1f964a52088be38e3",
+                "name": "Xcream",
+                "contact": {},
+                "location": {
+                    "address": "Nguyen Trai",
+                    "lat": 10.765131711959839,
+                    "lng": 106.688467,
+                    "distance": 234,
+                    "state": "Ho Chi Minh City",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1c9941735",
+                        "name": "Ice Cream Shop",
+                        "pluralName": "Ice Cream Shops",
+                        "shortName": "Ice Cream",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/icecream_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 47,
+                    "usersCount": 13,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fc90f6fe4b0b1bb87daa067",
+                "name": "Phan Anh Backpackers Hostel",
+                "contact": {
+                    "phone": "+84905870087",
+                    "formattedPhone": "+84 90 587 00 87"
+                },
+                "location": {
+                    "address": "373/6 Pham Ngu Lao",
+                    "lat": 10.766864,
+                    "lng": 106.689469,
+                    "distance": 214,
+                    "city": "Ho Chi Minh City Dist.1",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1f8931735",
+                        "name": "Bed & Breakfast",
+                        "pluralName": "Bed & Breakfasts",
+                        "shortName": "B & B",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/travel/bedandbreakfast_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 24,
+                    "usersCount": 14,
+                    "tipCount": 1
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4f391215e4b09ca12ec21b3b",
+                "name": "Nhà Vợ",
+                "contact": {},
+                "location": {
+                    "isFuzzed": true,
+                    "lat": 10.762263499104147,
+                    "lng": 106.69398030025182,
+                    "distance": 499,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d103941735",
+                        "name": "Home (private)",
+                        "pluralName": "Homes (private)",
+                        "shortName": "Home",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/home_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 2,
+                    "usersCount": 2,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fbceb3fe4b0c3466b94bfa2",
+                "name": "HMTC Apartment.",
+                "contact": {},
+                "location": {
+                    "lat": 10.765484321253538,
+                    "lng": 106.68825967380751,
+                    "distance": 257,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d130941735",
+                        "name": "Building",
+                        "pluralName": "Buildings",
+                        "shortName": "Other - Buildings",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 24,
+                    "usersCount": 1,
+                    "tipCount": 1
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e71b2ac2271d116927c54a8",
+                "name": "Cafe & restaurent Tay Tang",
+                "contact": {},
+                "location": {
+                    "lat": 10.766649858761033,
+                    "lng": 106.68929611243243,
+                    "distance": 208,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d108941735",
+                        "name": "Dumpling Restaurant",
+                        "pluralName": "Dumpling Restaurants",
+                        "shortName": "Dumplings",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/dumplings_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 2,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "5071bd21e4b09822b94ea5f7",
+                "name": "Động xoã",
+                "contact": {},
+                "location": {
+                    "isFuzzed": true,
+                    "lat": 10.762263499104147,
+                    "lng": 106.69398030025182,
+                    "distance": 499,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d103941735",
+                        "name": "Home (private)",
+                        "pluralName": "Homes (private)",
+                        "shortName": "Home",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/home_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fdbd866e4b04e7e29fc1a4a",
+                "name": "Nhà Thuốc Y Học Cổ Truyền Lê Lai",
+                "contact": {},
+                "location": {
+                    "address": "Lê Lai",
+                    "lat": 10.766645,
+                    "lng": 106.689464,
+                    "distance": 195,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d10f951735",
+                        "name": "Drugstore / Pharmacy",
+                        "pluralName": "Drugstores / Pharmacies",
+                        "shortName": "Pharmacy",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/shops/drugstore_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e43eb351f6e0a1ba5d68ec7",
+                "name": "Thiên Phú Quán",
+                "contact": {},
+                "location": {
+                    "address": "371 Phạm Ngũ Lão Quận 1",
+                    "lat": 10.76682898981367,
+                    "lng": 106.68942278860007,
+                    "distance": 214,
+                    "city": "Hồ Chí Minh",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ce941735",
+                        "name": "Seafood Restaurant",
+                        "pluralName": "Seafood Restaurants",
+                        "shortName": "Seafood",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/seafood_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 6,
+                    "usersCount": 6,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fec0942e4b0f58099342d13",
+                "name": "T&H Consulting",
+                "contact": {},
+                "location": {
+                    "lat": 10.765435218811035,
+                    "lng": 106.68863677978516,
+                    "distance": 216,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d174941735",
+                        "name": "Coworking Space",
+                        "pluralName": "Coworking Spaces",
+                        "shortName": "Coworking Space",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": true,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 1
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 1,
+                    "items": [
+                        {
+                            "id": "4fec0d8a1648aad69e5ac845",
+                            "type": "frequency",
+                            "message": "You get a tea treat from the owner",
+                            "imageUrls": {
+                                "count": 0
+                            },
+                            "description": "Unlocked every 3 check-ins",
+                            "finePrint": "- Should bring with you a RFP",
+                            "icon": "frequency",
+                            "title": "Loyalty Special",
+                            "provider": "foursquare",
+                            "redemption": "standard",
+                            "likes": {
+                                "count": 0,
+                                "groups": []
+                            }
+                        }
+                    ]
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fdf73c1e4b057598c4149e1",
+                "name": "Nơi tình yêu bắt đầu®",
+                "contact": {},
+                "location": {
+                    "lat": 10.765204100699233,
+                    "lng": 106.68917655944824,
+                    "distance": 156,
+                    "state": "Ho Chi Minh City",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d11b951735",
+                        "name": "Flower Shop",
+                        "pluralName": "Flower Shops",
+                        "shortName": "Flower Shop",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/shops/flowershop_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 74,
+                    "usersCount": 5,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e1881b9d4c062b044e89316",
+                "name": "My Home1",
+                "contact": {},
+                "location": {
+                    "isFuzzed": true,
+                    "lat": 10.762263499104147,
+                    "lng": 106.69398030025182,
+                    "distance": 499,
+                    "state": "Ho Chi Minh City",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d103941735",
+                        "name": "Home (private)",
+                        "pluralName": "Homes (private)",
+                        "shortName": "Home",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/home_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 35,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fec08fbe4b0b9e7d2401cee",
+                "name": "T&H Consulting",
+                "contact": {},
+                "location": {
+                    "lat": 10.765409469604492,
+                    "lng": 106.688720703125,
+                    "distance": 206,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d174941735",
+                        "name": "Coworking Space",
+                        "pluralName": "Coworking Spaces",
+                        "shortName": "Coworking Space",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 0,
+                    "usersCount": 0,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e16e7d562e1ccb5024844d9",
+                "name": "oc van snail and seafood",
+                "contact": {},
+                "location": {
+                    "address": "Nguyen An Ninh",
+                    "crossStreet": "Ben thanh",
+                    "lat": 10.765365,
+                    "lng": 106.688516,
+                    "distance": 228,
+                    "city": "District 1",
+                    "state": "Ho Chi Minh City",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4d4b7105d754a06374d81259",
+                        "name": "Food",
+                        "pluralName": "Food",
+                        "shortName": "Food",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 2,
+                    "usersCount": 2,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4f9776bde4b0a38d2a09fdf3",
+                "name": "Cà Phê Rally",
+                "contact": {},
+                "location": {
+                    "address": "203 Nguyễn Trãi, phường Phạm Ngũ Lão, Quận 1, Hồ Chí Minh",
+                    "lat": 10.765957832336426,
+                    "lng": 106.6883544921875,
+                    "distance": 257,
+                    "city": "Hồ Chí Minh",
+                    "state": "Hồ Chí Minh",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d16d941735",
+                        "name": "Café",
+                        "pluralName": "Cafés",
+                        "shortName": "Café",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/cafe_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 2,
+                    "usersCount": 2,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "502bbec2e4b07c0c5854589d",
+                "name": "Khách Sạn Nam Sơn",
+                "contact": {},
+                "location": {
+                    "lat": 10.765968322753906,
+                    "lng": 106.6883773803711,
+                    "distance": 255,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1fa931735",
+                        "name": "Hotel",
+                        "pluralName": "Hotels",
+                        "shortName": "Hotel",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/travel/hotel_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fd99e45e4b0251900f8ba88",
+                "name": "Nha khoa Hoàng Yến",
+                "contact": {},
+                "location": {
+                    "lat": 10.765856771761479,
+                    "lng": 106.68819631939685,
+                    "distance": 271,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d178941735",
+                        "name": "Dentist's Office",
+                        "pluralName": "Dentist's Offices",
+                        "shortName": "Dentist's Office",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/medical_dentist_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e3a895ba809ec55443c6b3f",
+                "name": "Hoa Khai Vegetarian Restaurant",
+                "contact": {},
+                "location": {
+                    "lat": 10.763835063027685,
+                    "lng": 106.68971068925298,
+                    "distance": 189,
+                    "city": "Ho Chi Minh City",
+                    "state": "Ho Chi Minh City",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1d3941735",
+                        "name": "Vegetarian / Vegan Restaurant",
+                        "pluralName": "Vegetarian / Vegan Restaurants",
+                        "shortName": "Vegetarian / Vegan",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/vegetarian_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 34,
+                    "usersCount": 17,
+                    "tipCount": 4
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4faa57b0e4b04f8c94259622",
+                "name": "Hoa Khai Vegetarian Restaurant",
+                "contact": {},
+                "location": {
+                    "address": "124-126 Nguyễn Cư Trinh, Q.1",
+                    "lat": 10.763710509109355,
+                    "lng": 106.68956098086633,
+                    "distance": 209,
+                    "city": "Ho Chi Minh City",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1d3941735",
+                        "name": "Vegetarian / Vegan Restaurant",
+                        "pluralName": "Vegetarian / Vegan Restaurants",
+                        "shortName": "Vegetarian / Vegan",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/vegetarian_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 28,
+                    "usersCount": 22,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4d5ea20ab19fa143e651dcc8",
+                "name": "Trai Cay Dia Nguyen Canh Chan",
+                "contact": {},
+                "location": {
+                    "lat": 10.7648080774745,
+                    "lng": 106.68892184236431,
+                    "distance": 192,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d112941735",
+                        "name": "Juice Bar",
+                        "pluralName": "Juice Bars",
+                        "shortName": "Juice Bar",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 8,
+                    "usersCount": 6,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e844b7693ad9b834482ac52",
+                "name": "|\\/|ij |-|0|\\/|3",
+                "contact": {},
+                "location": {
+                    "address": "117",
+                    "crossStreet": "Cong Quynh",
+                    "lat": 10.764656019272895,
+                    "lng": 106.68902635574341,
+                    "distance": 186,
+                    "city": "Ho Chi Minh",
+                    "state": "VN",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d121941735",
+                        "name": "Lounge",
+                        "pluralName": "Lounges",
+                        "shortName": "Lounge",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/nightlife/lounge_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 121,
+                    "usersCount": 5,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4ed9d60e775bcc53f9e12020",
+                "name": "Sửa Xe Tâm",
+                "contact": {},
+                "location": {
+                    "address": "122 Nguyen Cu Trinh",
+                    "lat": 10.763815,
+                    "lng": 106.689768,
+                    "distance": 188,
+                    "city": "Hcmc",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ef941735",
+                        "name": "Rental Car Location",
+                        "pluralName": "Rental Car Locations",
+                        "shortName": "Rental Car",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/travel/airport_rentalcar_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 3,
+                    "usersCount": 3,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e4268f2fa7630be83ff700e",
+                "name": "Quán chay Hoa Khai",
+                "contact": {},
+                "location": {
+                    "address": "124-126 Nguyễn Cư Trinh",
+                    "lat": 10.76358131782479,
+                    "lng": 106.68969341520314,
+                    "distance": 214,
+                    "city": "Ho Chi Minh City",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1d3941735",
+                        "name": "Vegetarian / Vegan Restaurant",
+                        "pluralName": "Vegetarian / Vegan Restaurants",
+                        "shortName": "Vegetarian / Vegan",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/vegetarian_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 19,
+                    "usersCount": 10,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4f2f3dcfe4b083c429218e01",
+                "name": " Piggy's Island ®",
+                "contact": {},
+                "location": {
+                    "lat": 10.764634939198137,
+                    "lng": 106.68900489807129,
+                    "distance": 189,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d117951735",
+                        "name": "Candy Store",
+                        "pluralName": "Candy Stores",
+                        "shortName": "Candy Store",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/shops/candystore_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 43,
+                    "usersCount": 5,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e9c3fdb6da1cbe0b90a4786",
+                "name": "Playstation 3",
+                "contact": {},
+                "location": {
+                    "lat": 10.763711,
+                    "lng": 106.689564,
+                    "distance": 209,
+                    "city": "Ho Chi Minh City",
+                    "state": "Hồ Chí Minh",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d18d941735",
+                        "name": "Gaming Cafe",
+                        "pluralName": "Gaming Cafes",
+                        "shortName": "Gaming Cafe",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/arts_entertainment/gamingcafe_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 4,
+                    "usersCount": 3,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "50010ffee4b0ded98e50f48f",
+                "name": "Ha Tran's House",
+                "contact": {},
+                "location": {
+                    "isFuzzed": true,
+                    "lat": 10.762263499104147,
+                    "lng": 106.69398030025182,
+                    "distance": 499,
+                    "city": "Hồ Chí Minh",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d103941735",
+                        "name": "Home (private)",
+                        "pluralName": "Homes (private)",
+                        "shortName": "Home",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/home_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 2,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "503736cbe4b0133c7121c678",
+                "name": "La Bella",
+                "contact": {},
+                "location": {
+                    "address": "166A Trần Hưng Đạo",
+                    "crossStreet": "Trần Hưng Đạo",
+                    "lat": 10.763532175088447,
+                    "lng": 106.69135173018508,
+                    "distance": 211,
+                    "city": "HO CHI MINH",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ed941735",
+                        "name": "Spa / Massage",
+                        "pluralName": "Spas / Massages",
+                        "shortName": "Spa / Massage",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/shops/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 5,
+                    "usersCount": 3,
+                    "tipCount": 1
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e3e8a17aeb73139a1876bfe",
+                "name": "Che le duong",
+                "contact": {},
+                "location": {
+                    "crossStreet": "Nguyen cu trinh-Cong Quynh",
+                    "lat": 10.76503,
+                    "lng": 106.689549,
+                    "distance": 119,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d112941735",
+                        "name": "Juice Bar",
+                        "pluralName": "Juice Bars",
+                        "shortName": "Juice Bar",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4c064d0591d776b0d497f8f9",
+                "name": "Huy hai",
+                "contact": {},
+                "location": {
+                    "lat": 10.765131711959839,
+                    "lng": 106.68936967849731,
+                    "distance": 136,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1fa931735",
+                        "name": "Hotel",
+                        "pluralName": "Hotels",
+                        "shortName": "Hotel",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/travel/hotel_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 9,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "502ce6efe4b0260c90a34f71",
+                "name": "Nhà Mit em",
+                "contact": {},
+                "location": {
+                    "lat": 10.764993,
+                    "lng": 106.689143,
+                    "distance": 163,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "506c3296e4b0b56e41bb6c46",
+                "name": "Bún Bò Huế O Nở",
+                "contact": {},
+                "location": {
+                    "lat": 10.763832,
+                    "lng": 106.69014,
+                    "distance": 170,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d142941735",
+                        "name": "Asian Restaurant",
+                        "pluralName": "Asian Restaurants",
+                        "shortName": "Asian",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/asian_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4e1f206ffa76920758b44b37",
+                "name": "My sweet home",
+                "contact": {},
+                "location": {
+                    "isFuzzed": true,
+                    "lat": 10.762263499104147,
+                    "lng": 106.69398030025182,
+                    "distance": 499,
+                    "city": "hcm",
+                    "state": "1",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d103941735",
+                        "name": "Home (private)",
+                        "pluralName": "Homes (private)",
+                        "shortName": "Home",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/home_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 0,
+                    "usersCount": 0,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4f898ed1e4b0ab0c1b224dc2",
+                "name": "Pho Bo Canada",
+                "contact": {},
+                "location": {
+                    "address": "128B nguyen Cu Trinh",
+                    "lat": 10.763713,
+                    "lng": 106.689567,
+                    "distance": 209,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d14a941735",
+                        "name": "Vietnamese Restaurant",
+                        "pluralName": "Vietnamese Restaurants",
+                        "shortName": "Vietnamese",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 2,
+                    "usersCount": 2,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4ff69596e4b01a84ed6121d5",
+                "name": "Kho Thi Spa & Beauty",
+                "contact": {},
+                "location": {
+                    "address": "170 Bis Tran Hung Dao St.",
+                    "lat": 10.763296,
+                    "lng": 106.691317,
+                    "distance": 235,
+                    "city": "HCM",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ed941735",
+                        "name": "Spa / Massage",
+                        "pluralName": "Spas / Massages",
+                        "shortName": "Spa / Massage",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/shops/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 4,
+                    "usersCount": 2,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4f3351a1e4b0a960e5949767",
+                "name": "VietMark - Team Building - Tour & MICE",
+                "contact": {},
+                "location": {
+                    "address": "166D",
+                    "crossStreet": "Trần Hưng Đạo",
+                    "lat": 10.763371604541078,
+                    "lng": 106.69122505290427,
+                    "distance": 224,
+                    "city": "Hồ Chí Minh",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4f04b25d2fb6e1c99f3db0c0",
+                        "name": "Travel Lounge",
+                        "pluralName": "Travel Lounges",
+                        "shortName": "Lounge",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/travel/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 32,
+                    "usersCount": 3,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4f1ce560e4b044fd370816d0",
+                "name": "Nha Ngoai Mia",
+                "contact": {},
+                "location": {
+                    "isFuzzed": true,
+                    "lat": 10.762263499104147,
+                    "lng": 106.69398030025182,
+                    "distance": 499,
+                    "city": "Ho Chi Minh",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d103941735",
+                        "name": "Home (private)",
+                        "pluralName": "Homes (private)",
+                        "shortName": "Home",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/building/home_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 3,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fb509dde4b07727d0cb88a8",
+                "name": "Huy Cận Camera Shop",
+                "contact": {
+                    "phone": "+84839142788",
+                    "formattedPhone": "+84 8 3914 2788"
+                },
+                "location": {
+                    "address": "176B",
+                    "crossStreet": "Trần Hưng Đạo",
+                    "lat": 10.76365978159161,
+                    "lng": 106.69155326237336,
+                    "distance": 208,
+                    "postalCode": "70000",
+                    "city": "Hồ Chí Minh",
+                    "state": "Hồ Chí Minh",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4eb1bdf03b7b55596b4a7491",
+                        "name": "Camera Store",
+                        "pluralName": "Camera Stores",
+                        "shortName": "Camera Store",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/shops/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 2,
+                    "usersCount": 0,
+                    "tipCount": 1
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4eaa22b730f823f86dc23db6",
+                "name": "Shop & Go",
+                "contact": {},
+                "location": {
+                    "address": "152 Trần Hưng Đạo. Dist.1",
+                    "lat": 10.76350541005967,
+                    "lng": 106.69136324630514,
+                    "distance": 215,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4d954b0ea243a5684a65b473",
+                        "name": "Convenience Store",
+                        "pluralName": "Convenience Stores",
+                        "shortName": "Convenience Stores",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/shops/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 15,
+                    "usersCount": 9,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fb0ec9fe4b0a5d4c177164c",
+                "name": "Quốc Catwalk",
+                "contact": {},
+                "location": {
+                    "address": "168 Tran Hung Dao Q1",
+                    "lat": 10.763375,
+                    "lng": 106.691168,
+                    "distance": 221,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d110951735",
+                        "name": "Salon / Barbershop",
+                        "pluralName": "Salons / Barbershops",
+                        "shortName": "Salon / Barbershop",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/shops/salon_barber_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "50372da6e4b03509a8c098cf",
+                "name": "La Bela Spa",
+                "contact": {},
+                "location": {
+                    "address": "152",
+                    "crossStreet": "Trần Hưng Đạo",
+                    "lat": 10.763450023321282,
+                    "lng": 106.69140355273012,
+                    "distance": 222,
+                    "city": "HCMC",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ed941735",
+                        "name": "Spa / Massage",
+                        "pluralName": "Spas / Massages",
+                        "shortName": "Spa / Massage",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/shops/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4fb76c84e4b0cbfabc77b44c",
+                "name": "Penguin",
+                "contact": {},
+                "location": {
+                    "lat": 10.7632427,
+                    "lng": 106.6910411,
+                    "distance": 232,
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 0,
+                    "usersCount": 0,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "508b579ee4b0101d99efc247",
+                "name": "Bún Riêu",
+                "contact": {},
+                "location": {
+                    "address": "176A Trần Hưng Đạo, Q1",
+                    "lat": 10.763163,
+                    "lng": 106.691053,
+                    "distance": 241,
+                    "city": "Hồ Chí Minh",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d14a941735",
+                        "name": "Vietnamese Restaurant",
+                        "pluralName": "Vietnamese Restaurants",
+                        "shortName": "Vietnamese",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/food/default_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 1,
+                    "usersCount": 1,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            },
+            {
+                "id": "4de1e7f81f6e3190cd043fdc",
+                "name": "QuocCatwalk",
+                "contact": {},
+                "location": {
+                    "address": "168",
+                    "crossStreet": "Tran Hung Dao",
+                    "lat": 10.763139,
+                    "lng": 106.691329,
+                    "distance": 252,
+                    "city": "Ho Chi Minh City",
+                    "state": "HCMC",
+                    "country": "Vietnam",
+                    "cc": "VN"
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d110951735",
+                        "name": "Salon / Barbershop",
+                        "pluralName": "Salons / Barbershops",
+                        "shortName": "Salon / Barbershop",
+                        "icon": {
+                            "prefix": "https://foursquare.com/img/categories/shops/salon_barber_",
+                            "sizes": [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "verified": false,
+                "restricted": true,
+                "stats": {
+                    "checkinsCount": 3,
+                    "usersCount": 2,
+                    "tipCount": 0
+                },
+                "likes": {
+                    "count": 0,
+                    "groups": []
+                },
+                "specials": {
+                    "count": 0,
+                    "items": []
+                },
+                "hereNow": {
+                    "count": 0,
+                    "groups": []
+                },
+                "referralId": "v-1352499774"
+            }
+        ]
+    }
+}
