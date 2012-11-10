@@ -10,22 +10,6 @@
 #import "MKitModel.h"
 
 
-const void *__CFArrayRetainCallBack(CFAllocatorRef allocator, const void *value)
-{
-    MKitModel *model=(MKitModel *)value;
-    if ([model conformsToProtocol:@protocol(MKitNoContext)])
-        [model retain];
-    
-    return value;
-}
-
-void __CFArrayReleaseCallBack(CFAllocatorRef allocator, const void *value)
-{
-    MKitModel *model=(MKitModel *)value;
-    if ([model conformsToProtocol:@protocol(MKitNoContext)])
-        [model release];
-}
-
 @implementation MKitMutableModelArray
 
 -(id)init
@@ -34,8 +18,8 @@ void __CFArrayReleaseCallBack(CFAllocatorRef allocator, const void *value)
     {
         CFArrayCallBacks cb=kCFTypeArrayCallBacks;
         
-        cb.retain=&__CFArrayRetainCallBack;
-        cb.release=&__CFArrayReleaseCallBack;
+        cb.retain=NULL;
+        cb.release=NULL;
         
         _array = CFArrayCreateMutable(NULL,
                                            0,
@@ -51,8 +35,8 @@ void __CFArrayReleaseCallBack(CFAllocatorRef allocator, const void *value)
     {
         CFArrayCallBacks cb=kCFTypeArrayCallBacks;
         
-        cb.retain=&__CFArrayRetainCallBack;
-        cb.release=&__CFArrayReleaseCallBack;
+        cb.retain=NULL;
+        cb.release=NULL;
         _array = CFArrayCreateMutable(NULL,
                                       numItems,
                                       &cb);
