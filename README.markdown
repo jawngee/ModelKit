@@ -769,6 +769,35 @@ But what if you want to query the context?  Maybe your user doesn't have an inte
 			NSLog(@"Author %@ is %d",author.name,author.age);
 	}
 
+### GeoPoints
+ModelKit includes some primitive geolocation features, specifically allowing you to associate latitude and longitude with a model and the the ability to query your model graph based on distance from one model to the other.  This works locally or with a backend.
+
+The class that provides this functionality is **MKitGeoPoint**.  **MKitGeoPoint** is not a model, so you should not treat it as such, but it can be, should be, used as a property on a model.  Let's look an example:
+
+	@interface SavedLocation : MKitModel
+	
+	@property (retain, nonatomic) MKitGeoPoint *location;
+	@property (copy, nonatomic) NSString *name;
+	@property (assign, nonatomic) NSInteger checkIns;
+	
+	@end
+	
+In this simple example, we have a **SavedLocation** model that has an **MKitGeoPoint** to store the actual lat/lon of the location, as well as its name and the number of times people have checked in there.
+
+#### Querying Based on Location
+
+Now storing latitude/longitude would not be interesting if we couldn't query on it to find other models within a certain distance of a given point.  Let's say our user is standing in the center of District 1 in Saigon, Vietnam.  We have several SavedLocation models already saved and want to find the ones that are nearest to where he's standing.  That query would look something like:
+
+	MKitModelQuery *q=[SavedLocation query];
+	
+	// let's find everything within 250 meters of where we are standing in Saigon
+	[q key:@"location" withinDistance:250/1000.0 ofPoint:[MKitGeoPoint geoPointWithLatitude:10.76529079 andLongitude:106.69060779]];
+	
+	NSDictionary *result=[q execute:nil];
+	
+	NSLog(@"We found %d places.",[result[MKitQueryItemCountKey] integerValue]);
+
+Note that some backends might not support this.  Parse currently does and ModelKit's features are 1:1 with Parse.  When performing the query using Parse's backend, it works exactly the same.  Kinvey also supports this as well.
 
 ### Users
 
@@ -934,8 +963,7 @@ Like models, you can simply call **delete** on the file to delete it.  Unless yo
 
 However, if you delete a model that has a file as a property, you can clean out "unused" files in the Parse data dashboard.
 
-### GeoPoints
-TBD
+
 
 ### Calling Backend Code
 TBD
