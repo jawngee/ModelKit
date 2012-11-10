@@ -127,6 +127,7 @@
 /**
  * Creates a generic HTTP request
  * @param method The HTTP method to use
+ * @param path The path
  * @param params The query parameters for the request
  * @param body The body data for the request
  * @param contentType The content type, if nil will use default for particular backend
