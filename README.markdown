@@ -2,8 +2,6 @@
 
 ModelKit is a simple to use model framework for Objective-C (Cocoa/iOS).  It allows you to write your model layer quickly and easily, managing persistence (local and network) for you.
 
-ModelKit is under active development and, as such, should probably not be used for production.
-
 ##About ModelKit
 Before we jump into the how-to, it's important to understand what ModelKit is and isn't:
 
