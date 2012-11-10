@@ -14,6 +14,89 @@
           <Path>annotated.html</Path>
           <Subnodes>
            <Node>
+            <Name>MKitGeoBounds</Name>
+            <Path>interface_m_kit_geo_bounds.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>boundsWithMinPoint:maxPoint:</Name>
+              <Path>interface_m_kit_geo_bounds.html</Path>
+              <Anchor>a84aa248bb4c9783690c9d66330e21c9d</Anchor>
+             </Node>
+             <Node>
+              <Name>maxPoint</Name>
+              <Path>interface_m_kit_geo_bounds.html</Path>
+              <Anchor>a3e77a1b3ba84ebfd5262f016b6b0a032</Anchor>
+             </Node>
+             <Node>
+              <Name>minPoint</Name>
+              <Path>interface_m_kit_geo_bounds.html</Path>
+              <Anchor>aa4975383cdb2d24bfdbce0cef5b8fde6</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>MKitGeoPoint</Name>
+            <Path>interface_m_kit_geo_point.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>boundingCoordinatesForDistance:</Name>
+              <Path>interface_m_kit_geo_point.html</Path>
+              <Anchor>a56ca0678af90e7cc459a79157c9d87d3</Anchor>
+             </Node>
+             <Node>
+              <Name>distanceTo:</Name>
+              <Path>interface_m_kit_geo_point.html</Path>
+              <Anchor>afe03ccdc1598001986d22e33f8d8ef0b</Anchor>
+             </Node>
+             <Node>
+              <Name>geoPointWithLatitude:andLongitude:</Name>
+              <Path>interface_m_kit_geo_point.html</Path>
+              <Anchor>adb81f4b27d988556cc8461dbb813c2f7</Anchor>
+             </Node>
+             <Node>
+              <Name>initWithLatitude:andLongitude:</Name>
+              <Path>interface_m_kit_geo_point.html</Path>
+              <Anchor>a80ca925502851648da894668e9b1ab1f</Anchor>
+             </Node>
+             <Node>
+              <Name>parsePointer</Name>
+              <Path>interface_m_kit_geo_point.html</Path>
+              <Anchor>ae3b0bd1b999f737526aabbd4d90f9180</Anchor>
+             </Node>
+             <Node>
+              <Name>latitude</Name>
+              <Path>interface_m_kit_geo_point.html</Path>
+              <Anchor>ac80e8999d3a4146c70ac3be25fafc798</Anchor>
+             </Node>
+             <Node>
+              <Name>latitudeRad</Name>
+              <Path>interface_m_kit_geo_point.html</Path>
+              <Anchor>ab92e92acfd5738fe1bbf26a71cc1d494</Anchor>
+             </Node>
+             <Node>
+              <Name>longitude</Name>
+              <Path>interface_m_kit_geo_point.html</Path>
+              <Anchor>a821076227665ea59b0cb39e768aee8f8</Anchor>
+             </Node>
+             <Node>
+              <Name>longitudeRad</Name>
+              <Path>interface_m_kit_geo_point.html</Path>
+              <Anchor>a315db32e39ce1d762fc3a1651ea449d0</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>MKitGeoPoint(Parse)</Name>
+            <Path>category_m_kit_geo_point_07_parse_08.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>parsePointer</Name>
+              <Path>category_m_kit_geo_point_07_parse_08.html</Path>
+              <Anchor>ae3b0bd1b999f737526aabbd4d90f9180</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>MKitModel</Name>
             <Path>interface_m_kit_model.html</Path>
             <Subnodes>
@@ -376,6 +459,11 @@
               <Name>key:condition:value:</Name>
               <Path>interface_m_kit_model_query.html</Path>
               <Anchor>ad84415a485afadfe072f9edc39a295a0</Anchor>
+             </Node>
+             <Node>
+              <Name>key:withinDistance:ofPoint:</Name>
+              <Path>interface_m_kit_model_query.html</Path>
+              <Anchor>a64b3ba19464fd8f708399a367116f192</Anchor>
              </Node>
              <Node>
               <Name>keyDoesNotExist:</Name>
@@ -1106,6 +1194,10 @@
           <Path>hierarchy.html</Path>
           <Subnodes>
            <Node>
+            <Name>MKitGeoPoint(Parse)</Name>
+            <Path>category_m_kit_geo_point_07_parse_08.html</Path>
+           </Node>
+           <Node>
             <Name>MKitModel(Internal)</Name>
             <Path>category_m_kit_model_07_internal_08.html</Path>
            </Node>
@@ -1215,6 +1307,14 @@
             <Name>NSObject</Name>
             <Path></Path>
             <Subnodes>
+             <Node>
+              <Name>MKitGeoBounds</Name>
+              <Path>interface_m_kit_geo_bounds.html</Path>
+             </Node>
+             <Node>
+              <Name>MKitGeoPoint</Name>
+              <Path>interface_m_kit_geo_point.html</Path>
+             </Node>
              <Node>
               <Name>MKitModel</Name>
               <Path>interface_m_kit_model.html</Path>
@@ -1428,6 +1528,14 @@
                 <Path>_m_kit_defs_8h_source.html</Path>
                </Node>
                <Node>
+                <Name>MKitGeoPoint.h</Name>
+                <Path>_m_kit_geo_point_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitGeoPoint.m</Name>
+                <Path>_m_kit_geo_point_8m_source.html</Path>
+               </Node>
+               <Node>
                 <Name>MKitModel.h</Name>
                 <Path>_m_kit_model_8h_source.html</Path>
                </Node>
@@ -1485,6 +1593,14 @@
                     <Name>Categories</Name>
                     <Path>dir_c97e81dda66247e7081a0a468c2b9b46.html</Path>
                     <Subnodes>
+                     <Node>
+                      <Name>MKitGeoPoint+Parse.h</Name>
+                      <Path>_m_kit_geo_point_09_parse_8h_source.html</Path>
+                     </Node>
+                     <Node>
+                      <Name>MKitGeoPoint+Parse.m</Name>
+                      <Path>_m_kit_geo_point_09_parse_8m_source.html</Path>
+                     </Node>
                      <Node>
                       <Name>MKitModel+Parse.h</Name>
                       <Path>_m_kit_model_09_parse_8h_source.html</Path>

@@ -2,6 +2,11 @@ var searchData=
 [
   ['manager',['manager',['../interface_m_kit_service_model_query.html#af8e7fff661acc01b9411a6fda21f42a1',1,'MKitServiceModelQuery']]],
   ['managerforservice_3a',['managerForService:',['../interface_m_kit_service_manager.html#a16d6c03ce3f21e8148c4837d810a0aa8',1,'MKitServiceManager']]],
+  ['maxpoint',['maxPoint',['../interface_m_kit_geo_bounds.html#a3e77a1b3ba84ebfd5262f016b6b0a032',1,'MKitGeoBounds']]],
+  ['minpoint',['minPoint',['../interface_m_kit_geo_bounds.html#aa4975383cdb2d24bfdbce0cef5b8fde6',1,'MKitGeoBounds']]],
+  ['mkitgeobounds',['MKitGeoBounds',['../interface_m_kit_geo_bounds.html',1,'']]],
+  ['mkitgeopoint',['MKitGeoPoint',['../interface_m_kit_geo_point.html',1,'']]],
+  ['mkitgeopoint_28parse_29',['MKitGeoPoint(Parse)',['../category_m_kit_geo_point_07_parse_08.html',1,'']]],
   ['mkitmodel',['MKitModel',['../interface_m_kit_model.html',1,'']]],
   ['mkitmodel_28internal_29',['MKitModel(Internal)',['../category_m_kit_model_07_internal_08.html',1,'']]],
   ['mkitmodel_28parse_29',['MKitModel(Parse)',['../category_m_kit_model_07_parse_08.html',1,'']]],

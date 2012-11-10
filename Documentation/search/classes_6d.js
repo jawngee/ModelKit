@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['mkitgeobounds',['MKitGeoBounds',['../interface_m_kit_geo_bounds.html',1,'']]],
+  ['mkitgeopoint',['MKitGeoPoint',['../interface_m_kit_geo_point.html',1,'']]],
+  ['mkitgeopoint_28parse_29',['MKitGeoPoint(Parse)',['../category_m_kit_geo_point_07_parse_08.html',1,'']]],
   ['mkitmodel',['MKitModel',['../interface_m_kit_model.html',1,'']]],
   ['mkitmodel_28internal_29',['MKitModel(Internal)',['../category_m_kit_model_07_internal_08.html',1,'']]],
   ['mkitmodel_28parse_29',['MKitModel(Parse)',['../category_m_kit_model_07_parse_08.html',1,'']]],

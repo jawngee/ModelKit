@@ -8,6 +8,7 @@ var interface_m_kit_model_query =
     [ "executeWithLimit:skip:error:", "interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0", null ],
     [ "initWithModelClass:", "interface_m_kit_model_query.html#a17a116a690f5d84c2a226b79652168dc", null ],
     [ "key:condition:value:", "interface_m_kit_model_query.html#ad84415a485afadfe072f9edc39a295a0", null ],
+    [ "key:withinDistance:ofPoint:", "interface_m_kit_model_query.html#a64b3ba19464fd8f708399a367116f192", null ],
     [ "keyDoesNotExist:", "interface_m_kit_model_query.html#af683eba84a5aac2baccfdcea9e6912e5", null ],
     [ "keyExists:", "interface_m_kit_model_query.html#a43ad622a66c1ba04521e8f6fadf6971b", null ],
     [ "orderBy:direction:", "interface_m_kit_model_query.html#a33156e11a671361de9764d8444fe8fae", null ],

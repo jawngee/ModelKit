@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "MKitGeoPoint(Parse)", "category_m_kit_geo_point_07_parse_08.html", null ],
     [ "MKitModel(Internal)", "category_m_kit_model_07_internal_08.html", null ],
     [ "MKitModel(Parse)", "category_m_kit_model_07_parse_08.html", null ],
     [ "MKitModelContext(Internal)", "category_m_kit_model_context_07_internal_08.html", null ],
@@ -31,6 +32,8 @@ var hierarchy =
       [ "MKitMutableOrderedDictionary", "interface_m_kit_mutable_ordered_dictionary.html", null ]
     ] ],
     [ "NSObject", null, [
+      [ "MKitGeoBounds", "interface_m_kit_geo_bounds.html", null ],
+      [ "MKitGeoPoint", "interface_m_kit_geo_point.html", null ],
       [ "MKitModel", "interface_m_kit_model.html", null ],
       [ "MKitModelContext", "interface_m_kit_model_context.html", null ],
       [ "MKitModelQuery", "interface_m_kit_model_query.html", [

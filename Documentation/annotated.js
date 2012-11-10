@@ -1,5 +1,8 @@
 var annotated =
 [
+    [ "MKitGeoBounds", "interface_m_kit_geo_bounds.html", "interface_m_kit_geo_bounds" ],
+    [ "MKitGeoPoint", "interface_m_kit_geo_point.html", "interface_m_kit_geo_point" ],
+    [ "MKitGeoPoint(Parse)", "category_m_kit_geo_point_07_parse_08.html", "category_m_kit_geo_point_07_parse_08" ],
     [ "MKitModel", "interface_m_kit_model.html", "interface_m_kit_model" ],
     [ "MKitModel(Internal)", "category_m_kit_model_07_internal_08.html", "category_m_kit_model_07_internal_08" ],
     [ "MKitModel(Parse)", "category_m_kit_model_07_parse_08.html", "category_m_kit_model_07_parse_08" ],

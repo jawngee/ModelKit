@@ -12,5 +12,6 @@ var searchData=
   ['deletemodelinbackground_3awithblock_3a',['deleteModelInBackground:withBlock:',['../interface_m_kit_service_manager.html#ab98bef3922a5963afd68405e9dcc7519',1,'MKitServiceManager']]],
   ['deserialize_3a',['deserialize:',['../interface_m_kit_model.html#ab7168486a373d33276a60e0909e6ed0f',1,'MKitModel']]],
   ['deserialize_3afromjson_3aobjectarray_3adecodingcache_3a',['deserialize:fromJSON:objectArray:decodingCache:',['../category_m_kit_model_07_internal_08.html#a260ce4f9c22b64d1937acfd8d92510ab',1,'MKitModel(Internal)']]],
-  ['deserializefromjson_3a',['deserializeFromJSON:',['../interface_m_kit_model.html#a4d2aad21edda6f1f42fd741972a4b443',1,'MKitModel']]]
+  ['deserializefromjson_3a',['deserializeFromJSON:',['../interface_m_kit_model.html#a4d2aad21edda6f1f42fd741972a4b443',1,'MKitModel']]],
+  ['distanceto_3a',['distanceTo:',['../interface_m_kit_geo_point.html#afe03ccdc1598001986d22e33f8d8ef0b',1,'MKitGeoPoint']]]
 ];

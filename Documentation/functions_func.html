@@ -155,6 +155,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>bindModel:data:
 : <a class="el" href="interface_m_kit_parse_model_binder.html#ac85fd317994547b0d3bfc4bf05803b69">MKitParseModelBinder</a>
 </li>
+<li>boundingCoordinatesForDistance:
+: <a class="el" href="interface_m_kit_geo_point.html#a56ca0678af90e7cc459a79157c9d87d3">MKitGeoPoint</a>
+</li>
+<li>boundsWithMinPoint:maxPoint:
+: <a class="el" href="interface_m_kit_geo_bounds.html#a84aa248bb4c9783690c9d66330e21c9d">MKitGeoBounds</a>
+</li>
 <li>buildQuery
 : <a class="el" href="category_m_kit_model_predicate_query_07_internal_08.html#a0e17239b1f2b26270cfee1ba669ee6c3">MKitModelPredicateQuery(Internal)</a>
 </li>
@@ -238,6 +244,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>deserializeFromJSON:
 : <a class="el" href="interface_m_kit_model.html#a4d2aad21edda6f1f42fd741972a4b443">MKitModel</a>
 </li>
+<li>distanceTo:
+: <a class="el" href="interface_m_kit_geo_point.html#afe03ccdc1598001986d22e33f8d8ef0b">MKitGeoPoint</a>
+</li>
 </ul>
 
 
@@ -289,6 +298,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>geoPointWithLatitude:andLongitude:
+: <a class="el" href="interface_m_kit_geo_point.html#adb81f4b27d988556cc8461dbb813c2f7">MKitGeoPoint</a>
+</li>
 <li>getDateFromId:
 : <a class="el" href="category_m_kit_model_07_internal_08.html#aa768146b1b6e6b27ee39a86268db577a">MKitModel(Internal)</a>
 </li>
@@ -313,6 +325,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>initWithKeys:
 : <a class="el" href="interface_m_kit_service_manager.html#a30ace61b8b86673ff08f97c8d919309f">MKitServiceManager</a>
+</li>
+<li>initWithLatitude:andLongitude:
+: <a class="el" href="interface_m_kit_geo_point.html#a80ca925502851648da894668e9b1ab1f">MKitGeoPoint</a>
 </li>
 <li>initWithModelClass:
 : <a class="el" href="interface_m_kit_model_query.html#a17a116a690f5d84c2a226b79652168dc">MKitModelQuery</a>
@@ -362,6 +377,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
 <li>key:condition:value:
 : <a class="el" href="interface_m_kit_model_query.html#ad84415a485afadfe072f9edc39a295a0">MKitModelQuery</a>
+</li>
+<li>key:withinDistance:ofPoint:
+: <a class="el" href="interface_m_kit_model_query.html#a64b3ba19464fd8f708399a367116f192">MKitModelQuery</a>
 </li>
 <li>keyDoesNotExist:
 : <a class="el" href="interface_m_kit_model_query.html#af683eba84a5aac2baccfdcea9e6912e5">MKitModelQuery</a>
@@ -431,12 +449,14 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="interface_m_kit_parse_file.html#aa986e93893b16aba7df917a82d37b37e">MKitParseFile</a>
 </li>
 <li>parsePointer
-: <a class="el" href="category_m_kit_model_07_parse_08.html#a144065b32af764f82867ce4532c23878">MKitModel(Parse)</a>
+: <a class="el" href="category_m_kit_geo_point_07_parse_08.html#ae3b0bd1b999f737526aabbd4d90f9180">MKitGeoPoint(Parse)</a>
+, <a class="el" href="interface_m_kit_geo_point.html#ae3b0bd1b999f737526aabbd4d90f9180">MKitGeoPoint</a>
 , <a class="el" href="interface_m_kit_model.html#a144065b32af764f82867ce4532c23878">MKitModel</a>
+, <a class="el" href="category_m_kit_model_07_parse_08.html#a144065b32af764f82867ce4532c23878">MKitModel(Parse)</a>
 </li>
 <li>parsePointerArray:
-: <a class="el" href="category_m_kit_mutable_model_array_07_parse_08.html#aec2f7468a256f3c3fa4080c489299c86">MKitMutableModelArray(Parse)</a>
-, <a class="el" href="interface_m_kit_mutable_model_array.html#aec2f7468a256f3c3fa4080c489299c86">MKitMutableModelArray</a>
+: <a class="el" href="interface_m_kit_mutable_model_array.html#aec2f7468a256f3c3fa4080c489299c86">MKitMutableModelArray</a>
+, <a class="el" href="category_m_kit_mutable_model_array_07_parse_08.html#aec2f7468a256f3c3fa4080c489299c86">MKitMutableModelArray(Parse)</a>
 </li>
 <li>parsePropertiesForClass:ignorePropPrefix:
 : <a class="el" href="category_m_kit_reflected_class_07_internal_08.html#a290fda965174ddf31b6a48be73dd412d">MKitReflectedClass(Internal)</a>
@@ -594,7 +614,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Nov 8 2012 04:29:53 for ModelKit by
+    <li class="footer">Generated on Sat Nov 10 2012 15:18:35 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

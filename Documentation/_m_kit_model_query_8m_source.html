@@ -156,64 +156,70 @@ $(document).ready(function(){initNavTree('_m_kit_model_query_8m_source.html','')
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    [<a class="code" href="interface_m_kit_model_query.html#a02cba614fd0e2ecbe1addde1fee14cad">conditions</a> addObject:@{@&quot;condition&quot;:@(condition),@&quot;key&quot;:key,@&quot;value&quot;:val}];</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a33156e11a671361de9764d8444fe8fae">   55</a></span>&#160;-(void)orderBy:(NSString *)key direction:(MKitQueryOrder)order</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    [<a class="code" href="interface_m_kit_model_query.html#a85efd1f3fe43ae476d1024e860d0ae9f">orders</a> addObject:@{@&quot;key&quot;:key,@&quot;dir&quot;:@(order)}];</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a2ec306256f0cb8e26936dfb955d20753">   60</a></span>&#160;-(NSDictionary *)execute:(NSError **)error</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> [<span class="keyword">self</span> <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">executeWithLimit</a>:NSNotFound <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">skip</a>:NSNotFound <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">error</a>:error];</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a693e99ec48887b562649d71b9524dd11">   65</a></span>&#160;-(void)executeInBackground:(MKitQueryResultBlock)resultBlock</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    [<span class="keyword">self</span> <a class="code" href="interface_m_kit_model_query.html#a9ea6dae7055a829584d58ff8818d8407">executeInBackgroundWithLimit</a>:NSNotFound <a class="code" href="interface_m_kit_model_query.html#a9ea6dae7055a829584d58ff8818d8407">skip</a>:NSNotFound <a class="code" href="interface_m_kit_model_query.html#a9ea6dae7055a829584d58ff8818d8407">resultBlock</a>:resultBlock];</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a64b3ba19464fd8f708399a367116f192">   56</a></span>&#160;-(void)key:(NSString *)key withinDistance:(<span class="keywordtype">double</span>)distance ofPoint:(<a class="code" href="interface_m_kit_geo_point.html">MKitGeoPoint</a> *)point</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    [<a class="code" href="interface_m_kit_model_query.html#a02cba614fd0e2ecbe1addde1fee14cad">conditions</a> addObject:@{@&quot;condition&quot;:@(KeyWithinDistance),@&quot;key&quot;:key,@&quot;value&quot;:@{@&quot;distance&quot;:@(distance),@&quot;point&quot;:point}}];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a33156e11a671361de9764d8444fe8fae">   61</a></span>&#160;-(void)orderBy:(NSString *)key direction:(MKitQueryOrder)order</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    [<a class="code" href="interface_m_kit_model_query.html#a85efd1f3fe43ae476d1024e860d0ae9f">orders</a> addObject:@{@&quot;key&quot;:key,@&quot;dir&quot;:@(order)}];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a2ec306256f0cb8e26936dfb955d20753">   66</a></span>&#160;-(NSDictionary *)execute:(NSError **)error</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> [<span class="keyword">self</span> <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">executeWithLimit</a>:NSNotFound <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">skip</a>:NSNotFound <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">error</a>:error];</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">   71</a></span>&#160;-(NSDictionary *)executeWithLimit:(NSInteger)limit skip:(NSInteger)skip error:(NSError **)error</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a693e99ec48887b562649d71b9524dd11">   71</a></span>&#160;-(void)executeInBackground:(MKitQueryResultBlock)resultBlock</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> nil;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    [<span class="keyword">self</span> <a class="code" href="interface_m_kit_model_query.html#a9ea6dae7055a829584d58ff8818d8407">executeInBackgroundWithLimit</a>:NSNotFound <a class="code" href="interface_m_kit_model_query.html#a9ea6dae7055a829584d58ff8818d8407">skip</a>:NSNotFound <a class="code" href="interface_m_kit_model_query.html#a9ea6dae7055a829584d58ff8818d8407">resultBlock</a>:resultBlock];</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a9ea6dae7055a829584d58ff8818d8407">   76</a></span>&#160;-(void)executeInBackgroundWithLimit:(NSInteger)limit skip:(NSInteger)skip resultBlock:(MKitQueryResultBlock)resultBlock</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    dispatch_async(dispatch_get_global_queue(0, 0), ^{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        NSError *error=nil;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        NSDictionary *result=[<span class="keyword">self</span> <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">executeWithLimit</a>:limit <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">skip</a>:skip <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">error</a>:&amp;error];</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> ((result!=nil) &amp;&amp; (resultBlock!=nil))</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            resultBlock(result[MKitQueryResultKey], [result[MKitQueryItemCountKey] integerValue], error);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (resultBlock)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            resultBlock(nil, 0, error);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    });</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a38af585be34efa416f5bf36b71ac3a5d">   89</a></span>&#160;-(NSInteger)count:(NSError **)error</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a96b71d239c5d840210caa8c14144cd0f">   94</a></span>&#160;-(void)countInBackground:(MKitIntResultBlock)resultBlock</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    dispatch_async(dispatch_get_global_queue(0, 0), ^{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        NSError *error=nil;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        NSInteger result=[<span class="keyword">self</span> <a class="code" href="interface_m_kit_model_query.html#a38af585be34efa416f5bf36b71ac3a5d">count</a>:&amp;error];</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> (resultBlock)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            resultBlock(result, error);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    });</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">   77</a></span>&#160;-(NSDictionary *)executeWithLimit:(NSInteger)limit skip:(NSInteger)skip error:(NSError **)error</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> nil;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a9ea6dae7055a829584d58ff8818d8407">   82</a></span>&#160;-(void)executeInBackgroundWithLimit:(NSInteger)limit skip:(NSInteger)skip resultBlock:(MKitQueryResultBlock)resultBlock</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    dispatch_async(dispatch_get_global_queue(0, 0), ^{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        NSError *error=nil;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        NSDictionary *result=[<span class="keyword">self</span> <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">executeWithLimit</a>:limit <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">skip</a>:skip <a class="code" href="interface_m_kit_model_query.html#ac6f0721c5582e29a3adf75c5559166b0">error</a>:&amp;error];</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> ((result!=nil) &amp;&amp; (resultBlock!=nil))</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            resultBlock(result[MKitQueryResultKey], [result[MKitQueryItemCountKey] integerValue], error);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (resultBlock)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            resultBlock(nil, 0, error);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    });</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a38af585be34efa416f5bf36b71ac3a5d">   95</a></span>&#160;-(NSInteger)count:(NSError **)error</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="interface_m_kit_model_query.html#a96b71d239c5d840210caa8c14144cd0f">  100</a></span>&#160;-(void)countInBackground:(MKitIntResultBlock)resultBlock</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    dispatch_async(dispatch_get_global_queue(0, 0), ^{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        NSError *error=nil;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        NSInteger result=[<span class="keyword">self</span> <a class="code" href="interface_m_kit_model_query.html#a38af585be34efa416f5bf36b71ac3a5d">count</a>:&amp;error];</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (resultBlock)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            resultBlock(result, error);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    });</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_4d2cd150aff3df625ebb7431566b7a26.html">Model</a></li><li class="navelem"><b>MKitModelQuery.m</b></li>
-    <li class="footer">Generated on Thu Nov 8 2012 04:29:53 for ModelKit by
+    <li class="footer">Generated on Sat Nov 10 2012 15:18:35 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

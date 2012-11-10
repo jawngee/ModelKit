@@ -6,6 +6,7 @@ var searchData=
   ['initwithdata_3aname_3acontenttype_3a',['initWithData:name:contentType:',['../interface_m_kit_service_file.html#ab043717f2344ec290d107f6acfbb778a',1,'MKitServiceFile']]],
   ['initwithfile_3a',['initWithFile:',['../interface_m_kit_service_file.html#aae78f991c00a95839ca587cb72e5cb4d',1,'MKitServiceFile']]],
   ['initwithkeys_3a',['initWithKeys:',['../interface_m_kit_service_manager.html#a30ace61b8b86673ff08f97c8d919309f',1,'MKitServiceManager']]],
+  ['initwithlatitude_3aandlongitude_3a',['initWithLatitude:andLongitude:',['../interface_m_kit_geo_point.html#a80ca925502851648da894668e9b1ab1f',1,'MKitGeoPoint']]],
   ['initwithmodelclass_3a',['initWithModelClass:',['../interface_m_kit_model_query.html#a17a116a690f5d84c2a226b79652168dc',1,'MKitModelQuery']]],
   ['initwithmodelclass_3amanager_3a',['initWithModelClass:manager:',['../interface_m_kit_service_model_query.html#a6cc12e2d4558e72fe1782a172062f061',1,'MKitServiceModelQuery']]],
   ['initwithname_3aandurl_3a',['initWithName:andURL:',['../interface_m_kit_service_file.html#af1d974b9ebe0ead458373ae7ada61ff4',1,'MKitServiceFile']]],

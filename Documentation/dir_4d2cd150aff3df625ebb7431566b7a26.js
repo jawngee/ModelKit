@@ -1,6 +1,8 @@
 var dir_4d2cd150aff3df625ebb7431566b7a26 =
 [
     [ "MKitDefs.h", "_m_kit_defs_8h_source.html", null ],
+    [ "MKitGeoPoint.h", "_m_kit_geo_point_8h_source.html", null ],
+    [ "MKitGeoPoint.m", "_m_kit_geo_point_8m_source.html", null ],
     [ "MKitModel.h", "_m_kit_model_8h_source.html", null ],
     [ "MKitModel.m", "_m_kit_model_8m_source.html", null ],
     [ "MKitModelContext.h", "_m_kit_model_context_8h_source.html", null ],
