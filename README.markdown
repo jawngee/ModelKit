@@ -66,7 +66,7 @@ In addition to the Doxygen generated documentation included in the repo, more in
 	* [Fetching a Models Data](https://github.com/jawngee/ModelKit/wiki/Backend-Services#wiki-Fetching)
 	* [Querying](https://github.com/jawngee/ModelKit/wiki/Backend-Services#wiki-Querying)
 	* [Users](https://github.com/jawngee/ModelKit/wiki/Backend-Services#wiki-Users)
-		* [Determing If Logged In](https://github.com/jawngee/ModelKit/wiki/Backend-Services#wiki-LoggedIn)
+		* [Determining If Logged In](https://github.com/jawngee/ModelKit/wiki/Backend-Services#wiki-LoggedIn)
 		* [Signing Up](https://github.com/jawngee/ModelKit/wiki/Backend-Services#wiki-SignUp)
 		* [Logging In](https://github.com/jawngee/ModelKit/wiki/Backend-Services#wiki-LoggingIn)
 		* [Logging Out](https://github.com/jawngee/ModelKit/wiki/Backend-Services#wiki-LoggingOut)
