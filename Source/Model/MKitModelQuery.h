@@ -45,8 +45,8 @@ typedef enum
  */
 typedef enum
 {
-    orderASC,
-    orderDESC
+    orderASC    = YES,
+    orderDESC   = NO
 } MKitQueryOrder;
 
 /**

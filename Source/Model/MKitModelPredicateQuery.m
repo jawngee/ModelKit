@@ -106,6 +106,15 @@
     if (results==nil)
         results=[NSArray array];
     
+    if (orders)
+    {
+        NSMutableArray *sortDescriptors=[NSMutableArray array];
+        for(NSDictionary *order in orders)
+            [sortDescriptors addObject:[NSSortDescriptor sortDescriptorWithKey:order[@"key"] ascending:[order[@"dir"] boolValue]]];
+        
+        results=[results sortedArrayUsingDescriptors:sortDescriptors];
+    }
+    
     return @{
         MKitQueryItemCountKey:@(results.count),
         MKitQueryResultKey:results
