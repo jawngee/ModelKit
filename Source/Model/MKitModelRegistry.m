@@ -12,20 +12,19 @@
 
 static NSMutableDictionary *registry=nil;
 
++(void)initialize
+{
+    [super initialize];
+    registry=[[NSMutableDictionary alloc] init];
+}
 
 +(void)registerModel:(NSString *)modelName forClass:(Class)class
 {
-    if (!registry)
-        registry=[[NSMutableDictionary alloc] init];
-    
     [registry setObject:class forKey:modelName];
 }
 
 +(Class)registeredClassForModel:(NSString *)modelName
 {
-    if (!registry)
-        return nil;
-    
     return [registry objectForKey:modelName];
 }
 

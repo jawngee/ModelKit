@@ -10,12 +10,15 @@
 
 @implementation MKitParseModel
 
-static MKitServiceManager *parseService=nil;
 
 +(MKitServiceManager *)service
 {
-    if (parseService==nil)
+    static MKitServiceManager *parseService=nil;
+    
+    static dispatch_once_t pred;
+    dispatch_once(&pred, ^{
         parseService=[MKitServiceManager managerForService:@"Parse"];
+    });
     
     return parseService;
 }

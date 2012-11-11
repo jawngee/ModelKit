@@ -43,6 +43,12 @@ static NSMutableArray *contextStack=nil;
 
 #pragma mark - Init/Dealloc
 
++(void)initialize
+{
+    [super initialize];
+    contextStack=[[NSMutableArray array] retain];
+}
+
 -(id)init
 {
     if ((self=[super init]))
@@ -72,9 +78,6 @@ static NSMutableArray *contextStack=nil;
 
 +(MKitModelContext *)current
 {
-    if (contextStack==nil)
-        contextStack=[[NSMutableArray alloc] init];
-    
     if (contextStack.count==0)
     {
         MKitModelContext *ctx=[[[MKitModelContext alloc] init] autorelease];
@@ -88,9 +91,6 @@ static NSMutableArray *contextStack=nil;
 
 +(MKitModelContext *)pop
 {
-    if (contextStack==nil)
-        return [self current];
-    
     if (contextStack.count>1)
         [contextStack removeObjectAtIndex:contextStack.count-1];
     
@@ -99,9 +99,6 @@ static NSMutableArray *contextStack=nil;
 
 +(MKitModelContext *)push
 {
-    if (contextStack==nil)
-        [self current];
-    
     MKitModelContext *ctx=[[[MKitModelContext alloc] init] autorelease];
     [contextStack addObject:ctx];
     
@@ -110,9 +107,6 @@ static NSMutableArray *contextStack=nil;
 
 +(void)clearAllContexts
 {
-    if (contextStack==nil)
-        return;
-    
     for(MKitModelContext *ctx in contextStack)
         [ctx clear];
     
@@ -255,9 +249,6 @@ static NSMutableArray *contextStack=nil;
 
 -(void)activate
 {
-    if (contextStack==nil)
-        contextStack=[[NSMutableArray alloc] init];
-    
     if ([contextStack indexOfObject:self]!=NSNotFound)
         [contextStack removeObject:self];
     
@@ -266,10 +257,8 @@ static NSMutableArray *contextStack=nil;
 
 -(void)deactivate
 {
-    if (contextStack==nil)
-        return;
-    
-    [contextStack removeObject:self];
+    if ([contextStack indexOfObject:self]!=0)
+        [contextStack removeObject:self];
 }
 
 #pragma mark - Persistence

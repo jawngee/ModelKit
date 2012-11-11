@@ -19,9 +19,6 @@ static NSMutableDictionary *managers=nil;
 
 +(MKitServiceManager *)setupService:(NSString *)name withKeys:(NSDictionary *)keys
 {
-    if (!managers)
-        managers=[[NSMutableDictionary dictionary] retain];
-    
     MKitServiceManager *m=[managers objectForKey:name];
     if (m)
         [managers removeObjectForKey:m];
@@ -37,10 +34,14 @@ static NSMutableDictionary *managers=nil;
 
 +(MKitServiceManager *)managerForService:(NSString *)name;
 {
-    if (!managers)
-        managers=[[NSMutableDictionary dictionary] retain];
-    
     return [managers objectForKey:name];
+}
+
++(void)initialize
+{
+    [super initialize];
+    
+    managers=[[NSMutableDictionary dictionary] retain];
 }
 
 -(id)initWithKeys:(NSDictionary *)keys
