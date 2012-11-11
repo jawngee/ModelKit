@@ -791,4 +791,22 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     [self deserialize:odict fromJSON:YES objectArray:oarray decodingCache:[NSMutableDictionary dictionary]];
 }
 
+-(NSString *)debugDescription
+{
+    NSMutableArray *propsStrings=[NSMutableArray array];
+    
+    [propsStrings addObject:[NSString stringWithFormat:@"\t%@: %@;",@"objectId",self.modelId]];
+    [propsStrings addObject:[NSString stringWithFormat:@"\t%@: %d;",@"modelState",self.modelState]];
+    [propsStrings addObject:[NSString stringWithFormat:@"\t%@: %@;",@"objectId",self.objectId]];
+    [propsStrings addObject:[NSString stringWithFormat:@"\t%@: %@;",@"createdAt",self.createdAt]];
+    [propsStrings addObject:[NSString stringWithFormat:@"\t%@: %@;",@"updateAt",self.updatedAt]];
+    
+    NSDictionary *props=[self properties];
+    [props enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",key,obj]];
+    }];
+    
+    return [NSString stringWithFormat:@"<%@: %p> { %@ }",NSStringFromClass([self class]),self,[propsStrings componentsJoinedByString:@";\n"]];
+}
+
 @end
