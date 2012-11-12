@@ -1,43 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>ModelKit by jawngee</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="ModelKit : A better model framework for Objective-C" />
 
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>ModelKit</title>
   </head>
+
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/jawngee/ModelKit">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/jawngee/ModelKit/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/jawngee/ModelKit/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
 
-    <div class="wrapper">
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jawngee/ModelKit">View on GitHub</a>
 
-      <section>
-        <div id="title">
-          <h1>ModelKit</h1>
-          <p>A better model framework for Objective-C</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/jawngee">jawngee</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
-        </div>
+          <h1 id="project_title">ModelKit</h1>
+          <h2 id="project_tagline">A better model framework for Objective-C</h2>
 
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jawngee/ModelKit/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jawngee/ModelKit/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h1>ModelKit</h1>
 
 <p>ModelKit is a simple to use model framework for Objective-C (Cocoa/iOS).  It allows you to write your model layer quickly and easily, managing persistence (local and network) for you.</p>
@@ -110,16 +103,16 @@
 </ul>
 </li>
 <li>
-<a href="https://github.com/jawngee/ModelKit/wiki/Contexts">Contexts</a>
+<a href="https://github.com/jawngee/ModelKit/wiki/Graphs">Model Graph</a>
 
 <ul>
-<li><a href="https://github.com/jawngee/ModelKit/wiki/Contexts#wiki-Fetching">Fetching Models</a></li>
-<li><a href="https://github.com/jawngee/ModelKit/wiki/Contexts#wiki-Removing">Removing a Model From The Context</a></li>
-<li><a href="https://github.com/jawngee/ModelKit/wiki/Contexts#wiki-Multiple">Multiple Contexts</a></li>
-<li><a href="https://github.com/jawngee/ModelKit/wiki/Contexts#wiki-Persisting">Persisting Contexts</a></li>
-<li><a href="https://github.com/jawngee/ModelKit/wiki/Contexts#wiki-Clearing">Clearing Contexts</a></li>
-<li><a href="https://github.com/jawngee/ModelKit/wiki/Contexts#wiki-NoContext">No Context Models</a></li>
-<li><a href="https://github.com/jawngee/ModelKit/wiki/Contexts#wiki-Information">Context Information</a></li>
+<li><a href="https://github.com/jawngee/ModelKit/wiki/Graphs#wiki-Fetching">Fetching Models</a></li>
+<li><a href="https://github.com/jawngee/ModelKit/wiki/Graphs#wiki-Removing">Removing a Model From The Graph</a></li>
+<li><a href="https://github.com/jawngee/ModelKit/wiki/Graphs#wiki-Multiple">Multiple Graphs</a></li>
+<li><a href="https://github.com/jawngee/ModelKit/wiki/Graphs#wiki-Persisting">Persisting Graphs</a></li>
+<li><a href="https://github.com/jawngee/ModelKit/wiki/Graphs#wiki-Clearing">Clearing Graphs</a></li>
+<li><a href="https://github.com/jawngee/ModelKit/wiki/Graphs#wiki-NoContext">Non Graph Models</a></li>
+<li><a href="https://github.com/jawngee/ModelKit/wiki/Graphs#wiki-Information">Graph Information</a></li>
 </ul>
 </li>
 <li><a href="https://github.com/jawngee/ModelKit/wiki/Querying-Models">Querying Models</a></li>
@@ -160,9 +153,16 @@
 </li>
 </ul>
       </section>
-
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">ModelKit maintained by <a href="https://github.com/jawngee">jawngee</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -173,6 +173,7 @@
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
+
 
   </body>
 </html>
