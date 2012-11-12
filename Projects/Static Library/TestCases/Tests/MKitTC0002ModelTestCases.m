@@ -21,6 +21,7 @@
     m1.boolV=YES;
     m1.floatV=0.66f;
     m1.doubleV=10.233;
+    m1.stringV=@"String Value";
     m1.dateV=[NSDate date];
     
     return m1;
@@ -183,6 +184,26 @@
     results=[[query execute:nil] objectForKey:MKitQueryResultKey];
     STAssertTrue(results.count==4, [NSString stringWithFormat:@"Should have 4 items, has %d",results.count]);
     
+}
+
+-(void)test004SavePerformance
+{
+    [MKitModelContext clearAllContexts];
+    
+    for(int i=0; i<1200; i++)
+        [self makeModelWithId:[NSString stringWithFormat:@"%d",i]];
+    
+    NSTimeInterval start=[[NSDate date] timeIntervalSince1970];
+    [[MKitModelContext current] saveToFile:@"/tmp/100k.plist" error:nil];
+    NSTimeInterval end=[[NSDate date] timeIntervalSince1970];
+    NSLog(@"WRITE TIME %f",end-start);
+    
+    [MKitModelContext clearAllContexts];
+    
+    start=[[NSDate date] timeIntervalSince1970];
+    [[MKitModelContext current] loadFromFile:@"/tmp/100k.plist" error:nil];
+    end=[[NSDate date] timeIntervalSince1970];
+    NSLog(@"READ TIME %f",end-start);
 }
 
 @end

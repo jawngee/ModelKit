@@ -103,12 +103,13 @@
 
 -(void)test0005SaveContext
 {
-    [TestModel instanceWithObjectId:@"001"];
-    [TestModel instanceWithObjectId:@"002"];
-    [TestModel instanceWithObjectId:@"003"];
-    [TestModel instanceWithObjectId:@"004"];
-    [TestModel instanceWithObjectId:@"005"];
-    [TestModel instanceWithObjectId:@"006"];
+    TestModel *m1=[TestModel instanceWithObjectId:@"001"];
+    TestModel *m2=[TestModel instanceWithObjectId:@"002"];
+    TestModel *m3=[TestModel instanceWithObjectId:@"003"];
+    TestModel *m4=[TestModel instanceWithObjectId:@"004"];
+    TestModel *m5=[TestModel instanceWithObjectId:@"005"];
+    TestModel *m6=[TestModel instanceWithObjectId:@"006"];
+
     
     STAssertTrue([[MKitModelContext current] saveToFile:@"/tmp/persist.plist" error:nil], @"This should never fail.");
     
