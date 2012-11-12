@@ -15,7 +15,7 @@
  *
  * Since a graph retains all models added to it, models stored in a normal
  * NSMutableArray would never be released.  Furthermore, models that implement
- * the MKitNoContext protocol need to be retained since they aren't stored in
+ * the MKitNoGraph protocol need to be retained since they aren't stored in
  * the graph.
  *
  * Finally, it makes serialization/deserialization way easier.

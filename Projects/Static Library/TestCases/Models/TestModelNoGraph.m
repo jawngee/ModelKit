@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import "TestModelNoContext.h"
+#import "TestModelNoGraph.h"
 
-@implementation TestModelNoContext
+@implementation TestModelNoGraph
 
 @end

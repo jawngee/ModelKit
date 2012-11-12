@@ -62,7 +62,7 @@
     if (![anObject isKindOfClass:[MKitModel class]])
         @throw [NSException exceptionWithName:@"Not Model" reason:@"Attempting to insert a non MKitModel class into MKitMutableModelArray" userInfo:nil];
     
-//    if (![anObject conformsToProtocol:@protocol(MKitNoContext)])
+//    if (![anObject conformsToProtocol:@protocol(MKitNoGraph)])
 //        [anObject autorelease];
     
     CFArrayInsertValueAtIndex(_array,
@@ -85,7 +85,7 @@
     if (![anObject isKindOfClass:[MKitModel class]])
         @throw [NSException exceptionWithName:@"Not Model" reason:@"Attempting to add a non MKitModel class into MKitMutableModelArray" userInfo:nil];
 
-//    if (![anObject conformsToProtocol:@protocol(MKitNoContext)])
+//    if (![anObject conformsToProtocol:@protocol(MKitNoGraph)])
 //        [anObject autorelease];
     
     CFArrayAppendValue(_array, (const void *)anObject);
@@ -101,7 +101,7 @@
     if (![anObject isKindOfClass:[MKitModel class]])
         @throw [NSException exceptionWithName:@"Not Model" reason:@"Attempting to replace a non MKitModel class into MKitMutableModelArray" userInfo:nil];
 
-//    if (![anObject conformsToProtocol:@protocol(MKitNoContext)])
+//    if (![anObject conformsToProtocol:@protocol(MKitNoGraph)])
 //        [anObject autorelease];
     
     CFArrayReplaceValues(_array, CFRangeMake(index, 1), (const void **)&anObject, 1);

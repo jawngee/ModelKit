@@ -126,8 +126,8 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     _modelId=[[NSString UUID] retain];
     _modelChanges=[[NSMutableDictionary dictionary] retain];
     
-    if (![[self class] conformsToProtocol:@protocol(MKitNoContext)])
-        [self addToContext];
+    if (![[self class] conformsToProtocol:@protocol(MKitNoGraph)])
+        [self addToGraph];
 }
 
 -(id)init
@@ -366,16 +366,16 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     [[NSNotificationCenter defaultCenter] postNotificationName:MKitModelPropertyChangedNotification object:self userInfo:@{@"keyPath":keyPath,@"change":change}];
 }
 
-#pragma mark - Context related
+#pragma mark - Graph related
 
--(void)addToContext
+-(void)addToGraph
 {
-    [[MKitModelGraph current] addToContext:self];
+    [[MKitModelGraph current] addToGraph:self];
 }
 
--(void)removeFromContext
+-(void)removeFromGraph
 {
-    [[MKitModelGraph current] removeFromContext:self];
+    [[MKitModelGraph current] removeFromGraph:self];
 }
 
 #pragma mark - Notification

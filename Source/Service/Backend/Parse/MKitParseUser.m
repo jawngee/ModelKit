@@ -52,7 +52,7 @@ static MKitParseUser *_currentUser=nil;
     BOOL result=[m save:error];
     
     if (!result)
-        [m removeFromContext];
+        [m removeFromGraph];
     else
     {
         _currentUser=m;
@@ -97,7 +97,7 @@ static MKitParseUser *_currentUser=nil;
             BOOL result=[user fetch:error];
             if (!result)
             {
-                [user removeFromContext];
+                [user removeFromGraph];
                 return NO;
             }
         }

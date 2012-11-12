@@ -8,7 +8,7 @@
 
 #import "MKitTC0001GraphTestCases.h"
 #import "TestModel.h"
-#import "TestModelNoContext.h"
+#import "TestModelNoGraph.h"
 
 @implementation MKitTC0001GraphTestCases
 
@@ -35,13 +35,13 @@
     STAssertTrue([MKitModelGraph current].graphSize==80, @"Graph size mismatch.");
     STAssertTrue([MKitModelGraph current].graphCount==1, @"Graph count mismatch.");
     
-    [model removeFromContext];
+    [model removeFromGraph];
     
     STAssertTrue([MKitModelGraph current].graphSize==0, @"Graph size mismatch.");
     STAssertTrue([MKitModelGraph current].graphCount==0, @"Graph count mismatch.");
 }
 
--(void)test0002ContextPopPush
+-(void)test0002GraphPopPush
 {
     [MKitModelGraph clearAllGraphs];
     
@@ -58,7 +58,7 @@
     STAssertTrue([MKitModelGraph current].graphCount==0, @"Graph count mismatch.");
 }
 
--(void)test0003ContextActivateDeactivate
+-(void)test0003GraphActivateDeactivate
 {
     MKitModelGraph *graph=[[MKitModelGraph alloc] init];
     
@@ -101,7 +101,7 @@
     STAssertTrue(m2==nil, @"Object should be nil");
 }
 
--(void)test0005SaveContext
+-(void)test0005SaveGraph
 {
     TestModel *m1=[TestModel instanceWithObjectId:@"001"];
     TestModel *m2=[TestModel instanceWithObjectId:@"002"];
@@ -116,9 +116,9 @@
     [MKitModelGraph clearAllGraphs];
 }
 
--(void)test0006LoadContext
+-(void)test0006LoadGraph
 {
-    [self test0005SaveContext];
+    [self test0005SaveGraph];
     
     [MKitModelGraph clearAllGraphs];
     

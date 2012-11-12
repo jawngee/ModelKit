@@ -79,7 +79,7 @@
  * Removes the model from any graphs
  * @param model The model to remove
  */
-+(void)removeFromAnyContext:(MKitModel *)model;
++(void)removeFromAnyGraph:(MKitModel *)model;
 
 
 #pragma mark - Activation
@@ -105,14 +105,14 @@
  * Adds the model to the graph
  * @param model The model to add
  */
--(void)addToContext:(MKitModel *)model;
+-(void)addToGraph:(MKitModel *)model;
 
 /**
  * Removes the model from the graph
  * @param model The model to remove
  * @result YES if removed, NO if not.
  */
--(BOOL)removeFromContext:(MKitModel *)model;
+-(BOOL)removeFromGraph:(MKitModel *)model;
 
 /**
  * Retrieves a model from the graph based on id and class

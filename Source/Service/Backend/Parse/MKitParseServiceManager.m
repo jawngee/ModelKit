@@ -372,7 +372,7 @@
     if ([op hasAcceptableStatusCode])
     {
         model.modelState=ModelStateDeleted;
-        [model removeFromContext];
+        [model removeFromGraph];
         return YES;
     }
     

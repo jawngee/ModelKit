@@ -119,16 +119,16 @@ static NSMutableArray *graphStack=nil;
 #pragma mark - Class Methods - Model Management
 
 
-+(void)removeFromAnyContext:(MKitModel *)model
++(void)removeFromAnyGraph:(MKitModel *)model
 {
     for(MKitModelGraph *ctx in graphStack)
-        if ([ctx removeFromContext:model])
+        if ([ctx removeFromGraph:model])
             return;
 }
 
 #pragma mark - Model Management
 
--(void)addToContext:(MKitModel *)model
+-(void)addToGraph:(MKitModel *)model
 {
     [modelStack setObject:model forKey:model.modelId];
 
@@ -149,7 +149,7 @@ static NSMutableArray *graphStack=nil;
     }
 }
 
--(BOOL)removeFromContext:(MKitModel *)model
+-(BOOL)removeFromGraph:(MKitModel *)model
 {
     BOOL exists=([modelStack objectForKey:model.modelId]!=nil);
     if (exists)
@@ -216,7 +216,7 @@ static NSMutableArray *graphStack=nil;
     if ([modelStack objectForKey:oldValue])
         [modelStack removeObjectForKey:oldValue];
     
-    if ((model.modelId) && (![[self class] conformsToProtocol:@protocol(MKitNoContext)]))
+    if ((model.modelId) && (![[self class] conformsToProtocol:@protocol(MKitNoGraph)]))
         [modelStack setObject:model forKey:model.modelId];
 
 }

@@ -8,6 +8,6 @@
 
 #import "MKitModel.h"
 
-@interface TestModelNoContext : MKitModel<MKitNoContext>
+@interface TestModelNoGraph : MKitModel<MKitNoGraph>
 
 @end

@@ -56,13 +56,13 @@
     // Make sure the graph has been cleared
     [MKitModelGraph clearAllGraphs];
     m1=(TestModel *)[[MKitModelGraph current] modelForObjectId:@"001" andClass:[TestModel class]];
-    STAssertTrue(m1==nil, @"Context wasn't cleared.");
+    STAssertTrue(m1==nil, @"Graph wasn't cleared.");
     
     // Deserialize
     m1=[TestModel instanceWithSerializedData:data];
     
     // Make sure we have 4 objects in the graph
-    STAssertTrue([MKitModelGraph current].graphCount==4, @"Context count mismatch, should be 4.");
+    STAssertTrue([MKitModelGraph current].graphCount==4, @"Graph count mismatch, should be 4.");
     
     m2=[TestModel instanceWithObjectId:@"002"];
     m3=[TestModel instanceWithObjectId:@"003"];
@@ -104,13 +104,13 @@
     // Make sure the graph has been cleared
     [MKitModelGraph clearAllGraphs];
     m1=(TestModel *)[[MKitModelGraph current] modelForObjectId:@"001" andClass:[TestModel class]];
-    STAssertTrue(m1==nil, @"Context wasn't cleared.");
+    STAssertTrue(m1==nil, @"Graph wasn't cleared.");
     
     // Deserialize
     m1=[TestModel instanceWithJSON:json];
     
     // Make sure we have 4 objects in the graph
-    STAssertTrue([MKitModelGraph current].graphCount==4, @"Context count mismatch, should be 4.");
+    STAssertTrue([MKitModelGraph current].graphCount==4, @"Graph count mismatch, should be 4.");
     
     m2=[TestModel instanceWithObjectId:@"002"];
     m3=[TestModel instanceWithObjectId:@"003"];

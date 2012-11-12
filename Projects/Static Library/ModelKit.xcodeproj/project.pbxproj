@@ -55,7 +55,7 @@
 		FFB8CBBE1643EA8C00D43C8F /* MKitParseUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CBBD1643EA8B00D43C8F /* MKitParseUser.m */; };
 		FFB8CBC816440F3A00D43C8F /* MKitServiceKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CBC716440F3200D43C8F /* MKitServiceKeyChain.m */; };
 		FFBA0D26163D23EE00B6560C /* MKitTC0001GraphTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D25163D23EE00B6560C /* MKitTC0001GraphTestCases.m */; };
-		FFBA0D29163D24C100B6560C /* TestModelNoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D28163D24C100B6560C /* TestModelNoContext.m */; };
+		FFBA0D29163D24C100B6560C /* TestModelNoGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D28163D24C100B6560C /* TestModelNoGraph.m */; };
 		FFBA0D2C163D254E00B6560C /* libModelKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54A9D16391DEA00F055A6 /* libModelKit.a */; };
 		FFBA0D32163D5B1F00B6560C /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D31163D5B1F00B6560C /* TestModel.m */; };
 		FFBA0D35163D709C00B6560C /* MKitTC0002ModelTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D34163D709C00B6560C /* MKitTC0002ModelTestCases.m */; };
@@ -182,8 +182,8 @@
 		FFB8CBC716440F3200D43C8F /* MKitServiceKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceKeyChain.m; sourceTree = "<group>"; };
 		FFBA0D24163D23EE00B6560C /* MKitTC0001GraphTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKitTC0001GraphTestCases.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FFBA0D25163D23EE00B6560C /* MKitTC0001GraphTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitTC0001GraphTestCases.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		FFBA0D27163D24C100B6560C /* TestModelNoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TestModelNoContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		FFBA0D28163D24C100B6560C /* TestModelNoContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModelNoContext.m; sourceTree = "<group>"; };
+		FFBA0D27163D24C100B6560C /* TestModelNoGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TestModelNoGraph.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		FFBA0D28163D24C100B6560C /* TestModelNoGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModelNoGraph.m; sourceTree = "<group>"; };
 		FFBA0D30163D5B1F00B6560C /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TestModel.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FFBA0D31163D5B1F00B6560C /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TestModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FFBA0D33163D709C00B6560C /* MKitTC0002ModelTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKitTC0002ModelTestCases.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -430,8 +430,8 @@
 		FFBA0D22163D23EE00B6560C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FFBA0D27163D24C100B6560C /* TestModelNoContext.h */,
-				FFBA0D28163D24C100B6560C /* TestModelNoContext.m */,
+				FFBA0D27163D24C100B6560C /* TestModelNoGraph.h */,
+				FFBA0D28163D24C100B6560C /* TestModelNoGraph.m */,
 				FFBA0D30163D5B1F00B6560C /* TestModel.h */,
 				FFBA0D31163D5B1F00B6560C /* TestModel.m */,
 				FF903042164E37B000156E71 /* TestVenueModel.h */,
@@ -707,7 +707,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFBA0D26163D23EE00B6560C /* MKitTC0001GraphTestCases.m in Sources */,
-				FFBA0D29163D24C100B6560C /* TestModelNoContext.m in Sources */,
+				FFBA0D29163D24C100B6560C /* TestModelNoGraph.m in Sources */,
 				FFBA0D32163D5B1F00B6560C /* TestModel.m in Sources */,
 				FFBA0D35163D709C00B6560C /* MKitTC0002ModelTestCases.m in Sources */,
 				FFBA0D44163DBEAB00B6560C /* MKitTC0000FoundationTestCases.m in Sources */,

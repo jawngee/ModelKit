@@ -43,7 +43,7 @@ extern NSString *const MKitModelPropertyChangedNotification;
 #pragma mark - Protocols
 
 /** Models that should not be added to the graph should "implement" this */
-@protocol MKitNoContext @end
+@protocol MKitNoGraph @end
 
 #pragma mark - MKitModel
 
@@ -61,7 +61,7 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * application isn't littered with different instances of the same object.
  *
  * For very large heirarchies, you might want to skip the graph.  In that case
- * implement the MKitNoContext protocol to mark your model as a non participant.
+ * implement the MKitNoGraph protocol to mark your model as a non participant.
  */
 @interface MKitModel : NSObject<NSCoding>
 {
@@ -154,16 +154,16 @@ extern NSString *const MKitModelPropertyChangedNotification;
 
 /**
  * Adds the object to the graph.  This is done automatically, but for models
- * conforming to MKitNoContext protocol, you'll have to call this if you want to
+ * conforming to MKitNoGraph protocol, you'll have to call this if you want to
  * add them.
  */
--(void)addToContext;
+-(void)addToGraph;
 
 /**
  * Removes an object from a graph.  If you call delete, you do not need to
  * call this.
  */
--(void)removeFromContext;
+-(void)removeFromGraph;
 
 /**
  * Suspend notifications when properties are changed.
