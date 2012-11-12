@@ -16,7 +16,7 @@
     return [[self service] queryForModelClass:self];
 }
 
-+(MKitModelQuery *)contextQuery
++(MKitModelQuery *)graphQuery
 {
     return [MKitModelPredicateQuery queryForModelClass:self];
 }
