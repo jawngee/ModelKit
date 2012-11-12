@@ -36,6 +36,7 @@
 		FF90303D164DBADE00156E71 /* venues.json in Resources */ = {isa = PBXBuildFile; fileRef = FF90303C164DBADE00156E71 /* venues.json */; };
 		FF903041164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FF903040164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m */; };
 		FF903044164E37B000156E71 /* TestVenueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF903043164E37B000156E71 /* TestVenueModel.m */; };
+		FF903047164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FF903046164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.m */; };
 		FF9419AB164534130072BFDA /* MKitServiceUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419AA164534130072BFDA /* MKitServiceUser.m */; };
 		FFA3DE7D163E785400D2D855 /* MKitServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DE7C163E785400D2D855 /* MKitServiceManager.m */; };
 		FFA3DEAA163F1A9800D2D855 /* NSString+ModelKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DEA9163F1A9800D2D855 /* NSString+ModelKit.m */; };
@@ -142,6 +143,8 @@
 		FF903040164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitTC0003GeoPointTestCases.m; sourceTree = "<group>"; };
 		FF903042164E37B000156E71 /* TestVenueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVenueModel.h; sourceTree = "<group>"; };
 		FF903043164E37B000156E71 /* TestVenueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVenueModel.m; sourceTree = "<group>"; };
+		FF903045164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitTC0004ModelQueryTestCases.h; sourceTree = "<group>"; };
+		FF903046164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitTC0004ModelQueryTestCases.m; sourceTree = "<group>"; };
 		FF9419AA164534130072BFDA /* MKitServiceUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceUser.m; sourceTree = "<group>"; };
 		FFA3DE7B163E785400D2D855 /* MKitServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitServiceManager.h; sourceTree = "<group>"; };
 		FFA3DE7C163E785400D2D855 /* MKitServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceManager.m; sourceTree = "<group>"; };
@@ -448,6 +451,8 @@
 				FFBA0D34163D709C00B6560C /* MKitTC0002ModelTestCases.m */,
 				FF90303F164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.h */,
 				FF903040164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m */,
+				FF903045164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.h */,
+				FF903046164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -708,6 +713,7 @@
 				FFBA0D44163DBEAB00B6560C /* MKitTC0000FoundationTestCases.m in Sources */,
 				FF903041164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m in Sources */,
 				FF903044164E37B000156E71 /* TestVenueModel.m in Sources */,
+				FF903047164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
