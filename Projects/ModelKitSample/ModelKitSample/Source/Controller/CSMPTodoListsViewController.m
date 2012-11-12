@@ -88,12 +88,16 @@
     
     MKitModelQuery *q=[CSMPTodoList contextQuery];
     [q key:@"owner" condition:KeyEquals value:[CSMPUser currentUser]];
+    [q orderBy:@"createdAt" direction:orderASC];
     NSArray *results=[[q execute:nil] objectForKey:MKitQueryResultKey];
     [lists addObjectsFromArray:results];
     [self.tableView reloadData];
     
+    NSLog(@"%@",[[lists objectAtIndex:0] properties]);
+    
     q=[CSMPTodoList query];
     [q key:@"owner" condition:KeyEquals value:[CSMPUser currentUser]];
+    [q orderBy:@"createdAt" direction:orderASC];
     [q executeInBackground:^(NSArray *objects, NSInteger totalCount, NSError *error) {
         if (objects!=nil)
         {
