@@ -10,7 +10,7 @@
 #import "JSONKit.h"
 #import "TestVenueModel.h"
 #import "MKitModelQuery.h"
-#import "MKitModelContext.h"
+#import "MKitModelGraph.h"
 
 @implementation MKitTC0003GeoPointTestCases
 
@@ -33,7 +33,7 @@
 
 -(void)tearDown
 {
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
 }
 
 -(void)testDistanceQuery

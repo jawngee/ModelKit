@@ -1,5 +1,5 @@
 //
-//  MKitModelContext.h
+//  MKitModelGraph.h
 //  ModelKit
 //
 //  Created by Jon Gilkison on 10/25/12.
@@ -11,53 +11,53 @@
 @class MKitModel;
 
 /**
- * The model context is a global storage mechanism for models so that your
+ * The model graph is a global storage mechanism for models so that your
  * application isn't littered with different instances of the same model.
  *
- * There is always one active context, but you can create "layers" of them
+ * There is always one active graph, but you can create "layers" of them
  * for specific purposes by calling the push and pop static class methods.
  */
-@interface MKitModelContext : NSObject
+@interface MKitModelGraph : NSObject
 {
     NSMutableDictionary *modelStack;    /**< Dictionary of models keyed by modelId */
     NSMutableDictionary *classCache;    /**< Dictionary of models classified by thier objectId and class */
     
-    NSUInteger contextSize;             /**< The rough estimate of the size of the context */
-    NSUInteger contextCount;            /**< The number of items stored in the context */
+    NSUInteger graphSize;             /**< The rough estimate of the size of the graph */
+    NSUInteger graphCount;            /**< The number of items stored in the graph */
 }
 
-@property (readonly) NSUInteger contextSize;
-@property (readonly) NSUInteger contextCount;
+@property (readonly) NSUInteger graphSize;
+@property (readonly) NSUInteger graphCount;
 
 #pragma mark - Class Methods - Stack Management
 
 /**
- * Returns the current context
- * @return The current context
+ * Returns the current graph
+ * @return The current graph
  */
-+(MKitModelContext *)current;
++(MKitModelGraph *)current;
 
 /**
- * Pops the current context off the stack.  If this is the last context, nothing happens
- * @return The current context
+ * Pops the current graph off the stack.  If this is the last graph, nothing happens
+ * @return The current graph
  */
-+(MKitModelContext *)pop;
++(MKitModelGraph *)pop;
 
 /**
- * Pushes a new context on top of the stack
- * @return The new context
+ * Pushes a new graph on top of the stack
+ * @return The new graph
  */
-+(MKitModelContext *)push;
++(MKitModelGraph *)push;
 
 /**
- * Clears all contexts
+ * Clears all graphs
  */
-+(void)clearAllContexts;
++(void)clearAllGraphs;
 
 #pragma mark - Persistence
 
 /**
- * Saves the context to a binary plist.
+ * Saves the graph to a binary plist.
  * @param file The name of the file to save to
  * @param error The error generated, if any
  * @return YES if succesful, NO if not.
@@ -65,7 +65,7 @@
 -(BOOL)saveToFile:(NSString *)file error:(NSError **)error;
 
 /**
- * Loads the context from a binary plist.
+ * Loads the graph from a binary plist.
  * @param file The name of the file to load from
  * @param error The error generated, if any
  * @return YES if succesful, NO if not.
@@ -76,7 +76,7 @@
 #pragma mark - Class Methods - Model Management
 
 /**
- * Removes the model from any contexts
+ * Removes the model from any graphs
  * @param model The model to remove
  */
 +(void)removeFromAnyContext:(MKitModel *)model;
@@ -85,37 +85,37 @@
 #pragma mark - Activation
 
 /**
- * Makes this context the active context
+ * Makes this graph the active graph
  */
 -(void)activate;
 
 /**
- * Deactivates this context
+ * Deactivates this graph
  */
 -(void)deactivate;
 
 /**
- * Clears the current context
+ * Clears the current graph
  */
 -(void)clear;
 
 #pragma mark - Model Management
 
 /**
- * Adds the model to the context
+ * Adds the model to the graph
  * @param model The model to add
  */
 -(void)addToContext:(MKitModel *)model;
 
 /**
- * Removes the model from the context
+ * Removes the model from the graph
  * @param model The model to remove
  * @result YES if removed, NO if not.
  */
 -(BOOL)removeFromContext:(MKitModel *)model;
 
 /**
- * Retrieves a model from the context based on id and class
+ * Retrieves a model from the graph based on id and class
  * @param objId The object id of the model
  * @param modelClass The class of the model
  * @return The model, if found, nil if not.
@@ -123,14 +123,14 @@
 -(MKitModel *)modelForObjectId:(NSString *)objId andClass:(Class)modelClass;
 
 /**
- * Retrieves a model from the context based on the model id
+ * Retrieves a model from the graph based on the model id
  * @param modelId The model id of the model
  * @return The model, if found, nil if not.
  */
 -(MKitModel *)modelForModelId:(NSString *)modelId;
 
 /**
- * Queries the context for models of a specific class matching a supplied predicate.
+ * Queries the graph for models of a specific class matching a supplied predicate.
  * @param predicate The predicate to filter with
  * @param modelClass The model class to filter on
  * @return An array of models filtered with the predicate

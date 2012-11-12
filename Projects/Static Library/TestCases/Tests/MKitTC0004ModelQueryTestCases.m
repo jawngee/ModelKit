@@ -30,7 +30,7 @@
 
 -(void)tearDown
 {
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
 }
 
 -(void)test0001QueryOrderByIntV

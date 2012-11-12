@@ -23,7 +23,7 @@
 #import "MKitModel.h"
 #import "MKitModelRegistry.h"
 #import "MKitMutableModelArray.h"
-#import "MKitModelContext.h"
+#import "MKitModelGraph.h"
 #import "MKitModelQuery.h"
 #import "MKitModelPredicateQuery.h"
 

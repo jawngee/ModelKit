@@ -37,6 +37,7 @@
 		FF903041164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FF903040164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m */; };
 		FF903044164E37B000156E71 /* TestVenueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF903043164E37B000156E71 /* TestVenueModel.m */; };
 		FF903047164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FF903046164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.m */; };
+		FF9030971650DED700156E71 /* MKitModelGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9030961650DED700156E71 /* MKitModelGraph.m */; };
 		FF9419AB164534130072BFDA /* MKitServiceUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9419AA164534130072BFDA /* MKitServiceUser.m */; };
 		FFA3DE7D163E785400D2D855 /* MKitServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DE7C163E785400D2D855 /* MKitServiceManager.m */; };
 		FFA3DEAA163F1A9800D2D855 /* NSString+ModelKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3DEA9163F1A9800D2D855 /* NSString+ModelKit.m */; };
@@ -53,7 +54,7 @@
 		FFB8CBBA1643A95200D43C8F /* MKitModelPredicateQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CBB91643A95200D43C8F /* MKitModelPredicateQuery.m */; };
 		FFB8CBBE1643EA8C00D43C8F /* MKitParseUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CBBD1643EA8B00D43C8F /* MKitParseUser.m */; };
 		FFB8CBC816440F3A00D43C8F /* MKitServiceKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8CBC716440F3200D43C8F /* MKitServiceKeyChain.m */; };
-		FFBA0D26163D23EE00B6560C /* MKitTC0001ContextTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D25163D23EE00B6560C /* MKitTC0001ContextTestCases.m */; };
+		FFBA0D26163D23EE00B6560C /* MKitTC0001GraphTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D25163D23EE00B6560C /* MKitTC0001GraphTestCases.m */; };
 		FFBA0D29163D24C100B6560C /* TestModelNoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D28163D24C100B6560C /* TestModelNoContext.m */; };
 		FFBA0D2C163D254E00B6560C /* libModelKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54A9D16391DEA00F055A6 /* libModelKit.a */; };
 		FFBA0D32163D5B1F00B6560C /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA0D31163D5B1F00B6560C /* TestModel.m */; };
@@ -70,7 +71,6 @@
 		FFBB3309164A467D0053F713 /* MKitServiceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBB3308164A467D0053F713 /* MKitServiceFile.m */; };
 		FFBB330C164A63080053F713 /* MKitParseFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBB330B164A63080053F713 /* MKitParseFile.m */; };
 		FFBB330F164A9F570053F713 /* MKitMutableFileArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBB330E164A9F570053F713 /* MKitMutableFileArray.m */; };
-		FFCFA9F11639732500BC2E3E /* MKitModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFA9F01639732500BC2E3E /* MKitModelContext.m */; };
 		FFCFAA21163A7DD800BC2E3E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA20163A7DD800BC2E3E /* JSONKit.m */; };
 		FFCFAA2F163A837300BC2E3E /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA2E163A837300BC2E3E /* ISO8601DateFormatter.m */; };
 		FFCFAA33163A83C800BC2E3E /* NSDate+ModelKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA32163A83C800BC2E3E /* NSDate+ModelKit.m */; };
@@ -145,6 +145,8 @@
 		FF903043164E37B000156E71 /* TestVenueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVenueModel.m; sourceTree = "<group>"; };
 		FF903045164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitTC0004ModelQueryTestCases.h; sourceTree = "<group>"; };
 		FF903046164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitTC0004ModelQueryTestCases.m; sourceTree = "<group>"; };
+		FF9030951650DED700156E71 /* MKitModelGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitModelGraph.h; sourceTree = "<group>"; };
+		FF9030961650DED700156E71 /* MKitModelGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitModelGraph.m; sourceTree = "<group>"; };
 		FF9419AA164534130072BFDA /* MKitServiceUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceUser.m; sourceTree = "<group>"; };
 		FFA3DE7B163E785400D2D855 /* MKitServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitServiceManager.h; sourceTree = "<group>"; };
 		FFA3DE7C163E785400D2D855 /* MKitServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceManager.m; sourceTree = "<group>"; };
@@ -178,8 +180,8 @@
 		FFB8CBBD1643EA8B00D43C8F /* MKitParseUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseUser.m; sourceTree = "<group>"; };
 		FFB8CBC616440F3000D43C8F /* MKitServiceKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitServiceKeyChain.h; sourceTree = "<group>"; };
 		FFB8CBC716440F3200D43C8F /* MKitServiceKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceKeyChain.m; sourceTree = "<group>"; };
-		FFBA0D24163D23EE00B6560C /* MKitTC0001ContextTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKitTC0001ContextTestCases.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		FFBA0D25163D23EE00B6560C /* MKitTC0001ContextTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitTC0001ContextTestCases.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		FFBA0D24163D23EE00B6560C /* MKitTC0001GraphTestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKitTC0001GraphTestCases.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		FFBA0D25163D23EE00B6560C /* MKitTC0001GraphTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitTC0001GraphTestCases.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FFBA0D27163D24C100B6560C /* TestModelNoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TestModelNoContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FFBA0D28163D24C100B6560C /* TestModelNoContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModelNoContext.m; sourceTree = "<group>"; };
 		FFBA0D30163D5B1F00B6560C /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TestModel.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -199,8 +201,6 @@
 		FFBB330B164A63080053F713 /* MKitParseFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseFile.m; sourceTree = "<group>"; };
 		FFBB330D164A9F570053F713 /* MKitMutableFileArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitMutableFileArray.h; sourceTree = "<group>"; };
 		FFBB330E164A9F570053F713 /* MKitMutableFileArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitMutableFileArray.m; sourceTree = "<group>"; };
-		FFCFA9EF1639732500BC2E3E /* MKitModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKitModelContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		FFCFA9F01639732500BC2E3E /* MKitModelContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MKitModelContext.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FFCFAA1F163A7DD800BC2E3E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../External/JSONKit/JSONKit.h; sourceTree = "<group>"; };
 		FFCFAA20163A7DD800BC2E3E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = ../../External/JSONKit/JSONKit.m; sourceTree = "<group>"; };
 		FFCFAA2D163A837300BC2E3E /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISO8601DateFormatter.h; path = ../../External/iso/ISO8601DateFormatter.h; sourceTree = "<group>"; };
@@ -273,10 +273,10 @@
 				FFB8CBB71643A7A900D43C8F /* MKitDefs.h */,
 				FF3C8CB3163936B0009EB62A /* MKitModel.h */,
 				FF3C8CB4163936B0009EB62A /* MKitModel.m */,
+				FF9030951650DED700156E71 /* MKitModelGraph.h */,
+				FF9030961650DED700156E71 /* MKitModelGraph.m */,
 				FF3C8D5C16396082009EB62A /* MKitModelRegistry.h */,
 				FF3C8D5D16396082009EB62A /* MKitModelRegistry.m */,
-				FFCFA9EF1639732500BC2E3E /* MKitModelContext.h */,
-				FFCFA9F01639732500BC2E3E /* MKitModelContext.m */,
 				FFB8CBB41643A6B000D43C8F /* MKitModelQuery.h */,
 				FFB8CBB51643A6B000D43C8F /* MKitModelQuery.m */,
 				FFB8CBB81643A95200D43C8F /* MKitModelPredicateQuery.h */,
@@ -445,8 +445,8 @@
 			children = (
 				FFBA0D42163DBEAB00B6560C /* MKitTC0000FoundationTestCases.h */,
 				FFBA0D43163DBEAB00B6560C /* MKitTC0000FoundationTestCases.m */,
-				FFBA0D24163D23EE00B6560C /* MKitTC0001ContextTestCases.h */,
-				FFBA0D25163D23EE00B6560C /* MKitTC0001ContextTestCases.m */,
+				FFBA0D24163D23EE00B6560C /* MKitTC0001GraphTestCases.h */,
+				FFBA0D25163D23EE00B6560C /* MKitTC0001GraphTestCases.m */,
 				FFBA0D33163D709C00B6560C /* MKitTC0002ModelTestCases.h */,
 				FFBA0D34163D709C00B6560C /* MKitTC0002ModelTestCases.m */,
 				FF90303F164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.h */,
@@ -673,7 +673,6 @@
 				FF3C8D42163940AC009EB62A /* MKitReflectedProperty.m in Sources */,
 				FF3C8D45163940B9009EB62A /* MKitReflectedClass.m in Sources */,
 				FF3C8D5E16396082009EB62A /* MKitModelRegistry.m in Sources */,
-				FFCFA9F11639732500BC2E3E /* MKitModelContext.m in Sources */,
 				FFCFAA21163A7DD800BC2E3E /* JSONKit.m in Sources */,
 				FFCFAA2F163A837300BC2E3E /* ISO8601DateFormatter.m in Sources */,
 				FFCFAA33163A83C800BC2E3E /* NSDate+ModelKit.m in Sources */,
@@ -699,6 +698,7 @@
 				FFBB330F164A9F570053F713 /* MKitMutableFileArray.m in Sources */,
 				FFE4F131164CDEFE00E26C74 /* MKitGeoPoint.m in Sources */,
 				FF903002164DACCB00156E71 /* MKitGeoPoint+Parse.m in Sources */,
+				FF9030971650DED700156E71 /* MKitModelGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,7 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFBA0D26163D23EE00B6560C /* MKitTC0001ContextTestCases.m in Sources */,
+				FFBA0D26163D23EE00B6560C /* MKitTC0001GraphTestCases.m in Sources */,
 				FFBA0D29163D24C100B6560C /* TestModelNoContext.m in Sources */,
 				FFBA0D32163D5B1F00B6560C /* TestModel.m in Sources */,
 				FFBA0D35163D709C00B6560C /* MKitTC0002ModelTestCases.m in Sources */,

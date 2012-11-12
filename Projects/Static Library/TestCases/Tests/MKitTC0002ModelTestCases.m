@@ -29,7 +29,7 @@
 
 -(void)test001SerializeDeserialize
 {
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
     
     TestModel *m1=[self makeModelWithId:@"001"];
     TestModel *m2=[self makeModelWithId:@"002"];
@@ -53,16 +53,16 @@
     // Serialize
     id data=[m1 serialize];
     
-    // Make sure the context has been cleared
-    [MKitModelContext clearAllContexts];
-    m1=(TestModel *)[[MKitModelContext current] modelForObjectId:@"001" andClass:[TestModel class]];
+    // Make sure the graph has been cleared
+    [MKitModelGraph clearAllGraphs];
+    m1=(TestModel *)[[MKitModelGraph current] modelForObjectId:@"001" andClass:[TestModel class]];
     STAssertTrue(m1==nil, @"Context wasn't cleared.");
     
     // Deserialize
     m1=[TestModel instanceWithSerializedData:data];
     
-    // Make sure we have 4 objects in the context
-    STAssertTrue([MKitModelContext current].contextCount==4, @"Context count mismatch, should be 4.");
+    // Make sure we have 4 objects in the graph
+    STAssertTrue([MKitModelGraph current].graphCount==4, @"Context count mismatch, should be 4.");
     
     m2=[TestModel instanceWithObjectId:@"002"];
     m3=[TestModel instanceWithObjectId:@"003"];
@@ -78,7 +78,7 @@
 
 -(void)test002SerializeDeserializeJSON
 {
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
     
     TestModel *m1=[self makeModelWithId:@"001"];
     TestModel *m2=[self makeModelWithId:@"002"];
@@ -101,16 +101,16 @@
     // Serialize
     NSString *json=[m1 serializeToJSON];
     
-    // Make sure the context has been cleared
-    [MKitModelContext clearAllContexts];
-    m1=(TestModel *)[[MKitModelContext current] modelForObjectId:@"001" andClass:[TestModel class]];
+    // Make sure the graph has been cleared
+    [MKitModelGraph clearAllGraphs];
+    m1=(TestModel *)[[MKitModelGraph current] modelForObjectId:@"001" andClass:[TestModel class]];
     STAssertTrue(m1==nil, @"Context wasn't cleared.");
     
     // Deserialize
     m1=[TestModel instanceWithJSON:json];
     
-    // Make sure we have 4 objects in the context
-    STAssertTrue([MKitModelContext current].contextCount==4, @"Context count mismatch, should be 4.");
+    // Make sure we have 4 objects in the graph
+    STAssertTrue([MKitModelGraph current].graphCount==4, @"Context count mismatch, should be 4.");
     
     m2=[TestModel instanceWithObjectId:@"002"];
     m3=[TestModel instanceWithObjectId:@"003"];
@@ -127,7 +127,7 @@
 
 -(void)test003PredicateQuery
 {
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
     
     TestModel *m1=[self makeModelWithId:@"001"];
     TestModel *m2=[self makeModelWithId:@"002"];
@@ -188,20 +188,20 @@
 
 -(void)test004SavePerformance
 {
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
     
     for(int i=0; i<1200; i++)
         [self makeModelWithId:[NSString stringWithFormat:@"%d",i]];
     
     NSTimeInterval start=[[NSDate date] timeIntervalSince1970];
-    [[MKitModelContext current] saveToFile:@"/tmp/100k.plist" error:nil];
+    [[MKitModelGraph current] saveToFile:@"/tmp/100k.plist" error:nil];
     NSTimeInterval end=[[NSDate date] timeIntervalSince1970];
     NSLog(@"WRITE TIME %f",end-start);
     
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
     
     start=[[NSDate date] timeIntervalSince1970];
-    [[MKitModelContext current] loadFromFile:@"/tmp/100k.plist" error:nil];
+    [[MKitModelGraph current] loadFromFile:@"/tmp/100k.plist" error:nil];
     end=[[NSDate date] timeIntervalSince1970];
     NSLog(@"READ TIME %f",end-start);
 }

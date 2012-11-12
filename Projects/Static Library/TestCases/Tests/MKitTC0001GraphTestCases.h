@@ -9,6 +9,6 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "ModelKit.h"
 
-@interface MKitTC0001ContextTestCases : SenTestCase
+@interface MKitTC0001GraphTestCases : SenTestCase
 
 @end

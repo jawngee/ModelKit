@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import "MKitTC0001ContextTestCases.h"
+#import "MKitTC0001GraphTestCases.h"
 #import "TestModel.h"
 #import "TestModelNoContext.h"
 
-@implementation MKitTC0001ContextTestCases
+@implementation MKitTC0001GraphTestCases
 
 - (void)setUp
 {
@@ -26,78 +26,78 @@
     [super tearDown];
 }
 
-- (void)test0001ContextSize
+- (void)test0001GraphSize
 {
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
     
     TestModel *model=[TestModel instanceWithObjectId:@"hey"];
     
-    STAssertTrue([MKitModelContext current].contextSize==80, @"Contexts size mismatch.");
-    STAssertTrue([MKitModelContext current].contextCount==1, @"Contexts count mismatch.");
+    STAssertTrue([MKitModelGraph current].graphSize==80, @"Graph size mismatch.");
+    STAssertTrue([MKitModelGraph current].graphCount==1, @"Graph count mismatch.");
     
     [model removeFromContext];
     
-    STAssertTrue([MKitModelContext current].contextSize==0, @"Contexts size mismatch.");
-    STAssertTrue([MKitModelContext current].contextCount==0, @"Contexts count mismatch.");
+    STAssertTrue([MKitModelGraph current].graphSize==0, @"Graph size mismatch.");
+    STAssertTrue([MKitModelGraph current].graphCount==0, @"Graph count mismatch.");
 }
 
 -(void)test0002ContextPopPush
 {
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
     
-    [MKitModelContext push];
+    [MKitModelGraph push];
     
     [TestModel instanceWithObjectId:@"hey"];
     
-    STAssertTrue([MKitModelContext current].contextSize==80, @"Contexts size mismatch.");
-    STAssertTrue([MKitModelContext current].contextCount==1, @"Contexts count mismatch.");
+    STAssertTrue([MKitModelGraph current].graphSize==80, @"Graph size mismatch.");
+    STAssertTrue([MKitModelGraph current].graphCount==1, @"Graph count mismatch.");
     
-    [MKitModelContext pop];
+    [MKitModelGraph pop];
 
-    STAssertTrue([MKitModelContext current].contextSize==0, @"Contexts size mismatch.");
-    STAssertTrue([MKitModelContext current].contextCount==0, @"Contexts count mismatch.");
+    STAssertTrue([MKitModelGraph current].graphSize==0, @"Graph size mismatch.");
+    STAssertTrue([MKitModelGraph current].graphCount==0, @"Graph count mismatch.");
 }
 
 -(void)test0003ContextActivateDeactivate
 {
-    MKitModelContext *context=[[MKitModelContext alloc] init];
+    MKitModelGraph *graph=[[MKitModelGraph alloc] init];
     
-    STAssertTrue([MKitModelContext current].contextSize==0, @"Contexts size mismatch.");
-    STAssertTrue([MKitModelContext current].contextCount==0, @"Contexts count mismatch.");
+    STAssertTrue([MKitModelGraph current].graphSize==0, @"Graph size mismatch.");
+    STAssertTrue([MKitModelGraph current].graphCount==0, @"Graph count mismatch.");
 
-    [context activate];
+    [graph activate];
     
     [TestModel instanceWithObjectId:@"hey"];
     
-    STAssertTrue([MKitModelContext current].contextSize==80, @"Contexts size mismatch.");
-    STAssertTrue([MKitModelContext current].contextCount==1, @"Contexts count mismatch.");
+    STAssertTrue([MKitModelGraph current].graphSize==80, @"Graph size mismatch.");
+    STAssertTrue([MKitModelGraph current].graphCount==1, @"Graph count mismatch.");
     
-    [context deactivate];
+    [graph deactivate];
 
-    STAssertTrue([MKitModelContext current].contextSize==0, @"Contexts size mismatch.");
-    STAssertTrue([MKitModelContext current].contextCount==0, @"Contexts count mismatch.");
+    STAssertTrue([MKitModelGraph current].graphSize==0, @"Graph size mismatch.");
+    STAssertTrue([MKitModelGraph current].graphCount==0, @"Graph count mismatch.");
     
-    [context activate];
+    [graph activate];
 
-    STAssertTrue([MKitModelContext current].contextSize==80, @"Contexts size mismatch.");
-    STAssertTrue([MKitModelContext current].contextCount==1, @"Contexts count mismatch.");
+    STAssertTrue([MKitModelGraph current].graphSize==80, @"Graph size mismatch.");
+    STAssertTrue([MKitModelGraph current].graphCount==1, @"Graph count mismatch.");
 
-    [context deactivate];
-    [context release];
+    [graph deactivate];
+    [graph release];
 }
 
 -(void)test0004FindModel
 {
     TestModel *m=[TestModel instanceWithObjectId:@"hey"];
 
-    TestModel *m2=(TestModel *)[[MKitModelContext current] modelForObjectId:@"hey" andClass:[TestModel class]];
+    TestModel *m2=(TestModel *)[[MKitModelGraph current] modelForObjectId:@"hey" andClass:[TestModel class]];
     STAssertTrue(m==m2, @"Objects do not match");
     
     m2=[TestModel instanceWithObjectId:@"hey"];
     STAssertTrue(m==m2, @"Objects do not match");
     
-    [[MKitModelContext current] clear];
-    m2=(TestModel *)[[MKitModelContext current] modelForObjectId:@"hey" andClass:[TestModel class]];
+    [[MKitModelGraph current] clear];
+    m2=(TestModel *)[[MKitModelGraph current] modelForObjectId:@"hey" andClass:[TestModel class]];
     STAssertTrue(m2==nil, @"Object should be nil");
 }
 
@@ -111,26 +111,26 @@
     TestModel *m6=[TestModel instanceWithObjectId:@"006"];
 
     
-    STAssertTrue([[MKitModelContext current] saveToFile:@"/tmp/persist.plist" error:nil], @"This should never fail.");
+    STAssertTrue([[MKitModelGraph current] saveToFile:@"/tmp/persist.plist" error:nil], @"This should never fail.");
     
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
 }
 
 -(void)test0006LoadContext
 {
     [self test0005SaveContext];
     
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
     
-    STAssertTrue([[MKitModelContext current] loadFromFile:@"/tmp/persist.plist" error:nil], @"This should never fail either.");
+    STAssertTrue([[MKitModelGraph current] loadFromFile:@"/tmp/persist.plist" error:nil], @"This should never fail either.");
     
-    TestModel *m=(TestModel *)[[MKitModelContext current] modelForObjectId:@"004" andClass:[TestModel class]];
+    TestModel *m=(TestModel *)[[MKitModelGraph current] modelForObjectId:@"004" andClass:[TestModel class]];
     STAssertTrue(m!=nil, @"Model is nil");
 }
 
 -(void)test0007ComplicatedSaveLoad
 {
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
     
     TestModel *m1=[TestModel instanceWithObjectId:@"001"];
     TestModel *m2=[TestModel instanceWithObjectId:@"002"];
@@ -193,9 +193,9 @@
     m6.amodelArrayV=[MKitMutableModelArray arrayWithArray:@[m4,m5]];
     m6.amodelV=m3;
 
-    STAssertTrue([[MKitModelContext current] saveToFile:@"/tmp/persist.plist" error:nil]==YES,@"This should never fail.");
-    [MKitModelContext clearAllContexts];
-    STAssertTrue([[MKitModelContext current] loadFromFile:@"/tmp/persist.plist" error:nil]==YES,@"This should never fail.");
+    STAssertTrue([[MKitModelGraph current] saveToFile:@"/tmp/persist.plist" error:nil]==YES,@"This should never fail.");
+    [MKitModelGraph clearAllGraphs];
+    STAssertTrue([[MKitModelGraph current] loadFromFile:@"/tmp/persist.plist" error:nil]==YES,@"This should never fail.");
     
     m1=[TestModel instanceWithObjectId:@"001"];
     m2=[TestModel instanceWithObjectId:@"002"];
@@ -215,7 +215,7 @@
     STAssertTrue([m1.amodelArrayV indexOfObject:m3]!=NSNotFound, @"Could not find m2 in array");
     STAssertTrue(m1.amodelV==m5,@"modelV not equal");
 
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
 }
 
 @end

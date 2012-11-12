@@ -1,19 +1,19 @@
 //
-//  MKitModelContext.m
+//  MKitModelGraph.m
 //  ModelKit
 //
 //  Created by Jon Gilkison on 10/25/12.
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
-#import "MKitModelContext.h"
+#import "MKitModelGraph.h"
 #import "MKitModel.h"
 #import <malloc/malloc.h>
 
 /**
  * Private methods
  */
-@interface MKitModelContext(Internal)
+@interface MKitModelGraph(Internal)
 
 /**
  * Notification that the model state has changed
@@ -35,18 +35,18 @@
 
 @end
 
-@implementation MKitModelContext
+@implementation MKitModelGraph
 
-static NSMutableArray *contextStack=nil;
+static NSMutableArray *graphStack=nil;
 
-@synthesize contextCount, contextSize;
+@synthesize graphCount, graphSize;
 
 #pragma mark - Init/Dealloc
 
 +(void)initialize
 {
     [super initialize];
-    contextStack=[[NSMutableArray array] retain];
+    graphStack=[[NSMutableArray array] retain];
 }
 
 -(id)init
@@ -76,44 +76,44 @@ static NSMutableArray *contextStack=nil;
 
 #pragma mark - Class Methods - Stack Management
 
-+(MKitModelContext *)current
++(MKitModelGraph *)current
 {
-    if (contextStack.count==0)
+    if (graphStack.count==0)
     {
-        MKitModelContext *ctx=[[[MKitModelContext alloc] init] autorelease];
-        [contextStack addObject:ctx];
+        MKitModelGraph *ctx=[[[MKitModelGraph alloc] init] autorelease];
+        [graphStack addObject:ctx];
         
         return ctx;
     }
     
-    return [contextStack lastObject];
+    return [graphStack lastObject];
 }
 
-+(MKitModelContext *)pop
++(MKitModelGraph *)pop
 {
-    if (contextStack.count>1)
-        [contextStack removeObjectAtIndex:contextStack.count-1];
+    if (graphStack.count>1)
+        [graphStack removeObjectAtIndex:graphStack.count-1];
     
-    return [contextStack lastObject];
+    return [graphStack lastObject];
 }
 
-+(MKitModelContext *)push
++(MKitModelGraph *)push
 {
-    MKitModelContext *ctx=[[[MKitModelContext alloc] init] autorelease];
-    [contextStack addObject:ctx];
+    MKitModelGraph *ctx=[[[MKitModelGraph alloc] init] autorelease];
+    [graphStack addObject:ctx];
     
     return ctx;
 }
 
-+(void)clearAllContexts
++(void)clearAllGraphs
 {
-    for(MKitModelContext *ctx in contextStack)
+    for(MKitModelGraph *ctx in graphStack)
         [ctx clear];
     
-    [contextStack removeAllObjects];
+    [graphStack removeAllObjects];
     
-    MKitModelContext *ctx=[[[MKitModelContext alloc] init] autorelease];
-    [contextStack addObject:ctx];
+    MKitModelGraph *ctx=[[[MKitModelGraph alloc] init] autorelease];
+    [graphStack addObject:ctx];
 }
 
 #pragma mark - Class Methods - Model Management
@@ -121,7 +121,7 @@ static NSMutableArray *contextStack=nil;
 
 +(void)removeFromAnyContext:(MKitModel *)model
 {
-    for(MKitModelContext *ctx in contextStack)
+    for(MKitModelGraph *ctx in graphStack)
         if ([ctx removeFromContext:model])
             return;
 }
@@ -144,8 +144,8 @@ static NSMutableArray *contextStack=nil;
         
         [objectCache setObject:model forKey:model.objectId];
         
-        contextCount++;
-        contextSize+=malloc_size(model);
+        graphCount++;
+        graphSize+=malloc_size(model);
     }
 }
 
@@ -166,8 +166,8 @@ static NSMutableArray *contextStack=nil;
         {
             [objectCache removeObjectForKey:model.objectId];
             
-            contextCount--;
-            contextSize-=malloc_size(model);
+            graphCount--;
+            graphSize-=malloc_size(model);
             
             return YES;
         }
@@ -181,8 +181,8 @@ static NSMutableArray *contextStack=nil;
     [classCache removeAllObjects];
     [modelStack removeAllObjects];
     
-    contextCount=0;
-    contextSize=0;
+    graphCount=0;
+    graphSize=0;
 }
 
 -(MKitModel *)modelForObjectId:(NSString *)objId andClass:(Class)modelClass
@@ -240,8 +240,8 @@ static NSMutableArray *contextStack=nil;
     {
         [objectCache setObject:model forKey:model.objectId];
     
-        contextCount++;
-        contextSize+=malloc_size(model);
+        graphCount++;
+        graphSize+=malloc_size(model);
     }
 }
 
@@ -249,16 +249,16 @@ static NSMutableArray *contextStack=nil;
 
 -(void)activate
 {
-    if ([contextStack indexOfObject:self]!=NSNotFound)
-        [contextStack removeObject:self];
+    if ([graphStack indexOfObject:self]!=NSNotFound)
+        [graphStack removeObject:self];
     
-    [contextStack addObject:self];
+    [graphStack addObject:self];
 }
 
 -(void)deactivate
 {
-    if ([contextStack indexOfObject:self]!=0)
-        [contextStack removeObject:self];
+    if ([graphStack indexOfObject:self]!=0)
+        [graphStack removeObject:self];
 }
 
 #pragma mark - Persistence

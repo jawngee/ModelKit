@@ -13,10 +13,10 @@
  * This subclass of NSMutableArray is specific to managing an array of models
  * associated with another model.  
  *
- * Since a context retains all models added to it, models stored in a normal
+ * Since a graph retains all models added to it, models stored in a normal
  * NSMutableArray would never be released.  Furthermore, models that implement
  * the MKitNoContext protocol need to be retained since they aren't stored in
- * the context.
+ * the graph.
  *
  * Finally, it makes serialization/deserialization way easier.
  */
