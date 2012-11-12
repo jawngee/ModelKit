@@ -86,7 +86,7 @@
     
     [lists removeAllObjects];
     
-    MKitModelQuery *q=[CSMPTodoList contextQuery];
+    MKitModelQuery *q=[CSMPTodoList graphQuery];
     [q key:@"owner" condition:KeyEquals value:[CSMPUser currentUser]];
     [q orderBy:@"createdAt" direction:orderASC];
     NSArray *results=[[q execute:nil] objectForKey:MKitQueryResultKey];
@@ -114,7 +114,7 @@
 -(void)logOutUser:(id)sender
 {
     [[CSMPUser currentUser] logOut];
-    [MKitModelContext clearAllContexts];
+    [MKitModelGraph clearAllGraphs];
 }
 
 -(void)addToDoList:(id)sender

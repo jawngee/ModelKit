@@ -24,10 +24,10 @@
     // Make sure your keys are defined in CSMPAppKeys
     [MKitServiceManager setupService:@"Parse" withKeys:@{@"AppID":PARSE_APP_ID,@"RestKey":PARSE_REST_KEY}];
     
-    // Reload the existing context if it exists
+    // Reload the existing graph if it exists
     NSError *error=nil;
-    if (![[MKitModelContext current] loadFromFile:[NSString fileNameInDocumentPath:@"context.plist"] error:&error])
-        NSLog(@"Error loading context: %@",error);
+    if (![[MKitModelGraph current] loadFromFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:&error])
+        NSLog(@"Error loading graph: %@",error);
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
@@ -41,12 +41,12 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    [[MKitModelContext current] saveToFile:[NSString fileNameInDocumentPath:@"context.plist"] error:nil];
+    [[MKitModelGraph current] saveToFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:nil];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [[MKitModelContext current] saveToFile:[NSString fileNameInDocumentPath:@"context.plist"] error:nil];
+    [[MKitModelGraph current] saveToFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:nil];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -61,7 +61,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    [[MKitModelContext current] saveToFile:[NSString fileNameInDocumentPath:@"context.plist"] error:nil];
+    [[MKitModelGraph current] saveToFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:nil];
 }
 
 @end
