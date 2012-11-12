@@ -61,7 +61,7 @@
                 [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ IN %%@",c[@"key"]],val]];
                 break;
             case KeyNotIn:
-                [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"NONE %@ IN %%@",c[@"key"]],val]];
+                [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"NOT (%@ IN %%@)",c[@"key"]],val]];
                 break;
             case KeyExists:
                 [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ != NIL",c[@"key"]]]];
