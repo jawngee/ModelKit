@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('_m_kit_model_predicate_query_8m_source
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#import &quot;MKitModelPredicateQuery.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#import &quot;MKitModelContext.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#import &quot;MKitModelGraph.h&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#import &quot;MKitGeoPoint.h&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="category_m_kit_model_predicate_query_07_internal_08.html">   16</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="category_m_kit_model_predicate_query_07_internal_08.html">MKitModelPredicateQuery(Internal)</a></div>
@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('_m_kit_model_predicate_query_8m_source
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@&quot;%@ IN %%@&quot;,c[@&quot;key&quot;]],val]];</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">case</span> KeyNotIn:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@&quot;NONE %@ IN %%@&quot;,c[@&quot;key&quot;]],val]];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@&quot;NOT (%@ IN %%@)&quot;,c[@&quot;key&quot;]],val]];</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">case</span> KeyExists:</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@&quot;%@ != NIL&quot;,c[@&quot;key&quot;]]]];</div>
@@ -198,30 +198,39 @@ $(document).ready(function(){initNavTree('_m_kit_model_predicate_query_8m_source
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    NSPredicate *predicate=[<span class="keyword">self</span> buildQuery];</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    NSArray *results=[[<a class="code" href="interface_m_kit_model_context.html">MKitModelContext</a> <a class="code" href="interface_m_kit_model_context.html#abf89ab8b8f857336c88e1be4d175fc80">current</a>] <a class="code" href="interface_m_kit_model_context.html#aafe9f421f5454dacd3e73486a57738f7">queryWithPredicate</a>:predicate <a class="code" href="interface_m_kit_model_context.html#aafe9f421f5454dacd3e73486a57738f7">forClass</a>:modelClass];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    NSArray *results=[[<a class="code" href="interface_m_kit_model_graph.html">MKitModelGraph</a> <a class="code" href="interface_m_kit_model_graph.html#a8e388708ecf957d82020a9580678ad07">current</a>] <a class="code" href="interface_m_kit_model_graph.html#a53b9ed3806e4f5d0ee827be440ee57de">queryWithPredicate</a>:predicate <a class="code" href="interface_m_kit_model_graph.html#a53b9ed3806e4f5d0ee827be440ee57de">forClass</a>:modelClass];</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (results==nil)</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        results=[NSArray array];</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> @{</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        MKitQueryItemCountKey:@(results.count),</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        MKitQueryResultKey:results</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    };</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;-(NSInteger)count:(NSError **)error</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> [[[<span class="keyword">self</span> executeWithLimit:NSNotFound skip:NSNotFound error:error] objectForKey:MKitQueryItemCountKey] integerValue];</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="interface_m_kit_model_query.html#a85efd1f3fe43ae476d1024e860d0ae9f">orders</a>)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        NSMutableArray *sortDescriptors=[NSMutableArray array];</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">for</span>(NSDictionary *order in <a class="code" href="interface_m_kit_model_query.html#a85efd1f3fe43ae476d1024e860d0ae9f">orders</a>)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            [sortDescriptors addObject:[NSSortDescriptor sortDescriptorWithKey:order[@&quot;key&quot;] ascending:[order[@&quot;dir&quot;] boolValue]]];</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        results=[results sortedArrayUsingDescriptors:sortDescriptors];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> @{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        MKitQueryItemCountKey:@(results.count),</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        MKitQueryResultKey:results</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    };</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;-(NSInteger)count:(NSError **)error</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> [[[<span class="keyword">self</span> executeWithLimit:NSNotFound skip:NSNotFound error:error] objectForKey:MKitQueryItemCountKey] integerValue];</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_4d2cd150aff3df625ebb7431566b7a26.html">Model</a></li><li class="navelem"><b>MKitModelPredicateQuery.m</b></li>
-    <li class="footer">Generated on Sat Nov 10 2012 15:18:35 for ModelKit by
+    <li class="footer">Generated on Mon Nov 12 2012 16:30:09 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

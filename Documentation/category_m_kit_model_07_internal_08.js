@@ -4,6 +4,8 @@ var category_m_kit_model_07_internal_08 =
     [ "flattenArray:encodeForJSON:encodingCache:", "category_m_kit_model_07_internal_08.html#a5239c03ed07b220ba056fb9c6e9edc0f", null ],
     [ "getDateFromId:", "category_m_kit_model_07_internal_08.html#aa768146b1b6e6b27ee39a86268db577a", null ],
     [ "getObjectFromDictionary:objectArray:", "category_m_kit_model_07_internal_08.html#a234035c942471782fa2f9d9efc0fb393", null ],
+    [ "registerForNotifications", "category_m_kit_model_07_internal_08.html#a169e65ec6eb57ac639a9859208c857e1", null ],
     [ "serializeForJSON:encodingCache:", "category_m_kit_model_07_internal_08.html#a699c103da0c0c6173ea0d4fc54b1b070", null ],
+    [ "setup", "category_m_kit_model_07_internal_08.html#a512c73a541a82454549a54e0c6e2285c", null ],
     [ "unflattenArray:decodeFromJSON:arrayClass:objectArray:decodingCache:", "category_m_kit_model_07_internal_08.html#adae1180df5b1096f42f67f9ce540c008", null ]
 ];

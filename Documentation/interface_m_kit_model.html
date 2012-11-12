@@ -126,10 +126,10 @@ Inheritance diagram for MKitModel:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:a88a798be77b03b0a936dedee30243cc0"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_model.html#a88a798be77b03b0a936dedee30243cc0">addToContext</a></td></tr>
-<tr class="separator:a88a798be77b03b0a936dedee30243cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a862b29ee98c260b5529b9fa0c776ac4e"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_model.html#a862b29ee98c260b5529b9fa0c776ac4e">removeFromContext</a></td></tr>
-<tr class="separator:a862b29ee98c260b5529b9fa0c776ac4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c80c83433a5655ee4764117eb585790"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_model.html#a5c80c83433a5655ee4764117eb585790">addToGraph</a></td></tr>
+<tr class="separator:a5c80c83433a5655ee4764117eb585790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7d563f20dd6010849234e3b31ce165"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_model.html#a2a7d563f20dd6010849234e3b31ce165">removeFromGraph</a></td></tr>
+<tr class="separator:a2a7d563f20dd6010849234e3b31ce165"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e6611393dbacace3bc9631c0ba18843"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_model.html#a9e6611393dbacace3bc9631c0ba18843">beginChanges</a></td></tr>
 <tr class="separator:a9e6611393dbacace3bc9631c0ba18843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40bff0a24e2da39d0478454ba9a8c107"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_model.html#a40bff0a24e2da39d0478454ba9a8c107">endChanges</a></td></tr>
@@ -188,27 +188,27 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base model.</p>
 <p>This model will save/load its properties automatically. By convention any property prefixed with 'model' is not persisted.</p>
-<p>All models are stored within a context which has one important side effect you must be aware of: they will never be released or autoreleased unless you explicitly remove them by calling their remove method.</p>
-<p>The context is sort of like a global storage for models so that your application isn't littered with different instances of the same object.</p>
-<p>For very large heirarchies, you might want to skip the context. In that case implement the <a class="el" href="protocol_m_kit_no_context-p.html">MKitNoContext</a> protocol to mark your model as a non participant. </p>
+<p>All models are stored within a graph which has one important side effect you must be aware of: they will never be released or autoreleased unless you explicitly remove them by calling their remove method.</p>
+<p>The graph is sort of like a global storage for models so that your application isn't littered with different instances of the same object.</p>
+<p>For very large heirarchies, you might want to skip the graph. In that case implement the <a class="el" href="protocol_m_kit_no_graph-p.html">MKitNoGraph</a> protocol to mark your model as a non participant. </p>
 
 <p>Definition at line <a class="el" href="_m_kit_model_8h_source.html#l00066">66</a> of file <a class="el" href="_m_kit_model_8h_source.html">MKitModel.h</a>.</p>
 </div><h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="a88a798be77b03b0a936dedee30243cc0"></a>
+<a class="anchor" id="a5c80c83433a5655ee4764117eb585790"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) addToContext </td>
+          <td class="memname">- (void) addToGraph </td>
           <td></td>
           <td class="paramname"></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds the object to the context. This is done automatically, but for models conforming to <a class="el" href="protocol_m_kit_no_context-p.html">MKitNoContext</a> protocol, you'll have to call this if you want to add them. </p>
+<p>Adds the object to the graph. This is done automatically, but for models conforming to <a class="el" href="protocol_m_kit_no_graph-p.html">MKitNoGraph</a> protocol, you'll have to call this if you want to add them. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00342">342</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00371">371</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -226,7 +226,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Suspend notifications when properties are changed. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00354">354</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00383">383</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -251,7 +251,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00742">742</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00771">771</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -276,7 +276,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00774">774</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00803">803</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -294,7 +294,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Resumes notifications when properties are changed. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00360">360</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00389">389</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -313,7 +313,7 @@ Properties</h2></td></tr>
 <p>Creates an empty instance of the class </p>
 <dl class="section return"><dt>Returns</dt><dd>A new empty instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00185">185</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00201">201</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -330,7 +330,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates a new instance with the contents of a JSON string. If the JSON contains an objectId, the context is checked first and if an object of the same class and id exists, refreshes that object's data with the contents of the JSON. </p>
+<p>Creates a new instance with the contents of a JSON string. If the JSON contains an objectId, the graph is checked first and if an object of the same class and id exists, refreshes that object's data with the contents of the JSON. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">JSONString</td><td>The JSONString to build the model from </td></tr>
@@ -339,7 +339,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00254">254</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00270">270</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -356,7 +356,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates an instance with the given model id, but first checks the context for an existing model of the same class and matching id, returning that if it exists. </p>
+<p>Creates an instance with the given model id, but first checks the graph for an existing model of the same class and matching id, returning that if it exists. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">modId</td><td>The model id </td></tr>
@@ -365,7 +365,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new instance if model id is not found, otherwise matching instance with model id </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00203">203</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00219">219</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -382,7 +382,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates an instance with the given object id, but first checks the context for an existing model of the same class and matching id, returning that if it exists. </p>
+<p>Creates an instance with the given object id, but first checks the graph for an existing model of the same class and matching id, returning that if it exists. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">objId</td><td>The object id </td></tr>
@@ -391,7 +391,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new instance if object id is not found, otherwise matching instance with object id </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00190">190</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00206">206</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -408,7 +408,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates a new instance with the contents of a dictionary. If the dictionary contains an objectId, the context is checked first and if an object of the same class and id exists, refreshes that object's data with the dictionary. </p>
+<p>Creates a new instance with the contents of a dictionary. If the dictionary contains an objectId, the graph is checked first and if an object of the same class and id exists, refreshes that object's data with the dictionary. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>The data to build the model from </td></tr>
@@ -417,7 +417,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00249">249</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00265">265</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -444,7 +444,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates a new instance with the contents of a dictionary. If the dictionary contains an objectId, the context is checked first and if an object of the same class and id exists, refreshes that object's data with the dictionary. </p>
+<p>Creates a new instance with the contents of a dictionary. If the dictionary contains an objectId, the graph is checked first and if an object of the same class and id exists, refreshes that object's data with the dictionary. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>The data to build the model from </td></tr>
@@ -454,7 +454,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00215">215</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00231">231</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -473,7 +473,7 @@ Properties</h2></td></tr>
 <p>Returns the name of the model, typically to specify a different name for a backend service, eg PREFIXPost becomes Post. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the model. If not overridden, returns the name of the class. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00093">93</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00104">104</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -513,7 +513,7 @@ Properties</h2></td></tr>
 <p>Retrieves all of the model's properties </p>
 <dl class="section return"><dt>Returns</dt><dd>All of the model's properties </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00715">715</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00744">744</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -534,7 +534,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="interface_m_kit_service_model.html#a10093c1e76818cb7c95e0f9d2ca6c2dd">MKitServiceModel</a>.</p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00263">263</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00280">280</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -552,25 +552,25 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Registers this class in the model registry. If you implement a custom model name, you need to call this from the load method of your class. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00098">98</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00109">109</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a862b29ee98c260b5529b9fa0c776ac4e"></a>
+<a class="anchor" id="a2a7d563f20dd6010849234e3b31ce165"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) removeFromContext </td>
+          <td class="memname">- (void) removeFromGraph </td>
           <td></td>
           <td class="paramname"></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Removes an object from a context. If you call delete, you do not need to call this. </p>
+<p>Removes an object from a graph. If you call delete, you do not need to call this. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00347">347</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00376">376</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -588,7 +588,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Resets tracking of changed properties. </p>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00376">376</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00405">405</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -607,7 +607,7 @@ Properties</h2></td></tr>
 <p>Flattens the model into a dictionary or array. If the serialized object contains model properties or an array of models, this method returns an array containing all of the objects. The first object of the array is the model being serialized. Note this dictionary cannot be stored to plist due to use of NSNull. </p>
 <dl class="section return"><dt>Returns</dt><dd>A dictionary containing information about the model plus its properties and their values </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00732">732</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00761">761</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -626,7 +626,7 @@ Properties</h2></td></tr>
 <p>Serializes the model to JSON </p>
 <dl class="section return"><dt>Returns</dt><dd>The serialized model as a JSON string. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00760">760</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_model_8m_source.html#l00789">789</a> of file <a class="el" href="_m_kit_model_8m_source.html">MKitModel.m</a>.</p>
 
 </div>
 </div>
@@ -779,7 +779,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_m_kit_model.html">MKitModel</a></li>
-    <li class="footer">Generated on Sat Nov 10 2012 15:18:35 for ModelKit by
+    <li class="footer">Generated on Mon Nov 12 2012 16:30:10 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

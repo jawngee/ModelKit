@@ -1,6 +1,6 @@
 var interface_m_kit_model =
 [
-    [ "addToContext", "interface_m_kit_model.html#a88a798be77b03b0a936dedee30243cc0", null ],
+    [ "addToGraph", "interface_m_kit_model.html#a5c80c83433a5655ee4764117eb585790", null ],
     [ "beginChanges", "interface_m_kit_model.html#a9e6611393dbacace3bc9631c0ba18843", null ],
     [ "deserialize:", "interface_m_kit_model.html#ab7168486a373d33276a60e0909e6ed0f", null ],
     [ "deserializeFromJSON:", "interface_m_kit_model.html#a4d2aad21edda6f1f42fd741972a4b443", null ],
@@ -16,7 +16,7 @@ var interface_m_kit_model =
     [ "properties", "interface_m_kit_model.html#a5b4368f5a007821a686d88ac7ba4247e", null ],
     [ "query", "interface_m_kit_model.html#a1bd6ad3751da96df6adc783c7aec78f5", null ],
     [ "register", "interface_m_kit_model.html#ac77a9c0b41b0dcdb6be77f164f9fe7cd", null ],
-    [ "removeFromContext", "interface_m_kit_model.html#a862b29ee98c260b5529b9fa0c776ac4e", null ],
+    [ "removeFromGraph", "interface_m_kit_model.html#a2a7d563f20dd6010849234e3b31ce165", null ],
     [ "resetChanges", "interface_m_kit_model.html#afd26486d5372b89c0b5f34b7b56dcdb2", null ],
     [ "serialize", "interface_m_kit_model.html#ac43d2d369cd4fd80faafefdca2c51d4a", null ],
     [ "serializeToJSON", "interface_m_kit_model.html#aa4c536580fffccfa7f8fe65119886b8f", null ],

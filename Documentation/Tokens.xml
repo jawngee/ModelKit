@@ -179,24 +179,24 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>addToContext</Name>
+      <Name>addToGraph</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>MKitModel</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_model.html</Path>
-    <Anchor>a88a798be77b03b0a936dedee30243cc0</Anchor>
+    <Anchor>a5c80c83433a5655ee4764117eb585790</Anchor>
     <DeclaredIn>MKitModel.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>removeFromContext</Name>
+      <Name>removeFromGraph</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>MKitModel</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_model.html</Path>
-    <Anchor>a862b29ee98c260b5529b9fa0c776ac4e</Anchor>
+    <Anchor>a2a7d563f20dd6010849234e3b31ce165</Anchor>
     <DeclaredIn>MKitModel.h</DeclaredIn>
   </Token>
   <Token>
@@ -468,6 +468,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>setup</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>func</Type>
+      <Scope>MKitModel(Internal)</Scope>
+    </TokenIdentifier>
+    <Path>category_m_kit_model_07_internal_08.html</Path>
+    <Anchor>a512c73a541a82454549a54e0c6e2285c</Anchor>
+    <DeclaredIn>MKitModel.m</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>registerForNotifications</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>func</Type>
+      <Scope>MKitModel(Internal)</Scope>
+    </TokenIdentifier>
+    <Path>category_m_kit_model_07_internal_08.html</Path>
+    <Anchor>a169e65ec6eb57ac639a9859208c857e1</Anchor>
+    <DeclaredIn>MKitModel.m</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>getDateFromId:</Name>
       <APILanguage>occ</APILanguage>
       <Type>func</Type>
@@ -555,260 +577,260 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MKitModelContext</Name>
+      <Name>MKitModelGraph</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>saveToFile:error:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>a8edfa66ee2aa5977e1cab3a26f50258c</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a0fd9fbf3102f971c6d95caf50f8f3664</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>loadFromFile:error:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>abea195103040c17fc226f71977a22e77</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>ac13b9cc0d14afde79084bc8c3b659dac</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>activate</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>acf8a35788c38b0ff4ce9eac950bb8b2a</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a9866fa3d85a5801c6f666756e144d3f3</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>deactivate</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>a0e7935c8cb3e0eb1052b685c06dc7c24</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a0ca099efd3b65657c3cd386fd93b4a7d</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>clear</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>a79c8f824aa0908d26c66c73e76a03e60</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a7df45ecfc0c4f85872149eb4b073714b</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>addToContext:</Name>
+      <Name>addToGraph:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>ad69468f69eaaae5e9c930f74c6bfb52f</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a5877e932a6724977157d58ea9bd34534</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>removeFromContext:</Name>
+      <Name>removeFromGraph:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>a49e1ea1d3d33c8b81aff4f53987f495a</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a6cfff932dac4c5a0649b52f8d4443804</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>modelForObjectId:andClass:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>af5b1376612af5184e282d4eea3c716a0</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>ad2d92544d96b73f3e7c74abf6885ec69</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>modelForModelId:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>a01360c745ace1dbd848fd0a2ebeaafdd</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a018455c45cd951c55ee65d0d0203e629</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>queryWithPredicate:forClass:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>aafe9f421f5454dacd3e73486a57738f7</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a53b9ed3806e4f5d0ee827be440ee57de</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>current</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>abf89ab8b8f857336c88e1be4d175fc80</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a8e388708ecf957d82020a9580678ad07</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>pop</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>ad25838cf2b2302cb928c9e33ca6f5212</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a6437a192eb69ce91608690ab375908d4</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>push</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>a699fc665089f1fe363547ef750b7aaba</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>abeda1f7020cf3cfce1ac52195192f1ff</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>clearAllContexts</Name>
+      <Name>clearAllGraphs</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>a4a120ab2ba4d148a049bcea19f3674cf</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>ae8bac1da6699b7cc6c938f821f9bf62a</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>removeFromAnyContext:</Name>
+      <Name>removeFromAnyGraph:</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>acbd6d0cba647d3845a128ded9d45eaee</Anchor>
-    <DeclaredIn>MKitModelContext.h</DeclaredIn>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a4acbb1a21fa758723ce8bd2e0266fff7</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>modelStack</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>abd7bb8fc8f11120b45c30a3aeac2a423</Anchor>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a644dedd0b1c8ff576391ae4ab2b415e1</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>classCache</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>a9235e274b5a2e71c5427fc6b73179ac0</Anchor>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a692d07166e8d7c9cf547aee8af07c646</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextSize</Name>
+      <Name>graphSize</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>a6065bfaec841b0ee399cc9d2e56b2158</Anchor>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>a93a71d821b18577fa38bc50057250505</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextCount</Name>
+      <Name>graphCount</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
-      <Scope>MKitModelContext</Scope>
+      <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
-    <Path>interface_m_kit_model_context.html</Path>
-    <Anchor>a28c85b31944ae2c2aa8589912fc6e45c</Anchor>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>ac56097cc3a4a7bb33fc2083712f0477f</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MKitModelContext(Internal)</Name>
+      <Name>MKitModelGraph(Internal)</Name>
       <APILanguage>c</APILanguage>
       <Type>cat</Type>
-      <Scope>MKitModelContext(Internal)</Scope>
+      <Scope>MKitModelGraph(Internal)</Scope>
     </TokenIdentifier>
-    <Path>category_m_kit_model_context_07_internal_08.html</Path>
+    <Path>category_m_kit_model_graph_07_internal_08.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>modelStateChanged:</Name>
       <APILanguage>occ</APILanguage>
       <Type>func</Type>
-      <Scope>MKitModelContext(Internal)</Scope>
+      <Scope>MKitModelGraph(Internal)</Scope>
     </TokenIdentifier>
-    <Path>category_m_kit_model_context_07_internal_08.html</Path>
-    <Anchor>a2ff2d8cf3e842b7846271dcbb34c5107</Anchor>
-    <DeclaredIn>MKitModelContext.m</DeclaredIn>
+    <Path>category_m_kit_model_graph_07_internal_08.html</Path>
+    <Anchor>a06c7fd5c20153fc00f24def2bc71e432</Anchor>
+    <DeclaredIn>MKitModelGraph.m</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>modelGainedIdentifier:</Name>
       <APILanguage>occ</APILanguage>
       <Type>func</Type>
-      <Scope>MKitModelContext(Internal)</Scope>
+      <Scope>MKitModelGraph(Internal)</Scope>
     </TokenIdentifier>
-    <Path>category_m_kit_model_context_07_internal_08.html</Path>
-    <Anchor>a98daf83eeed32e83269ff28a5ecdda8a</Anchor>
-    <DeclaredIn>MKitModelContext.m</DeclaredIn>
+    <Path>category_m_kit_model_graph_07_internal_08.html</Path>
+    <Anchor>aba3c6664d651c8e5ba3d713b922b8059</Anchor>
+    <DeclaredIn>MKitModelGraph.m</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>modelIdentifierChanged:</Name>
       <APILanguage>occ</APILanguage>
       <Type>func</Type>
-      <Scope>MKitModelContext(Internal)</Scope>
+      <Scope>MKitModelGraph(Internal)</Scope>
     </TokenIdentifier>
-    <Path>category_m_kit_model_context_07_internal_08.html</Path>
-    <Anchor>a5b42385260ac5f8fe037b89796a7e87c</Anchor>
-    <DeclaredIn>MKitModelContext.m</DeclaredIn>
+    <Path>category_m_kit_model_graph_07_internal_08.html</Path>
+    <Anchor>af0de121bbdf19984d1ae2239df907ec5</Anchor>
+    <DeclaredIn>MKitModelGraph.m</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1313,12 +1335,12 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MKitNoContext</Name>
+      <Name>MKitNoGraph</Name>
       <APILanguage>c</APILanguage>
       <Type>intf</Type>
-      <Scope>MKitNoContext</Scope>
+      <Scope>MKitNoGraph</Scope>
     </TokenIdentifier>
-    <Path>protocol_m_kit_no_context-p.html</Path>
+    <Path>protocol_m_kit_no_graph-p.html</Path>
     <DeclaredIn>MKitModel.h</DeclaredIn>
   </Token>
   <Token>
@@ -1611,13 +1633,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextQuery</Name>
+      <Name>graphQuery</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
       <Scope>MKitServiceModel</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_model.html</Path>
-    <Anchor>a60cb3b87246ba3229e058b80b6ef0113</Anchor>
+    <Anchor>a158d47aebdd6f1809a3e3ff56d3535cd</Anchor>
     <DeclaredIn>MKitServiceModel.h</DeclaredIn>
   </Token>
   <Token>
@@ -2959,24 +2981,24 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>addToContext</Name>
+      <Name>addToGraph</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>MKitModel</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_model.html</Path>
-    <Anchor>a88a798be77b03b0a936dedee30243cc0</Anchor>
+    <Anchor>a5c80c83433a5655ee4764117eb585790</Anchor>
     <DeclaredIn>MKitModel.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>removeFromContext</Name>
+      <Name>removeFromGraph</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>MKitModel</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_model.html</Path>
-    <Anchor>a862b29ee98c260b5529b9fa0c776ac4e</Anchor>
+    <Anchor>a2a7d563f20dd6010849234e3b31ce165</Anchor>
     <DeclaredIn>MKitModel.h</DeclaredIn>
   </Token>
   <Token>
@@ -3091,13 +3113,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextQuery</Name>
+      <Name>graphQuery</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
       <Scope>MKitServiceModel</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_model.html</Path>
-    <Anchor>a60cb3b87246ba3229e058b80b6ef0113</Anchor>
+    <Anchor>a158d47aebdd6f1809a3e3ff56d3535cd</Anchor>
     <DeclaredIn>MKitServiceModel.h</DeclaredIn>
   </Token>
   <Token>

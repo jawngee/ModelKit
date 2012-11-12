@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>ModelKit: Member List</title>
+<title>ModelKit: MKitModelGraph(Internal) Category Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('category_m_kit_model_context_07_08.html','');});
+$(document).ready(function(){initNavTree('category_m_kit_model_graph_07_internal_08.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -101,22 +101,107 @@ $(document).ready(function(){initNavTree('category_m_kit_model_context_07_08.htm
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Instance Methods</a> &#124;
+<a href="category_m_kit_model_graph_07_internal_08-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MKitModelContext() Member List</div>  </div>
+<div class="title">MKitModelGraph(Internal) Category Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Instance Methods</h2></td></tr>
+<tr class="memitem:a06c7fd5c20153fc00f24def2bc71e432"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_m_kit_model_graph_07_internal_08.html#a06c7fd5c20153fc00f24def2bc71e432">modelStateChanged:</a></td></tr>
+<tr class="separator:a06c7fd5c20153fc00f24def2bc71e432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3c6664d651c8e5ba3d713b922b8059"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_m_kit_model_graph_07_internal_08.html#aba3c6664d651c8e5ba3d713b922b8059">modelGainedIdentifier:</a></td></tr>
+<tr class="separator:aba3c6664d651c8e5ba3d713b922b8059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0de121bbdf19984d1ae2239df907ec5"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_m_kit_model_graph_07_internal_08.html#af0de121bbdf19984d1ae2239df907ec5">modelIdentifierChanged:</a></td></tr>
+<tr class="separator:af0de121bbdf19984d1ae2239df907ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Private methods </p>
 
-<p>This is the complete list of members for <a class="el" href="category_m_kit_model_context_07_08.html">MKitModelContext()</a>, including all inherited members.</p>
-<table class="directory">
-  <tr bgcolor="#f0f0f0"class="even"><td class="entry">-&#160;</td><td class="entry"><b>modelGainedIdentifier:</b> (defined in <a class="el" href="category_m_kit_model_context_07_08.html">MKitModelContext()</a>)</td><td class="entry"><a class="el" href="category_m_kit_model_context_07_08.html">MKitModelContext()</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry">-&#160;</td><td class="entry"><b>modelIdentifierChanged:</b> (defined in <a class="el" href="category_m_kit_model_context_07_08.html">MKitModelContext()</a>)</td><td class="entry"><a class="el" href="category_m_kit_model_context_07_08.html">MKitModelContext()</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"class="even"><td class="entry">-&#160;</td><td class="entry"><b>modelStateChanged:</b> (defined in <a class="el" href="category_m_kit_model_context_07_08.html">MKitModelContext()</a>)</td><td class="entry"><a class="el" href="category_m_kit_model_context_07_08.html">MKitModelContext()</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<p>Definition at line <a class="el" href="_m_kit_model_graph_8m_source.html#l00016">16</a> of file <a class="el" href="_m_kit_model_graph_8m_source.html">MKitModelGraph.m</a>.</p>
+</div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="aba3c6664d651c8e5ba3d713b922b8059"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) modelGainedIdentifier: </td>
+          <td></td>
+          <td class="paramtype">(NSNotification *)&#160;</td>
+          <td class="paramname"><em>notification</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Notification that the model has gained an objectId </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notification</td><td>The notification </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af0de121bbdf19984d1ae2239df907ec5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) modelIdentifierChanged: </td>
+          <td></td>
+          <td class="paramtype">(NSNotification *)&#160;</td>
+          <td class="paramname"><em>notification</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Notification that the model's ID has changed </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notification</td><td>The notification </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a06c7fd5c20153fc00f24def2bc71e432"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) modelStateChanged: </td>
+          <td></td>
+          <td class="paramtype">(NSNotification *)&#160;</td>
+          <td class="paramname"><em>notification</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Notification that the model state has changed </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notification</td><td>The notification </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this category was generated from the following file:<ul>
+<li>Source/Model/<a class="el" href="_m_kit_model_graph_8m_source.html">MKitModelGraph.m</a></li>
+</ul>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Nov 1 2012 16:18:09 for ModelKit by
+    <li class="navelem"><a class="el" href="category_m_kit_model_graph_07_internal_08.html">MKitModelGraph(Internal)</a></li>
+    <li class="footer">Generated on Mon Nov 12 2012 16:30:10 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

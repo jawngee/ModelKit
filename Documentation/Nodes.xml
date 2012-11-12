@@ -101,9 +101,9 @@
             <Path>interface_m_kit_model.html</Path>
             <Subnodes>
              <Node>
-              <Name>addToContext</Name>
+              <Name>addToGraph</Name>
               <Path>interface_m_kit_model.html</Path>
-              <Anchor>a88a798be77b03b0a936dedee30243cc0</Anchor>
+              <Anchor>a5c80c83433a5655ee4764117eb585790</Anchor>
              </Node>
              <Node>
               <Name>beginChanges</Name>
@@ -181,9 +181,9 @@
               <Anchor>ac77a9c0b41b0dcdb6be77f164f9fe7cd</Anchor>
              </Node>
              <Node>
-              <Name>removeFromContext</Name>
+              <Name>removeFromGraph</Name>
               <Path>interface_m_kit_model.html</Path>
-              <Anchor>a862b29ee98c260b5529b9fa0c776ac4e</Anchor>
+              <Anchor>a2a7d563f20dd6010849234e3b31ce165</Anchor>
              </Node>
              <Node>
               <Name>resetChanges</Name>
@@ -257,9 +257,19 @@
               <Anchor>a234035c942471782fa2f9d9efc0fb393</Anchor>
              </Node>
              <Node>
+              <Name>registerForNotifications</Name>
+              <Path>category_m_kit_model_07_internal_08.html</Path>
+              <Anchor>a169e65ec6eb57ac639a9859208c857e1</Anchor>
+             </Node>
+             <Node>
               <Name>serializeForJSON:encodingCache:</Name>
               <Path>category_m_kit_model_07_internal_08.html</Path>
               <Anchor>a699c103da0c0c6173ea0d4fc54b1b070</Anchor>
+             </Node>
+             <Node>
+              <Name>setup</Name>
+              <Path>category_m_kit_model_07_internal_08.html</Path>
+              <Anchor>a512c73a541a82454549a54e0c6e2285c</Anchor>
              </Node>
              <Node>
               <Name>unflattenArray:decodeFromJSON:arrayClass:objectArray:decodingCache:</Name>
@@ -280,124 +290,124 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>MKitModelContext</Name>
-            <Path>interface_m_kit_model_context.html</Path>
+            <Name>MKitModelGraph</Name>
+            <Path>interface_m_kit_model_graph.html</Path>
             <Subnodes>
              <Node>
               <Name>activate</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>acf8a35788c38b0ff4ce9eac950bb8b2a</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a9866fa3d85a5801c6f666756e144d3f3</Anchor>
              </Node>
              <Node>
-              <Name>addToContext:</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>ad69468f69eaaae5e9c930f74c6bfb52f</Anchor>
+              <Name>addToGraph:</Name>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a5877e932a6724977157d58ea9bd34534</Anchor>
              </Node>
              <Node>
               <Name>clear</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>a79c8f824aa0908d26c66c73e76a03e60</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a7df45ecfc0c4f85872149eb4b073714b</Anchor>
              </Node>
              <Node>
-              <Name>clearAllContexts</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>a4a120ab2ba4d148a049bcea19f3674cf</Anchor>
+              <Name>clearAllGraphs</Name>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>ae8bac1da6699b7cc6c938f821f9bf62a</Anchor>
              </Node>
              <Node>
               <Name>current</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>abf89ab8b8f857336c88e1be4d175fc80</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a8e388708ecf957d82020a9580678ad07</Anchor>
              </Node>
              <Node>
               <Name>deactivate</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>a0e7935c8cb3e0eb1052b685c06dc7c24</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a0ca099efd3b65657c3cd386fd93b4a7d</Anchor>
              </Node>
              <Node>
               <Name>loadFromFile:error:</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>abea195103040c17fc226f71977a22e77</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>ac13b9cc0d14afde79084bc8c3b659dac</Anchor>
              </Node>
              <Node>
               <Name>modelForModelId:</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>a01360c745ace1dbd848fd0a2ebeaafdd</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a018455c45cd951c55ee65d0d0203e629</Anchor>
              </Node>
              <Node>
               <Name>modelForObjectId:andClass:</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>af5b1376612af5184e282d4eea3c716a0</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>ad2d92544d96b73f3e7c74abf6885ec69</Anchor>
              </Node>
              <Node>
               <Name>pop</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>ad25838cf2b2302cb928c9e33ca6f5212</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a6437a192eb69ce91608690ab375908d4</Anchor>
              </Node>
              <Node>
               <Name>push</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>a699fc665089f1fe363547ef750b7aaba</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>abeda1f7020cf3cfce1ac52195192f1ff</Anchor>
              </Node>
              <Node>
               <Name>queryWithPredicate:forClass:</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>aafe9f421f5454dacd3e73486a57738f7</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a53b9ed3806e4f5d0ee827be440ee57de</Anchor>
              </Node>
              <Node>
-              <Name>removeFromAnyContext:</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>acbd6d0cba647d3845a128ded9d45eaee</Anchor>
+              <Name>removeFromAnyGraph:</Name>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a4acbb1a21fa758723ce8bd2e0266fff7</Anchor>
              </Node>
              <Node>
-              <Name>removeFromContext:</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>a49e1ea1d3d33c8b81aff4f53987f495a</Anchor>
+              <Name>removeFromGraph:</Name>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a6cfff932dac4c5a0649b52f8d4443804</Anchor>
              </Node>
              <Node>
               <Name>saveToFile:error:</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>a8edfa66ee2aa5977e1cab3a26f50258c</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a0fd9fbf3102f971c6d95caf50f8f3664</Anchor>
              </Node>
              <Node>
               <Name>classCache</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>a9235e274b5a2e71c5427fc6b73179ac0</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a692d07166e8d7c9cf547aee8af07c646</Anchor>
              </Node>
              <Node>
               <Name>modelStack</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>abd7bb8fc8f11120b45c30a3aeac2a423</Anchor>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a644dedd0b1c8ff576391ae4ab2b415e1</Anchor>
              </Node>
              <Node>
-              <Name>contextCount</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>a28c85b31944ae2c2aa8589912fc6e45c</Anchor>
+              <Name>graphCount</Name>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>ac56097cc3a4a7bb33fc2083712f0477f</Anchor>
              </Node>
              <Node>
-              <Name>contextSize</Name>
-              <Path>interface_m_kit_model_context.html</Path>
-              <Anchor>a6065bfaec841b0ee399cc9d2e56b2158</Anchor>
+              <Name>graphSize</Name>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>a93a71d821b18577fa38bc50057250505</Anchor>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>MKitModelContext(Internal)</Name>
-            <Path>category_m_kit_model_context_07_internal_08.html</Path>
+            <Name>MKitModelGraph(Internal)</Name>
+            <Path>category_m_kit_model_graph_07_internal_08.html</Path>
             <Subnodes>
              <Node>
               <Name>modelGainedIdentifier:</Name>
-              <Path>category_m_kit_model_context_07_internal_08.html</Path>
-              <Anchor>a98daf83eeed32e83269ff28a5ecdda8a</Anchor>
+              <Path>category_m_kit_model_graph_07_internal_08.html</Path>
+              <Anchor>aba3c6664d651c8e5ba3d713b922b8059</Anchor>
              </Node>
              <Node>
               <Name>modelIdentifierChanged:</Name>
-              <Path>category_m_kit_model_context_07_internal_08.html</Path>
-              <Anchor>a5b42385260ac5f8fe037b89796a7e87c</Anchor>
+              <Path>category_m_kit_model_graph_07_internal_08.html</Path>
+              <Anchor>af0de121bbdf19984d1ae2239df907ec5</Anchor>
              </Node>
              <Node>
               <Name>modelStateChanged:</Name>
-              <Path>category_m_kit_model_context_07_internal_08.html</Path>
-              <Anchor>a2ff2d8cf3e842b7846271dcbb34c5107</Anchor>
+              <Path>category_m_kit_model_graph_07_internal_08.html</Path>
+              <Anchor>a06c7fd5c20153fc00f24def2bc71e432</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -563,8 +573,8 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>&lt;MKitNoContext&gt;</Name>
-            <Path>protocol_m_kit_no_context-p.html</Path>
+            <Name>&lt;MKitNoGraph&gt;</Name>
+            <Path>protocol_m_kit_no_graph-p.html</Path>
            </Node>
            <Node>
             <Name>MKitParseFile</Name>
@@ -1013,11 +1023,6 @@
             <Path>interface_m_kit_service_model.html</Path>
             <Subnodes>
              <Node>
-              <Name>contextQuery</Name>
-              <Path>interface_m_kit_service_model.html</Path>
-              <Anchor>a60cb3b87246ba3229e058b80b6ef0113</Anchor>
-             </Node>
-             <Node>
               <Name>delete:</Name>
               <Path>interface_m_kit_service_model.html</Path>
               <Anchor>a261e0e80c5caa0ad74d1de78bc7f94d6</Anchor>
@@ -1036,6 +1041,11 @@
               <Name>fetchInBackground:</Name>
               <Path>interface_m_kit_service_model.html</Path>
               <Anchor>a2aaf3b79caeba97cf746c18c5c3b7335</Anchor>
+             </Node>
+             <Node>
+              <Name>graphQuery</Name>
+              <Path>interface_m_kit_service_model.html</Path>
+              <Anchor>a158d47aebdd6f1809a3e3ff56d3535cd</Anchor>
              </Node>
              <Node>
               <Name>query</Name>
@@ -1206,8 +1216,8 @@
             <Path>category_m_kit_model_07_parse_08.html</Path>
            </Node>
            <Node>
-            <Name>MKitModelContext(Internal)</Name>
-            <Path>category_m_kit_model_context_07_internal_08.html</Path>
+            <Name>MKitModelGraph(Internal)</Name>
+            <Path>category_m_kit_model_graph_07_internal_08.html</Path>
            </Node>
            <Node>
             <Name>MKitModelPredicateQuery(Internal)</Name>
@@ -1218,8 +1228,8 @@
             <Path>category_m_kit_mutable_model_array_07_parse_08.html</Path>
            </Node>
            <Node>
-            <Name>&lt;MKitNoContext&gt;</Name>
-            <Path>protocol_m_kit_no_context-p.html</Path>
+            <Name>&lt;MKitNoGraph&gt;</Name>
+            <Path>protocol_m_kit_no_graph-p.html</Path>
            </Node>
            <Node>
             <Name>MKitParseModelQuery(Internal)</Name>
@@ -1320,8 +1330,8 @@
               <Path>interface_m_kit_model.html</Path>
              </Node>
              <Node>
-              <Name>MKitModelContext</Name>
-              <Path>interface_m_kit_model_context.html</Path>
+              <Name>MKitModelGraph</Name>
+              <Path>interface_m_kit_model_graph.html</Path>
              </Node>
              <Node>
               <Name>MKitModelQuery</Name>
@@ -1544,12 +1554,12 @@
                 <Path>_m_kit_model_8m_source.html</Path>
                </Node>
                <Node>
-                <Name>MKitModelContext.h</Name>
-                <Path>_m_kit_model_context_8h_source.html</Path>
+                <Name>MKitModelGraph.h</Name>
+                <Path>_m_kit_model_graph_8h_source.html</Path>
                </Node>
                <Node>
-                <Name>MKitModelContext.m</Name>
-                <Path>_m_kit_model_context_8m_source.html</Path>
+                <Name>MKitModelGraph.m</Name>
+                <Path>_m_kit_model_graph_8m_source.html</Path>
                </Node>
                <Node>
                 <Name>MKitModelPredicateQuery.h</Name>
