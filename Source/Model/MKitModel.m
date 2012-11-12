@@ -32,6 +32,17 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 @interface MKitModel(Internal)
 
 /**
+ * Basic setup
+ */
+-(void)setup;
+
+
+/**
+ * Registers for property change notifications
+ */
+-(void)registerForNotifications;
+
+/**
  * Returns an NSDate from the val, which may be a string or dictionary.
  * @param val The value to convert to an NSDate
  * @return The converted date
@@ -106,27 +117,25 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 #pragma mark Init/Dealloc
 
+-(void)setup
+{
+    _changing=NO;
+    _modelState=ModelStateNew;
+    _createdAt=[[NSDate date] retain];
+    _updatedAt=[[NSDate date] retain];
+    _modelId=[[NSString UUID] retain];
+    _modelChanges=[[NSMutableDictionary dictionary] retain];
+    
+    if (![[self class] conformsToProtocol:@protocol(MKitNoContext)])
+        [self addToContext];
+}
+
 -(id)init
 {
     if ((self=[super init]))
     {
-        _changing=NO;
-        _modelState=ModelStateNew;
-        _createdAt=[[NSDate date] retain];
-        _updatedAt=[[NSDate date] retain];
-        _modelId=[[NSString UUID] retain];
-        _modelChanges=[[NSMutableDictionary dictionary] retain];
-        
-        if (![[self class] conformsToProtocol:@protocol(MKitNoContext)])
-            [self addToContext];
-
-        // We need observe our property changes to send out notifications
-        MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
-        [self addObserver:self forKeyPath:@"objectId" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
-        [self addObserver:self forKeyPath:@"updatedAt" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
-        [self addObserver:self forKeyPath:@"modelId" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
-        for(MKitReflectedProperty *p in [ref.properties allValues])
-            [self addObserver:self forKeyPath:p.name options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+        [self setup];
+        [self registerForNotifications];
     }
 
     return self;
@@ -134,8 +143,12 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
-    if ((self=[self init]))
+    if ((self=[super init]))
     {
+        [self setup];
+        
+        [self beginChanges];
+        
         id val=nil;
         
         self.updatedAt=[aDecoder decodeObjectForKey:@"updatedAt"];
@@ -155,6 +168,9 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
             
             [self setValue:val forKey:p.name];
         }
+    
+        [self endChanges];
+        [self registerForNotifications];
     }
     
     return self;
@@ -258,6 +274,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     return [self instanceWithSerializedData:jsonData fromJSON:YES];
 }
 
+
 #pragma mark - Query
 
 +(MKitModelQuery *)query
@@ -310,6 +327,18 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 }
 
 #pragma mark - Property observation
+
+-(void)registerForNotifications
+{
+    // We need observe our property changes to send out notifications
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+    [self addObserver:self forKeyPath:@"objectId" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+    [self addObserver:self forKeyPath:@"updatedAt" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+    [self addObserver:self forKeyPath:@"modelId" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+    for(MKitReflectedProperty *p in [ref.properties allValues])
+        [self addObserver:self forKeyPath:p.name options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
+}
+
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
