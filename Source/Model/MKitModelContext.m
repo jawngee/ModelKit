@@ -285,7 +285,7 @@ static NSMutableArray *contextStack=nil;
         return NO;
     }
     
-    NSData *data=[NSData dataWithContentsOfFile:file];
+    NSData *data=[NSData dataWithContentsOfFile:file options:NSDataReadingMappedAlways error:nil];
     NSKeyedUnarchiver *unarchiver=[[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
     NSArray *array=[unarchiver decodeObject];
     if (array)
