@@ -80,6 +80,8 @@ extern NSString *const MKitModelPropertyChangedNotification;
 @property (copy, nonatomic) NSDate *createdAt;          /**< Date created */
 @property (copy, nonatomic) NSDate *updatedAt;          /**< Date updated */
 
+#pragma mark - Initialization
+
 /**
  * Creates an empty instance of the class
  * @return A new empty instance
@@ -132,6 +134,8 @@ extern NSString *const MKitModelPropertyChangedNotification;
  */
 +(id)instanceWithJSON:(NSString *)JSONString;
 
+#pragma mark - Model registration
+
 /**
  * Returns the name of the model, typically to specify a different name for
  * a backend service, eg PREFIXPost becomes Post.
@@ -146,11 +150,15 @@ extern NSString *const MKitModelPropertyChangedNotification;
  */
 +(void)register;
 
+#pragma mark - Query
+
 /**
  * Returns a query object for the model.
  * @return The query object
  */
 +(MKitModelQuery *)query;
+
+#pragma mark - Graph Related
 
 /**
  * Adds the object to the graph.  This is done automatically, but for models
@@ -164,6 +172,8 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * call this.
  */
 -(void)removeFromGraph;
+
+#pragma mark - Change notification
 
 /**
  * Suspend notifications when properties are changed.
@@ -179,6 +189,8 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * Resets tracking of changed properties.
  */
 -(void)resetChanges;
+
+#pragma mark - Serialization/De-Serialization
 
 /**
  * Retrieves all of the model's properties
