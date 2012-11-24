@@ -29,6 +29,8 @@
 
 #define PARSE_BASE_URL @"https://api.parse.com/1/"
 
+NSString * const MKitParseServiceName=@"Parse";
+
 /**
  * Private methods
  */

@@ -8,6 +8,7 @@
 
 #import "MKitParseFile.h"
 #import "MKitServiceManager.h"
+#import "MKitParseServiceManager.h"
 
 @implementation MKitParseFile
 
@@ -16,7 +17,7 @@ static MKitServiceManager *parseService=nil;
 +(MKitServiceManager *)service
 {
     if (parseService==nil)
-        parseService=[MKitServiceManager managerForService:@"Parse"];
+        parseService=[MKitServiceManager managerForServiceNamed:MKitParseServiceName];
     
     return parseService;
 }

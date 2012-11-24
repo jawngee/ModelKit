@@ -31,6 +31,13 @@
 @property (assign, nonatomic) NSTimeInterval expirationTimeInterval;    /**< The number of seconds from now that the notification expires. */
 
 /**
+ * Returns the service associated with this notification.  You can subclass this
+ * and return a different one the default if you are, for example, using
+ * multiple Parse applications from the same app.
+ */
++(MKitServiceManager *)service;
+
+/**
  * Creates a new notification
  * @param message The message for the notification
  * @return The new notification

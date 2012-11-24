@@ -36,6 +36,13 @@
     [super dealloc];
 }
 
+#pragma mark - Service
+
++(MKitServiceManager *)service
+{
+    return nil;
+}
+
 #pragma mark - Static Initializers
 
 +(MKitServiceNotification *)notificationWithMessage:(NSString *)message

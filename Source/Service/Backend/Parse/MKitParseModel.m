@@ -7,6 +7,7 @@
 //
 
 #import "MKitParseModel.h"
+#import "MKitParseServiceManager.h"
 
 @implementation MKitParseModel
 
@@ -17,7 +18,7 @@
     
     static dispatch_once_t pred;
     dispatch_once(&pred, ^{
-        parseService=[MKitServiceManager managerForService:@"Parse"];
+        parseService=[MKitServiceManager managerForServiceNamed:MKitParseServiceName];
     });
     
     return parseService;

@@ -17,22 +17,12 @@
 
 static NSMutableDictionary *managers=nil;
 
-+(MKitServiceManager *)setupService:(NSString *)name withKeys:(NSDictionary *)keys
++(void)addService:(MKitServiceManager *)service named:(NSString *)serviceName
 {
-    MKitServiceManager *m=[managers objectForKey:name];
-    if (m)
-        [managers removeObjectForKey:m];
-    
-    Class serviceClass=NSClassFromString([NSString stringWithFormat:@"MKit%@ServiceManager",name]);
-    if (!serviceClass)
-        @throw [NSException exceptionWithName:@"Service Not Found" reason:[NSString stringWithFormat:@"Service named '%@' could not be found.",name] userInfo:nil];
-    
-    m=[[[serviceClass alloc] initWithKeys:keys] autorelease];
-    [managers setObject:m forKey:name];
-    return m;
+    [managers setObject:service forKey:serviceName];
 }
 
-+(MKitServiceManager *)managerForService:(NSString *)name;
++(MKitServiceManager *)managerForServiceNamed:(NSString *)name;
 {
     return [managers objectForKey:name];
 }

@@ -29,19 +29,18 @@
 @property (readonly) MKitServiceKeyChain *keychain;
 
 /**
- * Sets up a service for use
- * @param name The name of the service, eg "Parse"
- * @param keys Dictionary of keys needed by the service, eg Application ID, Rest Key, etc.
- * @return An instance of the service that has been setup
+ * Adds a service for use.
+ * @param service The service to add
+ * @param serviceName The name of the service.
  */
-+(MKitServiceManager *)setupService:(NSString *)name withKeys:(NSDictionary *)keys;
++(void)addService:(MKitServiceManager *)service named:(NSString *)serviceName;
 
 /**
  * Returns a service for a given name, eg "Parse"
  * @param name The name of the service, eg "Parse"
  * @return The manager instance, nil if not found
  */
-+(MKitServiceManager *)managerForService:(NSString *)name;
++(MKitServiceManager *)managerForServiceNamed:(NSString *)name;
 
 /**
  * Initializes the service with the given keys

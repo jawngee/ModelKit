@@ -15,6 +15,18 @@
 
 @implementation MKitParseNotification
 
++(MKitServiceManager *)service
+{
+    static MKitServiceManager *parseService=nil;
+    
+    static dispatch_once_t pred;
+    dispatch_once(&pred, ^{
+        parseService=[MKitServiceManager managerForServiceNamed:MKitParseServiceName];
+    });
+    
+    return parseService;
+}
+
 -(BOOL)send:(NSError **)error
 {
     BOOL result=NO;
@@ -55,10 +67,7 @@
     
     [body setObject:data forKey:@"data"];
     
-    //TODO: This is janky.
-    MKitParseServiceManager *service=(MKitParseServiceManager *)[MKitServiceManager managerForService:@"Parse"];
-    
-    AFHTTPRequestOperation *op=[service requestWithMethod:@"POST" path:@"push" params:nil body:[body JSONData] contentType:nil];
+    AFHTTPRequestOperation *op=[[[self class] service] requestWithMethod:@"POST" path:@"push" params:nil body:[body JSONData] contentType:nil];
     
     [op start];
     [op waitUntilFinished];

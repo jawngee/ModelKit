@@ -9,6 +9,8 @@
 #import "MKitServiceManager.h"
 #import "AFNetworking.h"
 
+extern NSString * const MKitParseServiceName;
+
 /**
  * Parse.com Service Manager
  */
