@@ -22,10 +22,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [MKitParseInstallation currentInstallation];
-    
     // Make sure your keys are defined in CSMPAppKeys
-    [MKitServiceManager setupService:@"Parse" withKeys:@{@"AppID":PARSE_APP_ID,@"RestKey":PARSE_REST_KEY}];
+    MKitParseServiceManager *parse=[[[MKitParseServiceManager alloc] initWithKeys:@{@"AppID":PARSE_APP_ID,@"RestKey":PARSE_REST_KEY}] autorelease];
+    
+    [MKitServiceManager addService:parse named:MKitParseServiceName];
     
     // Reload the existing graph if it exists
     NSError *error=nil;
