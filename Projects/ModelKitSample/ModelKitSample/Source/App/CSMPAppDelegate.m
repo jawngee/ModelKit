@@ -10,6 +10,7 @@
 
 #import "CSMPAppDelegate.h"
 #import "CSMPTodoListsViewController.h"
+#import "MKitParseInstallation.h"
 
 @implementation CSMPAppDelegate
 
@@ -21,12 +22,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [MKitParseInstallation currentInstallation];
+    
     // Make sure your keys are defined in CSMPAppKeys
     [MKitServiceManager setupService:@"Parse" withKeys:@{@"AppID":PARSE_APP_ID,@"RestKey":PARSE_REST_KEY}];
     
     // Reload the existing graph if it exists
     NSError *error=nil;
-    if (![[MKitModelGraph current] loadFromFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:&error])
+    if (![MKitModelGraph loadAllFromFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:&error])
         NSLog(@"Error loading graph: %@",error);
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -41,12 +44,12 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    [[MKitModelGraph current] saveToFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:nil];
+    [MKitModelGraph saveAllToFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:nil];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [[MKitModelGraph current] saveToFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:nil];
+    [MKitModelGraph saveAllToFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:nil];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -61,7 +64,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    [[MKitModelGraph current] saveToFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:nil];
+    [MKitModelGraph saveAllToFile:[NSString fileNameInDocumentPath:@"graph.plist"] error:nil];
 }
 
 @end

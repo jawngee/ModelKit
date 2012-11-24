@@ -93,8 +93,6 @@
     [lists addObjectsFromArray:results];
     [self.tableView reloadData];
     
-    NSLog(@"%@",[[lists objectAtIndex:0] properties]);
-    
     q=[CSMPTodoList query];
     [q key:@"owner" condition:KeyEquals value:[CSMPUser currentUser]];
     [q orderBy:@"createdAt" direction:orderASC];
