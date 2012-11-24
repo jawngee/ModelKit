@@ -7,3 +7,6 @@
 [submodule "External/iso"]
 	path = External/iso
 	url = git://github.com/jawngee/iso-8601-date-formatter.git
+[submodule "External/SecureUDID"]
+	path = External/SecureUDID
+	url = git://github.com/crashlytics/secureudid.git

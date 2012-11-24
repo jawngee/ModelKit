@@ -7,6 +7,7 @@
 //
 
 #import "MKitModelPredicateQuery.h"
+#import "MKitModel.h"
 #import "MKitModelGraph.h"
 #import "MKitGeoPoint.h"
 
@@ -101,7 +102,7 @@
 {
     NSPredicate *predicate=[self buildQuery];
     
-    NSArray *results=[[MKitModelGraph current] queryWithPredicate:predicate forClass:modelClass];
+    NSArray *results=[[modelClass graph] queryWithPredicate:predicate forClass:modelClass];
     
     if (results==nil)
         results=[NSArray array];

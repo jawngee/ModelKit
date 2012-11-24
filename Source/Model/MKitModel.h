@@ -9,6 +9,7 @@
 #include "MKitDefs.h"
 
 @class MKitModelQuery;
+@class MKitModelGraph;
 
 #pragma mark - Typedefs
 
@@ -25,10 +26,10 @@ typedef enum
 #pragma mark - Notifications
 
 /** Model state has changed */
-extern NSString *const MKitModelStateChangedNotification;
+extern NSString * const MKitModelStateChangedNotification;
 
 /** Model has gained an identifier */
-extern NSString *const MKitObjectIdentifierChangedNotification;
+extern NSString * const MKitObjectIdentifierChangedNotification;
 
 /** Model's internal ID has changed */
 extern NSString *const MKitModelIdentifierChangedNotification;
@@ -134,6 +135,11 @@ extern NSString *const MKitModelPropertyChangedNotification;
  */
 +(id)instanceWithJSON:(NSString *)JSONString;
 
+/**
+ * Provides a point to do any model initialization
+ */
+-(void)setup;
+
 #pragma mark - Model registration
 
 /**
@@ -159,6 +165,13 @@ extern NSString *const MKitModelPropertyChangedNotification;
 +(MKitModelQuery *)query;
 
 #pragma mark - Graph Related
+
+/**
+ * Returns the graph associated with this model.  You can override in subclasses
+ * so that different models are associated with different graphs.
+ * @return The graph associated with this model.
+ */
++(MKitModelGraph *)graph;
 
 /**
  * Adds the object to the graph.  This is done automatically, but for models

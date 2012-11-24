@@ -10,6 +10,9 @@
 
 @class MKitModel;
 
+/** Default graph */
+extern NSString * const MKitModelGraphDefault;
+
 /**
  * The model graph is a global storage mechanism for models so that your
  * application isn't littered with different instances of the same model.
@@ -17,44 +20,51 @@
  * There is always one active graph, but you can create "layers" of them
  * for specific purposes by calling the push and pop static class methods.
  */
-@interface MKitModelGraph : NSObject
+@interface MKitModelGraph : NSObject<NSCoding>
 {
     NSMutableDictionary *modelStack;    /**< Dictionary of models keyed by modelId */
     NSMutableDictionary *classCache;    /**< Dictionary of models classified by thier objectId and class */
     
-    NSUInteger graphSize;             /**< The rough estimate of the size of the graph */
-    NSUInteger graphCount;            /**< The number of items stored in the graph */
+    NSUInteger size;             /**< The rough estimate of the size of the graph */
+    NSUInteger objectCount;      /**< The number of items stored in the graph */
 }
 
-@property (readonly) NSUInteger graphSize;
-@property (readonly) NSUInteger graphCount;
+@property (readonly) NSUInteger size;
+@property (readonly) NSUInteger objectCount;
 
 #pragma mark - Class Methods - Stack Management
 
 /**
- * Returns the current graph
- * @return The current graph
+ * Returns the default graph
+ * @return The default graph
  */
-+(MKitModelGraph *)current;
++(MKitModelGraph *)defaultGraph;
 
 /**
- * Pops the current graph off the stack.  If this is the last graph, nothing happens
- * @return The current graph
+ * Returns a named graph
+ * @param name The name of the graph
+ * @return The named graph
  */
-+(MKitModelGraph *)pop;
++(MKitModelGraph *)graphNamed:(NSString *)name;
 
-/**
- * Pushes a new graph on top of the stack
- * @return The new graph
- */
-+(MKitModelGraph *)push;
-
-/**
- * Clears all graphs
- */
-+(void)clearAllGraphs;
 
 #pragma mark - Persistence
+
+/**
+ * Saves all graphs to a file
+ * @param file The name of the file to save to
+ * @param error The error generated, if any
+ * @return YES if succesful, NO if not.
+ */
++(BOOL)saveAllToFile:(NSString *)file error:(NSError **)error;
+
+/**
+ * Loads the graph from a binary plist.
+ * @param file The name of the file to load from
+ * @param error The error generated, if any
+ * @return YES if succesful, NO if not.
+ */
++(BOOL)loadAllFromFile:(NSString *)file error:(NSError **)error;
 
 /**
  * Saves the graph to a binary plist.
@@ -73,39 +83,29 @@
 -(BOOL)loadFromFile:(NSString *)file error:(NSError **)error;
 
 
-#pragma mark - Class Methods - Model Management
+#pragma mark - Model Management
 
 /**
- * Removes the model from any graphs
- * @param model The model to remove
+ * Clears all graphs
  */
-+(void)removeFromAnyGraph:(MKitModel *)model;
-
-
-#pragma mark - Activation
-
-/**
- * Makes this graph the active graph
- */
--(void)activate;
-
-/**
- * Deactivates this graph
- */
--(void)deactivate;
++(void)clearAllGraphs;
 
 /**
  * Clears the current graph
  */
 -(void)clear;
 
-#pragma mark - Model Management
-
 /**
  * Adds the model to the graph
  * @param model The model to add
  */
 -(void)addToGraph:(MKitModel *)model;
+
+/**
+ * Removes the model from any graphs
+ * @param model The model to remove
+ */
++(void)removeFromAnyGraph:(MKitModel *)model;
 
 /**
  * Removes the model from the graph
@@ -128,6 +128,8 @@
  * @return The model, if found, nil if not.
  */
 -(MKitModel *)modelForModelId:(NSString *)modelId;
+
+#pragma mark - Querying
 
 /**
  * Queries the graph for models of a specific class matching a supplied predicate.

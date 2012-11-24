@@ -10,6 +10,8 @@
 #import "MKitModel.h"
 #import <malloc/malloc.h>
 
+NSString * const MKitModelGraphDefault=@"default";
+
 /**
  * Private methods
  */
@@ -37,16 +39,17 @@
 
 @implementation MKitModelGraph
 
-static NSMutableArray *graphStack=nil;
+static NSMutableDictionary *graphs=nil;
 
-@synthesize graphCount, graphSize;
+@synthesize objectCount, size;
 
 #pragma mark - Init/Dealloc
 
 +(void)initialize
 {
     [super initialize];
-    graphStack=[[NSMutableArray array] retain];
+    
+    graphs=[[NSMutableDictionary dictionary] retain];
 }
 
 -(id)init
@@ -64,6 +67,21 @@ static NSMutableArray *graphStack=nil;
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self=[self init]))
+    {
+        [modelStack release];
+        [classCache release];
+        
+        NSArray *encoded=[aDecoder decodeObjectForKey:@"data"];
+        modelStack=[[encoded objectAtIndex:0] mutableCopy];
+        classCache=[[encoded objectAtIndex:1] mutableCopy];
+    }
+    
+    return self;
+}
+
 -(void)dealloc
 {
     [modelStack release];
@@ -74,59 +92,54 @@ static NSMutableArray *graphStack=nil;
     [super dealloc];
 }
 
+#pragma mark - NSCoding
+
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:@[modelStack,classCache] forKey:@"data"];
+}
+
 #pragma mark - Class Methods - Stack Management
 
-+(MKitModelGraph *)current
++(MKitModelGraph *)defaultGraph
 {
-    if (graphStack.count==0)
+    return [self graphNamed:MKitModelGraphDefault];
+}
+
+
++(MKitModelGraph *)graphNamed:(NSString *)name
+{
+    MKitModelGraph *graph=[graphs objectForKey:name];
+    
+    if (!graph)
     {
-        MKitModelGraph *ctx=[[[MKitModelGraph alloc] init] autorelease];
-        [graphStack addObject:ctx];
-        
-        return ctx;
+        graph=[[[MKitModelGraph alloc] init] autorelease];
+        [graphs setObject:graph forKey:MKitModelGraphDefault];
     }
     
-    return [graphStack lastObject];
+    return graph;
 }
 
-+(MKitModelGraph *)pop
-{
-    if (graphStack.count>1)
-        [graphStack removeObjectAtIndex:graphStack.count-1];
-    
-    return [graphStack lastObject];
-}
 
-+(MKitModelGraph *)push
-{
-    MKitModelGraph *ctx=[[[MKitModelGraph alloc] init] autorelease];
-    [graphStack addObject:ctx];
-    
-    return ctx;
-}
+#pragma mark - Model Management
 
 +(void)clearAllGraphs
 {
-    for(MKitModelGraph *ctx in graphStack)
-        [ctx clear];
-    
-    [graphStack removeAllObjects];
-    
-    MKitModelGraph *ctx=[[[MKitModelGraph alloc] init] autorelease];
-    [graphStack addObject:ctx];
+    [graphs enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [obj clear];
+    }];
 }
 
-#pragma mark - Class Methods - Model Management
 
 
-+(void)removeFromAnyGraph:(MKitModel *)model
+-(void)clear
 {
-    for(MKitModelGraph *ctx in graphStack)
-        if ([ctx removeFromGraph:model])
-            return;
+    [classCache removeAllObjects];
+    [modelStack removeAllObjects];
+    
+    objectCount=0;
+    size=0;
 }
-
-#pragma mark - Model Management
 
 -(void)addToGraph:(MKitModel *)model
 {
@@ -144,9 +157,16 @@ static NSMutableArray *graphStack=nil;
         
         [objectCache setObject:model forKey:model.objectId];
         
-        graphCount++;
-        graphSize+=malloc_size(model);
+        objectCount++;
+        size+=malloc_size(model);
     }
+}
+
++(void)removeFromAnyGraph:(MKitModel *)model
+{
+    [graphs enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        *stop=[obj removeFromGraph:model];
+    }];
 }
 
 -(BOOL)removeFromGraph:(MKitModel *)model
@@ -166,23 +186,14 @@ static NSMutableArray *graphStack=nil;
         {
             [objectCache removeObjectForKey:model.objectId];
             
-            graphCount--;
-            graphSize-=malloc_size(model);
+            objectCount--;
+            size-=malloc_size(model);
             
             return YES;
         }
     }
     
     return exists;
-}
-
--(void)clear
-{
-    [classCache removeAllObjects];
-    [modelStack removeAllObjects];
-    
-    graphCount=0;
-    graphSize=0;
 }
 
 -(MKitModel *)modelForObjectId:(NSString *)objId andClass:(Class)modelClass
@@ -210,6 +221,9 @@ static NSMutableArray *graphStack=nil;
 -(void)modelIdentifierChanged:(NSNotification *)notification
 {
     MKitModel *model=(MKitModel *)notification.object;
+    
+    if ([[model class] graph]!=self)
+        return;
     
     NSString *oldValue=[notification.userInfo objectForKey:NSKeyValueChangeOldKey];
     
@@ -240,28 +254,52 @@ static NSMutableArray *graphStack=nil;
     {
         [objectCache setObject:model forKey:model.objectId];
     
-        graphCount++;
-        graphSize+=malloc_size(model);
+        objectCount++;
+        size+=malloc_size(model);
     }
 }
 
-#pragma mark - Activation
-
--(void)activate
-{
-    if ([graphStack indexOfObject:self]!=NSNotFound)
-        [graphStack removeObject:self];
-    
-    [graphStack addObject:self];
-}
-
--(void)deactivate
-{
-    if ([graphStack indexOfObject:self]!=0)
-        [graphStack removeObject:self];
-}
-
 #pragma mark - Persistence
+
+
++(BOOL)saveAllToFile:(NSString *)file error:(NSError **)error
+{
+    NSMutableData *data=[NSMutableData data];
+    NSKeyedArchiver *archiver=[[[NSKeyedArchiver alloc] initForWritingWithMutableData:data] autorelease];
+    [archiver encodeRootObject:graphs];
+    [archiver finishEncoding];
+    [data writeToFile:file atomically:NO];
+    return YES;
+}
+
++(BOOL)loadAllFromFile:(NSString *)file error:(NSError **)error
+{
+    if (![[NSFileManager defaultManager] fileExistsAtPath:file])
+    {
+        if (error)
+            *error=[NSError errorWithDomain:NSPOSIXErrorDomain code:ENOENT userInfo:nil];
+        
+        return NO;
+    }
+
+    [graphs release];
+    graphs=nil;
+    
+    NSData *data=[NSData dataWithContentsOfFile:file options:NSDataReadingMappedAlways error:nil];
+    NSKeyedUnarchiver *unarchiver=[[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
+    NSDictionary *graphDict=[unarchiver decodeObject];
+    if (graphDict)
+    {
+        graphs=[graphDict mutableCopy];
+        
+        return YES;
+    }
+    
+    graphs=[[NSMutableDictionary dictionary] retain];
+    
+    return NO;
+
+}
 
 -(BOOL)saveToFile:(NSString *)file error:(NSError **)error
 {
@@ -291,16 +329,18 @@ static NSMutableArray *graphStack=nil;
     if (array)
     {
         [modelStack release];
-        modelStack=[[array objectAtIndex:0] retain];
+        modelStack=[[array objectAtIndex:0] mutableCopy];
         
         [classCache release];
-        classCache=[[array objectAtIndex:1] retain];
+        classCache=[[array objectAtIndex:1] mutableCopy];
         
         return YES;
     }
     
     return NO;
 }
+
+#pragma mark - Query
 
 -(NSArray *)queryWithPredicate:(NSPredicate *)predicate forClass:(Class)modelClass
 {
