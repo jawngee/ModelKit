@@ -55,14 +55,14 @@
     
     // Make sure the graph has been cleared
     [MKitModelGraph clearAllGraphs];
-    m1=(TestModel *)[[MKitModelGraph current] modelForObjectId:@"001" andClass:[TestModel class]];
+    m1=(TestModel *)[[MKitModelGraph defaultGraph] modelForObjectId:@"001" andClass:[TestModel class]];
     STAssertTrue(m1==nil, @"Graph wasn't cleared.");
     
     // Deserialize
     m1=[TestModel instanceWithSerializedData:data];
     
     // Make sure we have 4 objects in the graph
-    STAssertTrue([MKitModelGraph current].graphCount==4, @"Graph count mismatch, should be 4.");
+    STAssertTrue([MKitModelGraph defaultGraph].objectCount==4, @"Graph count mismatch, should be 4.");
     
     m2=[TestModel instanceWithObjectId:@"002"];
     m3=[TestModel instanceWithObjectId:@"003"];
@@ -103,14 +103,14 @@
     
     // Make sure the graph has been cleared
     [MKitModelGraph clearAllGraphs];
-    m1=(TestModel *)[[MKitModelGraph current] modelForObjectId:@"001" andClass:[TestModel class]];
+    m1=(TestModel *)[[MKitModelGraph defaultGraph] modelForObjectId:@"001" andClass:[TestModel class]];
     STAssertTrue(m1==nil, @"Graph wasn't cleared.");
     
     // Deserialize
     m1=[TestModel instanceWithJSON:json];
     
     // Make sure we have 4 objects in the graph
-    STAssertTrue([MKitModelGraph current].graphCount==4, @"Graph count mismatch, should be 4.");
+    STAssertTrue([MKitModelGraph defaultGraph].objectCount==4, @"Graph count mismatch, should be 4.");
     
     m2=[TestModel instanceWithObjectId:@"002"];
     m3=[TestModel instanceWithObjectId:@"003"];
@@ -194,14 +194,14 @@
         [self makeModelWithId:[NSString stringWithFormat:@"%d",i]];
     
     NSTimeInterval start=[[NSDate date] timeIntervalSince1970];
-    [[MKitModelGraph current] saveToFile:@"/tmp/100k.plist" error:nil];
+    [[MKitModelGraph defaultGraph] saveToFile:@"/tmp/100k.plist" error:nil];
     NSTimeInterval end=[[NSDate date] timeIntervalSince1970];
     NSLog(@"WRITE TIME %f",end-start);
     
     [MKitModelGraph clearAllGraphs];
     
     start=[[NSDate date] timeIntervalSince1970];
-    [[MKitModelGraph current] loadFromFile:@"/tmp/100k.plist" error:nil];
+    [[MKitModelGraph defaultGraph] loadFromFile:@"/tmp/100k.plist" error:nil];
     end=[[NSDate date] timeIntervalSince1970];
     NSLog(@"READ TIME %f",end-start);
 }
