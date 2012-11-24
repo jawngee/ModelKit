@@ -126,6 +126,11 @@
               <Anchor>a40bff0a24e2da39d0478454ba9a8c107</Anchor>
              </Node>
              <Node>
+              <Name>graph</Name>
+              <Path>interface_m_kit_model.html</Path>
+              <Anchor>aac1bd430794331e5987badb62339edbf</Anchor>
+             </Node>
+             <Node>
               <Name>instance</Name>
               <Path>interface_m_kit_model.html</Path>
               <Anchor>a5d0bbc2eb3d876d979c4875cb11469d7</Anchor>
@@ -201,6 +206,11 @@
               <Anchor>aa4c536580fffccfa7f8fe65119886b8f</Anchor>
              </Node>
              <Node>
+              <Name>setup</Name>
+              <Path>interface_m_kit_model.html</Path>
+              <Anchor>aee7d5cb74eb561e8fae855e1bf392123</Anchor>
+             </Node>
+             <Node>
               <Name>createdAt</Name>
               <Path>interface_m_kit_model.html</Path>
               <Anchor>a4a003b05b9aec38e846e813f10508019</Anchor>
@@ -267,11 +277,6 @@
               <Anchor>a699c103da0c0c6173ea0d4fc54b1b070</Anchor>
              </Node>
              <Node>
-              <Name>setup</Name>
-              <Path>category_m_kit_model_07_internal_08.html</Path>
-              <Anchor>a512c73a541a82454549a54e0c6e2285c</Anchor>
-             </Node>
-             <Node>
               <Name>unflattenArray:decodeFromJSON:arrayClass:objectArray:decodingCache:</Name>
               <Path>category_m_kit_model_07_internal_08.html</Path>
               <Anchor>adae1180df5b1096f42f67f9ce540c008</Anchor>
@@ -294,11 +299,6 @@
             <Path>interface_m_kit_model_graph.html</Path>
             <Subnodes>
              <Node>
-              <Name>activate</Name>
-              <Path>interface_m_kit_model_graph.html</Path>
-              <Anchor>a9866fa3d85a5801c6f666756e144d3f3</Anchor>
-             </Node>
-             <Node>
               <Name>addToGraph:</Name>
               <Path>interface_m_kit_model_graph.html</Path>
               <Anchor>a5877e932a6724977157d58ea9bd34534</Anchor>
@@ -314,14 +314,19 @@
               <Anchor>ae8bac1da6699b7cc6c938f821f9bf62a</Anchor>
              </Node>
              <Node>
-              <Name>current</Name>
+              <Name>defaultGraph</Name>
               <Path>interface_m_kit_model_graph.html</Path>
-              <Anchor>a8e388708ecf957d82020a9580678ad07</Anchor>
+              <Anchor>acce575104a5f71368938fbebe6c889f7</Anchor>
              </Node>
              <Node>
-              <Name>deactivate</Name>
+              <Name>graphNamed:</Name>
               <Path>interface_m_kit_model_graph.html</Path>
-              <Anchor>a0ca099efd3b65657c3cd386fd93b4a7d</Anchor>
+              <Anchor>a525c10ee30eb732eed3aaaddc41c9eee</Anchor>
+             </Node>
+             <Node>
+              <Name>loadAllFromFile:error:</Name>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>ae617e6ec704c6ff4843f7008d87a0d33</Anchor>
              </Node>
              <Node>
               <Name>loadFromFile:error:</Name>
@@ -339,16 +344,6 @@
               <Anchor>ad2d92544d96b73f3e7c74abf6885ec69</Anchor>
              </Node>
              <Node>
-              <Name>pop</Name>
-              <Path>interface_m_kit_model_graph.html</Path>
-              <Anchor>a6437a192eb69ce91608690ab375908d4</Anchor>
-             </Node>
-             <Node>
-              <Name>push</Name>
-              <Path>interface_m_kit_model_graph.html</Path>
-              <Anchor>abeda1f7020cf3cfce1ac52195192f1ff</Anchor>
-             </Node>
-             <Node>
               <Name>queryWithPredicate:forClass:</Name>
               <Path>interface_m_kit_model_graph.html</Path>
               <Anchor>a53b9ed3806e4f5d0ee827be440ee57de</Anchor>
@@ -362,6 +357,11 @@
               <Name>removeFromGraph:</Name>
               <Path>interface_m_kit_model_graph.html</Path>
               <Anchor>a6cfff932dac4c5a0649b52f8d4443804</Anchor>
+             </Node>
+             <Node>
+              <Name>saveAllToFile:error:</Name>
+              <Path>interface_m_kit_model_graph.html</Path>
+              <Anchor>ab6c47516ead5d6f1155ee11c52d1b9ac</Anchor>
              </Node>
              <Node>
               <Name>saveToFile:error:</Name>
@@ -379,14 +379,14 @@
               <Anchor>a644dedd0b1c8ff576391ae4ab2b415e1</Anchor>
              </Node>
              <Node>
-              <Name>graphCount</Name>
+              <Name>objectCount</Name>
               <Path>interface_m_kit_model_graph.html</Path>
-              <Anchor>ac56097cc3a4a7bb33fc2083712f0477f</Anchor>
+              <Anchor>a75a66bd72711dbe90cbf954970360245</Anchor>
              </Node>
              <Node>
-              <Name>graphSize</Name>
+              <Name>size</Name>
               <Path>interface_m_kit_model_graph.html</Path>
-              <Anchor>a93a71d821b18577fa38bc50057250505</Anchor>
+              <Anchor>ab72a70de0b717e878a97cbd067d020aa</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -588,6 +588,42 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>MKitParseInstallation</Name>
+            <Path>interface_m_kit_parse_installation.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>badge</Name>
+              <Path>interface_m_kit_parse_installation.html</Path>
+              <Anchor>aca776f7a5742983fa578fcc67bfd3fbe</Anchor>
+             </Node>
+             <Node>
+              <Name>channels</Name>
+              <Path>interface_m_kit_parse_installation.html</Path>
+              <Anchor>aa9cd472ca64086af88d422049c0547e4</Anchor>
+             </Node>
+             <Node>
+              <Name>deviceToken</Name>
+              <Path>interface_m_kit_parse_installation.html</Path>
+              <Anchor>a4a35826170ac840c4ac0b69b5aa1078c</Anchor>
+             </Node>
+             <Node>
+              <Name>deviceType</Name>
+              <Path>interface_m_kit_parse_installation.html</Path>
+              <Anchor>a7daddca3f73f3ea54b526675d4f2122e</Anchor>
+             </Node>
+             <Node>
+              <Name>installationId</Name>
+              <Path>interface_m_kit_parse_installation.html</Path>
+              <Anchor>a4d8377bca6c6eba04296df753bc4c78b</Anchor>
+             </Node>
+             <Node>
+              <Name>timeZone</Name>
+              <Path>interface_m_kit_parse_installation.html</Path>
+              <Anchor>af448910834f3ac101f205fdca717dee6</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>MKitParseModel</Name>
             <Path>interface_m_kit_parse_model.html</Path>
            </Node>
@@ -610,6 +646,13 @@
            <Node>
             <Name>MKitParseModelQuery</Name>
             <Path>interface_m_kit_parse_model_query.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>buildQuery</Name>
+              <Path>interface_m_kit_parse_model_query.html</Path>
+              <Anchor>a9fe5d445035fe1089ddf444ef6a7fc05</Anchor>
+             </Node>
+            </Subnodes>
            </Node>
            <Node>
             <Name>MKitParseModelQuery(Internal)</Name>
@@ -621,6 +664,10 @@
               <Anchor>a4621cf2fb79fc4e274f6dab112c7afd5</Anchor>
              </Node>
             </Subnodes>
+           </Node>
+           <Node>
+            <Name>MKitParseNotification</Name>
+            <Path>interface_m_kit_parse_notification.html</Path>
            </Node>
            <Node>
             <Name>MKitParseServiceManager</Name>
@@ -882,6 +929,47 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>&lt;MKitServiceInstallation&gt;</Name>
+            <Path>protocol_m_kit_service_installation-p.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>currentInstallation</Name>
+              <Path>protocol_m_kit_service_installation-p.html</Path>
+              <Anchor>af1e534292c3319de085e375308986d9b</Anchor>
+             </Node>
+             <Node>
+              <Name>badge</Name>
+              <Path>protocol_m_kit_service_installation-p.html</Path>
+              <Anchor>a64ad6e1772c470cecbd5fdf90bbf66ef</Anchor>
+             </Node>
+             <Node>
+              <Name>channels</Name>
+              <Path>protocol_m_kit_service_installation-p.html</Path>
+              <Anchor>a6abff6a52e5a57f2885f41a219fbc9b9</Anchor>
+             </Node>
+             <Node>
+              <Name>deviceToken</Name>
+              <Path>protocol_m_kit_service_installation-p.html</Path>
+              <Anchor>a66539633628dad43ca86f9576e3c5427</Anchor>
+             </Node>
+             <Node>
+              <Name>deviceType</Name>
+              <Path>protocol_m_kit_service_installation-p.html</Path>
+              <Anchor>a714526b4aa84c3babfd1bb2ae1d75b2b</Anchor>
+             </Node>
+             <Node>
+              <Name>installationId</Name>
+              <Path>protocol_m_kit_service_installation-p.html</Path>
+              <Anchor>a75cc02f59c311ad4a9cab3e503daa7cf</Anchor>
+             </Node>
+             <Node>
+              <Name>timeZone</Name>
+              <Path>protocol_m_kit_service_installation-p.html</Path>
+              <Anchor>a51639ad00bb0a4cf56353b54c4fc1417</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>MKitServiceKeyChain</Name>
             <Path>interface_m_kit_service_key_chain.html</Path>
             <Subnodes>
@@ -896,14 +984,29 @@
               <Anchor>acdfbb59352e4d77f99a2abaedb8ca6f6</Anchor>
              </Node>
              <Node>
+              <Name>deleteInstallationForId:</Name>
+              <Path>interface_m_kit_service_key_chain.html</Path>
+              <Anchor>a9818bf09e03b09112a69af887f1e6b46</Anchor>
+             </Node>
+             <Node>
               <Name>initWithService:</Name>
               <Path>interface_m_kit_service_key_chain.html</Path>
               <Anchor>af4246f0cec37ec50c5974c32d03f4a28</Anchor>
              </Node>
              <Node>
+              <Name>installationDataForId:</Name>
+              <Path>interface_m_kit_service_key_chain.html</Path>
+              <Anchor>a6d5198f1880fff5db2d2d6e759aab8d0</Anchor>
+             </Node>
+             <Node>
+              <Name>storeInstallation:installationData:</Name>
+              <Path>interface_m_kit_service_key_chain.html</Path>
+              <Anchor>a10b1b7bfff9bf363a2b47872bcc9f4a4</Anchor>
+             </Node>
+             <Node>
               <Name>storeUsername:password:sessionToken:data:</Name>
               <Path>interface_m_kit_service_key_chain.html</Path>
-              <Anchor>ab9e482b99378422fcc636ad376279d13</Anchor>
+              <Anchor>a000d8b71db4064027f44a51c4a4255d0</Anchor>
              </Node>
              <Node>
               <Name>service</Name>
@@ -957,6 +1060,11 @@
               <Anchor>a30ace61b8b86673ff08f97c8d919309f</Anchor>
              </Node>
              <Node>
+              <Name>installationData</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>a1d90d66efa534a4dc6b11c66a97d46a2</Anchor>
+             </Node>
+             <Node>
               <Name>managerForService:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
               <Anchor>a16d6c03ce3f21e8148c4837d810a0aa8</Anchor>
@@ -1000,6 +1108,11 @@
               <Name>setupService:withKeys:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
               <Anchor>ad33c0c71934d2d6af2c75c5def01181e</Anchor>
+             </Node>
+             <Node>
+              <Name>storeInstallationData:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>a7cf526ba9e1fbd542f2dcf796a527189</Anchor>
              </Node>
              <Node>
               <Name>storeUserCredentials:</Name>
@@ -1097,6 +1210,112 @@
               <Name>manager</Name>
               <Path>interface_m_kit_service_model_query.html</Path>
               <Anchor>af8e7fff661acc01b9411a6fda21f42a1</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>MKitServiceNotification</Name>
+            <Path>interface_m_kit_service_notification.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>notificationWithMessage:</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a9fdc9309cc2f84a055818a63032c228b</Anchor>
+             </Node>
+             <Node>
+              <Name>notificationWithMessage:badgeCount:</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a647a278004983d2ac683db13d05a44b7</Anchor>
+             </Node>
+             <Node>
+              <Name>notificationWithMessage:channels:</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a99e11e9faef5afb152c925568cd80b98</Anchor>
+             </Node>
+             <Node>
+              <Name>notificationWithMessage:channels:badgeCount:</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>af36b26dcf8dcaf5eacf196ff9d557e84</Anchor>
+             </Node>
+             <Node>
+              <Name>notificationWithMessage:channels:query:</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>ad71225c081fe8212a777892f8275369d</Anchor>
+             </Node>
+             <Node>
+              <Name>notificationWithMessage:channels:query:badgeCount:</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>ae980eebd634482340e5af122d4a92683</Anchor>
+             </Node>
+             <Node>
+              <Name>notificationWithMessage:query:</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a017763f02194fce54217d51e4ed45063</Anchor>
+             </Node>
+             <Node>
+              <Name>notificationWithMessage:query:badgeCount:</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a9eed8ebe30805c8dbdd733e9e03c6661</Anchor>
+             </Node>
+             <Node>
+              <Name>send:</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a58c05c94b81050e9e943354dc4c2e31a</Anchor>
+             </Node>
+             <Node>
+              <Name>sendInBackground:</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a9cb96497e135e99614e00109dc52f480</Anchor>
+             </Node>
+             <Node>
+              <Name>action</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a83b0a96a4466317ef223656ced33c8c3</Anchor>
+             </Node>
+             <Node>
+              <Name>badgeCount</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>ae53dce4ac05565d747c51ce768399951</Anchor>
+             </Node>
+             <Node>
+              <Name>channels</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a62c51ea64df88808f8cfb0ee5502500f</Anchor>
+             </Node>
+             <Node>
+              <Name>contentAvailable</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a1ad15815e2a362d1541d4c45a82b401e</Anchor>
+             </Node>
+             <Node>
+              <Name>expirationTimeInterval</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a3bb6dfa3f90734bd91b71d7d5b0238f6</Anchor>
+             </Node>
+             <Node>
+              <Name>message</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a7c17bb8787d6a5ba3534a89586f08719</Anchor>
+             </Node>
+             <Node>
+              <Name>pushTime</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>aa343e0cafd6b52f95ab821b89832af29</Anchor>
+             </Node>
+             <Node>
+              <Name>query</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>ad3a0efc3a3b6b0c9b99f35293adc186d</Anchor>
+             </Node>
+             <Node>
+              <Name>sound</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a63c40512e93b5be5b8aaf0ed14b98cb7</Anchor>
+             </Node>
+             <Node>
+              <Name>title</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a1797659337bbbfd6d2e09c29229f3290</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -1248,6 +1467,16 @@
             <Path>category_m_kit_service_file_07_internal_08.html</Path>
            </Node>
            <Node>
+            <Name>&lt;MKitServiceInstallation&gt;</Name>
+            <Path>protocol_m_kit_service_installation-p.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>MKitParseInstallation</Name>
+              <Path>interface_m_kit_parse_installation.html</Path>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>&lt;MKitServiceUser&gt;</Name>
             <Path>protocol_m_kit_service_user-p.html</Path>
             <Subnodes>
@@ -1274,6 +1503,10 @@
                   <Path>interface_m_kit_parse_model.html</Path>
                   <Subnodes>
                    <Node>
+                    <Name>MKitParseInstallation</Name>
+                    <Path>interface_m_kit_parse_installation.html</Path>
+                   </Node>
+                   <Node>
                     <Name>MKitParseUser</Name>
                     <Path>interface_m_kit_parse_user.html</Path>
                    </Node>
@@ -1282,6 +1515,10 @@
                 </Subnodes>
                </Node>
               </Subnodes>
+             </Node>
+             <Node>
+              <Name>MKitModelGraph</Name>
+              <Path>interface_m_kit_model_graph.html</Path>
              </Node>
             </Subnodes>
            </Node>
@@ -1397,6 +1634,16 @@
                </Node>
               </Subnodes>
              </Node>
+             <Node>
+              <Name>MKitServiceNotification</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>MKitParseNotification</Name>
+                <Path>interface_m_kit_parse_notification.html</Path>
+               </Node>
+              </Subnodes>
+             </Node>
             </Subnodes>
            </Node>
            <Node>
@@ -1412,6 +1659,84 @@
            <Node>
             <Name>All</Name>
             <Path>functions.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>a</Name>
+              <Path>functions.html</Path>
+             </Node>
+             <Node>
+              <Name>b</Name>
+              <Path>functions_0x62.html</Path>
+             </Node>
+             <Node>
+              <Name>c</Name>
+              <Path>functions_0x63.html</Path>
+             </Node>
+             <Node>
+              <Name>d</Name>
+              <Path>functions_0x64.html</Path>
+             </Node>
+             <Node>
+              <Name>e</Name>
+              <Path>functions_0x65.html</Path>
+             </Node>
+             <Node>
+              <Name>f</Name>
+              <Path>functions_0x66.html</Path>
+             </Node>
+             <Node>
+              <Name>g</Name>
+              <Path>functions_0x67.html</Path>
+             </Node>
+             <Node>
+              <Name>i</Name>
+              <Path>functions_0x69.html</Path>
+             </Node>
+             <Node>
+              <Name>k</Name>
+              <Path>functions_0x6b.html</Path>
+             </Node>
+             <Node>
+              <Name>l</Name>
+              <Path>functions_0x6c.html</Path>
+             </Node>
+             <Node>
+              <Name>m</Name>
+              <Path>functions_0x6d.html</Path>
+             </Node>
+             <Node>
+              <Name>n</Name>
+              <Path>functions_0x6e.html</Path>
+             </Node>
+             <Node>
+              <Name>o</Name>
+              <Path>functions_0x6f.html</Path>
+             </Node>
+             <Node>
+              <Name>p</Name>
+              <Path>functions_0x70.html</Path>
+             </Node>
+             <Node>
+              <Name>q</Name>
+              <Path>functions_0x71.html</Path>
+             </Node>
+             <Node>
+              <Name>r</Name>
+              <Path>functions_0x72.html</Path>
+             </Node>
+             <Node>
+              <Name>s</Name>
+              <Path>functions_0x73.html</Path>
+             </Node>
+             <Node>
+              <Name>t</Name>
+              <Path>functions_0x74.html</Path>
+             </Node>
+             <Node>
+              <Name>u</Name>
+              <Path>functions_0x75.html</Path>
+             </Node>
+            </Subnodes>
            </Node>
            <Node>
             <Name>Functions</Name>
@@ -1652,6 +1977,14 @@
                     <Path>_m_kit_parse_file_8m_source.html</Path>
                    </Node>
                    <Node>
+                    <Name>MKitParseInstallation.h</Name>
+                    <Path>_m_kit_parse_installation_8h_source.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>MKitParseInstallation.m</Name>
+                    <Path>_m_kit_parse_installation_8m_source.html</Path>
+                   </Node>
+                   <Node>
                     <Name>MKitParseModel.h</Name>
                     <Path>_m_kit_parse_model_8h_source.html</Path>
                    </Node>
@@ -1666,6 +1999,14 @@
                    <Node>
                     <Name>MKitParseModelQuery.m</Name>
                     <Path>_m_kit_parse_model_query_8m_source.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>MKitParseNotification.h</Name>
+                    <Path>_m_kit_parse_notification_8h_source.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>MKitParseNotification.m</Name>
+                    <Path>_m_kit_parse_notification_8m_source.html</Path>
                    </Node>
                    <Node>
                     <Name>MKitParseServiceManager.h</Name>
@@ -1694,6 +2035,14 @@
                <Node>
                 <Name>MKitServiceFile.m</Name>
                 <Path>_m_kit_service_file_8m_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceInstallation.h</Name>
+                <Path>_m_kit_service_installation_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceInstallation.m</Name>
+                <Path>_m_kit_service_installation_8m_source.html</Path>
                </Node>
                <Node>
                 <Name>MKitServiceKeyChain.h</Name>
@@ -1726,6 +2075,14 @@
                <Node>
                 <Name>MKitServiceModelQuery.m</Name>
                 <Path>_m_kit_service_model_query_8m_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceNotification.h</Name>
+                <Path>_m_kit_service_notification_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>MKitServiceNotification.m</Name>
+                <Path>_m_kit_service_notification_8m_source.html</Path>
                </Node>
                <Node>
                 <Name>MKitServiceUser.h</Name>

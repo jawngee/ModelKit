@@ -179,6 +179,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>setup</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model.html</Path>
+    <Anchor>aee7d5cb74eb561e8fae855e1bf392123</Anchor>
+    <DeclaredIn>MKitModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>addToGraph</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -399,6 +410,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>graph</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model.html</Path>
+    <Anchor>aac1bd430794331e5987badb62339edbf</Anchor>
+    <DeclaredIn>MKitModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>modelId</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
@@ -465,17 +487,6 @@
       <Scope>MKitModel(Internal)</Scope>
     </TokenIdentifier>
     <Path>category_m_kit_model_07_internal_08.html</Path>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>setup</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>func</Type>
-      <Scope>MKitModel(Internal)</Scope>
-    </TokenIdentifier>
-    <Path>category_m_kit_model_07_internal_08.html</Path>
-    <Anchor>a512c73a541a82454549a54e0c6e2285c</Anchor>
-    <DeclaredIn>MKitModel.m</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -609,28 +620,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>activate</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>MKitModelGraph</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_model_graph.html</Path>
-    <Anchor>a9866fa3d85a5801c6f666756e144d3f3</Anchor>
-    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>deactivate</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>MKitModelGraph</Scope>
-    </TokenIdentifier>
-    <Path>interface_m_kit_model_graph.html</Path>
-    <Anchor>a0ca099efd3b65657c3cd386fd93b4a7d</Anchor>
-    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>clear</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -697,35 +686,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>current</Name>
+      <Name>defaultGraph</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
       <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_model_graph.html</Path>
-    <Anchor>a8e388708ecf957d82020a9580678ad07</Anchor>
+    <Anchor>acce575104a5f71368938fbebe6c889f7</Anchor>
     <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>pop</Name>
+      <Name>graphNamed:</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
       <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_model_graph.html</Path>
-    <Anchor>a6437a192eb69ce91608690ab375908d4</Anchor>
+    <Anchor>a525c10ee30eb732eed3aaaddc41c9eee</Anchor>
     <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>push</Name>
+      <Name>saveAllToFile:error:</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
       <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_model_graph.html</Path>
-    <Anchor>abeda1f7020cf3cfce1ac52195192f1ff</Anchor>
+    <Anchor>ab6c47516ead5d6f1155ee11c52d1b9ac</Anchor>
+    <DeclaredIn>MKitModelGraph.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>loadAllFromFile:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitModelGraph</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_graph.html</Path>
+    <Anchor>ae617e6ec704c6ff4843f7008d87a0d33</Anchor>
     <DeclaredIn>MKitModelGraph.h</DeclaredIn>
   </Token>
   <Token>
@@ -772,23 +772,23 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>graphSize</Name>
+      <Name>size</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
       <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_model_graph.html</Path>
-    <Anchor>a93a71d821b18577fa38bc50057250505</Anchor>
+    <Anchor>ab72a70de0b717e878a97cbd067d020aa</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>graphCount</Name>
+      <Name>objectCount</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
       <Scope>MKitModelGraph</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_model_graph.html</Path>
-    <Anchor>ac56097cc3a4a7bb33fc2083712f0477f</Anchor>
+    <Anchor>a75a66bd72711dbe90cbf954970360245</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1547,6 +1547,246 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>MKitParseInstallation</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitParseInstallation</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_installation.html</Path>
+    <DeclaredIn>MKitParseInstallation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deviceType</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitParseInstallation</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_installation.html</Path>
+    <Anchor>a7daddca3f73f3ea54b526675d4f2122e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>installationId</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitParseInstallation</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_installation.html</Path>
+    <Anchor>a4d8377bca6c6eba04296df753bc4c78b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deviceToken</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitParseInstallation</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_installation.html</Path>
+    <Anchor>a4a35826170ac840c4ac0b69b5aa1078c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>badge</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitParseInstallation</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_installation.html</Path>
+    <Anchor>aca776f7a5742983fa578fcc67bfd3fbe</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timeZone</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitParseInstallation</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_installation.html</Path>
+    <Anchor>af448910834f3ac101f205fdca717dee6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>channels</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitParseInstallation</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_installation.html</Path>
+    <Anchor>aa9cd472ca64086af88d422049c0547e4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deviceType</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a714526b4aa84c3babfd1bb2ae1d75b2b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>installationId</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a75cc02f59c311ad4a9cab3e503daa7cf</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deviceToken</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a66539633628dad43ca86f9576e3c5427</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>badge</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a64ad6e1772c470cecbd5fdf90bbf66ef</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timeZone</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a51639ad00bb0a4cf56353b54c4fc1417</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>channels</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a6abff6a52e5a57f2885f41a219fbc9b9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>save:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>aa325d545c472172a3552e01415dc9372</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a40ab88ac8005b71ff04d563267583f33</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>delete:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a261e0e80c5caa0ad74d1de78bc7f94d6</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deleteInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>ac2bf36d184060bda52b0685895de7fd9</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fetch:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a9a21a574aebd57c3c6872d821c176400</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fetchInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a2aaf3b79caeba97cf746c18c5c3b7335</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>query</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a10093c1e76818cb7c95e0f9d2ca6c2dd</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>graphQuery</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a158d47aebdd6f1809a3e3ff56d3535cd</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>service</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_model.html</Path>
+    <Anchor>a60ad20ba8082c4d2666a8c542072c78b</Anchor>
+    <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>currentInstallation</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfcm</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>af1e534292c3319de085e375308986d9b</Anchor>
+    <DeclaredIn>MKitServiceInstallation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>MKitParseModel</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -1753,6 +1993,18 @@
       <Scope>MKitParseModelQuery</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_parse_model_query.html</Path>
+    <DeclaredIn>MKitParseModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>buildQuery</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitParseModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_query.html</Path>
+    <Anchor>a9fe5d445035fe1089ddf444ef6a7fc05</Anchor>
+    <DeclaredIn>MKitParseModelQuery.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1775,6 +2027,138 @@
     <Path>interface_m_kit_service_model_query.html</Path>
     <Anchor>a84ef2e7264e7ffe71626b81bf3062695</Anchor>
     <DeclaredIn>MKitServiceModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithModelClass:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a17a116a690f5d84c2a226b79652168dc</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>keyExists:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a43ad622a66c1ba04521e8f6fadf6971b</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>keyDoesNotExist:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>af683eba84a5aac2baccfdcea9e6912e5</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>key:condition:value:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>ad84415a485afadfe072f9edc39a295a0</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>key:withinDistance:ofPoint:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a64b3ba19464fd8f708399a367116f192</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>orderBy:direction:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a33156e11a671361de9764d8444fe8fae</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>execute:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a2ec306256f0cb8e26936dfb955d20753</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a693e99ec48887b562649d71b9524dd11</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeWithLimit:skip:error:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>ac6f0721c5582e29a3adf75c5559166b0</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>executeInBackgroundWithLimit:skip:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a9ea6dae7055a829584d58ff8818d8407</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>count:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a38af585be34efa416f5bf36b71ac3a5d</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>countInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModelQuery</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model_query.html</Path>
+    <Anchor>a96b71d239c5d840210caa8c14144cd0f</Anchor>
+    <DeclaredIn>MKitModelQuery.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1826,6 +2210,225 @@
     <Path>category_m_kit_parse_model_query_07_internal_08.html</Path>
     <Anchor>a4621cf2fb79fc4e274f6dab112c7afd5</Anchor>
     <DeclaredIn>MKitParseModelQuery.m</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MKitParseNotification</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitParseNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_notification.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>send:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a58c05c94b81050e9e943354dc4c2e31a</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sendInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a9cb96497e135e99614e00109dc52f480</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a9fdc9309cc2f84a055818a63032c228b</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:badgeCount:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a647a278004983d2ac683db13d05a44b7</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:channels:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a99e11e9faef5afb152c925568cd80b98</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:channels:badgeCount:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>af36b26dcf8dcaf5eacf196ff9d557e84</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:channels:query:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>ad71225c081fe8212a777892f8275369d</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:channels:query:badgeCount:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>ae980eebd634482340e5af122d4a92683</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:query:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a017763f02194fce54217d51e4ed45063</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:query:badgeCount:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a9eed8ebe30805c8dbdd733e9e03c6661</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>channels</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a62c51ea64df88808f8cfb0ee5502500f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>query</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>ad3a0efc3a3b6b0c9b99f35293adc186d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a7c17bb8787d6a5ba3534a89586f08719</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>badgeCount</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>ae53dce4ac05565d747c51ce768399951</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sound</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a63c40512e93b5be5b8aaf0ed14b98cb7</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>title</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a1797659337bbbfd6d2e09c29229f3290</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>action</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a83b0a96a4466317ef223656ced33c8c3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>contentAvailable</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a1ad15815e2a362d1541d4c45a82b401e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>pushTime</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>aa343e0cafd6b52f95ab821b89832af29</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>expirationTimeInterval</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a3bb6dfa3f90734bd91b71d7d5b0238f6</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1978,6 +2581,28 @@
     </TokenIdentifier>
     <Path>interface_m_kit_service_manager.html</Path>
     <Anchor>ae17cb193061855460d7e5c244517fb94</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>installationData</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>a1d90d66efa534a4dc6b11c66a97d46a2</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>storeInstallationData:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>a7cf526ba9e1fbd542f2dcf796a527189</Anchor>
     <DeclaredIn>MKitServiceManager.h</DeclaredIn>
   </Token>
   <Token>
@@ -2612,6 +3237,87 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>MKitServiceInstallation</Name>
+      <APILanguage>c</APILanguage>
+      <Type>intf</Type>
+      <Scope>MKitServiceInstallation</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <DeclaredIn>MKitServiceInstallation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>currentInstallation</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfcm</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>af1e534292c3319de085e375308986d9b</Anchor>
+    <DeclaredIn>MKitServiceInstallation.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deviceType</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a714526b4aa84c3babfd1bb2ae1d75b2b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>installationId</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a75cc02f59c311ad4a9cab3e503daa7cf</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deviceToken</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a66539633628dad43ca86f9576e3c5427</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>badge</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a64ad6e1772c470cecbd5fdf90bbf66ef</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timeZone</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a51639ad00bb0a4cf56353b54c4fc1417</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>channels</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfp</Type>
+      <Scope>MKitServiceInstallation-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_m_kit_service_installation-p.html</Path>
+    <Anchor>a6abff6a52e5a57f2885f41a219fbc9b9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>MKitServiceKeyChain</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -2639,7 +3345,7 @@
       <Scope>MKitServiceKeyChain</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_key_chain.html</Path>
-    <Anchor>ab9e482b99378422fcc636ad376279d13</Anchor>
+    <Anchor>a000d8b71db4064027f44a51c4a4255d0</Anchor>
     <DeclaredIn>MKitServiceKeyChain.h</DeclaredIn>
   </Token>
   <Token>
@@ -2662,6 +3368,39 @@
     </TokenIdentifier>
     <Path>interface_m_kit_service_key_chain.html</Path>
     <Anchor>acdfbb59352e4d77f99a2abaedb8ca6f6</Anchor>
+    <DeclaredIn>MKitServiceKeyChain.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>storeInstallation:installationData:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceKeyChain</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_key_chain.html</Path>
+    <Anchor>a10b1b7bfff9bf363a2b47872bcc9f4a4</Anchor>
+    <DeclaredIn>MKitServiceKeyChain.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>installationDataForId:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceKeyChain</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_key_chain.html</Path>
+    <Anchor>a6d5198f1880fff5db2d2d6e759aab8d0</Anchor>
+    <DeclaredIn>MKitServiceKeyChain.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deleteInstallationForId:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceKeyChain</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_key_chain.html</Path>
+    <Anchor>a9818bf09e03b09112a69af887f1e6b46</Anchor>
     <DeclaredIn>MKitServiceKeyChain.h</DeclaredIn>
   </Token>
   <Token>
@@ -2829,6 +3568,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>installationData</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>a1d90d66efa534a4dc6b11c66a97d46a2</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>storeInstallationData:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>a7cf526ba9e1fbd542f2dcf796a527189</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>saveFile:progressBlock:error:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -2978,6 +3739,17 @@
     <Path>interface_m_kit_service_model.html</Path>
     <Anchor>a2aaf3b79caeba97cf746c18c5c3b7335</Anchor>
     <DeclaredIn>MKitServiceModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setup</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model.html</Path>
+    <Anchor>aee7d5cb74eb561e8fae855e1bf392123</Anchor>
+    <DeclaredIn>MKitModel.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3219,6 +3991,17 @@
     </TokenIdentifier>
     <Path>interface_m_kit_model.html</Path>
     <Anchor>ac77a9c0b41b0dcdb6be77f164f9fe7cd</Anchor>
+    <DeclaredIn>MKitModel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>graph</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitModel</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_model.html</Path>
+    <Anchor>aac1bd430794331e5987badb62339edbf</Anchor>
     <DeclaredIn>MKitModel.h</DeclaredIn>
   </Token>
   <Token>
@@ -3516,6 +4299,226 @@
     </TokenIdentifier>
     <Path>interface_m_kit_model_query.html</Path>
     <Anchor>a4f4461722278e7e8e1091fe043631ddd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MKitServiceNotification</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>send:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a58c05c94b81050e9e943354dc4c2e31a</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sendInBackground:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a9cb96497e135e99614e00109dc52f480</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a9fdc9309cc2f84a055818a63032c228b</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:badgeCount:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a647a278004983d2ac683db13d05a44b7</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:channels:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a99e11e9faef5afb152c925568cd80b98</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:channels:badgeCount:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>af36b26dcf8dcaf5eacf196ff9d557e84</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:channels:query:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>ad71225c081fe8212a777892f8275369d</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:channels:query:badgeCount:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>ae980eebd634482340e5af122d4a92683</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:query:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a017763f02194fce54217d51e4ed45063</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>notificationWithMessage:query:badgeCount:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a9eed8ebe30805c8dbdd733e9e03c6661</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>channels</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a62c51ea64df88808f8cfb0ee5502500f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>query</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>ad3a0efc3a3b6b0c9b99f35293adc186d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>message</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a7c17bb8787d6a5ba3534a89586f08719</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>badgeCount</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>ae53dce4ac05565d747c51ce768399951</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sound</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a63c40512e93b5be5b8aaf0ed14b98cb7</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>title</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a1797659337bbbfd6d2e09c29229f3290</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>action</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a83b0a96a4466317ef223656ced33c8c3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>contentAvailable</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a1ad15815e2a362d1541d4c45a82b401e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>pushTime</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>aa343e0cafd6b52f95ab821b89832af29</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>expirationTimeInterval</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a3bb6dfa3f90734bd91b71d7d5b0238f6</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

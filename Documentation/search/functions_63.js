@@ -7,6 +7,6 @@ var searchData=
   ['count_3a',['count:',['../interface_m_kit_model_query.html#a38af585be34efa416f5bf36b71ac3a5d',1,'MKitModelQuery']]],
   ['countinbackground_3a',['countInBackground:',['../interface_m_kit_model_query.html#a96b71d239c5d840210caa8c14144cd0f',1,'MKitModelQuery']]],
   ['credentialsforusername_3a',['credentialsForUsername:',['../interface_m_kit_service_key_chain.html#a8326f3228eb48acc973ec5a6d00cccce',1,'MKitServiceKeyChain']]],
-  ['current',['current',['../interface_m_kit_model_graph.html#a8e388708ecf957d82020a9580678ad07',1,'MKitModelGraph']]],
+  ['currentinstallation',['currentInstallation',['../protocol_m_kit_service_installation-p.html#af1e534292c3319de085e375308986d9b',1,'MKitServiceInstallation-p']]],
   ['currentuser',['currentUser',['../interface_m_kit_parse_user.html#acd57d67d199b528bce050f37ea01f0e6',1,'MKitParseUser::currentUser()'],['../protocol_m_kit_service_user-p.html#a51e62737ba864bd0f98283b34db461ae',1,'MKitServiceUser-p::currentUser()']]]
 ];

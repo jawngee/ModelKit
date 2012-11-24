@@ -8,8 +8,15 @@
 
 #import "MKitServiceModelQuery.h"
 
+/**
+ * Implements querying via Parse
+ */
 @interface MKitParseModelQuery : MKitServiceModelQuery
 
+/**
+ * Builds the query
+ * @return The query
+ */
 -(NSDictionary *)buildQuery;
 
 @end

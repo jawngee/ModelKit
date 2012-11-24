@@ -124,12 +124,18 @@ Inheritance diagram for MKitServiceKeyChain:</div>
 Instance Methods</h2></td></tr>
 <tr class="memitem:af4246f0cec37ec50c5974c32d03f4a28"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_key_chain.html#af4246f0cec37ec50c5974c32d03f4a28">initWithService:</a></td></tr>
 <tr class="separator:af4246f0cec37ec50c5974c32d03f4a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9e482b99378422fcc636ad376279d13"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_key_chain.html#ab9e482b99378422fcc636ad376279d13">storeUsername:password:sessionToken:data:</a></td></tr>
-<tr class="separator:ab9e482b99378422fcc636ad376279d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a000d8b71db4064027f44a51c4a4255d0"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_key_chain.html#a000d8b71db4064027f44a51c4a4255d0">storeUsername:password:sessionToken:data:</a></td></tr>
+<tr class="separator:a000d8b71db4064027f44a51c4a4255d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8326f3228eb48acc973ec5a6d00cccce"><td class="memItemLeft" align="right" valign="top">(NSDictionary *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_key_chain.html#a8326f3228eb48acc973ec5a6d00cccce">credentialsForUsername:</a></td></tr>
 <tr class="separator:a8326f3228eb48acc973ec5a6d00cccce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdfbb59352e4d77f99a2abaedb8ca6f6"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_key_chain.html#acdfbb59352e4d77f99a2abaedb8ca6f6">deleteCredentialsForUsername:</a></td></tr>
 <tr class="separator:acdfbb59352e4d77f99a2abaedb8ca6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b1b7bfff9bf363a2b47872bcc9f4a4"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_key_chain.html#a10b1b7bfff9bf363a2b47872bcc9f4a4">storeInstallation:installationData:</a></td></tr>
+<tr class="separator:a10b1b7bfff9bf363a2b47872bcc9f4a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d5198f1880fff5db2d2d6e759aab8d0"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_key_chain.html#a6d5198f1880fff5db2d2d6e759aab8d0">installationDataForId:</a></td></tr>
+<tr class="separator:a6d5198f1880fff5db2d2d6e759aab8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9818bf09e03b09112a69af887f1e6b46"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_key_chain.html#a9818bf09e03b09112a69af887f1e6b46">deleteInstallationForId:</a></td></tr>
+<tr class="separator:a9818bf09e03b09112a69af887f1e6b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -193,6 +199,32 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9818bf09e03b09112a69af887f1e6b46"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) deleteInstallationForId: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>installationId</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes the data for a given installation id </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">installationId</td><td>The installation ID to remove the data for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_key_chain_8m_source.html#l00188">188</a> of file <a class="el" href="_m_kit_service_key_chain_8m_source.html">MKitServiceKeyChain.m</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="af4246f0cec37ec50c5974c32d03f4a28"></a>
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +251,70 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab9e482b99378422fcc636ad376279d13"></a>
+<a class="anchor" id="a6d5198f1880fff5db2d2d6e759aab8d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) installationDataForId: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>installationId</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the installation data for a given installation id </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">installationId</td><td>The installation ID to return data for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Installation data if successful, nil if not. </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_key_chain_8m_source.html#l00156">156</a> of file <a class="el" href="_m_kit_service_key_chain_8m_source.html">MKitServiceKeyChain.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a10b1b7bfff9bf363a2b47872bcc9f4a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) storeInstallation: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>installationId</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">installationData:</td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Stores the user's installation data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">installationId</td><td>The installation id </td></tr>
+    <tr><td class="paramname">data</td><td>Installation data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if successful, NO otherwise </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_key_chain_8m_source.html#l00131">131</a> of file <a class="el" href="_m_kit_service_key_chain_8m_source.html">MKitServiceKeyChain.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a000d8b71db4064027f44a51c4a4255d0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -244,7 +339,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey">data:</td>
           <td></td>
-          <td class="paramtype">(NSDictionary *)&#160;</td>
+          <td class="paramtype">(id)&#160;</td>
           <td class="paramname"><em>data</em>&#160;</td>
         </tr>
         <tr>
@@ -304,7 +399,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_m_kit_service_key_chain.html">MKitServiceKeyChain</a></li>
-    <li class="footer">Generated on Mon Nov 12 2012 16:30:10 for ModelKit by
+    <li class="footer">Generated on Sat Nov 24 2012 18:00:19 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

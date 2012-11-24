@@ -150,6 +150,10 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a17fbcc36fd83bd996499b2eb314ffcb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae17cb193061855460d7e5c244517fb94"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#ae17cb193061855460d7e5c244517fb94">storeUserCredentials:</a></td></tr>
 <tr class="separator:ae17cb193061855460d7e5c244517fb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d90d66efa534a4dc6b11c66a97d46a2"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#a1d90d66efa534a4dc6b11c66a97d46a2">installationData</a></td></tr>
+<tr class="separator:a1d90d66efa534a4dc6b11c66a97d46a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cf526ba9e1fbd542f2dcf796a527189"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#a7cf526ba9e1fbd542f2dcf796a527189">storeInstallationData:</a></td></tr>
+<tr class="separator:a7cf526ba9e1fbd542f2dcf796a527189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7d22be3ff0905f6339eca9251912d8a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#ab7d22be3ff0905f6339eca9251912d8a">saveFile:progressBlock:error:</a></td></tr>
 <tr class="separator:ab7d22be3ff0905f6339eca9251912d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac56b8dddac741f37397aaa99a4dc8645"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_m_kit_service_manager.html#ac56b8dddac741f37397aaa99a4dc8645">saveFileInBackground:progressBlock:resultBlock:</a></td></tr>
@@ -174,7 +178,7 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class for building an interface between models and a backend service </p>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00023">23</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00024">24</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
 </div><h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="af26f3035a4b7d0fa2767ed83c8661ad6"></a>
 <div class="memitem">
@@ -260,7 +264,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00157">157</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00169">169</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -296,7 +300,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00162">162</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00174">174</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -469,6 +473,25 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The new instance </dd></dl>
 
 <p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00047">47</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d90d66efa534a4dc6b11c66a97d46a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) installationData </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns installation data </p>
+<dl class="section return"><dt>Returns</dt><dd>Installation data </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00142">142</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -673,7 +696,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if successful, NO if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00142">142</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00154">154</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -716,7 +739,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00147">147</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00159">159</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
 
 </div>
 </div>
@@ -830,6 +853,31 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7cf526ba9e1fbd542f2dcf796a527189"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) storeInstallationData: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_m_kit_service_model.html">MKitServiceModel</a>&lt;<a class="el" href="protocol_m_kit_service_installation-p.html">MKitServiceInstallation</a>&gt; *)&#160;</td>
+          <td class="paramname"><em>install</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Stores installation data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">install</td><td>Installation data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8m_source.html#l00147">147</a> of file <a class="el" href="_m_kit_service_manager_8m_source.html">MKitServiceManager.m</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae17cb193061855460d7e5c244517fb94"></a>
 <div class="memitem">
 <div class="memproto">
@@ -894,7 +942,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Keychain for storing credentials </p>
 
-<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00025">25</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_kit_service_manager_8h_source.html#l00026">26</a> of file <a class="el" href="_m_kit_service_manager_8h_source.html">MKitServiceManager.h</a>.</p>
 
 </div>
 </div>
@@ -908,7 +956,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_m_kit_service_manager.html">MKitServiceManager</a></li>
-    <li class="footer">Generated on Mon Nov 12 2012 16:30:10 for ModelKit by
+    <li class="footer">Generated on Sat Nov 24 2012 18:00:19 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

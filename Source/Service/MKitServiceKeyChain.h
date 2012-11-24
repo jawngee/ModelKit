@@ -73,13 +73,14 @@ extern NSString *const MKitKeychainData;
 
 /**
  * Returns the installation data for a given installation id
+ * @param installationId The installation ID to return data for
  * @return Installation data if successful, nil if not.
  */
 -(id)installationDataForId:(NSString *)installationId;
 
 /**
- * Removes the credentials for a given username
- * @param username The username
+ * Removes the data for a given installation id
+ * @param installationId The installation ID to remove the data for.
  * @return YES if successful, NO if not.
  */
 -(BOOL)deleteInstallationForId:(NSString *)installationId;

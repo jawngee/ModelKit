@@ -6,7 +6,7 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ]
@@ -21,7 +21,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_m_kit_defs_8h_source.html",
-"interface_m_kit_service_file.html#ac9f70d18800b390f52c9923bdd92bed6"
+"interface_m_kit_parse_user.html#a486d3916ed9d54979bc5e767d085142f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

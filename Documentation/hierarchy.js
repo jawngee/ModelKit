@@ -11,6 +11,9 @@ var hierarchy =
     [ "MKitParseServiceManager(Internal)", "category_m_kit_parse_service_manager_07_internal_08.html", null ],
     [ "MKitReflectedClass(Internal)", "category_m_kit_reflected_class_07_internal_08.html", null ],
     [ "MKitServiceFile(Internal)", "category_m_kit_service_file_07_internal_08.html", null ],
+    [ "<MKitServiceInstallation>", "protocol_m_kit_service_installation-p.html", [
+      [ "MKitParseInstallation", "interface_m_kit_parse_installation.html", null ]
+    ] ],
     [ "<MKitServiceUser>", "protocol_m_kit_service_user-p.html", [
       [ "MKitParseUser", "interface_m_kit_parse_user.html", null ]
     ] ],
@@ -18,10 +21,12 @@ var hierarchy =
       [ "MKitModel", "interface_m_kit_model.html", [
         [ "MKitServiceModel", "interface_m_kit_service_model.html", [
           [ "MKitParseModel", "interface_m_kit_parse_model.html", [
+            [ "MKitParseInstallation", "interface_m_kit_parse_installation.html", null ],
             [ "MKitParseUser", "interface_m_kit_parse_user.html", null ]
           ] ]
         ] ]
-      ] ]
+      ] ],
+      [ "MKitModelGraph", "interface_m_kit_model_graph.html", null ]
     ] ],
     [ "NSDate(ModelKit)", "category_n_s_date_07_model_kit_08.html", null ],
     [ "NSMutableArray", null, [
@@ -53,6 +58,9 @@ var hierarchy =
       [ "MKitServiceKeyChain", "interface_m_kit_service_key_chain.html", null ],
       [ "MKitServiceManager", "interface_m_kit_service_manager.html", [
         [ "MKitParseServiceManager", "interface_m_kit_parse_service_manager.html", null ]
+      ] ],
+      [ "MKitServiceNotification", "interface_m_kit_service_notification.html", [
+        [ "MKitParseNotification", "interface_m_kit_parse_notification.html", null ]
       ] ]
     ] ],
     [ "NSString(ModelKit)", "category_n_s_string_07_model_kit_08.html", null ]

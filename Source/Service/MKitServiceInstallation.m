@@ -7,3 +7,6 @@
 //
 
 #import "MKitServiceInstallation.h"
+
+NSString * const MKitInstallationiOSDevice=@"ios";
+NSString * const MKitInstallationAndroidDevice=@"android";

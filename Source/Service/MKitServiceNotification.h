@@ -30,17 +30,85 @@
 @property (retain, nonatomic) NSDate *pushTime;                         /**< Date the notification will be sent */
 @property (assign, nonatomic) NSTimeInterval expirationTimeInterval;    /**< The number of seconds from now that the notification expires. */
 
+/**
+ * Creates a new notification
+ * @param message The message for the notification
+ * @return The new notification
+ */
 +(MKitServiceNotification *)notificationWithMessage:(NSString *)message;
+
+/**
+ * Creates a new notification
+ * @param message The message for the notification
+ * @param badgeCount The badge count for the notification, set to MKitBadgeIncrement to increment the badge count
+ * @return The new notification
+ */
 +(MKitServiceNotification *)notificationWithMessage:(NSString *)message badgeCount:(NSInteger)badgeCount;
+
+/**
+ * Creates a new notification
+ * @param message The message for the notification
+ * @param channels The channels to broadcast the notification to
+ * @return The new notification
+ */
 +(MKitServiceNotification *)notificationWithMessage:(NSString *)message channels:(NSArray *)channels;
+
+/**
+ * Creates a new notification
+ * @param message The message for the notification
+ * @param channels The channels to broadcast the notification to
+ * @param badgeCount The badge count for the notification, set to MKitBadgeIncrement to increment the badge count
+ * @return The new notification
+ */
 +(MKitServiceNotification *)notificationWithMessage:(NSString *)message channels:(NSArray *)channels badgeCount:(NSInteger)badgeCount;
+
+/**
+ * Creates a new notification
+ * @param message The message for the notification
+ * @param channels The channels to broadcast the notification to
+ * @param query The Installation query that determines where the notification gets sent
+ * @return The new notification
+ */
 +(MKitServiceNotification *)notificationWithMessage:(NSString *)message channels:(NSArray *)channels query:(MKitServiceModelQuery *)query;
+
+/**
+ * Creates a new notification
+ * @param message The message for the notification
+ * @param channels The channels to broadcast the notification to
+ * @param query The Installation query that determines where the notification gets sent
+ * @param badgeCount The badge count for the notification, set to MKitBadgeIncrement to increment the badge count
+ * @return The new notification
+ */
 +(MKitServiceNotification *)notificationWithMessage:(NSString *)message channels:(NSArray *)channels query:(MKitServiceModelQuery *)query badgeCount:(NSInteger)badgeCount;
+
+/**
+ * Creates a new notification
+ * @param message The message for the notification
+ * @param query The Installation query that determines where the notification gets sent
+ * @return The new notification
+ */
 +(MKitServiceNotification *)notificationWithMessage:(NSString *)message query:(MKitServiceModelQuery *)query;
+
+/**
+ * Creates a new notification
+ * @param message The message for the notification
+ * @param query The Installation query that determines where the notification gets sent
+ * @param badgeCount The badge count for the notification, set to MKitBadgeIncrement to increment the badge count
+ * @return The new notification
+ */
 +(MKitServiceNotification *)notificationWithMessage:(NSString *)message query:(MKitServiceModelQuery *)query badgeCount:(NSInteger)badgeCount;
 
-
+/**
+ * Sends the notification
+ * @param error The error, if any
+ * @return YES if succesful, NO if not
+ */
 -(BOOL)send:(NSError **)error;
+
+/**
+ * Sends the notification in the background
+ * @param resultBlock The result block to call when complete
+ */
 -(void)sendInBackground:(MKitBooleanResultBlock)resultBlock;
 
 

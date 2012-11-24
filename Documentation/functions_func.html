@@ -92,6 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_k"><span>k</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_q"><span>q</span></a></li>
@@ -133,9 +134,6 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
-<li>activate
-: <a class="el" href="interface_m_kit_model_graph.html#a9866fa3d85a5801c6f666756e144d3f3">MKitModelGraph</a>
-</li>
 <li>addToGraph
 : <a class="el" href="interface_m_kit_model.html#a5c80c83433a5655ee4764117eb585790">MKitModel</a>
 </li>
@@ -163,6 +161,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>buildQuery
 : <a class="el" href="category_m_kit_model_predicate_query_07_internal_08.html#a0e17239b1f2b26270cfee1ba669ee6c3">MKitModelPredicateQuery(Internal)</a>
+, <a class="el" href="interface_m_kit_parse_model_query.html#a9fe5d445035fe1089ddf444ef6a7fc05">MKitParseModelQuery</a>
 </li>
 <li>buildQueryOpWithLimit:skip:includeCount:
 : <a class="el" href="category_m_kit_parse_model_query_07_internal_08.html#a4621cf2fb79fc4e274f6dab112c7afd5">MKitParseModelQuery(Internal)</a>
@@ -192,8 +191,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>credentialsForUsername:
 : <a class="el" href="interface_m_kit_service_key_chain.html#a8326f3228eb48acc973ec5a6d00cccce">MKitServiceKeyChain</a>
 </li>
-<li>current
-: <a class="el" href="interface_m_kit_model_graph.html#a8e388708ecf957d82020a9580678ad07">MKitModelGraph</a>
+<li>currentInstallation
+: <a class="el" href="protocol_m_kit_service_installation-p.html#af1e534292c3319de085e375308986d9b">&lt;MKitServiceInstallation&gt;</a>
 </li>
 <li>currentUser
 : <a class="el" href="interface_m_kit_parse_user.html#acd57d67d199b528bce050f37ea01f0e6">MKitParseUser</a>
@@ -206,8 +205,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>dateFromISO8601:
 : <a class="el" href="category_n_s_date_07_model_kit_08.html#a781c74dcb47191d39682a00d4d1e52e2">NSDate(ModelKit)</a>
 </li>
-<li>deactivate
-: <a class="el" href="interface_m_kit_model_graph.html#a0ca099efd3b65657c3cd386fd93b4a7d">MKitModelGraph</a>
+<li>defaultGraph
+: <a class="el" href="interface_m_kit_model_graph.html#acce575104a5f71368938fbebe6c889f7">MKitModelGraph</a>
 </li>
 <li>delete:
 : <a class="el" href="interface_m_kit_service_model.html#a261e0e80c5caa0ad74d1de78bc7f94d6">MKitServiceModel</a>
@@ -225,6 +224,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>deleteInBackground:
 : <a class="el" href="interface_m_kit_service_file.html#a0e33a347a5534eac8ec9196bb0004d52">MKitServiceFile</a>
 , <a class="el" href="interface_m_kit_service_model.html#ac2bf36d184060bda52b0685895de7fd9">MKitServiceModel</a>
+</li>
+<li>deleteInstallationForId:
+: <a class="el" href="interface_m_kit_service_key_chain.html#a9818bf09e03b09112a69af887f1e6b46">MKitServiceKeyChain</a>
 </li>
 <li>deleteModel:error:
 : <a class="el" href="interface_m_kit_service_manager.html#a1568f80f20242b7f233a3ff66d1e9464">MKitServiceManager</a>
@@ -304,6 +306,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>getObjectFromDictionary:objectArray:
 : <a class="el" href="category_m_kit_model_07_internal_08.html#a234035c942471782fa2f9d9efc0fb393">MKitModel(Internal)</a>
 </li>
+<li>graph
+: <a class="el" href="interface_m_kit_model.html#aac1bd430794331e5987badb62339edbf">MKitModel</a>
+</li>
+<li>graphNamed:
+: <a class="el" href="interface_m_kit_model_graph.html#a525c10ee30eb732eed3aaaddc41c9eee">MKitModelGraph</a>
+</li>
 <li>graphQuery
 : <a class="el" href="interface_m_kit_service_model.html#a158d47aebdd6f1809a3e3ff56d3535cd">MKitServiceModel</a>
 </li>
@@ -343,6 +351,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>initWithService:
 : <a class="el" href="interface_m_kit_service_key_chain.html#af4246f0cec37ec50c5974c32d03f4a28">MKitServiceKeyChain</a>
+</li>
+<li>installationData
+: <a class="el" href="interface_m_kit_service_manager.html#a1d90d66efa534a4dc6b11c66a97d46a2">MKitServiceManager</a>
+</li>
+<li>installationDataForId:
+: <a class="el" href="interface_m_kit_service_key_chain.html#a6d5198f1880fff5db2d2d6e759aab8d0">MKitServiceKeyChain</a>
 </li>
 <li>instance
 : <a class="el" href="interface_m_kit_model.html#a5d0bbc2eb3d876d979c4875cb11469d7">MKitModel</a>
@@ -391,20 +405,23 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>loadAllFromFile:error:
+: <a class="el" href="interface_m_kit_model_graph.html#ae617e6ec704c6ff4843f7008d87a0d33">MKitModelGraph</a>
+</li>
 <li>loadFromFile:error:
 : <a class="el" href="interface_m_kit_model_graph.html#ac13b9cc0d14afde79084bc8c3b659dac">MKitModelGraph</a>
 </li>
 <li>logInInBackgroundWithUserName:password:resultBlock:
-: <a class="el" href="interface_m_kit_parse_user.html#ae1b41976853e47d69c8294ec2dbb579e">MKitParseUser</a>
-, <a class="el" href="protocol_m_kit_service_user-p.html#aaedfd4556921d8133141d101e8c66e93">&lt;MKitServiceUser&gt;</a>
+: <a class="el" href="protocol_m_kit_service_user-p.html#aaedfd4556921d8133141d101e8c66e93">&lt;MKitServiceUser&gt;</a>
+, <a class="el" href="interface_m_kit_parse_user.html#ae1b41976853e47d69c8294ec2dbb579e">MKitParseUser</a>
 </li>
 <li>logInWithUserName:password:error:
-: <a class="el" href="protocol_m_kit_service_user-p.html#acfa225f40dc8dfb908dc68e672182bd1">&lt;MKitServiceUser&gt;</a>
-, <a class="el" href="interface_m_kit_parse_user.html#aa2099ab036eacca891ec16c19c491f46">MKitParseUser</a>
+: <a class="el" href="interface_m_kit_parse_user.html#aa2099ab036eacca891ec16c19c491f46">MKitParseUser</a>
+, <a class="el" href="protocol_m_kit_service_user-p.html#acfa225f40dc8dfb908dc68e672182bd1">&lt;MKitServiceUser&gt;</a>
 </li>
 <li>logOut
-: <a class="el" href="interface_m_kit_parse_user.html#aa9c7f80d41b3b8bf764afce4ea0173c0">MKitParseUser</a>
-, <a class="el" href="protocol_m_kit_service_user-p.html#ac5f64bb5b31c297df71356aa904836b5">&lt;MKitServiceUser&gt;</a>
+: <a class="el" href="protocol_m_kit_service_user-p.html#ac5f64bb5b31c297df71356aa904836b5">&lt;MKitServiceUser&gt;</a>
+, <a class="el" href="interface_m_kit_parse_user.html#aa9c7f80d41b3b8bf764afce4ea0173c0">MKitParseUser</a>
 </li>
 </ul>
 
@@ -437,6 +454,34 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </ul>
 
 
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>notificationWithMessage:
+: <a class="el" href="interface_m_kit_service_notification.html#a9fdc9309cc2f84a055818a63032c228b">MKitServiceNotification</a>
+</li>
+<li>notificationWithMessage:badgeCount:
+: <a class="el" href="interface_m_kit_service_notification.html#a647a278004983d2ac683db13d05a44b7">MKitServiceNotification</a>
+</li>
+<li>notificationWithMessage:channels:
+: <a class="el" href="interface_m_kit_service_notification.html#a99e11e9faef5afb152c925568cd80b98">MKitServiceNotification</a>
+</li>
+<li>notificationWithMessage:channels:badgeCount:
+: <a class="el" href="interface_m_kit_service_notification.html#af36b26dcf8dcaf5eacf196ff9d557e84">MKitServiceNotification</a>
+</li>
+<li>notificationWithMessage:channels:query:
+: <a class="el" href="interface_m_kit_service_notification.html#ad71225c081fe8212a777892f8275369d">MKitServiceNotification</a>
+</li>
+<li>notificationWithMessage:channels:query:badgeCount:
+: <a class="el" href="interface_m_kit_service_notification.html#ae980eebd634482340e5af122d4a92683">MKitServiceNotification</a>
+</li>
+<li>notificationWithMessage:query:
+: <a class="el" href="interface_m_kit_service_notification.html#a017763f02194fce54217d51e4ed45063">MKitServiceNotification</a>
+</li>
+<li>notificationWithMessage:query:badgeCount:
+: <a class="el" href="interface_m_kit_service_notification.html#a9eed8ebe30805c8dbdd733e9e03c6661">MKitServiceNotification</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
 <li>orderBy:direction:
 : <a class="el" href="interface_m_kit_model_query.html#a33156e11a671361de9764d8444fe8fae">MKitModelQuery</a>
@@ -461,14 +506,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>parsePropertiesForClass:ignorePropPrefix:
 : <a class="el" href="category_m_kit_reflected_class_07_internal_08.html#a290fda965174ddf31b6a48be73dd412d">MKitReflectedClass(Internal)</a>
 </li>
-<li>pop
-: <a class="el" href="interface_m_kit_model_graph.html#a6437a192eb69ce91608690ab375908d4">MKitModelGraph</a>
-</li>
 <li>properties
 : <a class="el" href="interface_m_kit_model.html#a5b4368f5a007821a686d88ac7ba4247e">MKitModel</a>
-</li>
-<li>push
-: <a class="el" href="interface_m_kit_model_graph.html#abeda1f7020cf3cfce1ac52195192f1ff">MKitModelGraph</a>
 </li>
 </ul>
 
@@ -541,6 +580,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>save:progressBlock:
 : <a class="el" href="interface_m_kit_service_file.html#a7b57edce9bdcd04aade0047add9bc340">MKitServiceFile</a>
 </li>
+<li>saveAllToFile:error:
+: <a class="el" href="interface_m_kit_model_graph.html#ab6c47516ead5d6f1155ee11c52d1b9ac">MKitModelGraph</a>
+</li>
 <li>saveFile:progressBlock:error:
 : <a class="el" href="interface_m_kit_service_manager.html#ab7d22be3ff0905f6339eca9251912d8a">MKitServiceManager</a>
 </li>
@@ -562,6 +604,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>saveToFile:error:
 : <a class="el" href="interface_m_kit_model_graph.html#a0fd9fbf3102f971c6d95caf50f8f3664">MKitModelGraph</a>
 </li>
+<li>send:
+: <a class="el" href="interface_m_kit_service_notification.html#a58c05c94b81050e9e943354dc4c2e31a">MKitServiceNotification</a>
+</li>
+<li>sendInBackground:
+: <a class="el" href="interface_m_kit_service_notification.html#a9cb96497e135e99614e00109dc52f480">MKitServiceNotification</a>
+</li>
 <li>serialize
 : <a class="el" href="interface_m_kit_model.html#ac43d2d369cd4fd80faafefdca2c51d4a">MKitModel</a>
 </li>
@@ -576,7 +624,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="interface_m_kit_service_model.html#a60ad20ba8082c4d2666a8c542072c78b">MKitServiceModel</a>
 </li>
 <li>setup
-: <a class="el" href="category_m_kit_model_07_internal_08.html#a512c73a541a82454549a54e0c6e2285c">MKitModel(Internal)</a>
+: <a class="el" href="interface_m_kit_model.html#aee7d5cb74eb561e8fae855e1bf392123">MKitModel</a>
 </li>
 <li>setupService:withKeys:
 : <a class="el" href="interface_m_kit_service_manager.html#ad33c0c71934d2d6af2c75c5def01181e">MKitServiceManager</a>
@@ -586,14 +634,20 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="interface_m_kit_parse_user.html#a9498108c43deaafd2b0d6c997ea1b2bf">MKitParseUser</a>
 </li>
 <li>signUpWithUserName:email:password:error:
-: <a class="el" href="interface_m_kit_parse_user.html#aa7aec9e7c1f7c1d5a19e7ee377bfad76">MKitParseUser</a>
-, <a class="el" href="protocol_m_kit_service_user-p.html#a7239371af35a474b466274e2409203d3">&lt;MKitServiceUser&gt;</a>
+: <a class="el" href="protocol_m_kit_service_user-p.html#a7239371af35a474b466274e2409203d3">&lt;MKitServiceUser&gt;</a>
+, <a class="el" href="interface_m_kit_parse_user.html#aa7aec9e7c1f7c1d5a19e7ee377bfad76">MKitParseUser</a>
+</li>
+<li>storeInstallation:installationData:
+: <a class="el" href="interface_m_kit_service_key_chain.html#a10b1b7bfff9bf363a2b47872bcc9f4a4">MKitServiceKeyChain</a>
+</li>
+<li>storeInstallationData:
+: <a class="el" href="interface_m_kit_service_manager.html#a7cf526ba9e1fbd542f2dcf796a527189">MKitServiceManager</a>
 </li>
 <li>storeUserCredentials:
 : <a class="el" href="interface_m_kit_service_manager.html#ae17cb193061855460d7e5c244517fb94">MKitServiceManager</a>
 </li>
 <li>storeUsername:password:sessionToken:data:
-: <a class="el" href="interface_m_kit_service_key_chain.html#ab9e482b99378422fcc636ad376279d13">MKitServiceKeyChain</a>
+: <a class="el" href="interface_m_kit_service_key_chain.html#a000d8b71db4064027f44a51c4a4255d0">MKitServiceKeyChain</a>
 </li>
 </ul>
 
@@ -620,7 +674,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Nov 12 2012 16:30:10 for ModelKit by
+    <li class="footer">Generated on Sat Nov 24 2012 18:00:19 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>
