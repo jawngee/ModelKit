@@ -10,4 +10,6 @@
 
 @interface MKitParseModelQuery : MKitServiceModelQuery
 
+-(NSDictionary *)buildQuery;
+
 @end

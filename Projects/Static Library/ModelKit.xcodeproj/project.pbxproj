@@ -71,6 +71,12 @@
 		FFBB3309164A467D0053F713 /* MKitServiceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBB3308164A467D0053F713 /* MKitServiceFile.m */; };
 		FFBB330C164A63080053F713 /* MKitParseFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBB330B164A63080053F713 /* MKitParseFile.m */; };
 		FFBB330F164A9F570053F713 /* MKitMutableFileArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBB330E164A9F570053F713 /* MKitMutableFileArray.m */; };
+		FFC4AE111653A49E00852DC7 /* TestModelAltGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC4AE101653A49E00852DC7 /* TestModelAltGraph.m */; };
+		FFC4AE2716579AEB00852DC7 /* MKitServiceNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC4AE2616579AEB00852DC7 /* MKitServiceNotification.m */; };
+		FFC4AE2B1657ADC100852DC7 /* MKitServiceInstallation.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC4AE2A1657ADC100852DC7 /* MKitServiceInstallation.m */; };
+		FFC4AE2E1657AE0800852DC7 /* MKitParseInstallation.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC4AE2D1657AE0800852DC7 /* MKitParseInstallation.m */; };
+		FFC4AE561657B50700852DC7 /* SecureUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC4AE551657B50700852DC7 /* SecureUDID.m */; };
+		FFC4AE5C165F25B400852DC7 /* MKitParseNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC4AE5B165F25B300852DC7 /* MKitParseNotification.m */; };
 		FFCFAA21163A7DD800BC2E3E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA20163A7DD800BC2E3E /* JSONKit.m */; };
 		FFCFAA2F163A837300BC2E3E /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA2E163A837300BC2E3E /* ISO8601DateFormatter.m */; };
 		FFCFAA33163A83C800BC2E3E /* NSDate+ModelKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFAA32163A83C800BC2E3E /* NSDate+ModelKit.m */; };
@@ -201,6 +207,18 @@
 		FFBB330B164A63080053F713 /* MKitParseFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseFile.m; sourceTree = "<group>"; };
 		FFBB330D164A9F570053F713 /* MKitMutableFileArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitMutableFileArray.h; sourceTree = "<group>"; };
 		FFBB330E164A9F570053F713 /* MKitMutableFileArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitMutableFileArray.m; sourceTree = "<group>"; };
+		FFC4AE0F1653A49E00852DC7 /* TestModelAltGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModelAltGraph.h; sourceTree = "<group>"; };
+		FFC4AE101653A49E00852DC7 /* TestModelAltGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModelAltGraph.m; sourceTree = "<group>"; };
+		FFC4AE2516579AEB00852DC7 /* MKitServiceNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitServiceNotification.h; sourceTree = "<group>"; };
+		FFC4AE2616579AEB00852DC7 /* MKitServiceNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceNotification.m; sourceTree = "<group>"; };
+		FFC4AE291657ADC100852DC7 /* MKitServiceInstallation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitServiceInstallation.h; sourceTree = "<group>"; };
+		FFC4AE2A1657ADC100852DC7 /* MKitServiceInstallation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceInstallation.m; sourceTree = "<group>"; };
+		FFC4AE2C1657AE0800852DC7 /* MKitParseInstallation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitParseInstallation.h; sourceTree = "<group>"; };
+		FFC4AE2D1657AE0800852DC7 /* MKitParseInstallation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseInstallation.m; sourceTree = "<group>"; };
+		FFC4AE541657B50700852DC7 /* SecureUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecureUDID.h; path = ../../External/SecureUDID/SecureUDID.h; sourceTree = "<group>"; };
+		FFC4AE551657B50700852DC7 /* SecureUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecureUDID.m; path = ../../External/SecureUDID/SecureUDID.m; sourceTree = "<group>"; };
+		FFC4AE5A165F25B200852DC7 /* MKitParseNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitParseNotification.h; sourceTree = "<group>"; };
+		FFC4AE5B165F25B300852DC7 /* MKitParseNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitParseNotification.m; sourceTree = "<group>"; };
 		FFCFAA1F163A7DD800BC2E3E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../External/JSONKit/JSONKit.h; sourceTree = "<group>"; };
 		FFCFAA20163A7DD800BC2E3E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = ../../External/JSONKit/JSONKit.m; sourceTree = "<group>"; };
 		FFCFAA2D163A837300BC2E3E /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISO8601DateFormatter.h; path = ../../External/iso/ISO8601DateFormatter.h; sourceTree = "<group>"; };
@@ -298,6 +316,7 @@
 		FF3C8D11163939A1009EB62A /* External */ = {
 			isa = PBXGroup;
 			children = (
+				FFC4AE531657B4F700852DC7 /* SecureUDID */,
 				FFCFAA30163A837A00BC2E3E /* ISO8601 */,
 				FFCFAA22163A7DDD00BC2E3E /* JSONKit */,
 				FF3C8CB616393788009EB62A /* AFNetworkingStatic.xcodeproj */,
@@ -354,6 +373,10 @@
 				FFB8CBBD1643EA8B00D43C8F /* MKitParseUser.m */,
 				FFBB330A164A63080053F713 /* MKitParseFile.h */,
 				FFBB330B164A63080053F713 /* MKitParseFile.m */,
+				FFC4AE2C1657AE0800852DC7 /* MKitParseInstallation.h */,
+				FFC4AE2D1657AE0800852DC7 /* MKitParseInstallation.m */,
+				FFC4AE5A165F25B200852DC7 /* MKitParseNotification.h */,
+				FFC4AE5B165F25B300852DC7 /* MKitParseNotification.m */,
 			);
 			path = Parse;
 			sourceTree = "<group>";
@@ -436,6 +459,8 @@
 				FFBA0D31163D5B1F00B6560C /* TestModel.m */,
 				FF903042164E37B000156E71 /* TestVenueModel.h */,
 				FF903043164E37B000156E71 /* TestVenueModel.m */,
+				FFC4AE0F1653A49E00852DC7 /* TestModelAltGraph.h */,
+				FFC4AE101653A49E00852DC7 /* TestModelAltGraph.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,6 +482,15 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		FFC4AE531657B4F700852DC7 /* SecureUDID */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4AE541657B50700852DC7 /* SecureUDID.h */,
+				FFC4AE551657B50700852DC7 /* SecureUDID.m */,
+			);
+			name = SecureUDID;
+			sourceTree = "<group>";
+		};
 		FFCFA9F31639735A00BC2E3E /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +507,10 @@
 				FFB8CBC716440F3200D43C8F /* MKitServiceKeyChain.m */,
 				FFBB3307164A467D0053F713 /* MKitServiceFile.h */,
 				FFBB3308164A467D0053F713 /* MKitServiceFile.m */,
+				FFC4AE2516579AEB00852DC7 /* MKitServiceNotification.h */,
+				FFC4AE2616579AEB00852DC7 /* MKitServiceNotification.m */,
+				FFC4AE291657ADC100852DC7 /* MKitServiceInstallation.h */,
+				FFC4AE2A1657ADC100852DC7 /* MKitServiceInstallation.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -699,6 +737,11 @@
 				FFE4F131164CDEFE00E26C74 /* MKitGeoPoint.m in Sources */,
 				FF903002164DACCB00156E71 /* MKitGeoPoint+Parse.m in Sources */,
 				FF9030971650DED700156E71 /* MKitModelGraph.m in Sources */,
+				FFC4AE2716579AEB00852DC7 /* MKitServiceNotification.m in Sources */,
+				FFC4AE2B1657ADC100852DC7 /* MKitServiceInstallation.m in Sources */,
+				FFC4AE2E1657AE0800852DC7 /* MKitParseInstallation.m in Sources */,
+				FFC4AE561657B50700852DC7 /* SecureUDID.m in Sources */,
+				FFC4AE5C165F25B400852DC7 /* MKitParseNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +757,7 @@
 				FF903041164DBB5B00156E71 /* MKitTC0003GeoPointTestCases.m in Sources */,
 				FF903044164E37B000156E71 /* TestVenueModel.m in Sources */,
 				FF903047164FF0D800156E71 /* MKitTC0004ModelQueryTestCases.m in Sources */,
+				FFC4AE111653A49E00852DC7 /* TestModelAltGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

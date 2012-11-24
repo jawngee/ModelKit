@@ -33,19 +33,8 @@
 
 @implementation MKitParseModelQuery
 
--(AFHTTPRequestOperation *)buildQueryOpWithLimit:(NSInteger)limit skip:(NSInteger)skip includeCount:(BOOL)includeCount
+-(NSDictionary *)buildQuery
 {
-    NSMutableDictionary *params=[NSMutableDictionary dictionary];
-    
-    if (limit!=NSNotFound)
-        [params setObject:@(limit) forKey:@"limit"];
-    
-    if (skip!=NSNotFound)
-        [params setObject:@(skip) forKey:@"skip"];
-    
-    if (includeCount)
-        [params setObject:@(1) forKey:@"count"];
-    
     NSMutableDictionary *query=[NSMutableDictionary dictionary];
     for(NSDictionary *c in conditions)
     {
@@ -121,6 +110,24 @@
                 break;
         }
     }
+    
+    return query;
+}
+
+-(AFHTTPRequestOperation *)buildQueryOpWithLimit:(NSInteger)limit skip:(NSInteger)skip includeCount:(BOOL)includeCount
+{
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    
+    if (limit!=NSNotFound)
+        [params setObject:@(limit) forKey:@"limit"];
+    
+    if (skip!=NSNotFound)
+        [params setObject:@(skip) forKey:@"skip"];
+    
+    if (includeCount)
+        [params setObject:@(1) forKey:@"count"];
+    
+    NSDictionary *query=[self buildQuery];
     
     if (query.count>0)
         [params setObject:[query JSONString] forKey:@"where"];

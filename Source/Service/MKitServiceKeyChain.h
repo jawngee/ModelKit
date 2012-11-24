@@ -46,7 +46,7 @@ extern NSString *const MKitKeychainData;
  * @param data Other related data
  * @return YES if successful, NO otherwise
  */
--(BOOL)storeUsername:(NSString *)username password:(NSString *)password sessionToken:(NSString *)sessionToken data:(NSDictionary *)data;
+-(BOOL)storeUsername:(NSString *)username password:(NSString *)password sessionToken:(NSString *)sessionToken data:(id)data;
 
 /**
  * Returns the credentials for a given username
@@ -61,5 +61,28 @@ extern NSString *const MKitKeychainData;
  * @return YES if successful, NO if not.
  */
 -(BOOL)deleteCredentialsForUsername:(NSString *)username;
+
+
+/**
+ * Stores the user's installation data
+ * @param installationId The installation id
+ * @param data Installation data
+ * @return YES if successful, NO otherwise
+ */
+-(BOOL)storeInstallation:(NSString *)installationId installationData:(id)data;
+
+/**
+ * Returns the installation data for a given installation id
+ * @return Installation data if successful, nil if not.
+ */
+-(id)installationDataForId:(NSString *)installationId;
+
+/**
+ * Removes the credentials for a given username
+ * @param username The username
+ * @return YES if successful, NO if not.
+ */
+-(BOOL)deleteInstallationForId:(NSString *)installationId;
+
 
 @end

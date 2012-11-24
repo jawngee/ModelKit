@@ -27,7 +27,7 @@ static NSMutableDictionary *managers=nil;
     if (!serviceClass)
         @throw [NSException exceptionWithName:@"Service Not Found" reason:[NSString stringWithFormat:@"Service named '%@' could not be found.",name] userInfo:nil];
     
-    m=[[serviceClass alloc] initWithKeys:keys];
+    m=[[[serviceClass alloc] initWithKeys:keys] autorelease];
     [managers setObject:m forKey:name];
     return m;
 }
@@ -133,6 +133,18 @@ static NSMutableDictionary *managers=nil;
 }
 
 -(void)storeUserCredentials:(MKitServiceModel<MKitServiceUser> *)user
+{
+    
+}
+
+#pragma mark - Installation Data
+
+-(id)installationData
+{
+    return nil;
+}
+
+-(void)storeInstallationData:(MKitServiceModel<MKitServiceInstallation> *)install
 {
     
 }

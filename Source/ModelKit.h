@@ -36,6 +36,8 @@
 #import "MKitServiceKeyChain.h"
 #import "MKitServiceFile.h"
 #import "MKitMutableFileArray.h"
+#import "MKitServiceNotification.h"
+#import "MKitServiceInstallation.h"
 
 #import "MKitParseModel.h"
 #import "MKitParseModelQuery.h"
@@ -45,5 +47,7 @@
 #import "MKitModel+Parse.h"
 #import "MKitMutableModelArray+Parse.h"
 #import "MKitGeoPoint+Parse.h"
+#import "MKitParseInstallation.h"
+#import "MKitParseNotification.h"
 
 #endif

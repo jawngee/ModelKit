@@ -16,6 +16,7 @@
 @class MKitServiceModel;
 @class MKitServiceModelQuery;
 @protocol MKitServiceUser;
+@protocol MKitServiceInstallation;
 
 /**
  * Abstract class for building an interface between models and a backend service
@@ -147,6 +148,18 @@
  * @param user The user to store
  */
 -(void)storeUserCredentials:(MKitServiceModel<MKitServiceUser> *)user;
+
+/**
+ * Returns installation data
+ * @return Installation data
+ */
+-(id)installationData;
+
+/**
+ * Stores installation data
+ * @param install Installation data
+ */
+-(void)storeInstallationData:(MKitServiceModel<MKitServiceInstallation> *)install;
 
 /**
  * Saves the file with the service synchronously.  When subclassing MKitServiceManager, you must implement this method.

@@ -24,6 +24,8 @@
 #import "MKitParseFile.h"
 #import "MKitGeoPoint.h"
 #import "MKitGeoPoint+Parse.h"
+#import "MKitParseInstallation.h"
+#import "SecureUDID.h"
 
 #define PARSE_BASE_URL @"https://api.parse.com/1/"
 
@@ -101,7 +103,13 @@
         [parseClient setDefaultHeader:@"X-Parse-Session-Token" value:[MKitParseUser currentUser].modelSessionToken];
     
     // Parse uses a slightly different path for users, though the procedures are the same.  pita.
-    NSString *path=[class isSubclassOfClass:[MKitParseUser class]] ? @"users" : [NSString stringWithFormat:@"classes/%@",[class modelName]];
+    NSString *path=nil;
+    if ([class isSubclassOfClass:[MKitParseUser class]])
+        path=@"users";
+    else if ([class isSubclassOfClass:[MKitParseInstallation class]])
+        path=@"installations";
+    else
+        path=[NSString stringWithFormat:@"classes/%@",[class modelName]];
     
     NSMutableURLRequest *req=[parseClient requestWithMethod:method
                                                        path:path
@@ -436,6 +444,19 @@
     [[NSUserDefaults standardUserDefaults] setObject:puser.username forKey:[NSString stringWithFormat:@"%@-username",_appID]];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+#pragma mark - Installation Data
+
+-(id)installationData
+{
+    return [keychain installationDataForId:[SecureUDID UDIDForDomain:@"com.interfacelab.modelkit" usingKey:@"modelkit"]];
+}
+
+-(void)storeInstallationData:(MKitServiceModel<MKitServiceInstallation> *)install
+{
+    [keychain storeInstallation:[SecureUDID UDIDForDomain:@"com.interfacelab.modelkit" usingKey:@"modelkit"] installationData:[install serialize]];
+}
+
 
 #pragma mark - File
 

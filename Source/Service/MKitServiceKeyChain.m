@@ -31,7 +31,7 @@ NSString *const MKitKeychainData=@"data";
     [super dealloc];
 }
 
--(BOOL)storeUsername:(NSString *)username password:(NSString *)password sessionToken:(NSString *)sessionToken data:(NSDictionary *)data
+-(BOOL)storeUsername:(NSString *)username password:(NSString *)password sessionToken:(NSString *)sessionToken data:(id)data
 {
     if ([self deleteCredentialsForUsername:username])
     {
@@ -48,7 +48,7 @@ NSString *const MKitKeychainData=@"data";
         if (data)
         {
             NSMutableData *mdata = [NSMutableData data];
-            NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:mdata];
+            NSKeyedArchiver *archiver = [[[NSKeyedArchiver alloc] initForWritingWithMutableData:mdata] autorelease];
             [archiver encodeObject:data forKey:MKitKeychainData];
             [archiver finishEncoding];
             [dictionary setValue:mdata forKey:(id)kSecAttrComment];
@@ -77,22 +77,22 @@ NSString *const MKitKeychainData=@"data";
     {
         NSDictionary *result=(NSDictionary *)resultRef;
         
-        NSString *username = [[NSString alloc] initWithData:[result valueForKey:(id)kSecAttrAccount] encoding:NSUTF8StringEncoding];
+        NSString *username = [[[NSString alloc] initWithData:[result valueForKey:(id)kSecAttrAccount] encoding:NSUTF8StringEncoding] autorelease];
         
         NSString *sessionToken = nil;
         NSData *sessionTokenData=[result valueForKey:(id)kSecAttrGeneric];
-        sessionToken=[[NSString alloc] initWithData:sessionTokenData encoding:NSUTF8StringEncoding];
+        sessionToken=[[[NSString alloc] initWithData:sessionTokenData encoding:NSUTF8StringEncoding] autorelease];
         
         NSString *password = nil;
         NSData *passwordData = [result valueForKey:(id)kSecValueData];
         if (passwordData)
-            password = [[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
+            password = [[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding] autorelease];
         
         NSData *data = [result valueForKey:(id)kSecAttrComment];
-        NSDictionary *misc = nil;
+        id misc = nil;
         
         if (data) {
-            NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+            NSKeyedUnarchiver *unarchiver = [[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
             misc = [unarchiver decodeObjectForKey:MKitKeychainData];
             [unarchiver finishDecoding];
         }
@@ -122,6 +122,75 @@ NSString *const MKitKeychainData=@"data";
                            (id)kSecClassGenericPassword, (id)kSecClass,
                            [service dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrService,
                            [username dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrAccount,
+                           nil];
+    OSStatus status = SecItemDelete((CFDictionaryRef)query);
+    return (status == errSecSuccess || status == errSecItemNotFound);
+}
+
+
+-(BOOL)storeInstallation:(NSString *)installationId installationData:(id)data
+{
+    if ([self deleteInstallationForId:installationId])
+    {
+        NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                           (id)kSecClassKey, (id)kSecClass,
+                                           [installationId dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrAccount,
+                                           [service dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrService, nil];
+        
+         if (data)
+        {
+            NSMutableData *mdata = [NSMutableData data];
+            NSKeyedArchiver *archiver = [[[NSKeyedArchiver alloc] initForWritingWithMutableData:mdata] autorelease];
+            [archiver encodeObject:data forKey:MKitKeychainData];
+            [archiver finishEncoding];
+            [dictionary setValue:mdata forKey:(id)kSecAttrComment];
+        }
+        
+        OSStatus status = SecItemAdd((CFDictionaryRef)dictionary, NULL);
+        return (status == errSecSuccess);
+    }
+    
+    return NO;
+}
+
+-(id)installationDataForId:(NSString *)installationId
+{
+    NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
+                           (id)kSecClassKey, (id)kSecClass,
+                           [service dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrService,
+                           [installationId dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrAccount,
+                           (id)kCFBooleanTrue, (id)kSecReturnAttributes,
+                           (id)kCFBooleanTrue, (id)kSecReturnData,
+                           nil];
+    
+    CFDictionaryRef resultRef = NULL;
+    OSStatus status = SecItemCopyMatching((CFDictionaryRef)query, (CFTypeRef *)&resultRef);
+    if (status == errSecSuccess && resultRef != NULL)
+    {
+        NSDictionary *result=(NSDictionary *)resultRef;
+        
+        NSData *data = [result valueForKey:(id)kSecAttrComment];
+        id misc = nil;
+        
+        if (data) {
+            NSKeyedUnarchiver *unarchiver = [[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
+            misc = [unarchiver decodeObjectForKey:MKitKeychainData];
+            [unarchiver finishDecoding];
+        }
+        
+    
+        return misc;
+    }
+    
+    return nil;
+}
+
+-(BOOL)deleteInstallationForId:(NSString *)installationId
+{
+    NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
+                           (id)kSecClassKey, (id)kSecClass,
+                           [service dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrService,
+                           [installationId dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrAccount,
                            nil];
     OSStatus status = SecItemDelete((CFDictionaryRef)query);
     return (status == errSecSuccess || status == errSecItemNotFound);
