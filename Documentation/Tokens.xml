@@ -1987,6 +1987,72 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>processParseArray:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitParseModelBinder</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_binder.html</Path>
+    <Anchor>a6edd767b659d7e6e9e74ba2c154f914a</Anchor>
+    <DeclaredIn>MKitParseModelBinder.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>processParseDictionary:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitParseModelBinder</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_binder.html</Path>
+    <Anchor>adce53ca7fbfac1051b827ef92445cf84</Anchor>
+    <DeclaredIn>MKitParseModelBinder.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>processParseResult:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitParseModelBinder</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_binder.html</Path>
+    <Anchor>a8fe62edae8e548510ee93a2e5edde5be</Anchor>
+    <DeclaredIn>MKitParseModelBinder.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>prepareParseParametersArray:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitParseModelBinder</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_binder.html</Path>
+    <Anchor>a908170d3cb45283ac7de1f22533875b1</Anchor>
+    <DeclaredIn>MKitParseModelBinder.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>prepareParseParametersDictionary:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitParseModelBinder</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_binder.html</Path>
+    <Anchor>ada5164a6d60621ed63ea2b752d9ed237</Anchor>
+    <DeclaredIn>MKitParseModelBinder.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>prepareParseParameters:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitParseModelBinder</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_parse_model_binder.html</Path>
+    <Anchor>acdb88fe1ddc7fff441350f6c531643f7</Anchor>
+    <DeclaredIn>MKitParseModelBinder.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>MKitParseModelQuery</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -2240,6 +2306,17 @@
     </TokenIdentifier>
     <Path>interface_m_kit_service_notification.html</Path>
     <Anchor>a9cb96497e135e99614e00109dc52f480</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>service</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a3c1dba16be1616f9ce24f9cd835741c5</Anchor>
     <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
   </Token>
   <Token>
@@ -2651,24 +2728,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>setupService:withKeys:</Name>
+      <Name>callFunction:parameters:resultBlock:</Name>
       <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
+      <Type>instm</Type>
       <Scope>MKitServiceManager</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_manager.html</Path>
-    <Anchor>ad33c0c71934d2d6af2c75c5def01181e</Anchor>
+    <Anchor>a3e82c954a547c5e57921373323a0d1b3</Anchor>
     <DeclaredIn>MKitServiceManager.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>managerForService:</Name>
+      <Name>callFunctionInBackground:parameters:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>a08b6b8301ab7d52545fbb152f0871f07</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>addService:named:</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
       <Scope>MKitServiceManager</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_manager.html</Path>
-    <Anchor>a16d6c03ce3f21e8148c4837d810a0aa8</Anchor>
+    <Anchor>ac250c9bab0847271b006fad8d7bbdfc2</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>managerForServiceNamed:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>ac84d5c818a08900bb5b6377cd7c2cb8b</Anchor>
     <DeclaredIn>MKitServiceManager.h</DeclaredIn>
   </Token>
   <Token>
@@ -3634,24 +3733,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>setupService:withKeys:</Name>
+      <Name>callFunction:parameters:resultBlock:</Name>
       <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
+      <Type>instm</Type>
       <Scope>MKitServiceManager</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_manager.html</Path>
-    <Anchor>ad33c0c71934d2d6af2c75c5def01181e</Anchor>
+    <Anchor>a3e82c954a547c5e57921373323a0d1b3</Anchor>
     <DeclaredIn>MKitServiceManager.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>managerForService:</Name>
+      <Name>callFunctionInBackground:parameters:resultBlock:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>a08b6b8301ab7d52545fbb152f0871f07</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>addService:named:</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
       <Scope>MKitServiceManager</Scope>
     </TokenIdentifier>
     <Path>interface_m_kit_service_manager.html</Path>
-    <Anchor>a16d6c03ce3f21e8148c4837d810a0aa8</Anchor>
+    <Anchor>ac250c9bab0847271b006fad8d7bbdfc2</Anchor>
+    <DeclaredIn>MKitServiceManager.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>managerForServiceNamed:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_manager.html</Path>
+    <Anchor>ac84d5c818a08900bb5b6377cd7c2cb8b</Anchor>
     <DeclaredIn>MKitServiceManager.h</DeclaredIn>
   </Token>
   <Token>
@@ -4330,6 +4451,17 @@
     </TokenIdentifier>
     <Path>interface_m_kit_service_notification.html</Path>
     <Anchor>a9cb96497e135e99614e00109dc52f480</Anchor>
+    <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>service</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>MKitServiceNotification</Scope>
+    </TokenIdentifier>
+    <Path>interface_m_kit_service_notification.html</Path>
+    <Anchor>a3c1dba16be1616f9ce24f9cd835741c5</Anchor>
     <DeclaredIn>MKitServiceNotification.h</DeclaredIn>
   </Token>
   <Token>

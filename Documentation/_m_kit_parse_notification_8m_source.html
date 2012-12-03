@@ -119,73 +119,82 @@ $(document).ready(function(){initNavTree('_m_kit_parse_notification_8m_source.ht
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">@implementation </span><a class="code" href="interface_m_kit_parse_notification.html">MKitParseNotification</a></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;-(BOOL)send:(NSError **)error</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;+(<a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> *)<a class="code" href="interface_m_kit_service_notification.html#a3c1dba16be1616f9ce24f9cd835741c5">service</a></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    BOOL result=NO;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">static</span> <a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> *parseService=nil;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    NSMutableDictionary *data=[NSMutableDictionary dictionary];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    NSMutableDictionary *body=[NSMutableDictionary dictionary];</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> ((<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a62c51ea64df88808f8cfb0ee5502500f">channels</a>) &amp;&amp; (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a62c51ea64df88808f8cfb0ee5502500f">channels</a>.count&gt;0))</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        [body setObject:self.channels forKey:@&quot;channels&quot;];</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#ad3a0efc3a3b6b0c9b99f35293adc186d">query</a>)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> ([[<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#ad3a0efc3a3b6b0c9b99f35293adc186d">query</a> <span class="keyword">class</span>] isSubclassOfClass:[<a class="code" href="interface_m_kit_parse_model_query.html">MKitParseModelQuery</a> <span class="keyword">class</span>]])</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            [body setObject:[((<a class="code" href="interface_m_kit_parse_model_query.html">MKitParseModelQuery</a> *)<span class="keyword">self</span>.<a class="code" href="interface_m_kit_parse_model_query.html">query</a>) <a class="code" href="interface_m_kit_parse_model_query.html">buildQuery</a>] forKey:@&quot;where&quot;];</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">@throw</span> [NSException exceptionWithName:@&quot;Invalid Query Type&quot; reason:@&quot;Query is not a MKitParseModelQuery&quot; userInfo:nil];</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (!<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a7c17bb8787d6a5ba3534a89586f08719">message</a>)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">@throw</span> [NSException exceptionWithName:@&quot;Notification Missing Message&quot; reason:@&quot;Notification is missing a message&quot; userInfo:nil];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    [data setObject:self.message forKey:@&quot;alert&quot;];</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#ae53dce4ac05565d747c51ce768399951">badgeCount</a>!=MKitBadgeNoCount)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        [data setObject:(self.badgeCount==MKitBadgeIncrement) ? @&quot;Increment&quot; : @(self.badgeCount) forKey:@&quot;badge&quot;];</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a63c40512e93b5be5b8aaf0ed14b98cb7">sound</a>)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        [data setObject:self.sound forKey:@&quot;sound&quot;];</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a1ad15815e2a362d1541d4c45a82b401e">contentAvailable</a>)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        [data setObject:@(self.contentAvailable) forKey:@&quot;content-available&quot;];</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a83b0a96a4466317ef223656ced33c8c3">action</a>)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        [data setObject:self.action forKey:@&quot;action&quot;];</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">static</span> dispatch_once_t pred;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    dispatch_once(&amp;pred, ^{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        parseService=[<a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> <a class="code" href="interface_m_kit_service_manager.html#ac84d5c818a08900bb5b6377cd7c2cb8b">managerForServiceNamed</a>:MKitParseServiceName];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    });</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> parseService;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;-(BOOL)send:(NSError **)error</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    BOOL result=NO;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    NSMutableDictionary *data=[NSMutableDictionary dictionary];</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    NSMutableDictionary *body=[NSMutableDictionary dictionary];</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> ((<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a62c51ea64df88808f8cfb0ee5502500f">channels</a>) &amp;&amp; (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a62c51ea64df88808f8cfb0ee5502500f">channels</a>.count&gt;0))</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        [body setObject:self.channels forKey:@&quot;channels&quot;];</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#ad3a0efc3a3b6b0c9b99f35293adc186d">query</a>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> ([[<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#ad3a0efc3a3b6b0c9b99f35293adc186d">query</a> <span class="keyword">class</span>] isSubclassOfClass:[<a class="code" href="interface_m_kit_parse_model_query.html">MKitParseModelQuery</a> <span class="keyword">class</span>]])</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            [body setObject:[((<a class="code" href="interface_m_kit_parse_model_query.html">MKitParseModelQuery</a> *)<span class="keyword">self</span>.<a class="code" href="interface_m_kit_parse_model_query.html">query</a>) <a class="code" href="interface_m_kit_parse_model_query.html">buildQuery</a>] forKey:@&quot;where&quot;];</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">@throw</span> [NSException exceptionWithName:@&quot;Invalid Query Type&quot; reason:@&quot;Query is not a MKitParseModelQuery&quot; userInfo:nil];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (!<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a7c17bb8787d6a5ba3534a89586f08719">message</a>)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">@throw</span> [NSException exceptionWithName:@&quot;Notification Missing Message&quot; reason:@&quot;Notification is missing a message&quot; userInfo:nil];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    [data setObject:self.message forKey:@&quot;alert&quot;];</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a1797659337bbbfd6d2e09c29229f3290">title</a>)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        [data setObject:self.title forKey:@&quot;title&quot;];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#ae53dce4ac05565d747c51ce768399951">badgeCount</a>!=MKitBadgeNoCount)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        [data setObject:(self.badgeCount==MKitBadgeIncrement) ? @&quot;Increment&quot; : @(self.badgeCount) forKey:@&quot;badge&quot;];</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    [body setObject:data forKey:@&quot;data&quot;];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//TODO: This is janky.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="interface_m_kit_parse_service_manager.html">MKitParseServiceManager</a> *service=(<a class="code" href="interface_m_kit_parse_service_manager.html">MKitParseServiceManager</a> *)[<a class="code" href="interface_m_kit_service_manager.html">MKitServiceManager</a> managerForService:<span class="stringliteral">@&quot;Parse&quot;</span>];</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    AFHTTPRequestOperation *op=[service <a class="code" href="interface_m_kit_service_manager.html#a519a73ed459c5ac119d5411586b974cf">requestWithMethod</a>:@&quot;POST&quot; <a class="code" href="interface_m_kit_service_manager.html#a519a73ed459c5ac119d5411586b974cf">path</a>:@&quot;push&quot; <a class="code" href="interface_m_kit_service_manager.html#a519a73ed459c5ac119d5411586b974cf">params</a>:nil <a class="code" href="interface_m_kit_service_manager.html#a519a73ed459c5ac119d5411586b974cf">body</a>:[body JSONData] <a class="code" href="interface_m_kit_service_manager.html#a519a73ed459c5ac119d5411586b974cf">contentType</a>:nil];</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    [op start];</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    [op waitUntilFinished];</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> ([op hasAcceptableStatusCode])</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        result=YES;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (error)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        *error=op.error;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a63c40512e93b5be5b8aaf0ed14b98cb7">sound</a>)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        [data setObject:self.sound forKey:@&quot;sound&quot;];</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a1ad15815e2a362d1541d4c45a82b401e">contentAvailable</a>)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        [data setObject:@(self.contentAvailable) forKey:@&quot;content-available&quot;];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a83b0a96a4466317ef223656ced33c8c3">action</a>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        [data setObject:self.action forKey:@&quot;action&quot;];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">self</span>.<a class="code" href="interface_m_kit_service_notification.html#a1797659337bbbfd6d2e09c29229f3290">title</a>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        [data setObject:self.title forKey:@&quot;title&quot;];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    [body setObject:data forKey:@&quot;data&quot;];</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    AFHTTPRequestOperation *op=[[[<span class="keyword">self</span> class] service] requestWithMethod:@&quot;POST&quot; path:@&quot;push&quot; params:nil body:[body JSONData] contentType:nil];</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    [op start];</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    [op waitUntilFinished];</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> ([op hasAcceptableStatusCode])</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        result=YES;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (error)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        *error=op.error;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_274770857b8dca50bfd429b32ee69447.html">Service</a></li><li class="navelem"><a class="el" href="dir_1eed2606f6d1430968d938275b9cd35c.html">Backend</a></li><li class="navelem"><a class="el" href="dir_9d0cd325318ccf1dcb14e6d8f10fdc61.html">Parse</a></li><li class="navelem"><b>MKitParseNotification.m</b></li>
-    <li class="footer">Generated on Sat Nov 24 2012 18:00:19 for ModelKit by
+    <li class="footer">Generated on Mon Dec 3 2012 13:13:49 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

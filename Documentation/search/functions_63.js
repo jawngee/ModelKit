@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['callfunction_3aparameters_3aresultblock_3a',['callFunction:parameters:resultBlock:',['../interface_m_kit_service_manager.html#a3e82c954a547c5e57921373323a0d1b3',1,'MKitServiceManager']]],
+  ['callfunctioninbackground_3aparameters_3aresultblock_3a',['callFunctionInBackground:parameters:resultBlock:',['../interface_m_kit_service_manager.html#a08b6b8301ab7d52545fbb152f0871f07',1,'MKitServiceManager']]],
   ['classrequestwithmethod_3aclass_3aparams_3abody_3a',['classRequestWithMethod:class:params:body:',['../interface_m_kit_service_manager.html#af26f3035a4b7d0fa2767ed83c8661ad6',1,'MKitServiceManager']]],
   ['clear',['clear',['../interface_m_kit_model_graph.html#a7df45ecfc0c4f85872149eb4b073714b',1,'MKitModelGraph']]],
   ['clearallgraphs',['clearAllGraphs',['../interface_m_kit_model_graph.html#ae8bac1da6699b7cc6c938f821f9bf62a',1,'MKitModelGraph']]],

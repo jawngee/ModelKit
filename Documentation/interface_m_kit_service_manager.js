@@ -1,5 +1,8 @@
 var interface_m_kit_service_manager =
 [
+    [ "addService:named:", "interface_m_kit_service_manager.html#ac250c9bab0847271b006fad8d7bbdfc2", null ],
+    [ "callFunction:parameters:resultBlock:", "interface_m_kit_service_manager.html#a3e82c954a547c5e57921373323a0d1b3", null ],
+    [ "callFunctionInBackground:parameters:resultBlock:", "interface_m_kit_service_manager.html#a08b6b8301ab7d52545fbb152f0871f07", null ],
     [ "classRequestWithMethod:class:params:body:", "interface_m_kit_service_manager.html#af26f3035a4b7d0fa2767ed83c8661ad6", null ],
     [ "deleteFile:error:", "interface_m_kit_service_manager.html#a579a1a2b178313603f46871b9c6290af", null ],
     [ "deleteFileInBackground:withBlock:", "interface_m_kit_service_manager.html#aa8cc8003f11790e50ad9dc817fb5589f", null ],
@@ -9,7 +12,7 @@ var interface_m_kit_service_manager =
     [ "fetchModelInBackground:withBlock:", "interface_m_kit_service_manager.html#a8fde70ce3bc4111eed6e8edda2931ff6", null ],
     [ "initWithKeys:", "interface_m_kit_service_manager.html#a30ace61b8b86673ff08f97c8d919309f", null ],
     [ "installationData", "interface_m_kit_service_manager.html#a1d90d66efa534a4dc6b11c66a97d46a2", null ],
-    [ "managerForService:", "interface_m_kit_service_manager.html#a16d6c03ce3f21e8148c4837d810a0aa8", null ],
+    [ "managerForServiceNamed:", "interface_m_kit_service_manager.html#ac84d5c818a08900bb5b6377cd7c2cb8b", null ],
     [ "modelRequestWithMethod:model:params:body:", "interface_m_kit_service_manager.html#aa78fbeff668cd87fa6d2d37ebf0a56d3", null ],
     [ "queryForModelClass:", "interface_m_kit_service_manager.html#a50a85563c800263cfe85a5c2d9d48e50", null ],
     [ "requestWithMethod:path:params:body:contentType:", "interface_m_kit_service_manager.html#a519a73ed459c5ac119d5411586b974cf", null ],
@@ -17,7 +20,6 @@ var interface_m_kit_service_manager =
     [ "saveFileInBackground:progressBlock:resultBlock:", "interface_m_kit_service_manager.html#ac56b8dddac741f37397aaa99a4dc8645", null ],
     [ "saveModel:error:", "interface_m_kit_service_manager.html#a780a85f5bdd23658371d0ed6bd68200b", null ],
     [ "saveModelInBackground:withBlock:", "interface_m_kit_service_manager.html#aac2c8da32d306fedfc03ba65d8be30de", null ],
-    [ "setupService:withKeys:", "interface_m_kit_service_manager.html#ad33c0c71934d2d6af2c75c5def01181e", null ],
     [ "storeInstallationData:", "interface_m_kit_service_manager.html#a7cf526ba9e1fbd542f2dcf796a527189", null ],
     [ "storeUserCredentials:", "interface_m_kit_service_manager.html#ae17cb193061855460d7e5c244517fb94", null ],
     [ "userCredentials", "interface_m_kit_service_manager.html#a17fbcc36fd83bd996499b2eb314ffcb1", null ],

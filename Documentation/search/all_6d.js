@@ -1,7 +1,7 @@
 var searchData=
 [
   ['manager',['manager',['../interface_m_kit_service_model_query.html#af8e7fff661acc01b9411a6fda21f42a1',1,'MKitServiceModelQuery']]],
-  ['managerforservice_3a',['managerForService:',['../interface_m_kit_service_manager.html#a16d6c03ce3f21e8148c4837d810a0aa8',1,'MKitServiceManager']]],
+  ['managerforservicenamed_3a',['managerForServiceNamed:',['../interface_m_kit_service_manager.html#ac84d5c818a08900bb5b6377cd7c2cb8b',1,'MKitServiceManager']]],
   ['maxpoint',['maxPoint',['../interface_m_kit_geo_bounds.html#a3e77a1b3ba84ebfd5262f016b6b0a032',1,'MKitGeoBounds']]],
   ['message',['message',['../interface_m_kit_service_notification.html#a7c17bb8787d6a5ba3534a89586f08719',1,'MKitServiceNotification']]],
   ['minpoint',['minPoint',['../interface_m_kit_geo_bounds.html#aa4975383cdb2d24bfdbce0cef5b8fde6',1,'MKitGeoBounds']]],

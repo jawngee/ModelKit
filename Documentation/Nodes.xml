@@ -641,6 +641,36 @@
               <Path>interface_m_kit_parse_model_binder.html</Path>
               <Anchor>ac85fd317994547b0d3bfc4bf05803b69</Anchor>
              </Node>
+             <Node>
+              <Name>prepareParseParameters:</Name>
+              <Path>interface_m_kit_parse_model_binder.html</Path>
+              <Anchor>acdb88fe1ddc7fff441350f6c531643f7</Anchor>
+             </Node>
+             <Node>
+              <Name>prepareParseParametersArray:</Name>
+              <Path>interface_m_kit_parse_model_binder.html</Path>
+              <Anchor>a908170d3cb45283ac7de1f22533875b1</Anchor>
+             </Node>
+             <Node>
+              <Name>prepareParseParametersDictionary:</Name>
+              <Path>interface_m_kit_parse_model_binder.html</Path>
+              <Anchor>ada5164a6d60621ed63ea2b752d9ed237</Anchor>
+             </Node>
+             <Node>
+              <Name>processParseArray:</Name>
+              <Path>interface_m_kit_parse_model_binder.html</Path>
+              <Anchor>a6edd767b659d7e6e9e74ba2c154f914a</Anchor>
+             </Node>
+             <Node>
+              <Name>processParseDictionary:</Name>
+              <Path>interface_m_kit_parse_model_binder.html</Path>
+              <Anchor>adce53ca7fbfac1051b827ef92445cf84</Anchor>
+             </Node>
+             <Node>
+              <Name>processParseResult:</Name>
+              <Path>interface_m_kit_parse_model_binder.html</Path>
+              <Anchor>a8fe62edae8e548510ee93a2e5edde5be</Anchor>
+             </Node>
             </Subnodes>
            </Node>
            <Node>
@@ -1020,6 +1050,21 @@
             <Path>interface_m_kit_service_manager.html</Path>
             <Subnodes>
              <Node>
+              <Name>addService:named:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>ac250c9bab0847271b006fad8d7bbdfc2</Anchor>
+             </Node>
+             <Node>
+              <Name>callFunction:parameters:resultBlock:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>a3e82c954a547c5e57921373323a0d1b3</Anchor>
+             </Node>
+             <Node>
+              <Name>callFunctionInBackground:parameters:resultBlock:</Name>
+              <Path>interface_m_kit_service_manager.html</Path>
+              <Anchor>a08b6b8301ab7d52545fbb152f0871f07</Anchor>
+             </Node>
+             <Node>
               <Name>classRequestWithMethod:class:params:body:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
               <Anchor>af26f3035a4b7d0fa2767ed83c8661ad6</Anchor>
@@ -1065,9 +1110,9 @@
               <Anchor>a1d90d66efa534a4dc6b11c66a97d46a2</Anchor>
              </Node>
              <Node>
-              <Name>managerForService:</Name>
+              <Name>managerForServiceNamed:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
-              <Anchor>a16d6c03ce3f21e8148c4837d810a0aa8</Anchor>
+              <Anchor>ac84d5c818a08900bb5b6377cd7c2cb8b</Anchor>
              </Node>
              <Node>
               <Name>modelRequestWithMethod:model:params:body:</Name>
@@ -1103,11 +1148,6 @@
               <Name>saveModelInBackground:withBlock:</Name>
               <Path>interface_m_kit_service_manager.html</Path>
               <Anchor>aac2c8da32d306fedfc03ba65d8be30de</Anchor>
-             </Node>
-             <Node>
-              <Name>setupService:withKeys:</Name>
-              <Path>interface_m_kit_service_manager.html</Path>
-              <Anchor>ad33c0c71934d2d6af2c75c5def01181e</Anchor>
              </Node>
              <Node>
               <Name>storeInstallationData:</Name>
@@ -1266,6 +1306,11 @@
               <Name>sendInBackground:</Name>
               <Path>interface_m_kit_service_notification.html</Path>
               <Anchor>a9cb96497e135e99614e00109dc52f480</Anchor>
+             </Node>
+             <Node>
+              <Name>service</Name>
+              <Path>interface_m_kit_service_notification.html</Path>
+              <Anchor>a3c1dba16be1616f9ce24f9cd835741c5</Anchor>
              </Node>
              <Node>
               <Name>action</Name>

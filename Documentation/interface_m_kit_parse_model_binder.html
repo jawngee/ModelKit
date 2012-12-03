@@ -125,6 +125,18 @@ Class Methods</h2></td></tr>
 <tr class="separator:ac85fd317994547b0d3bfc4bf05803b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c3ab1ad308d6bad95a85c37ab35b6a2"><td class="memItemLeft" align="right" valign="top">(NSArray *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_parse_model_binder.html#a1c3ab1ad308d6bad95a85c37ab35b6a2">bindArrayOfModels:forClass:</a></td></tr>
 <tr class="separator:a1c3ab1ad308d6bad95a85c37ab35b6a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6edd767b659d7e6e9e74ba2c154f914a"><td class="memItemLeft" align="right" valign="top">(NSMutableArray *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_parse_model_binder.html#a6edd767b659d7e6e9e74ba2c154f914a">processParseArray:</a></td></tr>
+<tr class="separator:a6edd767b659d7e6e9e74ba2c154f914a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adce53ca7fbfac1051b827ef92445cf84"><td class="memItemLeft" align="right" valign="top">(NSDictionary *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_parse_model_binder.html#adce53ca7fbfac1051b827ef92445cf84">processParseDictionary:</a></td></tr>
+<tr class="separator:adce53ca7fbfac1051b827ef92445cf84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe62edae8e548510ee93a2e5edde5be"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_parse_model_binder.html#a8fe62edae8e548510ee93a2e5edde5be">processParseResult:</a></td></tr>
+<tr class="separator:a8fe62edae8e548510ee93a2e5edde5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a908170d3cb45283ac7de1f22533875b1"><td class="memItemLeft" align="right" valign="top">(NSMutableArray *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_parse_model_binder.html#a908170d3cb45283ac7de1f22533875b1">prepareParseParametersArray:</a></td></tr>
+<tr class="separator:a908170d3cb45283ac7de1f22533875b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada5164a6d60621ed63ea2b752d9ed237"><td class="memItemLeft" align="right" valign="top">(NSDictionary *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_parse_model_binder.html#ada5164a6d60621ed63ea2b752d9ed237">prepareParseParametersDictionary:</a></td></tr>
+<tr class="separator:ada5164a6d60621ed63ea2b752d9ed237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdb88fe1ddc7fff441350f6c531643f7"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_m_kit_parse_model_binder.html#acdb88fe1ddc7fff441350f6c531643f7">prepareParseParameters:</a></td></tr>
+<tr class="separator:acdb88fe1ddc7fff441350f6c531643f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility class to bind incoming parse data to models. </p>
@@ -204,6 +216,162 @@ Class Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="acdb88fe1ddc7fff441350f6c531643f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (id) prepareParseParameters: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>parameters</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method will take the parameters to send to a parse cloud function and insure it's the format that Parse anticipates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parameters</td><td>The parameters, either an array or a dictionary </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The prepared parameters </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_parse_model_binder_8m_source.html#l00324">324</a> of file <a class="el" href="_m_kit_parse_model_binder_8m_source.html">MKitParseModelBinder.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a908170d3cb45283ac7de1f22533875b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (NSMutableArray *) prepareParseParametersArray: </td>
+          <td></td>
+          <td class="paramtype">(NSArray *)&#160;</td>
+          <td class="paramname"><em>array</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method will take the parameters to send to a parse cloud function and insure it's the format that Parse anticipates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The array of parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The prepared array. </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_parse_model_binder_8m_source.html#l00213">213</a> of file <a class="el" href="_m_kit_parse_model_binder_8m_source.html">MKitParseModelBinder.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada5164a6d60621ed63ea2b752d9ed237"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (NSDictionary *) prepareParseParametersDictionary: </td>
+          <td></td>
+          <td class="paramtype">(NSDictionary *)&#160;</td>
+          <td class="paramname"><em>dictionary</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method will take the parameters to send to a parse cloud function and insure it's the format that Parse anticipates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dictionary</td><td>The dictionary of parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The prepared dictionary. </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_parse_model_binder_8m_source.html#l00269">269</a> of file <a class="el" href="_m_kit_parse_model_binder_8m_source.html">MKitParseModelBinder.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6edd767b659d7e6e9e74ba2c154f914a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (NSMutableArray *) processParseArray: </td>
+          <td></td>
+          <td class="paramtype">(NSMutableArray *)&#160;</td>
+          <td class="paramname"><em>array</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method will take the array result from a parse service call and map/create any models in the response. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The result of the cloud function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The processed array. </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_parse_model_binder_8m_source.html#l00138">138</a> of file <a class="el" href="_m_kit_parse_model_binder_8m_source.html">MKitParseModelBinder.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adce53ca7fbfac1051b827ef92445cf84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (NSDictionary *) processParseDictionary: </td>
+          <td></td>
+          <td class="paramtype">(NSDictionary *)&#160;</td>
+          <td class="paramname"><em>dictionary</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method will take the dictionary result from a parse service call and map/create any models in the response. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dictionary</td><td>The result of the cloud function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The processed dictionary. </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_parse_model_binder_8m_source.html#l00155">155</a> of file <a class="el" href="_m_kit_parse_model_binder_8m_source.html">MKitParseModelBinder.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fe62edae8e548510ee93a2e5edde5be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (id) processParseResult: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>result</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method will take the dictionary or array result from a parse service call and map/create any models in the response. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>The result of the cloud function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The processed result. </dd></dl>
+
+<p>Definition at line <a class="el" href="_m_kit_parse_model_binder_8m_source.html#l00202">202</a> of file <a class="el" href="_m_kit_parse_model_binder_8m_source.html">MKitParseModelBinder.m</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Source/Service/Backend/Parse/Utilities/<a class="el" href="_m_kit_parse_model_binder_8h_source.html">MKitParseModelBinder.h</a></li>
 <li>Source/Service/Backend/Parse/Utilities/<a class="el" href="_m_kit_parse_model_binder_8m_source.html">MKitParseModelBinder.m</a></li>
@@ -214,7 +382,7 @@ Class Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_m_kit_parse_model_binder.html">MKitParseModelBinder</a></li>
-    <li class="footer">Generated on Sat Nov 24 2012 18:00:19 for ModelKit by
+    <li class="footer">Generated on Mon Dec 3 2012 13:13:49 for ModelKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

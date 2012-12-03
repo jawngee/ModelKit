@@ -10,6 +10,7 @@ var interface_m_kit_service_notification =
     [ "notificationWithMessage:query:badgeCount:", "interface_m_kit_service_notification.html#a9eed8ebe30805c8dbdd733e9e03c6661", null ],
     [ "send:", "interface_m_kit_service_notification.html#a58c05c94b81050e9e943354dc4c2e31a", null ],
     [ "sendInBackground:", "interface_m_kit_service_notification.html#a9cb96497e135e99614e00109dc52f480", null ],
+    [ "service", "interface_m_kit_service_notification.html#a3c1dba16be1616f9ce24f9cd835741c5", null ],
     [ "action", "interface_m_kit_service_notification.html#a83b0a96a4466317ef223656ced33c8c3", null ],
     [ "badgeCount", "interface_m_kit_service_notification.html#ae53dce4ac05565d747c51ce768399951", null ],
     [ "channels", "interface_m_kit_service_notification.html#a62c51ea64df88808f8cfb0ee5502500f", null ],

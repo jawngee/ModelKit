@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['callfunction_3aparameters_3aresultblock_3a',['callFunction:parameters:resultBlock:',['../interface_m_kit_service_manager.html#a3e82c954a547c5e57921373323a0d1b3',1,'MKitServiceManager']]],
+  ['callfunctioninbackground_3aparameters_3aresultblock_3a',['callFunctionInBackground:parameters:resultBlock:',['../interface_m_kit_service_manager.html#a08b6b8301ab7d52545fbb152f0871f07',1,'MKitServiceManager']]],
   ['channels',['channels',['../interface_m_kit_parse_installation.html#aa9cd472ca64086af88d422049c0547e4',1,'MKitParseInstallation::channels()'],['../protocol_m_kit_service_installation-p.html#a6abff6a52e5a57f2885f41a219fbc9b9',1,'MKitServiceInstallation-p::channels()'],['../interface_m_kit_service_notification.html#a62c51ea64df88808f8cfb0ee5502500f',1,'MKitServiceNotification::channels()']]],
   ['classcache',['classCache',['../interface_m_kit_model_graph.html#a692d07166e8d7c9cf547aee8af07c646',1,'MKitModelGraph']]],
   ['classrequestwithmethod_3aclass_3aparams_3abody_3a',['classRequestWithMethod:class:params:body:',['../interface_m_kit_service_manager.html#af26f3035a4b7d0fa2767ed83c8661ad6',1,'MKitServiceManager']]],
