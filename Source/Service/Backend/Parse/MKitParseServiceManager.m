@@ -504,4 +504,32 @@ NSString * const MKitParseServiceName=@"Parse";
     return NO;
 }
 
+
+-(void)callFunction:(NSString *)function parameters:(id)params resultBlock:(MKitServiceResultBlock)resultBlock
+{
+    params=[MKitParseModelBinder prepareParseParameters:params];
+    NSData *data=[params JSONData];
+    
+    AFHTTPRequestOperation *op=[self requestWithMethod:@"POST" path:[NSString stringWithFormat:@"functions/%@",function] params:nil body:data contentType:@"text/json"];
+    
+    [op start];
+    [op waitUntilFinished];
+    
+    if ([op hasAcceptableStatusCode])
+    {
+        id data=[op.responseString objectFromJSONString];
+        data=[MKitParseModelBinder processParseResult:data];
+        
+        if (resultBlock)
+            resultBlock(YES, nil, data);
+    }
+    else
+    {
+        if (resultBlock)
+            resultBlock(NO, op.error, nil);
+        
+        NSLog(@"%@ - %@",op.error, op.responseString);
+    }
+}
+
 @end

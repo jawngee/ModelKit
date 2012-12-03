@@ -30,4 +30,52 @@
  */
 +(NSArray *)bindArrayOfModels:(NSArray *)models forClass:(Class)modelClass;
 
+/**
+ * This method will take the array result from a parse service
+ * call and map/create any models in the response.
+ * @param array The result of the cloud function
+ * @return The processed array.
+ */
++(NSMutableArray *)processParseArray:(NSMutableArray *)array;
+
+/**
+ * This method will take the dictionary result from a parse service
+ * call and map/create any models in the response.
+ * @param dictionary The result of the cloud function
+ * @return The processed dictionary.
+ */
++(NSDictionary *)processParseDictionary:(NSDictionary *)dictionary;
+
+/**
+ * This method will take the dictionary or array result from a parse service
+ * call and map/create any models in the response.
+ * @param result The result of the cloud function
+ * @return The processed result.
+ */
++(id)processParseResult:(id)result;
+
+/**
+ * This method will take the parameters to send to a parse cloud function
+ * and insure it's the format that Parse anticipates.
+ * @param array The array of parameters
+ * @return The prepared array.
+ */
++(NSMutableArray *)prepareParseParametersArray:(NSArray *)array;
+
+/**
+ * This method will take the parameters to send to a parse cloud function
+ * and insure it's the format that Parse anticipates.
+ * @param dictionary The dictionary of parameters
+ * @return The prepared dictionary.
+ */
++(NSDictionary *)prepareParseParametersDictionary:(NSDictionary *)dictionary;
+
+/**
+ * This method will take the parameters to send to a parse cloud function
+ * and insure it's the format that Parse anticipates.
+ * @param parameters The parameters, either an array or a dictionary
+ * @return The prepared parameters
+ */
++(id)prepareParseParameters:(id)parameters;
+
 @end

@@ -193,5 +193,21 @@
  */
 -(void)deleteFileInBackground:(MKitServiceFile *)file withBlock:(MKitBooleanResultBlock)resultBlock;
 
+/**
+ * Calls a backend function on the service with the supplied parameters
+ * @param function The name of the function to call.
+ * @param params The params to pass to the function
+ * @param resultBlock The result block to call when completed
+ */
+-(void)callFunction:(NSString *)function parameters:(NSDictionary *)params resultBlock:(MKitServiceResultBlock)resultBlock;
+
+/**
+ * Calls a backend function on the service with the supplied parameters in the background
+ * @param function The name of the function to call.
+ * @param params The params to pass to the function
+ * @param resultBlock The result block to call when completed
+ */
+-(void)callFunctionInBackground:(NSString *)function parameters:(NSDictionary *)params resultBlock:(MKitServiceResultBlock)resultBlock;
+
 
 @end

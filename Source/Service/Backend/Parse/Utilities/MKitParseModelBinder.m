@@ -135,5 +135,201 @@
     return result;
 }
 
++(NSMutableArray *)processParseArray:(NSMutableArray *)functionArray
+{
+    NSMutableArray *array=[NSMutableArray array];
+    
+    for(id obj in functionArray)
+    {
+        if ([[obj class] isSubclassOfClass:[NSDictionary class]])
+            obj=[self processParseDictionary:obj];
+        else if ([[obj class] isSubclassOfClass:[NSArray class]])
+            obj=[self processParseArray:obj];
+        
+        [array addObject:obj];
+    }
+    
+    return array;
+}
+
++(NSDictionary *)processParseDictionary:(NSDictionary *)dictionary
+{
+    NSMutableDictionary *result=[NSMutableDictionary dictionary];
+    
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+       if ([[obj class] isSubclassOfClass:[NSDictionary class]])
+       {
+           NSString *type=nil;
+           if ((type=obj[@"__type"]))
+           {
+               NSString *cname=obj[@"className"];
+               Class c=[MKitModelRegistry registeredClassForModel:cname];
+               if (!c)
+                   c=NSClassFromString(cname);
+               if (!c)
+                   @throw [NSException exceptionWithName:@"Invalid Class Name" reason:[NSString stringWithFormat:@"Parse returned an unknown classname '%@'.",cname] userInfo:obj];
+               
+               MKitModel *m=nil;
+               m=[c instanceWithObjectId:obj[@"objectId"]];
+               if ([type isEqualToString:@"Object"])
+                   [self bindModel:m data:obj];
+               else if ([type isEqualToString:@"Pointer"])
+               {
+                   if ((m.modelState==ModelStateNeedsData) && ([c isSubclassOfClass:[MKitServiceModel class]]))
+                       [((MKitServiceModel *)m) fetchInBackground:nil];
+               }
+               
+               [result setObject:m forKey:key];
+           }
+           else
+               [result setObject:[self processParseDictionary:obj] forKey:key];
+       }
+       else if ([[obj class] isSubclassOfClass:[NSArray class]])
+       {
+           NSMutableArray *array=[self processParseArray:obj];
+           [result setObject:array forKey:key];
+       }
+       else
+       {
+           [result setObject:obj forKey:key];
+       }
+    }];
+    
+    return result;
+}
+
+
++(id)processParseResult:(id)result
+{
+    if ([[result class] isSubclassOfClass:[NSDictionary class]])
+        return [self processParseDictionary:result];
+    
+    if ([[result class] isSubclassOfClass:[NSArray class]])
+        return [self processParseArray:result];
+    
+    return result;
+}
+
++(NSMutableArray *)prepareParseParametersArray:(NSArray *)array
+{
+    NSMutableArray *result=[NSMutableArray array];
+    
+    for(id obj in array)
+    {
+        if ([[obj class] isSubclassOfClass:[NSDictionary class]])
+            [result addObject:[self prepareParseParameters:obj]];
+        else if ([[obj class] isSubclassOfClass:[MKitMutableModelArray class]])
+        {
+            MKitMutableModelArray *modelArray=(MKitMutableModelArray *)obj;
+            NSMutableArray *array=[NSMutableArray array];
+            for(MKitServiceModel *model in modelArray)
+            {
+                if (model.modelState!=ModelStateValid)
+                    @throw [NSException exceptionWithName:@"Invalid Model State" reason:@"Models must be in a valid state." userInfo:nil];
+                
+                [array addObject:[model parsePointer]];
+            }
+            
+            [result addObject:array];
+        }
+        else if ([[obj class] isSubclassOfClass:[NSArray class]])
+        {
+            [result addObject:[self prepareParseParametersArray:obj]];
+        }
+        else if ([[obj class] isSubclassOfClass:[NSDate class]])
+        {
+            NSDate *date=(NSDate *)obj;
+            [result addObject:@{@"__type":@"Date",@"iso":[date ISO8601String]}];
+        }
+        else if ([[obj class] isSubclassOfClass:[MKitServiceModel class]])
+        {
+            MKitServiceModel *model=(MKitServiceModel *)obj;
+            if (model.modelState!=ModelStateValid)
+                @throw [NSException exceptionWithName:@"Invalid Model State" reason:@"Models must be in a valid state." userInfo:nil];
+            
+            [result addObject:[model parsePointer]];
+        }
+        else if ([[obj class] isSubclassOfClass:[MKitParseFile class]])
+        {
+            MKitParseFile *file=(MKitParseFile *)obj;
+            [result addObject:[file parseFilePointer]];
+        }
+        else if ([[obj class] isSubclassOfClass:[MKitGeoPoint class]])
+        {
+            MKitGeoPoint *geoPoint=(MKitGeoPoint *)obj;
+            [result addObject:[geoPoint parsePointer]];
+        }
+        else
+            [result addObject:obj];
+    }
+    
+    return result;
+}
+
++(NSDictionary *)prepareParseParametersDictionary:(NSDictionary *)dictionary
+{
+    NSMutableDictionary *result=[NSMutableDictionary dictionary];
+    
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if ([[obj class] isSubclassOfClass:[NSDictionary class]])
+            [result setObject:[self prepareParseParameters:obj] forKey:key];
+        else if ([[obj class] isSubclassOfClass:[MKitMutableModelArray class]])
+        {
+            MKitMutableModelArray *modelArray=(MKitMutableModelArray *)obj;
+            NSMutableArray *array=[NSMutableArray array];
+            for(MKitServiceModel *model in modelArray)
+            {
+                if (model.modelState!=ModelStateValid)
+                    @throw [NSException exceptionWithName:@"Invalid Model State" reason:@"Models must be in a valid state." userInfo:nil];
+                
+                [array addObject:[model parsePointer]];
+            }
+            
+            [result setObject:array forKey:key];
+        }
+        else if ([[obj class] isSubclassOfClass:[NSArray class]])
+        {
+            [result setObject:[self prepareParseParametersArray:obj] forKey:key];
+        }
+        else if ([[obj class] isSubclassOfClass:[NSDate class]])
+        {
+            NSDate *date=(NSDate *)obj;
+            [result setObject:@{@"__type":@"Date",@"iso":[date ISO8601String]} forKey:key];
+        }
+        else if ([[obj class] isSubclassOfClass:[MKitServiceModel class]])
+        {
+            MKitServiceModel *model=(MKitServiceModel *)obj;
+            if (model.modelState!=ModelStateValid)
+                @throw [NSException exceptionWithName:@"Invalid Model State" reason:@"Models must be in a valid state." userInfo:nil];
+
+            [result setObject:[model parsePointer] forKey:key];
+        }
+        else if ([[obj class] isSubclassOfClass:[MKitParseFile class]])
+        {
+            MKitParseFile *file=(MKitParseFile *)obj;
+            [result setObject:[file parseFilePointer] forKey:key];
+        }
+        else if ([[obj class] isSubclassOfClass:[MKitGeoPoint class]])
+        {
+            MKitGeoPoint *geoPoint=(MKitGeoPoint *)obj;
+            [result setObject:[geoPoint parsePointer] forKey:key];
+        }
+        else
+            [result setObject:obj forKey:key];
+    }];
+    
+    return result;
+}
+
++(id)prepareParseParameters:(id)parameters
+{
+    if ([[parameters class] isSubclassOfClass:[NSDictionary class]])
+        return [self prepareParseParametersDictionary:parameters];
+    
+    if ([[parameters class] isSubclassOfClass:[NSArray class]])
+        return [self prepareParseParametersArray:parameters];
+    
+    return parameters;
+}
 
 @end

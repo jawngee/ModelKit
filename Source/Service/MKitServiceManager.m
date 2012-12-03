@@ -171,4 +171,17 @@ static NSMutableDictionary *managers=nil;
     });
 }
 
+-(void)callFunction:(NSString *)function parameters:(NSDictionary *)params resultBlock:(MKitServiceResultBlock)resultBlock
+{
+    if (resultBlock)
+        resultBlock(NO,nil,nil);
+}
+
+-(void)callFunctionInBackground:(NSString *)function parameters:(NSDictionary *)params resultBlock:(MKitServiceResultBlock)resultBlock
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self callFunction:function parameters:params resultBlock:resultBlock];
+    });
+}
+
 @end
