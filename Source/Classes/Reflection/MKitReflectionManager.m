@@ -13,7 +13,7 @@
 
 static NSMutableDictionary *cache=nil;
 
-+(MKitReflectedClass *)reflectionForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix recurseChainUntil:(Class)topclass
++(MKitReflectedClass *)reflectionForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps recurseChainUntil:(Class)topclass
 {
     if (cache==nil)
         cache=[[NSMutableDictionary alloc] init];
@@ -22,7 +22,7 @@ static NSMutableDictionary *cache=nil;
     MKitReflectedClass *ref=[cache objectForKey:className];
     if (!ref)
     {
-        ref=[MKitReflectedClass reflectionForClass:class ignorePropPrefix:ignorePropPrefix recurseChainUntil:topclass];
+        ref=[MKitReflectedClass reflectionForClass:class ignorePropPrefix:ignorePropPrefix ignoreProperties:ignoredProps recurseChainUntil:topclass];
         [cache setObject:ref forKey:className];
     }
     

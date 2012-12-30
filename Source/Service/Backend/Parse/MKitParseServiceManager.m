@@ -394,7 +394,7 @@ NSString * const MKitParseServiceName=@"Parse";
 
 -(BOOL)fetchModel:(MKitModel *)model error:(NSError **)error
 {
-    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[model class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[model class] ignorePropPrefix:@"model" ignoreProperties:[[model class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     
     // We want Parse to return the full object data for all models this model points to/contains
     NSMutableArray *toInclude=[NSMutableArray array];

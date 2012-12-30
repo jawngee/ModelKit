@@ -20,7 +20,7 @@
  * @param class The class to parse properties for
  * @param ignorePropPrefix Properties with this prefix are ignored
  */
--(void)parsePropertiesForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix;
+-(void)parsePropertiesForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps;
 
 @end
 
@@ -28,12 +28,12 @@
 
 @synthesize properties;
 
-+(id)reflectionForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix recurseChainUntil:(Class)topclass
++(id)reflectionForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps recurseChainUntil:(Class)topclass
 {
-    return [[[MKitReflectedClass alloc] initWithClass:class ignorePropPrefix:ignorePropPrefix recurseChainUntil:topclass] autorelease];
+    return [[[MKitReflectedClass alloc] initWithClass:class ignorePropPrefix:ignorePropPrefix ignoreProperties:ignoredProps recurseChainUntil:topclass] autorelease];
 }
 
--(void)parsePropertiesForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix
+-(void)parsePropertiesForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps 
 {
     unsigned int outCount, i;
     objc_property_t *props = class_copyPropertyList(class, &outCount);
@@ -45,14 +45,15 @@
         {
             NSString *propertyName = [NSString stringWithCString:propName encoding:NSASCIIStringEncoding];
             if ((ignorePropPrefix==nil) || (![propertyName hasPrefix:ignorePropPrefix]))
-                [properties setObject:[[[MKitReflectedProperty alloc] initWithName:propertyName forProperty:property] autorelease] forKey:propertyName];
+                if ([ignoredProps indexOfObject:propertyName]==NSNotFound)
+                    [properties setObject:[[[MKitReflectedProperty alloc] initWithName:propertyName forProperty:property] autorelease] forKey:propertyName];
         }
     }
     
     free(props);
 }
 
--(id)initWithClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix recurseChainUntil:(Class)topclass
+-(id)initWithClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps recurseChainUntil:(Class)topclass
 {
     if ((self=[super init]))
     {
@@ -64,7 +65,7 @@
         Class parsingClass=class;
         while(parsingClass!=topclass)
         {
-            [self parsePropertiesForClass:parsingClass ignorePropPrefix:ignorePropPrefix];
+            [self parsePropertiesForClass:parsingClass ignorePropPrefix:ignorePropPrefix ignoreProperties:ignoredProps];
             parsingClass=[parsingClass superclass];
             if (parsingClass==nil)
                 break;

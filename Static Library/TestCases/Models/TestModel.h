@@ -20,5 +20,7 @@
 @property (assign, nonatomic) double doubleV;
 @property (assign, nonatomic) short shortV;
 @property (assign, nonatomic) TestModel *amodelV;
+@property (assign, nonatomic) NSString *ignoredProperty1;
+@property (assign, nonatomic) NSString *ignoredProperty2;
 
 @end

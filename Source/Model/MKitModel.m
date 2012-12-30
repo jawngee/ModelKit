@@ -109,6 +109,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     [MKitModelRegistry registerModel:[self modelName] forClass:self];
 }
 
++(NSArray *)ignoredProperties
+{
+    return nil;
+}
+
 #pragma mark Init/Dealloc
 
 -(void)setup
@@ -152,7 +157,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
         if (val)
             self.objectId=val;
         
-        MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+        MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" ignoreProperties:nil recurseChainUntil:[MKitModel class]];
         for(MKitReflectedProperty *p in [ref.properties allValues])
         {
             val=[aDecoder decodeObjectForKey:p.name];
@@ -173,7 +178,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 -(void)dealloc
 {
     // Remove our selves from as observers
-    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" ignoreProperties:[[self class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     [self removeObserver:self forKeyPath:@"objectId"];
     [self removeObserver:self forKeyPath:@"updatedAt"];
     [self removeObserver:self forKeyPath:@"modelId"];
@@ -280,7 +285,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
-    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" ignoreProperties:[[self class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     
     [aCoder encodeObject:self.createdAt forKey:@"createdAt"];
     [aCoder encodeObject:self.updatedAt forKey:@"updatedAt"];
@@ -325,7 +330,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 -(void)registerForNotifications
 {
     // We need observe our property changes to send out notifications
-    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" ignoreProperties:[[self class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     [self addObserver:self forKeyPath:@"objectId" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
     [self addObserver:self forKeyPath:@"updatedAt" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
     [self addObserver:self forKeyPath:@"modelId" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:NULL];
@@ -516,7 +521,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     MKitMutableOrderedDictionary *props=[MKitMutableOrderedDictionary dictionary];
     [result setObject:props forKey:@"properties"];
     
-    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" ignoreProperties:[[self class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     
     for(MKitReflectedProperty *p in [ref.properties allValues])
     {
@@ -648,7 +653,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     if (!props)
         props=dictionary;
     
-    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" ignoreProperties:[[self class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     val=nil;
     for(MKitReflectedProperty *p in [ref.properties allValues])
     {
@@ -744,7 +749,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 {
     MKitMutableOrderedDictionary *result=[MKitMutableOrderedDictionary dictionary];
     
-    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" ignoreProperties:[[self class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     
     for(MKitReflectedProperty *prop in [ref.properties allValues])
     {

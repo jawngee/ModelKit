@@ -9,6 +9,7 @@
 #import "MKitTC0001GraphTestCases.h"
 #import "TestModel.h"
 #import "TestModelNoGraph.h"
+#import <malloc/malloc.h>
 
 @implementation MKitTC0001GraphTestCases
 
@@ -32,7 +33,7 @@
     
     TestModel *model=[TestModel instanceWithObjectId:@"hey"];
     
-    STAssertTrue([MKitModelGraph defaultGraph].size==80, @"Graph size mismatch.");
+    STAssertTrue([MKitModelGraph defaultGraph].size==malloc_size(model), @"Graph size mismatch.  Should be %d but is %d",malloc_size(model),[MKitModelGraph defaultGraph].size);
     STAssertTrue([MKitModelGraph defaultGraph].objectCount==1, @"Graph count mismatch.");
     
     [model removeFromGraph];

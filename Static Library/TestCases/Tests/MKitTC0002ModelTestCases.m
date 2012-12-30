@@ -27,6 +27,20 @@
     return m1;
 }
 
+-(void)test000IgnoredProperties
+{
+    TestModel *m1=[self makeModelWithId:@"001"];
+    
+    NSArray *ignored=[TestModel ignoredProperties];
+    
+    NSDictionary *props=[m1 properties];
+    [props enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        STAssertTrue([ignored indexOfObject:key], @"Properties contained an ignored property '%@'.",key);
+        STAssertTrue(![key hasPrefix:@"model"], @"Properties contained a model property '%@'.",key);
+           
+    }];
+}
+
 -(void)test001SerializeDeserialize
 {
     [MKitModelGraph clearAllGraphs];

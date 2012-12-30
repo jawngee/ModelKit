@@ -156,6 +156,11 @@ extern NSString *const MKitModelPropertyChangedNotification;
  */
 +(void)register;
 
+/*
+ * Returns an array of properties to ignore when serializing/deserializing
+ */
++(NSArray *)ignoredProperties;
+
 #pragma mark - Query
 
 /**

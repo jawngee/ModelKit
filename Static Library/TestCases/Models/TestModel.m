@@ -10,6 +10,11 @@
 
 @implementation TestModel
 
++(NSArray *)ignoredProperties
+{
+    return @[@"ignoredProperty1",@"ignoredProperty2"];
+}
+
 -(id)init
 {
     if ((self=[super init]))

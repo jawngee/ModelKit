@@ -27,7 +27,7 @@
 {
     model.modelState=ModelStateValid;
     
-    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[model class] ignorePropPrefix:@"model" recurseChainUntil:[MKitModel class]];
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[model class] ignorePropPrefix:@"model" ignoreProperties:[[model class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     
     if ((data[@"modelId"]) && (data[@"modelId"]!=[NSNull null]))
         model.modelId=data[@"modelId"];

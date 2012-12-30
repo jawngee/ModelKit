@@ -57,7 +57,7 @@
 		FF2BBE601684B19600D7A854 /* MKitServiceModelQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2BBE1F1684B19600D7A854 /* MKitServiceModelQuery.m */; };
 		FF2BBE621684B19600D7A854 /* MKitServiceNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2BBE211684B19600D7A854 /* MKitServiceNotification.m */; };
 		FF2BBE641684B19600D7A854 /* MKitServiceUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2BBE231684B19600D7A854 /* MKitServiceUser.m */; };
-		FF2BBE681684B1AE00D7A854 /* libAFNetworkingStatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF2BBDD31684B16F00D7A854 /* libAFNetworkingStatic.a */; };
+		FF2BBEB416862A9400D7A854 /* libAFNetworkingStatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF2BBEB016862A8800D7A854 /* libAFNetworkingStatic.a */; };
 		FF3C8CC7163937CC009EB62A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC2163937CC009EB62A /* CoreGraphics.framework */; };
 		FF3C8CC8163937CC009EB62A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC3163937CC009EB62A /* CoreLocation.framework */; };
 		FF3C8CC9163937CC009EB62A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3C8CC4163937CC009EB62A /* MobileCoreServices.framework */; };
@@ -89,16 +89,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FF2BBDD21684B16F00D7A854 /* PBXContainerItemProxy */ = {
+		FF2BBEAF16862A8800D7A854 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FF2BBDCB1684B16F00D7A854 /* AFNetworkingStatic.xcodeproj */;
+			containerPortal = FF2BBEA816862A8800D7A854 /* AFNetworkingStatic.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = FFA54AB916391ECB00F055A6;
 			remoteInfo = AFNetworkingStatic;
 		};
-		FF2BBE661684B1AA00D7A854 /* PBXContainerItemProxy */ = {
+		FF2BBEB216862A9000D7A854 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FF2BBDCB1684B16F00D7A854 /* AFNetworkingStatic.xcodeproj */;
+			containerPortal = FF2BBEA816862A8800D7A854 /* AFNetworkingStatic.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = FFA54AB816391ECB00F055A6;
 			remoteInfo = AFNetworkingStatic;
@@ -131,7 +131,6 @@
 		FF2BBDC41684B15E00D7A854 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISO8601DateFormatter.h; path = ../External/iso/ISO8601DateFormatter.h; sourceTree = "<group>"; };
 		FF2BBDC71684B16800D7A854 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../External/JSONKit/JSONKit.h; sourceTree = "<group>"; };
 		FF2BBDC81684B16800D7A854 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = ../External/JSONKit/JSONKit.m; sourceTree = "<group>"; };
-		FF2BBDCB1684B16F00D7A854 /* AFNetworkingStatic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworkingStatic.xcodeproj; path = ../External/AFNetworkingStatic/AFNetworkingStatic.xcodeproj; sourceTree = "<group>"; };
 		FF2BBDD81684B19600D7A854 /* NSDate+ModelKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ModelKit.h"; sourceTree = "<group>"; };
 		FF2BBDD91684B19600D7A854 /* NSDate+ModelKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ModelKit.m"; sourceTree = "<group>"; };
 		FF2BBDDA1684B19600D7A854 /* NSString+ModelKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ModelKit.h"; sourceTree = "<group>"; };
@@ -200,6 +199,10 @@
 		FF2BBE211684B19600D7A854 /* MKitServiceNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceNotification.m; sourceTree = "<group>"; };
 		FF2BBE221684B19600D7A854 /* MKitServiceUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKitServiceUser.h; sourceTree = "<group>"; };
 		FF2BBE231684B19600D7A854 /* MKitServiceUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKitServiceUser.m; sourceTree = "<group>"; };
+		FF2BBEA816862A8800D7A854 /* AFNetworkingStatic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworkingStatic.xcodeproj; path = ../External/AFNetworkingStatic/AFNetworkingStatic.xcodeproj; sourceTree = "<group>"; };
+		FF2BBEC516862AC000D7A854 /* ModelKitNoDep-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ModelKitNoDep-Prefix.pch"; sourceTree = "<group>"; };
+		FF2BBEC616862AC000D7A854 /* ModelKitNoDep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelKitNoDep.h; sourceTree = "<group>"; };
+		FF2BBEC816862AC000D7A854 /* ModelKitNoDep.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelKitNoDep.m; sourceTree = "<group>"; };
 		FF3C8CC2163937CC009EB62A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FF3C8CC3163937CC009EB62A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FF3C8CC4163937CC009EB62A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -242,7 +245,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF2BBE681684B1AE00D7A854 /* libAFNetworkingStatic.a in Frameworks */,
+				FF2BBEB416862A9400D7A854 /* libAFNetworkingStatic.a in Frameworks */,
 				FF3C8CC7163937CC009EB62A /* CoreGraphics.framework in Frameworks */,
 				FF3C8CC8163937CC009EB62A /* CoreLocation.framework in Frameworks */,
 				FF3C8CC9163937CC009EB62A /* MobileCoreServices.framework in Frameworks */,
@@ -273,14 +276,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FF2BBDCC1684B16F00D7A854 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FF2BBDD31684B16F00D7A854 /* libAFNetworkingStatic.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		FF2BBDD51684B19600D7A854 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,10 +432,36 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		FF2BBEA916862A8800D7A854 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF2BBEB016862A8800D7A854 /* libAFNetworkingStatic.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF2BBEC316862AC000D7A854 /* ModelKitNoDep */ = {
+			isa = PBXGroup;
+			children = (
+				FF2BBEC616862AC000D7A854 /* ModelKitNoDep.h */,
+				FF2BBEC816862AC000D7A854 /* ModelKitNoDep.m */,
+				FF2BBEC416862AC000D7A854 /* Supporting Files */,
+			);
+			path = ModelKitNoDep;
+			sourceTree = "<group>";
+		};
+		FF2BBEC416862AC000D7A854 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF2BBEC516862AC000D7A854 /* ModelKitNoDep-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FF3C8D11163939A1009EB62A /* External */ = {
 			isa = PBXGroup;
 			children = (
-				FF2BBDCB1684B16F00D7A854 /* AFNetworkingStatic.xcodeproj */,
+				FF2BBEA816862A8800D7A854 /* AFNetworkingStatic.xcodeproj */,
 				FFC4AE531657B4F700852DC7 /* SecureUDID */,
 				FFCFAA30163A837A00BC2E3E /* ISO8601 */,
 				FFCFAA22163A7DDD00BC2E3E /* JSONKit */,
@@ -455,6 +476,7 @@
 				FF2BBDD51684B19600D7A854 /* Source */,
 				FFA54AA316391DEA00F055A6 /* Supporting Files */,
 				FFCFAA85163C655C00BC2E3E /* TestCases */,
+				FF2BBEC316862AC000D7A854 /* ModelKitNoDep */,
 				FFA54A9F16391DEA00F055A6 /* Frameworks */,
 				FFA54A9E16391DEA00F055A6 /* Products */,
 			);
@@ -589,7 +611,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				FF2BBE671684B1AA00D7A854 /* PBXTargetDependency */,
+				FF2BBEB316862A9000D7A854 /* PBXTargetDependency */,
 			);
 			name = ModelKit;
 			productName = ModelKit;
@@ -637,8 +659,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = FF2BBDCC1684B16F00D7A854 /* Products */;
-					ProjectRef = FF2BBDCB1684B16F00D7A854 /* AFNetworkingStatic.xcodeproj */;
+					ProductGroup = FF2BBEA916862A8800D7A854 /* Products */;
+					ProjectRef = FF2BBEA816862A8800D7A854 /* AFNetworkingStatic.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -651,11 +673,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FF2BBDD31684B16F00D7A854 /* libAFNetworkingStatic.a */ = {
+		FF2BBEB016862A8800D7A854 /* libAFNetworkingStatic.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libAFNetworkingStatic.a;
-			remoteRef = FF2BBDD21684B16F00D7A854 /* PBXContainerItemProxy */;
+			remoteRef = FF2BBEAF16862A8800D7A854 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -764,10 +786,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FF2BBE671684B1AA00D7A854 /* PBXTargetDependency */ = {
+		FF2BBEB316862A9000D7A854 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AFNetworkingStatic;
-			targetProxy = FF2BBE661684B1AA00D7A854 /* PBXContainerItemProxy */;
+			targetProxy = FF2BBEB216862A9000D7A854 /* PBXContainerItemProxy */;
 		};
 		FFBA0D2B163D254800B6560C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
