@@ -102,7 +102,7 @@ NSString * const MKitParseServiceName=@"Parse";
 
     // If we are currently logged in, set the session token
     if ([MKitParseUser currentUser])
-        [parseClient setDefaultHeader:@"X-Parse-Session-Token" value:[MKitParseUser currentUser].modelSessionToken];
+        [parseClient setDefaultHeader:@"X-Parse-Session-Token" value:[MKitParseUser currentUser].sessionToken];
     
     // Parse uses a slightly different path for users, though the procedures are the same.  pita.
     NSString *path=nil;
@@ -129,7 +129,7 @@ NSString * const MKitParseServiceName=@"Parse";
 
     // If we are currently logged in, set the session token
     if ([MKitParseUser currentUser])
-        [parseClient setDefaultHeader:@"X-Parse-Session-Token" value:[MKitParseUser currentUser].modelSessionToken];
+        [parseClient setDefaultHeader:@"X-Parse-Session-Token" value:[MKitParseUser currentUser].sessionToken];
     
     // Parse uses a slightly different path for users, though the procedures are the same.  pita.
     NSString *path=[model isKindOfClass:[MKitParseUser class]] ? [NSString stringWithFormat:@"users/%@",model.objectId] : [NSString stringWithFormat:@"classes/%@/%@",[[model class] modelName],model.objectId];
@@ -148,7 +148,10 @@ NSString * const MKitParseServiceName=@"Parse";
 {
     contentType=(contentType) ? contentType : @"application/json";
     [parseClient setDefaultHeader:@"Content-Type" value:contentType];
-
+    
+    if ([MKitParseUser currentUser])
+        [parseClient setDefaultHeader:@"X-Parse-Session-Token" value:[MKitParseUser currentUser].sessionToken];
+    
     NSMutableURLRequest *req=[parseClient requestWithMethod:method
                                                        path:path
                                                  parameters:params];
@@ -161,6 +164,8 @@ NSString * const MKitParseServiceName=@"Parse";
 
 -(BOOL)internalUpdateModel:(MKitModel *)model props:(NSDictionary *)props error:(NSError **)error
 {
+    NSLog(@"%@",[props JSONStringWithOptions:JKSerializeOptionPretty error:nil]);
+    
     AFHTTPRequestOperation *op=[self modelRequestWithMethod:@"PUT" model:model params:nil body:[props JSONData]];
     
     [op start];
@@ -201,7 +206,7 @@ NSString * const MKitParseServiceName=@"Parse";
         // If this class is a user, we need to do some special handling
         if (([model isKindOfClass:[MKitParseUser class]]) && (data[@"sessionToken"]))
         {
-            ((MKitParseUser *)model).modelSessionToken=data[@"sessionToken"];
+            ((MKitParseUser *)model).sessionToken=data[@"sessionToken"];
             
             // save the credentials in the keychain
             [self storeUserCredentials:(MKitParseUser *)model];
@@ -228,6 +233,8 @@ NSString * const MKitParseServiceName=@"Parse";
     
     NSMutableDictionary *refs=[NSMutableDictionary dictionary];
     NSMutableDictionary *propsToSave=[NSMutableDictionary dictionary];
+    
+    MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[model class] ignorePropPrefix:@"model" ignoreProperties:[[model class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     
     // Not sure we need to do this, but better safe than sorry.  Will revisit.
     [propsToSave setObject:model.modelId forKey:@"modelId"];
@@ -308,7 +315,19 @@ NSString * const MKitParseServiceName=@"Parse";
             [propsToSave setObject:arrayCopy forKey:key];
         }
         else
+        {
+            if ([[obj class] isSubclassOfClass:[NSNumber class]])
+            {
+                MKitReflectedProperty *p=ref.properties[key];
+                if ((p) && (p.type==refTypeChar))
+                    if ([obj charValue]<=1)
+                        obj=[NSNumber numberWithBool:[obj boolValue]];
+                
+                NSLog(@"%@ VAL TYPE: %s",key,[((NSNumber *)obj) objCType]);
+            }
+            
             [propsToSave setObject:obj forKey:key];
+        }
     }];
     
     BOOL result=NO;
@@ -440,7 +459,7 @@ NSString * const MKitParseServiceName=@"Parse";
 -(void)storeUserCredentials:(MKitServiceModel<MKitServiceUser> *)user
 {
     MKitParseUser *puser=(MKitParseUser *)user;
-    [keychain storeUsername:puser.username password:puser.password sessionToken:puser.modelSessionToken data:[user serialize]];
+    [keychain storeUsername:puser.username password:puser.password sessionToken:puser.sessionToken data:[user serialize]];
     
     // We store the user name so we can pull the credentials from the keychain next time the app starts
     [[NSUserDefaults standardUserDefaults] setObject:puser.username forKey:[NSString stringWithFormat:@"%@-username",_appID]];
@@ -508,15 +527,17 @@ NSString * const MKitParseServiceName=@"Parse";
 -(void)callFunction:(NSString *)function parameters:(id)params resultBlock:(MKitServiceResultBlock)resultBlock
 {
     params=[MKitParseModelBinder prepareParseParameters:params];
-    NSData *data=[params JSONData];
+    NSData *data=(params) ? [params JSONData] : [@"{}" dataUsingEncoding:NSUTF8StringEncoding];
     
-    AFHTTPRequestOperation *op=[self requestWithMethod:@"POST" path:[NSString stringWithFormat:@"functions/%@",function] params:nil body:data contentType:@"text/json"];
+    AFHTTPRequestOperation *op=[self requestWithMethod:@"POST" path:[NSString stringWithFormat:@"functions/%@",function] params:nil body:data contentType:@"application/json"];
     
     [op start];
     [op waitUntilFinished];
     
     if ([op hasAcceptableStatusCode])
     {
+        NSLog(@"%@",op.responseString);
+        
         id data=[op.responseString objectFromJSONString];
         data=[MKitParseModelBinder processParseResult:data];
         

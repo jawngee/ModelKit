@@ -21,5 +21,6 @@
 @property (nonatomic, copy) NSString *timeZone;             /**< The current timezone for the device */
 @property (nonatomic, retain) NSMutableArray *channels;     /**< The channels this device is subscribed to */
 
++(MKitParseInstallation *)currentInstallation;
 
 @end

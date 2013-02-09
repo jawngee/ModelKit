@@ -65,6 +65,9 @@
     if (self.title)
         [data setObject:self.title forKey:@"title"];
     
+    if (self.parameters)
+        [data addEntriesFromDictionary:self.parameters];
+    
     [body setObject:data forKey:@"data"];
     
     AFHTTPRequestOperation *op=[[[self class] service] requestWithMethod:@"POST" path:@"push" params:nil body:[body JSONData] contentType:nil];

@@ -14,10 +14,12 @@
  */
 @interface MKitParseUser : MKitParseModel<MKitServiceUser>
 
-@property (nonatomic, retain) NSString *modelSessionToken;  /**< Session token for authenticating other requests.  Uses model prefix so it isn't serialized */
+@property (nonatomic, retain) NSString *sessionToken;       /**< Session token for authenticating other requests. */
 @property (nonatomic, retain) NSString *username;           /**< User name */
 @property (nonatomic, retain) NSString *password;           /**< Password */
 @property (nonatomic, retain) NSString *email;              /**< Email */
+@property (nonatomic, retain) NSDictionary *authData;       /**< Authentication data */
+@property (nonatomic, assign) BOOL isNew;                   /**< Is a new user who just signed up. */
 
 +(MKitParseUser *)currentUser;
 
@@ -26,6 +28,9 @@
 
 +(BOOL)logInWithUserName:(NSString *)userName password:(NSString *)password error:(NSError **)error;
 +(void)logInInBackgroundWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;
+
++(BOOL)logInWithAuthData:(NSDictionary *)authData error:(NSError **)error;
++(void)logInWithAuthDataInBackground:(NSDictionary *)authData resultBlock:(MKitObjectResultBlock)resultBlock;
 
 +(BOOL)requestPasswordResetForEmail:(NSString *)email error:(NSError **)error;
 +(void)requestPasswordResetInBackgroundForEmail:(NSString *)email resultBlock:(MKitBooleanResultBlock)resultBlock;

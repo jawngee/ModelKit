@@ -104,16 +104,27 @@
         else if ([prop.typeClass isSubclassOfClass:[MKitServiceFile class]])
         {
             NSDictionary *fileDict=data[prop.name];
-            [model setValue:[MKitParseFile fileWithName:fileDict[@"name"] andURL:fileDict[@"url"]] forKey:prop.name];
+            if (fileDict)
+            {
+                MKitParseFile *file=[MKitParseFile fileWithName:fileDict[@"name"] andURL:fileDict[@"url"]];
+                NSLog(@"%@",model);
+                [model setValue:file forKey:prop.name];
+            }
         }
         else if ([prop.typeClass isSubclassOfClass:[MKitGeoPoint class]])
         {
             NSDictionary *geoDict=data[prop.name];
-            [model setValue:[MKitGeoPoint geoPointWithLatitude:[geoDict[@"latitude"] doubleValue] andLongitude:[geoDict[@"longitude"] doubleValue]] forKey:prop.name];
+            if (geoDict)
+                [model setValue:[MKitGeoPoint geoPointWithLatitude:[geoDict[@"latitude"] doubleValue] andLongitude:[geoDict[@"longitude"] doubleValue]] forKey:prop.name];
         }
         else
         {
-            [model setValue:data[prop.name] forKey:prop.name];
+            if (data[prop.name])
+            {
+                id val=data[prop.name];
+                NSLog(@"val: %@",val);
+                [model setValue:data[prop.name] forKey:prop.name];
+            }
         }
     }];
     
@@ -135,7 +146,7 @@
     return result;
 }
 
-+(NSMutableArray *)processParseArray:(NSMutableArray *)functionArray
++(id)processParseArray:(NSMutableArray *)functionArray
 {
     NSMutableArray *array=[NSMutableArray array];
     
@@ -152,34 +163,48 @@
     return array;
 }
 
-+(NSDictionary *)processParseDictionary:(NSDictionary *)dictionary
++(id)extractModel:(NSDictionary *)dictionary
 {
+    MKitModel *m=nil;
+    NSString *type=nil;
+    if ((type=dictionary[@"__type"]))
+    {
+        NSString *cname=dictionary[@"className"];
+        Class c=[MKitModelRegistry registeredClassForModel:cname];
+        if (!c)
+            c=NSClassFromString(cname);
+        if (!c)
+            @throw [NSException exceptionWithName:@"Invalid Class Name" reason:[NSString stringWithFormat:@"Parse returned an unknown classname '%@'.",cname] userInfo:dictionary];
+        m=[c instanceWithObjectId:dictionary[@"objectId"]];
+        if ([type isEqualToString:@"Object"])
+            [self bindModel:m data:dictionary];
+        else if ([type isEqualToString:@"Pointer"])
+        {
+            if ((m.modelState==ModelStateNeedsData) && ([c isSubclassOfClass:[MKitServiceModel class]]))
+                [((MKitServiceModel *)m) fetchInBackground:nil];
+        }
+        
+    }
+    
+    return m;
+}
+
++(id)processParseDictionary:(NSDictionary *)dictionary
+{
+    if (dictionary[@"__type"])
+        return [self extractModel:dictionary];
+    
     NSMutableDictionary *result=[NSMutableDictionary dictionary];
     
     [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
        if ([[obj class] isSubclassOfClass:[NSDictionary class]])
        {
-           NSString *type=nil;
-           if ((type=obj[@"__type"]))
+           if (obj[@"__type"])
            {
-               NSString *cname=obj[@"className"];
-               Class c=[MKitModelRegistry registeredClassForModel:cname];
-               if (!c)
-                   c=NSClassFromString(cname);
-               if (!c)
-                   @throw [NSException exceptionWithName:@"Invalid Class Name" reason:[NSString stringWithFormat:@"Parse returned an unknown classname '%@'.",cname] userInfo:obj];
+               id res=[self extractModel:obj];
                
-               MKitModel *m=nil;
-               m=[c instanceWithObjectId:obj[@"objectId"]];
-               if ([type isEqualToString:@"Object"])
-                   [self bindModel:m data:obj];
-               else if ([type isEqualToString:@"Pointer"])
-               {
-                   if ((m.modelState==ModelStateNeedsData) && ([c isSubclassOfClass:[MKitServiceModel class]]))
-                       [((MKitServiceModel *)m) fetchInBackground:nil];
-               }
-               
-               [result setObject:m forKey:key];
+               if (res)
+                   [result setObject:res forKey:key];
            }
            else
                [result setObject:[self processParseDictionary:obj] forKey:key];

@@ -165,6 +165,12 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
             if (val==[NSNull null])
                 val=nil;
             
+            if (p.type==refTypeChar)
+            {
+                if ([val charValue]<=1)
+                    val=[NSNumber numberWithBool:[val boolValue]];
+            }
+            
             [self setValue:val forKey:p.name];
         }
     
@@ -558,6 +564,12 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
         }
         else if ((p.type>=refTypeString && p.type<refTypeDate) || (p.type>=refTypeChar && p.type<refTypeUnknown))
         {
+            if (p.type==refTypeChar)
+            {
+                if ([val charValue]<=1)
+                    val=[NSNumber numberWithBool:[val boolValue]];
+            }
+            
             [props setObject:val forKey:p.name];
         }
     }
@@ -636,8 +648,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 -(void)deserialize:(NSDictionary *)dictionary fromJSON:(BOOL)fromJSON objectArray:(NSArray *)objectArray decodingCache:(NSMutableDictionary *)decodingCache
 {
-    self.updatedAt=[self getDateFromId:[dictionary objectForKey:@"updatedAt"]];
-    self.createdAt=[self getDateFromId:[dictionary objectForKey:@"createdAt"]];
+    if (dictionary[@"updatedAt"])
+        self.updatedAt=[self getDateFromId:[dictionary objectForKey:@"updatedAt"]];
+    
+    if (dictionary[@"createdAt"])
+        self.createdAt=[self getDateFromId:[dictionary objectForKey:@"createdAt"]];
     
     id val=[dictionary objectForKey:@"modelId"];
     if ((val) && (val!=[NSNull null]))
@@ -712,9 +727,13 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                 else
                     [self setValue:nil forKey:p.name];
                 break;
+            case refTypeChar:
+                if ([val charValue]<=1)
+                        val=[NSNumber numberWithBool:[val boolValue]];
+                [self setValue:val forKey:p.name];
+                break;
             case refTypeString:
             case refTypeNumber:
-            case refTypeChar:
             case refTypeShort:
             case refTypeInteger:
             case refTypeLong:
@@ -756,6 +775,9 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
         id val=[self valueForKey:prop.name];
         if (val==nil)
             val=[NSNull null];
+        else if (prop.type==refTypeChar)
+            val=[NSNumber numberWithBool:[val integerValue]];
+        
         [result setObject:val forKey:prop.name];
     }
     
@@ -840,6 +862,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     }];
     
     return [NSString stringWithFormat:@"<%@: %p> { %@ }",NSStringFromClass([self class]),self,[propsStrings componentsJoinedByString:@";\n"]];
+}
+
+-(NSString *)description
+{
+    return [self debugDescription];
 }
 
 @end

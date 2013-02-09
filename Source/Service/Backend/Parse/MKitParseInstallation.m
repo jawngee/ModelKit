@@ -31,7 +31,7 @@
     self.installationId=[SecureUDID UDIDForDomain:@"com.interfacelab.modelkit" usingKey:@"parse"];
 }
 
-+(id<MKitServiceInstallation>)currentInstallation
++(MKitParseInstallation *)currentInstallation
 {
     static MKitParseInstallation *currentInstallation=nil;
     

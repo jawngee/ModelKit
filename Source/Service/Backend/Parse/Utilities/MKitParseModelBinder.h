@@ -36,7 +36,7 @@
  * @param array The result of the cloud function
  * @return The processed array.
  */
-+(NSMutableArray *)processParseArray:(NSMutableArray *)array;
++(id)processParseArray:(NSMutableArray *)array;
 
 /**
  * This method will take the dictionary result from a parse service
@@ -44,7 +44,7 @@
  * @param dictionary The result of the cloud function
  * @return The processed dictionary.
  */
-+(NSDictionary *)processParseDictionary:(NSDictionary *)dictionary;
++(id)processParseDictionary:(NSDictionary *)dictionary;
 
 /**
  * This method will take the dictionary or array result from a parse service

@@ -19,6 +19,7 @@
         const char *attributes = property_getAttributes(property);
         NSString *typeStr=[NSString stringWithCString:attributes encoding:NSASCIIStringEncoding];
         NSString *type=[[typeStr componentsSeparatedByString:@","] objectAtIndex:0];
+        
         if ([type hasPrefix:@"T@"])
         {
             if ([type isEqualToString:@"T@"])
