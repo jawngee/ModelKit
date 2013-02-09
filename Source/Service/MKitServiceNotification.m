@@ -45,63 +45,111 @@
 
 #pragma mark - Static Initializers
 
-+(MKitServiceNotification *)notificationWithMessage:(NSString *)message
++(id)notificationWithMessage:(NSString *)message
+{
+    return [self notificationWithMessage:message parameters:nil];
+}
+
++(id)notificationWithMessage:(NSString *)message badgeCount:(NSInteger)badgeCount
+{
+    return [self notificationWithMessage:message badgeCount:badgeCount parameters:nil];
+}
+
++(id)notificationWithMessage:(NSString *)message channels:(NSArray *)channels
+{
+    return [self notificationWithMessage:message channels:channels parameters:nil];
+}
++(id)notificationWithMessage:(NSString *)message channels:(NSArray *)channels badgeCount:(NSInteger)badgeCount
+{
+    return [self notificationWithMessage:message channels:channels badgeCount:badgeCount parameters:nil];
+}
+
++(id)notificationWithMessage:(NSString *)message channels:(NSArray *)channels query:(MKitServiceModelQuery *)query
+{
+    return [self notificationWithMessage:message channels:channels query:query parameters:nil];
+}
+
++(id)notificationWithMessage:(NSString *)message channels:(NSArray *)channels query:(MKitServiceModelQuery *)query badgeCount:(NSInteger)badgeCount
+{
+    return [self notificationWithMessage:message channels:channels query:query badgeCount:badgeCount parameters:nil];
+}
+
++(id)notificationWithMessage:(NSString *)message query:(MKitServiceModelQuery *)query
+{
+    return [self notificationWithMessage:message query:query parameters:nil];
+}
+
++(id)notificationWithMessage:(NSString *)message query:(MKitServiceModelQuery *)query badgeCount:(NSInteger)badgeCount
+{
+    return [self notificationWithMessage:message query:query badgeCount:badgeCount parameters:nil];
+}
+
+
+
++(id)notificationWithMessage:(NSString *)message parameters:(NSDictionary *)parameters
 {
     MKitServiceNotification *notification=[[[self alloc] init] autorelease];
     
     notification.message=message;
+    notification.parameters=parameters;
     
     return notification;
 }
 
-+(MKitServiceNotification *)notificationWithMessage:(NSString *)message badgeCount:(NSInteger)badgeCount
++(id)notificationWithMessage:(NSString *)message badgeCount:(NSInteger)badgeCount parameters:(NSDictionary *)parameters
 {
     MKitServiceNotification *notification=[[[self alloc] init] autorelease];
     
     notification.message=message;
     notification.badgeCount=badgeCount;
+    notification.parameters=parameters;
     
     return notification;
 }
 
-+(MKitServiceNotification *)notificationWithMessage:(NSString *)message channels:(NSArray *)channels
++(id)notificationWithMessage:(NSString *)message channels:(NSArray *)channels parameters:(NSDictionary *)parameters
 {
     MKitServiceNotification *notification=[[[self alloc] init] autorelease];
     
     notification.message=message;
     notification.channels=[[channels mutableCopy] autorelease];
+    notification.parameters=parameters;
     
     return notification;
 }
 
-+(MKitServiceNotification *)notificationWithMessage:(NSString *)message channels:(NSArray *)channels badgeCount:(NSInteger)badgeCount
+
++(id)notificationWithMessage:(NSString *)message channels:(NSArray *)channels badgeCount:(NSInteger)badgeCount parameters:(NSDictionary *)parameters
 {
     MKitServiceNotification *notification=[[[self alloc] init] autorelease];
     
     notification.message=message;
     notification.channels=[[channels mutableCopy] autorelease];
+    notification.parameters=parameters;
     notification.badgeCount=badgeCount;
     
     return notification;
 }
 
-+(MKitServiceNotification *)notificationWithMessage:(NSString *)message channels:(NSArray *)channels query:(MKitServiceModelQuery *)query
++(id)notificationWithMessage:(NSString *)message channels:(NSArray *)channels query:(MKitServiceModelQuery *)query parameters:(NSDictionary *)parameters
 {
     MKitServiceNotification *notification=[[[self alloc] init] autorelease];
     
     notification.message=message;
     notification.channels=[[channels mutableCopy] autorelease];
+    notification.parameters=parameters;
     notification.query=query;
     
     return notification;
 }
 
-+(MKitServiceNotification *)notificationWithMessage:(NSString *)message channels:(NSArray *)channels query:(MKitServiceModelQuery *)query badgeCount:(NSInteger)badgeCount
++(id)notificationWithMessage:(NSString *)message channels:(NSArray *)channels query:(MKitServiceModelQuery *)query badgeCount:(NSInteger)badgeCount parameters:(NSDictionary *)parameters
 {
     MKitServiceNotification *notification=[[[self alloc] init] autorelease];
     
     notification.message=message;
     notification.channels=[[channels mutableCopy] autorelease];
+    notification.parameters=parameters;
     notification.query=query;
     notification.badgeCount=badgeCount;
     
@@ -109,23 +157,25 @@
 
 }
 
-+(MKitServiceNotification *)notificationWithMessage:(NSString *)message query:(MKitServiceModelQuery *)query
++(id)notificationWithMessage:(NSString *)message query:(MKitServiceModelQuery *)query parameters:(NSDictionary *)parameters
 {
     MKitServiceNotification *notification=[[[self alloc] init] autorelease];
     
     notification.message=message;
     notification.query=query;
+    notification.parameters=parameters;
     
     return notification;
 }
 
-+(MKitServiceNotification *)notificationWithMessage:(NSString *)message query:(MKitServiceModelQuery *)query badgeCount:(NSInteger)badgeCount
++(id)notificationWithMessage:(NSString *)message query:(MKitServiceModelQuery *)query badgeCount:(NSInteger)badgeCount parameters:(NSDictionary *)parameters
 {
     MKitServiceNotification *notification=[[[self alloc] init] autorelease];
     
     notification.message=message;
     notification.query=query;
     notification.badgeCount=badgeCount;
+    notification.parameters=parameters;
     
     return notification;
 }
