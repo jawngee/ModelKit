@@ -9,6 +9,9 @@
 #import "MKitDefs.h"
 #import "MKitServiceModel.h"
 
+/** User has signed up */
+extern NSString *const MKitUserSignedUpNotification;
+
 /** User Has Logged In */
 extern NSString *const MKitUserLoggedInNotification;
 
@@ -20,10 +23,12 @@ extern NSString *const MKitUserLoggedOutNotification;
  */
 @protocol MKitServiceUser
 
-@property (nonatomic, retain) NSString *modelSessionToken;  /**< Session token for authenticating other requests.  Uses model prefix so it isn't serialized */
+@property (nonatomic, retain) NSString *sessionToken;  /**< Session token for authenticating other requests.  Uses model prefix so it isn't serialized */
 @property (nonatomic, retain) NSString *username;           /**< User name */
 @property (nonatomic, retain) NSString *password;           /**< Password */
 @property (nonatomic, retain) NSString *email;              /**< Email */
+@property (nonatomic, retain) NSDictionary *authData;       /**< Authentication data */
+@property (nonatomic, assign) BOOL isNew;                   /**< Is a new user who just signed up. */
 
 /**
  * The current user.
@@ -66,6 +71,23 @@ extern NSString *const MKitUserLoggedOutNotification;
  * @param resultBlock The result block to call when the operation completes
  */
 +(void)logInInBackgroundWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock;
+
+/**
+ * Logs in a user using authentication data
+ * @param authData The auth data
+ * @param signup YES if the user should be signed up
+ * @param error The error, if any
+ * @result YES if authenticated, NO if not.
+ */
++(BOOL)logInWithAuthData:(NSDictionary *)authData error:(NSError **)error;
+
+/**
+ * Logs in a user using authentication data in the background
+ * @param authData The auth data
+ * @param signup YES if the user should be signed up
+ * @param resultBlock The resultBlock to call when complete
+ */
++(void)logInWithAuthDataInBackground:(NSDictionary *)authData resultBlock:(MKitObjectResultBlock)resultBlock;
 
 /**
  * Request a password reset email.

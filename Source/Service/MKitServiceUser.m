@@ -8,5 +8,6 @@
 
 #import "MKitServiceModelQuery.h"
 
+NSString *const MKitUserSignedUpNotification=@"MKitUserSignedUpNotification";
 NSString *const MKitUserLoggedInNotification=@"MKitUserLoggedInNotification";
 NSString *const MKitUserLoggedOutNotification=@"MKitUserLoggedOutNotification";
