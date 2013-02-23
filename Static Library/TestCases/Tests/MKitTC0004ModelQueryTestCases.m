@@ -224,6 +224,33 @@
     }];
 }
 
+-(void)test0001SubQuery
+{
+    MKitModelQuery *q=[SampleModel query];
+    [q key:@"intV" condition:KeyEquals value:@(10)];
+ 
+    MKitModelQuery *q2=[SampleModel query];
+    [q2 key:@"intV" condition:KeyEquals value:@(15)];
+    [q addSubquery:q2];
+    
+    q2=[SampleModel query];
+    [q2 key:@"intV" condition:KeyEquals value:@(20)];
+    [q addSubquery:q2];
+    
+    q2=[SampleModel query];
+    [q2 key:@"intV" condition:KeyEquals value:@(25)];
+    [q addSubquery:q2];
+    
+    NSArray *results=[[q execute:nil] objectForKey:MKitQueryResultKey];
+    
+    STAssertTrue(results.count==4, @"Results count is incorrect.");
+    
+    [results enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        SampleModel *sm=obj;
+        STAssertTrue(((sm.intV==10) || (sm.intV==15) || (sm.intV==20) || (sm.intV==25)), @"Incorrect results");
+    }];
+}
+
 //KeyWithin,
 //KeyExists,
 //KeyNotExist,
