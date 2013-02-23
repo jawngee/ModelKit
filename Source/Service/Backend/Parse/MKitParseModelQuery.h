@@ -17,6 +17,6 @@
  * Builds the query
  * @return The query
  */
--(NSDictionary *)buildQuery;
+-(id)buildQuery;
 
 @end

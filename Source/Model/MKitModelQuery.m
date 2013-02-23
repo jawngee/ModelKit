@@ -21,6 +21,7 @@
     {
         orders=[[NSMutableArray array] retain];
         conditions=[[NSMutableArray array] retain];
+        subqueries=[[NSMutableArray array] retain];
         modelClass=_modelClass;
     }
     
@@ -29,6 +30,7 @@
 
 -(void)dealloc
 {
+    [subqueries release];
     [orders release];
     [conditions release];
     [super dealloc];
@@ -105,6 +107,11 @@
         if (resultBlock)
             resultBlock(result, error);
     });
+}
+
+-(void)addSubquery:(MKitModelQuery *)query
+{
+    [subqueries addObject:query];
 }
 
 

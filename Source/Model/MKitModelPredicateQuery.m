@@ -28,6 +28,11 @@
 
 -(NSPredicate *)buildQuery
 {
+    NSMutableArray *builtSubQueries=[NSMutableArray array];
+    
+    for(MKitModelPredicateQuery *sq in subqueries)
+        [builtSubQueries addObject:[sq buildQuery]];
+    
     NSMutableArray *predicates=[NSMutableArray array];
     
     for(NSDictionary *c in conditions)
@@ -94,8 +99,16 @@
                 break;
         }
     }
+    
+    NSPredicate *q=[NSCompoundPredicate andPredicateWithSubpredicates:predicates];
 
-    return [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
+    if (builtSubQueries.count>0)
+    {
+        [builtSubQueries addObject:q];
+        q=[NSCompoundPredicate orPredicateWithSubpredicates:builtSubQueries];
+    }
+    
+    return q;
 }
 
 -(NSDictionary *)executeWithLimit:(NSInteger)limit skip:(NSInteger)skip error:(NSError **)error

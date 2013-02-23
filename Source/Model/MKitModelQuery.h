@@ -57,6 +57,7 @@ typedef enum
     NSMutableArray *orders;         /**< List of orderings */
     NSMutableArray *conditions;     /**< List of query conditions */
     Class modelClass;               /**< The model class being queried */
+    NSMutableArray *subqueries;     /**< Subqueries */
 }
 
 /**
@@ -65,7 +66,6 @@ typedef enum
  * @return The query object
  */
 +(MKitModelQuery *)queryForModelClass:(Class)modelClass;
-
 
 /**
  * Initializes a new instance
@@ -159,6 +159,12 @@ typedef enum
  * @param resultBlock The block to call when the query completes
  */
 -(void)countInBackground:(MKitIntResultBlock)resultBlock;
+
+/**
+ * Adds a subquery to the query.
+ * @param query The subquery to add
+ */
+-(void)addSubquery:(MKitModelQuery *)query;
 
 
 @end

@@ -33,8 +33,15 @@
 
 @implementation MKitParseModelQuery
 
--(NSDictionary *)buildQuery
+-(id)buildQuery
 {
+    NSMutableArray *builtSubqueries=[NSMutableArray array];
+    
+    for(MKitParseModelQuery *sq in subqueries)
+    {
+        [builtSubqueries addObject:[sq buildQuery]];
+    }
+    
     NSMutableDictionary *query=[NSMutableDictionary dictionary];
     for(NSDictionary *c in conditions)
     {
@@ -111,6 +118,12 @@
         }
     }
     
+    if (builtSubqueries.count>0)
+    {
+        [builtSubqueries addObject:query];
+        return builtSubqueries;
+    }
+    
     return query;
 }
 
@@ -127,10 +140,17 @@
     if (includeCount)
         [params setObject:@(1) forKey:@"count"];
     
-    NSDictionary *query=[self buildQuery];
+    id query=[self buildQuery];
     
-    if (query.count>0)
-        [params setObject:[query JSONString] forKey:@"where"];
+    if ([[query class] isSubclassOfClass:[NSArray class]])
+    {
+        [params setObject:[@{@"$or":query} JSONString] forKey:@"where"];
+    }
+    else
+    {
+        if ([query allKeys].count>0)
+            [params setObject:[query JSONString] forKey:@"where"];
+    }
     
     NSMutableArray *ordering=[NSMutableArray array];
     for(NSDictionary *o in orders)
