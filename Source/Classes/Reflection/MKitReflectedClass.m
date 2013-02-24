@@ -45,7 +45,7 @@
         {
             NSString *propertyName = [NSString stringWithCString:propName encoding:NSASCIIStringEncoding];
             if ((ignorePropPrefix==nil) || (![propertyName hasPrefix:ignorePropPrefix]))
-                if ([ignoredProps indexOfObject:propertyName]==NSNotFound)
+                if ((!ignoredProps) || ([ignoredProps indexOfObject:propertyName]==NSNotFound))
                     [properties setObject:[[[MKitReflectedProperty alloc] initWithName:propertyName forProperty:property] autorelease] forKey:propertyName];
         }
     }
