@@ -85,7 +85,7 @@
                 [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ ENDSWITH[cd] %%@",c[@"key"]],val]];
                 break;
             case KeyLike:
-                [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ LIKE[cd] *%%@*",c[@"key"]],val]];
+                [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ CONTAINS[cd] %%@",c[@"key"]],val]];
                 break;
             case KeyWithinDistance:
                 geoPoint=[val objectForKey:@"point"];

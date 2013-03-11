@@ -673,6 +673,10 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     for(MKitReflectedProperty *p in [ref.properties allValues])
     {
         val=[props objectForKey:p.name];
+        
+        if (val==nil)
+            continue;
+        
         if (val==[NSNull null])
             val=nil;
         
@@ -850,18 +854,18 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 {
     NSMutableArray *propsStrings=[NSMutableArray array];
     
-    [propsStrings addObject:[NSString stringWithFormat:@"\t%@: %@;",@"objectId",self.modelId]];
-    [propsStrings addObject:[NSString stringWithFormat:@"\t%@: %d;",@"modelState",self.modelState]];
-    [propsStrings addObject:[NSString stringWithFormat:@"\t%@: %@;",@"objectId",self.objectId]];
-    [propsStrings addObject:[NSString stringWithFormat:@"\t%@: %@;",@"createdAt",self.createdAt]];
-    [propsStrings addObject:[NSString stringWithFormat:@"\t%@: %@;",@"updateAt",self.updatedAt]];
+    [propsStrings addObject:[NSString stringWithFormat:@"\n\t%@: %@",@"modelId",self.modelId]];
+    [propsStrings addObject:[NSString stringWithFormat:@"%@: %d",@"modelState",self.modelState]];
+    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"objectId",self.objectId]];
+    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"createdAt",self.createdAt]];
+    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"updateAt",self.updatedAt]];
     
     NSDictionary *props=[self properties];
     [props enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",key,obj]];
     }];
     
-    return [NSString stringWithFormat:@"<%@: %p> { %@ }",NSStringFromClass([self class]),self,[propsStrings componentsJoinedByString:@";\n"]];
+    return [NSString stringWithFormat:@"<%@: %p> { %@;\n}\n",NSStringFromClass([self class]),self,[propsStrings componentsJoinedByString:@";\n\t"]];
 }
 
 -(NSString *)description

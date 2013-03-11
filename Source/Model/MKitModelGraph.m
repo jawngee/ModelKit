@@ -347,7 +347,11 @@ static NSMutableDictionary *graphs=nil;
     NSString *className=NSStringFromClass(modelClass);
     NSMutableDictionary *objectCache=[classCache objectForKey:className];
     if (!objectCache)
-        return nil;
+    {
+        NSPredicate *p=[NSPredicate predicateWithFormat:@"className==%@",className];
+        NSPredicate *c=[NSCompoundPredicate andPredicateWithSubpredicates:@[p,predicate]];
+        return [[modelStack allValues] filteredArrayUsingPredicate:c];
+    }
     
     return [[objectCache allValues] filteredArrayUsingPredicate:predicate];
 }
