@@ -171,6 +171,8 @@ static NSMutableDictionary *graphs=nil;
 
 -(BOOL)removeFromGraph:(MKitModel *)model
 {
+    [model retain];
+    
     BOOL exists=([modelStack objectForKey:model.modelId]!=nil);
     if (exists)
         [modelStack removeObjectForKey:model.modelId];
@@ -179,20 +181,19 @@ static NSMutableDictionary *graphs=nil;
     {
         NSString *className=NSStringFromClass([model class]);
         NSMutableDictionary *objectCache=[classCache objectForKey:className];
-        if (!objectCache)
-            return exists;
-    
-        if ([objectCache objectForKey:model.objectId])
+        
+        if ((objectCache) && ([objectCache objectForKey:model.objectId]))
         {
             [objectCache removeObjectForKey:model.objectId];
             
             objectCount--;
             size-=malloc_size(model);
             
-            return YES;
+            exists=YES;
         }
     }
     
+    [model release];
     return exists;
 }
 
