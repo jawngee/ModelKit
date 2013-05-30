@@ -82,6 +82,14 @@ extern NSString * const MKitModelGraphDefault;
  */
 -(BOOL)loadFromFile:(NSString *)file error:(NSError **)error;
 
+/**
+ * Imports a binary plist into the current graph
+ * @param file The name of the file to import from
+ * @param error The error generated, if any
+ * @return YES if successful, NO if not.
+ */
+-(BOOL)importFromFile:(NSString *)file error:(NSError **)error;
+
 
 #pragma mark - Model Management
 

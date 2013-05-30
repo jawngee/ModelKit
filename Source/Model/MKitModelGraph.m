@@ -341,6 +341,31 @@ static NSMutableDictionary *graphs=nil;
     return NO;
 }
 
+-(BOOL)importFromFile:(NSString *)file error:(NSError **)error
+{
+    if (![[NSFileManager defaultManager] fileExistsAtPath:file])
+    {
+        if (error)
+            *error=[NSError errorWithDomain:NSPOSIXErrorDomain code:ENOENT userInfo:nil];
+        
+        return NO;
+    }
+    
+    NSData *data=[NSData dataWithContentsOfFile:file options:NSDataReadingMappedAlways error:nil];
+    NSKeyedUnarchiver *unarchiver=[[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
+    NSArray *array=[unarchiver decodeObject];
+    if (array)
+    {
+        [modelStack addEntriesFromDictionary:[array objectAtIndex:0]];
+        [classCache addEntriesFromDictionary:[array objectAtIndex:1]];
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
+
 #pragma mark - Query
 
 -(NSArray *)queryWithPredicate:(NSPredicate *)predicate forClass:(Class)modelClass

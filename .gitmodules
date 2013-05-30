@@ -9,4 +9,4 @@
 	url = git://github.com/jawngee/iso-8601-date-formatter.git
 [submodule "External/SecureUDID"]
 	path = External/SecureUDID
-	url = git://github.com/crashlytics/secureudid.git
+url=git@github.com:jawngee/secureudid.git

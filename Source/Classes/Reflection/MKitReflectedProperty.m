@@ -62,7 +62,7 @@
                 _type=refTypeChar;
             else if ([type isEqualToString:@"Ts"])
                 _type=refTypeShort;
-            else if ([type isEqualToString:@"Ti"])
+            else if (([type isEqualToString:@"Ti"]) || ([type isEqualToString:@"Tq"]))
                 _type=refTypeInteger;
             else if ([type isEqualToString:@"Tl"])
                 _type=refTypeLong;

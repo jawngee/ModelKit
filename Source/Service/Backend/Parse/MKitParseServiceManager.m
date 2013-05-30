@@ -164,8 +164,6 @@ NSString * const MKitParseServiceName=@"Parse";
 
 -(BOOL)internalUpdateModel:(MKitModel *)model props:(NSDictionary *)props error:(NSError **)error
 {
-    NSLog(@"%@",[props JSONStringWithOptions:JKSerializeOptionPretty error:nil]);
-    
     AFHTTPRequestOperation *op=[self modelRequestWithMethod:@"PUT" model:model params:nil body:[props JSONData]];
     
     [op start];
@@ -322,8 +320,6 @@ NSString * const MKitParseServiceName=@"Parse";
                 if ((p) && (p.type==refTypeChar))
                     if ([obj charValue]<=1)
                         obj=[NSNumber numberWithBool:[obj boolValue]];
-                
-                NSLog(@"%@ VAL TYPE: %s",key,[((NSNumber *)obj) objCType]);
             }
             
             [propsToSave setObject:obj forKey:key];
@@ -536,8 +532,6 @@ NSString * const MKitParseServiceName=@"Parse";
     
     if ([op hasAcceptableStatusCode])
     {
-        NSLog(@"%@",op.responseString);
-        
         id data=[op.responseString objectFromJSONString];
         data=[MKitParseModelBinder processParseResult:data];
         
@@ -548,8 +542,6 @@ NSString * const MKitParseServiceName=@"Parse";
     {
         if (resultBlock)
             resultBlock(NO, op.error, nil);
-        
-        NSLog(@"%@ - %@",op.error, op.responseString);
     }
 }
 

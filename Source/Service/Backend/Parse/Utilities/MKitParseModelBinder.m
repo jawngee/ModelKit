@@ -107,7 +107,6 @@
             if (fileDict)
             {
                 MKitParseFile *file=[MKitParseFile fileWithName:fileDict[@"name"] andURL:fileDict[@"url"]];
-                NSLog(@"%@",model);
                 [model setValue:file forKey:prop.name];
             }
         }
@@ -121,8 +120,6 @@
         {
             if (data[prop.name])
             {
-                id val=data[prop.name];
-                NSLog(@"val: %@",val);
                 [model setValue:data[prop.name] forKey:prop.name];
             }
         }
