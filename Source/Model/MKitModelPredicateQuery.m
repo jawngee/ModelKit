@@ -100,7 +100,7 @@
         }
     }
     
-    NSPredicate *q=[NSCompoundPredicate andPredicateWithSubpredicates:predicates];
+    NSPredicate *q=(predicates.count==1) ? predicates[0] : [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
 
     if (builtSubQueries.count>0)
     {
