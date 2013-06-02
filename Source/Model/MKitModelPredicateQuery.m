@@ -95,6 +95,9 @@
                     double cdistance=acos(sin(p.latitudeRad) * sin(geoPoint.latitudeRad) + cos(p.latitudeRad) * cos(geoPoint.latitudeRad) * cos(geoPoint.longitudeRad - (p.longitudeRad))) * EARTH_RADIUS;
                     return (cdistance <= distance);
                 }]];
+            case KeyContains:
+                [predicates addObject:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ CONTAINS[c] %%@",c[@"key"]],val]];
+                break;
             default:
                 break;
         }
@@ -138,6 +141,21 @@
 -(NSInteger)count:(NSError **)error
 {
     return [[[self executeWithLimit:NSNotFound skip:NSNotFound error:error] objectForKey:MKitQueryItemCountKey] integerValue];
+}
+
+-(void)key:(NSString *)key condition:(MKitQueryCondition)condition value:(id)val
+{
+    if (condition==KeyContainsAll)
+    {
+        if (![((NSObject *)val) isKindOfClass:[NSArray class]])
+            [NSException raise:@"KeyContainsAll must have an array value." format:@"KeyContainsAll must have an array value."];
+        
+        NSArray *vals=(NSArray *)val;
+        for(id v in vals)
+            [super key:key condition:KeyContains value:v];
+    }
+    else
+        [super key:key condition:condition value:val];
 }
 
 @end

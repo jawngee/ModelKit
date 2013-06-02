@@ -37,7 +37,9 @@ typedef enum
     KeyBeginsWith,
     KeyEndsWith,
     KeyLike,
-    KeyWithinDistance
+    KeyWithinDistance,
+    KeyContains,
+    KeyContainsAll
 } MKitQueryCondition;
 
 /**

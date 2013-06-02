@@ -66,6 +66,7 @@
         
         switch ([c[@"condition"] integerValue])
         {
+            case KeyContains:
             case KeyEquals:
                 [query setObject:val forKey:c[@"key"]];
                 break;
@@ -113,6 +114,13 @@
                 distance=[[val objectForKey:@"distance"] doubleValue];
                 
                 [query setObject:@{@"$nearSphere":[geoPoint parsePointer],@"$maxDistanceInKilometers":@(distance)} forKey:c[@"key"]];
+                break;
+            case KeyContainsAll:
+                if (![((NSObject *)val) isKindOfClass:[NSArray class]])
+                    [NSException raise:@"Value must be array" format:@"KeyContainsAll value must be an array."];
+                
+                [query setObject:@{@"$all":val} forKey:c[@"key"]];
+                break;
             default:
                 break;
         }
