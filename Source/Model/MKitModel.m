@@ -157,9 +157,15 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
         if (val)
             self.objectId=val;
         
-        MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" ignoreProperties:nil recurseChainUntil:[MKitModel class]];
+        MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" ignoreProperties:[[self class] ignoredProperties] recurseChainUntil:[MKitModel class]];
         for(MKitReflectedProperty *p in [ref.properties allValues])
         {
+            if (![aDecoder containsValueForKey:p.name])
+            {
+                NSLog(@"Decoder missing key '%@' for class %@",p.name,NSStringFromClass([self class]));
+                continue;
+            }
+            
             val=[aDecoder decodeObjectForKey:p.name];
             
             if (val==[NSNull null])
