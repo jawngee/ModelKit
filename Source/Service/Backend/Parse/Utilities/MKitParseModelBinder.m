@@ -99,7 +99,19 @@
         }
         else if ([prop.typeClass isSubclassOfClass:[NSDate class]])
         {
-            [model setValue:[NSDate dateFromISO8601:data[prop.name]] forKey:prop.name];
+            id val=data[prop.name];
+            if ([val isKindOfClass:[NSDictionary class]])
+            {
+                NSDictionary *dict=(NSDictionary *)val;
+                if ([dict[@"__type"] isEqualToString:@"Date"])
+                {
+                    [model setValue:[NSDate dateFromISO8601:dict[@"iso"]] forKey:prop.name];
+                }
+                else
+                    [NSException raise:@"Date is an unknown dictionary type." format:@"Data: %@",dict];
+            }
+            else
+                [model setValue:[NSDate dateFromISO8601:data[prop.name]] forKey:prop.name];
         }
         else if ([prop.typeClass isSubclassOfClass:[MKitServiceFile class]])
         {

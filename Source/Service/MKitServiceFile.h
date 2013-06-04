@@ -22,7 +22,7 @@ typedef enum
 /**
  * Represents a file that can be saved to a backend service
  */
-@interface MKitServiceFile : NSObject
+@interface MKitServiceFile : NSObject<NSCoding>
 
 @property (copy, nonatomic) NSString *contentType;  /**< Content type */
 @property (copy, nonatomic) NSString *filename;     /**< File name of local file that this points to, can be nil */

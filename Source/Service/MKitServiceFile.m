@@ -74,6 +74,21 @@
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self=[self init]))
+    {
+        self.contentType=[aDecoder decodeObjectForKey:@"contentType"];
+        self.filename=[aDecoder decodeObjectForKey:@"filename"];
+        self.data=[aDecoder decodeObjectForKey:@"data"];
+        self.state=[aDecoder decodeIntegerForKey:@"state"];
+        self.name=[aDecoder decodeObjectForKey:@"name"];
+        self.url=[aDecoder decodeObjectForKey:@"url"];
+    }
+    
+    return self;
+}
+
 -(void)dealloc
 {
     self.contentType=nil;
@@ -108,6 +123,19 @@
 {
     return nil;
 }
+
+#pragma mark - NSCoding
+
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.contentType forKey:@"contentType"];
+    [aCoder encodeObject:self.filename forKey:@"filename"];
+    [aCoder encodeObject:self.data forKey:@"data"];
+    [aCoder encodeInteger:self.state forKey:@"state"];
+    [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeObject:self.url forKey:@"url"];
+}
+
 
 #pragma mark - Internal
 
@@ -150,6 +178,25 @@
         if (resultBlock)
             resultBlock(result, error);
     });
+}
+
+-(NSString *)debugDescription
+{
+    NSMutableArray *propsStrings=[NSMutableArray array];
+    
+    [propsStrings addObject:[NSString stringWithFormat:@"\n\t%@: %@",@"contentType",self.contentType]];
+    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"filename",self.filename]];
+    [propsStrings addObject:[NSString stringWithFormat:@"%@: %d",@"state",self.state]];
+    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"name",self.name]];
+    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"url",self.url]];
+    
+    
+    return [NSString stringWithFormat:@"<%@: %p> { %@;\n}\n",NSStringFromClass([self class]),self,[propsStrings componentsJoinedByString:@";\n\t"]];
+}
+
+-(NSString *)description
+{
+    return [self debugDescription];
 }
 
 
