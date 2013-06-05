@@ -110,8 +110,11 @@
                 else
                     [NSException raise:@"Date is an unknown dictionary type." format:@"Data: %@",dict];
             }
-            else
+            else if (val!=nil)
+            {
+                NSLog(@"DATE VAL: %@ = %@ (%@)",prop.name,val,NSStringFromClass([val class]));
                 [model setValue:[NSDate dateFromISO8601:data[prop.name]] forKey:prop.name];
+            }
         }
         else if ([prop.typeClass isSubclassOfClass:[MKitServiceFile class]])
         {
