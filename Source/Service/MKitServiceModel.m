@@ -16,11 +16,6 @@
     return [[self service] queryForModelClass:self];
 }
 
-+(MKitModelQuery *)graphQuery
-{
-    return [MKitModelPredicateQuery queryForModelClass:self];
-}
-
 +(MKitServiceManager *)service
 {
     return nil;

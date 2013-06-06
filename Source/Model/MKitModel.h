@@ -169,6 +169,12 @@ extern NSString *const MKitModelPropertyChangedNotification;
  */
 +(MKitModelQuery *)query;
 
+/**
+ * Returns a query object for the model using predicates on the graph.
+ * @return The query object
+ */
++(MKitModelQuery *)graphQuery;
+
 #pragma mark - Graph Related
 
 /**
@@ -242,5 +248,10 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * @param jsonString The JSON string to deserialize form.
  */
 -(void)deserializeFromJSON:(NSString *)jsonString;
+
+/**
+ * Returns the latest update date
+ */
++(NSDate *)mostRecentUpdateDate;
 
 @end
