@@ -180,6 +180,13 @@
 
 -(NSDictionary *)executeWithLimit:(NSInteger)limit skip:(NSInteger)skip error:(NSError **)error
 {
+    if (!manager.reachable)
+    {
+        *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
+        
+        return nil;
+    }
+    
     AFHTTPRequestOperation *op=[self buildQueryOpWithLimit:limit skip:skip includeCount:YES];
     
     [op start];
@@ -203,6 +210,13 @@
 
 -(NSInteger)count:(NSError **)error
 {
+    if (!manager.reachable)
+    {
+        *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
+        
+        return 0;
+    }
+    
     AFHTTPRequestOperation *op=[self buildQueryOpWithLimit:0 skip:NSNotFound includeCount:YES];
     
     [op start];

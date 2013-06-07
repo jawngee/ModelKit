@@ -31,6 +31,8 @@
 
 NSString * const MKitParseServiceName=@"Parse";
 
+NSString * const MKitParseErrorDomain=@"MKitParseErrorDomain";
+
 /**
  * Private methods
  */
@@ -75,6 +77,27 @@ NSString * const MKitParseServiceName=@"Parse";
         parseClient=[[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:PARSE_BASE_URL]];
         [parseClient setDefaultHeader:@"X-Parse-Application-Id" value:_appID];
         [parseClient setDefaultHeader:@"X-Parse-REST-API-Key" value:_restKey];
+        
+        __block typeof(self) this=self;
+        [parseClient setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+            if (status == AFNetworkReachabilityStatusNotReachable)
+            {
+                this.reachable=NO;
+                this.reachableOnWifi=NO;
+            }
+            else if (status==AFNetworkReachabilityStatusReachableViaWiFi)
+            {
+                this.reachable=YES;
+                this.reachableOnWifi=YES;
+            }
+            else
+            {
+                this.reachable=YES;
+                this.reachableOnWifi=NO;
+            }
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:MKitReachabilityChangedNotification object:self];
+        }];
         
         keychain=[[MKitServiceKeyChain alloc] initWithService:_appID];
     }
@@ -164,6 +187,13 @@ NSString * const MKitParseServiceName=@"Parse";
 
 -(BOOL)internalUpdateModel:(MKitModel *)model props:(NSDictionary *)props error:(NSError **)error
 {
+    if (!self.reachable)
+    {
+        *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
+        
+        return NO;
+    }
+    
     AFHTTPRequestOperation *op=[self modelRequestWithMethod:@"PUT" model:model params:nil body:[props JSONData]];
     
     [op start];
@@ -187,6 +217,13 @@ NSString * const MKitParseServiceName=@"Parse";
 
 -(BOOL)internalSaveModel:(MKitModel *)model props:(NSDictionary *)props error:(NSError **)error
 {
+    if (!self.reachable)
+    {
+        *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
+        
+        return NO;
+    }
+    
     AFHTTPRequestOperation *op=[self classRequestWithMethod:@"POST" class:[model class] params:nil body:[props JSONData]];
     
     [op start];
@@ -222,6 +259,13 @@ NSString * const MKitParseServiceName=@"Parse";
 
 -(BOOL)saveModel:(MKitModel *)model error:(NSError **)error
 {
+    if (!self.reachable)
+    {
+        *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
+        
+        return NO;
+    }
+    
     // normally I don't comment this much, but since you are reading this
     // you are possibly trying to write a new backend for ModelKit.  Hopefully
     // these comments will be helpful to you
@@ -389,6 +433,13 @@ NSString * const MKitParseServiceName=@"Parse";
 
 -(BOOL)deleteModel:(MKitModel *)model error:(NSError **)error
 {
+    if (!self.reachable)
+    {
+        *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
+        
+        return NO;
+    }
+    
     AFHTTPRequestOperation *op=[self modelRequestWithMethod:@"DELETE" model:model params:nil body:nil];
     
     [op start];
@@ -409,6 +460,13 @@ NSString * const MKitParseServiceName=@"Parse";
 
 -(BOOL)fetchModel:(MKitModel *)model error:(NSError **)error
 {
+    if (!self.reachable)
+    {
+        *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
+        
+        return NO;
+    }
+    
     MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[model class] ignorePropPrefix:@"model" ignoreProperties:[[model class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     
     // We want Parse to return the full object data for all models this model points to/contains
@@ -482,6 +540,13 @@ NSString * const MKitParseServiceName=@"Parse";
     if (file.state!=FileStateNew)
         return YES;
     
+    if (!self.reachable)
+    {
+        *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
+        
+        return NO;
+    }
+    
     AFHTTPRequestOperation *op=[self requestWithMethod:@"POST"
                                                   path:[NSString stringWithFormat:@"files/%@",file.name]
                                                 params:nil
@@ -522,6 +587,16 @@ NSString * const MKitParseServiceName=@"Parse";
 
 -(void)callFunction:(NSString *)function parameters:(id)params resultBlock:(MKitServiceResultBlock)resultBlock
 {
+    if (!self.reachable)
+    {
+        NSError *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
+        
+        if (resultBlock)
+            resultBlock(NO, error, nil);
+        
+        return;
+    }
+    
     params=[MKitParseModelBinder prepareParseParameters:params];
     NSData *data=(params) ? [params JSONData] : [@"{}" dataUsingEncoding:NSUTF8StringEncoding];
     

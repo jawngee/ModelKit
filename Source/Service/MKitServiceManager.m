@@ -11,6 +11,8 @@
 #import "MKitServiceUser.h"
 #import "MKitServiceModel.h"
 
+NSString * const MKitReachabilityChangedNotification=@"MKitReachabilityChangedNotification";
+
 @implementation MKitServiceManager
 
 @synthesize keychain;
@@ -39,6 +41,9 @@ static NSMutableDictionary *managers=nil;
     if ((self=[super init]))
     {
         keychain=nil;
+        
+        _reachable=NO;
+        _reachableOnWifi=NO;
     }
     
     return self;

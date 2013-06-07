@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 
 extern NSString * const MKitParseServiceName;
+extern NSString * const MKitParseErrorDomain;
 
 /**
  * Parse.com Service Manager

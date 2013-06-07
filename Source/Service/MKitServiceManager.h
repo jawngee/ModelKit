@@ -13,6 +13,8 @@
 #import "MKitServiceKeyChain.h"
 #import "MKitServiceFile.h"
 
+extern NSString * const MKitReachabilityChangedNotification;
+
 @class MKitServiceModel;
 @class MKitServiceModelQuery;
 @protocol MKitServiceUser;
@@ -25,6 +27,9 @@
 {
     MKitServiceKeyChain *keychain;      /**< Keychain for storing credentials */
 }
+
+@property (assign, nonatomic) BOOL reachable;
+@property (assign, nonatomic) BOOL reachableOnWifi;
 
 @property (readonly) MKitServiceKeyChain *keychain;
 
