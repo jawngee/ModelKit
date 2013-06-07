@@ -31,11 +31,6 @@
  */
 +(MKitServiceModelQuery *)query;
 
-/**
- * Returns a query object for the model using predicates on the graph.
- * @return The query object
- */
-+(MKitModelQuery *)graphQuery;
 
 /**
  * Returns the service manager this model uses for persistence

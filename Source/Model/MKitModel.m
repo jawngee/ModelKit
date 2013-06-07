@@ -293,6 +293,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     return [MKitModelPredicateQuery queryForModelClass:self];
 }
 
++(MKitModelQuery *)graphQuery
+{
+    return [MKitModelPredicateQuery queryForModelClass:self];
+}
+
 #pragma mark - NSCoding
 
 -(void)encodeWithCoder:(NSCoder *)aCoder
@@ -877,6 +882,21 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 -(NSString *)description
 {
     return [self debugDescription];
+}
+
++(NSDate *)mostRecentUpdateDate
+{
+    MKitModelQuery *updateQuery=[self graphQuery];
+    [updateQuery orderBy:@"updatedAt" direction:orderDESC];
+    NSArray *result=[[updateQuery execute:nil] objectForKey:MKitQueryResultKey];
+    
+    if (result.count>0)
+    {
+        MKitModel *model=result[0];
+        return model.updatedAt;
+    }
+    else
+        return nil;
 }
 
 @end
