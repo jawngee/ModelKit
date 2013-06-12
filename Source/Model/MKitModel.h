@@ -175,6 +175,12 @@ extern NSString *const MKitModelPropertyChangedNotification;
  */
 +(MKitModelQuery *)graphQuery;
 
+/**
+ * Returns all instances of this model that exist in the graph
+ * @return An array of all instances in the local graph
+ */
++(NSArray *)allInstances;
+
 #pragma mark - Graph Related
 
 /**

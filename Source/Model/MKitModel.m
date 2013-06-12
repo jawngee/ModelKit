@@ -298,6 +298,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     return [MKitModelPredicateQuery queryForModelClass:self];
 }
 
++(NSArray *)allInstances
+{
+    return [[[self graphQuery] execute:nil] objectForKey:MKitQueryResultKey];
+}
+
 #pragma mark - NSCoding
 
 -(void)encodeWithCoder:(NSCoder *)aCoder
