@@ -36,33 +36,108 @@
     [super dealloc];
 }
 
--(void)keyExists:(NSString *)key
+-(MKitModelQuery *)keyExists:(NSString *)key
 {
     [conditions addObject:@{@"condition":@(KeyExists),@"key":key}];
+    
+    return self;
 }
 
--(void)keyDoesNotExist:(NSString *)key
+-(MKitModelQuery *)keyDoesNotExist:(NSString *)key
 {
     [conditions addObject:@{@"condition":@(KeyNotExist),@"key":key}];
+    
+    return self;
 }
 
--(void)key:(NSString *)key condition:(MKitQueryCondition)condition value:(id)val
+-(MKitModelQuery *)key:(NSString *)key condition:(MKitQueryCondition)condition value:(id)val
 {
     if (val==nil)
         val=[NSNull null];
     
     [conditions addObject:@{@"condition":@(condition),@"key":key,@"value":val}];
+    
+    return self;
 }
 
 
--(void)key:(NSString *)key withinDistance:(double)distance ofPoint:(MKitGeoPoint *)point
+-(MKitModelQuery *)key:(NSString *)key withinDistance:(double)distance ofPoint:(MKitGeoPoint *)point
 {
     [conditions addObject:@{@"condition":@(KeyWithinDistance),@"key":key,@"value":@{@"distance":@(distance),@"point":point}}];
+    
+    return self;
 }
 
--(void)orderBy:(NSString *)key direction:(MKitQueryOrder)order
+-(MKitModelQuery *)orderBy:(NSString *)key direction:(MKitQueryOrder)order
 {
     [orders addObject:@{@"key":key,@"dir":@(order)}];
+    
+    return self;
+}
+
+-(MKitModelQuery *)key:(NSString *)key equals:(id)val
+{
+    return [self key:key condition:KeyEquals value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key notEqualTo:(id)val
+{
+    return [self key:key condition:KeyNotEqual value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key greaterThanEqual:(id)val
+{
+    return [self key:key condition:KeyGreaterThanEqual value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key greater:(id)val
+{
+    return [self key:key condition:KeyGreaterThan value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key lessThanEqual:(id)val
+{
+    return [self key:key condition:KeyLessThanEqual value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key lessThan:(id)val
+{
+    return [self key:key condition:KeyLessThan value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key isIn:(id)val
+{
+    return [self key:key condition:KeyIn value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key isNotIn:(id)val
+{
+    return [self key:key condition:KeyNotIn value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key beginsWith:(id)val
+{
+    return [self key:key condition:KeyBeginsWith value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key endsWith:(id)val
+{
+    return [self key:key condition:KeyEndsWith value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key like:(id)val
+{
+    return [self key:key condition:KeyLike value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key contains:(id)val
+{
+    return [self key:key condition:KeyContains value:val];
+}
+
+-(MKitModelQuery *)key:(NSString *)key containsAll:(id)val
+{
+    return [self key:key condition:KeyContainsAll value:val];
 }
 
 -(NSDictionary *)execute:(NSError **)error

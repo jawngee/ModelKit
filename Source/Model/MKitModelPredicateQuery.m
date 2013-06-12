@@ -143,7 +143,7 @@
     return [[[self executeWithLimit:NSNotFound skip:NSNotFound error:error] objectForKey:MKitQueryItemCountKey] integerValue];
 }
 
--(void)key:(NSString *)key condition:(MKitQueryCondition)condition value:(id)val
+-(MKitModelQuery *)key:(NSString *)key condition:(MKitQueryCondition)condition value:(id)val
 {
     if (condition==KeyContainsAll)
     {
@@ -156,6 +156,8 @@
     }
     else
         [super key:key condition:condition value:val];
+    
+    return self;
 }
 
 @end

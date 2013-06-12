@@ -42,8 +42,8 @@ static NSMutableDictionary *managers=nil;
     {
         keychain=nil;
         
-        _reachable=NO;
-        _reachableOnWifi=NO;
+        _reachable=YES;
+        _reachableOnWifi=YES;
     }
     
     return self;

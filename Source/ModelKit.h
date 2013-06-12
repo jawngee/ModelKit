@@ -50,4 +50,6 @@
 #import "MKitParseInstallation.h"
 #import "MKitParseNotification.h"
 
+#import "NSDictionary+MKitQuery.h"
+
 #endif
