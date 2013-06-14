@@ -63,7 +63,7 @@ NSString * const MKitParseErrorDomain=@"MKitParseErrorDomain";
 
 -(id)initWithKeys:(NSDictionary *)keys
 {
-    if ((self=[super init]))
+    if ((self=[super initWithKeys:keys]))
     {
         _appID=[[keys objectForKey:@"AppID"] copy];
         _restKey=[[keys objectForKey:@"RestKey"] copy];
@@ -608,15 +608,22 @@ NSString * const MKitParseErrorDomain=@"MKitParseErrorDomain";
     if ([op hasAcceptableStatusCode])
     {
         id data=[op.responseString objectFromJSONString];
-        data=[MKitParseModelBinder processParseResult:data];
+        
+        if (data)
+            data=[MKitParseModelBinder processParseResult:data];
         
         if (resultBlock)
             resultBlock(YES, nil, data);
     }
     else
     {
+        id data=[op.responseString objectFromJSONString];
+        
+        if (data)
+            data=[MKitParseModelBinder processParseResult:data];
+        
         if (resultBlock)
-            resultBlock(NO, op.error, nil);
+            resultBlock(NO, op.error, data);
     }
 }
 
