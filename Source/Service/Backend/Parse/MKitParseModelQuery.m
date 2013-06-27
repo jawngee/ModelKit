@@ -197,7 +197,7 @@
         id data=[op.responseString objectFromJSONString];
         return @{
             MKitQueryItemCountKey:data[@"count"],
-            MKitQueryResultKey:[MKitParseModelBinder bindArrayOfModels:[data objectForKey:@"results"] forClass:modelClass]
+            MKitQueryResultKey:(data==nil) ? @[] : [MKitParseModelBinder bindArrayOfModels:[data objectForKey:@"results"] forClass:modelClass]
         };
     }
     
@@ -212,7 +212,8 @@
 {
     if (!manager.reachable)
     {
-        *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
+        if (error!=nil)
+            *error=[NSError errorWithDomain:MKitParseErrorDomain code:666 description:@"Parse is not currently reachable" recoverySuggestion:@"Check your internet connection."];
         
         return 0;
     }
@@ -228,7 +229,7 @@
         return [data[@"count"] integerValue];
     }
     
-    if (error)
+    if ((error!=nil) && (op.error))
         *error=op.error;
     
     return 0;
