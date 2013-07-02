@@ -63,13 +63,13 @@ NSString *const MKitKeychainData=@"data";
 
 -(NSDictionary *)credentialsForUsername:(NSString *)username
 {
-    NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
+    NSDictionary *query = [[NSDictionary dictionaryWithObjectsAndKeys:
                            (id)kSecClassGenericPassword, (id)kSecClass,
                            [service dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrService,
                            [username dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrAccount,
                            (id)kCFBooleanTrue, (id)kSecReturnAttributes,
                            (id)kCFBooleanTrue, (id)kSecReturnData,
-                           nil];
+                           nil] retain];
     
     CFDictionaryRef resultRef = NULL;
     OSStatus status = SecItemCopyMatching((CFDictionaryRef)query, (CFTypeRef *)&resultRef);
@@ -118,11 +118,13 @@ NSString *const MKitKeychainData=@"data";
 
 -(BOOL)deleteCredentialsForUsername:(NSString *)username
 {
-    NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
+    NSData *sd=[service dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *un=[username dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *query = [[NSDictionary dictionaryWithObjectsAndKeys:
                            (id)kSecClassGenericPassword, (id)kSecClass,
-                           [service dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrService,
-                           [username dataUsingEncoding:NSUTF8StringEncoding], (id)kSecAttrAccount,
-                           nil];
+                           sd, (id)kSecAttrService,
+                           un, (id)kSecAttrAccount,
+                           nil] retain];
     OSStatus status = SecItemDelete((CFDictionaryRef)query);
     return (status == errSecSuccess || status == errSecItemNotFound);
 }
