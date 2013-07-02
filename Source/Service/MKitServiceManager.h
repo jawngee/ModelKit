@@ -41,6 +41,12 @@ extern NSString * const MKitReachabilityChangedNotification;
 +(void)addService:(MKitServiceManager *)service named:(NSString *)serviceName;
 
 /**
+ * Removes a service from use.
+ * @param serviceName The name of the service.
+ */
++(void)removeServiceNamed:(NSString *)serviceName;
+
+/**
  * Returns a service for a given name, eg "Parse"
  * @param name The name of the service, eg "Parse"
  * @return The manager instance, nil if not found

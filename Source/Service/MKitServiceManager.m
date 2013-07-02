@@ -24,6 +24,11 @@ static NSMutableDictionary *managers=nil;
     [managers setObject:service forKey:serviceName];
 }
 
++(void)removeServiceNamed:(NSString *)serviceName
+{
+    [managers removeObjectForKey:serviceName];
+}
+
 +(MKitServiceManager *)managerForServiceNamed:(NSString *)name;
 {
     return [managers objectForKey:name];
