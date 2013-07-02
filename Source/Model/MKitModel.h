@@ -75,6 +75,7 @@ extern NSString *const MKitModelPropertyChangedNotification;
 @property (retain, nonatomic) NSString *modelId;            /**< Used internally */
 @property (assign, nonatomic) MKitModelState modelState;    /**< The current model state */
 @property (readonly) NSDictionary *modelChanges;            /**< List of model properties that have changed */
+@property (assign, nonatomic) BOOL modelHasChanges;         /**< Model has changes */
 
 // All models have these properties
 @property (copy, nonatomic) NSString *objectId;         /**< The object ID - Application specific */

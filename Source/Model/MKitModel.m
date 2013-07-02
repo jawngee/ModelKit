@@ -92,6 +92,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 @implementation MKitModel
 
 @synthesize modelChanges=_modelChanges;
+@synthesize modelHasChanges;
 
 #pragma mark - Class Initialization
 
@@ -385,7 +386,10 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:MKitModelPropertyChangedNotification object:self userInfo:@{@"keyPath":keyPath,@"change":change}];
+    
+    self.modelHasChanges=(_modelChanges.count>0);
 }
+
 
 #pragma mark - Graph related
 
@@ -435,6 +439,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     
     _hasChanged=NO;
     [_modelChanges removeAllObjects];
+    self.modelHasChanges=NO;
 }
 
 #pragma mark - Private serialization/deserialization methods
