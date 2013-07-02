@@ -64,6 +64,8 @@
         MKitGeoPoint *geoPoint=nil;
         double distance=0.0;
         
+        NSMutableArray *newVals=[NSMutableArray array];
+        
         switch ([c[@"condition"] integerValue])
         {
             case KeyContains:
@@ -86,9 +88,35 @@
                 [query setObject:@{@"$lte":val} forKey:c[@"key"]];
                 break;
             case KeyIn:
+                if ([val isKindOfClass:[NSArray class]])
+                {
+                    [newVals removeAllObjects];
+                    [((NSArray *)val) enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                        if ([[obj class] isSubclassOfClass:[MKitModel class]])
+                            obj=[((MKitModel *) obj) parsePointer];
+                        
+                        [newVals addObject:obj];
+                    }];
+                    
+                    val=[[newVals copy] autorelease];
+                }
+                
                 [query setObject:@{@"$in":val} forKey:c[@"key"]];
                 break;
             case KeyNotIn:
+                if ([val isKindOfClass:[NSArray class]])
+                {
+                    [newVals removeAllObjects];
+                    [((NSArray *)val) enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                        if ([[obj class] isSubclassOfClass:[MKitModel class]])
+                            obj=[((MKitModel *) obj) parsePointer];
+                        
+                        [newVals addObject:obj];
+                    }];
+                    
+                    val=[[newVals copy] autorelease];
+                }
+                
                 [query setObject:@{@"$nin":val} forKey:c[@"key"]];
                 break;
             case KeyExists:
@@ -174,6 +202,8 @@
     
     if (includes.count>0)
         [params setObject:[includes componentsJoinedByString:@","] forKey:@"include"];
+    
+    NSLog(@"%@",params);
     
     return [manager classRequestWithMethod:@"GET" class:modelClass params:((params.count>0) ? params : nil) body:nil];
 }
