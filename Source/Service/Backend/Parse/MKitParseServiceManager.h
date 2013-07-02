@@ -21,6 +21,7 @@ extern NSString * const MKitParseErrorDomain;
     AFHTTPClient *parseClient;
     NSString *_appID;
     NSString *_restKey;
+    NSString *_masterKey;
 }
 
 @end

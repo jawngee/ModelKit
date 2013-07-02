@@ -67,6 +67,7 @@ NSString * const MKitParseErrorDomain=@"MKitParseErrorDomain";
     {
         _appID=[[keys objectForKey:@"AppID"] copy];
         _restKey=[[keys objectForKey:@"RestKey"] copy];
+        _masterKey=[[keys objectForKey:@"MasterKey"] copy];
         
         if (!_appID)
             @throw [NSException exceptionWithName:@"Missing App ID" reason:@"Missing AppID in keys dictionary" userInfo:nil];
@@ -77,6 +78,9 @@ NSString * const MKitParseErrorDomain=@"MKitParseErrorDomain";
         parseClient=[[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:PARSE_BASE_URL]];
         [parseClient setDefaultHeader:@"X-Parse-Application-Id" value:_appID];
         [parseClient setDefaultHeader:@"X-Parse-REST-API-Key" value:_restKey];
+        
+        if (_masterKey)
+            [parseClient setDefaultHeader:@"X-Parse-Master-Key" value:_masterKey];
         
         __block typeof(self) this=self;
         [parseClient setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
@@ -109,6 +113,7 @@ NSString * const MKitParseErrorDomain=@"MKitParseErrorDomain";
 {
     [_appID release];
     [_restKey release];
+    [_masterKey release];
     
     [super dealloc];
 }
