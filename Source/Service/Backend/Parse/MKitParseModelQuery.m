@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Interfacelab LLC. All rights reserved.
 //
 
+#import "MKitDefs.h"
+#import "MKitParseServiceManager.h"
 #import "MKitParseModelQuery.h"
 #import "NSDate+ModelKit.h"
 #import "MKitModel+Parse.h"

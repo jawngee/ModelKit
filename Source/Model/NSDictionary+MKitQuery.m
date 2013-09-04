@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+MKitQuery.h"
+#import "MKitModelQuery.h"
 
 @implementation NSDictionary (MKitQuery)
 
