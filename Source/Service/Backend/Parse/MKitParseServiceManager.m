@@ -346,7 +346,7 @@ NSString * const MKitParseErrorDomain=@"MKitParseErrorDomain";
         {
             [propsToSave setObject:[((MKitGeoPoint *)obj) parsePointer] forKey:key];
         }
-        else if ([[obj class] isSubclassOfClass:[NSMutableArray array]])
+        else if ([[obj class] isSubclassOfClass:[NSMutableArray class]])
         {
             NSMutableArray *arrayCopy=[NSMutableArray array];
             for(id val in ((NSMutableArray *)obj))
