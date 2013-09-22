@@ -140,6 +140,19 @@
     return [self key:key condition:KeyContainsAll value:val];
 }
 
+-(id)first
+{
+    NSError *error=nil;
+    NSDictionary *result=[self execute:&error];
+    if (error)
+        return nil;
+    
+    if ([result[MKitQueryResultKey] count]==0)
+        return nil;
+    
+    return [result[MKitQueryResultKey] objectAtIndex:0];
+}
+
 -(NSDictionary *)execute:(NSError **)error
 {
     return [self executeWithLimit:NSNotFound skip:NSNotFound error:error];

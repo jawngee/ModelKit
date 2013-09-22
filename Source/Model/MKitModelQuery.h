@@ -222,6 +222,13 @@ typedef enum
 -(MKitModelQuery *)key:(NSString *)key containsAll:(id)val;
 
 /**
+ *	Returns the first model found
+ *
+ *	@return The first model found
+ */
+-(id)first;
+
+/**
  * Executes the query and returns a dictionary.  The dictionary has two keys: totalCount and results.
  * totalCount contains the total number of items the query matches, results is an array of objects that
  * match the query.  Note that the number of items returned might be limited by the backend service
