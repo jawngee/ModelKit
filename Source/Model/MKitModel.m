@@ -130,6 +130,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
         [self addToGraph];
 }
 
+-(void)awake
+{
+    
+}
+
 -(id)init
 {
     if ((self=[super init]))
@@ -183,6 +188,8 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     
         [self endChanges];
         [self registerForNotifications];
+        
+        [self awake];
     }
     
     return self;
@@ -785,6 +792,8 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                 break;
         }
     }
+    
+    [self awake];
 }
 
 #pragma mark - Public serialization/deserialization methods

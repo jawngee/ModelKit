@@ -26,6 +26,7 @@
 #import "MKitGeoPoint+Parse.h"
 #import "MKitParseInstallation.h"
 #import "SecureUDID.h"
+#import "NSError+ModelKit.h"
 
 #define PARSE_BASE_URL @"https://api.parse.com/1/"
 

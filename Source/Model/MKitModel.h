@@ -141,6 +141,11 @@ extern NSString *const MKitModelPropertyChangedNotification;
  */
 -(void)setup;
 
+/**
+ * Called when the model has been loaded from file/stream/etc.
+ */
+-(void)awake;
+
 #pragma mark - Model registration
 
 /**

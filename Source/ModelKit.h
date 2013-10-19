@@ -11,6 +11,8 @@
 
 #include "MKitDefs.h"
 
+#import "NSError+ModelKit.h"
+
 #import "NSDate+ModelKit.h"
 #import "NSString+ModelKit.h"
 

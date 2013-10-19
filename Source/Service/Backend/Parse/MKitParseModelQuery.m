@@ -16,6 +16,7 @@
 #import "MKitParseModelBinder.h"
 #import "MKitGeoPoint.h"
 #import "MKitGeoPoint+Parse.h"
+#import "NSError+ModelKit.h"
 
 /**
  * Internal methods
