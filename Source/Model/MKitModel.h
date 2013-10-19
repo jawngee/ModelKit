@@ -72,6 +72,7 @@ extern NSString *const MKitModelPropertyChangedNotification;
     NSMutableDictionary *_modelChanges;
 }
 
+@property (assign, nonatomic) MKitModelGraph *graph;
 @property (retain, nonatomic) NSString *modelId;            /**< Used internally */
 @property (assign, nonatomic) MKitModelState modelState;    /**< The current model state */
 @property (readonly) NSDictionary *modelChanges;            /**< List of model properties that have changed */
@@ -194,7 +195,7 @@ extern NSString *const MKitModelPropertyChangedNotification;
  * so that different models are associated with different graphs.
  * @return The graph associated with this model.
  */
-+(MKitModelGraph *)graph;
++(MKitModelGraph *)defaultGraph;
 
 /**
  * Adds the object to the graph.  This is done automatically, but for models

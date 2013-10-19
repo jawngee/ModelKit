@@ -190,11 +190,17 @@
 
 -(void)sendInBackground:(MKitBooleanResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         BOOL result=[self send:&error];
         if (resultBlock)
             resultBlock(result,error);
+    
+        [currentGraph pop];
     });
 }
 

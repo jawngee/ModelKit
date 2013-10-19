@@ -82,11 +82,18 @@ static MKitParseUser *_currentUser=nil;
 
 +(void)signUpInBackgroundWithUserName:(NSString *)userName email:(NSString *)email password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSError *error=nil;
+        
+        [currentGraph push];
+        
         [self signUpWithUserName:userName email:email password:password error:&error];
+        
         if (resultBlock)
             resultBlock(_currentUser,error);
+        
+        [currentGraph pop];
     });
 }
 
@@ -137,11 +144,17 @@ static MKitParseUser *_currentUser=nil;
 
 +(void)logInInBackgroundWithUserName:(NSString *)userName password:(NSString *)password resultBlock:(MKitObjectResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         [self logInWithUserName:userName password:password error:&error];
+        
         if (resultBlock)
             resultBlock(_currentUser,error);
+        
+        [currentGraph pop];
     });
 }
 
@@ -187,11 +200,18 @@ static MKitParseUser *_currentUser=nil;
 
 +(void)logInWithAuthDataInBackground:(NSDictionary *)authData resultBlock:(MKitObjectResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         [self logInWithAuthData:authData error:&error];
+        
         if (resultBlock)
             resultBlock(_currentUser,error);
+        
+        [currentGraph pop];
     });
 }
 
@@ -220,11 +240,18 @@ static MKitParseUser *_currentUser=nil;
 
 +(void)requestPasswordResetInBackgroundForEmail:(NSString *)email resultBlock:(MKitBooleanResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         BOOL result=[self requestPasswordResetForEmail:email error:&error];
+        
         if (resultBlock)
             resultBlock(result,error);
+        
+        [currentGraph pop];
     });
 }
 

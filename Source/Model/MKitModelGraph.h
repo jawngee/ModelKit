@@ -47,6 +47,27 @@ extern NSString * const MKitModelGraphDefault;
  */
 +(MKitModelGraph *)graphNamed:(NSString *)name;
 
+#pragma mark -- Multi graph
+
+/**
+ * Pushes the current model graph to the top of the stack for the current thread.  Should always pair with pop.
+ */
+-(void)push;
+
+/**
+ * Returns the current model graph for the current thread
+ */
++(MKitModelGraph *)current;
+
+/**
+ * Pops the current graph for the thread off the stack
+ */
++(void)popCurrent;
+
+/**
+ * Pops the current graph for the thread off the stack
+ */
+-(void)pop;
 
 #pragma mark - Persistence
 

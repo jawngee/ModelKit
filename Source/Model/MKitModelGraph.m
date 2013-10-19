@@ -120,6 +120,60 @@ static NSMutableDictionary *graphs=nil;
     return graph;
 }
 
+#pragma mark -- Multi graph
+
+/**
+ * Sets the current graph for the current thread
+ */
+-(void)push
+{
+    NSMutableDictionary *dict = [[NSThread currentThread] threadDictionary];
+    
+    NSMutableArray *currentA=dict[@"currentGraphs"];
+    
+    if (!currentA)
+    {
+        currentA=[NSMutableArray array];
+        [dict setObject:currentA forKey:@"currentGraphs"];
+    }
+    
+    [currentA addObject:self];
+}
+
+/**
+ * Returns the current model graph for the current thread
+ */
++(MKitModelGraph *)current
+{
+    NSMutableDictionary *dict = [[NSThread currentThread] threadDictionary];
+    NSMutableArray *currentA=dict[@"currentGraphs"];
+    if (currentA)
+        return [currentA lastObject];
+    
+    return [self defaultGraph];
+}
+
+/**
+ * Pops the current graph for the thread off the stack
+ */
++(void)popCurrent
+{
+    NSMutableDictionary *dict = [[NSThread currentThread] threadDictionary];
+    NSMutableArray *currentA=dict[@"currentGraphs"];
+    if ((currentA) && (currentA.count>0))
+        [currentA removeLastObject];
+}
+
+/**
+ * Pops the current graph for the thread off the stack
+ */
+-(void)pop
+{
+    NSMutableDictionary *dict = [[NSThread currentThread] threadDictionary];
+    NSMutableArray *currentA=dict[@"currentGraphs"];
+    if ((currentA) && (currentA.count>0) && (currentA[0]==self))
+        [currentA removeLastObject];
+}
 
 #pragma mark - Model Management
 
@@ -223,7 +277,7 @@ static NSMutableDictionary *graphs=nil;
 {
     MKitModel *model=(MKitModel *)notification.object;
     
-    if ([[model class] graph]!=self)
+    if ([[model class] defaultGraph]!=self)
         return;
     
     NSString *oldValue=[notification.userInfo objectForKey:NSKeyValueChangeOldKey];

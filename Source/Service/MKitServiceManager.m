@@ -70,11 +70,18 @@ static NSMutableDictionary *managers=nil;
 
 -(void)saveModelInBackground:(MKitModel *)model withBlock:(MKitBooleanResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         BOOL result=[self saveModel:model error:&error];
+        
         if (resultBlock)
             resultBlock(result,error);
+        
+        [currentGraph pop];
     });
 }
 
@@ -85,11 +92,17 @@ static NSMutableDictionary *managers=nil;
 
 -(void)deleteModelInBackground:(MKitModel *)model withBlock:(MKitBooleanResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         BOOL result=[self deleteModel:model error:&error];
+        
         if (resultBlock)
             resultBlock(result,error);
+        
+        [currentGraph pop];
     });
 }
 
@@ -100,11 +113,18 @@ static NSMutableDictionary *managers=nil;
 
 -(void)fetchModelInBackground:(MKitModel *)model withBlock:(MKitBooleanResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         BOOL result=[self fetchModel:model error:&error];
+        
         if (resultBlock)
             resultBlock(result,error);
+        
+        [currentGraph pop];
     });
 }
 
@@ -158,11 +178,18 @@ static NSMutableDictionary *managers=nil;
 
 -(void)saveFileInBackground:(MKitServiceFile *)file progressBlock:(MKitProgressBlock)progressBlock resultBlock:(MKitBooleanResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         BOOL result=[self saveFile:file progressBlock:progressBlock error:&error];
+        
         if (resultBlock)
             resultBlock(result,error);
+        
+        [currentGraph pop];
     });
 }
 
@@ -173,11 +200,18 @@ static NSMutableDictionary *managers=nil;
 
 -(void)deleteFileInBackground:(MKitServiceFile *)file withBlock:(MKitBooleanResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         BOOL result=[self deleteFile:file error:&error];
+        
         if (resultBlock)
             resultBlock(result,error);
+        
+        [currentGraph pop];
     });
 }
 
@@ -189,8 +223,14 @@ static NSMutableDictionary *managers=nil;
 
 -(void)callFunctionInBackground:(NSString *)function parameters:(NSDictionary *)params resultBlock:(MKitServiceResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         [self callFunction:function parameters:params resultBlock:resultBlock];
+        
+        [currentGraph pop];
     });
 }
 

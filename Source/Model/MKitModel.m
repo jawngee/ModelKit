@@ -119,6 +119,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 -(void)setup
 {
+    _graph=[[self class] defaultGraph];
     _changing=NO;
     _modelState=ModelStateNew;
     _createdAt=[[NSDate date] retain];
@@ -224,7 +225,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 +(id)instanceWithObjectId:(NSString *)objId
 {
-    MKitModel *instance=[[[self class] graph] modelForObjectId:objId andClass:[self class]];
+    MKitModel *instance=[[[self class] defaultGraph] modelForObjectId:objId andClass:[self class]];
     if (instance!=nil)
         return instance;
     
@@ -237,7 +238,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 +(id)instanceWithModelId:(NSString *)modId
 {
-    MKitModel *instance=[[[self class] graph] modelForModelId:modId];
+    MKitModel *instance=[[[self class] defaultGraph] modelForModelId:modId];
     if (instance!=nil)
         return instance;
     
@@ -265,9 +266,9 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
         @throw [NSException exceptionWithName:@"Invalid Serialized Data" reason:@"Data must be either a dictionary or array" userInfo:nil];
     
     if ((odict[@"objectId"]) && (odict[@"objectId"]!=[NSNull null]))
-        instance=[[[self class] graph] modelForObjectId:odict[@"objectId"] andClass:[self class]];
+        instance=[[[self class] defaultGraph] modelForObjectId:odict[@"objectId"] andClass:[self class]];
     else if ((odict[@"modelId"]) && (odict[@"modelId"]!=[NSNull null]))
-        instance=[[[self class] graph] modelForModelId:odict[@"modelId"]];
+        instance=[[[self class] defaultGraph] modelForModelId:odict[@"modelId"]];
     
     if (!instance)
     {
@@ -400,19 +401,19 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
 
 #pragma mark - Graph related
 
-+(MKitModelGraph *)graph
++(MKitModelGraph *)defaultGraph
 {
-    return [MKitModelGraph defaultGraph];
+    return [MKitModelGraph current];
 }
 
 -(void)addToGraph
 {
-    [[[self class] graph] addToGraph:self];
+    [[[self class] defaultGraph] addToGraph:self];
 }
 
 -(void)removeFromGraph
 {
-    [[[self class] graph] removeFromGraph:self];
+    [[[self class] defaultGraph] removeFromGraph:self];
 }
 
 #pragma mark - Notification
@@ -637,7 +638,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                         model=[mc instanceWithObjectId:lookupDict[@"objectId"]];
                     else if ((lookupDict[@"modelId"]) && (lookupDict[@"modelId"]!=[NSNull null]))
                     {
-                        model=[[[self class] graph] modelForModelId:lookupDict[@"modelId"]];
+                        model=[[[self class] defaultGraph] modelForModelId:lookupDict[@"modelId"]];
                         if (!model)
                         {
                             model=[[[mc alloc] init] autorelease];
@@ -733,7 +734,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                                     model=[p.typeClass instanceWithObjectId:lookupDict[@"objectId"]];
                                 else if ((lookupDict[@"modelId"]) && (lookupDict[@"modelId"]!=[NSNull null]))
                                 {
-                                    model=[[[self class] graph] modelForModelId:lookupDict[@"modelId"]];
+                                    model=[[[self class] defaultGraph] modelForModelId:lookupDict[@"modelId"]];
                                     if (!model)
                                     {
                                         model=[[[p.typeClass alloc] init] autorelease];

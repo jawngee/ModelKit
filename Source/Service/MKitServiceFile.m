@@ -157,11 +157,17 @@
 
 -(void)saveInBackgroundWithProgress:(MKitProgressBlock)progressBlock resultBlock:(MKitBooleanResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         BOOL result=[self save:&error progressBlock:progressBlock];
+        
         if (resultBlock)
             resultBlock(result, error);
+        
+        [currentGraph pop];
     });
 }
 
@@ -172,11 +178,18 @@
 
 -(void)deleteInBackground:(MKitBooleanResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         BOOL result=[self delete:&error];
+        
         if (resultBlock)
             resultBlock(result, error);
+        
+        [currentGraph pop];
     });
 }
 

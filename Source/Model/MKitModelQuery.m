@@ -171,7 +171,11 @@
 
 -(void)executeInBackgroundWithLimit:(NSInteger)limit skip:(NSInteger)skip resultBlock:(MKitQueryResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         NSDictionary *result=[self executeWithLimit:limit skip:skip error:&error];
         
@@ -179,6 +183,8 @@
             resultBlock(result[MKitQueryResultKey], [result[MKitQueryItemCountKey] integerValue], error);
         else if (resultBlock)
             resultBlock(nil, 0, error);
+        
+        [currentGraph pop];
     });
 }
 
@@ -189,11 +195,16 @@
 
 -(void)countInBackground:(MKitIntResultBlock)resultBlock
 {
+    __block MKitModelGraph *currentGraph=[MKitModelGraph current];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [currentGraph push];
+        
         NSError *error=nil;
         NSInteger result=[self count:&error];
         if (resultBlock)
             resultBlock(result, error);
+        
+        [currentGraph pop];
     });
 }
 

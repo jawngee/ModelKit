@@ -118,7 +118,7 @@
 {
     NSPredicate *predicate=[self buildQuery];
     
-    NSArray *results=[[modelClass graph] queryWithPredicate:predicate forClass:modelClass];
+    NSArray *results=[[modelClass defaultGraph] queryWithPredicate:predicate forClass:modelClass];
     
     if (results==nil)
         results=[NSArray array];
