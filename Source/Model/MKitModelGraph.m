@@ -71,12 +71,16 @@ static NSMutableDictionary *graphs=nil;
 {
     if ((self=[self init]))
     {
+        [self push];
+        
         [modelStack release];
         [classCache release];
         
         NSArray *encoded=[aDecoder decodeObjectForKey:@"data"];
         modelStack=[[encoded objectAtIndex:0] mutableCopy];
         classCache=[[encoded objectAtIndex:1] mutableCopy];
+        
+        [self pop];
     }
     
     return self;
@@ -96,7 +100,9 @@ static NSMutableDictionary *graphs=nil;
 
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
+    [self push];
     [aCoder encodeObject:@[modelStack,classCache] forKey:@"data"];
+    [self pop];
 }
 
 #pragma mark - Class Methods - Stack Management
@@ -114,7 +120,7 @@ static NSMutableDictionary *graphs=nil;
     if (!graph)
     {
         graph=[[[MKitModelGraph alloc] init] autorelease];
-        [graphs setObject:graph forKey:MKitModelGraphDefault];
+        [graphs setObject:graph forKey:name];
     }
     
     return graph;
@@ -188,11 +194,15 @@ static NSMutableDictionary *graphs=nil;
 
 -(void)clear
 {
+    [self push];
+    
     [classCache removeAllObjects];
     [modelStack removeAllObjects];
     
     objectCount=0;
     size=0;
+    
+    [self pop];
 }
 
 -(void)addToGraph:(MKitModel *)model
@@ -225,6 +235,8 @@ static NSMutableDictionary *graphs=nil;
 
 -(BOOL)removeFromGraph:(MKitModel *)model
 {
+    [self push];
+    
     [model retain];
     
     BOOL exists=([modelStack objectForKey:model.modelId]!=nil);
@@ -248,6 +260,9 @@ static NSMutableDictionary *graphs=nil;
     }
     
     [model release];
+    
+    [self pop];
+    
     return exists;
 }
 
@@ -282,11 +297,15 @@ static NSMutableDictionary *graphs=nil;
     
     NSString *oldValue=[notification.userInfo objectForKey:NSKeyValueChangeOldKey];
     
+    [self push];
+    
     if ([modelStack objectForKey:oldValue])
         [modelStack removeObjectForKey:oldValue];
     
     if ((model.modelId) && (![[self class] conformsToProtocol:@protocol(MKitNoGraph)]))
         [modelStack setObject:model forKey:model.modelId];
+    
+    [self pop];
 
 }
 
@@ -358,11 +377,16 @@ static NSMutableDictionary *graphs=nil;
 
 -(BOOL)saveToFile:(NSString *)file error:(NSError **)error
 {
+    [self push];
+    
     NSMutableData *data=[NSMutableData data];
     NSKeyedArchiver *archiver=[[[NSKeyedArchiver alloc] initForWritingWithMutableData:data] autorelease];
     [archiver encodeRootObject:@[modelStack,classCache]];
     [archiver finishEncoding];
     [data writeToFile:file atomically:NO];
+    
+    [self pop];
+    
     return YES;
 }
 
@@ -374,9 +398,11 @@ static NSMutableDictionary *graphs=nil;
     {
         if (error)
             *error=[NSError errorWithDomain:NSPOSIXErrorDomain code:ENOENT userInfo:nil];
-        
+    
         return NO;
     }
+    
+    [self push];
     
     NSData *data=[NSData dataWithContentsOfFile:file options:NSDataReadingMappedAlways error:nil];
     NSKeyedUnarchiver *unarchiver=[[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
@@ -389,9 +415,11 @@ static NSMutableDictionary *graphs=nil;
         [classCache release];
         classCache=[[array objectAtIndex:1] mutableCopy];
         
+        [self pop];
         return YES;
     }
     
+    [self pop];
     return NO;
 }
 
@@ -405,6 +433,8 @@ static NSMutableDictionary *graphs=nil;
         return NO;
     }
     
+    [self push];
+    
     NSData *data=[NSData dataWithContentsOfFile:file options:NSDataReadingMappedAlways error:nil];
     NSKeyedUnarchiver *unarchiver=[[[NSKeyedUnarchiver alloc] initForReadingWithData:data] autorelease];
     NSArray *array=[unarchiver decodeObject];
@@ -413,9 +443,11 @@ static NSMutableDictionary *graphs=nil;
         [modelStack addEntriesFromDictionary:[array objectAtIndex:0]];
         [classCache addEntriesFromDictionary:[array objectAtIndex:1]];
         
+        [self pop];
         return YES;
     }
     
+    [self pop];
     return NO;
 }
 
