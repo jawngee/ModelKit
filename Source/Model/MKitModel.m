@@ -378,7 +378,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     
     _hasChanged=YES;
     
-    if ((![keyPath hasPrefix:@"model"]) && ([@[@"updatedAt",@"createdAt",@"objectId"] indexOfObject:keyPath]==NSNotFound))
+    if ((![keyPath hasPrefix:@"model"]) && ([@[@"updatedAt",@"createdAt",@"objectId"] indexOfObject:keyPath]==NSNotFound) && (change[NSKeyValueChangeNewKey]))
         [_modelChanges setObject:change[NSKeyValueChangeNewKey] forKey:keyPath];
     
     if (_changing)
