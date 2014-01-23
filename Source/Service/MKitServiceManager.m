@@ -10,6 +10,7 @@
 #import "MKitServiceModelQuery.h"
 #import "MKitServiceUser.h"
 #import "MKitServiceModel.h"
+#import "MKitModelGraph.h"
 
 NSString * const MKitReachabilityChangedNotification=@"MKitReachabilityChangedNotification";
 

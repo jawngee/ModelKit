@@ -86,6 +86,8 @@
 		FFCFAA83163C655C00BC2E3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCFAA6C163C642800BC2E3E /* UIKit.framework */; };
 		FFCFAA84163C655C00BC2E3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54AA016391DEA00F055A6 /* Foundation.framework */; };
 		FFCFAA8A163C655C00BC2E3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFCFAA88163C655C00BC2E3E /* InfoPlist.strings */; };
+		FFE73D8A189193A700A6241F /* NSError+ModelKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE73D89189193A700A6241F /* NSError+ModelKit.m */; };
+		FFE73D90189193C100A6241F /* NSDictionary+MKitQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE73D8F189193C100A6241F /* NSDictionary+MKitQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = FFA54A9C16391DEA00F055A6;
 			remoteInfo = CloudObject;
+		};
+		FFE73D8C189193A700A6241F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF2BBEA816862A8800D7A854 /* AFNetworkingStatic.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FF533ECC175776540058CC11;
+			remoteInfo = AFNetworkingStaticCocoa;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -238,6 +247,10 @@
 		FFCFAA87163C655C00BC2E3E /* TestCases-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestCases-Info.plist"; sourceTree = "<group>"; };
 		FFCFAA89163C655C00BC2E3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FFCFAA8E163C655C00BC2E3E /* TestCases-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestCases-Prefix.pch"; sourceTree = "<group>"; };
+		FFE73D88189193A700A6241F /* NSError+ModelKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+ModelKit.h"; sourceTree = "<group>"; };
+		FFE73D89189193A700A6241F /* NSError+ModelKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+ModelKit.m"; sourceTree = "<group>"; };
+		FFE73D8E189193C100A6241F /* NSDictionary+MKitQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MKitQuery.h"; sourceTree = "<group>"; };
+		FFE73D8F189193C100A6241F /* NSDictionary+MKitQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MKitQuery.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +314,8 @@
 		FF2BBDD71684B19600D7A854 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				FFE73D88189193A700A6241F /* NSError+ModelKit.h */,
+				FFE73D89189193A700A6241F /* NSError+ModelKit.m */,
 				FF2BBDD81684B19600D7A854 /* NSDate+ModelKit.h */,
 				FF2BBDD91684B19600D7A854 /* NSDate+ModelKit.m */,
 				FF2BBDDA1684B19600D7A854 /* NSString+ModelKit.h */,
@@ -338,6 +353,8 @@
 		FF2BBDEA1684B19600D7A854 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FFE73D8E189193C100A6241F /* NSDictionary+MKitQuery.h */,
+				FFE73D8F189193C100A6241F /* NSDictionary+MKitQuery.m */,
 				FF2BBDEB1684B19600D7A854 /* MKitDefs.h */,
 				FF2BBDEC1684B19600D7A854 /* MKitGeoPoint.h */,
 				FF2BBDED1684B19600D7A854 /* MKitGeoPoint.m */,
@@ -436,6 +453,7 @@
 			isa = PBXGroup;
 			children = (
 				FF2BBEB016862A8800D7A854 /* libAFNetworkingStatic.a */,
+				FFE73D8D189193A700A6241F /* libAFNetworkingStaticCocoa.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -680,6 +698,13 @@
 			remoteRef = FF2BBEAF16862A8800D7A854 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		FFE73D8D189193A700A6241F /* libAFNetworkingStaticCocoa.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworkingStaticCocoa.a;
+			remoteRef = FFE73D8C189193A700A6241F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -748,10 +773,12 @@
 				FF2BBE401684B19600D7A854 /* MKitGeoPoint+Parse.m in Sources */,
 				FF2BBE421684B19600D7A854 /* MKitModel+Parse.m in Sources */,
 				FF2BBE441684B19600D7A854 /* MKitMutableModelArray+Parse.m in Sources */,
+				FFE73D90189193C100A6241F /* NSDictionary+MKitQuery.m in Sources */,
 				FF2BBE461684B19600D7A854 /* MKitParseFile.m in Sources */,
 				FF2BBE481684B19600D7A854 /* MKitParseInstallation.m in Sources */,
 				FF2BBE4A1684B19600D7A854 /* MKitParseModel.m in Sources */,
 				FF2BBE4C1684B19600D7A854 /* MKitParseModelQuery.m in Sources */,
+				FFE73D8A189193A700A6241F /* NSError+ModelKit.m in Sources */,
 				FF2BBE4E1684B19600D7A854 /* MKitParseNotification.m in Sources */,
 				FF2BBE501684B19600D7A854 /* MKitParseServiceManager.m in Sources */,
 				FF2BBE521684B19600D7A854 /* MKitParseUser.m in Sources */,

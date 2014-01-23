@@ -7,6 +7,7 @@
 //
 
 #import "MKitServiceNotification.h"
+#import "MKitModelGraph.h"
 
 @implementation MKitServiceNotification
 

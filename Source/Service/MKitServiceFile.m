@@ -8,6 +8,7 @@
 
 #import "MKitServiceFile.h"
 #import "MKitServiceManager.h"
+#import "MKitModelGraph.h"
 
 /**
  * Internal methods
