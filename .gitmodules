@@ -3,7 +3,7 @@
 	url = git://github.com/jawngee/AFNetworkingStatic.git
 [submodule "External/JSONKit"]
 	path = External/JSONKit
-	url = git://github.com/johnezang/JSONKit.git
+url=https://github.com/jawngee/JSONKit.git
 [submodule "External/iso"]
 	path = External/iso
 	url = git://github.com/jawngee/iso-8601-date-formatter.git
