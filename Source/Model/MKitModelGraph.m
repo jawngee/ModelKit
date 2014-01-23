@@ -196,8 +196,15 @@ static NSMutableDictionary *graphs=nil;
 {
     [self push];
     
-    [classCache removeAllObjects];
-    [modelStack removeAllObjects];
+    @synchronized(classCache)
+    {
+        [classCache removeAllObjects];
+    }
+    
+    @synchronized(modelStack)
+    {
+        [modelStack removeAllObjects];
+    }
     
     objectCount=0;
     size=0;
@@ -379,9 +386,22 @@ static NSMutableDictionary *graphs=nil;
 {
     [self push];
     
+    NSMutableDictionary *modelStackCopy;
+    NSMutableDictionary *classCacheCopy;
+    
+    @synchronized(modelStack)
+    {
+        modelStackCopy=[[modelStack mutableCopy] autorelease];
+    }
+    
+    @synchronized(classCache)
+    {
+        classCacheCopy=[[classCache mutableCopy] autorelease];
+    }
+    
     NSMutableData *data=[NSMutableData data];
     NSKeyedArchiver *archiver=[[[NSKeyedArchiver alloc] initForWritingWithMutableData:data] autorelease];
-    [archiver encodeRootObject:@[modelStack,classCache]];
+    [archiver encodeRootObject:@[modelStackCopy,classCacheCopy]];
     [archiver finishEncoding];
     [data writeToFile:file atomically:NO];
     
