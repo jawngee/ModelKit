@@ -225,7 +225,7 @@
     [op start];
     [op waitUntilFinished];
     
-    if ([op hasAcceptableStatusCode])
+    if ([op hasAcceptableStatusCode] && [op responseString])
     {
         id data=[op.responseString objectFromJSONString];
         return @{
