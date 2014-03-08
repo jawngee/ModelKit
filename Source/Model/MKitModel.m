@@ -457,6 +457,12 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     NSString *oid=dict[@"objectId"];
     NSString *mid=dict[@"modelId"];
     
+    if ([oid isEqual:[NSNull null]])
+        oid=nil;
+    
+    if ([mid isEqual:[NSNull null]])
+        mid=nil;
+    
     for(NSDictionary *d in objectArray)
         if ((oid) && ([oid isEqualToString:d[@"objectId"]]))
             return d;
