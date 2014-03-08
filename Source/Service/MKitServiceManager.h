@@ -122,7 +122,7 @@ extern NSString * const MKitReachabilityChangedNotification;
  * @param body The body data for the request
  * @return The operation
  */
--(AFHTTPRequestOperation *)classRequestWithMethod:(NSString *)method class:(Class)class params:(NSDictionary *)params body:(NSData *)body;
+-(AFHTTPRequestOperation *)classRequestWithMethod:(NSString *)method class:(Class)objclass params:(NSDictionary *)params body:(NSData *)body;
 
 
 /**

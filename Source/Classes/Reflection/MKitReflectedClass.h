@@ -27,7 +27,7 @@
  * @param topclass The reflection will recurse up the class hiearachy until it hits this class.  If nil, NSObject is topclass
  * @return The new instance
  */
--(id)initWithClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps recurseChainUntil:(Class)topclass;
+-(id)initWithClass:(Class)objclass ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps recurseChainUntil:(Class)topclass;
 
 
 /**
@@ -37,6 +37,6 @@
  * @param topclass The reflection will recurse up the class hiearachy until it hits this class.  If nil, NSObject is topclass
  * @return The reflected class
  */
-+(id)reflectionForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps recurseChainUntil:(Class)topclass;
++(id)reflectionForClass:(Class)objclass ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps recurseChainUntil:(Class)topclass;
 
 @end

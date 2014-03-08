@@ -19,7 +19,7 @@
  * @param modelName The name of the model
  * @param class The class to map to
  */
-+(void)registerModel:(NSString *)modelName forClass:(Class)class;
++(void)registerModel:(NSString *)modelName forClass:(Class)objclass;
 
 /**
  * Retrieves the registered class for a given model

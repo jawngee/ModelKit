@@ -22,6 +22,6 @@
  * @param topclass The reflection will recurse up the class hiearachy until it hits this class.  If nil, NSObject is topclass
  * @return The reflected class
  */
-+(MKitReflectedClass *)reflectionForClass:(Class)class ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps recurseChainUntil:(Class)topclass;
++(MKitReflectedClass *)reflectionForClass:(Class)objclass ignorePropPrefix:(NSString *)ignorePropPrefix ignoreProperties:(NSArray *)ignoredProps recurseChainUntil:(Class)topclass;
 
 @end
