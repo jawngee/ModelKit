@@ -31,6 +31,7 @@ extern NSString * const MKitModelGraphDefault;
 
 @property (readonly) NSUInteger size;
 @property (readonly) NSUInteger objectCount;
+@property (readonly) NSMutableDictionary *classCache;
 
 #pragma mark - Class Methods - Stack Management
 

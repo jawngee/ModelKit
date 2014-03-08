@@ -41,7 +41,7 @@ NSString * const MKitModelGraphDefault=@"default";
 
 static NSMutableDictionary *graphs=nil;
 
-@synthesize objectCount, size;
+@synthesize objectCount, size, classCache;
 
 #pragma mark - Init/Dealloc
 
@@ -50,6 +50,9 @@ static NSMutableDictionary *graphs=nil;
     [super initialize];
     
     graphs=[[NSMutableDictionary dictionary] retain];
+    
+    MKitModelGraph *graph=[[[MKitModelGraph alloc] init] autorelease];
+    [graphs setObject:graph forKey:MKitModelGraphDefault];
 }
 
 -(id)init
@@ -116,13 +119,16 @@ static NSMutableDictionary *graphs=nil;
 +(MKitModelGraph *)graphNamed:(NSString *)name
 {
     MKitModelGraph *graph=[graphs objectForKey:name];
-    
-    if (!graph)
+        
+    @synchronized(graphs)
     {
-        graph=[[[MKitModelGraph alloc] init] autorelease];
-        [graphs setObject:graph forKey:name];
+        if (!graph)
+        {
+            graph=[[[MKitModelGraph alloc] init] autorelease];
+            [graphs setObject:graph forKey:name];
+        }
     }
-    
+
     return graph;
 }
 
@@ -153,7 +159,7 @@ static NSMutableDictionary *graphs=nil;
 {
     NSMutableDictionary *dict = [[NSThread currentThread] threadDictionary];
     NSMutableArray *currentA=dict[@"currentGraphs"];
-    if (currentA)
+    if ((currentA) && (currentA.count>0))
         return [currentA lastObject];
     
     return [self defaultGraph];
@@ -196,8 +202,15 @@ static NSMutableDictionary *graphs=nil;
 {
     [self push];
     
-    [classCache removeAllObjects];
-    [modelStack removeAllObjects];
+    @synchronized(classCache)
+    {
+        [classCache removeAllObjects];
+    }
+    
+    @synchronized(modelStack)
+    {
+        [modelStack removeAllObjects];
+    }
     
     objectCount=0;
     size=0;
@@ -379,9 +392,22 @@ static NSMutableDictionary *graphs=nil;
 {
     [self push];
     
+    NSMutableDictionary *modelStackCopy;
+    NSMutableDictionary *classCacheCopy;
+    
+    @synchronized(modelStack)
+    {
+        modelStackCopy=[[modelStack mutableCopy] autorelease];
+    }
+    
+    @synchronized(classCache)
+    {
+        classCacheCopy=[[classCache mutableCopy] autorelease];
+    }
+    
     NSMutableData *data=[NSMutableData data];
     NSKeyedArchiver *archiver=[[[NSKeyedArchiver alloc] initForWritingWithMutableData:data] autorelease];
-    [archiver encodeRootObject:@[modelStack,classCache]];
+    [archiver encodeRootObject:@[modelStackCopy,classCacheCopy]];
     [archiver finishEncoding];
     [data writeToFile:file atomically:NO];
     

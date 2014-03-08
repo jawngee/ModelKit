@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "JSONKit.h"
 #import "NSDate+ModelKit.h"
+#import "MKitModelGraph.h"
 
 @implementation MKitParseUser
 

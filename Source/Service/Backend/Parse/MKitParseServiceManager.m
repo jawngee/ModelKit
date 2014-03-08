@@ -146,6 +146,9 @@ NSString * const MKitParseErrorDomain=@"MKitParseErrorDomain";
                                                        path:path
                                                  parameters:params];
     
+    [req setTimeoutInterval:60];
+    [req setCachePolicy:NSURLRequestReloadIgnoringCacheData];
+    
     if  (body)
         [req setHTTPBody:body];
     

@@ -7,6 +7,7 @@
 //
 
 #import "MKitModelQuery.h"
+#import "MKitModelGraph.h"
 
 @implementation MKitModelQuery
 

@@ -8,6 +8,7 @@
 
 #import "MKitMutableFileArray.h"
 #import "MKitServiceFile.h"
+#import "MKitModelGraph.h"
 
 @implementation MKitMutableFileArray
 
