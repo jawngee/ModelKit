@@ -615,7 +615,10 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
         if ([[ele class] isSubclassOfClass:[NSDictionary class]])
         {
             NSDictionary *d=(NSDictionary *)ele;
-            if ([d objectForKey:@"__type"] && [[d objectForKey:@"__type"] isEqualToString:@"ModelPointer"])
+            
+            NSString *type=[d objectForKey:@"__type"];
+            
+            if (type && [type isEqualToString:@"ModelPointer"])
             {
                 Class mc=[MKitModelRegistry registeredClassForModel:[d objectForKey:@"model"]];
                 if (!mc)
@@ -652,16 +655,28 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                 if (model)
                     [replacement addObject:model];
             }
-            else
+            else if (type && [type isEqualToString:@"Object"])
             {
-                NSString *type=[d objectForKey:@"__type"];
-                if (type)
-                {
-                    if ([type isEqualToString:@"Date"])
-                    {
-                        [replacement addObject:[self getDateFromId:d]];
-                    }
-                }
+                Class mc=[MKitModelRegistry registeredClassForModel:[d objectForKey:@"className"]];
+                if (!mc)
+                    mc=NSClassFromString([d objectForKey:@"className"]);
+                if (!mc)
+                    @throw [NSException exceptionWithName:@"Unknown model class" reason:[NSString stringWithFormat:@"Unknown model class '%@'",[d objectForKey:@"className"]] userInfo:d];
+                
+                MKitModel *model=nil;
+                if ([d objectForKey:@"objectId"])
+                    model=[mc instanceWithObjectId:[d objectForKey:@"objectId"]];
+                else
+                    model=[mc instance];
+                
+                [model deserialize:d fromJSON:decodeFromJSON objectArray:nil decodingCache:decodingCache];
+                
+                if (model)
+                    [replacement addObject:model];
+            }
+            else if (type && [type isEqualToString:@"Date"])
+            {
+                [replacement addObject:[self getDateFromId:d]];
             }
         }
         else
@@ -717,9 +732,12 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                     if ([[val class] isSubclassOfClass:[NSDictionary class]])
                     {
                         NSDictionary *md=(NSDictionary *)val;
-                        if (([md objectForKey:@"__type"]) && ([[md objectForKey:@"__type"] isEqualToString:@"ModelPointer"]))
+
+                        MKitModel *model=nil;
+                        
+                        NSString *type=[md objectForKey:@"__type"];
+                        if (type && [[md objectForKey:@"__type"] isEqualToString:@"ModelPointer"])
                         {
-                            MKitModel *model=nil;
                             if ((md[@"modelId"]) && (md[@"modelId"]!=[NSNull null]))
                                 model=[decodingCache objectForKey:md[@"modelId"]];
                             
@@ -744,9 +762,22 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                                 [model deserialize:lookupDict fromJSON:fromJSON objectArray:objectArray decodingCache:decodingCache];
                                 [decodingCache setObject:model forKey:model.modelId];
                             }
-                            
-                            [self setValue:model forKey:p.name];
                         }
+                        else if (type && [[md objectForKey:@"__type"] isEqualToString:@"Pointer"])
+                        {
+                            Class mc=[MKitModelRegistry registeredClassForModel:[md objectForKey:@"className"]];
+                            if (!mc)
+                                mc=NSClassFromString([md objectForKey:@"className"]);
+                            
+                            if (!mc)
+                                @throw [NSException exceptionWithName:@"Unknown model class" reason:[NSString stringWithFormat:@"Unknown model class '%@'",[md objectForKey:@"className"]] userInfo:md];
+                            
+                            if ([md objectForKey:@"objectId"])
+                                model=[mc instanceWithObjectId:[md objectForKey:@"objectId"]];
+                        }
+                        
+                        if (model)
+                            [self setValue:model forKey:p.name];
                     }
                     else if ([[val class] isSubclassOfClass:[MKitModel class]])
                     {
