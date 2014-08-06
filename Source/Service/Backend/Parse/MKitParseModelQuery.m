@@ -206,7 +206,6 @@
     if (includes.count>0)
         [params setObject:[includes componentsJoinedByString:@","] forKey:@"include"];
     
-    NSLog(@"%@",params);
     
     return [manager classRequestWithMethod:@"GET" class:modelClass params:((params.count>0) ? params : nil) body:nil];
 }

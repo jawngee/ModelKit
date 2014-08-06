@@ -367,9 +367,8 @@ NSString * const MKitParseErrorDomain=@"MKitParseErrorDomain";
             if ([[obj class] isSubclassOfClass:[NSNumber class]])
             {
                 MKitReflectedProperty *p=ref.properties[key];
-                if ((p) && (p.type==refTypeChar))
-                    if ([obj charValue]<=1)
-                        obj=[NSNumber numberWithBool:[obj boolValue]];
+                if ((p) && (p.type==refTypeBool))
+                    obj=[NSNumber numberWithBool:[obj boolValue]];
             }
             
             [propsToSave setObject:obj forKey:key];

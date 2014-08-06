@@ -23,7 +23,8 @@ typedef enum
     refTypeDate         =7,         /**< NSDate */
     
     // primitive types
-    refTypeChar         =100,       /**< Char or BOOL type */
+    refTypeBool         =99,       /**<  BOOL type */
+    refTypeChar         =100,       /**< Char type */
     refTypeShort        =101,       /**< Short type */
     refTypeInteger      =102,       /**< Integer type */
     refTypeLong         =103,       /**< Long type */

@@ -59,7 +59,9 @@
         else
         {
             if ([type isEqualToString:@"Tc"])
-                _type=refTypeChar;
+                _type=refTypeBool;
+            else if ([type isEqualToString:@"TB"])
+                _type=refTypeBool;
             else if ([type isEqualToString:@"Ts"])
                 _type=refTypeShort;
             else if (([type isEqualToString:@"Ti"]) || ([type isEqualToString:@"Tq"]))

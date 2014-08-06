@@ -177,10 +177,9 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
             if (val==[NSNull null])
                 val=nil;
             
-            if (p.type==refTypeChar)
+            if (p.type==refTypeBool)
             {
-                if ([val charValue]<=1)
-                    val=[NSNumber numberWithBool:[val boolValue]];
+                val=[NSNumber numberWithBool:[val boolValue]];
             }
             
             [self setValue:val forKey:p.name];
@@ -338,6 +337,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
             case refTypeArray:
             case refTypeDictionary:
             case refTypeChar:
+            case refTypeBool:
             case refTypeShort:
             case refTypeInteger:
             case refTypeLong:
@@ -590,12 +590,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
             else
                 [props setObject:val forKey:p.name];
         }
-        else if ((p.type>=refTypeString && p.type<refTypeDate) || (p.type>=refTypeChar && p.type<refTypeUnknown))
+        else if ((p.type>=refTypeString && p.type<refTypeDate) || (p.type>=refTypeBool && p.type<refTypeUnknown))
         {
-            if (p.type==refTypeChar)
+            if (p.type==refTypeBool)
             {
-                if ([val charValue]<=1)
-                    val=[NSNumber numberWithBool:[val boolValue]];
+                val=[NSNumber numberWithBool:[val boolValue]];
             }
             
             [props setObject:val forKey:p.name];
@@ -790,9 +789,13 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                 else
                     [self setValue:nil forKey:p.name];
                 break;
+            case refTypeBool:
+                val=[NSNumber numberWithBool:[val boolValue]];
+                [self setValue:val forKey:p.name];
+                break;
             case refTypeChar:
                 if ([val charValue]<=1)
-                        val=[NSNumber numberWithBool:[val boolValue]];
+                    val=[NSNumber numberWithBool:[val boolValue]];
                 [self setValue:val forKey:p.name];
                 break;
             case refTypeString:
@@ -840,7 +843,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
         id val=[self valueForKey:prop.name];
         if (val==nil)
             val=[NSNull null];
-        else if (prop.type==refTypeChar)
+        else if (prop.type==refTypeBool)
             val=[NSNumber numberWithBool:[val integerValue]];
         
         [result setObject:val forKey:prop.name];
