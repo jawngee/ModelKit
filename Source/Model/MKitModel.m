@@ -811,7 +811,7 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
                 [self setValue:[self unflattenArray:val decodeFromJSON:fromJSON arrayClass:p.typeClass objectArray:objectArray decodingCache:decodingCache] forKey:p.name];
                 break;
             case refTypeDictionary:
-                [self setValue:nil forKey:p.name];
+                [self setValue:[p.typeClass dictionaryWithDictionary:val] forKey:p.name];
                 break;
             case refTypeData:
                 [self setValue:nil forKey:p.name];
