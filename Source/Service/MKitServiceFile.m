@@ -81,7 +81,7 @@
         self.contentType=[aDecoder decodeObjectForKey:@"contentType"];
         self.filename=[aDecoder decodeObjectForKey:@"filename"];
         self.data=[aDecoder decodeObjectForKey:@"data"];
-        self.state=[aDecoder decodeIntegerForKey:@"state"];
+        self.state=(MKitFileState)[aDecoder decodeIntegerForKey:@"state"];
         self.name=[aDecoder decodeObjectForKey:@"name"];
         self.url=[aDecoder decodeObjectForKey:@"url"];
     }
