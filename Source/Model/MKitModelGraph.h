@@ -48,6 +48,13 @@ extern NSString * const MKitModelGraphDefault;
  */
 +(MKitModelGraph *)graphNamed:(NSString *)name;
 
+
+/**
+ * Removes a graph
+ * @param graph The graph to remove
+ */
++(void)removeGraph:(MKitModelGraph *)graph;
+
 #pragma mark -- Multi graph
 
 /**
@@ -69,6 +76,11 @@ extern NSString * const MKitModelGraphDefault;
  * Pops the current graph for the thread off the stack
  */
 -(void)pop;
+
+/**
+ * Removes the current graph from the system
+ */
+-(void)remove;
 
 #pragma mark - Persistence
 

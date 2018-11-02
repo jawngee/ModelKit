@@ -132,6 +132,25 @@ static NSMutableDictionary *graphs=nil;
     return graph;
 }
 
+
++(void)removeGraph:(MKitModelGraph *)graph
+{
+    @synchronized(graphs)
+    {
+        __block NSString *graphKey=nil;
+        [graphs enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            if (obj==graph)
+            {
+                graphKey=key;
+                *stop=YES;
+            }
+        }];
+        
+        if (graphKey)
+            [graphs removeObjectForKey:graphKey];
+    }
+}
+
 #pragma mark -- Multi graph
 
 /**
@@ -185,6 +204,15 @@ static NSMutableDictionary *graphs=nil;
     NSMutableArray *currentA=dict[@"currentGraphs"];
     if ((currentA) && (currentA.count>0) && (currentA[0]==self))
         [currentA removeLastObject];
+}
+
+-(void)remove
+{
+    [self push];
+    [self clear];
+    [self pop];
+    
+    [MKitModelGraph removeGraph:self];
 }
 
 #pragma mark - Model Management
