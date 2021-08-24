@@ -328,6 +328,10 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     id val=nil;
     for(MKitReflectedProperty *p in [ref.properties allValues])
     {
+        if ([p.name isEqualToString:@"description"] || [p.name isEqualToString:@"debugDescription"] || [p.name isEqualToString:@"superclass"]) {
+            continue;
+        }
+        
         switch(p.type)
         {
             case refTypeId:
@@ -811,8 +815,19 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     
     MKitReflectedClass *ref=[MKitReflectionManager reflectionForClass:[self class] ignorePropPrefix:@"model" ignoreProperties:[[self class] ignoredProperties] recurseChainUntil:[MKitModel class]];
     
-    for(MKitReflectedProperty *prop in [ref.properties allValues])
-    {
+    for(MKitReflectedProperty *prop in [ref.properties allValues]) {
+        if ([prop.name isEqualToString:@"description"]) {
+            continue;
+        }
+        
+        if ([prop.name isEqualToString:@"debugDescription"]) {
+            continue;
+        }
+        
+        if ([prop.name isEqualToString:@"superclass"]) {
+            continue;
+        }
+        
         id val=[self valueForKey:prop.name];
         if (val==nil)
             val=[NSNull null];
@@ -892,11 +907,11 @@ NSString *const MKitModelIdentifierChangedNotification=@"MKitModelIdentifierChan
     NSMutableArray *propsStrings=[NSMutableArray array];
     
     [propsStrings addObject:[NSString stringWithFormat:@"\n\t%@: %@",@"modelId",self.modelId]];
-    [propsStrings addObject:[NSString stringWithFormat:@"%@: %d",@"modelState",self.modelState]];
-    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"objectId",self.objectId]];
-    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"createdAt",self.createdAt]];
-    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"updateAt",self.updatedAt]];
-    
+//    [propsStrings addObject:[NSString stringWithFormat:@"%@: %d",@"modelState",self.modelState]];
+//    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"objectId",self.objectId]];
+//    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"createdAt",self.createdAt]];
+//    [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",@"updateAt",self.updatedAt]];
+//    
     NSDictionary *props=[self properties];
     [props enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [propsStrings addObject:[NSString stringWithFormat:@"%@: %@",key,obj]];
